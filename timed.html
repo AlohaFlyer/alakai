@@ -30,6 +30,7 @@
     <h2>Timed sections</h2>
     <p class="muted">Real clock. No guessing penalty on either test, so never leave a blank. Two passes: answer what you know, flag what you don't, come back. Pacing checkpoints are set by your onboarding answer (change in Settings).</p>
     <div class="grid" id="modules"></div>
+    <div class="row" style="margin-top:12px" id="fullrow"><button id="full">Full-length test</button><small class="muted" id="fullnote"></small></div>
   </section>
 
   <section class="card" id="run" hidden>
@@ -65,11 +66,17 @@
     timed.modules.filter(m => !(test === 'act' && m.section === 'science' && !profile.science)).forEach(m => {
       const pool = bank.items.filter(i => i.section === m.section && i.timed_ok !== false).length;
       const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none';
-      d.innerHTML = `<h3>${A.esc(m.name)}</h3><p class="muted">${m.count} questions · ${m.minutes} min · ${Math.round(m.minutes * 60 / m.count)}s each</p><button ${pool < m.count ? 'disabled' : ''} data-m="${m.id}">Start</button>${pool < m.count ? `<small class="muted"> bank has ${pool} of ${m.count}</small>` : ''}`;
+      const adaptive = test === 'sat' && /m2$/.test(m.id);
+      d.innerHTML = `<h3>${A.esc(m.name)}</h3><p class="muted">${m.count} questions · ${m.minutes} min · ${Math.round(m.minutes * 60 / m.count)}s each${adaptive ? ' · adapts to your Module 1' : ''}</p><button ${pool < m.count ? 'disabled' : ''} data-m="${m.id}">Start</button>${pool < m.count ? `<small class="muted"> bank has ${pool} of ${m.count}</small>` : ''}`;
       host.appendChild(d);
     });
     host.querySelectorAll('button[data-m]').forEach(b => b.addEventListener('click', () => start(timed.modules.find(m => m.id === b.dataset.m))));
+    const mods = timed.modules.filter(m => !(test === 'act' && m.section === 'science' && !profile.science));
+    const total = mods.reduce((a, m) => a + m.minutes, 0);
+    document.getElementById('fullnote').textContent = test === 'sat' ? `RW M1, RW M2, 10-min break, Math M1, Math M2. About ${total + 10} minutes. Module 2 adapts.` : `${mods.map(m => m.name.replace(' (optional)', '')).join(', ')} back to back, about ${total + 15} minutes with one break.`;
+    document.getElementById('full').onclick = () => { chain = mods.slice(); chainResults = []; start(chain.shift()); };
   }
+  let chain = null, chainResults = [];
   let mod, items, idx, answers, flags, t0, end, timer, checkpoints, started;
   function start(m) {
     mod = m; const pool = A.shuffle(bank.items.filter(i => i.section === m.section && i.timed_ok !== false));
@@ -77,7 +84,13 @@
     items = pool.sort((a, b) => a.difficulty - b.difficulty).slice(0, m.count);
     // rebalance: take a difficulty-stratified sample instead of just the easiest
     const by = { 1: [], 2: [], 3: [] }; pool.forEach(i => by[i.difficulty].push(i));
-    const want = { 1: Math.round(m.count * 0.3), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2];
+    let want = { 1: Math.round(m.count * 0.3), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2];
+    // Adaptive SAT Module 2: route on the most recent Module 1 of the same section
+    if (test === 'sat' && /m2$/.test(m.id)) {
+      const m1 = S.get(test + '.timed', []).filter(t => t.id === m.id.replace('m2', 'm1')).slice(-1)[0];
+      if (m1) { const pct = m1.right / m1.n; if (pct >= 0.6) { want = { 1: Math.round(m.count * 0.1), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; m.routed = 'harder'; } else { want = { 1: Math.round(m.count * 0.45), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; m.routed = 'easier'; } }
+      else m.routed = null;
+    }
     let pick = [].concat(by[1].slice(0, want[1]), by[2].slice(0, want[2]), by[3].slice(0, want[3]));
     if (pick.length < m.count) pick = pick.concat(pool.filter(i => !pick.includes(i)).slice(0, m.count - pick.length));
     items = pick.sort((a, b) => a.difficulty - b.difficulty);
@@ -119,13 +132,21 @@
       const correct = a === null ? false : free ? (E.normalize(a) === E.normalize(it.answer) || (it.answer_alt || []).some(x => E.normalize(x) === E.normalize(a))) : a === it.answer;
       if (a === null) unanswered++; if (correct) right++;
       rows.push({ it, a, correct });
-      await E.record(test, it, { correct, ms: 0, cause: a === null ? 'time' : null }, 'timed');
+      await E.record(test, it, { correct, ms: 0, cause: a === null ? 'time' : null, trap: (!correct && a !== null && !free && it.traps) ? it.traps[a] : null }, 'timed');
     }
-    const rec = { id: mod.id, name: mod.name, right, n: items.length, seconds, unanswered, flagged: flags.size, timeUp, at: Date.now() };
+    const rec = { id: mod.id, name: mod.name, right, n: items.length, seconds, unanswered, flagged: flags.size, timeUp, at: Date.now(), routed: mod.routed || null, hardRight: rows.filter(r => r.correct && r.it.difficulty === 3).length };
     const list = S.get(test + '.timed', []); list.push(rec); S.set(test + '.timed', list.slice(-50));
     if (A.milestone(test, 'timed:' + mod.id + ':' + list.length)) S.set('milestone_pending', { test, text: `${mod.name} done: ${right}/${items.length}. Good time to send a progress report.` });
     document.getElementById('run').hidden = true; document.getElementById('review').hidden = false;
-    document.getElementById('rsummary').textContent = `${right} of ${items.length} right in ${A.fmtTime(seconds)}${timeUp ? ' (time ran out)' : ''}. ${unanswered} left blank, ${flags.size} flagged. Misses are in your error log.`;
+    const flaggedEasy = [...flags].filter(i => items[i].difficulty === 1).length;
+    document.getElementById('rsummary').textContent = `${right} of ${items.length} right in ${A.fmtTime(seconds)}${timeUp ? ' (time ran out)' : ''}. ${unanswered} left blank, ${flags.size} flagged${flags.size ? ` (${flaggedEasy} of those were easy-rated: your own order of difficulty is the one that counts)` : ''}.${mod.routed ? ` Module 2 was the ${mod.routed} version.` : ''} Misses are in your error log.`;
+    if (chain && chain.length) {
+      chainResults.push(rec);
+      const nextMod = chain.shift(); const isBreak = test === 'sat' ? nextMod.section === 'math' && mod.section === 'rw' : chain.length === 1;
+      const btn = document.createElement('button'); btn.textContent = isBreak ? `Take a 10-minute break, then start ${nextMod.name}` : `Continue to ${nextMod.name}`; btn.style.marginTop = '10px';
+      btn.onclick = () => start(nextMod);
+      document.getElementById('rsummary').after(btn);
+    } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(test + '.fulltests', (S.get(test + '.fulltests', [])).concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; }
     document.getElementById('rshow').onclick = () => {
       const host = document.getElementById('rlist'); host.innerHTML = ''; const letters = 'ABCDE';
       rows.forEach(({ it, a, correct }, i) => { const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none'; const free = !it.choices || !it.choices.length;

@@ -18,6 +18,8 @@ KADEN: Okay so what do I actually do.
 PONO: Two passes. First pass, you ride through in order. You look at a question. If you can see the path in about ten seconds, you take it. If you can't see the path, you pick your best guess, you flag it, and you move on. You do not sit there. Sitting there is fighting the horse.
 KADEN: But what if I almost have it.
 DEREK: "Almost have it" is the most expensive phrase on the SAT. Almost have it for one more minute is three questions you never saw. Those three could be easy. The one you're stuck on, by definition, is not.
+LEHUA: And when you guess, cross things out first. The app has a little x next to every choice. Use it.
+DEREK: Right. Crossing out one wrong choice turns a one-in-four guess into one-in-three. Cross out two and it's a coin flip. Small moves, real points. One warning: only cross out a choice when you can say why it is wrong. If you cross out the right answer, the app will tell you, and that's a sign you were guessing with the x button, not thinking with it.
 LEHUA: Say the guessing rule, Derek, because people still don't believe it.
 DEREK: There is no guessing penalty. None. On the SAT and on the ACT. A blank is a guaranteed zero. A random guess on a four-choice question is worth a quarter of a point on average. And if you can cross out even one wrong choice, it's a third. So a blank is the only answer that is always wrong.
 KADEN: So I should just guess on everything?
@@ -49,7 +51,7 @@ LEHUA: One more thing and then we'll let Kaden go catch his bus. The adaptive th
 DEREK: It means module one accuracy matters more than module one speed. Do not sprint module one to save time. There's no saving time, each module has its own clock. Get module one right, calmly, and you unlock the module that can give you the big score.
 PONO: Ride the first horse clean. Then they give you the fast horse.
 KADEN: There it is.
-LEHUA: Alright. Here's your homework. Go to Timed in the app. Do one Reading and Writing module, just one, with the checkpoints on. Don't worry about the score. Watch what the clock does to you. Then come back and do episode four.
+LEHUA: Alright. Here's your homework. If you haven't done the placement check yet, do that first, it's two questions per skill and it tells the dashboard where to start you. Then go to Timed in the app. Do one Reading and Writing module, just one, with the checkpoints on. Don't worry about the score. Watch what the clock does to you. Then come back and do episode four.
 KADEN: And flag stuff.
 PONO: And flag stuff. No blanks.
 DEREK: No blanks.

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Placement check · Alakaʻi Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+    <div class="toggle" data-mount></div>
+  </header>
+  <nav class="tabs"></nav>
+
+  <section class="card" id="intro">
+    <h2>Placement check</h2>
+    <p>Two questions from every skill, untimed, no feedback until the end. About <span id="est"></span> minutes. It seeds your weak-spots list so the dashboard knows where to point you on day one. You can skip it and let drills build the picture instead.</p>
+    <div class="row"><button id="start">Start</button><a class="btn secondary" href="dashboard.html">Skip for now</a></div>
+  </section>
+
+  <section class="card" id="run" hidden>
+    <div class="row" style="justify-content:space-between"><strong>Placement check</strong><span class="muted" id="count"></span></div>
+    <div class="bar-track" style="margin:8px 0"><div class="bar-fill" id="prog"></div></div>
+    <div id="item" style="margin-top:12px"></div>
+    <div class="row" style="margin-top:10px"><button id="next" disabled>Next</button><button class="ghost" id="stop">Stop and score what I've done</button></div>
+  </section>
+
+  <section class="card" id="done" hidden>
+    <h2>Placement pau</h2>
+    <p id="summary"></p>
+    <table id="bysec"><tr><th>Section</th><th>Score</th><th>Start here</th></tr></table>
+    <div class="row" style="margin-top:12px"><a class="btn" href="dashboard.html">Go to dashboard</a><a class="btn secondary" href="drill.html">Drills</a></div>
+  </section>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script src="assets/engine.js"></script>
+<script>
+(async () => {
+  const A = window.Alakai, E = window.AlakaiEngine, S = A.Store;
+  const { profile } = await A.boot({ page: 'placement.html', gate: true }); if (!profile) return;
+  const test = A.getTest(); const bank = await E.Bank.load(test);
+  const secs = E.Bank.visibleSections(bank, test, profile);
+  const skills = secs.flatMap(sec => sec.skills.map(sk => sk.id));
+  // 2 per skill, difficulty 2 preferred, unseen preferred
+  const seen = S.get('seen', {});
+  const items = [];
+  skills.forEach(sk => { const pool = A.shuffle(bank.items.filter(i => i.skill === sk && i.timed_ok !== false)).sort((a, b) => (Math.abs(a.difficulty - 2) - Math.abs(b.difficulty - 2)) || ((seen[a.id] || 0) - (seen[b.id] || 0))); items.push(...pool.slice(0, 2)); });
+  const order = A.shuffle(items);
+  document.getElementById('est').textContent = Math.round(order.length * 1.1);
+  let i = 0; const answers = [];
+  document.getElementById('start').addEventListener('click', () => { document.getElementById('intro').hidden = true; document.getElementById('run').hidden = false; show(); });
+  function show() {
+    if (i >= order.length) return finish();
+    const item = order[i]; document.getElementById('count').textContent = `${i + 1} of ${order.length}`; document.getElementById('prog').style.width = Math.round(100 * i / order.length) + '%';
+    const host = document.getElementById('item'); const free = !item.choices || !item.choices.length; const letters = 'ABCDE';
+    host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px">` : `<div class="choices">${item.choices.map((c, k) => `<div class="choice-row"><button class="choice" data-k="${k}"><strong>${letters[k]}.</strong> ${A.esc(c)}</button><button class="strike" data-k="${k}" aria-label="Cross out">×</button></div>`).join('')}</div>`}`;
+    const nb = document.getElementById('next'); nb.disabled = true; let picked = null;
+    host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { picked = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => delete x.dataset.state); b.dataset.state = 'picked'; nb.disabled = false; }));
+    host.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => b.parentElement.classList.toggle('struck')));
+    const f = host.querySelector('#free'); if (f) f.addEventListener('input', () => { picked = f.value.trim() || null; nb.disabled = !picked; });
+    nb.onclick = () => { const correct = free ? (E.normalize(picked) === E.normalize(item.answer) || (item.answer_alt || []).some(x => E.normalize(x) === E.normalize(picked))) : picked === item.answer; answers.push({ item, picked, correct }); i++; show(); };
+  }
+  document.getElementById('stop').addEventListener('click', finish);
+  async function finish() {
+    document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
+    if (!answers.length) { document.getElementById('summary').textContent = 'Nothing answered.'; return; }
+    for (const a of answers) { const free = !a.item.choices || !a.item.choices.length; await E.record(test, a.item, { correct: a.correct, ms: 0, trap: (!a.correct && !free && a.item.traps) ? a.item.traps[a.picked] : null }, 'placement'); }
+    const right = answers.filter(a => a.correct).length;
+    document.getElementById('summary').textContent = `${right} of ${answers.length} right. Weak spots are seeded on your dashboard; the first drills will point at them.`;
+    const t = document.getElementById('bysec');
+    secs.forEach(sec => { const rows = answers.filter(a => a.item.section === sec.id); if (!rows.length) return; const r = rows.filter(a => a.correct).length; const bySkill = {}; rows.forEach(a => { const k = bySkill[a.item.skill] = bySkill[a.item.skill] || { n: 0, r: 0 }; k.n++; if (a.correct) k.r++; }); const weakest = Object.entries(bySkill).sort((x, y) => x[1].r / x[1].n - y[1].r / y[1].n)[0]; t.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(sec.name)}</td><td>${r}/${rows.length}</td><td><a href="drill.html?skill=${encodeURIComponent(weakest[0])}">${A.esc(bank.skillName[weakest[0]])}</a></td></tr>`); });
+    S.set(test + '.placement', { at: Date.now(), right, n: answers.length });
+  }
+})();
+</script>
+</body>
+</html>

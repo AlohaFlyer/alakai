@@ -104,7 +104,7 @@
     S.set('profile', answers);
     A.setTest(answers.test === 'act' ? 'act' : 'sat');
     await A.pingOnce(S.get('school', schools.default), answers.grade || '');
-    location.href = params.get('next') || 'dashboard.html';
+    location.href = params.get('next') || 'placement.html';
   }
   render();
 })();

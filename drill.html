@@ -24,6 +24,10 @@
     <div class="row" style="margin-top:12px">
       <label for="n" style="margin:0">Items</label>
       <select id="n" style="width:auto"><option>6</option><option>10</option><option>14</option><option>18</option></select>
+      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="1" checked> Easy</label>
+      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="2" checked> Medium</label>
+      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="3" checked> Hard</label>
+      <label style="margin:0;font-weight:500"><input type="checkbox" id="missed"> Only ones I've missed</label>
       <button id="mixed">Mixed set, all sections</button>
       <button class="secondary" id="redo">Redo missed items due</button>
     </div>
@@ -79,7 +83,10 @@
     } else if (sel.item) { set = [bank.byId[sel.item]].filter(Boolean); kind = 'redo'; title = 'Redo'; }
     else {
       // hide science unless on
-      const exclude = new Set(bank.items.filter(i => test === 'act' && i.section === 'science' && !profile.science).map(i => i.id));
+      const diffs = new Set([...document.querySelectorAll('.diff:checked')].map(c => +c.value));
+      const missedOnly = document.getElementById('missed').checked;
+      const missedIds = new Set(S.get(test + '.errlog', []).map(e => e.id));
+      const exclude = new Set(bank.items.filter(i => (test === 'act' && i.section === 'science' && !profile.science) || !diffs.has(i.difficulty) || (missedOnly && !missedIds.has(i.id))).map(i => i.id));
       set = E.buildSet(bank, { skill: sel.skill, section: sel.section, n, exclude });
       title = sel.skill ? bank.skillName[sel.skill] : sel.section ? bank.sectionName[sel.section] : 'Mixed set';
     }
@@ -91,7 +98,8 @@
       if (i >= set.length) return finish();
       document.getElementById('count').textContent = `${i + 1} of ${set.length}`; document.getElementById('prog').style.width = Math.round(100 * i / set.length) + '%';
       const item = set[i]; const host = document.getElementById('item');
-      const res = await E.renderItem(host, item, { streak: streak + 1, skillName: bank.skillName[item.skill], onNext: () => { i++; next(); }, nextLabel: i === set.length - 1 ? 'Finish' : 'Next' });
+      const strategy = await E.strategyFor(test, item.skill);
+      const res = await E.renderItem(host, item, { strategy, streak: streak + 1, skillName: bank.skillName[item.skill], onNext: () => { i++; next(); }, nextLabel: i === set.length - 1 ? 'Finish' : 'Next' });
       if (res.correct) { right++; streak++; } else { streak = 0; res.cause = await E.askCause(host); }
       results.push(res); await E.record(test, item, res, kind);
     };

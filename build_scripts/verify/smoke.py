@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
 PROFILE = {"test":"sat","minutes":"30","device":"laptop","missmode":"answer","firstmode":"read","fear":"math","timepressure":"sometimes","grade":"11","name":"Smoke","email":"s@example.com","milestones":True,"onboarded":True,"science":True,"setSize":6}
-PAGES = ["index.html","settings.html","dashboard.html","drill.html","quiz.html","timed.html","timing.html","notes.html"]
+PAGES = ["index.html","settings.html","dashboard.html","drill.html","quiz.html","timed.html","timing.html","notes.html","placement.html","strategies.html"]
 async def main():
     srv = subprocess.Popen([sys.executable, "-m", "http.server", str(PORT)], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL); time.sleep(1)
     errs = []

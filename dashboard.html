@@ -43,6 +43,14 @@
     <div class="card stat"><div class="big" id="acc">–</div><small>overall accuracy</small></div>
   </section>
 
+  <div class="card banner" id="placement-nudge" hidden><strong>New here?</strong> Take the placement check (two questions per skill, about 20 minutes) so the dashboard knows where to start you. <div class="row" style="margin-top:8px"><a class="btn" href="placement.html">Placement check</a><button class="ghost" id="pl-later">Later</button></div></div>
+
+  <section class="card">
+    <h2>This week</h2>
+    <p class="muted" id="plan-note"></p>
+    <div class="stack" id="plan"></div>
+  </section>
+
   <section class="card">
     <h2>By section</h2>
     <div class="rings" id="rings"></div>
@@ -52,6 +60,11 @@
     <div class="card">
       <h2>Next up</h2>
       <div class="stack" id="next"></div>
+    </div>
+    <div class="card">
+      <h2>Skill levels</h2>
+      <table id="levels"><tr><th>Skill</th><th>Level</th><th>Done</th></tr></table>
+      <small class="muted">New, Attempted, Familiar (60% over 5), Proficient (75% over 10 with a hard one right), Mastered (plus a correct redo).</small>
     </div>
     <div class="card">
       <h2>Weak spots</h2>
@@ -66,6 +79,16 @@
       <table id="timed"><tr><th>Section</th><th>Score</th><th>Time</th><th>Blank</th></tr></table>
     </div>
     <div class="card">
+      <h2>Estimated band</h2>
+      <p id="band" class="muted">Do a timed module first.</p>
+      <small class="muted" id="band-disc"></small>
+    </div>
+    <div class="card">
+      <h2>Official practice</h2>
+      <div class="stack" id="links"></div>
+      <small class="muted">Use these for real full-length tests and official score estimates. This app is for drilling between them.</small>
+    </div>
+    <div class="card">
       <h2><span data-test-label>SAT</span> Notes</h2>
       <p id="eps" class="muted"></p>
       <p>Blitz high score: <strong id="blitz">–</strong></p>
@@ -75,12 +98,14 @@
   <section class="card">
     <h2>Error log</h2>
     <p class="muted">Items you missed, due for a redo 3 days later.</p>
-    <table id="errlog"><tr><th>Skill</th><th>Missed</th><th>Due</th><th></th></tr></table>
+    <p id="trapsum" class="muted"></p>
+    <table id="errlog"><tr><th>Skill</th><th>Trap</th><th>Due</th><th></th></tr></table>
   </section>
 
   <footer>Everything above lives on this device. <a href="settings.html#disclosures" style="color:inherit">Disclosures</a></footer>
 </div>
 <script src="assets/app.js"></script>
+<script src="assets/engine.js"></script>
 <script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
 <script>
 (async () => {
@@ -99,6 +124,8 @@
     document.getElementById('acc').textContent = s.attempts ? Math.round(100 * s.right / s.attempts) + '%' : '–';
     let skills = null; try { skills = await A.data(`data/${test}/skills.json`); } catch (e) {}
     const name = k => { if (!skills) return k; for (const sec of skills.sections) { if (sec.id === k) return sec.name; const f = sec.skills.find(x => x.id === k); if (f) return f.name; } return k; };
+    let _bank = null; try { _bank = await window.AlakaiEngine.Bank.load(test); } catch (e) {}
+    const bankById = id => _bank ? _bank.byId[id] : null;
     const sections = skills ? skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && !profile.science)) : [];
     const rings = document.getElementById('rings'); rings.innerHTML = '';
     sections.forEach(sec => { const v = s.bySection[sec.id] || { n: 0, r: 0 }; const pct = v.n ? Math.round(100 * v.r / v.n) : 0; rings.insertAdjacentHTML('beforeend', `<div class="ring-wrap"><div class="ring" style="--p:${pct}"><span>${v.n ? pct + '%' : '–'}</span></div>${A.esc(sec.name)}<br><small>${v.n} done</small></div>`); });
@@ -123,8 +150,44 @@
     document.getElementById('blitz').textContent = s.blitz.length ? Math.max(...s.blitz.map(b => b.score)) : '–';
     const el = document.getElementById('errlog'); el.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
     const log = S.get(test + '.errlog', []).filter(e => !e.done).sort((a, b) => a.due - b.due).slice(0, 12);
-    log.forEach(e => el.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(e.skill))}</td><td>${new Date(e.at).toLocaleDateString()}</td><td>${e.due <= Date.now() ? '<span class="chip warn">due</span>' : new Date(e.due).toLocaleDateString()}</td><td><a href="drill.html?item=${encodeURIComponent(e.id)}">redo</a></td></tr>`));
+    const trapCounts = {}; S.get(test + '.errlog', []).forEach(e => { if (e.trap) trapCounts[e.trap] = (trapCounts[e.trap] || 0) + 1; });
+    const topTraps = Object.entries(trapCounts).sort((a, b) => b[1] - a[1]).slice(0, 3);
+    document.getElementById('trapsum').textContent = topTraps.length ? 'Your most common traps: ' + topTraps.map(([k, n]) => `${(window.AlakaiEngine.TRAP_NAMES[k] || k).replace('Trap: ', '')} (${n})`).join(', ') + '.' : '';
+    log.forEach(e => el.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(e.skill))}</td><td>${e.trap ? A.esc((window.AlakaiEngine.TRAP_NAMES[e.trap] || e.trap).replace('Trap: ', '')) : '<span class="muted">' + (e.cause === 'time' ? 'ran out of time' : 'missed ' + new Date(e.at).toLocaleDateString()) + '</span>'}</td><td>${e.due <= Date.now() ? '<span class="chip warn">due</span>' : new Date(e.due).toLocaleDateString()}</td><td><a href="drill.html?item=${encodeURIComponent(e.id)}">redo</a></td></tr>`));
     if (!log.length) el.insertAdjacentHTML('beforeend', '<tr><td colspan="4" class="muted">Clean sheet.</td></tr>');
+    // placement nudge
+    const pl = S.get(test + '.placement', null); const plDismiss = S.get('placement_dismissed', {});
+    document.getElementById('placement-nudge').hidden = !!(pl || plDismiss[test] || s.attempts >= 20);
+    // skill levels
+    const attempts = await A.DB.all(test); const lv = {};
+    attempts.forEach(a => { if (!['drill', 'timed', 'redo', 'placement'].includes(a.kind)) return; const k = lv[a.skill] = lv[a.skill] || { n: 0, r: 0, hardRight: false, redoRight: false }; k.n++; if (a.correct) { k.r++; if (a.kind === 'redo') k.redoRight = true; const it = bankById(a.item); if (it && it.difficulty === 3) k.hardRight = true; } });
+    const lt = document.getElementById('levels'); lt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
+    const order = { Mastered: 0, Proficient: 1, Familiar: 2, Attempted: 3, New: 4 };
+    const allSkills = sections.flatMap(sec => sec.skills.map(sk => sk.id));
+    allSkills.map(k => [k, window.AlakaiEngine ? window.AlakaiEngine.level(lv[k]) : 'New', lv[k] ? lv[k].n : 0]).sort((a, b) => order[a[1]] - order[b[1]] || b[2] - a[2]).slice(0, 12).forEach(([k, l, n]) => lt.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(k))}</td><td><span class="chip ${l === 'Mastered' || l === 'Proficient' ? 'ok' : l === 'New' ? '' : 'warn'}">${l}</span></td><td>${n}</td></tr>`));
+    // estimated band
+    let scale = null; try { scale = await A.data(`data/${test}/scale.json`); } catch (e) {}
+    const bandEl = document.getElementById('band'); document.getElementById('band-disc').textContent = scale ? scale.disclaimer : '';
+    if (scale && s.timed.length) {
+      const out = []; const secKeys = Object.keys(scale).filter(k => k !== 'disclaimer');
+      secKeys.forEach(sec => { const t = s.timed.filter(x => x.id.includes('-' + sec + '-') || x.id === `${test}-${sec}`).slice(-2); if (!t.length) return; const pct = 100 * t.reduce((a, x) => a + x.right, 0) / t.reduce((a, x) => a + x.n, 0); const band = scale[sec].slice().reverse().find(b => pct >= b.min_pct); if (band) out.push(`${name(sec)}: ${band.band[0]} to ${band.band[1]}`); });
+      bandEl.textContent = out.length ? out.join(' · ') : 'Do a timed module first.';
+    }
+    // official links
+    let links = { sat: [], act: [] }; try { links = await A.data('data/links.json'); } catch (e) {}
+    document.getElementById('links').innerHTML = (links[test] || []).map(l => `<a class="btn secondary" style="display:block" href="${A.esc(l.url)}" target="_blank" rel="noopener">${A.esc(l.name)}</a>`).join('');
+    // weekly plan
+    const planEl = document.getElementById('plan'); planEl.innerHTML = '';
+    const minutes = +(profile.minutes || 30); const days = 7; const budget = minutes * days;
+    const weights = allSkills.map(k => { const v = s.bySkill[k]; const acc = v && v.n ? v.r / v.n : 0.5; return [k, (1 - acc) + (v ? 0 : 0.15)]; }).sort((a, b) => b[1] - a[1]);
+    const plan = []; let used = 0;
+    const timedDue = !s.timed.length || (Date.now() - s.timed[s.timed.length - 1].at) > 6 * 86400000;
+    if (timedDue) { plan.push(['One timed module (35 min)', 'timed.html']); used += 35; }
+    if (dte !== null && (dte <= 14 && dte > 10 || dte <= 3 && dte > 0)) { plan.push([`Full-length test (test is in ${dte} days)`, 'timed.html']); used += test === 'sat' ? 145 : 180; }
+    for (const [k] of weights) { if (used + 15 > budget) break; plan.push([`Drill ${name(k)} (10 items, about 15 min)`, `drill.html?skill=${encodeURIComponent(k)}`]); used += 15; if (plan.length >= 6) break; }
+    if (used + 10 <= budget) plan.push(['Quizzer Blitz, two rounds (5 min)', 'quiz.html']);
+    plan.forEach(([t, h]) => planEl.insertAdjacentHTML('beforeend', `<a class="btn secondary" href="${h}" style="display:block">${A.esc(t)}</a>`));
+    document.getElementById('plan-note').textContent = `${minutes} min a day × 7 = ${budget} min. Weighted toward your weakest skills; timed module every week; full test at 14 and 3 days out.`;
     // milestone banner
     const pending = S.get('milestone_pending', null);
     if (pending && pending.test === test) { document.getElementById('milestone').hidden = false; document.getElementById('ms-text').textContent = pending.text; }
@@ -132,6 +195,7 @@
   document.getElementById('send').addEventListener('click', () => A.sendReport(A.getTest()));
   document.getElementById('ms-send').addEventListener('click', () => { S.del('milestone_pending'); A.sendReport(A.getTest()); });
   document.getElementById('ms-later').addEventListener('click', () => { S.del('milestone_pending'); document.getElementById('milestone').hidden = true; });
+  document.getElementById('pl-later').addEventListener('click', () => { const d = S.get('placement_dismissed', {}); d[A.getTest()] = true; S.set('placement_dismissed', d); document.getElementById('placement-nudge').hidden = true; });
   document.addEventListener('alakai:test', render);
   render();
 })();

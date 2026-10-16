@@ -2,6 +2,7 @@
 (function () {
   'use strict';
   const A = window.Alakai, S = A.Store;
+  const TRAP_NAMES = { extreme: 'Trap: too extreme', 'half-right': 'Trap: half right', irrelevant: 'Trap: true but irrelevant', 'wrong-part': 'Trap: answers the wrong part', opposite: 'Trap: opposite', 'calc-slip': 'Trap: calculation slip', misread: 'Trap: misread the question', partial: 'Trap: stopped a step early', overreach: 'Trap: adds an assumption', 'grammar-near-miss': 'Trap: near miss', other: 'Trap' };
   const FILES = { sat: ['drills_rw.json', 'drills_math.json'], act: ['drills_english.json', 'drills_math.json', 'drills_reading.json', 'drills_science.json'] };
 
   const Bank = {
@@ -46,30 +47,35 @@
     const start = Date.now();
     const free = !item.choices || item.choices.length === 0;
     const letters = 'ABCDE';
+    const strat = opts.strategy; // {name, steps[]} or undefined
     container.innerHTML = `
+      ${strat ? `<details class="approach"><summary>Approach: ${A.esc(strat.name)}</summary><ol>${strat.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol></details>` : ''}
       ${item.passage ? `<div class="passage card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}
       <div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
       ${free ? `<div class="row"><input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px"><button id="submit">Check</button></div>`
-             : `<div class="choices">${item.choices.map((c, i) => `<button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
+             : `<div class="choices">${item.choices.map((c, i) => `<div class="choice-row"><button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button><button class="strike" data-i="${i}" title="Cross out" aria-label="Cross out ${letters[i]}">×</button></div>`).join('')}</div>`}
       <div class="row" style="margin-top:8px">${opts.allowFlag ? '<button class="ghost" id="flag">Flag for later</button>' : ''}${mode === 'hint' ? '<button class="ghost" id="hintbtn">Hint</button>' : ''}<span class="muted" id="skillname">${A.esc(opts.skillName || '')}</span></div>
       <div id="fb"></div>`;
     return new Promise(resolve => {
       let hintUsed = false, tries = 0, settled = false;
       const hb = container.querySelector('#hintbtn'); if (hb) hb.addEventListener('click', () => { hintUsed = true; showHint(); });
       function showHint() { let h = container.querySelector('.hintbox'); if (!h) { h = document.createElement('div'); h.className = 'explain hintbox'; container.querySelector('#fb').appendChild(h); } h.textContent = 'Hint: ' + item.hint; }
+      const struck = new Set();
+      container.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => { const i = +b.dataset.i; const row = b.parentElement; if (struck.has(i)) { struck.delete(i); row.classList.remove('struck'); } else { struck.add(i); row.classList.add('struck'); } }));
       const fl = container.querySelector('#flag'); if (fl) fl.addEventListener('click', () => { fl.textContent = 'Flagged'; opts.onFlag && opts.onFlag(item); });
       function finish(correct, picked) {
         if (settled) return; settled = true;
         const ms = Date.now() - start;
         container.querySelectorAll('.choice').forEach(b => { b.disabled = true; const i = +b.dataset.i; if (i === item.answer) b.dataset.state = 'right'; else if (i === picked) b.dataset.state = 'wrong'; });
         if (!opts.silent) explain(correct, picked);
-        resolve({ correct, ms, picked, hintUsed, tries });
+        resolve({ correct, ms, picked, hintUsed, tries, struck: [...struck], trap: (!correct && !free && item.traps && item.traps[picked]) || null });
       }
       function explain(correct, picked) {
         const fb = container.querySelector('#fb');
         A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak);
         const parts = [];
-        if (!correct && !free && item.distractors && item.distractors[picked]) parts.push(`<p><strong>Why ${letters[picked]} tempts you:</strong> ${A.esc(item.distractors[picked])}</p>`);
+        if (!correct && !free && item.distractors && item.distractors[picked]) parts.push(`<p>${item.traps && item.traps[picked] ? `<span class="chip warn">${A.esc(TRAP_NAMES[item.traps[picked]] || item.traps[picked])}</span> ` : ''}<strong>Why ${letters[picked]} tempts you:</strong> ${A.esc(item.distractors[picked])}</p>`);
+        if (!correct && !free && struck.has(item.answer)) parts.push(`<p class="muted">You crossed out the right answer. Cross out only when you can say why it is wrong.</p>`);
         parts.push(`<p><strong>${free ? 'Answer: ' + A.esc(item.answer) + '. ' : ''}Why ${free ? '' : letters[item.answer] + ' is right'}:</strong> ${A.esc(item.explain)}</p>`);
         if (mode === 'worked' || (!correct && item.worked)) parts.push(`<details ${mode === 'worked' ? 'open' : ''}><summary>Worked solution</summary><pre style="white-space:pre-wrap;font-family:inherit">${A.esc(item.worked)}</pre></details>`);
         const d = document.createElement('div'); d.className = 'explain'; d.innerHTML = parts.join(''); fb.appendChild(d);
@@ -91,10 +97,10 @@
 
   async function record(test, item, res, kind, extra) {
     const seen = S.get('seen', {}); seen[item.id] = (seen[item.id] || 0) + 1; S.set('seen', seen);
-    await A.DB.add(Object.assign({ test, kind, item: item.id, skill: item.skill, section: item.section, correct: !!res.correct, ms: res.ms, hint: !!res.hintUsed, cause: res.cause || null }, extra || {}));
+    await A.DB.add(Object.assign({ test, kind, item: item.id, skill: item.skill, section: item.section, correct: !!res.correct, ms: res.ms, hint: !!res.hintUsed, cause: res.cause || null, trap: res.trap || null, struck: (res.struck || []).length }, extra || {}));
     if (!res.correct && kind !== 'blitz') {
       const log = S.get(test + '.errlog', []);
-      if (!log.some(e => e.id === item.id && !e.done)) log.push({ id: item.id, skill: item.skill, at: Date.now(), due: Date.now() + 3 * 86400000, done: false, cause: res.cause || null });
+      if (!log.some(e => e.id === item.id && !e.done)) log.push({ id: item.id, skill: item.skill, at: Date.now(), due: Date.now() + 3 * 86400000, done: false, cause: res.cause || null, trap: res.trap || null });
       S.set(test + '.errlog', log.slice(-300));
     } else if (res.correct && kind === 'redo') {
       const log = S.get(test + '.errlog', []); log.forEach(e => { if (e.id === item.id) e.done = true; }); S.set(test + '.errlog', log);
@@ -110,5 +116,9 @@
     });
   }
 
-  window.AlakaiEngine = { Bank, buildSet, renderItem, record, askCause, normalize };
+  let _strat = null;
+  async function strategyFor(test, skill) { if (!_strat) { try { _strat = await A.data('data/strategies.json'); } catch (e) { _strat = {}; } } return (_strat[test] || {})[skill] || null; }
+  // Skill levels: Attempted, Familiar (>=60% over 5), Proficient (>=75% over 10 with a hard item right), Mastered (Proficient + a correct redo)
+  function level(stats) { if (!stats || !stats.n) return 'New'; const acc = stats.r / stats.n; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight && stats.redoRight) return 'Mastered'; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight) return 'Proficient'; if (stats.n >= 5 && acc >= 0.6) return 'Familiar'; return 'Attempted'; }
+  window.AlakaiEngine = { strategyFor, level, TRAP_NAMES, Bank, buildSet, renderItem, record, askCause, normalize };
 })();

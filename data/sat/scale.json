@@ -1,0 +1,147 @@
+{
+  "disclaimer": "Rough estimate from this app's practice items, not an official score. Practice items and curves here are approximations; only an official College Board Bluebook practice test gives a real score estimate.",
+  "rw": [
+    {
+      "min_pct": 0,
+      "band": [
+        200,
+        270
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        230,
+        300
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        280,
+        350
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        340,
+        410
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        400,
+        470
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        450,
+        520
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        500,
+        570
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        560,
+        630
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        620,
+        700
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        720,
+        800
+      ]
+    }
+  ],
+  "math": [
+    {
+      "min_pct": 0,
+      "band": [
+        200,
+        270
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        220,
+        290
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        270,
+        340
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        320,
+        390
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        380,
+        450
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        440,
+        510
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        500,
+        570
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        560,
+        640
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        630,
+        710
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        720,
+        800
+      ]
+    }
+  ]
+}

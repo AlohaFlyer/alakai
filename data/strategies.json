@@ -1,0 +1,558 @@
+{
+  "sat": {
+    "rw-ii-central": {
+      "name": "Find the main point",
+      "steps": [
+        "Read the whole passage before looking at choices.",
+        "Say the main point in one short sentence.",
+        "Pick the choice that matches your sentence, not just one detail.",
+        "Cut choices that are too broad or too narrow."
+      ],
+      "trap": "Choosing an answer that is true for one sentence but not the whole passage.",
+      "time": "70"
+    },
+    "rw-ii-evidence": {
+      "name": "Claim, then proof",
+      "steps": [
+        "Underline the exact claim the question wants supported.",
+        "Restate that claim in your own words.",
+        "Test each choice: does it prove this claim directly?",
+        "For graphs, check the labels, units, and the exact numbers."
+      ],
+      "trap": "Picking a true statement or real data point that does not support the specific claim.",
+      "time": "75"
+    },
+    "rw-ii-inference": {
+      "name": "Smallest step",
+      "steps": [
+        "Find the last line before the blank and what it sets up.",
+        "Predict what must logically come next.",
+        "Pick the choice that requires the fewest new assumptions.",
+        "Cut anything the text never actually supports."
+      ],
+      "trap": "Choosing an exciting conclusion that goes further than the text allows.",
+      "time": "75"
+    },
+    "rw-cs-words": {
+      "name": "Predict the word",
+      "steps": [
+        "Cover the choices and read the full sentence.",
+        "Say your own word for the blank using clues nearby.",
+        "Match your word to the choice closest in meaning.",
+        "Plug your pick back in and reread the sentence."
+      ],
+      "trap": "Picking a familiar word that fits the topic but not this sentence's meaning.",
+      "time": "50"
+    },
+    "rw-cs-structure": {
+      "name": "Job, not content",
+      "steps": [
+        "Read the question to see which part it asks about.",
+        "Ask what that part does: claim, example, contrast, or detail.",
+        "Describe that job in a few words before reading choices.",
+        "Pick the choice whose verb matches the job you named."
+      ],
+      "trap": "Choosing an answer that summarizes what the text says instead of what it does.",
+      "time": "70"
+    },
+    "rw-cs-cross": {
+      "name": "Pin both views",
+      "steps": [
+        "Read Text 1 and write its view in five words.",
+        "Read Text 2 and write its view in five words.",
+        "Decide if they agree, disagree, or one qualifies the other.",
+        "Pick the choice that fits both of your notes."
+      ],
+      "trap": "Mixing up which author said what, or ignoring the second text's twist.",
+      "time": "80"
+    },
+    "rw-ei-rhetorical": {
+      "name": "Goal first",
+      "steps": [
+        "Read the question's goal before reading any notes.",
+        "Circle the key words of that goal.",
+        "Pick the choice that does exactly that goal.",
+        "Ignore choices that are accurate but serve a different goal."
+      ],
+      "trap": "Choosing a sentence that uses correct facts from the notes but misses the stated goal.",
+      "time": "45"
+    },
+    "rw-ei-transitions": {
+      "name": "Name the relationship",
+      "steps": [
+        "Read the sentence before and the sentence after.",
+        "Label the link: add, contrast, cause, example, or sequence.",
+        "Cut every choice from a different category.",
+        "Pick the remaining word that fits the exact shade."
+      ],
+      "trap": "Picking a transition that sounds smooth but signals the wrong relationship.",
+      "time": "40"
+    },
+    "rw-sec-boundaries": {
+      "name": "Label both sides",
+      "steps": [
+        "Find where the punctuation goes in the sentence.",
+        "Label each side: complete sentence or not.",
+        "Two complete sides need a period, semicolon, or comma plus conjunction.",
+        "Recheck: a lone comma between two complete sentences is wrong."
+      ],
+      "trap": "Accepting a comma splice because the sentence reads naturally aloud.",
+      "time": "40"
+    },
+    "rw-sec-form": {
+      "name": "Find the true subject",
+      "steps": [
+        "Cross out phrases between the subject and the verb.",
+        "Match the verb to the real subject in number and tense.",
+        "Check every pronoun points clearly to one noun.",
+        "Make sure a modifier sits right next to what it describes."
+      ],
+      "trap": "Matching the verb to the nearest noun instead of the actual subject.",
+      "time": "40"
+    },
+    "math-alg-linear-eq": {
+      "name": "Isolate cleanly",
+      "steps": [
+        "Write down exactly what the question asks you to find.",
+        "Undo addition or subtraction first, then multiplication or division.",
+        "Flip the inequality sign if you multiply or divide by a negative.",
+        "Check whether they want x or an expression like 2x."
+      ],
+      "trap": "Solving for x when the question asked for a different expression.",
+      "time": "60"
+    },
+    "math-alg-linear-fn": {
+      "name": "Slope and start",
+      "steps": [
+        "Find the starting value: the y-intercept.",
+        "Find the rate: change in y over change in x.",
+        "Say the slope in words with units.",
+        "Match to the choice or graph with that start and rate."
+      ],
+      "trap": "Swapping slope and intercept, or reading rise over run upside down.",
+      "time": "75"
+    },
+    "math-alg-systems": {
+      "name": "Line up and eliminate",
+      "steps": [
+        "Write both equations with variables in the same order.",
+        "Pick the variable with the easiest coefficients to cancel.",
+        "Add or subtract to remove it, then solve.",
+        "Plug back in to find the other value."
+      ],
+      "trap": "Stopping after finding one variable when the question asks for the other or a sum.",
+      "time": "90"
+    },
+    "math-adv-quadratics": {
+      "name": "Pick the right form",
+      "steps": [
+        "Ask what they want: roots, vertex, or y-intercept.",
+        "Use factored form for roots, vertex form for max or min.",
+        "Use standard form's constant for the y-intercept.",
+        "Check signs: (x - 3) means the root is positive 3."
+      ],
+      "trap": "Getting the sign of a root or vertex coordinate backwards.",
+      "time": "95"
+    },
+    "math-adv-nonlinear": {
+      "name": "Add or multiply?",
+      "steps": [
+        "Check how the output changes each step.",
+        "Same amount added means linear; same factor multiplied means exponential.",
+        "Write the starting value and the growth or decay factor.",
+        "Plug in a simple input to confirm your model."
+      ],
+      "trap": "Treating a percent growth as a flat amount added each period.",
+      "time": "95"
+    },
+    "math-adv-expressions": {
+      "name": "Simplify, then compare",
+      "steps": [
+        "Factor or expand both sides to the simplest form.",
+        "Find a common denominator before combining fractions.",
+        "Note values that make a denominator zero.",
+        "Test a small number like 2 if the algebra stalls."
+      ],
+      "trap": "Canceling terms across addition instead of only common factors.",
+      "time": "100"
+    },
+    "math-psda-ratios": {
+      "name": "Units guide you",
+      "steps": [
+        "Write each number with its units.",
+        "Set up the ratio so units cancel to the answer's unit.",
+        "Cross multiply or scale up, then compute.",
+        "Check the answer's size makes sense for the story."
+      ],
+      "trap": "Flipping a rate so the units end up upside down.",
+      "time": "70"
+    },
+    "math-psda-percent": {
+      "name": "Original times multiplier",
+      "steps": [
+        "Identify the original amount the percent is based on.",
+        "Convert the change to a multiplier, like 1.15 or 0.80.",
+        "Multiply in order for back-to-back changes.",
+        "For percent change, divide the difference by the original."
+      ],
+      "trap": "Adding successive percents or dividing by the new value instead of the original.",
+      "time": "70"
+    },
+    "math-psda-stats": {
+      "name": "Count what matters",
+      "steps": [
+        "Identify what the question wants: mean, median, range, or probability.",
+        "For probability, put the favorable count over the right total.",
+        "For mean, check if an outlier shifts it more than the median.",
+        "Read table rows and columns twice before dividing."
+      ],
+      "trap": "Using the whole table's total when the question limits it to one group.",
+      "time": "80"
+    },
+    "math-psda-inference": {
+      "name": "Read the model honestly",
+      "steps": [
+        "Read the axis labels and units first.",
+        "Use the line of best fit for predictions, not single dots.",
+        "Interpret slope as the change in y per one unit of x.",
+        "Only generalize to the group that was randomly sampled."
+      ],
+      "trap": "Claiming cause and effect, or applying a sample's result to a different population.",
+      "time": "80"
+    },
+    "math-geo-area": {
+      "name": "Draw and label",
+      "steps": [
+        "Sketch the figure and label every given value.",
+        "Write the formula before plugging in numbers.",
+        "Use angle rules: straight line 180, triangle 180, parallel lines.",
+        "Check the answer has the right units: square or cubic."
+      ],
+      "trap": "Using diameter for radius, or mixing area and perimeter.",
+      "time": "90"
+    },
+    "math-geo-triangles": {
+      "name": "Triangle first",
+      "steps": [
+        "Draw the right triangle and label opposite, adjacent, hypotenuse.",
+        "Look for special triangles: 3-4-5, 30-60-90, 45-45-90.",
+        "Pick the trig ratio or Pythagorean theorem that uses your knowns.",
+        "For circles, connect radius, diameter, and arc to the full circle."
+      ],
+      "trap": "Labeling opposite and adjacent from the wrong angle.",
+      "time": "95"
+    }
+  },
+  "act": {
+    "english-punct": {
+      "name": "What's on each side",
+      "steps": [
+        "Find the punctuation mark being tested.",
+        "Label each side: full sentence, phrase, or list item.",
+        "Match the mark to the job, like semicolon for two sentences.",
+        "For apostrophes, ask who owns it and how many owners."
+      ],
+      "trap": "Adding commas wherever you would pause when speaking.",
+      "time": "35"
+    },
+    "english-grammar": {
+      "name": "Strip to the core",
+      "steps": [
+        "Cross out the words between the subject and verb.",
+        "Match the verb to the subject and keep the tense consistent.",
+        "Check each pronoun matches its noun in number.",
+        "Make sure the modifier is next to what it describes."
+      ],
+      "trap": "Matching the verb to a nearby noun instead of the real subject.",
+      "time": "35"
+    },
+    "english-sentence": {
+      "name": "One sentence test",
+      "steps": [
+        "Find the main subject and verb.",
+        "Check that it can stand alone as a complete thought.",
+        "Fix run-ons by splitting or joining with proper punctuation.",
+        "Make list items match in form, like all -ing words."
+      ],
+      "trap": "Accepting a fragment because it is long and sounds complete.",
+      "time": "40"
+    },
+    "english-strategy": {
+      "name": "Does it earn its place",
+      "steps": [
+        "Read the question to learn the writer's goal.",
+        "Reread the paragraph around the sentence in question.",
+        "Ask if the paragraph loses anything without it.",
+        "Pick the yes or no choice whose reason matches."
+      ],
+      "trap": "Choosing yes or no correctly but picking the wrong reason.",
+      "time": "50"
+    },
+    "english-organization": {
+      "name": "Fit both neighbors",
+      "steps": [
+        "Read the sentence before and after the spot.",
+        "Name the link: contrast, cause, addition, or order.",
+        "Pick the transition or placement that fits both neighbors.",
+        "For moving sentences, look for words pointing back to something."
+      ],
+      "trap": "Picking a transition that fits the next sentence but not the previous one.",
+      "time": "45"
+    },
+    "english-style": {
+      "name": "Shortest clear choice",
+      "steps": [
+        "Check whether OMIT or the shortest choice keeps the meaning.",
+        "Cut choices that repeat an idea already stated.",
+        "Match the tone of the passage, not too casual or fancy.",
+        "Pick the most precise word that fits the sentence."
+      ],
+      "trap": "Choosing a longer, fancier answer that says the same thing twice.",
+      "time": "30"
+    },
+    "math-prealgebra": {
+      "name": "Units and order",
+      "steps": [
+        "Write each number with its units.",
+        "Follow order of operations step by step.",
+        "Convert percents to decimals before multiplying.",
+        "Check the answer size makes sense."
+      ],
+      "trap": "Taking a percent of the wrong base amount.",
+      "time": "45"
+    },
+    "math-algebra": {
+      "name": "Isolate and check",
+      "steps": [
+        "Write what the question asks you to find.",
+        "Undo operations in reverse order to isolate the variable.",
+        "Flip an inequality when multiplying or dividing by a negative.",
+        "Plug your answer back in to check."
+      ],
+      "trap": "Forgetting to flip the inequality sign with a negative.",
+      "time": "55"
+    },
+    "math-functions": {
+      "name": "Know the form",
+      "steps": [
+        "Identify the function type: linear, quadratic, or exponential.",
+        "Use the form that shows what they ask for.",
+        "For f(g(x)), work from the inside out.",
+        "Plug in a test value to confirm your choice."
+      ],
+      "trap": "Doing the outer function first in a composition.",
+      "time": "70"
+    },
+    "math-geometry": {
+      "name": "Sketch and formula",
+      "steps": [
+        "Draw the figure and label all given values.",
+        "Write the formula from memory, no sheet provided.",
+        "Look for hidden triangles or right angles.",
+        "Check units and whether they want area or perimeter."
+      ],
+      "trap": "Using diameter in place of radius.",
+      "time": "70"
+    },
+    "math-coordinate": {
+      "name": "Slope first",
+      "steps": [
+        "Plot or sketch the points given.",
+        "Find the slope between key points.",
+        "Use slope to answer parallel, perpendicular, or line questions.",
+        "For distance or midpoint, label x and y carefully."
+      ],
+      "trap": "Using the same slope for perpendicular lines instead of the negative reciprocal.",
+      "time": "65"
+    },
+    "math-trig": {
+      "name": "Draw the triangle",
+      "steps": [
+        "Draw the triangle and mark the angle in question.",
+        "Label opposite, adjacent, and hypotenuse from that angle.",
+        "Pick sine, cosine, or tangent that uses your known sides.",
+        "Check your calculator is in the correct angle mode."
+      ],
+      "trap": "Labeling sides from the wrong angle.",
+      "time": "75"
+    },
+    "math-stats": {
+      "name": "Favorable over total",
+      "steps": [
+        "Decide if the question is mean, median, probability, or counting.",
+        "For probability, write favorable outcomes over total outcomes.",
+        "For counting, multiply the choices for each slot.",
+        "Check whether order matters before finishing."
+      ],
+      "trap": "Adding choices that should be multiplied, or using the wrong total.",
+      "time": "65"
+    },
+    "math-modeling": {
+      "name": "Words to equation",
+      "steps": [
+        "Underline what the question asks for.",
+        "Translate each sentence into math, one piece at a time.",
+        "Solve step by step and write each result.",
+        "Check the answer fits the story and units."
+      ],
+      "trap": "Answering an earlier step instead of the final question.",
+      "time": "90"
+    },
+    "reading-detail": {
+      "name": "Go back to the line",
+      "steps": [
+        "Pick out the key words in the question.",
+        "Find those words in the passage.",
+        "Reread a few lines before and after.",
+        "Pick the choice that paraphrases those lines."
+      ],
+      "trap": "Answering from memory and picking a choice with passage words but the wrong meaning.",
+      "time": "50"
+    },
+    "reading-inference": {
+      "name": "Prove it in the text",
+      "steps": [
+        "Find the lines the question points to.",
+        "Ask what the author clearly suggests there.",
+        "Cut choices you cannot back with a specific line.",
+        "Pick the most moderate supported choice."
+      ],
+      "trap": "Picking an extreme answer that goes beyond what the author suggests.",
+      "time": "60"
+    },
+    "reading-craft": {
+      "name": "Function and fit",
+      "steps": [
+        "Reread the word or phrase in its full sentence.",
+        "Predict its meaning or job before reading choices.",
+        "Match your prediction to the choices.",
+        "Check tone words against the passage's overall attitude."
+      ],
+      "trap": "Choosing the most common meaning of a word instead of its meaning in context.",
+      "time": "55"
+    },
+    "reading-integration": {
+      "name": "Compare both texts",
+      "steps": [
+        "Write each passage's main view in a few words.",
+        "Note where they agree and where they differ.",
+        "Check which passage the question asks about.",
+        "Pick the choice that fits both notes."
+      ],
+      "trap": "Choosing a statement true of one passage when the question asks about both.",
+      "time": "65"
+    },
+    "science-data": {
+      "name": "Labels then lookup",
+      "steps": [
+        "Read the question first to see which figure it needs.",
+        "Read the axis labels and units on that figure.",
+        "Find the value or trend the question asks about.",
+        "Check your answer against the figure, not outside knowledge."
+      ],
+      "trap": "Reading the wrong line, column, or unit on a figure.",
+      "time": "45"
+    },
+    "science-research": {
+      "name": "Find what changed",
+      "steps": [
+        "Identify what the experimenters changed on purpose.",
+        "Identify what they measured as the result.",
+        "Note what stayed the same in every trial.",
+        "Use those three roles to answer design questions."
+      ],
+      "trap": "Mixing up the variable that was changed with the one that was measured.",
+      "time": "60"
+    },
+    "science-conflict": {
+      "name": "Sort the views",
+      "steps": [
+        "Read the intro for the question being debated.",
+        "Write each viewpoint's main claim in a few words.",
+        "Note where the viewpoints agree and disagree.",
+        "Answer by matching the claim to the right viewpoint."
+      ],
+      "trap": "Attributing one scientist's claim to another.",
+      "time": "70"
+    }
+  },
+  "general": [
+    {
+      "id": "two-pass",
+      "name": "Two passes",
+      "steps": [
+        "First pass: answer every question you can do quickly.",
+        "Mark any question taking more than a minute and move on.",
+        "Second pass: return to marked questions with the time left.",
+        "Save the final minute to fill any blanks."
+      ]
+    },
+    {
+      "id": "eliminate",
+      "name": "Cross out wrong answers",
+      "steps": [
+        "Read every choice before picking one.",
+        "Cross out choices that are clearly wrong.",
+        "Compare the remaining choices word by word.",
+        "Guess from what is left if you are stuck."
+      ]
+    },
+    {
+      "id": "predict-match",
+      "name": "Predict, then match",
+      "steps": [
+        "Cover the choices after reading the question.",
+        "Say your own answer in a few words.",
+        "Find the choice closest to your prediction."
+      ]
+    },
+    {
+      "id": "read-question-first",
+      "name": "Read the question first",
+      "steps": [
+        "Read the question before the passage or figure.",
+        "Note exactly what it asks for.",
+        "Read or look only where you need to.",
+        "Reread the question before choosing an answer."
+      ]
+    },
+    {
+      "id": "plug-in",
+      "name": "Pick your own numbers",
+      "steps": [
+        "Use when choices have variables in them.",
+        "Pick simple numbers like 2 or 3 for each variable.",
+        "Solve the problem with your numbers to get a target.",
+        "Plug the same numbers into each choice to find the match."
+      ]
+    },
+    {
+      "id": "backsolve",
+      "name": "Work backward from choices",
+      "steps": [
+        "Use when choices are numbers and the question asks for a value.",
+        "Start with a middle choice and test it in the problem.",
+        "If it is too big or small, move the right way.",
+        "Stop when one choice works."
+      ]
+    },
+    {
+      "id": "units",
+      "name": "Track units",
+      "steps": [
+        "Write units next to every number you use.",
+        "Cancel units as you multiply or divide.",
+        "Check the final units match what the question asks."
+      ]
+    },
+    {
+      "id": "no-blanks",
+      "name": "Never leave a blank",
+      "steps": [
+        "Wrong answers cost nothing, so answer every question.",
+        "Watch the clock and keep a minute in reserve.",
+        "Fill every blank with your best guess before time ends."
+      ]
+    }
+  ]
+}

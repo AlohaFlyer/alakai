@@ -1,0 +1,291 @@
+{
+  "disclaimer": "Rough estimate from this app's practice items, not an official score. Practice items and curves here are approximations; only an official ACT practice test gives a real score estimate.",
+  "english": [
+    {
+      "min_pct": 0,
+      "band": [
+        1,
+        4
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        4,
+        7
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        8,
+        11
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        11,
+        14
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        14,
+        17
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        17,
+        20
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        19,
+        22
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        22,
+        25
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        26,
+        29
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        31,
+        35
+      ]
+    }
+  ],
+  "math": [
+    {
+      "min_pct": 0,
+      "band": [
+        1,
+        4
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        5,
+        8
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        10,
+        13
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        13,
+        16
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        16,
+        19
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        18,
+        21
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        21,
+        24
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        24,
+        27
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        27,
+        31
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        32,
+        36
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "min_pct": 0,
+      "band": [
+        1,
+        4
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        4,
+        7
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        8,
+        11
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        11,
+        14
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        15,
+        18
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        18,
+        21
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        21,
+        24
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        24,
+        27
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        28,
+        31
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        32,
+        36
+      ]
+    }
+  ],
+  "science": [
+    {
+      "min_pct": 0,
+      "band": [
+        1,
+        4
+      ]
+    },
+    {
+      "min_pct": 10,
+      "band": [
+        5,
+        8
+      ]
+    },
+    {
+      "min_pct": 20,
+      "band": [
+        9,
+        12
+      ]
+    },
+    {
+      "min_pct": 30,
+      "band": [
+        12,
+        15
+      ]
+    },
+    {
+      "min_pct": 40,
+      "band": [
+        16,
+        19
+      ]
+    },
+    {
+      "min_pct": 50,
+      "band": [
+        19,
+        22
+      ]
+    },
+    {
+      "min_pct": 60,
+      "band": [
+        21,
+        24
+      ]
+    },
+    {
+      "min_pct": 70,
+      "band": [
+        24,
+        27
+      ]
+    },
+    {
+      "min_pct": 80,
+      "band": [
+        28,
+        31
+      ]
+    },
+    {
+      "min_pct": 90,
+      "band": [
+        32,
+        36
+      ]
+    }
+  ]
+}

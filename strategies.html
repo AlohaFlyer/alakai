@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strategies · Alakaʻi Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+<style>
+  .strat { border-bottom: 1px solid var(--line); padding: 10px 0; }
+  .strat h3 { margin: 0 0 4px; } .strat ol { margin: 4px 0 6px 18px; padding: 0; } .strat li { margin-bottom: 2px; }
+  .strat .meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+    <div class="toggle" data-mount></div>
+  </header>
+  <nav class="tabs"></nav>
+
+  <section class="card">
+    <h2>Strategies</h2>
+    <p class="muted">One repeatable routine per question type, plus the eight moves that work everywhere. Each routine also shows up as an "Approach" box on its drills.</p>
+  </section>
+
+  <section class="card">
+    <h2>Works on everything</h2>
+    <div id="general"></div>
+  </section>
+
+  <section class="card">
+    <h2>By question type</h2>
+    <div id="byskill"></div>
+  </section>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script>
+(async () => {
+  const A = window.Alakai;
+  const { profile } = await A.boot({ page: 'strategies.html' });
+  async function render() {
+    const test = A.getTest();
+    let st = { general: [], sat: {}, act: {} }; try { st = await A.data('data/strategies.json'); } catch (e) {}
+    const skills = await A.data(`data/${test}/skills.json`);
+    document.getElementById('general').innerHTML = (st.general || []).map(g => `<div class="strat"><h3>${A.esc(g.name)}</h3><ol>${g.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol></div>`).join('');
+    const host = document.getElementById('byskill'); host.innerHTML = '';
+    skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && profile && !profile.science)).forEach(sec => {
+      host.insertAdjacentHTML('beforeend', `<h3 style="margin-top:14px">${A.esc(sec.name)}</h3>`);
+      sec.skills.forEach(sk => { const s = (st[test] || {})[sk.id]; if (!s) return; host.insertAdjacentHTML('beforeend', `<div class="strat"><strong>${A.esc(sk.name)}</strong>: ${A.esc(s.name)}<ol>${s.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol><div class="meta"><span class="chip warn">${A.esc(s.trap)}</span><span class="chip">target ${A.esc(String(s.time))}s</span><a href="drill.html?skill=${encodeURIComponent(sk.id)}">Drill it</a></div></div>`); });
+    });
+  }
+  document.addEventListener('alakai:test', render); render();
+})();
+</script>
+</body>
+</html>
