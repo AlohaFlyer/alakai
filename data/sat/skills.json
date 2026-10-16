@@ -1,0 +1,28 @@
+{"test":"sat","sections":[
+ {"id":"rw","name":"Reading and Writing","skills":[
+  {"id":"rw-ii-central","name":"Central Ideas and Details","domain":"Information and Ideas","tip":"Find the sentence the whole passage leans on, then match, don't infer."},
+  {"id":"rw-ii-evidence","name":"Command of Evidence (text and quantitative)","domain":"Information and Ideas","tip":"Restate the claim in your own words first, then test each choice against it."},
+  {"id":"rw-ii-inference","name":"Inferences","domain":"Information and Ideas","tip":"The right inference is the smallest step from the text, not the most interesting one."},
+  {"id":"rw-cs-words","name":"Words in Context","domain":"Craft and Structure","tip":"Cover the blank, predict a word, then match the prediction."},
+  {"id":"rw-cs-structure","name":"Text Structure and Purpose","domain":"Craft and Structure","tip":"Ask what the sentence does for the paragraph, not what it says."},
+  {"id":"rw-cs-cross","name":"Cross-Text Connections","domain":"Craft and Structure","tip":"Pin each author's position in five words before reading the choices."},
+  {"id":"rw-ei-rhetorical","name":"Rhetorical Synthesis (notes)","domain":"Expression of Ideas","tip":"Read the goal in the question stem first, then scan the notes for only what serves it."},
+  {"id":"rw-ei-transitions","name":"Transitions","domain":"Expression of Ideas","tip":"Decide the relationship (add, contrast, cause, example) before looking at the words."},
+  {"id":"rw-sec-boundaries","name":"Boundaries (punctuation between clauses)","domain":"Standard English Conventions","tip":"Label each side as independent or not, then the punctuation chooses itself."},
+  {"id":"rw-sec-form","name":"Form, Structure, and Sense (agreement, verbs, pronouns, modifiers)","domain":"Standard English Conventions","tip":"Find the subject by crossing out prepositional phrases."}
+ ]},
+ {"id":"math","name":"Math","skills":[
+  {"id":"math-alg-linear-eq","name":"Linear equations and inequalities","domain":"Algebra","tip":"Isolate in two moves max; if it takes more, you picked the wrong first move."},
+  {"id":"math-alg-linear-fn","name":"Linear functions and graphs","domain":"Algebra","tip":"Slope is a rate: units of y per unit of x. Say it in words."},
+  {"id":"math-alg-systems","name":"Systems of linear equations","domain":"Algebra","tip":"Line up the variables, then eliminate the one with the easiest coefficients."},
+  {"id":"math-adv-quadratics","name":"Quadratics and factoring","domain":"Advanced Math","tip":"Vertex form for max/min, factored form for roots, standard form for the y-intercept."},
+  {"id":"math-adv-nonlinear","name":"Nonlinear functions, exponentials, polynomials","domain":"Advanced Math","tip":"Exponential means multiply each step; linear means add each step."},
+  {"id":"math-adv-expressions","name":"Equivalent expressions and rational equations","domain":"Advanced Math","tip":"Plug in a small number to test equivalence before you factor anything."},
+  {"id":"math-psda-ratios","name":"Ratios, rates, proportions, units","domain":"Problem-Solving and Data Analysis","tip":"Write the units; let them cancel."},
+  {"id":"math-psda-percent","name":"Percentages and percent change","domain":"Problem-Solving and Data Analysis","tip":"Percent change is (new minus old) over old, every time."},
+  {"id":"math-psda-stats","name":"One- and two-variable data, statistics, probability","domain":"Problem-Solving and Data Analysis","tip":"Mean moves with outliers; median does not."},
+  {"id":"math-psda-inference","name":"Scatterplots, models, and inference from samples","domain":"Problem-Solving and Data Analysis","tip":"A conclusion only reaches as far as the sample was drawn."},
+  {"id":"math-geo-area","name":"Area, volume, and lines/angles","domain":"Geometry and Trigonometry","tip":"The reference sheet has the formulas; the question hides which shape."},
+  {"id":"math-geo-triangles","name":"Right triangles, trig, and circles","domain":"Geometry and Trigonometry","tip":"SOH CAH TOA plus the Pythagorean triples 3-4-5 and 5-12-13 cover most of it."}
+ ]}
+]}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drills · Alakaʻi Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+    <div class="toggle" data-mount></div>
+  </header>
+  <nav class="tabs"></nav>
+
+  <section class="card" id="picker">
+    <h2>Drills</h2>
+    <p class="muted">Short mixed sets. Pick a section or a single skill. Feedback the way you asked for in onboarding (change it in Settings).</p>
+    <div class="grid" id="sections"></div>
+    <div class="row" style="margin-top:12px">
+      <label for="n" style="margin:0">Items</label>
+      <select id="n" style="width:auto"><option>6</option><option>10</option><option>14</option><option>18</option></select>
+      <button id="mixed">Mixed set, all sections</button>
+      <button class="secondary" id="redo">Redo missed items due</button>
+    </div>
+  </section>
+
+  <section class="card" id="run" hidden>
+    <div class="row" style="justify-content:space-between">
+      <div><strong id="title"></strong> <span class="muted" id="count"></span></div>
+      <div class="bar-track" style="width:140px"><div class="bar-fill" id="prog"></div></div>
+    </div>
+    <div id="item" style="margin-top:12px"></div>
+  </section>
+
+  <section class="card" id="done" hidden>
+    <h2>Set pau</h2>
+    <p id="summary"></p>
+    <div class="row"><button id="again">Another set</button><a class="btn secondary" href="dashboard.html">Dashboard</a></div>
+  </section>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script src="assets/engine.js"></script>
+<script>
+(async () => {
+  const A = window.Alakai, E = window.AlakaiEngine, S = A.Store;
+  const { profile } = await A.boot({ page: 'drill.html', gate: true }); if (!profile) return;
+  const q = new URLSearchParams(location.search);
+  let test = A.getTest(); let bank = await E.Bank.load(test);
+  document.getElementById('n').value = profile.setSize || 10;
+  function drawPicker() {
+    const secs = E.Bank.visibleSections(bank, test, profile); const host = document.getElementById('sections'); host.innerHTML = '';
+    secs.forEach(sec => {
+      const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none';
+      d.innerHTML = `<h3>${A.esc(sec.name)}</h3><div class="stack">${sec.skills.map(sk => `<a href="#" data-skill="${sk.id}" style="display:block">${A.esc(sk.name)} <small class="muted">(${bank.items.filter(i => i.skill === sk.id).length})</small></a>`).join('')}</div><button class="secondary" data-section="${sec.id}" style="margin-top:8px">Whole section</button>`;
+      host.appendChild(d);
+    });
+    host.querySelectorAll('[data-skill]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); start({ skill: a.dataset.skill }); }));
+    host.querySelectorAll('[data-section]').forEach(b => b.addEventListener('click', () => start({ section: b.dataset.section })));
+    if (!bank.items.length) host.innerHTML = '<p class="muted">The ' + test.toUpperCase() + ' bank is not built yet.</p>';
+  }
+  document.getElementById('mixed').addEventListener('click', () => start({}));
+  document.getElementById('redo').addEventListener('click', () => start({ redo: true }));
+  document.getElementById('again').addEventListener('click', () => { document.getElementById('done').hidden = true; document.getElementById('picker').hidden = false; });
+  document.addEventListener('alakai:test', async () => { test = A.getTest(); bank = await E.Bank.load(test); drawPicker(); });
+
+  async function start(sel) {
+    const n = +document.getElementById('n').value;
+    let set, kind = 'drill', title = 'Mixed set';
+    if (sel.redo) {
+      const due = S.get(test + '.errlog', []).filter(e => !e.done && e.due <= Date.now()).map(e => bank.byId[e.id]).filter(Boolean);
+      if (!due.length) { alert('Nothing due for redo yet. Missed items come back 3 days later.'); return; }
+      set = due.slice(0, n); kind = 'redo'; title = 'Redo: missed items';
+    } else if (sel.item) { set = [bank.byId[sel.item]].filter(Boolean); kind = 'redo'; title = 'Redo'; }
+    else {
+      // hide science unless on
+      const exclude = new Set(bank.items.filter(i => test === 'act' && i.section === 'science' && !profile.science).map(i => i.id));
+      set = E.buildSet(bank, { skill: sel.skill, section: sel.section, n, exclude });
+      title = sel.skill ? bank.skillName[sel.skill] : sel.section ? bank.sectionName[sel.section] : 'Mixed set';
+    }
+    if (!set.length) { alert('No items for that yet.'); return; }
+    document.getElementById('picker').hidden = true; document.getElementById('run').hidden = false; document.getElementById('done').hidden = true;
+    document.getElementById('title').textContent = title;
+    let i = 0, right = 0, streak = 0; const results = [];
+    const next = async () => {
+      if (i >= set.length) return finish();
+      document.getElementById('count').textContent = `${i + 1} of ${set.length}`; document.getElementById('prog').style.width = Math.round(100 * i / set.length) + '%';
+      const item = set[i]; const host = document.getElementById('item');
+      const res = await E.renderItem(host, item, { streak: streak + 1, skillName: bank.skillName[item.skill], onNext: () => { i++; next(); }, nextLabel: i === set.length - 1 ? 'Finish' : 'Next' });
+      if (res.correct) { right++; streak++; } else { streak = 0; res.cause = await E.askCause(host); }
+      results.push(res); await E.record(test, item, res, kind);
+    };
+    const finish = () => {
+      document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
+      const avg = Math.round(results.reduce((a, r) => a + r.ms, 0) / results.length / 1000);
+      document.getElementById('summary').textContent = `${right} of ${set.length} right, about ${avg}s per item. Misses are in your error log and come back in 3 days.`;
+      const total = S.get(test + '.drillcount', 0) + set.length; S.set(test + '.drillcount', total);
+      if (Math.floor(total / 100) > Math.floor((total - set.length) / 100) && A.milestone(test, 'drills' + Math.floor(total / 100) * 100)) S.set('milestone_pending', { test, text: `${Math.floor(total / 100) * 100} drills done. Good time to send a progress report.` });
+    };
+    next();
+  }
+  drawPicker();
+  if (q.get('skill')) start({ skill: q.get('skill') }); else if (q.get('section')) start({ section: q.get('section') }); else if (q.get('mode') === 'redo') start({ redo: true }); else if (q.get('item')) start({ item: q.get('item') });
+})();
+</script>
+</body>
+</html>

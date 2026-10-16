@@ -1,0 +1,6 @@
+{"modules":[
+ {"id":"sat-rw-m1","section":"rw","name":"Reading and Writing Module 1","minutes":32,"count":27},
+ {"id":"sat-rw-m2","section":"rw","name":"Reading and Writing Module 2","minutes":32,"count":27},
+ {"id":"sat-math-m1","section":"math","name":"Math Module 1","minutes":35,"count":22},
+ {"id":"sat-math-m2","section":"math","name":"Math Module 2","minutes":35,"count":22}
+]}

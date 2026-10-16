@@ -1,0 +1,19 @@
+{
+  "_note": "Study-habits profile, not a learning-styles quiz. Each answer changes app behavior (see 'effects').",
+  "questions": [
+    {"id":"test","q":"Which test are you prepping for?","type":"single","options":[["sat","SAT"],["act","ACT"],["both","Both"]],"effects":"sets the toggle default; 'both' keeps both banks active"},
+    {"id":"testdate","q":"When is your test? (skip if you don't know yet)","type":"date","effects":"drives the spacing schedule and days-to-test on the dashboard"},
+    {"id":"minutes","q":"On a normal school day, how many minutes can you really give this?","type":"single","options":[["15","15"],["30","30"],["45","45"],["60","60 or more"]],"effects":"drill set size: 15 → 6 items, 30 → 10, 45 → 14, 60 → 18"},
+    {"id":"device","q":"Where will you mostly do this?","type":"single","options":[["phone","Phone"],["laptop","Laptop or tablet"],["mix","Both"]],"effects":"phone shortens passages per set and turns on bigger tap targets"},
+    {"id":"missmode","q":"When you miss a question, what do you want to see first?","type":"single","options":[["answer","The answer and why"],["hint","A hint, then let me retry"],["worked","A full worked example"]],"effects":"explanation mode in drills"},
+    {"id":"firstmode","q":"Do you learn a new idea better by hearing it explained or reading it?","type":"single","options":[["hear","Hearing it (play the episode first)"],["read","Reading it (show the notes first)"],["either","Either"]],"effects":"orders podcast vs notes on each topic page; a preference, not a learning style"},
+    {"id":"fear","q":"Which section worries you most?","type":"single","dynamic":"sections","effects":"dashboard puts that section first and the planner front-loads it"},
+    {"id":"lastscore","q":"Last practice or real score, if you have one (optional)","type":"text","placeholder":"e.g. 1180 or 24","effects":"baseline on the dashboard"},
+    {"id":"timepressure","q":"On timed tests, do you run out of time?","type":"single","options":[["never","Never"],["sometimes","Sometimes"],["always","Always"]],"effects":"pacing coach intensity: never → off, sometimes → checkpoints, always → checkpoints plus per-question nudge"},
+    {"id":"science","q":"ACT only: are you taking the optional Science section?","type":"single","only":"act","options":[["no","No"],["yes","Yes"],["unsure","Not sure yet"]],"effects":"shows or hides Science everywhere; 'unsure' shows it"}
+  ],
+  "sections": {
+    "sat": [["rw","Reading and Writing"],["math","Math"]],
+    "act": [["english","English"],["math","Math"],["reading","Reading"],["science","Science"]]
+  }
+}

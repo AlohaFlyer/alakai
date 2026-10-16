@@ -1,0 +1,3 @@
+[{"q":"Is there a guessing penalty on the SAT?","choices":["Yes, a quarter point per wrong answer","Only in the Math modules","No, a blank is the only answer that is always wrong","Only on Module 2"],"answer":2},
+ {"q":"In the two-pass method, what do you do with a question you cannot see the path on in about ten seconds?","choices":["Keep working until you get it","Leave it blank and move on","Pick your best guess, flag it, move on","Skip to the end of the module"],"answer":2},
+ {"q":"How many times should you check the clock during a module?","choices":["Every question","Twice, at the one-third and two-thirds marks","Only in the last minute","Never"],"answer":1}]

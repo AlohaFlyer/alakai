@@ -1,0 +1,625 @@
+[
+ {
+  "id": "sat-card-rw-001",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What is an independent clause?",
+  "back": "A group of words with a subject and a verb that can stand alone as a complete sentence.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-002",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What is a dependent clause?",
+  "back": "A clause with a subject and verb that cannot stand alone, usually starting with because, although, when, which, or who.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-003",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Name the three correct ways to join two independent clauses.",
+  "back": "Period; semicolon; or comma plus a FANBOYS conjunction.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-004",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What are the FANBOYS conjunctions?",
+  "back": "For, and, nor, but, or, yet, so.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-005",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What is a comma splice?",
+  "back": "Two independent clauses joined by a comma alone, with no FANBOYS conjunction.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-006",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What is a run-on (fused) sentence?",
+  "back": "Two independent clauses joined with no punctuation or conjunction at all.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-007",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "When do you use a semicolon between clauses?",
+  "back": "Between two independent clauses with no FANBOYS conjunction.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-008",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What punctuation goes before and after a conjunctive adverb (however, therefore, indeed) joining two clauses?",
+  "back": "Semicolon (or period) before it, comma after it.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-009",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What must come before a colon?",
+  "back": "A complete independent clause.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-010",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What can follow a colon?",
+  "back": "A list, an explanation, an example, or a quotation that elaborates on the clause before it.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-011",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "When do semicolons separate items in a list?",
+  "back": "When the list items themselves contain commas.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-012",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What punctuation follows an introductory dependent clause?",
+  "back": "A comma, before the main clause begins.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-013",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "How do you punctuate a nonessential (extra) phrase or clause in mid-sentence?",
+  "back": "Set it off on both sides with matching marks: two commas, two dashes, or two parentheses.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-014",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "If a nonessential phrase opens with a dash, how must it close?",
+  "back": "With a dash (or the sentence's end). Never mix a dash with a comma.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-015",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Can a single dash join two independent clauses?",
+  "back": "Yes. A single dash can set off an emphatic explanation or break, similar to a colon.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-016",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Should a comma separate a subject from its verb?",
+  "back": "No, unless a nonessential element between them is set off by a pair of commas.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-017",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Does an essential (restrictive) clause take commas?",
+  "back": "No. Essential clauses, often starting with 'that,' are not set off by commas.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-018",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Which relative pronoun introduces nonessential clauses: 'that' or 'which'?",
+  "back": "'Which,' set off by commas. 'That' introduces essential clauses without commas.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-019",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "Does a comma go between a preposition and its object?",
+  "back": "No. Never separate a preposition from its object.",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-020",
+  "section": "rw",
+  "topic": "Punctuation",
+  "front": "What is an appositive?",
+  "back": "A noun phrase that renames the noun beside it, e.g., 'Hilo, the county seat, ...'",
+  "tags": [
+   "grammar",
+   "boundaries"
+  ]
+ },
+ {
+  "id": "sat-card-rw-021",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "How do you find the true subject when a prepositional phrase follows it?",
+  "back": "Cross out the prepositional phrase; the subject is never inside it.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-022",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "Is 'each' singular or plural?",
+  "back": "Singular: 'Each of the students is...'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-023",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "With 'neither... nor' or 'either... or,' which subject does the verb agree with?",
+  "back": "The subject nearer to the verb.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-024",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "Does 'along with' or 'as well as' change a subject's number?",
+  "back": "No. The verb agrees with the subject before the phrase.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-025",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "Is 'the number of' singular or plural?",
+  "back": "Singular: 'The number of birds has grown.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-026",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "Is 'a number of' singular or plural?",
+  "back": "Plural: 'A number of birds have returned.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-027",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "In an inverted sentence ('Among the tools was a hammer'), where is the subject?",
+  "back": "After the verb. Flip the sentence to find it.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-028",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "When is the present perfect (has/have + past participle) used?",
+  "back": "For an action that began in the past and continues to now, often with 'since' or 'for.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-029",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "When is the past perfect (had + past participle) used?",
+  "back": "For a past action completed before another past action.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-030",
+  "section": "rw",
+  "topic": "Agreement and Verbs",
+  "front": "What is the verb tense consistency rule?",
+  "back": "Keep tenses consistent unless the time frame actually changes; verbs joined by 'and' usually match.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-031",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "Which pronouns are subject case?",
+  "back": "I, he, she, we, they, who.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-032",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "Which pronouns are object case?",
+  "back": "Me, him, her, us, them, whom.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-033",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "How do you choose the pronoun in a compound like 'Leilani and ___'?",
+  "back": "Drop the other noun and test the pronoun alone.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-034",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "What does a pronoun need to agree with?",
+  "back": "Its antecedent, in number: singular with singular, plural with plural.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-035",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "When is a reflexive pronoun (myself, themselves) correct?",
+  "back": "Only when it refers back to a subject already in the clause.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-036",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "What is a dangling modifier?",
+  "back": "An introductory phrase not followed immediately by the noun it describes.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-037",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "What noun must follow an introductory modifier like 'Walking along the beach,'?",
+  "back": "The noun doing the action of the modifier.",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-038",
+  "section": "rw",
+  "topic": "Pronouns and Modifiers",
+  "front": "What does a logical comparison require?",
+  "back": "Comparing like with like, often using 'that of' or 'those of.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-039",
+  "section": "rw",
+  "topic": "Apostrophes",
+  "front": "its vs. it's",
+  "back": "'Its' is possessive. 'It's' means 'it is' or 'it has.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-040",
+  "section": "rw",
+  "topic": "Apostrophes",
+  "front": "their vs. they're vs. there",
+  "back": "Their = possessive. They're = they are. There = a place or 'there is.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-041",
+  "section": "rw",
+  "topic": "Apostrophes",
+  "front": "whose vs. who's",
+  "back": "'Whose' is possessive. 'Who's' means 'who is' or 'who has.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-042",
+  "section": "rw",
+  "topic": "Apostrophes",
+  "front": "How do you form the possessive of a plural noun ending in s?",
+  "back": "Add an apostrophe after the s: 'the scientists' data.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-043",
+  "section": "rw",
+  "topic": "Apostrophes",
+  "front": "How do you form the possessive of a singular noun?",
+  "back": "Add apostrophe + s: 'the scientist's data.'",
+  "tags": [
+   "grammar",
+   "form"
+  ]
+ },
+ {
+  "id": "sat-card-rw-044",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal addition",
+  "back": "Furthermore, moreover, in addition, additionally, also, likewise, similarly.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-045",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal contrast",
+  "back": "However, nevertheless, nonetheless, by contrast, conversely, on the other hand, yet, still.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-046",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal cause and effect",
+  "back": "Therefore, thus, consequently, as a result, hence, accordingly, for this reason.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-047",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal example",
+  "back": "For example, for instance, specifically, to illustrate.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-048",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal sequence or time",
+  "back": "First, next, then, subsequently, afterward, thereafter, finally, meanwhile.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-049",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal concession",
+  "back": "Admittedly, granted, of course, to be sure.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-050",
+  "section": "rw",
+  "topic": "Transitions",
+  "front": "Transitions that signal restatement or emphasis",
+  "back": "In other words, that is, in fact, indeed.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "sat-card-rw-051",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "undermine",
+  "back": "To weaken or damage, especially gradually or from beneath.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-052",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "corroborate",
+  "back": "To confirm or support with evidence.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-053",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "equivocal",
+  "back": "Unclear or ambiguous; not committing to either side.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-054",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "tentative",
+  "back": "Not certain or fixed; offered cautiously.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-055",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "meticulous",
+  "back": "Showing great attention to detail; very careful.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-056",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "sophisticated",
+  "back": "Complex and refined; highly developed.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-057",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "sparing",
+  "back": "Using little; economical or infrequent.",
+  "tags": [
+   "vocab"
+  ]
+ },
+ {
+  "id": "sat-card-rw-058",
+  "section": "rw",
+  "topic": "Words in Context",
+  "front": "qualify (a claim)",
+  "back": "To limit or modify a claim, making it less absolute.",
+  "tags": [
+   "vocab"
+  ]
+ }
+]

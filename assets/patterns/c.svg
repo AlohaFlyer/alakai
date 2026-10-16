@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern C "Paniolo": stacked chevrons for the Kohala ridgelines with a ranch-fence rhythm of posts and rails, and pili grass ticks. Original ʻohe kāpala-style geometry. CSS mask: filled = colored. -->
+  <g fill="#000">
+    <!-- chevron rows (ridgelines), two per tile -->
+    <path d="M0 14 L16 2 L32 14 L48 2 L64 14 L64 19 L48 7 L32 19 L16 7 L0 19 Z"/>
+    <path d="M0 30 L16 18 L32 30 L48 18 L64 30 L64 35 L48 23 L32 35 L16 23 L0 35 Z"/>
+    <!-- fence: posts and two rails -->
+    <rect x="0" y="42" width="64" height="2"/>
+    <rect x="0" y="50" width="64" height="2"/>
+    <rect x="6" y="38" width="3" height="18"/>
+    <rect x="30" y="38" width="3" height="18"/>
+    <rect x="54" y="38" width="3" height="18"/>
+    <!-- pili grass ticks -->
+    <path d="M2 60 h1.6 v4 h-1.6z M10 61 h1.6 v3 h-1.6z M18 60 h1.6 v4 h-1.6z M26 61 h1.6 v3 h-1.6z M34 60 h1.6 v4 h-1.6z M42 61 h1.6 v3 h-1.6z M50 60 h1.6 v4 h-1.6z M58 61 h1.6 v3 h-1.6z"/>
+  </g>
+</svg>

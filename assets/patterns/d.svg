@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern D "Kaula" (rope): a continuous two-strand twisted rope along the bar axis, reading as a lariat laid flat. Original. Vertical tile; the horizontal bar rotates it via CSS (mask repeat on the long axis). -->
+  <g fill="none" stroke="#000" stroke-width="7" stroke-linecap="round">
+    <path d="M20 -4 C20 10 44 22 44 36 C44 50 20 60 20 68"/>
+    <path d="M44 -4 C44 10 20 22 20 36 C20 50 44 60 44 68"/>
+  </g>
+  <g fill="#000">
+    <!-- over/under notches to sell the twist -->
+    <path d="M28 14 l8 6 l-2 3 l-8 -6z"/>
+    <path d="M28 46 l8 6 l-2 3 l-8 -6z"/>
+  </g>
+</svg>

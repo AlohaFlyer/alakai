@@ -1,0 +1,608 @@
+[
+ {
+  "id": "act-card-math-001",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Area of a rectangle",
+  "back": "A = l x w",
+  "tags": [
+   "area"
+  ]
+ },
+ {
+  "id": "act-card-math-002",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Area of a triangle",
+  "back": "A = (1/2) b h",
+  "tags": [
+   "area"
+  ]
+ },
+ {
+  "id": "act-card-math-003",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Area of a trapezoid",
+  "back": "A = (1/2)(b1 + b2) h",
+  "tags": [
+   "area"
+  ]
+ },
+ {
+  "id": "act-card-math-004",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Area of a circle",
+  "back": "A = pi r^2",
+  "tags": [
+   "circle"
+  ]
+ },
+ {
+  "id": "act-card-math-005",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Circumference of a circle",
+  "back": "C = 2 pi r = pi d",
+  "tags": [
+   "circle"
+  ]
+ },
+ {
+  "id": "act-card-math-006",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Arc length for central angle x degrees",
+  "back": "(x/360) x 2 pi r",
+  "tags": [
+   "circle"
+  ]
+ },
+ {
+  "id": "act-card-math-007",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Sector area for central angle x degrees",
+  "back": "(x/360) x pi r^2",
+  "tags": [
+   "circle"
+  ]
+ },
+ {
+  "id": "act-card-math-008",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Equation of a circle with center (h, k), radius r",
+  "back": "(x - h)^2 + (y - k)^2 = r^2",
+  "tags": [
+   "circle",
+   "coordinate"
+  ]
+ },
+ {
+  "id": "act-card-math-009",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Pythagorean theorem",
+  "back": "a^2 + b^2 = c^2, c is the hypotenuse",
+  "tags": [
+   "triangle"
+  ]
+ },
+ {
+  "id": "act-card-math-010",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Common Pythagorean triples",
+  "back": "3-4-5, 5-12-13, 8-15-17, 7-24-25 and their multiples",
+  "tags": [
+   "triangle"
+  ]
+ },
+ {
+  "id": "act-card-math-011",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "45-45-90 triangle side ratio",
+  "back": "x : x : x sqrt(2)",
+  "tags": [
+   "triangle",
+   "special"
+  ]
+ },
+ {
+  "id": "act-card-math-012",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "30-60-90 triangle side ratio",
+  "back": "x : x sqrt(3) : 2x (short leg opposite 30)",
+  "tags": [
+   "triangle",
+   "special"
+  ]
+ },
+ {
+  "id": "act-card-math-013",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Sum of interior angles of an n-gon",
+  "back": "(n - 2) x 180 degrees",
+  "tags": [
+   "polygon"
+  ]
+ },
+ {
+  "id": "act-card-math-014",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Sum of exterior angles of any convex polygon",
+  "back": "360 degrees",
+  "tags": [
+   "polygon"
+  ]
+ },
+ {
+  "id": "act-card-math-015",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Exterior angle of a triangle",
+  "back": "Equals the sum of the two remote interior angles",
+  "tags": [
+   "triangle"
+  ]
+ },
+ {
+  "id": "act-card-math-016",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Parallel lines cut by a transversal",
+  "back": "Alternate interior and corresponding angles are equal; same-side interior angles sum to 180",
+  "tags": [
+   "angles"
+  ]
+ },
+ {
+  "id": "act-card-math-017",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Similar figures: scale factor k",
+  "back": "Lengths scale by k, areas by k^2, volumes by k^3",
+  "tags": [
+   "similarity"
+  ]
+ },
+ {
+  "id": "act-card-math-018",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Volume of a rectangular prism",
+  "back": "V = l w h",
+  "tags": [
+   "volume"
+  ]
+ },
+ {
+  "id": "act-card-math-019",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Volume of a cylinder",
+  "back": "V = pi r^2 h",
+  "tags": [
+   "volume"
+  ]
+ },
+ {
+  "id": "act-card-math-020",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Volume of a cone",
+  "back": "V = (1/3) pi r^2 h",
+  "tags": [
+   "volume"
+  ]
+ },
+ {
+  "id": "act-card-math-021",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Volume of a pyramid",
+  "back": "V = (1/3) B h, B = base area",
+  "tags": [
+   "volume"
+  ]
+ },
+ {
+  "id": "act-card-math-022",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Volume of a sphere",
+  "back": "V = (4/3) pi r^3",
+  "tags": [
+   "volume"
+  ]
+ },
+ {
+  "id": "act-card-math-023",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Surface area of a sphere",
+  "back": "SA = 4 pi r^2",
+  "tags": [
+   "surface"
+  ]
+ },
+ {
+  "id": "act-card-math-024",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Surface area of a cylinder",
+  "back": "SA = 2 pi r^2 + 2 pi r h",
+  "tags": [
+   "surface"
+  ]
+ },
+ {
+  "id": "act-card-math-025",
+  "section": "math",
+  "topic": "Geometry",
+  "front": "Space diagonal of a box l x w x h",
+  "back": "sqrt(l^2 + w^2 + h^2)",
+  "tags": [
+   "volume",
+   "triangle"
+  ]
+ },
+ {
+  "id": "act-card-math-026",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Slope between two points",
+  "back": "m = (y2 - y1)/(x2 - x1)",
+  "tags": [
+   "line"
+  ]
+ },
+ {
+  "id": "act-card-math-027",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Slope-intercept and point-slope form",
+  "back": "y = mx + b; y - y1 = m(x - x1)",
+  "tags": [
+   "line"
+  ]
+ },
+ {
+  "id": "act-card-math-028",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Parallel and perpendicular slopes",
+  "back": "Parallel: equal slopes. Perpendicular: negative reciprocals (product -1)",
+  "tags": [
+   "line"
+  ]
+ },
+ {
+  "id": "act-card-math-029",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Distance formula",
+  "back": "d = sqrt((x2 - x1)^2 + (y2 - y1)^2)",
+  "tags": [
+   "distance"
+  ]
+ },
+ {
+  "id": "act-card-math-030",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Midpoint formula",
+  "back": "((x1 + x2)/2, (y1 + y2)/2)",
+  "tags": [
+   "midpoint"
+  ]
+ },
+ {
+  "id": "act-card-math-031",
+  "section": "math",
+  "topic": "Coordinate",
+  "front": "Ellipse x^2/a^2 + y^2/b^2 = 1",
+  "back": "Center (0, 0); axes lengths 2a (horizontal) and 2b (vertical)",
+  "tags": [
+   "conics"
+  ]
+ },
+ {
+  "id": "act-card-math-032",
+  "section": "math",
+  "topic": "Trig",
+  "front": "SOH CAH TOA",
+  "back": "sin = opp/hyp, cos = adj/hyp, tan = opp/adj",
+  "tags": [
+   "trig"
+  ]
+ },
+ {
+  "id": "act-card-math-033",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Pythagorean identity",
+  "back": "sin^2 x + cos^2 x = 1",
+  "tags": [
+   "trig",
+   "identity"
+  ]
+ },
+ {
+  "id": "act-card-math-034",
+  "section": "math",
+  "topic": "Trig",
+  "front": "tan in terms of sin and cos",
+  "back": "tan x = sin x / cos x",
+  "tags": [
+   "trig",
+   "identity"
+  ]
+ },
+ {
+  "id": "act-card-math-035",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Unit circle values at 30, 45, 60 degrees (sin)",
+  "back": "sin 30 = 1/2, sin 45 = sqrt(2)/2, sin 60 = sqrt(3)/2",
+  "tags": [
+   "unit circle"
+  ]
+ },
+ {
+  "id": "act-card-math-036",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Unit circle quadrantal values",
+  "back": "(cos, sin): 0 deg (1,0), 90 (0,1), 180 (-1,0), 270 (0,-1)",
+  "tags": [
+   "unit circle"
+  ]
+ },
+ {
+  "id": "act-card-math-037",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Signs of trig functions by quadrant (ASTC)",
+  "back": "I all positive, II sin, III tan, IV cos",
+  "tags": [
+   "unit circle"
+  ]
+ },
+ {
+  "id": "act-card-math-038",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Degrees to radians",
+  "back": "Multiply by pi/180; 180 degrees = pi radians",
+  "tags": [
+   "unit circle"
+  ]
+ },
+ {
+  "id": "act-card-math-039",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Amplitude and period of y = A sin(Bx) + D",
+  "back": "Amplitude |A|, period 2 pi/|B|, midline y = D",
+  "tags": [
+   "graphs"
+  ]
+ },
+ {
+  "id": "act-card-math-040",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Law of Sines",
+  "back": "a/sin A = b/sin B = c/sin C",
+  "tags": [
+   "oblique"
+  ]
+ },
+ {
+  "id": "act-card-math-041",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Law of Cosines",
+  "back": "c^2 = a^2 + b^2 - 2ab cos C",
+  "tags": [
+   "oblique"
+  ]
+ },
+ {
+  "id": "act-card-math-042",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Exponent rules: product, quotient, power",
+  "back": "x^a x^b = x^(a+b); x^a/x^b = x^(a-b); (x^a)^b = x^(ab)",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "act-card-math-043",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Zero and negative exponents",
+  "back": "x^0 = 1; x^(-n) = 1/x^n",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "act-card-math-044",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Definition of a logarithm",
+  "back": "log_b(a) = c means b^c = a",
+  "tags": [
+   "logs"
+  ]
+ },
+ {
+  "id": "act-card-math-045",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Log rules",
+  "back": "log(MN) = log M + log N; log(M/N) = log M - log N; log(M^k) = k log M",
+  "tags": [
+   "logs"
+  ]
+ },
+ {
+  "id": "act-card-math-046",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Quadratic formula",
+  "back": "x = (-b +/- sqrt(b^2 - 4ac)) / (2a)",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "act-card-math-047",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Discriminant b^2 - 4ac",
+  "back": "Positive: 2 real roots; zero: 1; negative: no real roots",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "act-card-math-048",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Vertex of y = ax^2 + bx + c",
+  "back": "x = -b/(2a); plug in for y",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "act-card-math-049",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Sum and product of roots of ax^2 + bx + c = 0",
+  "back": "Sum = -b/a, product = c/a",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "act-card-math-050",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Difference of squares",
+  "back": "a^2 - b^2 = (a - b)(a + b)",
+  "tags": [
+   "factoring"
+  ]
+ },
+ {
+  "id": "act-card-math-051",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Exponential growth or decay",
+  "back": "y = a(1 + r)^t; growth r > 0, decay r < 0",
+  "tags": [
+   "exponentials"
+  ]
+ },
+ {
+  "id": "act-card-math-052",
+  "section": "math",
+  "topic": "Stats",
+  "front": "Mean, median, mode",
+  "back": "Mean: sum/count. Median: middle of sorted list. Mode: most frequent value",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "act-card-math-053",
+  "section": "math",
+  "topic": "Stats",
+  "front": "Probability of an event",
+  "back": "P = favorable outcomes / total equally likely outcomes",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "act-card-math-054",
+  "section": "math",
+  "topic": "Stats",
+  "front": "Independent events A and B",
+  "back": "P(A and B) = P(A) x P(B)",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "act-card-math-055",
+  "section": "math",
+  "topic": "Stats",
+  "front": "P(A or B)",
+  "back": "P(A) + P(B) - P(A and B)",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "act-card-math-056",
+  "section": "math",
+  "topic": "Stats",
+  "front": "Permutations vs combinations",
+  "back": "nPr = n!/(n - r)! (order matters); nCr = n!/(r!(n - r)!) (order does not)",
+  "tags": [
+   "counting"
+  ]
+ },
+ {
+  "id": "act-card-math-057",
+  "section": "math",
+  "topic": "Stats",
+  "front": "Fundamental counting principle",
+  "back": "Multiply the number of choices for each independent slot",
+  "tags": [
+   "counting"
+  ]
+ },
+ {
+  "id": "act-card-math-058",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Matrix addition and scalar multiplication",
+  "back": "Add matching entries; scalar multiplies every entry. Sizes must match to add",
+  "tags": [
+   "matrices"
+  ]
+ },
+ {
+  "id": "act-card-math-059",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Matrix multiplication size rule",
+  "back": "(m x n)(n x p) gives m x p; inner dimensions must match",
+  "tags": [
+   "matrices"
+  ]
+ },
+ {
+  "id": "act-card-math-060",
+  "section": "math",
+  "topic": "Algebra",
+  "front": "Determinant of [[a, b], [c, d]]",
+  "back": "ad - bc",
+  "tags": [
+   "matrices"
+  ]
+ }
+]

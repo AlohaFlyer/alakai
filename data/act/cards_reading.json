@@ -1,0 +1,452 @@
+[
+ {
+  "id": "act-card-rd-001",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "ACT Reading timing (2025 enhanced)",
+  "back": "36 questions in 40 minutes, about 9 to 10 minutes per passage set including questions.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-002",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "How long should you spend reading a passage?",
+  "back": "About 3 minutes. Read for main idea and structure, then spend about 6 minutes on its questions.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-003",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "What if a question stalls you?",
+  "back": "Guess, mark it, move on after about 1 minute. No penalty for wrong answers.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-004",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "Should you leave any answer blank?",
+  "back": "Never. Wrong answers cost nothing on the ACT.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-005",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "Which passage to do first?",
+  "back": "Start with the passage type you read fastest. Save your weakest type for last.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-006",
+  "section": "reading",
+  "topic": "Pacing",
+  "front": "Line or paragraph reference questions: order?",
+  "back": "Do them first within a set; they are quickest to verify.",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-rd-007",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Detail question playbook",
+  "back": "Go back to the line. Find the words. Match the paraphrase. Never answer from memory.",
+  "tags": [
+   "detail"
+  ]
+ },
+ {
+  "id": "act-card-rd-008",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "EXCEPT / NOT question playbook",
+  "back": "Check each choice against the passage. Cross off the three that appear. The leftover is the answer.",
+  "tags": [
+   "detail"
+  ]
+ },
+ {
+  "id": "act-card-rd-009",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Inference question playbook",
+  "back": "Pick the smallest step from the text. If you cannot point to lines that support it, eliminate it.",
+  "tags": [
+   "inference"
+  ]
+ },
+ {
+  "id": "act-card-rd-010",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Main idea question playbook",
+  "back": "The answer covers the whole passage, not one paragraph. Too narrow or too broad is wrong.",
+  "tags": [
+   "inference"
+  ]
+ },
+ {
+  "id": "act-card-rd-011",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Author's attitude question playbook",
+  "back": "Find opinion words (surely, reckless, unfortunately). Moderate attitudes are usually right; extreme ones rarely are.",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-012",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Word-in-context playbook",
+  "back": "Cover the word, reread the sentence, predict a substitute, then pick the choice that matches. Beware common meanings.",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-013",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Purpose / function question playbook",
+  "back": "Ask what the sentence does (introduces, contrasts, gives an example, concludes), not what it says.",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-014",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Paired passage playbook",
+  "back": "Read A, do A questions. Read B, do B questions. Then do questions about both.",
+  "tags": [
+   "integration"
+  ]
+ },
+ {
+  "id": "act-card-rd-015",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Paired passage: pin positions",
+  "back": "Write each author's position in five words before reading choices on comparison questions.",
+  "tags": [
+   "integration"
+  ]
+ },
+ {
+  "id": "act-card-rd-016",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "\"How would Author B respond to A?\" questions",
+  "back": "Find B's main evidence or claim. The answer applies B's view to A's point.",
+  "tags": [
+   "integration"
+  ]
+ },
+ {
+  "id": "act-card-rd-017",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "\"Both passages agree\" questions",
+  "back": "The correct choice must be supported by lines in BOTH passages. Eliminate anything only one mentions.",
+  "tags": [
+   "integration"
+  ]
+ },
+ {
+  "id": "act-card-rd-018",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Common wrong-answer traps",
+  "back": "True but not answering the question; right words from the wrong part; too extreme; reverses the relationship.",
+  "tags": [
+   "strategy"
+  ]
+ },
+ {
+  "id": "act-card-rd-019",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Number trap on detail questions",
+  "back": "Passages reuse numbers for different things. Check what each number counts before picking.",
+  "tags": [
+   "detail"
+  ]
+ },
+ {
+  "id": "act-card-rd-020",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Prose fiction: what to track",
+  "back": "Who the characters are, how they feel about each other, and what changes by the end.",
+  "tags": [
+   "literary"
+  ]
+ },
+ {
+  "id": "act-card-rd-021",
+  "section": "reading",
+  "topic": "Playbook",
+  "front": "Natural science passage: what to track",
+  "back": "The phenomenon, its cause, and any cause-effect chain. Ignore jargon you do not need.",
+  "tags": [
+   "science"
+  ]
+ },
+ {
+  "id": "act-card-rd-022",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "chronological structure",
+  "back": "Events in time order. Clues: first, then, later, by 1952, today.",
+  "tags": [
+   "structure"
+  ]
+ },
+ {
+  "id": "act-card-rd-023",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "problem-solution structure",
+  "back": "Presents a problem, then one or more fixes. Clues: the challenge, to address this, the result.",
+  "tags": [
+   "structure"
+  ]
+ },
+ {
+  "id": "act-card-rd-024",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "compare-contrast structure",
+  "back": "Sets two things side by side. Clues: however, unlike, similarly, by contrast.",
+  "tags": [
+   "structure"
+  ]
+ },
+ {
+  "id": "act-card-rd-025",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "claim and counterclaim",
+  "back": "States one view, then an opposing view, often with a rebuttal. Clues: some argue, critics counter, yet.",
+  "tags": [
+   "structure"
+  ]
+ },
+ {
+  "id": "act-card-rd-026",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "What is a pivot sentence?",
+  "back": "A sentence that shifts direction, often with but, however, yet, or not... but. The new direction is usually the point.",
+  "tags": [
+   "structure"
+  ]
+ },
+ {
+  "id": "act-card-rd-027",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "personification",
+  "back": "Giving human traits to a non-human thing (the machine does not know the tree).",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-028",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "metaphor vs. simile",
+  "back": "Metaphor: direct comparison (hula is a library). Simile: uses like or as (like a pianist).",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-029",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "anecdote",
+  "back": "A short personal story used to illustrate a point.",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-030",
+  "section": "reading",
+  "topic": "Structure",
+  "front": "rhetorical question",
+  "back": "A question asked for effect, not for an answer, usually to set up the author's point.",
+  "tags": [
+   "craft"
+  ]
+ },
+ {
+  "id": "act-card-rd-031",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "ambivalent",
+  "back": "Having mixed or conflicting feelings about something.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-032",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "nostalgic",
+  "back": "Wistfully longing for the past.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-033",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "skeptical",
+  "back": "Doubting; not easily convinced.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-034",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "reverent",
+  "back": "Showing deep respect or honor.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-035",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "wry",
+  "back": "Dry, quietly ironic humor.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-036",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "candid",
+  "back": "Frank and honest.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-037",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "objective",
+  "back": "Neutral and fact-based; no personal opinion shown.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-038",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "indignant",
+  "back": "Angry about something seen as unfair.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-039",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "contemplative",
+  "back": "Thoughtful and reflective.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-040",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "didactic",
+  "back": "Intended to teach or instruct, sometimes preachy.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-041",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "admiring",
+  "back": "Expressing approval and respect.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-042",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "cautionary",
+  "back": "Warning about a danger or mistake.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-043",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "wistful",
+  "back": "Gently sad longing for something out of reach.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-044",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "sardonic",
+  "back": "Mocking and bitterly scornful.",
+  "tags": [
+   "tone"
+  ]
+ },
+ {
+  "id": "act-card-rd-045",
+  "section": "reading",
+  "topic": "Tone",
+  "front": "measured",
+  "back": "Careful, balanced, and restrained.",
+  "tags": [
+   "tone"
+  ]
+ }
+]

@@ -1,0 +1,352 @@
+[
+ {
+  "id": "act-card-science-001",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "First move on any table or graph",
+  "back": "Read the title, axis labels, and units before any numbers",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-002",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Reading a value from a line graph",
+  "back": "Find x on the horizontal axis, go up to the correct line, read across to y",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-003",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Two lines on one graph",
+  "back": "Check the key; most wrong answers read the other line",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-004",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Interpolation",
+  "back": "Estimating between measured values; stay inside the data range",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-005",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Extrapolation",
+  "back": "Extending a trend beyond the data range; less certain than interpolation",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-006",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Direct relationship",
+  "back": "Both variables increase together (or decrease together)",
+  "tags": [
+   "relationships"
+  ]
+ },
+ {
+  "id": "act-card-science-007",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Inverse relationship",
+  "back": "As one variable increases, the other decreases",
+  "tags": [
+   "relationships"
+  ]
+ },
+ {
+  "id": "act-card-science-008",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Constant factor vs constant amount",
+  "back": "Equal ratios between steps = exponential; equal differences = linear",
+  "tags": [
+   "relationships"
+  ]
+ },
+ {
+  "id": "act-card-science-009",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Steeper segment of a line graph",
+  "back": "Faster rate of change over that interval",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-010",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Flat segment of a line graph",
+  "back": "No change in y over that interval",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-011",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Maximum or minimum questions",
+  "back": "Scan the whole column or curve; peaks can be in the middle",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-012",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Percent from counts",
+  "back": "Divide by the stated total, not by 100, unless the total is 100",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-013",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Ratio between two values",
+  "back": "Divide one by the other from the same row",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-014",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Reading log or uneven scales",
+  "back": "Check the spacing of tick labels; equal spaces may not mean equal amounts",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-015",
+  "section": "science",
+  "topic": "Design",
+  "front": "Independent variable",
+  "back": "The factor the experimenter deliberately changes",
+  "tags": [
+   "variables"
+  ]
+ },
+ {
+  "id": "act-card-science-016",
+  "section": "science",
+  "topic": "Design",
+  "front": "Dependent variable",
+  "back": "The outcome measured; it responds to the independent variable",
+  "tags": [
+   "variables"
+  ]
+ },
+ {
+  "id": "act-card-science-017",
+  "section": "science",
+  "topic": "Design",
+  "front": "Controlled variables",
+  "back": "Factors held constant so only the independent variable changes",
+  "tags": [
+   "variables"
+  ]
+ },
+ {
+  "id": "act-card-science-018",
+  "section": "science",
+  "topic": "Design",
+  "front": "Control group",
+  "back": "Gets none of the treatment; provides a baseline",
+  "tags": [
+   "variables"
+  ]
+ },
+ {
+  "id": "act-card-science-019",
+  "section": "science",
+  "topic": "Design",
+  "front": "Treatment group",
+  "back": "Receives the variable being tested",
+  "tags": [
+   "variables"
+  ]
+ },
+ {
+  "id": "act-card-science-020",
+  "section": "science",
+  "topic": "Design",
+  "front": "Fair test",
+  "back": "Only one variable differs between the groups being compared",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-021",
+  "section": "science",
+  "topic": "Design",
+  "front": "Why repeat trials",
+  "back": "Reduces the effect of random error; checks repeatability",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-022",
+  "section": "science",
+  "topic": "Design",
+  "front": "Shared condition across experiments",
+  "back": "Same setup in two experiments should give the same result; a consistency check",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-023",
+  "section": "science",
+  "topic": "Design",
+  "front": "Designing a test for a claim",
+  "back": "Change only the factor the claim names; hold everything else constant",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-024",
+  "section": "science",
+  "topic": "Design",
+  "front": "Correlation vs causation",
+  "back": "Two variables moving together does not prove one causes the other",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-025",
+  "section": "science",
+  "topic": "Design",
+  "front": "Hypothesis",
+  "back": "A testable prediction about how variables are related",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-026",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "First pass on conflicting viewpoints",
+  "back": "One sentence per scientist: claim plus the key evidence",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-027",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Agree questions",
+  "back": "Find a statement both make, even if their conclusions differ",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-028",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Weaken questions",
+  "back": "Find the finding that contradicts the one fact a scientist depends on",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-029",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Support questions",
+  "back": "The finding must match what that scientist predicts, not just fail to contradict it",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-030",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Watch qualifiers",
+  "back": "Words like only, always, mainly, and not change what a scientist claims",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-031",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Outside knowledge",
+  "back": "Judge each viewpoint by the passage, not by what you believe is true",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-032",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "Science section timing",
+  "back": "40 questions in 40 minutes: about 1 minute per question",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-science-033",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "Passage pacing",
+  "back": "About 6 to 7 minutes per passage; skim the stimulus, go to questions",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-science-034",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "When stuck",
+  "back": "Mark it, guess, move on; no penalty for wrong answers",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-science-035",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "Conflicting viewpoints timing",
+  "back": "Read the full passage; budget a bit more time than data passages",
+  "tags": [
+   "pacing"
+  ]
+ }
+]

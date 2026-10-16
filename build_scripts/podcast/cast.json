@@ -1,0 +1,67 @@
+{
+ "_note": "Voices approved by Ryan 2026-10-16. voice_id is the ElevenLabs library id; each must be added to the account's voices (My Voices > Add) before Text-to-Dialogue can use it. Never change a voice_id once episodes are published.",
+ "characters": [
+  {
+   "key": "lehua",
+   "name": "Lehua",
+   "role": "Host",
+   "gender": "F",
+   "age": "late 20s",
+   "voice_id": "jRIDd6YCznqwKHkWlpOh",
+   "voice_brief": "Warm, quick, local Hawaiʻi cadence, laughs easily, keeps the show moving. Not a radio voice, a cool older-cousin voice.",
+   "gag": "Always has a Costco run to get to after the show.",
+   "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
+   "voice_library_name": "Hoku"
+  },
+  {
+   "key": "derek",
+   "name": "Derek Nakamura",
+   "role": "Math coach",
+   "gender": "M",
+   "age": "40s",
+   "voice_id": "Eqw4o5WB3NXnOBL9xr97",
+   "voice_brief": "Dry, precise, calm, slightly deadpan. Japanese-American local, Hilo-raised. The guy who says the shortcut once and waits.",
+   "gag": "Rates every shortcut out of ten and nothing has ever scored a ten.",
+   "speaks": "Standard English, occasional local phrasing.",
+   "voice_library_name": "Brandon"
+  },
+  {
+   "key": "sarah",
+   "name": "Sarah Medeiros",
+   "role": "Reading and Writing coach",
+   "gender": "F",
+   "age": "30s",
+   "voice_id": "0f4r1bLyisMv67ocsZMl",
+   "voice_brief": "Storyteller energy, expressive, Portuguese-Hawaiian local, grammar nerd who is funny about it. Clear diction.",
+   "gag": "Cannot let a misplaced comma go, even in a text from her mom.",
+   "speaks": "Standard English with local warmth.",
+   "voice_library_name": "Cristina G."
+  },
+  {
+   "key": "pono",
+   "name": "Coach Pono",
+   "role": "Timing and strategy coach",
+   "gender": "M",
+   "age": "50s",
+   "voice_id": "f0ODjLMfcJmlKfs7dFCW",
+   "voice_brief": "Ex-paniolo, ex-track coach, big easy voice, talks about the clock like a horse you have to manage. Hawaiian, Waimea-born.",
+   "gag": "Every strategy is secretly a rodeo metaphor.",
+   "speaks": "Pidgin-forward, slows down for the key lines.",
+   "voice_library_name": "Mikey"
+  },
+  {
+   "key": "kaden",
+   "name": "Kaden",
+   "role": "Student guest",
+   "gender": "M",
+   "age": "16",
+   "voice_id": "3XOBzXhnDY98yeWQ3GdM",
+   "voice_brief": "Gen Z, honest, asks the question everyone is thinking, a little sleepy at the top of the show and locked in by the end. Local mixed kid.",
+   "gag": "Relates everything to a game, a car, or being late for the bus.",
+   "speaks": "Gen Z slang in moderation, pidgin when excited.",
+   "voice_library_name": "Brayden"
+  }
+ ],
+ "min_voices_per_episode": 3,
+ "max_voices_per_episode": 5
+}

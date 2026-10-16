@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern G "Horseshoe": open horseshoes marching along the bar, nail dots at the heels, thin rails each edge. Original. -->
+  <g fill="none" stroke="#000" stroke-width="6" stroke-linecap="round">
+    <path d="M18 46 C18 18 46 18 46 46"/>
+  </g>
+  <g fill="#000">
+    <circle cx="18" cy="50" r="3.4"/><circle cx="46" cy="50" r="3.4"/>
+    <rect x="0" y="2" width="64" height="3"/><rect x="0" y="59" width="64" height="3"/>
+  </g>
+</svg>

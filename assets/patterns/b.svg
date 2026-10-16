@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern B "Lauhala": diamond lattice in the plaited-lauhala manner with an ʻōhiʻa lehua radial cluster at each crossing. Original ʻohe kāpala-style geometry. CSS mask: filled = colored. -->
+  <g fill="#000">
+    <!-- lattice strands (two diagonals, 4px wide, tiling) -->
+    <path d="M-4 28 L28 -4 L36 -4 L-4 36 Z"/>
+    <path d="M28 68 L68 28 L68 36 L36 68 Z"/>
+    <path d="M28 -4 L68 36 L68 28 L36 -4 Z"/>
+    <path d="M-4 28 L36 68 L28 68 L-4 36 Z"/>
+    <!-- lehua cluster at center: ring of 8 dots around a core -->
+    <circle cx="32" cy="32" r="3.2"/>
+    <circle cx="32" cy="22" r="1.8"/><circle cx="32" cy="42" r="1.8"/>
+    <circle cx="22" cy="32" r="1.8"/><circle cx="42" cy="32" r="1.8"/>
+    <circle cx="25" cy="25" r="1.6"/><circle cx="39" cy="25" r="1.6"/>
+    <circle cx="25" cy="39" r="1.6"/><circle cx="39" cy="39" r="1.6"/>
+    <!-- corner diamonds (quarter at each corner so they join when tiled) -->
+    <path d="M0 0 L6 0 L0 6 Z"/><path d="M64 0 L58 0 L64 6 Z"/>
+    <path d="M0 64 L6 64 L0 58 Z"/><path d="M64 64 L58 64 L64 58 Z"/>
+  </g>
+</svg>

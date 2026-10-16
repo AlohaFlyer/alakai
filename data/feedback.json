@@ -1,0 +1,48 @@
+{
+  "_note": "Local-style feedback lines. Kind, clean, pidgin as affection. Edit freely. The app never repeats the same line twice in a row.",
+  "right": [
+    "Chee hoo!",
+    "Ho, shoots! Nailed it.",
+    "Akamai!",
+    "Winnahz!",
+    "Da kine. Exactly da kine.",
+    "Pau already? Nice.",
+    "Mean. Keep going.",
+    "Yessah!",
+    "You get 'em.",
+    "Solid like Mauna Kea.",
+    "Clean. No sweat.",
+    "Eh, somebody was paying attention.",
+    "Ono answer.",
+    "Right on, braddah. Right on, sistah.",
+    "Kīpuʻupuʻu rain could not stop you."
+  ],
+  "wrong": [
+    "Aiyah. Try again.",
+    "No worries, we go again.",
+    "Close, but not yet. Read the explanation.",
+    "Hamajang. Reset and go.",
+    "Eh, happens. Check the why.",
+    "Not dis time. Next one.",
+    "Small kine off. Look at the distractor.",
+    "Shoots. Da test does that on purpose.",
+    "Stay cool. The error log remembers so you don't have to.",
+    "No shame. Nobody wen born knowing this.",
+    "Almost. Slow down one notch.",
+    "Pau hana? Not yet. One more."
+  ],
+  "streak": {
+    "5": "Five in a row. Chee hoo!",
+    "10": "Ten straight. Dis one going places.",
+    "20": "Twenty. Somebody call Aunty, she gotta see this.",
+    "30": "Thirty. You are the kumu now."
+  },
+  "timeout": [
+    "Time. No shame, that's what Blitz is for.",
+    "Clock wen beat you. Next round, you beat the clock."
+  ],
+  "blitz_end": [
+    "Round pau. Check your high score.",
+    "That's the round. Breathe, then go again."
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alakaʻi Test Prep · Free SAT and ACT prep for Big Island students</title>
+<meta name="description" content="Free SAT and ACT practice for Hawaiʻi Island high schoolers. Drills, timed sections, quizzers, and the SAT Notes and ACT Notes podcast. Everything stays on your device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+<style>
+  body.hero-bg { background-image: url("assets/hero.jpg"); }
+  @media (max-width: 700px) { body.hero-bg { background-image: url("assets/hero-900.jpg"); } }
+  .hero-text { text-align: center; padding: 8vh 0 4vh; }
+  .hero-text .kicker { letter-spacing: .25em; text-transform: uppercase; font-size: .85rem; opacity: .9; }
+  .hero-text h1 { font-size: clamp(2.2rem, 7vw, 4rem); margin: .2em 0; }
+  .start-card { max-width: 560px; margin: 0 auto; }
+</style>
+</head>
+<body class="hero-bg">
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+    <div class="toggle" data-mount></div>
+  </header>
+
+  <div class="hero-text">
+    <div class="kicker">Free · No login · Big Island</div>
+    <h1>Lead your own prep.</h1>
+    <p>Retrieval drills, timed sections, quizzers, and a podcast that sounds like home. Everything you do stays on your device.</p>
+  </div>
+
+  <section class="card start-card">
+    <div class="field">
+      <label for="school">Your school</label>
+      <select id="school"></select>
+    </div>
+    <div class="row">
+      <button id="start">Start</button>
+      <a class="btn secondary" id="continue" href="dashboard.html" hidden>Continue</a>
+      <a class="btn secondary" href="settings.html#disclosures">What gets stored</a>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px">
+    <div class="card"><h3>Drills</h3><p class="muted">Short mixed sets by skill. Immediate feedback, your way: answer, hint, or worked example.</p></div>
+    <div class="card"><h3>Timed</h3><p class="muted">Real-clock modules with pacing checkpoints and the two-pass method.</p></div>
+    <div class="card"><h3>Quizzers</h3><p class="muted">Spaced recall for the stuff you just have to know, plus Blitz: 60 seconds, streaks, high scores.</p></div>
+    <div class="card"><h3><span data-test-label>SAT</span> Notes</h3><p class="muted">A local-voiced podcast on how to think through the test, with a quick check after each episode.</p></div>
+  </section>
+
+  <footer>Alakaʻi: to lead, to guide. Photo: Sean Robertson, Unsplash. Not affiliated with College Board or ACT. <a href="settings.html#disclosures" style="color:inherit">Disclosures</a></footer>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script>
+(async () => {
+  const A = window.Alakai;
+  await A.boot({ page: 'index.html' });
+  const schools = await A.data('data/schools.json');
+  const sel = document.getElementById('school');
+  sel.innerHTML = schools.schools.map(s => `<option value="${s.id}">${A.esc(s.name)}${s.town ? ' · ' + A.esc(s.town) : ''}</option>`).join('');
+  sel.value = A.Store.get('school', schools.default);
+  sel.addEventListener('change', () => { A.Store.set('school', sel.value); const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); });
+  const p = A.profile();
+  if (p && p.onboarded) { document.getElementById('continue').hidden = false; document.getElementById('start').textContent = 'Start over'; }
+  document.getElementById('start').addEventListener('click', () => { A.Store.set('school', sel.value); location.href = p && p.onboarded ? 'onboard.html?redo=1' : 'onboard.html'; });
+})();
+</script>
+</body>
+</html>

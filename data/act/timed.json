@@ -1,0 +1,6 @@
+{"_verify":"2025 enhanced ACT timings, confirm against act.org before launch","modules":[
+ {"id":"act-english","section":"english","name":"English","minutes":35,"count":50},
+ {"id":"act-math","section":"math","name":"Math","minutes":50,"count":45},
+ {"id":"act-reading","section":"reading","name":"Reading","minutes":40,"count":36},
+ {"id":"act-science","section":"science","name":"Science (optional)","minutes":40,"count":40}
+]}

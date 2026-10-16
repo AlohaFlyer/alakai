@@ -1,0 +1,2002 @@
+[
+ {
+  "id": "act-reading-craft-001",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story about a girl helping at her grandfather's ranch in Waimea.\n\nLeilani had been awake since four, but the corral still felt like a dream. Fog pressed against the fence posts, and the horses were only shapes until they breathed. Her grandfather moved among them without hurry, checking a hoof here, a cinch there, speaking in the low voice he used for animals and for people he trusted.\n\n\"You saddle Kahu,\" he said, and handed her the blanket.\n\nShe had watched him do it a hundred times. Now her hands forgot everything. The blanket slid; the saddle landed crooked. Kahu shifted his weight and sighed, a long patient sound, as if he had expected this.\n\nHer grandfather did not take the saddle from her. He leaned on the rail and waited. When she finally pulled the cinch tight, he walked over, ran two fingers under it, and nodded once.\n\nThat nod stayed with her all morning, warmer than the sun when it finally burned through the fog.",
+  "stem": "The description of Kahu's \"long patient sound, as if he had expected this\" primarily serves to:",
+  "choices": [
+   "explain why the saddle landed crooked.",
+   "suggest that Leilani should give up.",
+   "add gentle humor to Leilani's struggle.",
+   "show that Kahu is sick."
+  ],
+  "answer": 2,
+  "explain": "Giving the horse a patient, knowing sigh is a lightly humorous touch that softens Leilani's clumsy moment. It does not explain the error or signal illness.",
+  "distractors": [
+   "The sigh comes after the error and does not cause it.",
+   "The story continues with her success.",
+   "(keyed) Correct: the personified sigh lightens the scene.",
+   "Nothing suggests illness."
+  ],
+  "hint": "How would the scene feel without the horse's sigh?",
+  "worked": "The sigh personifies Kahu as patient and unsurprised.\nEffect: a gentle, funny note.\nAnswer: choice C.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-002",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about the economics of Kona coffee.\n\nKona coffee is grown on roughly 600 farms along a twenty-mile strip of the island's western slopes. Most of these farms are small; the typical operation covers fewer than five acres and is run by a single family. That scale shapes nearly every part of the business.\n\nBecause small farms cannot afford large processing equipment, many growers sell their ripe cherry to mills that wash, dry, and roast it. Others process their own beans and sell directly to visitors, earning several times more per pound. The direct-sale model, however, demands hours that many farmers simply do not have, since a large share of growers also hold jobs off the farm.\n\nThe label itself is a source of tension. State law allows a blend containing as little as 10 percent Kona beans to carry the word \"Kona\" on its package. Many farmers argue that such blends confuse buyers and depress prices for pure Kona coffee. Supporters of the rule counter that blends introduce new customers to the region's name. The dispute has continued for decades, and it reveals how much the farmers' fortunes depend on a single word.",
+  "stem": "The main purpose of the third paragraph is to:",
+  "choices": [
+   "describe a long-running disagreement over how Kona coffee is labeled.",
+   "compare Kona coffee with coffee from other regions.",
+   "explain how coffee cherry is processed.",
+   "argue that blends should be banned."
+  ],
+  "answer": 0,
+  "explain": "The paragraph presents both farmers' objections and supporters' counterarguments about the labeling law. It describes the dispute rather than taking a side.",
+  "distractors": [
+   "(keyed) Correct: it lays out the labeling dispute.",
+   "No other regions are mentioned.",
+   "Processing is in the second paragraph.",
+   "The author presents both sides without arguing for a ban."
+  ],
+  "hint": "Does the author take a side, or present both?",
+  "worked": "Paragraph 3: 10 percent rule.\nFarmers' view and supporters' view.\nDecades-long dispute.\nFunction: describe the disagreement.\nAnswer: choice A.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-003",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about the economics of Kona coffee.\n\nKona coffee is grown on roughly 600 farms along a twenty-mile strip of the island's western slopes. Most of these farms are small; the typical operation covers fewer than five acres and is run by a single family. That scale shapes nearly every part of the business.\n\nBecause small farms cannot afford large processing equipment, many growers sell their ripe cherry to mills that wash, dry, and roast it. Others process their own beans and sell directly to visitors, earning several times more per pound. The direct-sale model, however, demands hours that many farmers simply do not have, since a large share of growers also hold jobs off the farm.\n\nThe label itself is a source of tension. State law allows a blend containing as little as 10 percent Kona beans to carry the word \"Kona\" on its package. Many farmers argue that such blends confuse buyers and depress prices for pure Kona coffee. Supporters of the rule counter that blends introduce new customers to the region's name. The dispute has continued for decades, and it reveals how much the farmers' fortunes depend on a single word.",
+  "stem": "The author's statement that the farmers' fortunes \"depend on a single word\" most nearly emphasizes:",
+  "choices": [
+   "that state law is too short.",
+   "that the coffee is sold under many different names.",
+   "that farmers cannot read labels.",
+   "how much value the name \"Kona\" holds in the market."
+  ],
+  "answer": 3,
+  "explain": "The single word is \"Kona.\" The phrase emphasizes that the name itself carries enough market value to affect prices, which is why the label dispute matters.",
+  "distractors": [
+   "The length of the law is not discussed.",
+   "The point is one name, not many.",
+   "Nothing suggests farmers cannot read.",
+   "(keyed) Correct: the name drives value."
+  ],
+  "hint": "What is the \"single word\"?",
+  "worked": "The word in dispute: Kona.\nBlends with that word affect prices.\nSo the word holds market value.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-004",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay on the revival of hula.\n\nFor much of the nineteenth century, hula survived in the shadows. Missionaries had condemned it, and many Hawaiian families taught it quietly, if at all. When King David Kalākaua took the throne in 1874, he did something that seemed, to some observers, almost reckless: he brought hula back to the royal court and invited dancers to perform at his coronation.\n\nKalākaua understood that a dance is more than movement. Each hula carries a chant, and each chant carries genealogy, history, and place names that might otherwise be lost. To revive hula was to revive a library.\n\nThe revival he began did not proceed in a straight line. After his death, interest faded again. It was not until the 1960s and 1970s that a new generation of kumu hula, many of them trained by elders who had kept the old forms alive, brought the art back to the center of Hawaiian life. The Merrie Monarch Festival, named in Kalākaua's honor, became their stage. Today the festival is so selective that hālau prepare for a year or more for a single performance.",
+  "stem": "The statement \"To revive hula was to revive a library\" uses a comparison to emphasize that hula:",
+  "choices": [
+   "was performed only by scholars.",
+   "preserves knowledge such as history and genealogy.",
+   "is mainly a written art form.",
+   "was taught in buildings with books."
+  ],
+  "answer": 1,
+  "explain": "The previous sentence says chants carry genealogy, history, and place names. Comparing hula to a library emphasizes that it stores knowledge.",
+  "distractors": [
+   "No such claim appears.",
+   "(keyed) Correct: hula holds knowledge like a library.",
+   "Hula is performed and chanted, not written.",
+   "The library is a metaphor, not a literal building."
+  ],
+  "hint": "Read the sentence right before the comparison.",
+  "worked": "Before: chants carry genealogy, history, place names.\nA library stores knowledge.\nSo hula stores knowledge.\nAnswer: choice B.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-005",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "HUMANITIES: This passage is adapted from an essay on the revival of hula.\n\nFor much of the nineteenth century, hula survived in the shadows. Missionaries had condemned it, and many Hawaiian families taught it quietly, if at all. When King David Kalākaua took the throne in 1874, he did something that seemed, to some observers, almost reckless: he brought hula back to the royal court and invited dancers to perform at his coronation.\n\nKalākaua understood that a dance is more than movement. Each hula carries a chant, and each chant carries genealogy, history, and place names that might otherwise be lost. To revive hula was to revive a library.\n\nThe revival he began did not proceed in a straight line. After his death, interest faded again. It was not until the 1960s and 1970s that a new generation of kumu hula, many of them trained by elders who had kept the old forms alive, brought the art back to the center of Hawaiian life. The Merrie Monarch Festival, named in Kalākaua's honor, became their stage. Today the festival is so selective that hālau prepare for a year or more for a single performance.",
+  "stem": "The third paragraph's statement that the revival \"did not proceed in a straight line\" primarily serves to:",
+  "choices": [
+   "introduce the idea that interest in hula rose and fell over time.",
+   "criticize Kalākaua's leadership.",
+   "describe a specific hula movement.",
+   "suggest that the revival failed."
+  ],
+  "answer": 0,
+  "explain": "The paragraph goes on to describe interest fading after Kalākaua's death and rising again in the 1960s. The phrase sets up that up-and-down history.",
+  "distractors": [
+   "(keyed) Correct: it previews the rise and fall of interest.",
+   "The author does not criticize Kalākaua.",
+   "\"Straight line\" is a metaphor, not a dance step.",
+   "The paragraph ends with the revival succeeding."
+  ],
+  "hint": "What does the rest of the paragraph describe?",
+  "worked": "After the phrase: interest faded, then returned.\nThe phrase previews that pattern.\nAnswer: choice A.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-006",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the observatories on Mauna Kea.\n\nAt nearly 14,000 feet, the summit of Mauna Kea sits above roughly 40 percent of Earth's atmosphere. More important for astronomers, it sits above most of the atmosphere's water vapor, which absorbs infrared light. Infrared observations allow scientists to study objects hidden behind clouds of dust, such as stars in the process of forming.\n\nThe summit offers a second advantage: stable air. Trade winds flow smoothly over the ocean for thousands of miles before reaching the island, with few mountains to stir them into turbulence. Turbulent air makes stars appear to twinkle, which is charming to a child but frustrating to a telescope. The smoother the air, the sharper the image.\n\nThese conditions come with costs. Workers must stop at a station partway up the mountain to adjust to the thin air, and many still suffer headaches at the top. Equipment must survive freezing nights and intense sunlight. Yet for a telescope, few places on Earth offer a clearer window to the universe.",
+  "stem": "The phrase \"charming to a child but frustrating to a telescope\" primarily serves to:",
+  "choices": [
+   "describe a scientific instrument.",
+   "argue that twinkling stars are imaginary.",
+   "contrast a familiar view of twinkling with its effect on astronomy.",
+   "suggest that children should not use telescopes."
+  ],
+  "answer": 2,
+  "explain": "The phrase contrasts how ordinary people enjoy twinkling with how it harms telescope images. It makes the scientific problem relatable.",
+  "distractors": [
+   "It describes an effect, not an instrument.",
+   "Twinkling is real; it comes from turbulence.",
+   "(keyed) Correct: the contrast connects common experience to science.",
+   "No advice about children is given."
+  ],
+  "hint": "What two reactions to twinkling are compared?",
+  "worked": "Child: charmed.\nTelescope: frustrated.\nFunction: contrast a familiar view with a scientific one.\nAnswer: choice C.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-007",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a novel. The narrator, Kenji, has returned to his family's coffee farm in Holualoa after a year at college on the mainland.\n\nThe road up to the farm had not changed, but I had. I noticed things I used to step over: the rusted wheelbarrow by the gate, the hand-lettered sign my mother repainted every spring, the way the mist clung to the coffee rows as if it had nowhere better to be.\n\nMy father was in the drying shed, turning beans with a wooden rake. He looked up and said, \"You're late for picking season,\" which was his way of saying he had missed me.\n\nI picked up a second rake. For a while neither of us spoke. The beans hissed softly as we turned them, a sound I had forgotten I knew.\n\nAt school I had learned words for things like this: supply chains, microclimates, value-added processing. I had planned to explain them all to him. Standing in the shed, I realized he already understood them in a language older than mine, one spoken with the hands. I decided my explanations could wait.",
+  "stem": "The phrase \"as if it had nowhere better to be\" gives the mist a quality that is:",
+  "choices": [
+   "threatening and dark.",
+   "lazy and lingering.",
+   "quick and restless.",
+   "cold and painful."
+  ],
+  "answer": 1,
+  "explain": "Describing the mist as having nowhere better to be makes it seem idle and in no hurry to leave. That is a lingering, lazy quality.",
+  "distractors": [
+   "Nothing in the phrase is threatening.",
+   "(keyed) Correct: idle, staying put.",
+   "The phrase suggests the opposite of restless.",
+   "Temperature is not described."
+  ],
+  "hint": "Picture someone who has nowhere better to be. What are they like?",
+  "worked": "\"Nowhere better to be\" = idle, in no hurry.\nApplied to mist: it lingers.\nAnswer: lazy and lingering.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-008",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a novel. The narrator, Kenji, has returned to his family's coffee farm in Holualoa after a year at college on the mainland.\n\nThe road up to the farm had not changed, but I had. I noticed things I used to step over: the rusted wheelbarrow by the gate, the hand-lettered sign my mother repainted every spring, the way the mist clung to the coffee rows as if it had nowhere better to be.\n\nMy father was in the drying shed, turning beans with a wooden rake. He looked up and said, \"You're late for picking season,\" which was his way of saying he had missed me.\n\nI picked up a second rake. For a while neither of us spoke. The beans hissed softly as we turned them, a sound I had forgotten I knew.\n\nAt school I had learned words for things like this: supply chains, microclimates, value-added processing. I had planned to explain them all to him. Standing in the shed, I realized he already understood them in a language older than mine, one spoken with the hands. I decided my explanations could wait.",
+  "stem": "In the final paragraph, the contrast between the terms Kenji learned at school and \"a language older than mine, one spoken with the hands\" primarily serves to:",
+  "choices": [
+   "suggest that Kenji regrets attending college.",
+   "show Kenji recognizing that his father's practical knowledge equals what he studied.",
+   "criticize the college for teaching useless terms.",
+   "explain the meaning of \"microclimates.\""
+  ],
+  "answer": 1,
+  "explain": "Kenji realizes his father \"already understood\" the concepts through hands-on work. The contrast shows respect for that knowledge, not rejection of his own studies.",
+  "distractors": [
+   "He decides his explanations can wait, not that college was a mistake.",
+   "(keyed) Correct: the contrast honors the father's hands-on knowledge.",
+   "The terms are not called useless.",
+   "No definition is given."
+  ],
+  "hint": "What does Kenji realize about his father?",
+  "worked": "School terms vs. a language of the hands.\nKenji: father already understood them.\nPoint: respect for practical knowledge.\nAnswer: father's knowledge equals his studies.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-009",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about tsunami preparedness in Hilo.\n\nOn April 1, 1946, a tsunami generated by an earthquake near Alaska struck Hilo without warning, killing 159 people across the islands. In 1960, a second tsunami, this one from Chile, killed 61 people in Hilo, even though warning sirens had sounded hours earlier.\n\nResearchers who interviewed survivors of the 1960 event found that the problem was not the sirens themselves. Many residents did not understand what the sirens meant. Some believed the first siren was only a warning to get ready and waited for a second signal. Others had heard of earlier false alarms and decided the danger was exaggerated. A few went down to the bayfront to watch.\n\nThe lesson changed how officials approach disasters. A warning system, they concluded, is only as good as the public's understanding of it. Today Hilo tests its sirens monthly, schools hold evacuation drills, and maps of inundation zones are printed in the telephone book. The goal is not simply to make noise but to make sure everyone knows what the noise means.",
+  "stem": "The final sentence's contrast between making \"noise\" and making sure everyone knows \"what the noise means\" serves mainly to:",
+  "choices": [
+   "introduce a new problem with the sirens.",
+   "suggest that sirens should be removed.",
+   "summarize the central lesson the passage has described.",
+   "describe how the sirens sound."
+  ],
+  "answer": 2,
+  "explain": "The whole passage moves toward the idea that understanding, not just alarms, saves lives. The last sentence restates that lesson memorably.",
+  "distractors": [
+   "No new problem is raised.",
+   "Sirens are still tested monthly.",
+   "(keyed) Correct: it sums up the lesson.",
+   "The sound itself is not described."
+  ],
+  "hint": "Is the last sentence new information or a summary?",
+  "worked": "Paragraph 3 states the lesson.\nFinal sentence restates it vividly.\nFunction: summary of the central lesson.\nAnswer: summarize.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-010",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay by a woodworker about carving with koa.\n\nPeople ask why I still carve koa by hand when a machine could rough out a bowl in minutes. The honest answer is that the machine does not know the tree.\n\nKoa is unpredictable. Its grain can twist within a single board, shifting from straight to wavy to the shimmering pattern carvers call curl. A blade that cuts cleanly in one direction will tear the wood an inch later. I have to read the grain as I go, adjusting the angle of the chisel with every stroke.\n\nThis slowness is not a burden; it is the point. When I spend three weeks on a bowl, I come to know where the tree grew fast in a wet year and slow in a dry one. The finished bowl carries that history in its rings. A machine-cut bowl may be smooth, but it has been made by something that never paid attention.\n\nI do not claim that hand carving is better for everyone. I only know that for me, it is the difference between making an object and having a conversation.",
+  "stem": "The author's claim that the machine \"does not know the tree\" uses which technique?",
+  "choices": [
+   "A comparison between two kinds of trees",
+   "Personification, giving a machine a human ability it lacks",
+   "A technical definition of machine carving",
+   "Exaggeration of the machine's speed"
+  ],
+  "answer": 1,
+  "explain": "\"Knowing\" a tree is a human capacity. Saying the machine lacks it treats the machine as if it could know, which is personification used to make a point.",
+  "distractors": [
+   "Only one kind of tree, koa, is discussed.",
+   "(keyed) Correct: the line uses a human trait to make a point.",
+   "No definition is given.",
+   "Speed is mentioned elsewhere and not exaggerated here."
+  ],
+  "hint": "Can a machine \"know\" anything?",
+  "worked": "\"Know\" is a human trait.\nDenying it to a machine treats it as person-like.\nPersonification.\nAnswer: personification.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-011",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "HUMANITIES: This passage is adapted from an essay by a woodworker about carving with koa.\n\nPeople ask why I still carve koa by hand when a machine could rough out a bowl in minutes. The honest answer is that the machine does not know the tree.\n\nKoa is unpredictable. Its grain can twist within a single board, shifting from straight to wavy to the shimmering pattern carvers call curl. A blade that cuts cleanly in one direction will tear the wood an inch later. I have to read the grain as I go, adjusting the angle of the chisel with every stroke.\n\nThis slowness is not a burden; it is the point. When I spend three weeks on a bowl, I come to know where the tree grew fast in a wet year and slow in a dry one. The finished bowl carries that history in its rings. A machine-cut bowl may be smooth, but it has been made by something that never paid attention.\n\nI do not claim that hand carving is better for everyone. I only know that for me, it is the difference between making an object and having a conversation.",
+  "stem": "The last sentence of the passage compares hand carving to \"having a conversation\" in order to emphasize:",
+  "choices": [
+   "that carving is a social activity done in groups.",
+   "that the author talks aloud while working.",
+   "the back-and-forth attention between carver and wood.",
+   "how noisy hand carving can be."
+  ],
+  "answer": 2,
+  "explain": "Throughout the passage the author reads the grain and adjusts each stroke, responding to the wood. A conversation captures that two-way responsiveness.",
+  "distractors": [
+   "He describes working alone.",
+   "Taken too literally.",
+   "(keyed) Correct: the carver responds to the wood, and the wood responds back.",
+   "Noise is not discussed."
+  ],
+  "hint": "What does the author do with each stroke, according to paragraph 2?",
+  "worked": "Paragraph 2: reads grain, adjusts each stroke.\nThat is responsive, two-way.\nConversation = back-and-forth.\nAnswer: back-and-forth attention.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-012",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the nēnē, the Hawaiian goose.\n\nThe nēnē is descended from Canada geese that likely arrived in Hawaiʻi about 500,000 years ago. Over time, the birds adapted to life on lava fields rather than wetlands. Their feet became less webbed, with longer toes and stronger pads for gripping rough rock. Their wings grew shorter, since predators were rare and long flights were seldom necessary.\n\nThese adaptations served the nēnē well until humans introduced mongooses, cats, and pigs. By 1952, only about 30 nēnē survived in the wild. Ground-nesting and slow to flee, the birds had no defense against the new predators.\n\nA captive breeding program begun in the 1950s slowly rebuilt the population. Biologists raised goslings in pens and released them onto protected land. Progress was uneven; some early releases failed because the young birds had never learned to find food on their own. Later programs let parents raise their own goslings in large open enclosures, and survival improved. Today more than 3,000 nēnē live across several islands, though they remain vulnerable to cars and predators.",
+  "stem": "The first paragraph is mainly organized to:",
+  "choices": [
+   "argue for a captive breeding program.",
+   "explain how the nēnē's body changed to suit its environment.",
+   "describe how humans harmed the nēnē.",
+   "compare the nēnē with modern Canada geese."
+  ],
+  "answer": 1,
+  "explain": "The first paragraph traces ancestry and then lists adaptations of feet and wings to life on lava fields. Human harm and breeding come in later paragraphs.",
+  "distractors": [
+   "Breeding is paragraph 3.",
+   "(keyed) Correct: ancestry and physical adaptations.",
+   "Human harm is paragraph 2.",
+   "Modern Canada geese are not described."
+  ],
+  "hint": "What do the feet and wing details have in common?",
+  "worked": "Paragraph 1: ancestry, feet, wings.\nAll adaptations to lava fields.\nAnswer: body changes to environment.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-013",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the nēnē, the Hawaiian goose.\n\nThe nēnē is descended from Canada geese that likely arrived in Hawaiʻi about 500,000 years ago. Over time, the birds adapted to life on lava fields rather than wetlands. Their feet became less webbed, with longer toes and stronger pads for gripping rough rock. Their wings grew shorter, since predators were rare and long flights were seldom necessary.\n\nThese adaptations served the nēnē well until humans introduced mongooses, cats, and pigs. By 1952, only about 30 nēnē survived in the wild. Ground-nesting and slow to flee, the birds had no defense against the new predators.\n\nA captive breeding program begun in the 1950s slowly rebuilt the population. Biologists raised goslings in pens and released them onto protected land. Progress was uneven; some early releases failed because the young birds had never learned to find food on their own. Later programs let parents raise their own goslings in large open enclosures, and survival improved. Today more than 3,000 nēnē live across several islands, though they remain vulnerable to cars and predators.",
+  "stem": "As it is used in the passage, the word \"uneven\" (paragraph 3) most nearly means:",
+  "choices": [
+   "unfair.",
+   "odd-numbered.",
+   "inconsistent.",
+   "rough-surfaced."
+  ],
+  "answer": 2,
+  "explain": "The sentence goes on to say some releases failed while later ones succeeded. Progress that sometimes works and sometimes does not is inconsistent.",
+  "distractors": [
+   "Fairness is not the issue.",
+   "A math meaning that does not fit.",
+   "(keyed) Correct: progress had ups and downs.",
+   "A physical meaning of uneven, not this one."
+  ],
+  "hint": "Read what follows the semicolon.",
+  "worked": "After the semicolon: some releases failed.\nLater ones improved.\nProgress varied: inconsistent.\nAnswer: inconsistent.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-014",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story. Makana is training to join the crew of a voyaging canoe.\n\nThe first night out, Makana could not find a single star she had memorized. Clouds covered the eastern sky, and the canoe rose and fell on swells that seemed to come from everywhere at once.\n\nAuntie Pua, the navigator, sat near the stern with her eyes half closed. She was not asleep. Makana had learned that much. Pua was feeling the canoe, the way a pianist feels a keyboard without looking down.\n\n\"Which way is the big swell coming from?\" Pua asked.\n\nMakana wanted to say she did not know. Instead she closed her eyes, too, and waited. Under the confusion of small waves, she felt something slower and heavier, a long push against the left side of the hull, then a release.\n\n\"From the northeast,\" she said.\n\nPua opened one eye. \"Good,\" she said. \"Now you have a star you can feel.\" Makana kept her eyes closed a moment longer, afraid that if she opened them, the swell would disappear.",
+  "stem": "The comparison of Pua to \"a pianist\" who \"feels a keyboard without looking down\" primarily emphasizes Pua's:",
+  "choices": [
+   "love of music.",
+   "deep, practiced skill.",
+   "need for rest.",
+   "lack of attention."
+  ],
+  "answer": 1,
+  "explain": "A pianist who does not need to look has mastered the instrument through practice. The comparison shows Pua senses the canoe with similar mastery.",
+  "distractors": [
+   "Music is only the comparison, not her interest.",
+   "(keyed) Correct: mastery through practice.",
+   "The narrator says she is not asleep.",
+   "The passage says she is fully attentive, not asleep."
+  ],
+  "hint": "What does it mean when a pianist does not need to look?",
+  "worked": "Pianist without looking = expert.\nPua feels the canoe the same way.\nAnswer: practiced skill.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-015",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from a report on the shift from sugar to diversified agriculture on the Hāmākua Coast.\n\nWhen the Hāmākua Sugar Company closed in 1994, roughly 800 workers lost their jobs, and about 30,000 acres of cane land went quiet. For a region that had grown sugar for more than a century, the closure was more than an economic blow. It ended a way of life organized around the mill whistle and the harvest calendar.\n\nThe years that followed were difficult, but they were not empty. Some former workers leased small parcels and began growing vegetables, flowers, and tropical fruit. Others planted macadamia nuts or eucalyptus for timber. A few experimented with crops that had never been grown commercially on the island, such as vanilla and cacao.\n\nThese new ventures face challenges that sugar never did. Sugar had one buyer, the mill, and one market. Diversified farmers must find their own customers, often at farmers markets or through restaurants. Their incomes are less predictable. Yet many say they would not return to the old system. As one grower put it, \"The mill decided everything. Now I decide.\"",
+  "stem": "The author's statement that the years after the closure \"were difficult, but they were not empty\" primarily serves to:",
+  "choices": [
+   "argue that the mill should reopen.",
+   "describe the region's weather.",
+   "emphasize that the region was abandoned.",
+   "shift the focus from loss to the new ventures that followed."
+  ],
+  "answer": 3,
+  "explain": "The first paragraph focuses on loss; this sentence pivots to the new farms described next. It acknowledges hardship while introducing renewal.",
+  "distractors": [
+   "Growers say they would not return.",
+   "Weather is not discussed.",
+   "\"Not empty\" says the opposite of abandonment.",
+   "(keyed) Correct: a pivot from loss to renewal."
+  ],
+  "hint": "What does the rest of paragraph 2 describe?",
+  "worked": "Paragraph 1: loss.\nPivot sentence: difficult but not empty.\nRest of paragraph 2: new farms.\nAnswer: shift to new ventures.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-016",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay about the paniolo tradition of slack key guitar.\n\nSlack key guitar, or kī hōʻalu, began on the ranches. When Mexican and Spanish vaqueros came to Hawaiʻi in the 1830s to teach cattle handling, they brought guitars. After they left, the Hawaiian cowboys who kept the instruments had no one to teach them standard tunings. So they invented their own.\n\nThe word \"slack\" refers to loosening, or slackening, the strings until an open strum produces a pleasing chord. Each family developed its own tunings and guarded them closely. A player might turn away from visitors while retuning so that no one could copy the secret.\n\nThis secrecy, which might seem selfish, actually helped the art survive. Because tunings were passed down within families, each one carried a kind of signature. Listeners could sometimes tell which valley or ranch a player came from by the sound alone. When recordings in the mid-twentieth century finally spread slack key beyond family circles, they revealed not one style but dozens, each preserved by generations of careful keeping.",
+  "stem": "The third paragraph's main function is to:",
+  "choices": [
+   "define the term \"slack key.\"",
+   "explain how a practice that seems negative helped preserve slack key.",
+   "list famous slack key musicians.",
+   "describe the vaqueros' arrival."
+  ],
+  "answer": 1,
+  "explain": "The paragraph argues that secrecy, though it might seem selfish, preserved many distinct styles. Arrival and definition appear in earlier paragraphs.",
+  "distractors": [
+   "That is paragraph 2.",
+   "(keyed) Correct: reframes secrecy as preservation.",
+   "No musicians are named.",
+   "That is paragraph 1."
+  ],
+  "hint": "What claim does the paragraph's first sentence make?",
+  "worked": "Paragraph 3 opens: secrecy actually helped the art survive.\nRest supports that.\nAnswer: negative practice preserved the art.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-017",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 2,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about how new land forms on Hawaiʻi Island.\n\nWhen lava enters the ocean, the meeting is violent. Seawater flashes into steam, and the molten rock shatters into fragments of black glass. Waves grind those fragments into sand, which is why many beaches near recent eruptions are black.\n\nSome of the lava cools into a shelf called a lava delta. Deltas can extend hundreds of yards beyond the old coastline, but they are unstable. They are built on loose rubble rather than solid rock, and hot water circulating inside them weakens their structure. Sections of a delta can collapse into the sea without warning, sometimes sending blasts of steam and rock across the area where visitors once stood.\n\nOver decades, the new land changes. Ferns and lichens take root in cracks, followed by ʻōhiʻa trees, whose seeds arrive on the wind. Rain slowly breaks down the rock into soil. A lava field that was bare black stone may support a young forest within a century. In this way, the same eruptions that destroy forests also prepare the ground for new ones.",
+  "stem": "The author describes the meeting of lava and ocean as \"violent\" mainly to emphasize:",
+  "choices": [
+   "the author's fear of volcanoes.",
+   "that the ocean is dangerous to swim in.",
+   "that lava is a living thing.",
+   "the sudden, forceful reactions that occur."
+  ],
+  "answer": 3,
+  "explain": "The next sentences describe water flashing into steam and rock shattering. \"Violent\" prepares the reader for those forceful reactions.",
+  "distractors": [
+   "The author's feelings are not described.",
+   "Swimming is not discussed.",
+   "Lava is not personified as living.",
+   "(keyed) Correct: it previews the steam and shattering."
+  ],
+  "hint": "What happens right after the word \"violent\"?",
+  "worked": "Next: water flashes into steam, rock shatters.\nViolent = forceful, sudden.\nAnswer: forceful reactions.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-018",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about how new land forms on Hawaiʻi Island.\n\nWhen lava enters the ocean, the meeting is violent. Seawater flashes into steam, and the molten rock shatters into fragments of black glass. Waves grind those fragments into sand, which is why many beaches near recent eruptions are black.\n\nSome of the lava cools into a shelf called a lava delta. Deltas can extend hundreds of yards beyond the old coastline, but they are unstable. They are built on loose rubble rather than solid rock, and hot water circulating inside them weakens their structure. Sections of a delta can collapse into the sea without warning, sometimes sending blasts of steam and rock across the area where visitors once stood.\n\nOver decades, the new land changes. Ferns and lichens take root in cracks, followed by ʻōhiʻa trees, whose seeds arrive on the wind. Rain slowly breaks down the rock into soil. A lava field that was bare black stone may support a young forest within a century. In this way, the same eruptions that destroy forests also prepare the ground for new ones.",
+  "stem": "As used in the passage, the word \"unstable\" most nearly means:",
+  "choices": [
+   "constantly moving.",
+   "easily changed by opinion.",
+   "emotionally troubled.",
+   "likely to give way."
+  ],
+  "answer": 3,
+  "explain": "The paragraph explains that deltas rest on loose rubble and can collapse. \"Unstable\" here means likely to give way.",
+  "distractors": [
+   "Deltas are not described as moving constantly.",
+   "Opinions are irrelevant.",
+   "An emotional meaning that does not fit rock.",
+   "(keyed) Correct: fits the collapse described."
+  ],
+  "hint": "What does the paragraph say deltas might do?",
+  "worked": "Deltas built on rubble.\nThey can collapse.\nUnstable = likely to give way.\nAnswer: likely to give way.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-019",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about how new land forms on Hawaiʻi Island.\n\nWhen lava enters the ocean, the meeting is violent. Seawater flashes into steam, and the molten rock shatters into fragments of black glass. Waves grind those fragments into sand, which is why many beaches near recent eruptions are black.\n\nSome of the lava cools into a shelf called a lava delta. Deltas can extend hundreds of yards beyond the old coastline, but they are unstable. They are built on loose rubble rather than solid rock, and hot water circulating inside them weakens their structure. Sections of a delta can collapse into the sea without warning, sometimes sending blasts of steam and rock across the area where visitors once stood.\n\nOver decades, the new land changes. Ferns and lichens take root in cracks, followed by ʻōhiʻa trees, whose seeds arrive on the wind. Rain slowly breaks down the rock into soil. A lava field that was bare black stone may support a young forest within a century. In this way, the same eruptions that destroy forests also prepare the ground for new ones.",
+  "stem": "The third paragraph is organized mainly by:",
+  "choices": [
+   "presenting a problem and its solution.",
+   "describing stages of change over time.",
+   "listing causes of eruptions.",
+   "comparing two different volcanoes."
+  ],
+  "answer": 1,
+  "explain": "The paragraph moves from ferns and lichens, to ʻōhiʻa, to soil, to a forest within a century. That is a sequence of stages over time.",
+  "distractors": [
+   "No problem-solution structure appears.",
+   "(keyed) Correct: a time sequence of recovery.",
+   "Causes of eruptions are not discussed.",
+   "Only one process is described, not two volcanoes."
+  ],
+  "hint": "Note words like \"followed by\" and \"within a century.\"",
+  "worked": "First: ferns and lichens.\nThen: ʻōhiʻa trees.\nOver time: soil, forest.\nStructure: stages over time.\nAnswer: stages over time.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-craft-020",
+  "section": "reading",
+  "skill": "reading-craft",
+  "difficulty": 3,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about how new land forms on Hawaiʻi Island.\n\nWhen lava enters the ocean, the meeting is violent. Seawater flashes into steam, and the molten rock shatters into fragments of black glass. Waves grind those fragments into sand, which is why many beaches near recent eruptions are black.\n\nSome of the lava cools into a shelf called a lava delta. Deltas can extend hundreds of yards beyond the old coastline, but they are unstable. They are built on loose rubble rather than solid rock, and hot water circulating inside them weakens their structure. Sections of a delta can collapse into the sea without warning, sometimes sending blasts of steam and rock across the area where visitors once stood.\n\nOver decades, the new land changes. Ferns and lichens take root in cracks, followed by ʻōhiʻa trees, whose seeds arrive on the wind. Rain slowly breaks down the rock into soil. A lava field that was bare black stone may support a young forest within a century. In this way, the same eruptions that destroy forests also prepare the ground for new ones.",
+  "stem": "The final sentence of the passage primarily serves to:",
+  "choices": [
+   "introduce a new topic about forest fires.",
+   "warn readers about visiting lava fields.",
+   "contradict the passage's earlier claims.",
+   "present an idea that ties together destruction and renewal."
+  ],
+  "answer": 3,
+  "explain": "The passage describes destructive lava and then new forests. The final sentence connects both: the same eruptions destroy and prepare.",
+  "distractors": [
+   "Forest fires are not discussed.",
+   "The warning came in paragraph 2; the last sentence is a reflection.",
+   "It extends, not contradicts, the earlier points.",
+   "(keyed) Correct: it links destruction and renewal."
+  ],
+  "hint": "Does the final sentence look back or introduce something new?",
+  "worked": "Earlier: lava destroys, new land forms.\nParagraph 3: forests grow back.\nLast sentence: same eruptions do both.\nAnswer: ties destruction and renewal.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-001",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story about a girl helping at her grandfather's ranch in Waimea.\n\nLeilani had been awake since four, but the corral still felt like a dream. Fog pressed against the fence posts, and the horses were only shapes until they breathed. Her grandfather moved among them without hurry, checking a hoof here, a cinch there, speaking in the low voice he used for animals and for people he trusted.\n\n\"You saddle Kahu,\" he said, and handed her the blanket.\n\nShe had watched him do it a hundred times. Now her hands forgot everything. The blanket slid; the saddle landed crooked. Kahu shifted his weight and sighed, a long patient sound, as if he had expected this.\n\nHer grandfather did not take the saddle from her. He leaned on the rail and waited. When she finally pulled the cinch tight, he walked over, ran two fingers under it, and nodded once.\n\nThat nod stayed with her all morning, warmer than the sun when it finally burned through the fog.",
+  "stem": "According to the passage, what does Leilani's grandfather do when she first saddles Kahu incorrectly?",
+  "choices": [
+   "He takes the saddle and fixes it himself.",
+   "He tells her to try a calmer horse.",
+   "He explains each step aloud.",
+   "He leans on the rail and waits."
+  ],
+  "answer": 3,
+  "explain": "The passage states directly that he \"did not take the saddle from her. He leaned on the rail and waited.\" Detail questions are answered by returning to the line.",
+  "distractors": [
+   "The passage says he did not take the saddle.",
+   "No other horse is mentioned.",
+   "He says nothing while she works.",
+   "(keyed) Correct: stated directly in the passage."
+  ],
+  "hint": "Find the paragraph that begins with \"Her grandfather did not...\"",
+  "worked": "Locate the moment after the saddle lands crooked.\nText: \"He leaned on the rail and waited.\"\nMatch to choice D.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-002",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story about a girl helping at her grandfather's ranch in Waimea.\n\nLeilani had been awake since four, but the corral still felt like a dream. Fog pressed against the fence posts, and the horses were only shapes until they breathed. Her grandfather moved among them without hurry, checking a hoof here, a cinch there, speaking in the low voice he used for animals and for people he trusted.\n\n\"You saddle Kahu,\" he said, and handed her the blanket.\n\nShe had watched him do it a hundred times. Now her hands forgot everything. The blanket slid; the saddle landed crooked. Kahu shifted his weight and sighed, a long patient sound, as if he had expected this.\n\nHer grandfather did not take the saddle from her. He leaned on the rail and waited. When she finally pulled the cinch tight, he walked over, ran two fingers under it, and nodded once.\n\nThat nod stayed with her all morning, warmer than the sun when it finally burned through the fog.",
+  "stem": "The passage indicates that the grandfather checks the cinch by:",
+  "choices": [
+   "watching how Kahu walks.",
+   "pulling it as hard as he can.",
+   "asking Leilani whether it is tight.",
+   "running two fingers under it."
+  ],
+  "answer": 3,
+  "explain": "The text says he \"ran two fingers under it, and nodded once.\" The other actions never happen.",
+  "distractors": [
+   "He does not watch Kahu walk.",
+   "He does not pull it.",
+   "He does not ask her anything.",
+   "(keyed) Correct: the stated action."
+  ],
+  "hint": "Look near the end, just before the nod.",
+  "worked": "Find \"When she finally pulled the cinch tight.\"\nNext action: ran two fingers under it.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-003",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about the economics of Kona coffee.\n\nKona coffee is grown on roughly 600 farms along a twenty-mile strip of the island's western slopes. Most of these farms are small; the typical operation covers fewer than five acres and is run by a single family. That scale shapes nearly every part of the business.\n\nBecause small farms cannot afford large processing equipment, many growers sell their ripe cherry to mills that wash, dry, and roast it. Others process their own beans and sell directly to visitors, earning several times more per pound. The direct-sale model, however, demands hours that many farmers simply do not have, since a large share of growers also hold jobs off the farm.\n\nThe label itself is a source of tension. State law allows a blend containing as little as 10 percent Kona beans to carry the word \"Kona\" on its package. Many farmers argue that such blends confuse buyers and depress prices for pure Kona coffee. Supporters of the rule counter that blends introduce new customers to the region's name. The dispute has continued for decades, and it reveals how much the farmers' fortunes depend on a single word.",
+  "stem": "According to the passage, the typical Kona coffee farm covers:",
+  "choices": [
+   "fewer than five acres.",
+   "roughly 600 acres.",
+   "more than fifty acres.",
+   "about twenty acres."
+  ],
+  "answer": 0,
+  "explain": "The passage says \"the typical operation covers fewer than five acres.\" Twenty is the length of the strip in miles, and 600 is the number of farms.",
+  "distractors": [
+   "(keyed) Correct: stated directly.",
+   "600 is the number of farms.",
+   "Not stated.",
+   "Twenty refers to miles of coastline."
+  ],
+  "hint": "Watch for numbers that describe different things.",
+  "worked": "Find \"typical operation.\"\nText: fewer than five acres.\nAnswer: choice A.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-004",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about the economics of Kona coffee.\n\nKona coffee is grown on roughly 600 farms along a twenty-mile strip of the island's western slopes. Most of these farms are small; the typical operation covers fewer than five acres and is run by a single family. That scale shapes nearly every part of the business.\n\nBecause small farms cannot afford large processing equipment, many growers sell their ripe cherry to mills that wash, dry, and roast it. Others process their own beans and sell directly to visitors, earning several times more per pound. The direct-sale model, however, demands hours that many farmers simply do not have, since a large share of growers also hold jobs off the farm.\n\nThe label itself is a source of tension. State law allows a blend containing as little as 10 percent Kona beans to carry the word \"Kona\" on its package. Many farmers argue that such blends confuse buyers and depress prices for pure Kona coffee. Supporters of the rule counter that blends introduce new customers to the region's name. The dispute has continued for decades, and it reveals how much the farmers' fortunes depend on a single word.",
+  "stem": "The passage states that farmers who process their own beans and sell directly to visitors:",
+  "choices": [
+   "work fewer hours than other farmers.",
+   "are required to blend their beans.",
+   "earn several times more per pound.",
+   "must sell to mills first."
+  ],
+  "answer": 2,
+  "explain": "The second paragraph says direct sellers earn \"several times more per pound.\" It adds that the model demands many hours, which rules out choice A.",
+  "distractors": [
+   "The model demands more hours, not fewer.",
+   "Blending is a separate issue about labels.",
+   "(keyed) Correct: stated in the passage.",
+   "They skip the mills."
+  ],
+  "hint": "Reread the sentence beginning \"Others process their own beans.\"",
+  "worked": "Locate \"Others process their own beans and sell directly.\"\nResult: earning several times more per pound.\nAnswer: choice C.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-005",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "HUMANITIES: This passage is adapted from an essay on the revival of hula.\n\nFor much of the nineteenth century, hula survived in the shadows. Missionaries had condemned it, and many Hawaiian families taught it quietly, if at all. When King David Kalākaua took the throne in 1874, he did something that seemed, to some observers, almost reckless: he brought hula back to the royal court and invited dancers to perform at his coronation.\n\nKalākaua understood that a dance is more than movement. Each hula carries a chant, and each chant carries genealogy, history, and place names that might otherwise be lost. To revive hula was to revive a library.\n\nThe revival he began did not proceed in a straight line. After his death, interest faded again. It was not until the 1960s and 1970s that a new generation of kumu hula, many of them trained by elders who had kept the old forms alive, brought the art back to the center of Hawaiian life. The Merrie Monarch Festival, named in Kalākaua's honor, became their stage. Today the festival is so selective that hālau prepare for a year or more for a single performance.",
+  "stem": "According to the passage, Kalākaua invited hula dancers to perform at:",
+  "choices": [
+   "the first Merrie Monarch Festival.",
+   "his funeral.",
+   "a missionary school.",
+   "his coronation."
+  ],
+  "answer": 3,
+  "explain": "The first paragraph states he \"invited dancers to perform at his coronation.\" The festival came much later.",
+  "distractors": [
+   "The festival was founded long after his reign.",
+   "His death is mentioned, not a funeral performance.",
+   "Missionaries condemned hula.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Look at the end of the first paragraph.",
+  "worked": "Find \"invited dancers to perform at.\"\nText: his coronation.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-006",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the observatories on Mauna Kea.\n\nAt nearly 14,000 feet, the summit of Mauna Kea sits above roughly 40 percent of Earth's atmosphere. More important for astronomers, it sits above most of the atmosphere's water vapor, which absorbs infrared light. Infrared observations allow scientists to study objects hidden behind clouds of dust, such as stars in the process of forming.\n\nThe summit offers a second advantage: stable air. Trade winds flow smoothly over the ocean for thousands of miles before reaching the island, with few mountains to stir them into turbulence. Turbulent air makes stars appear to twinkle, which is charming to a child but frustrating to a telescope. The smoother the air, the sharper the image.\n\nThese conditions come with costs. Workers must stop at a station partway up the mountain to adjust to the thin air, and many still suffer headaches at the top. Equipment must survive freezing nights and intense sunlight. Yet for a telescope, few places on Earth offer a clearer window to the universe.",
+  "stem": "According to the passage, Mauna Kea's summit sits above about what portion of Earth's atmosphere?",
+  "choices": [
+   "Most of it",
+   "60 percent",
+   "14 percent",
+   "40 percent"
+  ],
+  "answer": 3,
+  "explain": "The first sentence states that the summit sits above \"roughly 40 percent of Earth's atmosphere.\" The passage says it is above most of the water vapor, not most of the atmosphere.",
+  "distractors": [
+   "\"Most\" refers to water vapor, not the atmosphere.",
+   "Not stated.",
+   "14 comes from the height, 14,000 feet.",
+   "(keyed) Correct: stated in the first sentence."
+  ],
+  "hint": "Check the first sentence carefully: atmosphere versus water vapor.",
+  "worked": "First sentence: above roughly 40 percent of Earth's atmosphere.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-007",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the observatories on Mauna Kea.\n\nAt nearly 14,000 feet, the summit of Mauna Kea sits above roughly 40 percent of Earth's atmosphere. More important for astronomers, it sits above most of the atmosphere's water vapor, which absorbs infrared light. Infrared observations allow scientists to study objects hidden behind clouds of dust, such as stars in the process of forming.\n\nThe summit offers a second advantage: stable air. Trade winds flow smoothly over the ocean for thousands of miles before reaching the island, with few mountains to stir them into turbulence. Turbulent air makes stars appear to twinkle, which is charming to a child but frustrating to a telescope. The smoother the air, the sharper the image.\n\nThese conditions come with costs. Workers must stop at a station partway up the mountain to adjust to the thin air, and many still suffer headaches at the top. Equipment must survive freezing nights and intense sunlight. Yet for a telescope, few places on Earth offer a clearer window to the universe.",
+  "stem": "The passage states that trade winds reaching Mauna Kea are smooth because they:",
+  "choices": [
+   "blow only at night.",
+   "cross thousands of miles of ocean with few mountains to disturb them.",
+   "are warmed by volcanic heat.",
+   "contain very little water vapor."
+  ],
+  "answer": 1,
+  "explain": "The second paragraph says the winds \"flow smoothly over the ocean for thousands of miles... with few mountains to stir them into turbulence.\"",
+  "distractors": [
+   "No timing is mentioned.",
+   "(keyed) Correct: stated directly.",
+   "Volcanic heat is not mentioned.",
+   "Water vapor relates to infrared, not to smooth air."
+  ],
+  "hint": "Find the sentence about trade winds in paragraph 2.",
+  "worked": "Paragraph 2: trade winds flow smoothly over the ocean.\nReason: few mountains to stir them.\nAnswer: choice B.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-008",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a novel. The narrator, Kenji, has returned to his family's coffee farm in Holualoa after a year at college on the mainland.\n\nThe road up to the farm had not changed, but I had. I noticed things I used to step over: the rusted wheelbarrow by the gate, the hand-lettered sign my mother repainted every spring, the way the mist clung to the coffee rows as if it had nowhere better to be.\n\nMy father was in the drying shed, turning beans with a wooden rake. He looked up and said, \"You're late for picking season,\" which was his way of saying he had missed me.\n\nI picked up a second rake. For a while neither of us spoke. The beans hissed softly as we turned them, a sound I had forgotten I knew.\n\nAt school I had learned words for things like this: supply chains, microclimates, value-added processing. I had planned to explain them all to him. Standing in the shed, I realized he already understood them in a language older than mine, one spoken with the hands. I decided my explanations could wait.",
+  "stem": "According to the passage, where does Kenji find his father?",
+  "choices": [
+   "At the front gate",
+   "In the drying shed",
+   "On the road to the farm",
+   "Among the coffee rows"
+  ],
+  "answer": 1,
+  "explain": "The second paragraph says \"My father was in the drying shed, turning beans with a wooden rake.\"",
+  "distractors": [
+   "The gate is where the wheelbarrow is.",
+   "(keyed) Correct: stated directly.",
+   "Kenji is the one on the road.",
+   "The mist is in the coffee rows; his father is not."
+  ],
+  "hint": "Look at the opening of the second paragraph.",
+  "worked": "Paragraph 2: \"My father was in the drying shed.\"\nAnswer: the drying shed.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-009",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a novel. The narrator, Kenji, has returned to his family's coffee farm in Holualoa after a year at college on the mainland.\n\nThe road up to the farm had not changed, but I had. I noticed things I used to step over: the rusted wheelbarrow by the gate, the hand-lettered sign my mother repainted every spring, the way the mist clung to the coffee rows as if it had nowhere better to be.\n\nMy father was in the drying shed, turning beans with a wooden rake. He looked up and said, \"You're late for picking season,\" which was his way of saying he had missed me.\n\nI picked up a second rake. For a while neither of us spoke. The beans hissed softly as we turned them, a sound I had forgotten I knew.\n\nAt school I had learned words for things like this: supply chains, microclimates, value-added processing. I had planned to explain them all to him. Standing in the shed, I realized he already understood them in a language older than mine, one spoken with the hands. I decided my explanations could wait.",
+  "stem": "Which of the following is NOT one of the things Kenji notices on the road to the farm?",
+  "choices": [
+   "A new fence around the drying shed",
+   "A rusted wheelbarrow by the gate",
+   "Mist clinging to the coffee rows",
+   "A hand-lettered sign his mother repaints"
+  ],
+  "answer": 0,
+  "explain": "The first paragraph lists the wheelbarrow, the sign, and the mist. A new fence is never mentioned.",
+  "distractors": [
+   "(keyed) Correct: no fence is mentioned.",
+   "Listed in paragraph 1.",
+   "Listed in paragraph 1.",
+   "Listed in paragraph 1."
+  ],
+  "hint": "Check each choice against the list in the first paragraph.",
+  "worked": "List: wheelbarrow, sign, mist.\nFence: not there.\nNOT question: pick the one missing.\nAnswer: the new fence.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-010",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about tsunami preparedness in Hilo.\n\nOn April 1, 1946, a tsunami generated by an earthquake near Alaska struck Hilo without warning, killing 159 people across the islands. In 1960, a second tsunami, this one from Chile, killed 61 people in Hilo, even though warning sirens had sounded hours earlier.\n\nResearchers who interviewed survivors of the 1960 event found that the problem was not the sirens themselves. Many residents did not understand what the sirens meant. Some believed the first siren was only a warning to get ready and waited for a second signal. Others had heard of earlier false alarms and decided the danger was exaggerated. A few went down to the bayfront to watch.\n\nThe lesson changed how officials approach disasters. A warning system, they concluded, is only as good as the public's understanding of it. Today Hilo tests its sirens monthly, schools hold evacuation drills, and maps of inundation zones are printed in the telephone book. The goal is not simply to make noise but to make sure everyone knows what the noise means.",
+  "stem": "According to the passage, the 1960 tsunami originated near:",
+  "choices": [
+   "Chile.",
+   "Japan.",
+   "Hilo.",
+   "Alaska."
+  ],
+  "answer": 0,
+  "explain": "The first paragraph says the 1960 tsunami was \"from Chile.\" Alaska was the source of the 1946 tsunami.",
+  "distractors": [
+   "(keyed) Correct: stated directly.",
+   "Not mentioned.",
+   "Hilo is where it struck.",
+   "Alaska was 1946."
+  ],
+  "hint": "Keep the two dates straight.",
+  "worked": "1946: Alaska.\n1960: Chile.\nAnswer: Chile.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-011",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about tsunami preparedness in Hilo.\n\nOn April 1, 1946, a tsunami generated by an earthquake near Alaska struck Hilo without warning, killing 159 people across the islands. In 1960, a second tsunami, this one from Chile, killed 61 people in Hilo, even though warning sirens had sounded hours earlier.\n\nResearchers who interviewed survivors of the 1960 event found that the problem was not the sirens themselves. Many residents did not understand what the sirens meant. Some believed the first siren was only a warning to get ready and waited for a second signal. Others had heard of earlier false alarms and decided the danger was exaggerated. A few went down to the bayfront to watch.\n\nThe lesson changed how officials approach disasters. A warning system, they concluded, is only as good as the public's understanding of it. Today Hilo tests its sirens monthly, schools hold evacuation drills, and maps of inundation zones are printed in the telephone book. The goal is not simply to make noise but to make sure everyone knows what the noise means.",
+  "stem": "The passage lists all of the following as reasons some residents did not evacuate in 1960 EXCEPT:",
+  "choices": [
+   "some doubted the danger because of earlier false alarms.",
+   "some went to the bayfront to watch.",
+   "the sirens could not be heard in some neighborhoods.",
+   "some waited for a second signal."
+  ],
+  "answer": 2,
+  "explain": "The passage says \"the problem was not the sirens themselves\" and lists waiting for a second signal, doubts from false alarms, and going to watch. Inaudible sirens is not a reason given.",
+  "distractors": [
+   "Listed.",
+   "Listed.",
+   "(keyed) Correct: the passage specifically says the sirens were not the problem.",
+   "Listed."
+  ],
+  "hint": "The passage says what the problem was NOT. Start there.",
+  "worked": "Text: the problem was not the sirens themselves.\nReasons listed: second signal, false alarms, watching.\nMissing: sirens inaudible.\nAnswer: the sirens could not be heard.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-012",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay by a woodworker about carving with koa.\n\nPeople ask why I still carve koa by hand when a machine could rough out a bowl in minutes. The honest answer is that the machine does not know the tree.\n\nKoa is unpredictable. Its grain can twist within a single board, shifting from straight to wavy to the shimmering pattern carvers call curl. A blade that cuts cleanly in one direction will tear the wood an inch later. I have to read the grain as I go, adjusting the angle of the chisel with every stroke.\n\nThis slowness is not a burden; it is the point. When I spend three weeks on a bowl, I come to know where the tree grew fast in a wet year and slow in a dry one. The finished bowl carries that history in its rings. A machine-cut bowl may be smooth, but it has been made by something that never paid attention.\n\nI do not claim that hand carving is better for everyone. I only know that for me, it is the difference between making an object and having a conversation.",
+  "stem": "According to the woodworker, why does a blade that cuts cleanly in one direction tear the wood \"an inch later\"?",
+  "choices": [
+   "Koa contains hard mineral deposits.",
+   "The grain of koa can change direction within a single board.",
+   "The blade becomes dull after one stroke.",
+   "The carver loses concentration."
+  ],
+  "answer": 1,
+  "explain": "The second paragraph explains that koa's grain \"can twist within a single board,\" so the angle that works in one spot fails in the next.",
+  "distractors": [
+   "Minerals are not mentioned.",
+   "(keyed) Correct: the grain shifts.",
+   "Dull blades are not mentioned.",
+   "The author emphasizes close attention, not lost concentration."
+  ],
+  "hint": "Read the sentence before the one about the blade.",
+  "worked": "Text: grain can twist within a single board.\nSo the right cutting angle keeps changing.\nAnswer: the grain changes direction.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-013",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the nēnē, the Hawaiian goose.\n\nThe nēnē is descended from Canada geese that likely arrived in Hawaiʻi about 500,000 years ago. Over time, the birds adapted to life on lava fields rather than wetlands. Their feet became less webbed, with longer toes and stronger pads for gripping rough rock. Their wings grew shorter, since predators were rare and long flights were seldom necessary.\n\nThese adaptations served the nēnē well until humans introduced mongooses, cats, and pigs. By 1952, only about 30 nēnē survived in the wild. Ground-nesting and slow to flee, the birds had no defense against the new predators.\n\nA captive breeding program begun in the 1950s slowly rebuilt the population. Biologists raised goslings in pens and released them onto protected land. Progress was uneven; some early releases failed because the young birds had never learned to find food on their own. Later programs let parents raise their own goslings in large open enclosures, and survival improved. Today more than 3,000 nēnē live across several islands, though they remain vulnerable to cars and predators.",
+  "stem": "According to the passage, roughly how many nēnē survived in the wild in 1952?",
+  "choices": [
+   "About 30",
+   "About 500",
+   "About 300",
+   "About 3,000"
+  ],
+  "answer": 0,
+  "explain": "The second paragraph says \"By 1952, only about 30 nēnē survived in the wild.\" 3,000 is today's population.",
+  "distractors": [
+   "(keyed) Correct: stated directly.",
+   "500 comes from 500,000 years.",
+   "Not stated.",
+   "3,000 is today's number."
+  ],
+  "hint": "Watch for numbers from different time periods.",
+  "worked": "Find \"By 1952.\"\nText: only about 30.\nAnswer: about 30.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-014",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the nēnē, the Hawaiian goose.\n\nThe nēnē is descended from Canada geese that likely arrived in Hawaiʻi about 500,000 years ago. Over time, the birds adapted to life on lava fields rather than wetlands. Their feet became less webbed, with longer toes and stronger pads for gripping rough rock. Their wings grew shorter, since predators were rare and long flights were seldom necessary.\n\nThese adaptations served the nēnē well until humans introduced mongooses, cats, and pigs. By 1952, only about 30 nēnē survived in the wild. Ground-nesting and slow to flee, the birds had no defense against the new predators.\n\nA captive breeding program begun in the 1950s slowly rebuilt the population. Biologists raised goslings in pens and released them onto protected land. Progress was uneven; some early releases failed because the young birds had never learned to find food on their own. Later programs let parents raise their own goslings in large open enclosures, and survival improved. Today more than 3,000 nēnē live across several islands, though they remain vulnerable to cars and predators.",
+  "stem": "According to the passage, why did some early releases of captive-bred nēnē fail?",
+  "choices": [
+   "The birds flew back to their pens.",
+   "The release sites had no fresh water.",
+   "Disease spread among the released birds.",
+   "The young birds had never learned to find food on their own."
+  ],
+  "answer": 3,
+  "explain": "The third paragraph says \"some early releases failed because the young birds had never learned to find food on their own.\"",
+  "distractors": [
+   "Not mentioned.",
+   "Water is not mentioned.",
+   "Disease is not mentioned.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Find the word \"failed\" in paragraph 3.",
+  "worked": "Paragraph 3: early releases failed.\nReason: never learned to find food.\nAnswer: choice about finding food.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-015",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story. Makana is training to join the crew of a voyaging canoe.\n\nThe first night out, Makana could not find a single star she had memorized. Clouds covered the eastern sky, and the canoe rose and fell on swells that seemed to come from everywhere at once.\n\nAuntie Pua, the navigator, sat near the stern with her eyes half closed. She was not asleep. Makana had learned that much. Pua was feeling the canoe, the way a pianist feels a keyboard without looking down.\n\n\"Which way is the big swell coming from?\" Pua asked.\n\nMakana wanted to say she did not know. Instead she closed her eyes, too, and waited. Under the confusion of small waves, she felt something slower and heavier, a long push against the left side of the hull, then a release.\n\n\"From the northeast,\" she said.\n\nPua opened one eye. \"Good,\" she said. \"Now you have a star you can feel.\" Makana kept her eyes closed a moment longer, afraid that if she opened them, the swell would disappear.",
+  "stem": "According to the passage, why can Makana not find the stars she memorized on the first night?",
+  "choices": [
+   "She has forgotten them.",
+   "Pua tells her not to look.",
+   "The moon is too bright.",
+   "Clouds cover the eastern sky."
+  ],
+  "answer": 3,
+  "explain": "The first paragraph says \"Clouds covered the eastern sky.\" The stars are hidden, not forgotten.",
+  "distractors": [
+   "She memorized them; they are hidden.",
+   "Pua says nothing about the stars at first.",
+   "The moon is not mentioned.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Reread the first two sentences.",
+  "worked": "Sentence 2: Clouds covered the eastern sky.\nAnswer: clouds.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-016",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story. Makana is training to join the crew of a voyaging canoe.\n\nThe first night out, Makana could not find a single star she had memorized. Clouds covered the eastern sky, and the canoe rose and fell on swells that seemed to come from everywhere at once.\n\nAuntie Pua, the navigator, sat near the stern with her eyes half closed. She was not asleep. Makana had learned that much. Pua was feeling the canoe, the way a pianist feels a keyboard without looking down.\n\n\"Which way is the big swell coming from?\" Pua asked.\n\nMakana wanted to say she did not know. Instead she closed her eyes, too, and waited. Under the confusion of small waves, she felt something slower and heavier, a long push against the left side of the hull, then a release.\n\n\"From the northeast,\" she said.\n\nPua opened one eye. \"Good,\" she said. \"Now you have a star you can feel.\" Makana kept her eyes closed a moment longer, afraid that if she opened them, the swell would disappear.",
+  "stem": "When Makana closes her eyes, what does she feel under the small waves?",
+  "choices": [
+   "Wind on her face from the east",
+   "The canoe beginning to turn",
+   "A sudden drop in temperature",
+   "A slower, heavier push against the left side of the hull"
+  ],
+  "answer": 3,
+  "explain": "The passage describes \"something slower and heavier, a long push against the left side of the hull, then a release.\"",
+  "distractors": [
+   "Wind is not mentioned.",
+   "No turn is mentioned.",
+   "Temperature is not mentioned.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Find the sentence beginning \"Under the confusion of small waves.\"",
+  "worked": "Locate the sentence.\nText: slower and heavier, a long push against the left side.\nAnswer: the heavy push.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-017",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from a report on the shift from sugar to diversified agriculture on the Hāmākua Coast.\n\nWhen the Hāmākua Sugar Company closed in 1994, roughly 800 workers lost their jobs, and about 30,000 acres of cane land went quiet. For a region that had grown sugar for more than a century, the closure was more than an economic blow. It ended a way of life organized around the mill whistle and the harvest calendar.\n\nThe years that followed were difficult, but they were not empty. Some former workers leased small parcels and began growing vegetables, flowers, and tropical fruit. Others planted macadamia nuts or eucalyptus for timber. A few experimented with crops that had never been grown commercially on the island, such as vanilla and cacao.\n\nThese new ventures face challenges that sugar never did. Sugar had one buyer, the mill, and one market. Diversified farmers must find their own customers, often at farmers markets or through restaurants. Their incomes are less predictable. Yet many say they would not return to the old system. As one grower put it, \"The mill decided everything. Now I decide.\"",
+  "stem": "According to the passage, how many workers lost their jobs when the Hāmākua Sugar Company closed?",
+  "choices": [
+   "About 30,000",
+   "About 1,994",
+   "More than 100",
+   "Roughly 800"
+  ],
+  "answer": 3,
+  "explain": "The first sentence says \"roughly 800 workers lost their jobs.\" 30,000 is acres; 1994 is the year.",
+  "distractors": [
+   "30,000 refers to acres.",
+   "1994 is the year.",
+   "\"More than a century\" refers to years.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Match each number to what it counts.",
+  "worked": "800: workers.\n30,000: acres.\nAnswer: roughly 800.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-018",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from a report on the shift from sugar to diversified agriculture on the Hāmākua Coast.\n\nWhen the Hāmākua Sugar Company closed in 1994, roughly 800 workers lost their jobs, and about 30,000 acres of cane land went quiet. For a region that had grown sugar for more than a century, the closure was more than an economic blow. It ended a way of life organized around the mill whistle and the harvest calendar.\n\nThe years that followed were difficult, but they were not empty. Some former workers leased small parcels and began growing vegetables, flowers, and tropical fruit. Others planted macadamia nuts or eucalyptus for timber. A few experimented with crops that had never been grown commercially on the island, such as vanilla and cacao.\n\nThese new ventures face challenges that sugar never did. Sugar had one buyer, the mill, and one market. Diversified farmers must find their own customers, often at farmers markets or through restaurants. Their incomes are less predictable. Yet many say they would not return to the old system. As one grower put it, \"The mill decided everything. Now I decide.\"",
+  "stem": "The passage mentions all of the following as crops planted after the sugar mill closed EXCEPT:",
+  "choices": [
+   "pineapple.",
+   "eucalyptus.",
+   "macadamia nuts.",
+   "vanilla."
+  ],
+  "answer": 0,
+  "explain": "The second paragraph lists vegetables, flowers, tropical fruit, macadamia nuts, eucalyptus, vanilla, and cacao. Pineapple is not named.",
+  "distractors": [
+   "(keyed) Correct: not mentioned.",
+   "Mentioned.",
+   "Mentioned.",
+   "Mentioned."
+  ],
+  "hint": "Scan paragraph 2 for each crop.",
+  "worked": "Listed: macadamia, eucalyptus, vanilla, cacao, vegetables, flowers, fruit.\nMissing: pineapple.\nAnswer: pineapple.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-019",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 1,
+  "passage": "HUMANITIES: This passage is adapted from an essay about the paniolo tradition of slack key guitar.\n\nSlack key guitar, or kī hōʻalu, began on the ranches. When Mexican and Spanish vaqueros came to Hawaiʻi in the 1830s to teach cattle handling, they brought guitars. After they left, the Hawaiian cowboys who kept the instruments had no one to teach them standard tunings. So they invented their own.\n\nThe word \"slack\" refers to loosening, or slackening, the strings until an open strum produces a pleasing chord. Each family developed its own tunings and guarded them closely. A player might turn away from visitors while retuning so that no one could copy the secret.\n\nThis secrecy, which might seem selfish, actually helped the art survive. Because tunings were passed down within families, each one carried a kind of signature. Listeners could sometimes tell which valley or ranch a player came from by the sound alone. When recordings in the mid-twentieth century finally spread slack key beyond family circles, they revealed not one style but dozens, each preserved by generations of careful keeping.",
+  "stem": "According to the passage, what does \"slack\" in \"slack key\" refer to?",
+  "choices": [
+   "Loosening the guitar strings",
+   "A relaxed playing style",
+   "Playing without a pick",
+   "A type of ranch rope"
+  ],
+  "answer": 0,
+  "explain": "The second paragraph says \"slack\" refers to \"loosening, or slackening, the strings.\"",
+  "distractors": [
+   "(keyed) Correct: stated directly.",
+   "A plausible guess but not what the passage says.",
+   "Picks are not mentioned.",
+   "Ropes are not mentioned."
+  ],
+  "hint": "Find the definition in paragraph 2.",
+  "worked": "Paragraph 2: slack = loosening the strings.\nAnswer: loosening the strings.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-detail-020",
+  "section": "reading",
+  "skill": "reading-detail",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay about the paniolo tradition of slack key guitar.\n\nSlack key guitar, or kī hōʻalu, began on the ranches. When Mexican and Spanish vaqueros came to Hawaiʻi in the 1830s to teach cattle handling, they brought guitars. After they left, the Hawaiian cowboys who kept the instruments had no one to teach them standard tunings. So they invented their own.\n\nThe word \"slack\" refers to loosening, or slackening, the strings until an open strum produces a pleasing chord. Each family developed its own tunings and guarded them closely. A player might turn away from visitors while retuning so that no one could copy the secret.\n\nThis secrecy, which might seem selfish, actually helped the art survive. Because tunings were passed down within families, each one carried a kind of signature. Listeners could sometimes tell which valley or ranch a player came from by the sound alone. When recordings in the mid-twentieth century finally spread slack key beyond family circles, they revealed not one style but dozens, each preserved by generations of careful keeping.",
+  "stem": "According to the passage, why did Hawaiian cowboys invent their own guitar tunings?",
+  "choices": [
+   "Ranch owners required unique tunings.",
+   "Standard tunings sounded wrong in Hawaiian songs.",
+   "Their guitars had fewer strings.",
+   "No one remained to teach them standard tunings."
+  ],
+  "answer": 3,
+  "explain": "The first paragraph says that after the vaqueros left, the cowboys \"had no one to teach them standard tunings. So they invented their own.\"",
+  "distractors": [
+   "Not stated.",
+   "Not stated.",
+   "Not stated.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Look for \"So they invented their own.\" What comes before it?",
+  "worked": "Before: had no one to teach them standard tunings.\nAnswer: no one to teach them.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-001",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story about a girl helping at her grandfather's ranch in Waimea.\n\nLeilani had been awake since four, but the corral still felt like a dream. Fog pressed against the fence posts, and the horses were only shapes until they breathed. Her grandfather moved among them without hurry, checking a hoof here, a cinch there, speaking in the low voice he used for animals and for people he trusted.\n\n\"You saddle Kahu,\" he said, and handed her the blanket.\n\nShe had watched him do it a hundred times. Now her hands forgot everything. The blanket slid; the saddle landed crooked. Kahu shifted his weight and sighed, a long patient sound, as if he had expected this.\n\nHer grandfather did not take the saddle from her. He leaned on the rail and waited. When she finally pulled the cinch tight, he walked over, ran two fingers under it, and nodded once.\n\nThat nod stayed with her all morning, warmer than the sun when it finally burned through the fog.",
+  "stem": "It can reasonably be inferred that the grandfather's single nod signals:",
+  "choices": [
+   "approval of Leilani's work.",
+   "that Kahu is too tired to ride.",
+   "that the fog is lifting.",
+   "impatience with how long she took."
+  ],
+  "answer": 0,
+  "explain": "He checks the cinch and then nods; the nod stays with Leilani \"warmer than the sun.\" That warmth only makes sense if the nod meant approval.",
+  "distractors": [
+   "(keyed) Correct: the check, the nod, and Leilani's warm feeling all point to approval.",
+   "Kahu's condition is not tied to the nod.",
+   "The fog lifts later and is unrelated to the nod.",
+   "Nothing suggests impatience; he waited calmly."
+  ],
+  "hint": "How does Leilani feel about the nod?",
+  "worked": "He checks the cinch, then nods.\nLeilani feels warmed by it all morning.\nA warm feeling follows praise.\nSmallest step: approval.\nAnswer: choice A.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-002",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story about a girl helping at her grandfather's ranch in Waimea.\n\nLeilani had been awake since four, but the corral still felt like a dream. Fog pressed against the fence posts, and the horses were only shapes until they breathed. Her grandfather moved among them without hurry, checking a hoof here, a cinch there, speaking in the low voice he used for animals and for people he trusted.\n\n\"You saddle Kahu,\" he said, and handed her the blanket.\n\nShe had watched him do it a hundred times. Now her hands forgot everything. The blanket slid; the saddle landed crooked. Kahu shifted his weight and sighed, a long patient sound, as if he had expected this.\n\nHer grandfather did not take the saddle from her. He leaned on the rail and waited. When she finally pulled the cinch tight, he walked over, ran two fingers under it, and nodded once.\n\nThat nod stayed with her all morning, warmer than the sun when it finally burned through the fog.",
+  "stem": "The description of the grandfather speaking \"in the low voice he used for animals and for people he trusted\" most strongly suggests that he:",
+  "choices": [
+   "does not trust Leilani yet.",
+   "is too tired to speak loudly in the morning.",
+   "prefers horses to people.",
+   "is calm and respectful toward those he works with."
+  ],
+  "answer": 3,
+  "explain": "The low voice is reserved for animals and trusted people, which suggests a calm, respectful manner. Nothing implies he prefers horses or distrusts Leilani.",
+  "distractors": [
+   "The passage gives no sign that he distrusts her, and he hands her the job.",
+   "Tiredness is never suggested.",
+   "He uses the same voice for trusted people, so no preference is shown.",
+   "(keyed) Correct: the voice reflects calm and respect."
+  ],
+  "hint": "Who else gets this same voice?",
+  "worked": "Voice used for animals and trusted people.\nImplies gentleness and respect.\nNo comparison favoring horses.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-003",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about the economics of Kona coffee.\n\nKona coffee is grown on roughly 600 farms along a twenty-mile strip of the island's western slopes. Most of these farms are small; the typical operation covers fewer than five acres and is run by a single family. That scale shapes nearly every part of the business.\n\nBecause small farms cannot afford large processing equipment, many growers sell their ripe cherry to mills that wash, dry, and roast it. Others process their own beans and sell directly to visitors, earning several times more per pound. The direct-sale model, however, demands hours that many farmers simply do not have, since a large share of growers also hold jobs off the farm.\n\nThe label itself is a source of tension. State law allows a blend containing as little as 10 percent Kona beans to carry the word \"Kona\" on its package. Many farmers argue that such blends confuse buyers and depress prices for pure Kona coffee. Supporters of the rule counter that blends introduce new customers to the region's name. The dispute has continued for decades, and it reveals how much the farmers' fortunes depend on a single word.",
+  "stem": "Based on the passage, which statement about many Kona coffee farmers is most strongly supported?",
+  "choices": [
+   "They prefer selling to mills because mills pay more.",
+   "They support the 10 percent blend rule.",
+   "They own large processing equipment.",
+   "They lack time to pursue direct sales because they also work other jobs."
+  ],
+  "answer": 3,
+  "explain": "The passage says direct sales demand hours many farmers do not have, \"since a large share of growers also hold jobs off the farm.\" That directly supports choice D.",
+  "distractors": [
+   "The passage says direct sales pay more, not mills.",
+   "The passage says many farmers oppose the rule.",
+   "The passage says small farms cannot afford large equipment.",
+   "(keyed) Correct: the passage links lack of time to off-farm jobs."
+  ],
+  "hint": "What reason does the passage give for farmers not selling directly?",
+  "worked": "Direct sales pay more but take time.\nMany growers hold off-farm jobs.\nSo they lack time.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-004",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay on the revival of hula.\n\nFor much of the nineteenth century, hula survived in the shadows. Missionaries had condemned it, and many Hawaiian families taught it quietly, if at all. When King David Kalākaua took the throne in 1874, he did something that seemed, to some observers, almost reckless: he brought hula back to the royal court and invited dancers to perform at his coronation.\n\nKalākaua understood that a dance is more than movement. Each hula carries a chant, and each chant carries genealogy, history, and place names that might otherwise be lost. To revive hula was to revive a library.\n\nThe revival he began did not proceed in a straight line. After his death, interest faded again. It was not until the 1960s and 1970s that a new generation of kumu hula, many of them trained by elders who had kept the old forms alive, brought the art back to the center of Hawaiian life. The Merrie Monarch Festival, named in Kalākaua's honor, became their stage. Today the festival is so selective that hālau prepare for a year or more for a single performance.",
+  "stem": "The passage most strongly suggests that the kumu hula of the 1960s and 1970s were able to revive hula partly because:",
+  "choices": [
+   "the government required hula in schools.",
+   "missionaries changed their views.",
+   "elders had preserved the older forms.",
+   "Kalākaua had written down every chant."
+  ],
+  "answer": 2,
+  "explain": "The passage says many of these kumu were \"trained by elders who had kept the old forms alive.\" That preservation made the later revival possible.",
+  "distractors": [
+   "No government requirement is mentioned.",
+   "Missionary views are not discussed for that period.",
+   "(keyed) Correct: elders kept the forms alive.",
+   "Written chants are not mentioned."
+  ],
+  "hint": "Who trained the new generation?",
+  "worked": "Text: trained by elders who had kept the old forms alive.\nPreservation enabled revival.\nAnswer: choice C.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-005",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "HUMANITIES: This passage is adapted from an essay on the revival of hula.\n\nFor much of the nineteenth century, hula survived in the shadows. Missionaries had condemned it, and many Hawaiian families taught it quietly, if at all. When King David Kalākaua took the throne in 1874, he did something that seemed, to some observers, almost reckless: he brought hula back to the royal court and invited dancers to perform at his coronation.\n\nKalākaua understood that a dance is more than movement. Each hula carries a chant, and each chant carries genealogy, history, and place names that might otherwise be lost. To revive hula was to revive a library.\n\nThe revival he began did not proceed in a straight line. After his death, interest faded again. It was not until the 1960s and 1970s that a new generation of kumu hula, many of them trained by elders who had kept the old forms alive, brought the art back to the center of Hawaiian life. The Merrie Monarch Festival, named in Kalākaua's honor, became their stage. Today the festival is so selective that hālau prepare for a year or more for a single performance.",
+  "stem": "The author's comment that Kalākaua's action seemed \"almost reckless\" to some observers suggests that:",
+  "choices": [
+   "reviving hula publicly went against the attitudes of influential groups at the time.",
+   "Kalākaua was known for dangerous behavior.",
+   "the coronation was poorly organized.",
+   "dancers were reluctant to perform."
+  ],
+  "answer": 0,
+  "explain": "Because missionaries had condemned hula, bringing it openly to the court risked disapproval. \"Reckless\" reflects how bold the move looked to those who opposed hula.",
+  "distractors": [
+   "(keyed) Correct: the move defied prevailing disapproval.",
+   "No other behavior of his is described.",
+   "Organization is not discussed.",
+   "Nothing suggests dancers were unwilling."
+  ],
+  "hint": "What had happened to hula before Kalākaua's reign?",
+  "worked": "Missionaries condemned hula; it was taught quietly.\nReviving it publicly was bold.\nTo some, it looked reckless.\nAnswer: choice A.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-006",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the observatories on Mauna Kea.\n\nAt nearly 14,000 feet, the summit of Mauna Kea sits above roughly 40 percent of Earth's atmosphere. More important for astronomers, it sits above most of the atmosphere's water vapor, which absorbs infrared light. Infrared observations allow scientists to study objects hidden behind clouds of dust, such as stars in the process of forming.\n\nThe summit offers a second advantage: stable air. Trade winds flow smoothly over the ocean for thousands of miles before reaching the island, with few mountains to stir them into turbulence. Turbulent air makes stars appear to twinkle, which is charming to a child but frustrating to a telescope. The smoother the air, the sharper the image.\n\nThese conditions come with costs. Workers must stop at a station partway up the mountain to adjust to the thin air, and many still suffer headaches at the top. Equipment must survive freezing nights and intense sunlight. Yet for a telescope, few places on Earth offer a clearer window to the universe.",
+  "stem": "It can reasonably be inferred from the passage that a site with more turbulent air would produce telescope images that are:",
+  "choices": [
+   "more colorful.",
+   "identical.",
+   "brighter.",
+   "blurrier."
+  ],
+  "answer": 3,
+  "explain": "The passage says \"the smoother the air, the sharper the image.\" The reverse follows: more turbulent air means less sharp, or blurrier, images.",
+  "distractors": [
+   "Color is not discussed.",
+   "The passage says air quality changes image sharpness.",
+   "Brightness is not linked to turbulence.",
+   "(keyed) Correct: the reverse of smoother means sharper."
+  ],
+  "hint": "Flip the passage's \"the smoother the air\" rule.",
+  "worked": "Rule: smoother air → sharper image.\nReverse: rougher air → less sharp.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-007",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the observatories on Mauna Kea.\n\nAt nearly 14,000 feet, the summit of Mauna Kea sits above roughly 40 percent of Earth's atmosphere. More important for astronomers, it sits above most of the atmosphere's water vapor, which absorbs infrared light. Infrared observations allow scientists to study objects hidden behind clouds of dust, such as stars in the process of forming.\n\nThe summit offers a second advantage: stable air. Trade winds flow smoothly over the ocean for thousands of miles before reaching the island, with few mountains to stir them into turbulence. Turbulent air makes stars appear to twinkle, which is charming to a child but frustrating to a telescope. The smoother the air, the sharper the image.\n\nThese conditions come with costs. Workers must stop at a station partway up the mountain to adjust to the thin air, and many still suffer headaches at the top. Equipment must survive freezing nights and intense sunlight. Yet for a telescope, few places on Earth offer a clearer window to the universe.",
+  "stem": "The passage suggests that infrared observation is especially valuable because it:",
+  "choices": [
+   "makes stars twinkle less.",
+   "requires no special equipment.",
+   "works best at sea level.",
+   "lets scientists see objects that dust would otherwise hide."
+  ],
+  "answer": 3,
+  "explain": "The passage says infrared allows study of objects \"hidden behind clouds of dust, such as stars in the process of forming.\" That is its stated value.",
+  "distractors": [
+   "Twinkling is caused by turbulence, a separate issue.",
+   "Nothing suggests no equipment is needed.",
+   "The passage implies the opposite: it needs a site above water vapor.",
+   "(keyed) Correct: infrared reveals dust-hidden objects."
+  ],
+  "hint": "What does infrared let scientists study?",
+  "worked": "Text: objects hidden behind clouds of dust.\nThat is its value.\nAnswer: choice D.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-008",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 1,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a novel. The narrator, Kenji, has returned to his family's coffee farm in Holualoa after a year at college on the mainland.\n\nThe road up to the farm had not changed, but I had. I noticed things I used to step over: the rusted wheelbarrow by the gate, the hand-lettered sign my mother repainted every spring, the way the mist clung to the coffee rows as if it had nowhere better to be.\n\nMy father was in the drying shed, turning beans with a wooden rake. He looked up and said, \"You're late for picking season,\" which was his way of saying he had missed me.\n\nI picked up a second rake. For a while neither of us spoke. The beans hissed softly as we turned them, a sound I had forgotten I knew.\n\nAt school I had learned words for things like this: supply chains, microclimates, value-added processing. I had planned to explain them all to him. Standing in the shed, I realized he already understood them in a language older than mine, one spoken with the hands. I decided my explanations could wait.",
+  "stem": "Kenji's statement that his father's remark \"was his way of saying he had missed me\" suggests that his father:",
+  "choices": [
+   "did not notice Kenji had been gone.",
+   "tends to express affection indirectly.",
+   "wants Kenji to return to college.",
+   "is angry that Kenji arrived late."
+  ],
+  "answer": 1,
+  "explain": "Kenji interprets a complaint about lateness as a sign of love. That suggests his father shows affection in indirect ways rather than saying it outright.",
+  "distractors": [
+   "The remark shows he noticed the absence.",
+   "(keyed) Correct: a gruff remark carries hidden warmth.",
+   "Nothing suggests this.",
+   "Kenji explicitly reads the remark as missing him, not anger."
+  ],
+  "hint": "What does Kenji say the remark really means?",
+  "worked": "Surface: You're late.\nMeaning per Kenji: I missed you.\nSo the father expresses feeling indirectly.\nAnswer: indirect affection.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-009",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about tsunami preparedness in Hilo.\n\nOn April 1, 1946, a tsunami generated by an earthquake near Alaska struck Hilo without warning, killing 159 people across the islands. In 1960, a second tsunami, this one from Chile, killed 61 people in Hilo, even though warning sirens had sounded hours earlier.\n\nResearchers who interviewed survivors of the 1960 event found that the problem was not the sirens themselves. Many residents did not understand what the sirens meant. Some believed the first siren was only a warning to get ready and waited for a second signal. Others had heard of earlier false alarms and decided the danger was exaggerated. A few went down to the bayfront to watch.\n\nThe lesson changed how officials approach disasters. A warning system, they concluded, is only as good as the public's understanding of it. Today Hilo tests its sirens monthly, schools hold evacuation drills, and maps of inundation zones are printed in the telephone book. The goal is not simply to make noise but to make sure everyone knows what the noise means.",
+  "stem": "It can reasonably be inferred that many of the deaths in Hilo in 1960 resulted mainly from:",
+  "choices": [
+   "residents being away from home.",
+   "the tsunami being larger than the one in 1946.",
+   "a lack of any warning system.",
+   "public misunderstanding of the warning."
+  ],
+  "answer": 3,
+  "explain": "Sirens sounded hours earlier, but researchers found many residents did not understand what they meant. The passage points to misunderstanding, not the lack of a system.",
+  "distractors": [
+   "Not mentioned.",
+   "The passage does not compare wave size.",
+   "Sirens existed and sounded.",
+   "(keyed) Correct: the passage stresses that people misunderstood the sirens."
+  ],
+  "hint": "Sirens sounded hours ahead. So what went wrong?",
+  "worked": "1960: sirens sounded hours earlier.\nStill 61 died.\nResearchers: people did not understand the sirens.\nAnswer: misunderstanding.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-010",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from an article about tsunami preparedness in Hilo.\n\nOn April 1, 1946, a tsunami generated by an earthquake near Alaska struck Hilo without warning, killing 159 people across the islands. In 1960, a second tsunami, this one from Chile, killed 61 people in Hilo, even though warning sirens had sounded hours earlier.\n\nResearchers who interviewed survivors of the 1960 event found that the problem was not the sirens themselves. Many residents did not understand what the sirens meant. Some believed the first siren was only a warning to get ready and waited for a second signal. Others had heard of earlier false alarms and decided the danger was exaggerated. A few went down to the bayfront to watch.\n\nThe lesson changed how officials approach disasters. A warning system, they concluded, is only as good as the public's understanding of it. Today Hilo tests its sirens monthly, schools hold evacuation drills, and maps of inundation zones are printed in the telephone book. The goal is not simply to make noise but to make sure everyone knows what the noise means.",
+  "stem": "Based on the passage, officials would most likely view a new siren that is louder but not explained to the public as:",
+  "choices": [
+   "unnecessary because drills are enough.",
+   "dangerous because it causes panic.",
+   "insufficient on its own.",
+   "a complete solution."
+  ],
+  "answer": 2,
+  "explain": "Officials concluded that \"a warning system is only as good as the public's understanding of it.\" A louder siren without explanation would not fix that, so they would see it as insufficient.",
+  "distractors": [
+   "They use sirens and drills together.",
+   "Panic is not discussed.",
+   "(keyed) Correct: understanding matters as much as volume.",
+   "Contradicts the lesson about understanding."
+  ],
+  "hint": "What did officials conclude a warning system depends on?",
+  "worked": "Lesson: system is only as good as public understanding.\nLouder ≠ better understood.\nSo: insufficient alone.\nAnswer: insufficient on its own.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-011",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 2,
+  "passage": "HUMANITIES: This passage is adapted from an essay by a woodworker about carving with koa.\n\nPeople ask why I still carve koa by hand when a machine could rough out a bowl in minutes. The honest answer is that the machine does not know the tree.\n\nKoa is unpredictable. Its grain can twist within a single board, shifting from straight to wavy to the shimmering pattern carvers call curl. A blade that cuts cleanly in one direction will tear the wood an inch later. I have to read the grain as I go, adjusting the angle of the chisel with every stroke.\n\nThis slowness is not a burden; it is the point. When I spend three weeks on a bowl, I come to know where the tree grew fast in a wet year and slow in a dry one. The finished bowl carries that history in its rings. A machine-cut bowl may be smooth, but it has been made by something that never paid attention.\n\nI do not claim that hand carving is better for everyone. I only know that for me, it is the difference between making an object and having a conversation.",
+  "stem": "The author's statement \"I do not claim that hand carving is better for everyone\" suggests that the author:",
+  "choices": [
+   "sees hand carving as a personal choice rather than a rule for all carvers.",
+   "thinks machines produce better bowls.",
+   "is unsure whether hand carving is worth the effort.",
+   "plans to stop carving by hand."
+  ],
+  "answer": 0,
+  "explain": "After explaining why hand carving matters to him, the author limits the claim to himself. This shows he views it as a personal choice.",
+  "distractors": [
+   "(keyed) Correct: he limits the claim to his own practice.",
+   "He says machine bowls lack attention.",
+   "He is sure it is worth it for him.",
+   "Nothing suggests he will stop."
+  ],
+  "hint": "Who does the author say hand carving is right for?",
+  "worked": "Text: not better for everyone.\nText: for me, it is a conversation.\nPersonal choice.\nAnswer: personal choice.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-012",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "HUMANITIES: This passage is adapted from an essay by a woodworker about carving with koa.\n\nPeople ask why I still carve koa by hand when a machine could rough out a bowl in minutes. The honest answer is that the machine does not know the tree.\n\nKoa is unpredictable. Its grain can twist within a single board, shifting from straight to wavy to the shimmering pattern carvers call curl. A blade that cuts cleanly in one direction will tear the wood an inch later. I have to read the grain as I go, adjusting the angle of the chisel with every stroke.\n\nThis slowness is not a burden; it is the point. When I spend three weeks on a bowl, I come to know where the tree grew fast in a wet year and slow in a dry one. The finished bowl carries that history in its rings. A machine-cut bowl may be smooth, but it has been made by something that never paid attention.\n\nI do not claim that hand carving is better for everyone. I only know that for me, it is the difference between making an object and having a conversation.",
+  "stem": "It can most reasonably be inferred that the author values the three weeks spent on a bowl mainly because that time:",
+  "choices": [
+   "lets him learn the tree's history through its wood.",
+   "is required by koa carving traditions.",
+   "helps him avoid using machines that are expensive.",
+   "makes the bowl more valuable to buyers."
+  ],
+  "answer": 0,
+  "explain": "The author says that during those weeks he comes \"to know where the tree grew fast in a wet year and slow in a dry one.\" The value lies in knowing the tree.",
+  "distractors": [
+   "(keyed) Correct: time lets him know the tree's history.",
+   "No tradition requirement is mentioned.",
+   "Cost of machines is not discussed.",
+   "Price is never mentioned."
+  ],
+  "hint": "What does the author come to know during the three weeks?",
+  "worked": "Text: I come to know where the tree grew fast or slow.\nValue: learning the tree.\nAnswer: learn the tree's history.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-013",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about the nēnē, the Hawaiian goose.\n\nThe nēnē is descended from Canada geese that likely arrived in Hawaiʻi about 500,000 years ago. Over time, the birds adapted to life on lava fields rather than wetlands. Their feet became less webbed, with longer toes and stronger pads for gripping rough rock. Their wings grew shorter, since predators were rare and long flights were seldom necessary.\n\nThese adaptations served the nēnē well until humans introduced mongooses, cats, and pigs. By 1952, only about 30 nēnē survived in the wild. Ground-nesting and slow to flee, the birds had no defense against the new predators.\n\nA captive breeding program begun in the 1950s slowly rebuilt the population. Biologists raised goslings in pens and released them onto protected land. Progress was uneven; some early releases failed because the young birds had never learned to find food on their own. Later programs let parents raise their own goslings in large open enclosures, and survival improved. Today more than 3,000 nēnē live across several islands, though they remain vulnerable to cars and predators.",
+  "stem": "The passage most strongly suggests that letting parents raise their own goslings improved survival because:",
+  "choices": [
+   "goslings could learn feeding skills from their parents.",
+   "parent-raised goslings grew longer wings.",
+   "enclosures kept out all predators permanently.",
+   "parents protected goslings from cars."
+  ],
+  "answer": 0,
+  "explain": "The earlier failure was that goslings never learned to find food. Parent-raising fixed survival, so the smallest inference is that parents taught those skills.",
+  "distractors": [
+   "(keyed) Correct: it addresses the problem named just before.",
+   "Wing length changed over evolutionary time, not in the program.",
+   "The passage says birds are still vulnerable to predators.",
+   "Cars are mentioned as a current threat, not a reason for improvement."
+  ],
+  "hint": "What problem did the earlier releases have?",
+  "worked": "Problem: goslings couldn't find food.\nChange: parents raise goslings.\nResult: survival improved.\nLink: parents taught feeding.\nAnswer: learned from parents.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-014",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 2,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story. Makana is training to join the crew of a voyaging canoe.\n\nThe first night out, Makana could not find a single star she had memorized. Clouds covered the eastern sky, and the canoe rose and fell on swells that seemed to come from everywhere at once.\n\nAuntie Pua, the navigator, sat near the stern with her eyes half closed. She was not asleep. Makana had learned that much. Pua was feeling the canoe, the way a pianist feels a keyboard without looking down.\n\n\"Which way is the big swell coming from?\" Pua asked.\n\nMakana wanted to say she did not know. Instead she closed her eyes, too, and waited. Under the confusion of small waves, she felt something slower and heavier, a long push against the left side of the hull, then a release.\n\n\"From the northeast,\" she said.\n\nPua opened one eye. \"Good,\" she said. \"Now you have a star you can feel.\" Makana kept her eyes closed a moment longer, afraid that if she opened them, the swell would disappear.",
+  "stem": "Pua's comment \"Now you have a star you can feel\" suggests that she thinks:",
+  "choices": [
+   "Makana has made a mistake.",
+   "Makana should stop studying stars.",
+   "the swell can guide Makana the way a star would.",
+   "the clouds will clear soon."
+  ],
+  "answer": 2,
+  "explain": "Stars help navigators keep direction. By calling the swell a star Makana can feel, Pua means it can serve the same guiding role.",
+  "distractors": [
+   "She just said \"Good.\"",
+   "She does not dismiss star study.",
+   "(keyed) Correct: the swell replaces the hidden star as a guide.",
+   "No weather prediction is made."
+  ],
+  "hint": "What job does a star do for a navigator?",
+  "worked": "Stars give direction.\nMakana found the swell's direction.\nPua: a star you can feel.\nSo the swell guides like a star.\nAnswer: swell guides like a star.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-015",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "LITERARY NARRATIVE: This passage is adapted from a short story. Makana is training to join the crew of a voyaging canoe.\n\nThe first night out, Makana could not find a single star she had memorized. Clouds covered the eastern sky, and the canoe rose and fell on swells that seemed to come from everywhere at once.\n\nAuntie Pua, the navigator, sat near the stern with her eyes half closed. She was not asleep. Makana had learned that much. Pua was feeling the canoe, the way a pianist feels a keyboard without looking down.\n\n\"Which way is the big swell coming from?\" Pua asked.\n\nMakana wanted to say she did not know. Instead she closed her eyes, too, and waited. Under the confusion of small waves, she felt something slower and heavier, a long push against the left side of the hull, then a release.\n\n\"From the northeast,\" she said.\n\nPua opened one eye. \"Good,\" she said. \"Now you have a star you can feel.\" Makana kept her eyes closed a moment longer, afraid that if she opened them, the swell would disappear.",
+  "stem": "Makana's fear that \"if she opened them, the swell would disappear\" most strongly suggests that she:",
+  "choices": [
+   "is not yet confident in her new skill.",
+   "is afraid of the ocean.",
+   "disagrees with Pua.",
+   "wants to sleep."
+  ],
+  "answer": 0,
+  "explain": "She has just sensed the swell for the first time and worries she might lose it. That reflects a new skill she does not yet trust.",
+  "distractors": [
+   "(keyed) Correct: she fears losing a fragile new ability.",
+   "She is afraid of losing the feeling, not of the ocean.",
+   "She just answered Pua's question successfully.",
+   "Nothing suggests she wants sleep."
+  ],
+  "hint": "Why would someone be afraid to lose a feeling they just found?",
+  "worked": "She just found the swell.\nFears it will vanish.\nImplies uncertainty in the skill.\nAnswer: not yet confident.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-016",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 2,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from a report on the shift from sugar to diversified agriculture on the Hāmākua Coast.\n\nWhen the Hāmākua Sugar Company closed in 1994, roughly 800 workers lost their jobs, and about 30,000 acres of cane land went quiet. For a region that had grown sugar for more than a century, the closure was more than an economic blow. It ended a way of life organized around the mill whistle and the harvest calendar.\n\nThe years that followed were difficult, but they were not empty. Some former workers leased small parcels and began growing vegetables, flowers, and tropical fruit. Others planted macadamia nuts or eucalyptus for timber. A few experimented with crops that had never been grown commercially on the island, such as vanilla and cacao.\n\nThese new ventures face challenges that sugar never did. Sugar had one buyer, the mill, and one market. Diversified farmers must find their own customers, often at farmers markets or through restaurants. Their incomes are less predictable. Yet many say they would not return to the old system. As one grower put it, \"The mill decided everything. Now I decide.\"",
+  "stem": "The grower's statement \"The mill decided everything. Now I decide\" suggests that many diversified farmers value:",
+  "choices": [
+   "growing a single crop.",
+   "independence over predictability.",
+   "working for a large company.",
+   "high incomes over freedom."
+  ],
+  "answer": 1,
+  "explain": "The passage says incomes are now less predictable, yet growers would not return. The quote shows they prize control over their own choices.",
+  "distractors": [
+   "They grow many crops.",
+   "(keyed) Correct: they accept unpredictable income for independence.",
+   "They prefer not working for the mill.",
+   "Incomes are less predictable, and freedom is what they gain."
+  ],
+  "hint": "What did the farmers give up, and what did they gain?",
+  "worked": "Gave up: predictable income.\nGained: deciding for themselves.\nWould not return.\nAnswer: independence over predictability.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-017",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "SOCIAL SCIENCE: This passage is adapted from a report on the shift from sugar to diversified agriculture on the Hāmākua Coast.\n\nWhen the Hāmākua Sugar Company closed in 1994, roughly 800 workers lost their jobs, and about 30,000 acres of cane land went quiet. For a region that had grown sugar for more than a century, the closure was more than an economic blow. It ended a way of life organized around the mill whistle and the harvest calendar.\n\nThe years that followed were difficult, but they were not empty. Some former workers leased small parcels and began growing vegetables, flowers, and tropical fruit. Others planted macadamia nuts or eucalyptus for timber. A few experimented with crops that had never been grown commercially on the island, such as vanilla and cacao.\n\nThese new ventures face challenges that sugar never did. Sugar had one buyer, the mill, and one market. Diversified farmers must find their own customers, often at farmers markets or through restaurants. Their incomes are less predictable. Yet many say they would not return to the old system. As one grower put it, \"The mill decided everything. Now I decide.\"",
+  "stem": "The passage suggests that, compared with sugar growers, diversified farmers face greater difficulty mainly because they:",
+  "choices": [
+   "have less land available.",
+   "must find their own buyers and markets.",
+   "are not allowed to sell at farmers markets.",
+   "cannot grow crops in Hāmākua's climate."
+  ],
+  "answer": 1,
+  "explain": "The third paragraph contrasts sugar's single buyer with diversified farmers who \"must find their own customers.\" That is the main difficulty described.",
+  "distractors": [
+   "Land is not described as scarce.",
+   "(keyed) Correct: no guaranteed buyer.",
+   "They do sell at farmers markets.",
+   "Their crops grow there."
+  ],
+  "hint": "What did sugar have that the new crops lack?",
+  "worked": "Sugar: one buyer, one market.\nDiversified: must find customers.\nAnswer: must find their own buyers.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-018",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 1,
+  "passage": "HUMANITIES: This passage is adapted from an essay about the paniolo tradition of slack key guitar.\n\nSlack key guitar, or kī hōʻalu, began on the ranches. When Mexican and Spanish vaqueros came to Hawaiʻi in the 1830s to teach cattle handling, they brought guitars. After they left, the Hawaiian cowboys who kept the instruments had no one to teach them standard tunings. So they invented their own.\n\nThe word \"slack\" refers to loosening, or slackening, the strings until an open strum produces a pleasing chord. Each family developed its own tunings and guarded them closely. A player might turn away from visitors while retuning so that no one could copy the secret.\n\nThis secrecy, which might seem selfish, actually helped the art survive. Because tunings were passed down within families, each one carried a kind of signature. Listeners could sometimes tell which valley or ranch a player came from by the sound alone. When recordings in the mid-twentieth century finally spread slack key beyond family circles, they revealed not one style but dozens, each preserved by generations of careful keeping.",
+  "stem": "The detail that a player might turn away while retuning suggests that:",
+  "choices": [
+   "players were embarrassed by their mistakes.",
+   "families considered their tunings valuable and private.",
+   "visitors were not allowed on ranches.",
+   "retuning was considered rude."
+  ],
+  "answer": 1,
+  "explain": "The passage says families \"guarded them closely,\" and turning away kept the secret from being copied. That shows tunings were treated as valuable and private.",
+  "distractors": [
+   "Mistakes are not mentioned.",
+   "(keyed) Correct: secrecy protected something valued.",
+   "Visitors were present, just not shown the tuning.",
+   "Rudeness is not mentioned."
+  ],
+  "hint": "Why would someone hide something from visitors?",
+  "worked": "Tunings guarded closely.\nTurn away so no one copies.\nSo tunings were valued and private.\nAnswer: valuable and private.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-019",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 3,
+  "passage": "HUMANITIES: This passage is adapted from an essay about the paniolo tradition of slack key guitar.\n\nSlack key guitar, or kī hōʻalu, began on the ranches. When Mexican and Spanish vaqueros came to Hawaiʻi in the 1830s to teach cattle handling, they brought guitars. After they left, the Hawaiian cowboys who kept the instruments had no one to teach them standard tunings. So they invented their own.\n\nThe word \"slack\" refers to loosening, or slackening, the strings until an open strum produces a pleasing chord. Each family developed its own tunings and guarded them closely. A player might turn away from visitors while retuning so that no one could copy the secret.\n\nThis secrecy, which might seem selfish, actually helped the art survive. Because tunings were passed down within families, each one carried a kind of signature. Listeners could sometimes tell which valley or ranch a player came from by the sound alone. When recordings in the mid-twentieth century finally spread slack key beyond family circles, they revealed not one style but dozens, each preserved by generations of careful keeping.",
+  "stem": "Based on the passage, the author would most likely agree that the secrecy around slack key tunings:",
+  "choices": [
+   "nearly caused the art form to disappear.",
+   "was unfair to younger players.",
+   "ended because of disagreements between families.",
+   "had an unexpected benefit for the art form."
+  ],
+  "answer": 3,
+  "explain": "The author says the secrecy \"might seem selfish\" but \"actually helped the art survive\" by preserving many distinct styles. That is an unexpected benefit.",
+  "distractors": [
+   "The author says the opposite.",
+   "Not suggested; tunings passed within families.",
+   "Recordings spread it, not disputes.",
+   "(keyed) Correct: the author argues it helped the art survive."
+  ],
+  "hint": "Look for \"might seem\" and \"actually.\"",
+  "worked": "\"Might seem selfish\" sets up a surprise.\n\"Actually helped the art survive.\"\nUnexpected benefit.\nAnswer: unexpected benefit.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-inference-020",
+  "section": "reading",
+  "skill": "reading-inference",
+  "difficulty": 1,
+  "passage": "NATURAL SCIENCE: This passage is adapted from an article about how new land forms on Hawaiʻi Island.\n\nWhen lava enters the ocean, the meeting is violent. Seawater flashes into steam, and the molten rock shatters into fragments of black glass. Waves grind those fragments into sand, which is why many beaches near recent eruptions are black.\n\nSome of the lava cools into a shelf called a lava delta. Deltas can extend hundreds of yards beyond the old coastline, but they are unstable. They are built on loose rubble rather than solid rock, and hot water circulating inside them weakens their structure. Sections of a delta can collapse into the sea without warning, sometimes sending blasts of steam and rock across the area where visitors once stood.\n\nOver decades, the new land changes. Ferns and lichens take root in cracks, followed by ʻōhiʻa trees, whose seeds arrive on the wind. Rain slowly breaks down the rock into soil. A lava field that was bare black stone may support a young forest within a century. In this way, the same eruptions that destroy forests also prepare the ground for new ones.",
+  "stem": "The passage suggests that visitors standing on a lava delta are at risk mainly because:",
+  "choices": [
+   "the delta can collapse suddenly.",
+   "the black sand is extremely hot.",
+   "waves frequently wash over the delta.",
+   "ʻōhiʻa trees fall without warning."
+  ],
+  "answer": 0,
+  "explain": "The second paragraph says deltas are unstable and \"can collapse into the sea without warning,\" sending steam and rock across where visitors once stood.",
+  "distractors": [
+   "(keyed) Correct: sudden collapse is the stated danger.",
+   "Sand temperature is not mentioned.",
+   "Waves are not described as washing over deltas.",
+   "Trees grow on old land, not new deltas."
+  ],
+  "hint": "What does the passage say can happen to a delta without warning?",
+  "worked": "Deltas are unstable.\nThey can collapse without warning.\nVisitors are near that area.\nAnswer: collapse.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-001",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 1,
+  "passage": "PAIRED PASSAGES: These passages discuss how Polynesian navigators first reached Hawaiʻi.\n\nPassage A\nFor much of the twentieth century, some scholars argued that Polynesians reached distant islands like Hawaiʻi largely by accident. Canoes blown off course by storms, they suggested, drifted until they happened upon land. Supporters of this view pointed out that the Pacific is vast and that ancient navigators had no compasses or charts. Surely, they reasoned, finding a speck of land thousands of miles away required more luck than skill. Computer simulations in the 1970s, however, showed that drifting canoes almost never reached Hawaiʻi from the south.\n\nPassage B\nThe 1976 voyage of Hōkūleʻa from Hawaiʻi to Tahiti answered the drift theory with action. Using no instruments, navigator Mau Piailug guided the canoe more than 2,500 miles by reading stars, swells, winds, and birds. The canoe arrived where it intended to go. Since then, Hōkūleʻa and other canoes have completed dozens of such voyages, including round trips. These journeys demonstrate that Polynesian settlement of the Pacific was deliberate: a planned achievement built on knowledge passed down through generations of navigators.",
+  "stem": "The author of Passage A describes the drift theory mainly as:",
+  "choices": [
+   "a theory accepted by all navigators.",
+   "a view once held by some scholars.",
+   "a theory proven by Hōkūleʻa.",
+   "the author's own belief."
+  ],
+  "answer": 1,
+  "explain": "Passage A says \"some scholars argued\" the theory and presents their reasoning, then notes evidence against it. It reports a past view rather than endorsing it.",
+  "distractors": [
+   "Navigators are not said to accept it.",
+   "(keyed) Correct: it reports what some scholars argued.",
+   "Hōkūleʻa appears in Passage B, and it disproved the theory.",
+   "The author cites evidence against it, so it is not presented as the author's belief."
+  ],
+  "hint": "Who does Passage A say held this view?",
+  "worked": "Passage A: \"some scholars argued.\"\nIt reports their reasoning.\nThen gives counterevidence.\nSo: a view once held by some scholars.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-002",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss how Polynesian navigators first reached Hawaiʻi.\n\nPassage A\nFor much of the twentieth century, some scholars argued that Polynesians reached distant islands like Hawaiʻi largely by accident. Canoes blown off course by storms, they suggested, drifted until they happened upon land. Supporters of this view pointed out that the Pacific is vast and that ancient navigators had no compasses or charts. Surely, they reasoned, finding a speck of land thousands of miles away required more luck than skill. Computer simulations in the 1970s, however, showed that drifting canoes almost never reached Hawaiʻi from the south.\n\nPassage B\nThe 1976 voyage of Hōkūleʻa from Hawaiʻi to Tahiti answered the drift theory with action. Using no instruments, navigator Mau Piailug guided the canoe more than 2,500 miles by reading stars, swells, winds, and birds. The canoe arrived where it intended to go. Since then, Hōkūleʻa and other canoes have completed dozens of such voyages, including round trips. These journeys demonstrate that Polynesian settlement of the Pacific was deliberate: a planned achievement built on knowledge passed down through generations of navigators.",
+  "stem": "Which statement best describes the relationship between the two passages?",
+  "choices": [
+   "Passage A presents a theory, and Passage B offers evidence against it.",
+   "The passages discuss unrelated topics.",
+   "Passage B presents a theory, and Passage A offers evidence for it.",
+   "Both passages support the drift theory."
+  ],
+  "answer": 0,
+  "explain": "Passage A explains the drift theory; Passage B says Hōkūleʻa \"answered the drift theory with action,\" showing deliberate navigation. B counters the theory A describes.",
+  "distractors": [
+   "(keyed) Correct: A describes the theory; B refutes it.",
+   "Both concern how Polynesians reached distant islands.",
+   "Reverses the roles.",
+   "Passage B rejects the drift theory."
+  ],
+  "hint": "Pin each passage's position in five words.",
+  "worked": "A: some scholars thought settlement was accidental.\nB: voyages show it was deliberate.\nB counters A.\nAnswer: theory, then evidence against it.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-003",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss how Polynesian navigators first reached Hawaiʻi.\n\nPassage A\nFor much of the twentieth century, some scholars argued that Polynesians reached distant islands like Hawaiʻi largely by accident. Canoes blown off course by storms, they suggested, drifted until they happened upon land. Supporters of this view pointed out that the Pacific is vast and that ancient navigators had no compasses or charts. Surely, they reasoned, finding a speck of land thousands of miles away required more luck than skill. Computer simulations in the 1970s, however, showed that drifting canoes almost never reached Hawaiʻi from the south.\n\nPassage B\nThe 1976 voyage of Hōkūleʻa from Hawaiʻi to Tahiti answered the drift theory with action. Using no instruments, navigator Mau Piailug guided the canoe more than 2,500 miles by reading stars, swells, winds, and birds. The canoe arrived where it intended to go. Since then, Hōkūleʻa and other canoes have completed dozens of such voyages, including round trips. These journeys demonstrate that Polynesian settlement of the Pacific was deliberate: a planned achievement built on knowledge passed down through generations of navigators.",
+  "stem": "Both passages indicate that:",
+  "choices": [
+   "ancient Polynesian navigators did not use compasses or charts.",
+   "Pacific settlement was entirely accidental.",
+   "drifting canoes regularly reached Hawaiʻi.",
+   "Hōkūleʻa sailed in 1976."
+  ],
+  "answer": 0,
+  "explain": "Passage A says navigators \"had no compasses or charts,\" and Passage B says Piailug used \"no instruments.\" Only this point appears in both.",
+  "distractors": [
+   "(keyed) Correct: both note the absence of instruments.",
+   "Passage B rejects this.",
+   "Passage A's simulations show the opposite.",
+   "Only Passage B mentions Hōkūleʻa."
+  ],
+  "hint": "Look for a fact stated in A and also in B.",
+  "worked": "A: no compasses or charts.\nB: no instruments.\nShared point found.\nAnswer: no compasses or charts.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-004",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss how Polynesian navigators first reached Hawaiʻi.\n\nPassage A\nFor much of the twentieth century, some scholars argued that Polynesians reached distant islands like Hawaiʻi largely by accident. Canoes blown off course by storms, they suggested, drifted until they happened upon land. Supporters of this view pointed out that the Pacific is vast and that ancient navigators had no compasses or charts. Surely, they reasoned, finding a speck of land thousands of miles away required more luck than skill. Computer simulations in the 1970s, however, showed that drifting canoes almost never reached Hawaiʻi from the south.\n\nPassage B\nThe 1976 voyage of Hōkūleʻa from Hawaiʻi to Tahiti answered the drift theory with action. Using no instruments, navigator Mau Piailug guided the canoe more than 2,500 miles by reading stars, swells, winds, and birds. The canoe arrived where it intended to go. Since then, Hōkūleʻa and other canoes have completed dozens of such voyages, including round trips. These journeys demonstrate that Polynesian settlement of the Pacific was deliberate: a planned achievement built on knowledge passed down through generations of navigators.",
+  "stem": "How would the author of Passage B most likely respond to the reasoning in Passage A that finding distant land \"required more luck than skill\"?",
+  "choices": [
+   "By arguing that navigators' knowledge made planned voyages possible",
+   "By saying the Pacific is smaller than scholars believed",
+   "By agreeing that most voyages succeeded by luck",
+   "By claiming that compasses were used secretly"
+  ],
+  "answer": 0,
+  "explain": "Passage B stresses that voyages were \"a planned achievement built on knowledge passed down through generations.\" That directly answers the luck argument with skill.",
+  "distractors": [
+   "(keyed) Correct: B credits skill and knowledge.",
+   "B says nothing about the Pacific's size.",
+   "B rejects luck as the explanation.",
+   "B says no instruments were used."
+  ],
+  "hint": "What does Passage B say made the voyages possible?",
+  "worked": "A's claim: luck more than skill.\nB's claim: knowledge passed down made voyages deliberate.\nB would answer with skill.\nAnswer: navigators' knowledge.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-005",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 1,
+  "passage": "PAIRED PASSAGES: These passages discuss controlling invasive species on Hawaiʻi Island.\n\nPassage A\nMongooses were brought to the Big Island in 1883 to control rats in the sugarcane fields. The plan failed. Rats are active at night, while mongooses hunt by day, so the two rarely met. Instead, mongooses turned to easier prey: the eggs and chicks of ground-nesting birds such as the nēnē. The story is a warning. Introducing one species to control another can create a problem worse than the one it was meant to solve, and the damage may last for more than a century.\n\nPassage B\nBiological control, the use of one organism to manage another, has a mixed reputation in Hawaiʻi. Early efforts were often careless. Modern programs, however, require years of testing to confirm that a control agent will attack only its intended target. In 2011, for example, scientists released a tiny wasp to fight an invasive insect damaging native wiliwili trees, and the wasp has helped many of the trees recover. Careful biological control, supporters argue, may be the only practical way to manage pests spread across large, rugged landscapes.",
+  "stem": "According to Passage A, why did mongooses fail to control rats?",
+  "choices": [
+   "Mongooses could not survive in cane fields.",
+   "Farmers removed the mongooses.",
+   "Mongooses hunt by day, while rats are active at night.",
+   "Rats were too large for mongooses to catch."
+  ],
+  "answer": 2,
+  "explain": "Passage A states that \"rats are active at night, while mongooses hunt by day, so the two rarely met.\"",
+  "distractors": [
+   "Mongooses did survive and spread.",
+   "Not mentioned.",
+   "(keyed) Correct: stated directly in Passage A.",
+   "Size is not mentioned."
+  ],
+  "hint": "Find the sentence right after \"The plan failed.\"",
+  "worked": "Passage A: rats at night, mongooses by day.\nThey rarely met.\nAnswer: different active times.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-006",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss controlling invasive species on Hawaiʻi Island.\n\nPassage A\nMongooses were brought to the Big Island in 1883 to control rats in the sugarcane fields. The plan failed. Rats are active at night, while mongooses hunt by day, so the two rarely met. Instead, mongooses turned to easier prey: the eggs and chicks of ground-nesting birds such as the nēnē. The story is a warning. Introducing one species to control another can create a problem worse than the one it was meant to solve, and the damage may last for more than a century.\n\nPassage B\nBiological control, the use of one organism to manage another, has a mixed reputation in Hawaiʻi. Early efforts were often careless. Modern programs, however, require years of testing to confirm that a control agent will attack only its intended target. In 2011, for example, scientists released a tiny wasp to fight an invasive insect damaging native wiliwili trees, and the wasp has helped many of the trees recover. Careful biological control, supporters argue, may be the only practical way to manage pests spread across large, rugged landscapes.",
+  "stem": "The author of Passage B would most likely view the mongoose introduction described in Passage A as an example of:",
+  "choices": [
+   "the careless early efforts that modern testing is meant to prevent.",
+   "a successful biological control program.",
+   "the only practical way to manage pests.",
+   "a program that required years of testing."
+  ],
+  "answer": 0,
+  "explain": "Passage B says \"early efforts were often careless\" and that modern programs require testing to make sure agents attack only their target. The mongoose, which attacked birds instead of rats, fits the careless early category.",
+  "distractors": [
+   "(keyed) Correct: the mongoose fits B's description of careless early efforts.",
+   "It failed.",
+   "B argues for careful control, not the mongoose approach.",
+   "Passage A gives no sign of testing."
+  ],
+  "hint": "How does Passage B describe early biological control efforts?",
+  "worked": "B: early efforts were often careless.\nMongoose attacked unintended prey.\nModern testing aims to stop that.\nAnswer: a careless early effort.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-007",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss controlling invasive species on Hawaiʻi Island.\n\nPassage A\nMongooses were brought to the Big Island in 1883 to control rats in the sugarcane fields. The plan failed. Rats are active at night, while mongooses hunt by day, so the two rarely met. Instead, mongooses turned to easier prey: the eggs and chicks of ground-nesting birds such as the nēnē. The story is a warning. Introducing one species to control another can create a problem worse than the one it was meant to solve, and the damage may last for more than a century.\n\nPassage B\nBiological control, the use of one organism to manage another, has a mixed reputation in Hawaiʻi. Early efforts were often careless. Modern programs, however, require years of testing to confirm that a control agent will attack only its intended target. In 2011, for example, scientists released a tiny wasp to fight an invasive insect damaging native wiliwili trees, and the wasp has helped many of the trees recover. Careful biological control, supporters argue, may be the only practical way to manage pests spread across large, rugged landscapes.",
+  "stem": "Which statement best captures a key difference between the two passages?",
+  "choices": [
+   "Passage A supports biological control, while Passage B opposes it.",
+   "Passage A describes modern testing, while Passage B describes the 1880s.",
+   "Passage A emphasizes the risks of introducing species, while Passage B argues that careful introductions can help.",
+   "Passage A focuses on plants, while Passage B focuses on birds."
+  ],
+  "answer": 2,
+  "explain": "Passage A treats the mongoose as \"a warning.\" Passage B grants early mistakes but argues modern, tested control can work, citing the wiliwili wasp.",
+  "distractors": [
+   "Reverses their positions.",
+   "Reverses their time frames.",
+   "(keyed) Correct: A warns; B defends careful use.",
+   "A focuses on mongooses and birds; B on insects and trees."
+  ],
+  "hint": "Pin each author's attitude toward introducing species.",
+  "worked": "A: introduction can backfire; a warning.\nB: careful, tested control can help.\nDifference: risk vs. careful benefit.\nAnswer: choice describing that contrast.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-008",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss controlling invasive species on Hawaiʻi Island.\n\nPassage A\nMongooses were brought to the Big Island in 1883 to control rats in the sugarcane fields. The plan failed. Rats are active at night, while mongooses hunt by day, so the two rarely met. Instead, mongooses turned to easier prey: the eggs and chicks of ground-nesting birds such as the nēnē. The story is a warning. Introducing one species to control another can create a problem worse than the one it was meant to solve, and the damage may last for more than a century.\n\nPassage B\nBiological control, the use of one organism to manage another, has a mixed reputation in Hawaiʻi. Early efforts were often careless. Modern programs, however, require years of testing to confirm that a control agent will attack only its intended target. In 2011, for example, scientists released a tiny wasp to fight an invasive insect damaging native wiliwili trees, and the wasp has helped many of the trees recover. Careful biological control, supporters argue, may be the only practical way to manage pests spread across large, rugged landscapes.",
+  "stem": "Both passages suggest that introducing one species to control another:",
+  "choices": [
+   "is only effective against insects.",
+   "can cause harm if the introduced species attacks unintended targets.",
+   "should never be attempted.",
+   "always succeeds when done in Hawaiʻi."
+  ],
+  "answer": 1,
+  "explain": "Passage A shows mongooses eating bird eggs instead of rats. Passage B says modern testing exists to make sure agents attack \"only\" their target, implying harm when they do not.",
+  "distractors": [
+   "A discusses rats, not insects.",
+   "(keyed) Correct: both recognize the danger of unintended targets.",
+   "B supports careful use.",
+   "A shows a failure."
+  ],
+  "hint": "What problem does Passage B's testing try to prevent?",
+  "worked": "A: mongooses attacked birds instead of rats.\nB: testing ensures only the target is attacked.\nShared concern: unintended targets.\nAnswer: can cause harm to unintended targets.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-009",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 1,
+  "passage": "PAIRED PASSAGES: These passages discuss tourism in Kona.\n\nPassage A\nTourism supports roughly one in four jobs on Hawaiʻi Island, and nowhere is that more visible than in Kona. Hotels, tour companies, restaurants, and coffee farms all depend on visitors. When travel stopped during the pandemic in 2020, many Kona families lost their income within weeks. That experience showed how essential tourism is to the region. Rather than limiting visitors, the community should focus on keeping them coming, while making sure the money they spend stays with local businesses.\n\nPassage B\nKona's beaches and reefs draw visitors from around the world, but they cannot absorb unlimited numbers. At some popular snorkeling bays, coral cover has declined as crowds have grown. Traffic on the main highway now backs up for miles at rush hour. Residents have begun asking whether more visitors are always better. Some places in Hawaiʻi now require reservations to enter popular parks. Kona, these residents argue, should consider similar limits before its most beloved places are damaged beyond repair.",
+  "stem": "The author of Passage A uses the 2020 pandemic mainly as evidence that:",
+  "choices": [
+   "visitors damage coral reefs.",
+   "Kona should limit visitors.",
+   "coffee farms do not depend on tourism.",
+   "tourism is essential to Kona's economy."
+  ],
+  "answer": 3,
+  "explain": "Passage A says losing visitors cost families income \"within weeks,\" which \"showed how essential tourism is to the region.\"",
+  "distractors": [
+   "That is Passage B's concern.",
+   "Passage A argues against limits.",
+   "Passage A says coffee farms do depend on visitors.",
+   "(keyed) Correct: stated as the lesson of 2020."
+  ],
+  "hint": "What does Passage A say the pandemic showed?",
+  "worked": "2020: travel stopped, income lost.\nLesson: tourism is essential.\nAnswer: tourism is essential.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-010",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss tourism in Kona.\n\nPassage A\nTourism supports roughly one in four jobs on Hawaiʻi Island, and nowhere is that more visible than in Kona. Hotels, tour companies, restaurants, and coffee farms all depend on visitors. When travel stopped during the pandemic in 2020, many Kona families lost their income within weeks. That experience showed how essential tourism is to the region. Rather than limiting visitors, the community should focus on keeping them coming, while making sure the money they spend stays with local businesses.\n\nPassage B\nKona's beaches and reefs draw visitors from around the world, but they cannot absorb unlimited numbers. At some popular snorkeling bays, coral cover has declined as crowds have grown. Traffic on the main highway now backs up for miles at rush hour. Residents have begun asking whether more visitors are always better. Some places in Hawaiʻi now require reservations to enter popular parks. Kona, these residents argue, should consider similar limits before its most beloved places are damaged beyond repair.",
+  "stem": "On which point would the authors of the two passages most likely disagree?",
+  "choices": [
+   "Whether tourism provides jobs",
+   "Whether Kona has beaches",
+   "Whether Kona attracts visitors",
+   "Whether Kona should limit the number of visitors"
+  ],
+  "answer": 3,
+  "explain": "Passage A says the community should focus on \"keeping them coming\" rather than limiting visitors; Passage B argues Kona should consider limits.",
+  "distractors": [
+   "B does not deny tourism provides jobs.",
+   "Both would agree Kona has beaches.",
+   "Both agree Kona draws visitors.",
+   "(keyed) Correct: the core disagreement."
+  ],
+  "hint": "Find the one claim where A says yes and B says no.",
+  "worked": "A: do not limit visitors.\nB: consider limits.\nDisagreement: limits.\nAnswer: limiting visitors.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-011",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss tourism in Kona.\n\nPassage A\nTourism supports roughly one in four jobs on Hawaiʻi Island, and nowhere is that more visible than in Kona. Hotels, tour companies, restaurants, and coffee farms all depend on visitors. When travel stopped during the pandemic in 2020, many Kona families lost their income within weeks. That experience showed how essential tourism is to the region. Rather than limiting visitors, the community should focus on keeping them coming, while making sure the money they spend stays with local businesses.\n\nPassage B\nKona's beaches and reefs draw visitors from around the world, but they cannot absorb unlimited numbers. At some popular snorkeling bays, coral cover has declined as crowds have grown. Traffic on the main highway now backs up for miles at rush hour. Residents have begun asking whether more visitors are always better. Some places in Hawaiʻi now require reservations to enter popular parks. Kona, these residents argue, should consider similar limits before its most beloved places are damaged beyond repair.",
+  "stem": "The author of Passage B would most likely respond to Passage A's call to keep visitors coming by pointing out that:",
+  "choices": [
+   "visitors spend too little money.",
+   "growing crowds are already harming places that attract visitors.",
+   "most tourism jobs are not in Kona.",
+   "the pandemic did not affect Kona."
+  ],
+  "answer": 1,
+  "explain": "Passage B notes coral decline as crowds grow and warns places could be \"damaged beyond repair.\" That is the natural reply to a call for ever more visitors.",
+  "distractors": [
+   "B does not discuss spending.",
+   "(keyed) Correct: B's central evidence is crowd damage.",
+   "B does not discuss where jobs are.",
+   "B does not mention the pandemic."
+  ],
+  "hint": "What evidence does Passage B rely on?",
+  "worked": "B: coral decline, traffic.\nConcern: damage to beloved places.\nReply to A: more visitors cause harm.\nAnswer: crowds harm the attractions.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-012",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss tourism in Kona.\n\nPassage A\nTourism supports roughly one in four jobs on Hawaiʻi Island, and nowhere is that more visible than in Kona. Hotels, tour companies, restaurants, and coffee farms all depend on visitors. When travel stopped during the pandemic in 2020, many Kona families lost their income within weeks. That experience showed how essential tourism is to the region. Rather than limiting visitors, the community should focus on keeping them coming, while making sure the money they spend stays with local businesses.\n\nPassage B\nKona's beaches and reefs draw visitors from around the world, but they cannot absorb unlimited numbers. At some popular snorkeling bays, coral cover has declined as crowds have grown. Traffic on the main highway now backs up for miles at rush hour. Residents have begun asking whether more visitors are always better. Some places in Hawaiʻi now require reservations to enter popular parks. Kona, these residents argue, should consider similar limits before its most beloved places are damaged beyond repair.",
+  "stem": "Passage B's mention that some places in Hawaiʻi require reservations serves mainly to:",
+  "choices": [
+   "describe the history of tourism.",
+   "explain how to visit Kona's beaches.",
+   "show that limits on visitors have been tried elsewhere.",
+   "argue that reservations hurt businesses."
+  ],
+  "answer": 2,
+  "explain": "The detail comes just before B argues Kona \"should consider similar limits.\" It offers a precedent for the proposal.",
+  "distractors": [
+   "No history is given.",
+   "No instructions are given.",
+   "(keyed) Correct: it provides a precedent.",
+   "B does not discuss business harm."
+  ],
+  "hint": "What word in the next sentence links back to the reservations?",
+  "worked": "Next sentence: \"similar limits.\"\nReservations are an example of limits elsewhere.\nFunction: precedent.\nAnswer: limits tried elsewhere.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-013",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 1,
+  "passage": "PAIRED PASSAGES: These passages discuss competition in hula.\n\nPassage A\nWhen the Merrie Monarch Festival added a hula competition in 1971, some kumu hula worried. Hula, they said, was a sacred practice meant to honor gods, ancestors, and places. Turning it into a contest with judges and scores risked reducing a spiritual tradition to a performance. Dancers might begin to choose chants for their crowd appeal rather than their meaning. These critics did not oppose the festival itself, but they feared that the pressure to win would slowly change what hula was for.\n\nPassage B\nThe competition at Merrie Monarch has done more to preserve hula than almost anything else in the past half century. Because judges score dancers on their knowledge of chants, their costumes, and their adherence to tradition, hālau spend months researching the history behind each dance. Many kumu say that preparing for the festival pushes their students to learn the language and genealogy behind every movement. Far from weakening hula's meaning, the competition has given dancers a powerful reason to study it more deeply.",
+  "stem": "According to Passage A, some kumu hula worried that competition might lead dancers to:",
+  "choices": [
+   "perform only for tourists.",
+   "stop attending the festival.",
+   "choose chants for crowd appeal rather than meaning.",
+   "abandon traditional costumes entirely."
+  ],
+  "answer": 2,
+  "explain": "Passage A says critics feared \"dancers might begin to choose chants for their crowd appeal rather than their meaning.\"",
+  "distractors": [
+   "Tourists are not mentioned.",
+   "Not stated.",
+   "(keyed) Correct: stated directly.",
+   "Costumes are not mentioned in Passage A."
+  ],
+  "hint": "Find the sentence in Passage A that begins \"Dancers might.\"",
+  "worked": "Passage A: chants chosen for crowd appeal.\nAnswer: crowd appeal over meaning.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-014",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss competition in hula.\n\nPassage A\nWhen the Merrie Monarch Festival added a hula competition in 1971, some kumu hula worried. Hula, they said, was a sacred practice meant to honor gods, ancestors, and places. Turning it into a contest with judges and scores risked reducing a spiritual tradition to a performance. Dancers might begin to choose chants for their crowd appeal rather than their meaning. These critics did not oppose the festival itself, but they feared that the pressure to win would slowly change what hula was for.\n\nPassage B\nThe competition at Merrie Monarch has done more to preserve hula than almost anything else in the past half century. Because judges score dancers on their knowledge of chants, their costumes, and their adherence to tradition, hālau spend months researching the history behind each dance. Many kumu say that preparing for the festival pushes their students to learn the language and genealogy behind every movement. Far from weakening hula's meaning, the competition has given dancers a powerful reason to study it more deeply.",
+  "stem": "The author of Passage B would most likely respond to the concern in Passage A by arguing that:",
+  "choices": [
+   "hula was never sacred.",
+   "the festival should end its competition.",
+   "judging criteria reward deep knowledge of tradition.",
+   "crowds should choose the winners."
+  ],
+  "answer": 2,
+  "explain": "Passage B says judges score knowledge of chants and adherence to tradition, so hālau study more deeply. That answers the fear that competition rewards crowd appeal.",
+  "distractors": [
+   "B never denies hula's sacred nature.",
+   "B praises the competition.",
+   "(keyed) Correct: B points to scoring that rewards tradition.",
+   "Judges, not crowds, score in B."
+  ],
+  "hint": "According to Passage B, what do judges score?",
+  "worked": "A's worry: crowd appeal replaces meaning.\nB: judges score knowledge and tradition.\nSo meaning is rewarded.\nAnswer: criteria reward tradition.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-015",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss competition in hula.\n\nPassage A\nWhen the Merrie Monarch Festival added a hula competition in 1971, some kumu hula worried. Hula, they said, was a sacred practice meant to honor gods, ancestors, and places. Turning it into a contest with judges and scores risked reducing a spiritual tradition to a performance. Dancers might begin to choose chants for their crowd appeal rather than their meaning. These critics did not oppose the festival itself, but they feared that the pressure to win would slowly change what hula was for.\n\nPassage B\nThe competition at Merrie Monarch has done more to preserve hula than almost anything else in the past half century. Because judges score dancers on their knowledge of chants, their costumes, and their adherence to tradition, hālau spend months researching the history behind each dance. Many kumu say that preparing for the festival pushes their students to learn the language and genealogy behind every movement. Far from weakening hula's meaning, the competition has given dancers a powerful reason to study it more deeply.",
+  "stem": "Which choice best describes how the two passages differ in their view of the competition's effect on hula?",
+  "choices": [
+   "Passage A fears it will change hula's purpose, while Passage B believes it deepens dancers' understanding.",
+   "Passage A focuses on the present, while Passage B focuses only on 1971.",
+   "Both passages argue that the competition should be eliminated.",
+   "Passage A thinks it has improved costumes, while Passage B thinks it has harmed them."
+  ],
+  "answer": 0,
+  "explain": "Passage A's critics fear competition \"would slowly change what hula was for.\" Passage B says it gives dancers reason to \"study it more deeply.\"",
+  "distractors": [
+   "(keyed) Correct: fear of changed purpose vs. deeper study.",
+   "A describes 1971 concerns; B discusses recent decades.",
+   "Neither calls for elimination; A's critics did not oppose the festival.",
+   "Costumes are not compared this way."
+  ],
+  "hint": "Pin each passage's view in five words.",
+  "worked": "A: competition may change hula's purpose.\nB: competition deepens study.\nAnswer: the choice capturing that contrast.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-016",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss competition in hula.\n\nPassage A\nWhen the Merrie Monarch Festival added a hula competition in 1971, some kumu hula worried. Hula, they said, was a sacred practice meant to honor gods, ancestors, and places. Turning it into a contest with judges and scores risked reducing a spiritual tradition to a performance. Dancers might begin to choose chants for their crowd appeal rather than their meaning. These critics did not oppose the festival itself, but they feared that the pressure to win would slowly change what hula was for.\n\nPassage B\nThe competition at Merrie Monarch has done more to preserve hula than almost anything else in the past half century. Because judges score dancers on their knowledge of chants, their costumes, and their adherence to tradition, hālau spend months researching the history behind each dance. Many kumu say that preparing for the festival pushes their students to learn the language and genealogy behind every movement. Far from weakening hula's meaning, the competition has given dancers a powerful reason to study it more deeply.",
+  "stem": "Passage A's statement that the critics \"did not oppose the festival itself\" serves mainly to:",
+  "choices": [
+   "suggest that the festival was unpopular.",
+   "clarify that their concern was limited to the competition.",
+   "show that the critics later changed their minds.",
+   "explain how judges are chosen."
+  ],
+  "answer": 1,
+  "explain": "The sentence narrows the critics' objection: they accepted the festival but worried about the pressure of competition.",
+  "distractors": [
+   "Nothing suggests the festival was unpopular.",
+   "(keyed) Correct: it limits the scope of the objection.",
+   "No change of mind is described.",
+   "Judge selection is not discussed."
+  ],
+  "hint": "What did the critics object to, and what did they not object to?",
+  "worked": "Not opposed: the festival.\nConcerned about: pressure to win.\nFunction: narrow the objection.\nAnswer: concern limited to the competition.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-017",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 1,
+  "passage": "PAIRED PASSAGES: These passages discuss geothermal energy on Hawaiʻi Island.\n\nPassage A\nHawaiʻi Island sits atop one of the world's most active volcanic systems, and that heat can generate electricity day and night. Unlike solar or wind power, geothermal energy does not depend on weather. The Puna geothermal plant can supply roughly a quarter of the island's electricity, reducing the need to import oil by ship. The plant also occupies only a few dozen acres, far less land than a solar farm of similar output would need. For an island that once relied almost entirely on fossil fuels, geothermal power offers steady, local, renewable energy.\n\nPassage B\nNot everyone in Puna welcomes the geothermal plant. Some residents report odors and noise from the facility, and in 1991 an uncontrolled release of steam and gas forced nearby families to evacuate. Others object for cultural reasons: in Hawaiian tradition, volcanic heat is associated with the goddess Pele, and drilling into it is seen by some as disrespectful. These residents argue that the island should rely more heavily on solar power, which can be placed on rooftops without drilling into the earth.",
+  "stem": "According to Passage A, one advantage of geothermal energy over solar and wind is that it:",
+  "choices": [
+   "requires no drilling.",
+   "is cheaper to build.",
+   "produces no odors.",
+   "does not depend on weather."
+  ],
+  "answer": 3,
+  "explain": "Passage A says \"Unlike solar or wind power, geothermal energy does not depend on weather.\"",
+  "distractors": [
+   "Geothermal requires drilling, as Passage B notes.",
+   "Cost is not mentioned.",
+   "Passage B reports odors.",
+   "(keyed) Correct: stated directly."
+  ],
+  "hint": "Look for \"Unlike solar or wind\" in Passage A.",
+  "worked": "Passage A: does not depend on weather.\nAnswer: does not depend on weather.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-018",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss geothermal energy on Hawaiʻi Island.\n\nPassage A\nHawaiʻi Island sits atop one of the world's most active volcanic systems, and that heat can generate electricity day and night. Unlike solar or wind power, geothermal energy does not depend on weather. The Puna geothermal plant can supply roughly a quarter of the island's electricity, reducing the need to import oil by ship. The plant also occupies only a few dozen acres, far less land than a solar farm of similar output would need. For an island that once relied almost entirely on fossil fuels, geothermal power offers steady, local, renewable energy.\n\nPassage B\nNot everyone in Puna welcomes the geothermal plant. Some residents report odors and noise from the facility, and in 1991 an uncontrolled release of steam and gas forced nearby families to evacuate. Others object for cultural reasons: in Hawaiian tradition, volcanic heat is associated with the goddess Pele, and drilling into it is seen by some as disrespectful. These residents argue that the island should rely more heavily on solar power, which can be placed on rooftops without drilling into the earth.",
+  "stem": "Passage B differs from Passage A in that Passage B:",
+  "choices": [
+   "describes how much electricity the plant produces.",
+   "raises health, safety, and cultural objections to the plant.",
+   "praises the plant's reliability.",
+   "argues that oil imports should increase."
+  ],
+  "answer": 1,
+  "explain": "Passage B discusses odors, noise, a 1991 evacuation, and cultural concerns about Pele. Passage A focuses on the plant's benefits.",
+  "distractors": [
+   "That is Passage A's content.",
+   "(keyed) Correct: B focuses on objections.",
+   "That is Passage A's view.",
+   "Neither argues for more oil."
+  ],
+  "hint": "What kinds of concerns does Passage B list?",
+  "worked": "B: odors, noise, evacuation.\nB: cultural objection.\nA: benefits.\nAnswer: objections.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-019",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 3,
+  "passage": "PAIRED PASSAGES: These passages discuss geothermal energy on Hawaiʻi Island.\n\nPassage A\nHawaiʻi Island sits atop one of the world's most active volcanic systems, and that heat can generate electricity day and night. Unlike solar or wind power, geothermal energy does not depend on weather. The Puna geothermal plant can supply roughly a quarter of the island's electricity, reducing the need to import oil by ship. The plant also occupies only a few dozen acres, far less land than a solar farm of similar output would need. For an island that once relied almost entirely on fossil fuels, geothermal power offers steady, local, renewable energy.\n\nPassage B\nNot everyone in Puna welcomes the geothermal plant. Some residents report odors and noise from the facility, and in 1991 an uncontrolled release of steam and gas forced nearby families to evacuate. Others object for cultural reasons: in Hawaiian tradition, volcanic heat is associated with the goddess Pele, and drilling into it is seen by some as disrespectful. These residents argue that the island should rely more heavily on solar power, which can be placed on rooftops without drilling into the earth.",
+  "stem": "Based on both passages, the supporters of geothermal power in Passage A and the residents described in Passage B would most likely both accept that:",
+  "choices": [
+   "Hawaiʻi Island should use renewable energy sources.",
+   "solar power is unreliable.",
+   "drilling into volcanic heat is disrespectful.",
+   "the Puna plant should be expanded."
+  ],
+  "answer": 0,
+  "explain": "Passage A praises geothermal because it is renewable; the residents in Passage B want more solar power, also renewable. Both sides favor renewables even though they disagree on which kind.",
+  "distractors": [
+   "(keyed) Correct: both favor renewable sources.",
+   "Passage A notes weather dependence but does not call solar unreliable; B favors it.",
+   "Only some residents in B hold this view.",
+   "Passage B opposes the plant."
+  ],
+  "hint": "Look past the disagreement. What do both sides want?",
+  "worked": "A: geothermal, renewable.\nB: more solar, renewable.\nShared: renewable energy.\nAnswer: use renewable sources.",
+  "timed_ok": true
+ },
+ {
+  "id": "act-reading-integration-020",
+  "section": "reading",
+  "skill": "reading-integration",
+  "difficulty": 2,
+  "passage": "PAIRED PASSAGES: These passages discuss geothermal energy on Hawaiʻi Island.\n\nPassage A\nHawaiʻi Island sits atop one of the world's most active volcanic systems, and that heat can generate electricity day and night. Unlike solar or wind power, geothermal energy does not depend on weather. The Puna geothermal plant can supply roughly a quarter of the island's electricity, reducing the need to import oil by ship. The plant also occupies only a few dozen acres, far less land than a solar farm of similar output would need. For an island that once relied almost entirely on fossil fuels, geothermal power offers steady, local, renewable energy.\n\nPassage B\nNot everyone in Puna welcomes the geothermal plant. Some residents report odors and noise from the facility, and in 1991 an uncontrolled release of steam and gas forced nearby families to evacuate. Others object for cultural reasons: in Hawaiian tradition, volcanic heat is associated with the goddess Pele, and drilling into it is seen by some as disrespectful. These residents argue that the island should rely more heavily on solar power, which can be placed on rooftops without drilling into the earth.",
+  "stem": "The reference to the 1991 release of steam and gas in Passage B primarily serves to:",
+  "choices": [
+   "show that the plant produces more power than expected.",
+   "explain why geothermal energy is renewable.",
+   "support the claim that the plant has posed safety risks.",
+   "describe a traditional Hawaiian ceremony."
+  ],
+  "answer": 2,
+  "explain": "The 1991 event forced families to evacuate. It is evidence for Passage B's point that some residents have reason to fear the plant.",
+  "distractors": [
+   "Power output is not mentioned with this event.",
+   "It does not explain renewability.",
+   "(keyed) Correct: concrete evidence of risk.",
+   "It describes an accident, not a ceremony."
+  ],
+  "hint": "What happened to nearby families in 1991?",
+  "worked": "1991: uncontrolled release, families evacuated.\nUsed as evidence of risk.\nAnswer: safety risks.",
+  "timed_ok": true
+ }
+]

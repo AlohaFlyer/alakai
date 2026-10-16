@@ -1,0 +1,324 @@
+{
+ "_note": "Every Hawaiian word, local term, and acronym that may appear in a script, with its spoken form. render.py refuses to build a script containing a flagged token that is not listed here. 'say' is a respelling fed to the ElevenLabs pronunciation dictionary (alias rule); 'ipa' is optional.",
+ "terms": {
+  "Alakaʻi": {
+   "say": "ah-lah-KAH-ee",
+   "note": "to lead, to guide"
+  },
+  "Hawaiʻi": {
+   "say": "hah-VAI-ee"
+  },
+  "Hawaii": {
+   "say": "hah-VAI-ee"
+  },
+  "Waimea": {
+   "say": "wy-MAY-ah"
+  },
+  "Kamuela": {
+   "say": "kah-moo-EH-lah"
+  },
+  "Kohala": {
+   "say": "koh-HAH-lah"
+  },
+  "Kīpuʻupuʻu": {
+   "say": "KEE-poo-oo-POO-oo",
+   "note": "cold wind-driven Waimea rain"
+  },
+  "Mauna Kea": {
+   "say": "MOW-nah KEH-ah"
+  },
+  "Hilo": {
+   "say": "HEE-loh"
+  },
+  "Honokaʻa": {
+   "say": "hoh-noh-KAH-ah"
+  },
+  "Kealakehe": {
+   "say": "keh-ah-lah-KEH-heh"
+  },
+  "Konawaena": {
+   "say": "koh-nah-WY-nah"
+  },
+  "Pāhoa": {
+   "say": "PAH-hoh-ah"
+  },
+  "Keaʻau": {
+   "say": "keh-ah-AH-oo"
+  },
+  "Kaʻū": {
+   "say": "kah-OO"
+  },
+  "Waiākea": {
+   "say": "wy-AH-keh-ah"
+  },
+  "Laupāhoehoe": {
+   "say": "lau-PAH-hoy-hoy"
+  },
+  "Puna": {
+   "say": "POO-nah"
+  },
+  "Kona": {
+   "say": "KOH-nah"
+  },
+  "Hāmākua": {
+   "say": "hah-MAH-koo-ah"
+  },
+  "Waipiʻo": {
+   "say": "wy-PEE-oh"
+  },
+  "Puakō": {
+   "say": "poo-ah-KOH"
+  },
+  "ʻōhiʻa": {
+   "say": "oh-HEE-ah"
+  },
+  "lehua": {
+   "say": "leh-HOO-ah"
+  },
+  "Lehua": {
+   "say": "leh-HOO-ah"
+  },
+  "paniolo": {
+   "say": "pah-nee-OH-loh",
+   "note": "Hawaiian cowboy"
+  },
+  "pili": {
+   "say": "PEE-lee"
+  },
+  "lauhala": {
+   "say": "lau-HAH-lah"
+  },
+  "kapa": {
+   "say": "KAH-pah"
+  },
+  "ʻohe kāpala": {
+   "say": "OH-heh KAH-pah-lah"
+  },
+  "kumu": {
+   "say": "KOO-moo",
+   "note": "teacher"
+  },
+  "akamai": {
+   "say": "ah-kah-MY",
+   "note": "smart"
+  },
+  "pau": {
+   "say": "pow",
+   "note": "finished"
+  },
+  "pau hana": {
+   "say": "pow HAH-nah"
+  },
+  "kōkua": {
+   "say": "KOH-koo-ah"
+  },
+  "mahalo": {
+   "say": "mah-HAH-loh"
+  },
+  "aloha": {
+   "say": "ah-LOH-hah"
+  },
+  "ʻono": {
+   "say": "OH-noh"
+  },
+  "keiki": {
+   "say": "KAY-kee"
+  },
+  "ʻohana": {
+   "say": "oh-HAH-nah"
+  },
+  "hoʻomau": {
+   "say": "hoh-oh-MOW",
+   "note": "persevere"
+  },
+  "lanakila": {
+   "say": "lah-nah-KEE-lah",
+   "note": "victory"
+  },
+  "Pono": {
+   "say": "POH-noh"
+  },
+  "Kaden": {
+   "say": "KAY-den"
+  },
+  "Medeiros": {
+   "say": "meh-DAIR-ohs"
+  },
+  "Nakamura": {
+   "say": "nah-kah-MOO-rah"
+  },
+  "chee hoo": {
+   "say": "chee HOO"
+  },
+  "shoots": {
+   "say": "shoots"
+  },
+  "da kine": {
+   "say": "dah KYNE"
+  },
+  "hamajang": {
+   "say": "HAH-mah-jang",
+   "note": "messed up"
+  },
+  "braddah": {
+   "say": "BRAH-dah"
+  },
+  "sistah": {
+   "say": "SIS-tah"
+  },
+  "tita": {
+   "say": "TEE-tah"
+  },
+  "Hele-On": {
+   "say": "HEH-leh on",
+   "note": "the county bus"
+  },
+  "Merrie Monarch": {
+   "say": "MERRY MON-ark"
+  },
+  "SAT": {
+   "say": "ess ay tee"
+  },
+  "PSAT": {
+   "say": "pee ess ay tee"
+  },
+  "NMSQT": {
+   "say": "en em ess kyoo tee"
+  },
+  "ACT": {
+   "say": "ay see tee"
+  },
+  "DSAT": {
+   "say": "dee ess ay tee"
+  },
+  "RW": {
+   "say": "reading and writing"
+  },
+  "HPA": {
+   "say": "aitch pee ay"
+  },
+  "HSA": {
+   "say": "aitch ess ay"
+  },
+  "GPA": {
+   "say": "gee pee ay"
+  },
+  "STEM": {
+   "say": "stem"
+  },
+  "SOH CAH TOA": {
+   "say": "so ka toe-ah"
+  },
+  "ELA": {
+   "say": "ee el ay"
+  },
+  "AP": {
+   "say": "ay pee"
+  },
+  "FAFSA": {
+   "say": "FAF-sah"
+  },
+  "UH": {
+   "say": "you aitch"
+  },
+  "Bluebook": {
+   "say": "blue book"
+  },
+  "Khan Academy": {
+   "say": "con academy"
+  },
+  "ʻokina": {
+   "say": "oh-KEE-nah",
+   "note": "the glottal stop mark"
+  },
+  "kahakō": {
+   "say": "kah-hah-KOH",
+   "note": "the macron"
+  }
+ },
+ "flag_patterns": [
+  "[A-Z]{2,6}",
+  "[A-Za-zʻāēīōūĀĒĪŌŪ]*[ʻāēīōūĀĒĪŌŪ][A-Za-zʻāēīōūĀĒĪŌŪ]*"
+ ],
+ "_respelling_syllables": [
+  "academy",
+  "ah",
+  "aitch",
+  "and",
+  "ark",
+  "ay",
+  "blue",
+  "book",
+  "brah",
+  "chee",
+  "con",
+  "dah",
+  "dair",
+  "dee",
+  "den",
+  "ee",
+  "eh",
+  "el",
+  "em",
+  "en",
+  "ess",
+  "faf",
+  "gee",
+  "hah",
+  "hee",
+  "heh",
+  "hoh",
+  "hoo",
+  "hoy",
+  "jang",
+  "ka",
+  "kah",
+  "kay",
+  "kee",
+  "keh",
+  "koh",
+  "koo",
+  "kyne",
+  "kyoo",
+  "lah",
+  "lau",
+  "lee",
+  "leh",
+  "loh",
+  "mah",
+  "may",
+  "meh",
+  "merry",
+  "mon",
+  "moo",
+  "mow",
+  "my",
+  "nah",
+  "nee",
+  "noh",
+  "oh",
+  "ohs",
+  "on",
+  "oo",
+  "pah",
+  "pee",
+  "poh",
+  "poo",
+  "pow",
+  "rah",
+  "reading",
+  "sah",
+  "see",
+  "shoots",
+  "sis",
+  "so",
+  "stem",
+  "tah",
+  "tee",
+  "toe",
+  "vai",
+  "writing",
+  "wy",
+  "you"
+ ]
+}

@@ -1,0 +1,114 @@
+/* Alakaʻi Test Prep: question engine shared by drills, timed sections, and redo. Depends on app.js. */
+(function () {
+  'use strict';
+  const A = window.Alakai, S = A.Store;
+  const FILES = { sat: ['drills_rw.json', 'drills_math.json'], act: ['drills_english.json', 'drills_math.json', 'drills_reading.json', 'drills_science.json'] };
+
+  const Bank = {
+    _cache: {},
+    async load(test) {
+      if (this._cache[test]) return this._cache[test];
+      const skills = await A.data(`data/${test}/skills.json`);
+      let items = [];
+      for (const f of FILES[test]) { try { items = items.concat(await A.data(`data/${test}/${f}`)); } catch (e) { /* bank not built yet */ } }
+      const byId = {}; items.forEach(i => byId[i.id] = i);
+      const skillName = {}, sectionOf = {}, sectionName = {};
+      skills.sections.forEach(sec => { sectionName[sec.id] = sec.name; sec.skills.forEach(sk => { skillName[sk.id] = sk.name; sectionOf[sk.id] = sec.id; }); });
+      this._cache[test] = { skills, items, byId, skillName, sectionOf, sectionName };
+      return this._cache[test];
+    },
+    visibleSections(bank, test, profile) { return bank.skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && !(profile && profile.science))); }
+  };
+
+  // Interleaved set: pull from several skills, shuffle within difficulty bands, never two of the same skill in a row when avoidable
+  function buildSet(bank, { skill, section, n, exclude }) {
+    exclude = exclude || new Set();
+    let pool = bank.items.filter(i => !exclude.has(i.id));
+    if (skill) pool = pool.filter(i => i.skill === skill);
+    else if (section) pool = pool.filter(i => i.section === section);
+    pool = A.shuffle(pool);
+    // weight unseen items first
+    const seen = S.get('seen', {});
+    pool.sort((a, b) => (seen[a.id] || 0) - (seen[b.id] || 0));
+    const out = []; let last = null;
+    while (out.length < n && pool.length) {
+      let idx = pool.findIndex(i => i.skill !== last); if (idx < 0) idx = 0;
+      const it = pool.splice(idx, 1)[0]; out.push(it); last = it.skill;
+    }
+    return out;
+  }
+
+  // Render one item into container; returns a promise resolving {correct, ms, picked}
+  function renderItem(container, item, opts) {
+    opts = opts || {};
+    const profile = A.profile() || {};
+    const mode = opts.mode || profile.missmode || 'answer';
+    const start = Date.now();
+    const free = !item.choices || item.choices.length === 0;
+    const letters = 'ABCDE';
+    container.innerHTML = `
+      ${item.passage ? `<div class="passage card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}
+      <div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
+      ${free ? `<div class="row"><input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px"><button id="submit">Check</button></div>`
+             : `<div class="choices">${item.choices.map((c, i) => `<button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
+      <div class="row" style="margin-top:8px">${opts.allowFlag ? '<button class="ghost" id="flag">Flag for later</button>' : ''}${mode === 'hint' ? '<button class="ghost" id="hintbtn">Hint</button>' : ''}<span class="muted" id="skillname">${A.esc(opts.skillName || '')}</span></div>
+      <div id="fb"></div>`;
+    return new Promise(resolve => {
+      let hintUsed = false, tries = 0, settled = false;
+      const hb = container.querySelector('#hintbtn'); if (hb) hb.addEventListener('click', () => { hintUsed = true; showHint(); });
+      function showHint() { let h = container.querySelector('.hintbox'); if (!h) { h = document.createElement('div'); h.className = 'explain hintbox'; container.querySelector('#fb').appendChild(h); } h.textContent = 'Hint: ' + item.hint; }
+      const fl = container.querySelector('#flag'); if (fl) fl.addEventListener('click', () => { fl.textContent = 'Flagged'; opts.onFlag && opts.onFlag(item); });
+      function finish(correct, picked) {
+        if (settled) return; settled = true;
+        const ms = Date.now() - start;
+        container.querySelectorAll('.choice').forEach(b => { b.disabled = true; const i = +b.dataset.i; if (i === item.answer) b.dataset.state = 'right'; else if (i === picked) b.dataset.state = 'wrong'; });
+        if (!opts.silent) explain(correct, picked);
+        resolve({ correct, ms, picked, hintUsed, tries });
+      }
+      function explain(correct, picked) {
+        const fb = container.querySelector('#fb');
+        A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak);
+        const parts = [];
+        if (!correct && !free && item.distractors && item.distractors[picked]) parts.push(`<p><strong>Why ${letters[picked]} tempts you:</strong> ${A.esc(item.distractors[picked])}</p>`);
+        parts.push(`<p><strong>${free ? 'Answer: ' + A.esc(item.answer) + '. ' : ''}Why ${free ? '' : letters[item.answer] + ' is right'}:</strong> ${A.esc(item.explain)}</p>`);
+        if (mode === 'worked' || (!correct && item.worked)) parts.push(`<details ${mode === 'worked' ? 'open' : ''}><summary>Worked solution</summary><pre style="white-space:pre-wrap;font-family:inherit">${A.esc(item.worked)}</pre></details>`);
+        const d = document.createElement('div'); d.className = 'explain'; d.innerHTML = parts.join(''); fb.appendChild(d);
+        const b = document.createElement('button'); b.textContent = opts.nextLabel || 'Next'; b.style.marginTop = '10px'; b.addEventListener('click', () => opts.onNext && opts.onNext()); fb.appendChild(b);
+      }
+      container.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => {
+        const i = +b.dataset.i; tries++;
+        if (i === item.answer) return finish(true, i);
+        if (mode === 'hint' && tries === 1 && !opts.timed) { b.dataset.state = 'wrong'; b.disabled = true; showHint(); return; }
+        finish(false, i);
+      }));
+      const sub = container.querySelector('#submit'); if (sub) {
+        const check = () => { const v = container.querySelector('#free').value.trim(); if (!v) return; tries++; const ok = normalize(v) === normalize(item.answer) || (item.answer_alt || []).some(a => normalize(a) === normalize(v)); if (ok) return finish(true, v); if (mode === 'hint' && tries === 1 && !opts.timed) { showHint(); return; } finish(false, v); };
+        sub.addEventListener('click', check); container.querySelector('#free').addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
+      }
+    });
+  }
+  function normalize(v) { v = String(v).trim().replace(/\s+/g, '').replace(/^\+/, ''); const n = Number(v); if (!isNaN(n) && v !== '') return String(Math.round(n * 10000) / 10000); if (/^-?\d+\/\d+$/.test(v)) { const [a, b] = v.split('/').map(Number); if (b) return String(Math.round(a / b * 10000) / 10000); } return v.toLowerCase(); }
+
+  async function record(test, item, res, kind, extra) {
+    const seen = S.get('seen', {}); seen[item.id] = (seen[item.id] || 0) + 1; S.set('seen', seen);
+    await A.DB.add(Object.assign({ test, kind, item: item.id, skill: item.skill, section: item.section, correct: !!res.correct, ms: res.ms, hint: !!res.hintUsed, cause: res.cause || null }, extra || {}));
+    if (!res.correct && kind !== 'blitz') {
+      const log = S.get(test + '.errlog', []);
+      if (!log.some(e => e.id === item.id && !e.done)) log.push({ id: item.id, skill: item.skill, at: Date.now(), due: Date.now() + 3 * 86400000, done: false, cause: res.cause || null });
+      S.set(test + '.errlog', log.slice(-300));
+    } else if (res.correct && kind === 'redo') {
+      const log = S.get(test + '.errlog', []); log.forEach(e => { if (e.id === item.id) e.done = true; }); S.set(test + '.errlog', log);
+    }
+  }
+
+  function askCause(container) {
+    return new Promise(resolve => {
+      const d = document.createElement('div'); d.className = 'row'; d.style.marginTop = '8px';
+      d.innerHTML = '<span class="muted">Why did you miss it?</span>' + [['careless', 'Careless'], ['concept', 'Didn\'t know it'], ['time', 'Rushed']].map(([v, l]) => `<button class="secondary" data-c="${v}">${l}</button>`).join('');
+      d.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { d.innerHTML = `<span class="chip">${b.textContent}</span>`; resolve(b.dataset.c); }));
+      container.querySelector('#fb').prepend(d);
+    });
+  }
+
+  window.AlakaiEngine = { Bank, buildSet, renderItem, record, askCause, normalize };
+})();

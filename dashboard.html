@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Alakaʻi Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+<style>
+  .stat { text-align: center; }
+  .stat .big { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+  .rings { display: flex; gap: 18px; flex-wrap: wrap; }
+  .ring-wrap { text-align: center; font-size: .9rem; }
+  .banner { background: color-mix(in srgb, var(--primary) 12%, transparent); border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+    <div class="toggle" data-mount></div>
+  </header>
+  <nav class="tabs"></nav>
+
+  <div class="card banner" id="milestone" hidden>
+    <strong>Nice work.</strong> <span id="ms-text"></span>
+    <div class="row" style="margin-top:8px"><button id="ms-send">Send progress report</button><button class="ghost" id="ms-later">Later</button></div>
+  </div>
+
+  <section class="card">
+    <div class="row" style="justify-content:space-between">
+      <div><h2 style="margin:0">Aloha, <span id="who"></span></h2><small id="sub"></small></div>
+      <button id="send">Send progress report</button>
+    </div>
+  </section>
+
+  <section class="grid stats">
+    <div class="card stat"><div class="big" id="days">–</div><small>days to test</small></div>
+    <div class="card stat"><div class="big" id="streak">0</div><small>day streak</small></div>
+    <div class="card stat"><div class="big" id="answered">0</div><small>questions answered</small></div>
+    <div class="card stat"><div class="big" id="acc">–</div><small>overall accuracy</small></div>
+  </section>
+
+  <section class="card">
+    <h2>By section</h2>
+    <div class="rings" id="rings"></div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Next up</h2>
+      <div class="stack" id="next"></div>
+    </div>
+    <div class="card">
+      <h2>Weak spots</h2>
+      <table id="weak"><tr><th>Skill</th><th>Score</th><th>Avg time</th></tr></table>
+      <small class="muted">Needs 4+ attempts to show.</small>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Timed sections</h2>
+      <table id="timed"><tr><th>Section</th><th>Score</th><th>Time</th><th>Blank</th></tr></table>
+    </div>
+    <div class="card">
+      <h2><span data-test-label>SAT</span> Notes</h2>
+      <p id="eps" class="muted"></p>
+      <p>Blitz high score: <strong id="blitz">–</strong></p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Error log</h2>
+    <p class="muted">Items you missed, due for a redo 3 days later.</p>
+    <table id="errlog"><tr><th>Skill</th><th>Missed</th><th>Due</th><th></th></tr></table>
+  </section>
+
+  <footer>Everything above lives on this device. <a href="settings.html#disclosures" style="color:inherit">Disclosures</a></footer>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script>
+(async () => {
+  const A = window.Alakai, S = A.Store;
+  const { profile } = await A.boot({ page: 'dashboard.html', gate: true });
+  if (!profile) return;
+  async function render() {
+    const test = A.getTest();
+    document.getElementById('who').textContent = profile.name || 'friend';
+    const dte = profile.testdate ? Math.ceil((new Date(profile.testdate) - Date.now()) / 86400000) : null;
+    document.getElementById('days').textContent = dte === null ? '–' : dte;
+    document.getElementById('sub').textContent = `${test.toUpperCase()} · ${profile.minutes || 30} min a day · ${profile.timepressure === 'always' ? 'pacing coach on' : profile.timepressure === 'sometimes' ? 'checkpoints on' : 'no clock pressure'}`;
+    const s = await A.Progress.summary(test);
+    document.getElementById('streak').textContent = s.streak;
+    document.getElementById('answered').textContent = s.attempts;
+    document.getElementById('acc').textContent = s.attempts ? Math.round(100 * s.right / s.attempts) + '%' : '–';
+    let skills = null; try { skills = await A.data(`data/${test}/skills.json`); } catch (e) {}
+    const name = k => { if (!skills) return k; for (const sec of skills.sections) { if (sec.id === k) return sec.name; const f = sec.skills.find(x => x.id === k); if (f) return f.name; } return k; };
+    const sections = skills ? skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && !profile.science)) : [];
+    const rings = document.getElementById('rings'); rings.innerHTML = '';
+    sections.forEach(sec => { const v = s.bySection[sec.id] || { n: 0, r: 0 }; const pct = v.n ? Math.round(100 * v.r / v.n) : 0; rings.insertAdjacentHTML('beforeend', `<div class="ring-wrap"><div class="ring" style="--p:${pct}"><span>${v.n ? pct + '%' : '–'}</span></div>${A.esc(sec.name)}<br><small>${v.n} done</small></div>`); });
+    if (!sections.length) rings.innerHTML = '<p class="muted">Content banks load in a later phase of the build.</p>';
+    const weak = Object.entries(s.bySkill).filter(([, v]) => v.n >= 4).sort((a, b) => a[1].r / a[1].n - b[1].r / b[1].n).slice(0, 5);
+    const wt = document.getElementById('weak'); wt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
+    weak.forEach(([k, v]) => wt.insertAdjacentHTML('beforeend', `<tr><td><a href="drill.html?skill=${encodeURIComponent(k)}">${A.esc(name(k))}</a></td><td>${v.r}/${v.n}</td><td>${Math.round(v.time / v.n / 1000)}s</td></tr>`));
+    if (!weak.length) wt.insertAdjacentHTML('beforeend', '<tr><td colspan="3" class="muted">Do a few drills first.</td></tr>');
+    const nx = document.getElementById('next'); nx.innerHTML = '';
+    const items = [];
+    if (profile.fear && !s.bySection[profile.fear]) items.push([`Start with ${name(profile.fear)}, the section you flagged`, `drill.html?section=${profile.fear}`]);
+    weak.slice(0, 2).forEach(([k]) => items.push([`Drill ${name(k)}`, `drill.html?skill=${encodeURIComponent(k)}`]));
+    const due = S.get(test + '.errlog', []).filter(e => e.due <= Date.now() && !e.done).length; if (due) items.push([`Redo ${due} missed item${due === 1 ? '' : 's'} that are due`, 'drill.html?mode=redo']);
+    if (!s.timed.length) items.push(['Do one timed module to get a baseline', 'timed.html']);
+    if (!Object.values(s.episodes).some(e => e.done)) items.push([`Listen to ${test.toUpperCase()} Notes Ep 1`, 'notes.html']);
+    if (!items.length) items.push(['Mixed drill, 10 items', 'drill.html']);
+    items.slice(0, 4).forEach(([t, h]) => nx.insertAdjacentHTML('beforeend', `<a class="btn secondary" href="${h}" style="display:block">${A.esc(t)}</a>`));
+    const tt = document.getElementById('timed'); tt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
+    s.timed.slice(-8).reverse().forEach(t => tt.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(t.name)}</td><td>${t.right}/${t.n}</td><td>${A.fmtTime(t.seconds)}</td><td>${t.unanswered || 0}</td></tr>`));
+    if (!s.timed.length) tt.insertAdjacentHTML('beforeend', '<tr><td colspan="4" class="muted">No timed sections yet.</td></tr>');
+    const eps = Object.values(s.episodes).filter(e => e.done); document.getElementById('eps').textContent = eps.length ? `${eps.length} episode${eps.length === 1 ? '' : 's'} completed.` : 'No episodes completed yet.';
+    document.getElementById('blitz').textContent = s.blitz.length ? Math.max(...s.blitz.map(b => b.score)) : '–';
+    const el = document.getElementById('errlog'); el.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
+    const log = S.get(test + '.errlog', []).filter(e => !e.done).sort((a, b) => a.due - b.due).slice(0, 12);
+    log.forEach(e => el.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(e.skill))}</td><td>${new Date(e.at).toLocaleDateString()}</td><td>${e.due <= Date.now() ? '<span class="chip warn">due</span>' : new Date(e.due).toLocaleDateString()}</td><td><a href="drill.html?item=${encodeURIComponent(e.id)}">redo</a></td></tr>`));
+    if (!log.length) el.insertAdjacentHTML('beforeend', '<tr><td colspan="4" class="muted">Clean sheet.</td></tr>');
+    // milestone banner
+    const pending = S.get('milestone_pending', null);
+    if (pending && pending.test === test) { document.getElementById('milestone').hidden = false; document.getElementById('ms-text').textContent = pending.text; }
+  }
+  document.getElementById('send').addEventListener('click', () => A.sendReport(A.getTest()));
+  document.getElementById('ms-send').addEventListener('click', () => { S.del('milestone_pending'); A.sendReport(A.getTest()); });
+  document.getElementById('ms-later').addEventListener('click', () => { S.del('milestone_pending'); document.getElementById('milestone').hidden = true; });
+  document.addEventListener('alakai:test', render);
+  render();
+})();
+</script>
+</body>
+</html>

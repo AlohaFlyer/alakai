@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get set up · Alakaʻi Test Prep</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="manifest" href="site.webmanifest">
+<style>
+  .onb { max-width: 620px; margin: 0 auto; }
+  .opts { display: grid; gap: 8px; }
+  .opts button { text-align: left; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-weight: 500; }
+  .opts button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+  .step { font-size: .85rem; color: var(--ink-soft); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap onb">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="mark">A</span><span class="name">Alakaʻi Test Prep</span></a>
+  </header>
+  <div class="bar-track" style="margin-bottom:14px"><div class="bar-fill" id="prog"></div></div>
+  <section class="card" id="card">
+    <div class="step" id="step"></div>
+    <h2 id="q"></h2>
+    <div id="body"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="secondary" id="back">Back</button>
+      <button id="next">Next</button>
+      <button class="ghost" id="skip" hidden>Skip</button>
+    </div>
+  </section>
+  <p class="muted" style="text-align:center">10 quick questions so the app fits how you actually study. Nothing here leaves your device except one anonymous school-and-grade message at the end. <a href="settings.html#disclosures">Details</a></p>
+</div>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
+<script>
+(async () => {
+  const A = window.Alakai, S = A.Store;
+  await A.boot({ page: 'onboard.html' });
+  const cfg = await A.data('data/onboarding.json');
+  const schools = await A.data('data/schools.json');
+  const params = new URLSearchParams(location.search);
+  const existing = (params.get('redo') ? null : A.profile()) || {};
+  const answers = Object.assign({}, existing);
+  const qs = cfg.questions.slice();
+  // Final contact step
+  qs.push({ id: 'contact', q: 'Last thing: who gets your progress reports?', type: 'contact' });
+  let i = 0;
+  const el = { q: document.getElementById('q'), body: document.getElementById('body'), step: document.getElementById('step'), prog: document.getElementById('prog'), next: document.getElementById('next'), back: document.getElementById('back'), skip: document.getElementById('skip') };
+
+  function visible(q) { if (q.only === 'act') return answers.test === 'act' || answers.test === 'both'; return true; }
+  function list() { return qs.filter(visible); }
+  function render() {
+    const L = list(); if (i >= L.length) return finish(); if (i < 0) i = 0;
+    const q = L[i]; el.step.textContent = `Question ${i + 1} of ${L.length}`; el.prog.style.width = Math.round(100 * i / L.length) + '%';
+    el.q.textContent = q.q; el.back.disabled = i === 0; el.skip.hidden = !(q.type === 'date' || q.type === 'text');
+    el.next.textContent = i === L.length - 1 ? 'Finish' : 'Next';
+    let html = '';
+    if (q.type === 'single') {
+      let opts = q.options;
+      if (q.dynamic === 'sections') { const t = answers.test === 'both' ? 'sat' : (answers.test || 'sat'); opts = cfg.sections[t].filter(([k]) => !(t === 'act' && k === 'science' && answers.science === 'no')); if (answers.test === 'both') opts = cfg.sections.sat.concat(cfg.sections.act.filter(([k]) => k !== 'math')); }
+      html = '<div class="opts">' + opts.map(([v, l]) => `<button type="button" data-v="${A.esc(v)}" aria-pressed="${answers[q.id] === v}">${A.esc(l)}</button>`).join('') + '</div>';
+    } else if (q.type === 'date') {
+      html = `<input type="date" id="in" value="${A.esc(answers[q.id] || '')}">`;
+    } else if (q.type === 'text') {
+      html = `<input type="text" id="in" placeholder="${A.esc(q.placeholder || '')}" value="${A.esc(answers[q.id] || '')}">`;
+    } else if (q.type === 'contact') {
+      const schoolId = S.get('school', schools.default); const sc = schools.schools.find(s => s.id === schoolId);
+      html = `
+        <div class="field"><label>School</label><select id="c-school">${schools.schools.map(s => `<option value="${s.id}" ${s.id === schoolId ? 'selected' : ''}>${A.esc(s.name)}</option>`).join('')}</select></div>
+        <div class="field"><label>Grade</label><select id="c-grade"><option value="">Choose</option>${['9', '10', '11', '12', 'other'].map(g => `<option value="${g}" ${answers.grade === g ? 'selected' : ''}>${g === 'other' ? 'Other' : g + 'th'}</option>`).join('')}</select></div>
+        <div class="field"><label>Your first name</label><input type="text" id="c-name" autocomplete="given-name" value="${A.esc(answers.name || '')}"></div>
+        <div class="field"><label>Your email (reports go here)</label><input type="email" id="c-email" autocomplete="email" value="${A.esc(answers.email || '')}"></div>
+        <div class="field"><label>Parent or teacher name (optional)</label><input type="text" id="c-pname" value="${A.esc(answers.pname || '')}"></div>
+        <div class="field"><label>Parent or teacher email (optional, CC on reports)</label><input type="email" id="c-pemail" value="${A.esc(answers.pemail || '')}"></div>
+        <div class="field"><label><input type="checkbox" id="c-ms" ${answers.milestones === false ? '' : 'checked'}> Remind me to send a report at milestones (end of a timed section, every 5 episodes, every 100 drills)</label></div>
+        <p class="muted">Emails stay on this device. Reports open in your own mail app. When you tap Finish, one anonymous message with just <code>{"school":"${A.esc(schoolId)}","grade":"…"}</code> is sent.</p>`;
+    }
+    el.body.innerHTML = html;
+    el.body.querySelectorAll('.opts button').forEach(b => b.addEventListener('click', () => { answers[q.id] = b.dataset.v; el.body.querySelectorAll('.opts button').forEach(x => x.setAttribute('aria-pressed', x === b)); setTimeout(() => { i++; render(); }, 180); }));
+  }
+  function collect() {
+    const L = list(); const q = L[i]; if (!q) return true;
+    if (q.type === 'single' && !answers[q.id]) return false;
+    if (q.type === 'date' || q.type === 'text') { answers[q.id] = document.getElementById('in').value.trim(); }
+    if (q.type === 'contact') {
+      answers.grade = document.getElementById('c-grade').value; answers.name = document.getElementById('c-name').value.trim(); answers.email = document.getElementById('c-email').value.trim();
+      answers.pname = document.getElementById('c-pname').value.trim(); answers.pemail = document.getElementById('c-pemail').value.trim(); answers.milestones = document.getElementById('c-ms').checked;
+      S.set('school', document.getElementById('c-school').value);
+      if (!answers.grade || !answers.name) { alert('Grade and first name help the dashboard make sense. Email is optional but reports need it.'); return false; }
+    }
+    return true;
+  }
+  el.next.addEventListener('click', () => { if (!collect()) return; i++; render(); });
+  el.skip.addEventListener('click', () => { const q = list()[i]; answers[q.id] = ''; i++; render(); });
+  el.back.addEventListener('click', () => { collect(); i--; render(); });
+  async function finish() {
+    answers.onboarded = true; answers.onboardedAt = new Date().toISOString();
+    answers.science = answers.science === 'yes' || answers.science === 'unsure';
+    answers.setSize = { '15': 6, '30': 10, '45': 14, '60': 18 }[answers.minutes] || 10;
+    S.set('profile', answers);
+    A.setTest(answers.test === 'act' ? 'act' : 'sat');
+    await A.pingOnce(S.get('school', schools.default), answers.grade || '');
+    location.href = params.get('next') || 'dashboard.html';
+  }
+  render();
+})();
+</script>
+</body>
+</html>

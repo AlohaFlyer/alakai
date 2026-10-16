@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern A "Kohala": mauna triangles (Kohala and Mauna Kea profiles) under a Kīpuʻupuʻu rain hatch. Original ʻohe kāpala-style geometry. Used as a CSS mask: filled = colored. -->
+  <g fill="#000">
+    <!-- rain hatch, upper band -->
+    <path d="M0 2 l6 6 v3 l-6 -6z M14 0 l8 8 v3 l-8 -8z M28 0 l8 8 v3 l-8 -8z M42 0 l8 8 v3 l-8 -8z M56 0 l8 8 v3 l-8 -8z"/>
+    <path d="M0 14 l6 6 v3 l-6 -6z M14 12 l8 8 v3 l-8 -8z M28 12 l8 8 v3 l-8 -8z M42 12 l8 8 v3 l-8 -8z M56 12 l8 8 v3 l-8 -8z"/>
+    <!-- horizon line -->
+    <rect x="0" y="26" width="64" height="2"/>
+    <!-- low mountain row (Kohala), tall peak (Mauna Kea) -->
+    <path d="M0 50 L10 40 L20 50 Z"/>
+    <path d="M18 50 L32 32 L46 50 Z"/>
+    <path d="M44 50 L54 40 L64 50 Z"/>
+    <!-- pili grass ticks, lower band -->
+    <path d="M4 56 h2 v8 h-2z M12 58 h2 v6 h-2z M20 56 h2 v8 h-2z M28 58 h2 v6 h-2z M36 56 h2 v8 h-2z M44 58 h2 v6 h-2z M52 56 h2 v8 h-2z M60 58 h2 v6 h-2z"/>
+    <rect x="0" y="52" width="64" height="2"/>
+  </g>
+</svg>

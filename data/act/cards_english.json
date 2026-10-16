@@ -1,0 +1,476 @@
+[
+ {
+  "id": "act-card-eng-001",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "What can a semicolon join?",
+  "back": "Two independent clauses with no FANBOYS conjunction. Both sides must be able to stand alone as sentences.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-002",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "What must come before a colon?",
+  "back": "A complete independent clause. After it: a list, explanation, quotation, or clause that explains what came before.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-003",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "What is a comma splice?",
+  "back": "Two independent clauses joined by only a comma. Fix with a period, semicolon, or comma plus FANBOYS.",
+  "tags": [
+   "punctuation",
+   "sentence"
+  ]
+ },
+ {
+  "id": "act-card-eng-004",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "What are the FANBOYS conjunctions?",
+  "back": "For, and, nor, but, or, yet, so. Comma plus one of these can join two independent clauses.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-005",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "How do you punctuate a nonessential (extra) phrase in mid-sentence?",
+  "back": "With a matching pair: two commas, two dashes, or two parentheses. Never mix a comma with a dash.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-006",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "Essential vs. nonessential clause: which gets commas?",
+  "back": "Nonessential (removable without losing which one you mean) gets commas. Essential (identifies the noun) gets none.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-007",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "Can a single comma separate a subject from its verb?",
+  "back": "No. Never put one comma between subject and verb, or between verb and its object.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-008",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "Which takes commas, \"that\" or \"which\" clauses?",
+  "back": "\"Which\" clauses are nonessential and take commas. \"That\" clauses are essential and take none.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-009",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "Singular vs. plural possessive apostrophe",
+  "back": "Singular: add 's (dog's). Plural ending in s: add ' only (dogs'). Irregular plural: add 's (children's).",
+  "tags": [
+   "punctuation",
+   "apostrophe"
+  ]
+ },
+ {
+  "id": "act-card-eng-010",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "its vs. it's",
+  "back": "its = possessive (no apostrophe). it's = it is or it has.",
+  "tags": [
+   "apostrophe",
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-011",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "their / there / they're",
+  "back": "their = possessive. there = place or \"there is.\" they're = they are.",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-012",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "whose vs. who's",
+  "back": "whose = possessive. who's = who is or who has.",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-013",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "Comma after an introductory element?",
+  "back": "Yes. Put a comma after an introductory word, phrase, or dependent clause (However, / After the storm, / Because it rained,).",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-014",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "How many commas in a list of three?",
+  "back": "Commas between all items, including before \"and\" on the ACT. No comma after the last item.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-015",
+  "section": "english",
+  "topic": "Punctuation",
+  "front": "What can a single dash do at the end of a sentence?",
+  "back": "Set off a summary, explanation, or dramatic add-on, like a colon. The part before the dash must be complete.",
+  "tags": [
+   "punctuation"
+  ]
+ },
+ {
+  "id": "act-card-eng-016",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "How do you find the true subject?",
+  "back": "Cross out prepositional phrases (of the, in the, with the) and interrupters. What remains is the subject.",
+  "tags": [
+   "agreement"
+  ]
+ },
+ {
+  "id": "act-card-eng-017",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "Is \"each\" (or every, either, neither, anyone) singular or plural?",
+  "back": "Singular. Each of the dancers HAS. Everyone IS.",
+  "tags": [
+   "agreement"
+  ]
+ },
+ {
+  "id": "act-card-eng-018",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "Neither/nor or either/or: which subject sets the verb?",
+  "back": "The subject closer to the verb. Neither the manager nor the cowhands WERE.",
+  "tags": [
+   "agreement"
+  ]
+ },
+ {
+  "id": "act-card-eng-019",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "Do \"along with,\" \"as well as,\" \"together with\" make a subject plural?",
+  "back": "No. Only \"and\" makes a compound subject. The coach, along with players, IS.",
+  "tags": [
+   "agreement"
+  ]
+ },
+ {
+  "id": "act-card-eng-020",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "\"The number of\" vs. \"a number of\"",
+  "back": "\"The number of\" is singular (the number IS). \"A number of\" is plural (a number ARE).",
+  "tags": [
+   "agreement"
+  ]
+ },
+ {
+  "id": "act-card-eng-021",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "Subject or object pronoun? Quick test",
+  "back": "Drop the other person: \"thanked me,\" not \"thanked I.\" Subject: I, he, she, we, they, who. Object: me, him, her, us, them, whom.",
+  "tags": [
+   "pronouns"
+  ]
+ },
+ {
+  "id": "act-card-eng-022",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "who vs. whom",
+  "back": "who = subject (he). whom = object (him). Remove interrupters like \"I think\" first.",
+  "tags": [
+   "pronouns"
+  ]
+ },
+ {
+  "id": "act-card-eng-023",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "What makes a pronoun reference wrong?",
+  "back": "Ambiguous (two possible nouns), missing antecedent, or a number mismatch. Replace with the noun if unclear.",
+  "tags": [
+   "pronouns"
+  ]
+ },
+ {
+  "id": "act-card-eng-024",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "When do you use past perfect (had + verb)?",
+  "back": "For an action completed before another past action. By the time lava arrived, residents HAD LEFT.",
+  "tags": [
+   "tense"
+  ]
+ },
+ {
+  "id": "act-card-eng-025",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "How do you choose a verb tense on the ACT?",
+  "back": "Match the tense of the surrounding sentences unless a time word signals a shift.",
+  "tags": [
+   "tense"
+  ]
+ },
+ {
+  "id": "act-card-eng-026",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "would have vs. would of",
+  "back": "Always \"would have\" (or would've). \"Of\" is never a helping verb.",
+  "tags": [
+   "tense",
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-027",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "What is a dangling modifier?",
+  "back": "An opening phrase whose doer is not the noun right after the comma. Walking home, THE PERSON (not the rain).",
+  "tags": [
+   "modifiers"
+  ]
+ },
+ {
+  "id": "act-card-eng-028",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "Comparative vs. superlative",
+  "back": "Two things: -er or more. Three or more: -est or most. Never both (no \"most tallest\").",
+  "tags": [
+   "modifiers"
+  ]
+ },
+ {
+  "id": "act-card-eng-029",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "fewer vs. less",
+  "back": "fewer = countable (fewer students). less = uncountable (less water).",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-030",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "affect vs. effect",
+  "back": "affect = verb, to influence. effect = noun, a result. (Effect as a verb means to bring about.)",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-031",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "than vs. then",
+  "back": "than = comparison (taller than). then = time (and then).",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-032",
+  "section": "english",
+  "topic": "Grammar",
+  "front": "farther vs. further",
+  "back": "farther = physical distance. further = degree or extent (further study).",
+  "tags": [
+   "confused-words"
+  ]
+ },
+ {
+  "id": "act-card-eng-033",
+  "section": "english",
+  "topic": "Sentence structure",
+  "front": "What is a fragment?",
+  "back": "A group of words missing a subject, a main verb, or starting with a subordinator (because, although) without a main clause.",
+  "tags": [
+   "sentence"
+  ]
+ },
+ {
+  "id": "act-card-eng-034",
+  "section": "english",
+  "topic": "Sentence structure",
+  "front": "What is parallel structure?",
+  "back": "Items in a list or comparison share the same form: to rope, to shoe, to mend; reading vs. reading.",
+  "tags": [
+   "parallelism"
+  ]
+ },
+ {
+  "id": "act-card-eng-035",
+  "section": "english",
+  "topic": "Sentence structure",
+  "front": "not only ... but also",
+  "back": "Must be followed by parallel elements: not only sources of food but also places to gather.",
+  "tags": [
+   "parallelism"
+  ]
+ },
+ {
+  "id": "act-card-eng-036",
+  "section": "english",
+  "topic": "Sentence structure",
+  "front": "Can \"although\" and \"but\" join the same two clauses?",
+  "back": "No. One joining word per pair of clauses. Although X, Y. Not: Although X, but Y.",
+  "tags": [
+   "sentence"
+  ]
+ },
+ {
+  "id": "act-card-eng-037",
+  "section": "english",
+  "topic": "Concision",
+  "front": "ACT concision default",
+  "back": "If choices are all grammatical, pick the shortest one that keeps the meaning. OMIT is often right.",
+  "tags": [
+   "concision"
+  ]
+ },
+ {
+  "id": "act-card-eng-038",
+  "section": "english",
+  "topic": "Concision",
+  "front": "Common redundancies to cut",
+  "back": "return back, annually every year, ascend upward, unique and individual, totally complete, past history.",
+  "tags": [
+   "concision"
+  ]
+ },
+ {
+  "id": "act-card-eng-039",
+  "section": "english",
+  "topic": "Concision",
+  "front": "Wordy phrases and their one-word fixes",
+  "back": "due to the fact that = because; at this point in time = now; in order to = to.",
+  "tags": [
+   "concision"
+  ]
+ },
+ {
+  "id": "act-card-eng-040",
+  "section": "english",
+  "topic": "Transitions",
+  "front": "Contrast transitions",
+  "back": "however, but, yet, nevertheless, nonetheless, still, on the other hand, in contrast.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "act-card-eng-041",
+  "section": "english",
+  "topic": "Transitions",
+  "front": "Cause-and-effect transitions",
+  "back": "therefore, thus, consequently, as a result, so, for this reason, because of this.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "act-card-eng-042",
+  "section": "english",
+  "topic": "Transitions",
+  "front": "Addition and example transitions",
+  "back": "Addition: also, moreover, furthermore, in addition. Example: for example, for instance, specifically.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "act-card-eng-043",
+  "section": "english",
+  "topic": "Transitions",
+  "front": "Sequence and time transitions",
+  "back": "first, next, then, finally, meanwhile, afterward, since then, today, previously.",
+  "tags": [
+   "transitions"
+  ]
+ },
+ {
+  "id": "act-card-eng-044",
+  "section": "english",
+  "topic": "Strategy",
+  "front": "Add/delete question: two-step method",
+  "back": "1) Decide yes or no: does it support the paragraph's focus? 2) Pick the reason that matches what the sentence actually says.",
+  "tags": [
+   "strategy"
+  ]
+ },
+ {
+  "id": "act-card-eng-045",
+  "section": "english",
+  "topic": "Strategy",
+  "front": "\"What would the paragraph lose?\" questions",
+  "back": "Summarize the sentence in five words. The right answer describes that content, nothing more.",
+  "tags": [
+   "strategy"
+  ]
+ },
+ {
+  "id": "act-card-eng-046",
+  "section": "english",
+  "topic": "Strategy",
+  "front": "Sentence placement questions",
+  "back": "Look for clue words (First, this, these, Finally, pronouns) and place the sentence next to what they point to.",
+  "tags": [
+   "organization"
+  ]
+ },
+ {
+  "id": "act-card-eng-047",
+  "section": "english",
+  "topic": "Style",
+  "front": "How to match tone on ACT English",
+  "back": "Match the passage's register. Formal passages reject slang and casual hedges like \"kind of\" or \"stuff.\"",
+  "tags": [
+   "style"
+  ]
+ }
+]

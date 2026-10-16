@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Pattern F "Saddle stitch": a flat leather strap with a running saddle stitch down the middle and a rope twist along each edge. Original. -->
+  <g fill="#000">
+    <!-- edge rope twists -->
+    <path d="M0 2 l8 6 v4 l-8 -6z M16 2 l8 6 v4 l-8 -6z M32 2 l8 6 v4 l-8 -6z M48 2 l8 6 v4 l-8 -6z"/>
+    <path d="M8 2 l-8 6 v4 l8 -6z M24 2 l-8 6 v4 l8 -6z M40 2 l-8 6 v4 l8 -6z M56 2 l-8 6 v4 l8 -6z M64 2 l-8 6 v4 l8 -6z"/>
+    <path d="M0 52 l8 6 v4 l-8 -6z M16 52 l8 6 v4 l-8 -6z M32 52 l8 6 v4 l-8 -6z M48 52 l8 6 v4 l-8 -6z"/>
+    <path d="M8 52 l-8 6 v4 l8 -6z M24 52 l-8 6 v4 l8 -6z M40 52 l-8 6 v4 l8 -6z M56 52 l-8 6 v4 l8 -6z M64 52 l-8 6 v4 l8 -6z"/>
+    <!-- strap edges -->
+    <rect x="0" y="16" width="64" height="2"/><rect x="0" y="46" width="64" height="2"/>
+    <!-- saddle stitch: slanted dashes -->
+    <path d="M4 36 l6 -8 h3 l-6 8z M20 36 l6 -8 h3 l-6 8z M36 36 l6 -8 h3 l-6 8z M52 36 l6 -8 h3 l-6 8z"/>
+  </g>
+</svg>

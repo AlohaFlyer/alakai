@@ -1,0 +1,31 @@
+{"test":"act","sections":[
+ {"id":"english","name":"English","skills":[
+  {"id":"english-punct","name":"Punctuation (commas, semicolons, colons, dashes, apostrophes)","domain":"Conventions of Standard English","tip":"Decide what is on each side of the mark before you pick the mark."},
+  {"id":"english-grammar","name":"Grammar and usage (agreement, pronouns, verb tense, modifiers)","domain":"Conventions of Standard English","tip":"Cross out everything between the subject and the verb."},
+  {"id":"english-sentence","name":"Sentence structure (fragments, run-ons, parallelism)","domain":"Conventions of Standard English","tip":"Every sentence needs one subject-verb pair that can stand alone."},
+  {"id":"english-strategy","name":"Topic development and relevance (add, delete, purpose)","domain":"Production of Writing","tip":"Would the paragraph lose anything if this sentence vanished? That answers add/delete."},
+  {"id":"english-organization","name":"Organization, unity, transitions","domain":"Production of Writing","tip":"Read the sentence before and after; the transition must fit both."},
+  {"id":"english-style","name":"Word choice, tone, concision","domain":"Knowledge of Language","tip":"Shortest choice that keeps the meaning usually wins."}
+ ]},
+ {"id":"math","name":"Math","skills":[
+  {"id":"math-prealgebra","name":"Number, operations, ratios, percents","domain":"Preparing for Higher Math","tip":"Write the units; let them cancel."},
+  {"id":"math-algebra","name":"Linear equations, inequalities, systems","domain":"Preparing for Higher Math","tip":"Isolate in two moves max."},
+  {"id":"math-functions","name":"Functions, quadratics, exponentials","domain":"Preparing for Higher Math","tip":"Vertex form for max/min, factored form for roots."},
+  {"id":"math-geometry","name":"Plane geometry: angles, triangles, circles, area","domain":"Preparing for Higher Math","tip":"No formula sheet on the ACT. Know area, circumference, Pythagorean theorem cold."},
+  {"id":"math-coordinate","name":"Coordinate geometry: slope, distance, midpoint, conics basics","domain":"Preparing for Higher Math","tip":"Slope first; most coordinate questions are slope in disguise."},
+  {"id":"math-trig","name":"Trigonometry: SOH CAH TOA, unit circle, identities","domain":"Preparing for Higher Math","tip":"Draw the triangle. Label the sides. Then the ratio."},
+  {"id":"math-stats","name":"Statistics, probability, counting","domain":"Preparing for Higher Math","tip":"Probability is favorable over total; counting is multiply the slots."},
+  {"id":"math-modeling","name":"Modeling and multi-step word problems","domain":"Integrating Essential Skills","tip":"Translate the sentence to an equation before you compute anything."}
+ ]},
+ {"id":"reading","name":"Reading","skills":[
+  {"id":"reading-detail","name":"Key ideas and details (locate, paraphrase)","domain":"Key Ideas and Details","tip":"Go back to the line. Never answer from memory."},
+  {"id":"reading-inference","name":"Inference and author's view","domain":"Key Ideas and Details","tip":"The right inference is the smallest step from the text."},
+  {"id":"reading-craft","name":"Craft and structure (word meaning, purpose, tone)","domain":"Craft and Structure","tip":"Ask what the sentence does, not what it says."},
+  {"id":"reading-integration","name":"Integration of knowledge (paired passages, argument)","domain":"Integration of Knowledge and Ideas","tip":"Pin each author's position in five words before the choices."}
+ ]},
+ {"id":"science","name":"Science","skills":[
+  {"id":"science-data","name":"Data representation (reading tables and graphs)","domain":"Interpretation of Data","tip":"Find the axis labels and units before the numbers."},
+  {"id":"science-research","name":"Research summaries (experiment design, variables, controls)","domain":"Scientific Investigation","tip":"Name the independent, dependent and controlled variables in the margin."},
+  {"id":"science-conflict","name":"Conflicting viewpoints","domain":"Evaluation of Models","tip":"One sentence per scientist: what they claim and the one fact they lean on."}
+ ]}
+]}

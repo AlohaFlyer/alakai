@@ -1,0 +1,602 @@
+[
+ {
+  "id": "sat-card-math-001",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Slope formula through (x1, y1) and (x2, y2)",
+  "back": "m = (y2 - y1)/(x2 - x1)",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-002",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Slope-intercept form of a line",
+  "back": "y = mx + b; m is slope, b is the y-intercept",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-003",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Point-slope form of a line",
+  "back": "y - y1 = m(x - x1)",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-004",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Standard form Ax + By = C: slope?",
+  "back": "m = -A/B",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-005",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Slopes of parallel lines",
+  "back": "Equal slopes (different intercepts)",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-006",
+  "section": "math",
+  "topic": "Lines",
+  "front": "Slopes of perpendicular lines",
+  "back": "Negative reciprocals; product is -1",
+  "tags": [
+   "lines"
+  ]
+ },
+ {
+  "id": "sat-card-math-007",
+  "section": "math",
+  "topic": "Systems",
+  "front": "Linear system with no solution",
+  "back": "Same slope, different y-intercepts (parallel lines)",
+  "tags": [
+   "systems"
+  ]
+ },
+ {
+  "id": "sat-card-math-008",
+  "section": "math",
+  "topic": "Systems",
+  "front": "Linear system with infinitely many solutions",
+  "back": "Same slope and same y-intercept (same line)",
+  "tags": [
+   "systems"
+  ]
+ },
+ {
+  "id": "sat-card-math-009",
+  "section": "math",
+  "topic": "Systems",
+  "front": "ax + b = cx + d has no solution when",
+  "back": "a = c and b is not d",
+  "tags": [
+   "systems"
+  ]
+ },
+ {
+  "id": "sat-card-math-010",
+  "section": "math",
+  "topic": "Coordinate geometry",
+  "front": "Distance formula",
+  "back": "d = sqrt((x2 - x1)^2 + (y2 - y1)^2)",
+  "tags": [
+   "coordinate"
+  ]
+ },
+ {
+  "id": "sat-card-math-011",
+  "section": "math",
+  "topic": "Coordinate geometry",
+  "front": "Midpoint formula",
+  "back": "((x1 + x2)/2, (y1 + y2)/2)",
+  "tags": [
+   "coordinate"
+  ]
+ },
+ {
+  "id": "sat-card-math-012",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Vertex form of a parabola",
+  "back": "y = a(x - h)^2 + k; vertex (h, k)",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-013",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "x-coordinate of the vertex of y = ax^2 + bx + c",
+  "back": "x = -b/(2a)",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-014",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Quadratic formula",
+  "back": "x = (-b +/- sqrt(b^2 - 4ac))/(2a)",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-015",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Discriminant and what it tells you",
+  "back": "b^2 - 4ac: positive = 2 real roots, zero = 1, negative = 0",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-016",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Sum and product of the roots of ax^2 + bx + c = 0",
+  "back": "Sum = -b/a; product = c/a",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-017",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Difference of squares",
+  "back": "a^2 - b^2 = (a + b)(a - b)",
+  "tags": [
+   "factoring"
+  ]
+ },
+ {
+  "id": "sat-card-math-018",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Perfect square trinomials",
+  "back": "(a + b)^2 = a^2 + 2ab + b^2; (a - b)^2 = a^2 - 2ab + b^2",
+  "tags": [
+   "factoring"
+  ]
+ },
+ {
+  "id": "sat-card-math-019",
+  "section": "math",
+  "topic": "Quadratics",
+  "front": "Parabola y = ax^2 + bx + c opens up or down?",
+  "back": "Up if a > 0; down if a < 0",
+  "tags": [
+   "quadratics"
+  ]
+ },
+ {
+  "id": "sat-card-math-020",
+  "section": "math",
+  "topic": "Exponents",
+  "front": "Product rule for exponents",
+  "back": "a^m * a^n = a^(m + n)",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "sat-card-math-021",
+  "section": "math",
+  "topic": "Exponents",
+  "front": "Quotient rule for exponents",
+  "back": "a^m / a^n = a^(m - n)",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "sat-card-math-022",
+  "section": "math",
+  "topic": "Exponents",
+  "front": "Power of a power",
+  "back": "(a^m)^n = a^(mn)",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "sat-card-math-023",
+  "section": "math",
+  "topic": "Exponents",
+  "front": "Zero and negative exponents",
+  "back": "a^0 = 1; a^-n = 1/a^n (a not 0)",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "sat-card-math-024",
+  "section": "math",
+  "topic": "Exponents",
+  "front": "Fractional exponent a^(m/n)",
+  "back": "a^(m/n) = (nth root of a)^m",
+  "tags": [
+   "exponents"
+  ]
+ },
+ {
+  "id": "sat-card-math-025",
+  "section": "math",
+  "topic": "Exponentials",
+  "front": "Exponential growth or decay model",
+  "back": "y = a(1 + r)^t growth; y = a(1 - r)^t decay",
+  "tags": [
+   "exponentials"
+  ]
+ },
+ {
+  "id": "sat-card-math-026",
+  "section": "math",
+  "topic": "Exponentials",
+  "front": "Linear vs exponential change",
+  "back": "Linear adds the same amount each step; exponential multiplies by the same factor",
+  "tags": [
+   "exponentials"
+  ]
+ },
+ {
+  "id": "sat-card-math-027",
+  "section": "math",
+  "topic": "Exponentials",
+  "front": "Half-life model",
+  "back": "A = A0 (1/2)^(t/h), h = half-life",
+  "tags": [
+   "exponentials"
+  ]
+ },
+ {
+  "id": "sat-card-math-028",
+  "section": "math",
+  "topic": "Polynomials",
+  "front": "Factor theorem",
+  "back": "x - a is a factor of p(x) exactly when p(a) = 0",
+  "tags": [
+   "polynomials"
+  ]
+ },
+ {
+  "id": "sat-card-math-029",
+  "section": "math",
+  "topic": "Polynomials",
+  "front": "Zero with even multiplicity",
+  "back": "Graph touches the x-axis and turns; odd multiplicity crosses",
+  "tags": [
+   "polynomials"
+  ]
+ },
+ {
+  "id": "sat-card-math-030",
+  "section": "math",
+  "topic": "Percent",
+  "front": "Percent change",
+  "back": "(new - old)/old * 100",
+  "tags": [
+   "percent"
+  ]
+ },
+ {
+  "id": "sat-card-math-031",
+  "section": "math",
+  "topic": "Percent",
+  "front": "Multiplier for a p% increase; for a p% decrease",
+  "back": "1 + p/100; 1 - p/100",
+  "tags": [
+   "percent"
+  ]
+ },
+ {
+  "id": "sat-card-math-032",
+  "section": "math",
+  "topic": "Percent",
+  "front": "Successive percent changes",
+  "back": "Multiply the factors; they do not simply add",
+  "tags": [
+   "percent"
+  ]
+ },
+ {
+  "id": "sat-card-math-033",
+  "section": "math",
+  "topic": "Percent",
+  "front": "Find the original after a p% change",
+  "back": "original = new / (1 +/- p/100)",
+  "tags": [
+   "percent"
+  ]
+ },
+ {
+  "id": "sat-card-math-034",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Median",
+  "back": "Middle value of sorted data; average the two middle values if the count is even",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-035",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Effect of an outlier on mean and median",
+  "back": "Mean moves toward the outlier; median barely changes",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-036",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Mean from a total",
+  "back": "Total = mean * count; work with totals when values are added or removed",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-037",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Standard deviation intuition",
+  "back": "Typical distance from the mean; more spread = larger SD",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-038",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Add a constant to every value: effect on mean and SD",
+  "back": "Mean shifts by the constant; SD unchanged",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-039",
+  "section": "math",
+  "topic": "Statistics",
+  "front": "Multiply every value by k: effect on mean and SD",
+  "back": "Mean and SD both multiply by |k|",
+  "tags": [
+   "stats"
+  ]
+ },
+ {
+  "id": "sat-card-math-040",
+  "section": "math",
+  "topic": "Probability",
+  "front": "Basic probability",
+  "back": "P = favorable outcomes / total equally likely outcomes",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "sat-card-math-041",
+  "section": "math",
+  "topic": "Probability",
+  "front": "P(A or B)",
+  "back": "P(A) + P(B) - P(A and B)",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "sat-card-math-042",
+  "section": "math",
+  "topic": "Probability",
+  "front": "P(A and B) for independent events",
+  "back": "P(A) * P(B)",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "sat-card-math-043",
+  "section": "math",
+  "topic": "Probability",
+  "front": "Conditional probability from a two-way table",
+  "back": "Use only the row or column given by the condition as the denominator",
+  "tags": [
+   "probability"
+  ]
+ },
+ {
+  "id": "sat-card-math-044",
+  "section": "math",
+  "topic": "Data and inference",
+  "front": "Residual",
+  "back": "Actual value minus predicted value",
+  "tags": [
+   "inference"
+  ]
+ },
+ {
+  "id": "sat-card-math-045",
+  "section": "math",
+  "topic": "Data and inference",
+  "front": "Random sampling vs random assignment",
+  "back": "Random sampling lets you generalize; random assignment lets you claim cause",
+  "tags": [
+   "inference"
+  ]
+ },
+ {
+  "id": "sat-card-math-046",
+  "section": "math",
+  "topic": "Data and inference",
+  "front": "Effect of a larger sample on margin of error",
+  "back": "Larger random sample gives a smaller margin of error",
+  "tags": [
+   "inference"
+  ]
+ },
+ {
+  "id": "sat-card-math-047",
+  "section": "math",
+  "topic": "Circles",
+  "front": "Equation of a circle with center (h, k) and radius r",
+  "back": "(x - h)^2 + (y - k)^2 = r^2",
+  "tags": [
+   "circles"
+  ]
+ },
+ {
+  "id": "sat-card-math-048",
+  "section": "math",
+  "topic": "Circles",
+  "front": "Arc length and sector area for a central angle",
+  "back": "Fraction of circle (angle/360) times circumference or area",
+  "tags": [
+   "circles"
+  ]
+ },
+ {
+  "id": "sat-card-math-049",
+  "section": "math",
+  "topic": "Circles",
+  "front": "Arc length in radians",
+  "back": "s = r * theta",
+  "tags": [
+   "circles"
+  ]
+ },
+ {
+  "id": "sat-card-math-050",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Degrees to radians; radians to degrees",
+  "back": "Multiply by pi/180; multiply by 180/pi",
+  "tags": [
+   "trig"
+  ]
+ },
+ {
+  "id": "sat-card-math-051",
+  "section": "math",
+  "topic": "Trig",
+  "front": "SOH CAH TOA",
+  "back": "sin = opp/hyp, cos = adj/hyp, tan = opp/adj",
+  "tags": [
+   "trig"
+  ]
+ },
+ {
+  "id": "sat-card-math-052",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Cofunction identity for complementary angles",
+  "back": "sin x = cos(90 - x)",
+  "tags": [
+   "trig"
+  ]
+ },
+ {
+  "id": "sat-card-math-053",
+  "section": "math",
+  "topic": "Trig",
+  "front": "Pythagorean identity",
+  "back": "sin^2 x + cos^2 x = 1",
+  "tags": [
+   "trig"
+  ]
+ },
+ {
+  "id": "sat-card-math-054",
+  "section": "math",
+  "topic": "Triangles",
+  "front": "Common Pythagorean triples",
+  "back": "3-4-5, 5-12-13, 8-15-17, 7-24-25, and their multiples",
+  "tags": [
+   "triangles"
+  ]
+ },
+ {
+  "id": "sat-card-math-055",
+  "section": "math",
+  "topic": "Triangles",
+  "front": "Similar figures: scale factor k, area and volume scale by",
+  "back": "Area by k^2; volume by k^3",
+  "tags": [
+   "triangles"
+  ]
+ },
+ {
+  "id": "sat-card-math-056",
+  "section": "math",
+  "topic": "Polygons",
+  "front": "Sum of interior angles of an n-sided polygon",
+  "back": "(n - 2) * 180 degrees",
+  "tags": [
+   "geometry"
+  ]
+ },
+ {
+  "id": "sat-card-math-057",
+  "section": "math",
+  "topic": "Reference sheet",
+  "front": "Area and circle formulas given on the SAT reference sheet",
+  "back": "A = pi r^2, C = 2pi r, A = lw, A = 1/2 bh",
+  "tags": [
+   "reference-sheet"
+  ]
+ },
+ {
+  "id": "sat-card-math-058",
+  "section": "math",
+  "topic": "Reference sheet",
+  "front": "Right-triangle facts given on the SAT reference sheet",
+  "back": "c^2 = a^2 + b^2 and the 30-60-90 and 45-45-90 side ratios",
+  "tags": [
+   "reference-sheet"
+  ]
+ },
+ {
+  "id": "sat-card-math-059",
+  "section": "math",
+  "topic": "Reference sheet",
+  "front": "Volume formulas given on the SAT reference sheet",
+  "back": "Box, cylinder, sphere, cone, and pyramid volumes",
+  "tags": [
+   "reference-sheet"
+  ]
+ },
+ {
+  "id": "sat-card-math-060",
+  "section": "math",
+  "topic": "Reference sheet",
+  "front": "Angle facts given on the SAT reference sheet",
+  "back": "Circle has 360 degrees (2pi radians); triangle angles sum to 180",
+  "tags": [
+   "reference-sheet"
+  ]
+ }
+]
