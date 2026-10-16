@@ -234,6 +234,117 @@
   "kahakō": {
    "say": "kah-hah-KOH",
    "note": "the macron"
+  },
+  "Nāwahīokalaniʻōpuʻu": {
+   "say": "nah-wah-hee-oh-kah-lah-nee-OH-poo-oo"
+  },
+  "Nāwahī": {
+   "say": "nah-wah-HEE"
+  },
+  "Ka ʻUmeke Kāʻeo": {
+   "say": "kah oo-MEH-keh KAH-eh-oh"
+  },
+  "ʻUmeke": {
+   "say": "oo-MEH-keh"
+  },
+  "Kāʻeo": {
+   "say": "KAH-eh-oh"
+  },
+  "Kanu o ka ʻĀina": {
+   "say": "KAH-noo oh kah AH-ee-nah"
+  },
+  "ʻĀina": {
+   "say": "AH-ee-nah"
+  },
+  "Ke Ana Laʻahana": {
+   "say": "keh AH-nah lah-ah-HAH-nah"
+  },
+  "Laʻahana": {
+   "say": "lah-ah-HAH-nah"
+  },
+  "ʻEhunuikaimalino": {
+   "say": "eh-hoo-noo-ee-kai-mah-LEE-noh"
+  },
+  "ʻEhunui": {
+   "say": "eh-hoo-NOO-ee"
+  },
+  "Makua Lani": {
+   "say": "mah-KOO-ah LAH-nee"
+  },
+  "Kamehameha": {
+   "say": "kah-MEH-hah-MEH-hah"
+  },
+  "Ke Kula": {
+   "say": "keh KOO-lah"
+  },
+  "Kapaʻau": {
+   "say": "kah-pah-OW"
+  },
+  "Kealakekua": {
+   "say": "keh-ah-lah-keh-KOO-ah"
+  },
+  "Pāhala": {
+   "say": "PAH-hah-lah"
+  },
+  "Hōkū": {
+   "say": "HOH-koo"
+  },
+  "Kīlauea": {
+   "say": "kee-lau-EH-ah"
+  },
+  "Hōkūleʻa": {
+   "say": "hoh-koo-LEH-ah"
+  },
+  "nēnē": {
+   "say": "NAY-nay"
+  },
+  "loʻi": {
+   "say": "LOH-ee"
+  },
+  "kalo": {
+   "say": "KAH-loh"
+  },
+  "hula": {
+   "say": "HOO-lah"
+  },
+  "ʻukulele": {
+   "say": "oo-koo-LEH-leh"
+  },
+  "Kāʻanapali": {
+   "say": "kah-ah-nah-PAH-lee"
+  },
+  "Waikoloa": {
+   "say": "wy-koh-LOH-ah"
+  },
+  "Kawaihae": {
+   "say": "kah-wy-HAH-eh"
+  },
+  "Hāwī": {
+   "say": "HAH-vee"
+  },
+  "ʻĀhualoa": {
+   "say": "ah-hoo-ah-LOH-ah"
+  },
+  "mālama": {
+   "say": "MAH-lah-mah"
+  },
+  "kuleana": {
+   "say": "koo-leh-AH-nah"
+  },
+  "pono": {
+   "say": "POH-noh"
+  },
+  "wahine": {
+   "say": "wah-HEE-neh"
+  },
+  "kāne": {
+   "say": "KAH-neh"
+  },
+  "haole": {
+   "say": "HOW-leh"
+  },
+  "ʻaumākua": {
+   "say": "ow-MAH-koo-ah"
   }
  },
  "flag_patterns": [
@@ -269,10 +380,12 @@
   "heh",
   "hoh",
   "hoo",
+  "how",
   "hoy",
   "jang",
   "ka",
   "kah",
+  "kai",
   "kay",
   "kee",
   "keh",
@@ -294,12 +407,16 @@
   "mow",
   "my",
   "nah",
+  "nay",
   "nee",
+  "neh",
   "noh",
+  "noo",
   "oh",
   "ohs",
   "on",
   "oo",
+  "ow",
   "pah",
   "pee",
   "poh",
@@ -317,8 +434,11 @@
   "tee",
   "toe",
   "vai",
+  "vee",
+  "wah",
   "writing",
   "wy",
   "you"
- ]
+ ],
+ "_approved": "Lexicon reviewed by Ryan 2026-10-16 (P1-P21), all entries approved as written."
 }

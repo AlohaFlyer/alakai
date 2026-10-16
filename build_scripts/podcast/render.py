@@ -84,9 +84,9 @@ def render_elevenlabs(ep_scenes, by, outdir, pdict_id):
     key = os.environ.get("ELEVENLABS_API_KEY") or sys.exit("ELEVENLABS_API_KEY missing")
     prev = []
     for i, sc in enumerate(ep_scenes):
+        if (outdir / f"scene{i:02d}.mp3").exists(): print(f"  scene {i}: exists, skip"); continue
         body = {"model_id": "eleven_v3", "inputs": [{"text": t, "voice_id": by[sp]["voice_id"]} for sp, t in sc]}
         if pdict_id: body["pronunciation_dictionary_locators"] = [pdict_id]
-        if prev: body["previous_request_ids"] = prev[-3:]
         r = requests.post("https://api.elevenlabs.io/v1/text-to-dialogue?output_format=mp3_44100_128", headers={"xi-api-key": key, "Content-Type": "application/json"}, json=body, timeout=600)
         if r.status_code != 200: sys.exit(f"scene {i}: {r.status_code} {r.text[:300]}")
         (outdir / f"scene{i:02d}.mp3").write_bytes(r.content)
