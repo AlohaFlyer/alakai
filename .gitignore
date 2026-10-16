@@ -3,3 +3,4 @@ build_scripts/podcast/out/
 build_scripts/podcast/.env
 __pycache__/
 .DS_Store
+audio/*.mp3
