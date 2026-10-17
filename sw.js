@@ -1,5 +1,5 @@
 /* Alakaʻi Test Prep service worker: cache-first for app shell and data, network-first for episodes.json, never caches audio. */
-const VERSION = 'alakai-v9';
+const VERSION = 'alakai-v10';
 const SHELL = ['index.html', 'onboard.html', 'dashboard.html', 'drill.html', 'quiz.html', 'timed.html', 'timing.html', 'notes.html', 'settings.html', 'placement.html', 'strategies.html',
   'assets/app.css', 'assets/app.js', 'assets/engine.js', 'assets/patterns/solid.svg', 'assets/patterns/a.svg', 'assets/patterns/b.svg', 'assets/patterns/c.svg', 'assets/patterns/d.svg', 'assets/patterns/e.svg', 'assets/patterns/f.svg', 'assets/patterns/g.svg', 'assets/hero-900.jpg', 'assets/icons/favicon-32.png', 'assets/icons/mark-72.png', 'assets/icons/icon-192.png',
   'data/schools.json', 'data/feedback.json', 'data/onboarding.json', 'data/strategies.json', 'data/links.json', 'data/sat/scale.json', 'data/act/scale.json', 'data/sat/skills.json', 'data/act/skills.json', 'data/sat/timed.json', 'data/act/timed.json'];
