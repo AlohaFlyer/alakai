@@ -3,7 +3,7 @@
 Audio URL base comes from AUDIO_BASE env (default 'audio/' for repo-hosted, or https://audio.alakaitestprep.app/ for R2)."""
 import json, os, re, subprocess, pathlib, sys
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent.parent
-BASE = os.environ.get("AUDIO_BASE", "audio/")
+BASE = os.environ.get("AUDIO_BASE", "https://audio.alakaitestprep.app/")
 CAST = json.loads((HERE / "cast.json").read_text())
 APPROVED = json.loads((HERE / "approved.json").read_text())
 eps = {"shows": {"sat": "SAT Notes Podcast", "act": "ACT Notes Podcast"}, "sat": [], "act": [], "cast": [{"name": c["name"], "role": c["role"]} for c in CAST["characters"]]}
