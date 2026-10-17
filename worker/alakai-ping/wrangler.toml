@@ -5,4 +5,4 @@ routes = [{ pattern = "ping.alakaitestprep.app", custom_domain = true }]
 
 [[kv_namespaces]]
 binding = "PINGS"
-id = "REPLACE_WITH_KV_ID"   # created by: npx wrangler@4 kv namespace create PINGS
+id = "5195fc8801464eac973873b598045fc9"   # created by: npx wrangler@4 kv namespace create PINGS
