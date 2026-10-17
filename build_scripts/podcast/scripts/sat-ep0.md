@@ -1,5 +1,6 @@
 # SAT Notes Ep 0: How We Say Things
 cast: lehua, derek, sarah, pono, kaden
+facts: Kona Costco open 7 days, closes 8:30 PM Mon-Fri, 7 PM Sat, 6 PM Sun (verified costco.com 2026-10-16)
 target_minutes: 6
 
 LEHUA: Aloha, and welcome to SAT Notes. I'm Lehua, and before we teach you one single thing about the SAT, we gotta do something more important. We gotta agree on how we say stuff.
@@ -44,5 +45,7 @@ DEREK: And when I rate your shortcut a six, it's a good six.
 KADEN: Is anything ever a ten?
 DEREK: Not yet.
 LEHUA: That's episode zero. Episode one is how this test actually works, which is less scary than you think. Go do three drills in the app, come back, we'll be here. Mahalo, and I gotta go to Costco.
-KADEN: It's Tuesday.
-LEHUA: Costco doesn't care what day it is.
+KADEN: It's almost five. Kona's an hour from here.
+LEHUA: It's Thursday. They're open till eight thirty. Plenty time.
+KADEN: On a Sunday you'd be done.
+LEHUA: On a Sunday I'd already be there.

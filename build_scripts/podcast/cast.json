@@ -9,7 +9,7 @@
    "age": "late 20s",
    "voice_id": "jRIDd6YCznqwKHkWlpOh",
    "voice_brief": "Warm, quick, local Hawaiʻi cadence, laughs easily, keeps the show moving. Not a radio voice, a cool older-cousin voice.",
-   "gag": "Always has a Costco run to get to after the show.",
+   "gag": "Always has a Costco run to get to after the show. Facts to keep straight: Kona Costco (73-5600 Maiau St) is open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun; about an hour from Waimea. The joke is the drive and the early Sunday close, never that it is closed.",
    "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
    "voice_library_name": "Hoku",
    "local": true,
@@ -80,5 +80,8 @@
   "Standard English means no 'wen', 'stay', 'da', 'dis', 'get' for 'have', or dropped copulas inside an instructional sentence.",
   "A character can set up a teaching point in pidgin ('Okay, listen up, dis one important') and then deliver the point itself in standard English."
  ],
- "_pronunciation": "2026-10-16 finding: dictionaries (alias and IPA) do not fix Hawaiian on ElevenLabs. Mikey (Coach Pono) pronounces Hawaiian correctly from raw spelling on eleven_v3. render2.py renders Pono whole and splices termbank clips (Pono's voice) into other characters' Hawaiian words."
+ "_pronunciation": "2026-10-16 finding: dictionaries (alias and IPA) do not fix Hawaiian on ElevenLabs. Mikey (Coach Pono) pronounces Hawaiian correctly from raw spelling on eleven_v3. render2.py renders Pono whole and splices termbank clips (Pono's voice) into other characters' Hawaiian words.",
+ "fact_rules": [
+  "Any real place, business, hour, price, or date mentioned in a script must be verified before rendering and noted in the script header as 'facts:'."
+ ]
 }
