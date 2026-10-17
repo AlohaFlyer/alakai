@@ -14,3 +14,9 @@ Linters: render2 0 spliced; render.py ok, 1,126 words, 4 voices.
 2. checks/sat-ep13.json Q1 correct choice updated to the same wording ("One full practice test, no later than three days out, then short daily practice"), still the only defensible answer.
 
 Re-checked: 7:45 - 60 - 15 = 6:30 and the trap "stopped a step early"; what-to-bring list and calculator wording per pass 1 sources; PSAT October and junior-year National Merit; one game gag, one rodeo bit, one rating (8). Linters: render2 0 spliced; render.py ok, 1,144 words, 4 voices.
+
+## Pass 3
+
+PASS
+
+7:45 - 60 - 15 = 6:30, trap "stopped a step early"; full-test timing now agrees with the app's 3-day test; what-to-bring and calculator wording per College Board pages; PSAT October and junior-year National Merit; Ep 1 adaptive hedge; one game gag (the drive-the-route line is advice, not the gag), one rodeo bit, airport, rating 8; checks match. No edits. Linters: render2 0 spliced; render.py ok, 1,144 words, 4 voices.

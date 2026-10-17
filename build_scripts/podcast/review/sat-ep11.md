@@ -13,3 +13,9 @@ Linters: render2 0 spliced; render.py ok, 1,209 words, 4 voices.
 PASS
 
 Re-checked independently against the Bluebook directions PDF cited by pass 1: 5/6 characters, fourth-digit truncate or round, mixed numbers as 7/2 or 3.5, no symbols, one answer if several; reference sheet list correct and SOH CAH TOA absent; vertex (3, 50), answer D 50 feet, trap "answers the wrong part" with Ep 4 callback; sign rule on (x - 4)(x + 1). One game gag, one rodeo bit, one rating (8); Fish and the Hog is an English name. No edits.
+
+## Pass 3
+
+PASS
+
+Vertex (3, 50), answer D, trap "answers the wrong part" with Ep 4 callback; grid-in rules and reference sheet as verified by passes 1 and 2; one game gag, one rodeo bit, cake, rating 8; checks match. Noted, left alone: the second read of the stem drops "t seconds after it is thrown"; the first read carries it and the walk-through says "three seconds," so it is followable. No edits. Linters: render2 0 spliced; render.py ok, 1,209 words, 4 voices.

@@ -11,12 +11,12 @@ LEHUA: Callback first, then the mailbag. Kaden, what was in your bag?
 KADEN: My device, charged, with exam setup done. Printed admission ticket. Physical ID, not a photo on my phone. Pencils. My login. And a snack for the break. And I left with the fifteen-minute cushion, because last time I stopped a step early.
 DEREK: Good. And how did it feel?
 KADEN: Module two of Math was hard. And I remembered, hard can be good news. So I just kept going.
-LEHUA: Love it. Okay, listener questions. We got a lot. First one is from a junior. "What is National Merit, and do I need to do anything?" Derek.
+LEHUA: Love it. Okay, listener questions. First one is from a junior. "What is National Merit, and do I need to do anything?" Derek.
 DEREK: National Merit is a scholarship program, and the way in is the PSAT slash NMSQT. That test is given in October. The one that counts is the one you take as a junior. So if you're a sophomore, next October is the one. If you're a junior, it's probably already scheduled at your school. Ask your counselor. And prepare for it the same way you prepare for the SAT, because it tests the same skills, in Bluebook.
 LEHUA: Next. "What does superscore mean?"
 DEREK: Some colleges take your best Reading and Writing score from one test date and your best Math score from another date and add them together. That's a superscore. Not every college does it. It's each college's policy, so look it up on their admissions page. And to get superscored, the college needs both test dates, so you send both. Some colleges want every score you have, so check that too.
-SARAH: Can we make it a question? It's the last episode. Let's do one more pause-and-try.
-DEREK: Sure. I'll read it twice. "A student takes the SAT in March and gets six hundred in Reading and Writing and five fifty in Math. In June, she gets five seventy in Reading and Writing and six twenty in Math. What is her superscore?"
+SARAH: Make it a pause-and-try. Last one of the season.
+DEREK: I'll read it twice. "A student takes the SAT in March and gets six hundred in Reading and Writing and five fifty in Math. In June, she gets five seventy in Reading and Writing and six twenty in Math. What is her superscore?"
 DEREK: Again. "March, six hundred Reading and Writing, five fifty Math. June, five seventy Reading and Writing, six twenty Math. What is her superscore?"
 LEHUA: Pause it and try.
 LEHUA: And we're back. Kaden.
@@ -26,8 +26,6 @@ KADEN: Stopped a step early. Again. The same trap as my leave time.
 PONO: That's the trap that follows you around. Every time you get an answer, ask, is there one more step?
 LEHUA: Next. "How many times should I take it?"
 PONO: College Board doesn't put a limit on it. Their own suggestion is at least twice, spring of junior year and fall of senior year. But more is not always better. Here's the plan I like. Take it once, then use your error log and your weekly plan for a couple of months, then take it again. Each time should come after real work, not just another try. Same as breaking a horse. You don't climb back on ten times in a row. You go back to the round pen, work on what went wrong, then try again.
-KADEN: There it is.
-PONO: Last episode. Had to.
 LEHUA: Next. "Do I even need the SAT if colleges are test-optional?"
 DEREK: Depends on the college, and it changes. The flagship UH campus is test-optional with what they call a "Do No Harm" policy. If a score you send would hurt you, they leave it out. But some scholarships and direct-entry programs may still want scores. And several highly selective private colleges have gone back to requiring scores. So look up every school on your list, every year. A good score can still help, even when it's optional.
 LEHUA: Next one is about money. "The test costs money. What if that's a problem?"
@@ -38,11 +36,9 @@ KADEN: For real, the plan helped. When I got stuck, I just flagged it. I didn't 
 LEHUA: Next. "I read slowly. Is the SAT going to destroy me?"
 SARAH: Not the way you think. The digital SAT Reading and Writing section is one short passage per question. There's no long passage to get lost in. So you don't need to read faster. You need to read on purpose. Read the question first, so you know what you're hunting for. Then read the passage once, carefully, and predict before you look at the choices. That's episode five. Slow and careful beats fast and lost.
 SARAH: And for the record, I'm a slow reader too. I stop at every comma to check it.
-LEHUA: Of course you do.
-SARAH: My niece made me a birthday card that said, "Happy, birthday." A comma right in the middle, for no reason. I put it on the fridge anyway. Best card I ever got.
-LEHUA: Next. "Can I get extra time or other accommodations?"
+LEHUA: Of course you do. Next. "Can I get extra time or other accommodations?"
 SARAH: Talk to your counselor about accommodations. They know the process, and they'll walk you through it.
-LEHUA: That's the whole answer, and it's the right one. Last question. "I have a job after school. How do I study?"
+LEHUA: That's the whole answer. Last question. "I have a job after school. How do I study?"
 DEREK: Small and steady. When you set up the app, it asks how many minutes a day you have. If you work, pick fifteen. That's still more than an hour and a half a week. The weekly plan multiplies your minutes by seven and puts them toward your weakest skills. You can change it any time in Settings, with redo onboarding.
 PONO: And fifteen minutes every day beats two hours on Sunday.
 KADEN: I studied on the bus. Two drills a day. The bus finally paid off.

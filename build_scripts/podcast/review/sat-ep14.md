@@ -16,3 +16,10 @@ Linters: render2 0 spliced; render.py ok, 1,426 words, 5 voices (panel limit 1,7
 2. Trap label made defensible: Kaden picked the best single date, which is a different method, not obviously "one more step." Derek now says "You stopped a step early. You compared the totals, but a superscore goes one step further, to each section. It takes the best of each section."
 
 Re-checked: 1150, 1190, 1220; 105 minutes; Settings has Redo onboarding, the parent or teacher email field and Save; dashboard has Send progress report; counselor-only accommodations; no medical advice on nerves; one rating (9, never ten); five voices. Left alone: render.py estimates 9.6 min against target_minutes 8; words (1,439) are inside the 1,700 panel limit. Linters: render2 0 spliced; render.py ok, 1,439 words, 5 voices.
+
+## Pass 3
+
+1. Pass 2 open item decided: trimmed banter only, 1,439 to 1,384 words (est 9.6 to 9.2 min). Cuts: "We got a lot"; Sarah and Derek's pause-and-try setup shortened ("Make it a pause-and-try. Last one of the season." / "I'll read it twice."); Kaden "There it is" / Pono "Last episode. Had to." after the horse line; Lehua "and it's the right one".
+2. Gag count: Sarah had two comma bits ("I stop at every comma" and the niece's "Happy, birthday" card). Cut the card, kept the on-topic line; Lehua's "Of course you do" now leads straight into the accommodations question.
+
+All nine listener questions kept, superscore pause-and-try intact (1150, 1190, 1220), season recap intact. Stopped at 1,384 rather than 1,350: the next cuts would be Kaden's test-day proof lines or retrieval beats. Checks unaffected. Linters: render2 0 spliced; render.py ok, 1,384 words, 5 voices (panel limit 1,700).

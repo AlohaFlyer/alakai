@@ -14,3 +14,9 @@ Linters: render2 0 spliced; render.py ok, 1,156 words, 4 voices.
 1. Grammar slip in the grammar episode: Lehua's sign-off "I'm out, I have paddling practice at the harbor, and if I'm late I'm the one bailing water" was a comma splice. Now "I'm out. I have paddling practice at the harbor, and if I'm late, I'm the one bailing water."
 
 Re-checked: every rule Sarah states (label both sides; period, semicolon, or comma plus conjunction; comma splice; semicolon needs two independent clauses; colon after a complete clause; matching pairs of dashes or commas; comma after an opening dependent clause) is correct; worked example has only B correct, D's subject-verb comma explained correctly; mom's text is a true splice; pass 1 fixes hold. Kaden's car (new driver, mom in the passenger seat) is consistent with Ep 9 and Ep 13. Linters: render2 0 spliced; render.py ok, 1,156 words, 4 voices.
+
+## Pass 3
+
+PASS
+
+Every punctuation rule re-checked; only B (semicolon) is correct, D's subject-verb comma explained right; mom's text is a true splice; Lehua's sign-off now clean; one car gag, one comma gag, paddling, rating 9; checks match. No edits. Linters: render2 0 spliced; render.py ok, 1,156 words, 4 voices.

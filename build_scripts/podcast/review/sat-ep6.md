@@ -10,3 +10,9 @@ Linters: render2 0 spliced; render.py ok, 1,208 words, 4 voices.
 PASS
 
 Re-checked independently: example has one defensible answer (A, "may have helped"; B and D add an assumption, C too extreme); 40 to 22 is a drop of 18, less than half; four Inferences steps and claim-then-proof steps match strategies.json; trap wording "adds an assumption"; callback, pause-and-try, Kaden recap, one rating (8); gags once each (game, comma, record store); house rule clean including unflagged names; 1,208 words; checks/sat-ep6.json one answer each. No edits.
+
+## Pass 3
+
+PASS
+
+Read at speaking pace. Example has one answer (A); 40 to 22 is a drop of 18, less than half of 40; callback to Ep 5, next-episode line to Ep 7; strategy steps match rw-ii-inference and rw-ii-evidence; one game gag, one comma gag, record store (no repeat within three), rating 8; checks match the script. No edits. Linters: render2 0 spliced; render.py ok, 1,208 words, 4 voices.

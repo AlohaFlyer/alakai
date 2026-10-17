@@ -11,3 +11,9 @@ Linters: render2 0 spliced; render.py ok, 1,154 words, 4 voices.
 1. Listenability: "One ten, one twenty, one thirty" and "One ten, then one twenty-one" can be heard as "one, ten" at speaking pace and by TTS. Now "A hundred ten, a hundred twenty, a hundred thirty" and "A hundred ten, then a hundred twenty-one."
 
 Re-checked: 100 x 1.2 x 0.8 = 96; 4 x 3/2 = 6; 1.1^20 x 100 = 672.75; mean 7.2, median 9; Ep 1 mean continuity; one answer per check. Linters: render2 0 spliced; render.py ok, 1,159 words, 4 voices.
+
+## Pass 3
+
+PASS
+
+100 x 1.2 x 0.8 = 96; 4 x 3/2 = 6; 100 x 1.1^20 = 672.75 ("about six hundred seventy"); mean 7.2, median 9; Ep 1 mean continuity; ratio sits under the multiplier idea, so three teaching points hold; one game gag, one comma gag, pond hike, rating 9; checks match. No edits. Linters: render2 0 spliced; render.py ok, 1,159 words, 4 voices.

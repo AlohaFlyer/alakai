@@ -12,3 +12,9 @@ Linters: render2 0 spliced; render.py ok, 1,147 words, 4 voices.
 PASS
 
 Re-checked independently: 40 - 24 = 16, the borrow walk-through is right, 26 from not lowering the tens digit, 37 and 64 distractors explained, 26 + 24 = 50 check, backsolve 8 then 10; 95 s per Math question; Pono alone says Pukalani; Kaden driving fits Ep 7 and Ep 13. Left alone: the episode carries more than three teaching points (slope in words, backsolve, plug in, systems, rise over run), but that is the plan's own list and pass 1 accepted it; plug-in has no worked number, which is thin but brief. No edits.
+
+## Pass 3
+
+1. Pass 2 open item decided: plug-in had no worked number. Added a short Derek line on the same tank: which expression gives gallons left after t minutes; pick t = 2, 6 gallons drained, target 34; 40 - 3t gives 34 (hit), 40 + 3t gives 46 (miss). Two choices only, so it holds by ear. Facts line now carries the plug-in arithmetic.
+
+Re-checked: 40 - 24 = 16, borrow walk-through, 26 from not lowering the tens digit, 26 + 24 = 50 check, backsolve 8 then 10; 95 s per Math question; one car gag, one rodeo bit, food trucks (Pono alone says Pukalani), rating 8; checks still match. Linters: render2 0 spliced; render.py ok, 1,200 words, 4 voices.
