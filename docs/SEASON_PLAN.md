@@ -62,3 +62,15 @@ Pass requires all of: facts match the named source; one concept; a pause-and-try
 ## Pipeline
 
 write (2 agents) -> review (1 fresh agent, rubric above) -> fix -> lint (render.py and render2.py dry runs) -> Ryan approves -> render on the Mac -> master -> approved.json -> publish.py -> push.
+
+## Backlog: Season 2 (college path), added 2026-10-16
+
+Ryan's list, to plan later. Same cast, same format, probably a third show or a "College Notes" tag inside both:
+
+- Scoir (how HPA and other Big Island schools use it, what to keep updated)
+- Common App (timeline, essay, activities list, recommenders)
+- Scholarships (local: Hawaiʻi Community Foundation, Kamehameha Schools, Pauahi; national; how to search without paying)
+- Financial aid (FAFSA, CSS Profile, net price calculators, what "meets full need" means)
+- How to choose a university (fit, cost, distance from home, mainland vs UH, transfer paths)
+- Sports scholarships (NCAA eligibility center, divisions, how recruiting really works for island athletes)
+- How to pick a program or major (undeclared is fine, prerequisites, what changes later)
