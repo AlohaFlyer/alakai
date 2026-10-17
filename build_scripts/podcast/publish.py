@@ -5,11 +5,13 @@ import json, os, re, subprocess, pathlib, sys
 HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent.parent
 BASE = os.environ.get("AUDIO_BASE", "audio/")
 CAST = json.loads((HERE / "cast.json").read_text())
-eps = {"sat": [], "act": [], "cast": [{"name": c["name"], "role": c["role"]} for c in CAST["characters"]]}
+APPROVED = json.loads((HERE / "approved.json").read_text())
+eps = {"shows": {"sat": "SAT Notes Podcast", "act": "ACT Notes Podcast"}, "sat": [], "act": [], "cast": [{"name": c["name"], "role": c["role"]} for c in CAST["characters"]]}
 for mp3 in sorted((ROOT / "audio").glob("*.mp3")):
     m = re.match(r"(sat|act)-ep(\d+)\.mp3", mp3.name)
     if not m: continue
     test, n = m.group(1), int(m.group(2))
+    if n not in APPROVED.get(test, []): continue
     script = HERE / "scripts" / f"{test}-ep{n}.md"
     title = topic = ""; transcript = []
     if script.exists():
@@ -27,6 +29,7 @@ for script in sorted((HERE / "scripts").glob("*.md")):
     if not m: continue
     test, n = m.group(1), int(m.group(2))
     if any(e["n"] == n for e in eps[test]): continue
+    if n not in APPROVED.get(test + "_coming", []): continue
     title = topic = ""
     for line in script.read_text().splitlines():
         if line.startswith("# "): title = re.sub(r"^.*?Ep \d+: ", "", line[2:]).strip()

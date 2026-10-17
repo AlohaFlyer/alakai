@@ -267,7 +267,7 @@
   }
   function mountNav(current) {
     const nav = document.querySelector('nav.tabs'); if (!nav) return;
-    const items = [['dashboard.html', 'Dashboard'], ['drill.html', 'Drills'], ['quiz.html', 'Quizzers'], ['timed.html', 'Timed'], ['notes.html', '<span data-test-label>SAT</span> Notes'], ['timing.html', 'Time squeeze'], ['strategies.html', 'Strategies'], ['settings.html', 'Settings']];
+    const items = [['dashboard.html', 'Dashboard'], ['drill.html', 'Drills'], ['quiz.html', 'Quizzers'], ['timed.html', 'Timed'], ['notes.html', '<span data-test-label>SAT</span> Notes Podcast'], ['timing.html', 'Time squeeze'], ['strategies.html', 'Strategies'], ['settings.html', 'Settings']];
     nav.innerHTML = items.map(([h, l]) => `<a href="${h}" ${h === current ? 'aria-current="page"' : ''}>${l}</a>`).join('');
   }
   function fmtTime(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
