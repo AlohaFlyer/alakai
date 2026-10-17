@@ -1,10 +1,10 @@
 # SAT Notes Ep 1: How This Test Actually Works
 cast: lehua, derek, pono, kaden
-facts: Digital SAT taken in Bluebook; Reading and Writing 2 modules x 27 questions x 32 min; Math 2 modules x 22 questions x 35 min; total 2 hr 14 min plus one 10-minute break between sections; adaptive by module (module 1 mixed difficulty, module 2 easier or harder); a few unscored pretest questions per module; section scores 200 to 800, total 400 to 1600; no guessing penalty; Math about 75% multiple choice, 25% student-produced response; Desmos graphing calculator built in; class of 2025 national mean total 1029 (College Board 2025 Total Group Report); UH Manoa (flagship) is test-optional with a "Do No Harm" policy and some scholarships may require scores (manoa.hawaii.edu/admissions/freshman, checked 2026-10-16); middle 50 percent ranges are published by each school
+facts: Digital SAT taken in Bluebook; Reading and Writing 2 modules x 27 questions x 32 min; Math 2 modules x 22 questions x 35 min; total 2 hr 14 min plus one 10-minute break between sections; adaptive by module (module 1 mixed difficulty, module 2 easier or harder); a few unscored pretest questions per module; section scores 200 to 800, total 400 to 1600; no guessing penalty; Math about 75% multiple choice, 25% student-produced response; Desmos graphing calculator built in; class of 2025 national mean total 1029 (College Board 2025 Total Group Report); UH Manoa (flagship) is test-optional with a "Do No Harm" policy and some scholarships may require scores (manoa.hawaii.edu/admissions/freshman, checked 2026-10-16); most colleges publish a middle 50 percent score range for admitted or enrolled students; several highly selective private colleges reinstated required testing for recent admission cycles (school admissions pages); students may bring an approved calculator, and a reference sheet of math formulas is provided (College Board calculator policy); Reading and Writing is one short passage per question; Bluebook has Mark for Review, an answer eliminator, and a question navigation grid (College Board Bluebook testing tools)
 target_minutes: 8
 homework: Take the placement check | placement.html
 
-LEHUA: Hey, welcome back to SAT Notes, episode one. I'm Lehua. Today we answer the question nobody asks out loud. What even is this test? Derek is here, Coach Pono is here, and Kaden is here with a breakfast burrito.
+LEHUA: Hey, welcome to SAT Notes, episode one. I'm Lehua. Today we answer the question nobody asks out loud. What even is this test? Derek is here, Coach Pono is here, and Kaden is here with a breakfast burrito.
 KADEN: It's a second breakfast. First one was at home.
 DEREK: Two breakfasts. Bold.
 LEHUA: Okay, Kaden, what do you think the SAT is right now? Be honest.
@@ -29,7 +29,7 @@ DEREK: For context, the national average total for the class of twenty twenty-fi
 KADEN: So anything over that is good?
 DEREK: Anything over that is above average. Whether it's good depends on where you're applying.
 LEHUA: Right, and this is the part I want Big Island kids to hear. A good score is not one number. It's a number compared to the schools on your list.
-DEREK: Every college publishes a middle fifty percent range for admitted students. That means a quarter of admitted students scored below the low number, and a quarter scored above the high number. You can find it on the school's admissions page, or on College Board's BigFuture site.
+DEREK: Most colleges publish a middle fifty percent range for their admitted or enrolled students. That means a quarter of those students scored below the low number, and a quarter scored above the high number. You can find it on the school's admissions page, or on College Board's BigFuture site.
 DEREK: So the rule is this. If your score is inside that range, you're a normal applicant there. If it's at or above the top of the range, your score helps you. If it's below the bottom, think hard about whether to send it.
 KADEN: What about UH? Most of my friends are going to UH.
 DEREK: Good question. As of this fall, the flagship UH campus is test-optional. You choose whether to send a score. And they have what they call a "Do No Harm" policy. If a score you send would hurt your chances for admission or a scholarship, they leave it out.
@@ -42,11 +42,11 @@ KADEN: My cousin lies a lot.
 LEHUA: Okay, Derek, give him the one rule that changes how he takes the whole test.
 DEREK: There is no guessing penalty. A wrong answer and a blank answer both earn zero points. So a blank can never help you. Answer every question.
 KADEN: Every question? Even if I have no idea?
-DEREK: Every question. We have a whole episode on how to guess well. That's episode two.
+DEREK: Every question. We have a whole episode on making those guesses smarter by crossing out wrong answers. That's episode two.
 LEHUA: Let's do a little tour of the actual test, because the tools are built in. Derek, Math first.
 DEREK: In Math, about three quarters of the questions are multiple choice. The other quarter, you type in your own answer. That's called a student-produced response. And there's a Desmos graphing calculator built right into Bluebook. You can also bring an approved calculator of your own.
 KADEN: Desmos is in there? That's kind of a cheat code.
-DEREK: It's a tool, not a cheat code. Use it to graph and check, not to avoid learning the algebra. There's also a reference sheet with the main geometry formulas, and we'll go through what's on it in episode seven.
+DEREK: It's a tool, not a cheat code. Use it to graph and check, not to avoid learning the algebra. There's also a reference sheet with the main geometry formulas, and we'll go through what's on it in episode eleven.
 LEHUA: And Reading and Writing?
 PONO: Reading and Writing is short passages. One short passage, one question. You are not reading a five-page story and answering ten questions about it. You read a paragraph, you answer one thing, and you move on.
 KADEN: Okay, that's way less scary.
@@ -61,6 +61,6 @@ DEREK: Eight.
 KADEN: I'll take it.
 LEHUA: Homework. Open the app. Take the placement check if you haven't. It's two questions per skill, and it tells the dashboard where to start you. Then tap the official practice button and look at Bluebook. You don't have to take a full test yet. Just open it, so it isn't a stranger on test day.
 PONO: Know the place before you get there.
-LEHUA: That's episode one. Episode two is guessing and the two-pass method. Thanks for listening, everybody.
+LEHUA: That's episode one. Episode two is crossing out, how to find the wrong answers. Thanks for listening, everybody.
 KADEN: Can I finish my burrito now?
 LEHUA: Finish your burrito.

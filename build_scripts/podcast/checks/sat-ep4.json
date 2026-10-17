@@ -1,0 +1,5 @@
+[
+ {"q": "In Desmos, how do you solve a system of two linear equations?", "choices": ["Type both equations and tap the point where the lines cross", "Type only the first equation and read the y-intercept", "Multiply the two equations together and graph the result", "Desmos cannot solve systems"], "answer": 0},
+ {"q": "The lines y = 2x + 1 and y = -x + 7 cross at (x, y). The question asks for y. A student answers 2. Which trap is that?", "choices": ["Calculation slip", "Too extreme", "Answers the wrong part", "Opposite"], "answer": 2},
+ {"q": "When is plain algebra usually faster than typing into Desmos?", "choices": ["Never, Desmos is always faster", "When the algebra is only one or two steps, like 3x + 4 = 19", "When the numbers are messy fractions or decimals", "When the question is a quadratic"], "answer": 1}
+]

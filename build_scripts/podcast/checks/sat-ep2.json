@@ -1,0 +1,5 @@
+[
+ {"q": "When should you tap the x to cross out an answer choice?", "choices": ["Whenever a choice feels a little off", "Only when you can say in one sentence why it is wrong", "Only after you have picked your answer", "Never, crossing out wastes time"], "answer": 1},
+ {"q": "\"The coach was usually blunt, but after the loss she was unusually ___.\" Choice A is \"blunt.\" Which trap is that?", "choices": ["Too extreme", "Opposite", "True but irrelevant", "Near miss"], "answer": 1},
+ {"q": "You crossed out two choices and are down to two. What is your chance on a guess now?", "choices": ["One in four", "One in three", "One in two, a coin flip", "No better than a blank"], "answer": 2}
+]

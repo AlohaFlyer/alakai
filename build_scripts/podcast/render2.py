@@ -25,7 +25,8 @@ import render as R
 TERMS = R.LEX["terms"]
 def is_hawaiian(t): return bool(re.search(r"[ʻāēīōūĀĒĪŌŪ]", t)) or (t[0].islower() and t not in ("shoots",)) or t in ("Waimea","Kohala","Hilo","Puna","Kona","Kamuela","Kealakehe","Konawaena","Kealakekua","Lehua","Pono","Hele-On","Makua Lani","Kamehameha","Ke Kula","Mauna Kea","Hawaii")
 CAST_NAMES = {c["name"] for c in R.CAST["characters"]} | {c["name"].split()[-1] for c in R.CAST["characters"]} | {c["name"].split()[0] for c in R.CAST["characters"]}
-HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_") and t not in CAST_NAMES], key=len, reverse=True)
+CAST_LOWER = {n.lower() for n in CAST_NAMES}
+HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_") and t.lower() not in CAST_LOWER], key=len, reverse=True)
 ACR = {t: v["say"] for t, v in TERMS.items() if not is_hawaiian(t) and not t.startswith("_") and v.get("say")}
 def slug(t): return re.sub(r"[^a-z0-9]+", "-", t.lower().replace("ʻ", "")).strip("-")
 
@@ -38,7 +39,7 @@ def split_hawaiian(text):
     """Return list of (kind, text): kind 'en' or 'haw'."""
     pat = "|".join(re.escape(t) for t in HAW)
     parts, pos = [], 0
-    for m in re.finditer(pat, text):
+    for m in re.finditer(pat, text, flags=re.IGNORECASE):
         # word boundary check for plain-ascii terms
         s, e = m.span()
         if s and text[s-1].isalpha(): continue
