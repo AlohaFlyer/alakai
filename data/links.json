@@ -1,1 +1,26 @@
-{"sat":[{"name":"Bluebook (official digital SAT app and full-length practice tests)","url":"https://bluebook.collegeboard.org/"},{"name":"Khan Academy official Digital SAT prep (free)","url":"https://www.khanacademy.org/digital-sat"},{"name":"College Board SAT practice","url":"https://satsuite.collegeboard.org/sat/practice-preparation"}],"act":[{"name":"ACT official free practice test","url":"https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/free-act-test-prep.html"},{"name":"ACT test day and section details","url":"https://www.act.org/content/act/en/products-and-services/the-act.html"}]}
+{
+ "sat": [
+  {
+   "name": "Bluebook: official full-length SAT practice tests",
+   "url": "https://bluebook.collegeboard.org/"
+  },
+  {
+   "name": "Khan Academy: official Digital SAT prep",
+   "url": "https://www.khanacademy.org/digital-sat"
+  },
+  {
+   "name": "College Board: SAT practice and prep",
+   "url": "https://satsuite.collegeboard.org/sat/practice-preparation"
+  }
+ ],
+ "act": [
+  {
+   "name": "ACT: free official practice test",
+   "url": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/free-act-test-prep.html"
+  },
+  {
+   "name": "ACT: what is on the test",
+   "url": "https://www.act.org/content/act/en/products-and-services/the-act.html"
+  }
+ ]
+}

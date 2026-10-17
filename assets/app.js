@@ -206,6 +206,19 @@
       const bar = document.createElement('div'); bar.className = 'frame-bar ' + pos; bar.setAttribute('aria-hidden', 'true'); document.body.prepend(bar);
     });
   }
+  async function mountPractice() {
+    if (document.querySelector('.practice-btn')) return;
+    const bar = document.querySelector('.topbar'); if (!bar) return;
+    let links = { sat: [], act: [] }; try { links = await data('data/links.json'); } catch (e) { return; }
+    const wrap = document.createElement('div'); wrap.className = 'practice';
+    wrap.innerHTML = `<button type="button" class="practice-btn secondary" aria-haspopup="true" aria-expanded="false">Free official practice</button><div class="practice-menu" hidden></div>`;
+    const toggle = bar.querySelector('.toggle'); if (toggle) toggle.before(wrap); else bar.appendChild(wrap);
+    const btn = wrap.querySelector('.practice-btn'), menu = wrap.querySelector('.practice-menu');
+    const fill = () => { const t = getTest(); menu.innerHTML = `<div class="muted" style="padding:4px 10px;font-size:.8rem">${t.toUpperCase()} official, free</div>` + (links[t] || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a>`).join('') + `<div class="muted" style="padding:4px 10px;font-size:.8rem">${t === 'sat' ? 'ACT' : 'SAT'}</div>` + (links[t === 'sat' ? 'act' : 'sat'] || []).slice(0, 1).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a>`).join(''); };
+    btn.addEventListener('click', e => { e.stopPropagation(); fill(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); });
+    document.addEventListener('click', () => { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); });
+    document.addEventListener('alakai:test', () => { if (!menu.hidden) fill(); });
+  }
   function mountNav(current) {
     const nav = document.querySelector('nav.tabs'); if (!nav) return;
     const items = [['dashboard.html', 'Dashboard'], ['drill.html', 'Drills'], ['quiz.html', 'Quizzers'], ['timed.html', 'Timed'], ['notes.html', '<span data-test-label>SAT</span> Notes'], ['timing.html', 'Time squeeze'], ['strategies.html', 'Strategies'], ['settings.html', 'Settings']];
@@ -224,6 +237,7 @@
     document.querySelectorAll('[data-test-label]').forEach(el => el.textContent = getTest().toUpperCase());
     document.querySelectorAll('.toggle[data-mount]').forEach(mountToggle);
     mountNav(opts.page);
+    mountPractice();
     document.querySelectorAll('[data-test-label]').forEach(el => el.textContent = getTest().toUpperCase());
     if (opts.gate) requireOnboarding();
     return { school, profile: profile(), test: getTest() };
