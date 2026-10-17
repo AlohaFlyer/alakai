@@ -1,6 +1,6 @@
 # ACT Notes Ep 4: Where the Sentence Breaks, ACT Edition
 cast: lehua, sarah, derek, kaden
-facts: ACT English is 50 questions in 35 minutes and tests punctuation under Conventions of Standard English, no share of points stated (act.org); English questions offer a NO CHANGE choice for the underlined part (act.org free practice test); English checkpoint question 17 at 11:40 (timing.html); app strategy "What's on each side": find the mark, label each side full sentence or phrase or list item, match the mark to the job, apostrophes ask who owns it and how many owners; strategy trap "Adding commas wherever you would pause when speaking" (data/strategies.json english-punct); skill tip "Decide what is on each side of the mark before you pick the mark" (data/act/skills.json english-punct); app trap label "Trap: near miss" (assets/engine.js TRAP_NAMES); the cross-out x and the error log (assets/engine.js; dashboard.html); punctuation rules taught (two independent clauses joined by a period, a semicolon, or a comma plus a coordinating conjunction; a comma alone between two independent clauses is a comma splice; a semicolon is not paired with a coordinating conjunction between two clauses; a colon or a dash follows a complete sentence) are standard English usage; Fish and the Hog, Waimea, known for its chocolate cake, no hours stated (cast.json places)
+facts: ACT English is 50 questions in 35 minutes and tests punctuation under Conventions of Standard English, 38 to 43 percent of the section, tied with Production of Writing (act.org Preparing-for-the-ACT.pdf, checked 2026-10-16), so the script does not call punctuation the biggest pool; English questions offer a NO CHANGE choice for the underlined part (act.org free practice test); English checkpoint question 17 at 11:40 (timing.html); app strategy "What's on each side": find the mark, label each side full sentence or phrase or list item, match the mark to the job, apostrophes ask who owns it and how many owners; strategy trap "Adding commas wherever you would pause when speaking" (data/strategies.json english-punct); skill tip "Decide what is on each side of the mark before you pick the mark" (data/act/skills.json english-punct); app trap label "Trap: near miss" (assets/engine.js TRAP_NAMES); the cross-out x and the error log (assets/engine.js; dashboard.html); punctuation rules taught (two independent clauses joined by a period, a semicolon, or a comma plus a coordinating conjunction; a comma alone between two independent clauses is a comma splice; a semicolon is not paired with a coordinating conjunction between two clauses; a colon or a dash follows a complete sentence) are standard English usage; Fish and the Hog, Waimea, known for its chocolate cake, no hours stated (cast.json places)
 target_minutes: 8
 homework: Drill punctuation | drill.html?skill=english-punct
 
@@ -9,7 +9,7 @@ KADEN: It's a vibe. It's a study vibe.
 SARAH: It's a nap vibe.
 LEHUA: Warm-up from last time. Kaden, ACT English. What question should you be on at eleven minutes forty?
 KADEN: Seventeen. And if I'm behind, I flag faster, not read faster.
-LEHUA: Good. So how do you get through English questions fast enough to make seventeen? You know the rules cold. Today is the rule that shows up the most. Where the sentence breaks. Sarah, you've been waiting all week.
+LEHUA: Good. So how do you get through English questions fast enough to make seventeen? You know the rules cold. Today is a rule that shows up all over the English section. Where the sentence breaks. Sarah, you've been waiting all week.
 SARAH: I have. My mom texted me this morning. "I'm at the store, I'll be home soon."
 KADEN: That's a normal text.
 SARAH: It's a comma splice. Two complete sentences glued together with only a comma. I texted back a semicolon.
@@ -18,14 +18,14 @@ SARAH: Just the semicolon. She knows what it means.
 DEREK: Does she?
 SARAH: She does now.
 LEHUA: Okay, teach it. Why does punctuation matter so much on ACT English?
-SARAH: Because punctuation questions show up all over the English section, and they're some of the most learnable points on the whole test. There are only a few rules. Once you know them, these questions take you ten seconds.
+SARAH: Because punctuation questions show up again and again, and they're some of the most learnable points on the whole test. There are only a few rules. Once you know them, these questions take you ten seconds.
 SARAH: Here's the move. The app calls it "what's on each side." Find the punctuation mark being tested. Then look left of it and right of it, and label each side. Is it a full sentence that could stand alone? Or is it just a piece, a phrase?
 KADEN: How do I know if it's a full sentence?
 SARAH: It has a subject and a verb, and it makes sense if you put a period after it. "The tide was low." Full sentence. "When the tide was low." Not a full sentence. That word "when" makes it wait for something.
 SARAH: Now the rule. If both sides are full sentences, you have three options. A period. A semicolon. Or a comma plus a joining word like and, but, or so. That's it. A comma by itself is not allowed. That's the comma splice my mom did.
 DEREK: So a semicolon is basically a period that doesn't end the sentence.
 SARAH: Between two full sentences, yes. Exactly that.
-SARAH: And two more marks. A colon and a dash. On the ACT, the safe rule is, the part before a colon has to be a full sentence. The colon says, here comes the thing I promised. Same for a dash when it's setting something up.
+SARAH: And two more marks. A colon and a dash. On the ACT, the safe rule is that the part before a colon has to be a full sentence. The colon says, here comes the thing I promised. Same for a dash when it's setting something up.
 KADEN: Like a semicolon is a save point. The level ends, but you keep going.
 SARAH: I will allow that.
 LEHUA: Okay. Let's do one. Sarah, read it.
@@ -39,8 +39,8 @@ KADEN: Period, semicolon, or comma plus and. So B, the semicolon.
 SARAH: B. Let's kill the others, because the wrong ones are the lesson. C has nothing between two full sentences. That's a run-on. Cross it out. D has a semicolon and the word and together. You use one or the other, not both. Cross it out.
 SARAH: And A. A is the trap we're naming today. The app calls it near miss. It looks almost right. It's one tiny mark away from correct. If it said comma and, it would be fine. With just the comma, it's a comma splice. And it's the one people pick because it sounds right when you say it out loud.
 KADEN: Because you pause there.
-SARAH: Because you pause there. That's the other trap the app warns you about. Adding commas wherever you would pause when you're talking. Your voice is not a punctuation rule. Label the sides instead.
-DEREK: Also note, A was No Change. On the ACT, No Change is right sometimes. Not always, not never. Don't avoid it, and don't fall in love with it. Test it like any other choice.
+SARAH: Because you pause there. That's the other trap the app warns you about: adding commas wherever you would pause when you're talking. Your voice is not a punctuation rule. Label the sides instead.
+DEREK: Also, notice that A was No Change. On the ACT, No Change is right sometimes. Not always, not never. Don't avoid it, and don't fall in love with it. Test it like any other choice.
 LEHUA: Okay, Sarah, one more piece. Apostrophes, quick.
 SARAH: Quick. Ask two questions. Does something own something? And how many owners? One student's notebook, apostrophe before the s. Two students' notebooks, apostrophe after the s. And "its" with no apostrophe means belonging to it. "It's" with an apostrophe means it is. Say "it is" in the sentence. If that works, use the apostrophe.
 KADEN: That's the one I always mess up.

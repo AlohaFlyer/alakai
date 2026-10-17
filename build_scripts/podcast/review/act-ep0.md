@@ -1,0 +1,8 @@
+# act-ep0 review, pass 1 (dev only, never publishes)
+
+1. Wrong pronunciation taught: "The weight goes on the front, com." American English stresses the second syllable of composite (Merriam-Webster käm-ˈpä-zət; first-syllable stress is chiefly British). Derek now says "The weight goes in the middle. Com, pahz, it. The middle sounds like the start of 'positive.'" Kaden and Derek's follow-up is "Com-pahz-it. Not com-pose-it." Sarah's setup is "like it rhymes with 'compose it'." Respellings use lowercase, because render.py flags capitalized POZ/POSE as missing acronyms.
+2. Overstated: "A regular wooden one, sharpened." ACT says sharpened No. 2 pencils with erasers (act.org/the-act/id), nothing about wood. Now "A regular one you sharpen, with an eraser. Not mechanical."
+3. Facts line: added the Merriam-Webster stress note.
+
+Checked, no change: sections, OMIT and NO CHANGE, STEM, MyACT, superscore, fee waiver via counselor, pencils; Pono alone says Hawaiian words; Kaden's respellings (Hah-VAI-ee etc.) are allowed by the house rule; one rating, one rodeo bit; paddling place, with Pono saying the place name.
+Linters: render2 0 spliced; render.py ok, 727 words, 5 voices.

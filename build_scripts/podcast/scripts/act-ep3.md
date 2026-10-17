@@ -1,6 +1,6 @@
 # ACT Notes Ep 3: Forty-Two Seconds
 cast: lehua, pono, derek, kaden
-facts: Enhanced ACT: English 50 questions in 35 minutes, Math 45 questions in 50 minutes, Reading 36 questions in 40 minutes, Science optional 40 questions in 40 minutes (act.org); per-question budgets 42 s, 67 s, 67 s, 60 s (2100/50, 3000/45, 2400/36, 2400/40; timing.html); Reading is four passages, about 10 minutes each (timing.html); no guessing penalty (act.org); online testing has an on-screen countdown timer (ACT online testing tools guide, doe.sd.gov OnlineACTtools.pdf); paper testers may bring a watch with no alarm (act.org/the-act/id, checked 2026-10-16); two-pass method, ten-second rule, last-60-seconds rule, checkpoints at one-third and two-thirds (English question 17 at 11:40 and 33 at 23:20; Math 15 at 16:40 and 30 at 33:20; Reading passage 2 done at 20:00), "behind, flag faster; ahead, slow down one notch", and "on the ACT, mark the number on your scratch paper" (timing.html; data/strategies.json general two-pass); the app's timed sections show checkpoint messages "on pace" or "behind pace. Flag the long ones and move" (timed.html); The Ironman World Championship is held on the Big Island in October (cast.json places)
+facts: Enhanced ACT: English 50 questions in 35 minutes, Math 45 questions in 50 minutes, Reading 36 questions in 40 minutes, Science optional 40 questions in 40 minutes (act.org); per-question budgets 42 s, 67 s, 67 s, 60 s (2100/50, 3000/45, 2400/36, 2400/40; timing.html); Reading is four passages, about 10 minutes each (timing.html); no guessing penalty (act.org); online testing has an on-screen countdown timer (ACT online testing tools guide, doe.sd.gov OnlineACTtools.pdf); paper testers may bring a watch with no alarm (act.org/the-act/id, checked 2026-10-16); two-pass method, ten-second rule, last-60-seconds rule, checkpoints at one-third and two-thirds (English question 17 at 11:40 and 33 at 23:20; Math 15 at 16:40 and 30 at 33:20; Reading passage 2 done at 20:00), "behind, flag faster; ahead, slow down one notch", (timing.html; data/strategies.json general two-pass); online testers can flag questions and may get scratch paper, and paper testers may use the test booklet for notes (act.org Preparing-for-the-ACT.pdf, checked 2026-10-16); app trap label "Trap: stopped a step early" (assets/engine.js TRAP_NAMES); 3 x 42 s = 126 s, about 2 minutes; flagging at 10 s instead of 120 s saves 110 s (arithmetic); the app's timed sections show checkpoint messages "on pace" or "behind pace. Flag the long ones and move" (timed.html); The Ironman World Championship is held on the Big Island in October (cast.json places)
 target_minutes: 8
 homework: Do one timed section with checkpoints | timed.html
 
@@ -15,7 +15,7 @@ KADEN: Forty-two seconds still sounds fake.
 PONO: Forty-two is plenty for most English questions. Most of them are short. One underlined part, four choices. If you know the rule, you're done in fifteen seconds. The trouble is never the easy ones. The trouble is the one question you sit on for three minutes.
 LEHUA: Because nobody runs out of time evenly.
 PONO: Right. Two or three questions eat the clock, and then the clock tells you about it at the end. So here's the plan. Two passes. Listen, dis part important.
-PONO: First pass, go in order. Look at the question. If you can see the path in about ten seconds, do it. If you can't, pick your best guess, mark it, and move on. On paper, mark the question number on your scratch paper. Don't sit there.
+PONO: First pass, go in order. Look at the question. If you can see the path in about ten seconds, do it. If you can't, pick your best guess, mark it, and move on. Online, use the flag. On paper, circle the question number in your test booklet. Don't sit there.
 PONO: Second pass, with whatever time is left, go back to the ones you marked. Easiest-looking first, the monster last. You already put a guess on every one, so you're just upgrading.
 DEREK: And the last sixty seconds, you stop solving. Check that every question has an answer. No blanks. There's no guessing penalty, so a blank is the only answer that's always wrong.
 PONO: It's like barrel racing. You go around the barrel, you don't stop to look at it. The one you knocked over, you deal with later.
@@ -33,10 +33,10 @@ LEHUA: Again. English. Eleven forty used. You just finished question fourteen. O
 PONO: Pause it and try.
 PONO: Okay. Kaden.
 KADEN: The target at eleven forty is seventeen. I'm on fourteen. So I'm behind by three.
-PONO: Behind by three. Now what? This is where people panic.
+PONO: Behind by three. That's only half of it. The question also asked what you do. Stop at "behind" and the app would call that stopped a step early. So, now what? This is where people panic.
 KADEN: Go faster?
 PONO: No. Don't read faster. Reading faster makes mistakes. You flag faster. You lower the bar. If a question doesn't show you the path in ten seconds, it gets a guess and a mark, right now, no thinking about it. That's how you catch up. You stop feeding the slow ones.
-DEREK: Three questions behind at forty-two seconds each is about two minutes. Two quick flags and you've made most of it back.
+DEREK: Three questions behind at forty-two seconds each is about two minutes. Flag the next slow one at ten seconds instead of fighting it for two minutes, and you've made most of that back.
 KADEN: And if I'm ahead?
 PONO: Slow down one notch. Ahead is fine. Ahead and careless is the problem. Use the extra seconds to read every word of the question.
 LEHUA: The app does this for you, right?

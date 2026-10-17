@@ -1,6 +1,6 @@
 # ACT Notes Ep 9: The Last Ten
 cast: lehua, derek, pono, kaden
-facts: No formula sheet is provided on the ACT (act.org; data/act/skills.json math-geometry tip "No formula sheet on the ACT. Know area, circumference, Pythagorean theorem cold"); calculator allowed on the whole Math section (act.org); Math is 45 questions in 50 minutes, about 67 s each (act.org; timing.html); app strategy "Draw the triangle": draw it and mark the angle, label opposite, adjacent and hypotenuse from that angle, pick sine, cosine or tangent, check the calculator is in the correct angle mode; strategy trap "Labeling sides from the wrong angle" (data/strategies.json math-trig); geometry strategy trap "Using diameter in place of radius" (data/strategies.json math-geometry); two-pass, ten-second rule (data/strategies.json general); app trap label "Trap: half right" (assets/engine.js TRAP_NAMES); formulas taught (triangle angles sum to 180 degrees, Pythagorean theorem, 3-4-5 and 5-12-13 right triangles, rectangle area, triangle area one half base times height, circle area pi r squared, circumference 2 pi r, SOH CAH TOA, slope rise over run, box volume length times width times height) are standard math; worked example: in a 3-4-5 right triangle, for the angle opposite the side of 3, cosine is adjacent over hypotenuse, 4/5; Mauna Lani North Course, no rates stated (cast.json places)
+facts: ACT Math questions have four answer choices (counselorblog.act.org/the-enhanced-act-explained, checked 2026-10-16); for angle P in the 3-4-5 triangle, sine 3/5, cosine 4/5, tangent 3/4, and 5/4 is hypotenuse over adjacent, the reciprocal of cosine (arithmetic); No formula sheet is provided on the ACT (act.org; data/act/skills.json math-geometry tip "No formula sheet on the ACT. Know area, circumference, Pythagorean theorem cold"); calculator allowed on the whole Math section (act.org); Math is 45 questions in 50 minutes, about 67 s each (act.org; timing.html); app strategy "Draw the triangle": draw it and mark the angle, label opposite, adjacent and hypotenuse from that angle, pick sine, cosine or tangent, check the calculator is in the correct angle mode; strategy trap "Labeling sides from the wrong angle" (data/strategies.json math-trig); geometry strategy trap "Using diameter in place of radius" (data/strategies.json math-geometry); two-pass, ten-second rule (data/strategies.json general); app trap label "Trap: half right" (assets/engine.js TRAP_NAMES); formulas taught (triangle angles sum to 180 degrees, Pythagorean theorem, 3-4-5 and 5-12-13 right triangles, rectangle area, triangle area one half base times height, circle area pi r squared, circumference 2 pi r, SOH CAH TOA, slope rise over run, box volume length times width times height) are standard math; worked example: in a 3-4-5 right triangle, for the angle opposite the side of 3, cosine is adjacent over hypotenuse, 4/5; Mauna Lani North Course, no rates stated (cast.json places)
 target_minutes: 8
 homework: Drill trigonometry | drill.html?skill=math-trig
 
@@ -10,12 +10,12 @@ PONO: Smart. Always bring a spare.
 LEHUA: Warm-up from last time. Kaden, what does f of five mean?
 KADEN: Go across to five and read how high the graph is. It's the output, the height. Not five.
 LEHUA: Good. Today, Derek, the episode is called The Last Ten. What's the last ten?
-DEREK: The last ten things you need to memorize for ACT math. Here's why. The SAT gives you a reference sheet with formulas on it. The ACT gives you nothing. No formula sheet. Whatever you need, you bring in your head.
+DEREK: The last ten things you need to memorize for ACT math. Here's why. The SAT gives you a reference sheet with formulas on it. The ACT doesn't. No formula sheet. Whatever you need, you bring in your head.
 KADEN: Nothing? Not even the circle one?
 DEREK: Not even the circle one. But the good news is the list is short. Ten things. Kaden, you're going to say them back at the end, so listen.
 DEREK: One. The angles in a triangle add up to one hundred eighty degrees.
 DEREK: Two. The Pythagorean theorem. In a right triangle, a squared plus b squared equals c squared, and c is the long side, the hypotenuse.
-DEREK: Three. Two right triangles that show up all the time. Three, four, five. And five, twelve, thirteen. Also their doubles, like six, eight, ten. If you see two of those numbers, you already know the third.
+DEREK: Three. Two right triangles that show up all the time. Three, four, five. And five, twelve, thirteen. Also their doubles, like six, eight, ten. If a right triangle shows you two of those numbers, you already know the third.
 DEREK: Four. Area of a rectangle. Length times width.
 DEREK: Five. Area of a triangle. One half, times base, times height.
 DEREK: Six. Area of a circle. Pi r squared.
@@ -37,7 +37,7 @@ KADEN: CAH. Cosine is adjacent over hypotenuse. Four over five. B.
 DEREK: B, four fifths. Now look at choice A. Three fifths.
 KADEN: That's opposite over hypotenuse. That's sine.
 DEREK: That's sine. And that's the trap we're naming today. The app calls it half right. The bottom of the fraction is right. Five, the hypotenuse. The top is wrong. Half the answer matches, so it feels right. It usually happens when you label the sides from the wrong angle, or you mix up which letter goes with which ratio.
-DEREK: C, three fourths, is tangent. D, five fourths, isn't anything. It's upside down. So you could cross out D right away. Hypotenuse is the longest side, so sine and cosine can never be bigger than one.
+DEREK: C, three fourths, is tangent. D, five fourths, is cosine flipped upside down, with the hypotenuse on top. The hypotenuse is the longest side, so sine and cosine can never be bigger than one. That means you could cross out D right away.
 KADEN: Oh, that's a good cross-out rule.
 DEREK: It's a free one. And one more thing from the app. If you ever use your calculator for trig, check that it's in degrees when the question uses degrees. Wrong mode, wrong answer, and you won't know why.
 LEHUA: Okay, Coach, time sinks. Geometry and trig questions can eat the clock. What's the rule?
