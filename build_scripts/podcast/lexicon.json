@@ -353,6 +353,18 @@
   "Kaunaʻoa": {
    "say": "kow-nah-OH-ah",
    "note": "Kaunaʻoa Bay, the beach at Mauna Kea Beach Hotel"
+  },
+  "hālau": {
+   "say": "HAH-lau",
+   "note": "hula school; Pono only"
+  },
+  "Uila": {
+   "say": "oo-EE-lah",
+   "note": "Uila Records, Waimea; Pono only"
+  },
+  "Waikiʻi": {
+   "say": "wai-KEE-ee",
+   "note": "Waikiʻi Ranch above Waimea, polo; Pono only"
   }
  },
  "flag_patterns": [

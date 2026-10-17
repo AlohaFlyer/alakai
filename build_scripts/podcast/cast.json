@@ -9,7 +9,7 @@
    "age": "late 20s",
    "voice_id": "jRIDd6YCznqwKHkWlpOh",
    "voice_brief": "Warm, quick, local Hawaiʻi cadence, laughs easily, keeps the show moving. Not a radio voice, a cool older-cousin voice.",
-   "gag": "Always has somewhere to be after the show, and it rotates: the Costco run (Kona Costco, open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun, about an hour from Waimea); canoe paddling practice at the harbor; dinner at Pau Pizza in town; her niece's volleyball practice at the district park; sunset at the beach by the old hotel; an early swim at the big white-sand beach; a day hike at the volcano. The joke is the timing and the drive, never that a place is closed. House rule: Lehua names the activity in English; if a Hawaiian place name is needed, Coach Pono says it (Kawaihae, Kaunaʻoa, Hāpuna, Kīlauea).",
+   "gag": "Always has somewhere to be after the show, and it rotates through the places list in this file: the Costco run (Kona Costco, open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun, about an hour from Waimea); paddling at the harbor; the record store; Pac-Man at the pizza place; chocolate cake at the barbecue place; potato wedges at the gas station; the Saturday hike to the pond; the Christmas parade; hula practice; polo; the horses at the stable; volleyball at the district park; sunset at the beach by the old hotel; an early swim at the big white-sand beach; a hike at the volcano. The joke is the timing and the drive, never that a place is closed. Lehua names the activity in English; Coach Pono says any Hawaiian place name.",
    "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
    "voice_library_name": "Hoku",
    "local": true,
@@ -87,7 +87,7 @@
  ],
  "engine": "elevenlabs",
  "places": {
-  "_note": "Waimea-area activities for banter. Lehua says the English description; Pono says the Hawaiian name if it is said at all.",
+  "_note": "Waimea-area activities for banter (Ryan's list, 2026-10-16). Lehua says the English description; Pono says the Hawaiian name if it is said at all. English business names (Fish and the Hog, Minit Stop, Anna's Pond, Uila Records is a Hawaiian word so Pono) follow the house rule by lexicon check. Rotate: each place at most once per three episodes, Costco at most once per four.",
   "costco": {
    "say_en": "the Costco run",
    "pono": "Kona",
@@ -122,6 +122,51 @@
    "say_en": "a day hike at the volcano",
    "pono": "Kīlauea",
    "facts": "Hawaiʻi Volcanoes National Park is about 2 hours from Waimea by car; check nps.gov for current closures"
+  },
+  "records": {
+   "say_en": "the record store in town",
+   "pono": "Uila Records",
+   "facts": "Uila Records, Waimea; no hours stated"
+  },
+  "pacman": {
+   "say_en": "the Pac-Man machine at the pizza place",
+   "pono": "Pau Pizza",
+   "facts": "Pau Pizza, Waimea, has a Pac-Man arcade machine (Ryan, 2026-10-16); no hours stated"
+  },
+  "cake": {
+   "say_en": "chocolate cake at the barbecue place on the main road",
+   "pono": "",
+   "facts": "Fish and the Hog, Waimea, known for its chocolate cake (Ryan); the name is English so any character may say it; no hours stated"
+  },
+  "wedges": {
+   "say_en": "potato wedges at the gas station",
+   "pono": "",
+   "facts": "Minit Stop (Ryan says Minut Stop; the chain spells it Minit Stop), Waimea; any character may say it; no hours stated"
+  },
+  "annas_pond": {
+   "say_en": "the Saturday morning hike up to the pond",
+   "pono": "Anna's Pond",
+   "facts": "Anna's Pond trail above Waimea, a Saturday-morning local hike (Ryan); say nothing about access rules; Pono or anyone may say Anna's Pond since it is English"
+  },
+  "parade": {
+   "say_en": "the Christmas parade",
+   "pono": "Waimea",
+   "facts": "Waimea Christmas Twilight Parade, early December each year; no date stated"
+  },
+  "hula": {
+   "say_en": "hula practice",
+   "pono": "hālau",
+   "facts": "hula and hālau are lexicon terms; Lehua may say hula (loanword in English) but only Pono says hālau"
+  },
+  "polo": {
+   "say_en": "polo at the field",
+   "pono": "Waiki'i",
+   "facts": "polo is played above Waimea in season (Ryan); no club or schedule named"
+  },
+  "horses": {
+   "say_en": "working the horses at the stable",
+   "pono": "",
+   "facts": "Pono's horses; any character may say it; pairs naturally with Pono's rodeo gag, so do not double up"
   }
  }
 }
