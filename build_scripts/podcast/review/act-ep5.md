@@ -10,3 +10,10 @@
 
 Verified: the box is; its, not their; B is the only choice where the subject after the comma is the driver (C and D dangle); B is the longest (13 words, against 10 and 11); near miss trap; OMIT; checks answers taught; pond hike place; Kaden's truck line once; rating 8.
 Linters: render2 0 spliced; render.py ok, 1,126 words.
+
+
+## Pass 2
+
+PASS
+
+Grammar redone: "The box of old records are" fixed to "is"; "The team lost its first game" correct; misplaced vs dangling defined correctly; A, C and D all leave "the fog" or "the road" as the driver (dangling); B is the only correct choice and the longest (13 words against 11, 12, 12); redundancy examples correct; OMIT rule matches strategies.json english-style. checks/act-ep5.json has one answer each.

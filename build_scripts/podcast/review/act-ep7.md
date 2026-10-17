@@ -7,3 +7,10 @@
 
 Verified: 4x8 + 8x5 = 72; 5x8 + 7x5 = 75; 7 is the student count (misread the question, plan trap); 0.8x; 100 to 80 to 96; "four choices" is correct; 67 s; one rodeo bit (roping); wedges place, with Pono saying the English name Minit Stop; rating 7 with the reason (units omitted from the recap) true to the recap.
 Linters: render2 0 spliced; render.py ok, 1,052 words.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: 4 x 8 + 8 x 5 = 72, 5 x 8 + 7 x 5 = 75, 8a + 5(12 - a) = 75 gives a = 5 only; D (7) is the student count; 0.8x from x = 100; 100 to 80 to 96; one roping line; wedges place; rating 7; checks/act-ep7.json matches.

@@ -7,3 +7,10 @@
 
 Verified: all ten formulas; cos P = 4/5 (B); 3/5 is sine (half right, plan trap); 3/4 is tangent; degrees mode; one rodeo bit (horse trailer); golf place, with Pono saying Mauna Lani; rating 9; continuity: Ep 10's callback ("can't be bigger than one") matches; homework math-trig exists.
 Linters: render2 0 spliced; render.py ok, 1,040 words.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: cos P = 4/5 with P opposite 3; 3/5 sine (half right), 3/4 tangent, 5/4 reciprocal of cosine; sine and cosine at most 1 in a right triangle; all ten formulas correct; Ep 8 is "last week" for slope; one horse line; golf place; rating 9; checks/act-ep9.json matches.

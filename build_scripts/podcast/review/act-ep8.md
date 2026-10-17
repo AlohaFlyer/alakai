@@ -7,3 +7,10 @@
 
 Verified: slope 4/2 = 2; f(x) = 2x + 3; f(5) = 13; distractors 2 (slope), 5 (input), 10 (no intercept); roots 2 and 6; max 7 at x = 3; answers the wrong part (plan trap); 3 voices (rubric minimum met); Pac-Man place (first pizza-place use); "going on a shirt too" pays off Ep 5; rating 8; homework math-coordinate exists.
 Linters: render2 0 spliced; render.py ok, 1,079 words, 3 voices.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: slope (7 - 3)/(2 - 0) = 2, f(x) = 2x + 3, f(5) = 13; distractors 2, 5, 10 explained; roots 2 and 6 from (x - 2)(x - 6); max 7 at x = 3; one game line; Pac-Man place; rating 8; checks/act-ep8.json matches.

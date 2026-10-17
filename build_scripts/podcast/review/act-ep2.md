@@ -8,3 +8,11 @@
 
 Verified: 42, 67, 67, 60 s; SAT 71 and 95 s (1920/27, 2100/22); 3000/45 = 66.7; 95 minus 67 = 28 s, "almost half a minute"; Ep 9 is the formula episode and Ep 3 is pace, per the plan; checks answers taught; record store place (not used in Eps 0, 1, 3, 4); one rating; Kaden's game line once.
 Linters: render2 0 spliced; render.py ok, 1,164 words, 4 voices.
+
+
+## Pass 2
+
+1. Tone (school-safe): the cold open had a 16-year-old holding two energy drinks at nine in the morning, played as normal. Now "two breakfast sandwiches"; the "one is for later / later is ten" joke is unchanged.
+
+Re-verified: 2100/50 = 42, 3000/45 = 66.7, 2400/36 = 66.7, 2400/40 = 60 s; SAT 1920/27 = 71.1 and 2100/22 = 95.5 s; 64 + 70 = 134 min (2 h 14 min); 95 minus 67 = 28 s; 50/45 = 1.1 min (answers the wrong part); fee and calculator facts; checks/act-ep2.json Q1 to Q3 each have one answer taught in the script.
+Linters: render2 0 spliced; render.py ok, 1,164 words, 4 voices.

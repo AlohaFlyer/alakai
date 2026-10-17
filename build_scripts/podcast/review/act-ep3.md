@@ -8,3 +8,10 @@
 Verified: checkpoints 11:40 and 23:20 (Q17, Q33), 16:40 and 33:20 (Q15, Q30); the mirror claim (35:00 minus 11:40 = 23:20; 50:00 minus 16:40 = 33:20); Reading passage 2 at 20:00; the "Time squeeze" page name; the online countdown; a watch with no alarm; one rodeo bit (barrel racing); Ironman place; Kaden's car line once; checks answers taught.
 App note (not a script fix): timing.html line 78 still says "On the ACT, mark the number on your scratch paper," which is wrong for paper testers.
 Linters: render2 0 spliced; render.py ok, 1,102 words.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: checkpoints 11:40/Q17 and 23:20/Q33, 16:40/Q15 and 33:20/Q30 (match timed.html Math.round(f x count)); mirror claim; Reading passage 2 at 20:00; 3 x 42 = 126 s, flag at 10 s saves 110 s; "stopped a step early" fits the walk-through; timed.html checkpoint wording matches; one rodeo bit, one car line, Ironman place, rating 7; checks/act-ep3.json matches the script after pass 1.

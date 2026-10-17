@@ -6,3 +6,11 @@
 
 Verified: 36 q in 40 min, 10 min per passage; example B is the one defensible answer; A is too extreme (plan trap); D's rain is a detail with the wrong meaning; pair notes "tourism helps / strains the town"; strategies match strategies.json reading-detail, reading-inference, reading-integration; airport place (Lehua says "the airport"; no Hawaiian word); callback to Ep 9 cosine; rating 8; next is Ep 11.
 Linters: render2 0 spliced; render.py ok, 1,071 words.
+
+
+## Pass 2
+
+1. Pass 1's open judgment call resolved: "you can skip ahead and come back, so you can work the passages in any order" claimed more than the source. Now phrased as what the guide says: "ACT's own prep guide says to answer the easy questions first, skip the hard ones, and go back to them if you have time, as long as you're still in that section. So inside Reading, you don't have to go in order." Facts line updated to say no ACT page states "any order" and the script states only the guide's skip-and-return rule.
+
+Re-verified: example B is the one defensible answer, A too extreme, C and D cut correctly; strategies match strategies.json; checks/act-ep10.json matches.
+Linters: render2 0 spliced; render.py ok, 1,094 words, 4 voices.

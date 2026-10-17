@@ -7,3 +7,10 @@
 
 Verified: 27 + 26 + 25 = 78, divided by 3 = 26; 72/3 = 24; 75/3 = 25; fees 70, 75 and 95 dollars (act.org fees page, checked 2026-10-16); UH Manoa test-optional and UH Hilo lines unchanged from Ep 1's verified facts; 19.4 average; accommodations go only to the counselor; Science answer matches Ep 1; one rodeo line ("Ride the clock"), one rating (9, "Nobody gets ten"), one bus line; sunset place, with Pono saying Kaunaʻoa; homework settings.html exists.
 Linters: render2 0 spliced; render.py ok, 1,423 words, 5 voices (panel limit 1,700).
+
+
+## Pass 2
+
+PASS
+
+Re-verified: superscore 27 + 26 + 25 = 78 / 3 = 26; single dates 24 and 25; fees 70, 75, 95 dollars and fee waiver (two tests, six colleges, 11th and 12th grade) re-fetched from act.org 2026-10-16; accommodations only "talk to your counselor"; Hilo and Kaunaʻoa said only by Pono; one rodeo line, one bus line, one rating (9); 1,423 words, inside the 1,700 panel limit; checks/act-ep14.json matches.

@@ -8,3 +8,10 @@
 
 Verified: comma splice, semicolon, comma plus FANBOYS, the run-on in C, "; and" in D; one defensible answer (B); near miss named as the app says it; apostrophe rules; recap and rating 8 (up from 7 in Ep 3, so "up from last week" holds); cake place; Sarah's comma bit once; Kaden's game line once; homework skill english-punct exists.
 Linters: render2 0 spliced; render.py ok, 1,075 words.
+
+
+## Pass 2
+
+PASS
+
+Grammar redone: "The tide was low, we walked out to the reef" is a comma splice; B (semicolon) is the only correct choice; C is a fused sentence; D pairs a semicolon with "and"; A is the near miss (fixable by one mark or by adding "and"). Apostrophe rules (student's, students', its/it's) correct for regular nouns. Colon and dash rule correct. Mom's text is a comma splice. checks/act-ep4.json matches.

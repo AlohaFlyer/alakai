@@ -6,3 +6,11 @@
 
 Checked, no change: sections, OMIT and NO CHANGE, STEM, MyACT, superscore, fee waiver via counselor, pencils; Pono alone says Hawaiian words; Kaden's respellings (Hah-VAI-ee etc.) are allowed by the house rule; one rating, one rodeo bit; paddling place, with Pono saying the place name.
 Linters: render2 0 spliced; render.py ok, 727 words, 5 voices.
+
+
+## Pass 2
+
+1. Fact not on the facts line: Pono's "Kawaihae, late afternoon" states a practice time; cast.json places says paddling has no times stated. Now "Kawaihae. Bring water."
+
+Checked, no change: composite stress (second syllable), OMIT and No Change, STEM, MyACT, superscore, pencils, fee waiver via counselor; only Pono says Hawaiian words; one rating (4), one rodeo line; checks/act-ep0.json all three answers taught.
+Linters: render2 0 spliced; render.py ok, 725 words, 5 voices.

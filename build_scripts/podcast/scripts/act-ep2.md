@@ -4,7 +4,7 @@ facts: Enhanced ACT: English 50 questions in 35 minutes (about 42 s each), Math 
 target_minutes: 8
 homework: Do one timed ACT section | timed.html
 
-LEHUA: Hey, welcome back to ACT Notes, episode two. I'm Lehua. Sarah is here, Derek is here, and Kaden is here holding two energy drinks.
+LEHUA: Hey, welcome back to ACT Notes, episode two. I'm Lehua. Sarah is here, Derek is here, and Kaden is here holding two breakfast sandwiches.
 KADEN: One is for later.
 SARAH: It's nine in the morning.
 KADEN: Later is ten.

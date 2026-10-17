@@ -34,7 +34,7 @@ KADEN: Okay, so I need a new watch.
 DEREK: You need a quiet watch. Also bring a current photo ID. It has to be the real hard plastic card, like a driver's license or a school ID, and the name has to match your registration. A photo on your phone doesn't count. Print your admission ticket from MyACT, too. And bring an approved calculator, one you've used all month, even if you test online, where there's one on the screen. Don't bring a fancy new one you've never touched.
 PONO: Check the test day page on act dot org for the full list. That's the official one. Read it a few days before, not that morning.
 LEHUA: And the drive. A lot of us drive a long way to a test center on this island.
-PONO: Know where you're going the day before. If you've never been to that building, find it before test day. Check-in is usually eight in the morning, and if you're late, they won't let you in. Leave early. Add time for traffic and for parking and for finding the right room. If you get there early, you sit in the car and eat a snack. That's the worst case. That's a good worst case.
+PONO: Know where you're going the day before. If you've never been to that building, find it before test day. ACT says to be inside the test center by eight in the morning, and late arrivals can't be admitted. Leave early. Add time for traffic and for parking and for finding the right room. If you get there early, you sit in the car and eat a snack. That's the worst case. That's a good worst case.
 KADEN: My mom's car takes like five minutes to start in the morning.
 PONO: Then leave five minutes earlier than that.
 LEHUA: Last thing, scores. Where do they go?

@@ -9,3 +9,10 @@
 
 Verified: B is the one defensible answer; however, not therefore; pointer words; 50 s suggested time (strategies.json); rating 9 (not a ten); bus line once; volleyball place; homework english-strategy exists.
 Linters: render2 0 spliced; render.py ok, 1,073 words.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: B is the only choice that shows beginners are welcome; A and D are true but irrelevant, C works against the goal; "however" is contrast, "therefore" would claim cause; pointer-word rule; 50 s matches strategies.json; one bus line, rating 9; checks/act-ep6.json matches.

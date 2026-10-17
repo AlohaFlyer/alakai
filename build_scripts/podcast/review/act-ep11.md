@@ -8,3 +8,10 @@
 
 Verified: 40/40, about 60 s; own score, STEM; Plant A grew 8 cm against 6 cm (2 against 1.5 cm a week), answer A; B is misread the question (plan trap); Science toggle exists in settings.html; Ep 1's "episode eleven" and "reading charts and tables" promise kept; one rodeo bit (sorting cattle); Beach 69 place, with Pono saying Waialea; rating 7.
 Linters: render2 0 spliced; render.py ok, 1,118 words.
+
+
+## Pass 2
+
+PASS
+
+Re-verified: Plant A 8 cm in 4 weeks (2 cm/week) against Plant B 6 cm (1.5 cm/week), answer A; B is misread the question; no calculator on Science; skill tips match skills.json ("One sentence per scientist" is the science-conflict tip); Science toggle in Settings; one cattle line; Beach 69 place; rating 7; checks/act-ep11.json matches.

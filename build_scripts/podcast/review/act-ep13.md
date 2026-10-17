@@ -9,3 +9,11 @@
 
 Verified: Q1 has one answer (No. 2 pencils); mechanical pencil ban callback to Ep 1; full-length test 3 days out (dashboard.html); one rodeo bit (horse before the rodeo); Kaden's car line once; volcano place about 2 hours, with Pono saying Kīlauea; rating 7.
 Linters: render2 0 spliced; render.py ok, 1,187 words.
+
+
+## Pass 2
+
+1. Arrival rule hedged where the source is firm: "Check-in is usually eight in the morning, and if you're late, they won't let you in." act.org/the-act/id says be inside the test center by 8:00 a.m. and late arrivals cannot be admitted. Now "ACT says to be inside the test center by eight in the morning, and late arrivals can't be admitted."
+
+Re-verified: fee waiver covers up to two tests, one high school report and up to six college choices, extra reports free after scores (act.org fee waivers page, re-fetched 2026-10-16); test fee includes four college reports if listed at registration (act.org fees page, re-fetched); ID, ticket, pencils, watch; checks/act-ep13.json Q1 has one answer (No. 2 pencils).
+Linters: render2 0 spliced; render.py ok, 1,190 words, 4 voices.

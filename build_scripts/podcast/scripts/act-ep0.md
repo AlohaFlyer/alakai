@@ -55,4 +55,4 @@ DEREK: No.
 LEHUA: That's episode zero. Episode one is how the ACT works. Go take the placement check in the app, then come back. Thanks, everybody. I'm leaving for paddling practice at the harbor.
 KADEN: Right now?
 LEHUA: The canoe doesn't wait for me.
-PONO: Kawaihae, late afternoon. Bring water.
+PONO: Kawaihae. Bring water.
