@@ -9,7 +9,7 @@
    "age": "late 20s",
    "voice_id": "jRIDd6YCznqwKHkWlpOh",
    "voice_brief": "Warm, quick, local Hawaiʻi cadence, laughs easily, keeps the show moving. Not a radio voice, a cool older-cousin voice.",
-   "gag": "Always has somewhere to be after the show, and it rotates through the places list in this file: the Costco run (Kona Costco, open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun, about an hour from Waimea); paddling at the harbor; the record store; Pac-Man at the pizza place; chocolate cake at the barbecue place; potato wedges at the gas station; the Saturday hike to the pond; the Christmas parade; hula practice; polo; the horses at the stable; volleyball at the district park; dropping her dad at the airport; tennis or golf down the hill; Beach 69; boogie boarding at the bay with the big shore break; a bike ride or triathlon cycling practice; soccer practice by the rodeo arena; the Saturday farmers markets (stables or the school in town); the Wednesday food trucks and the red barn grilled cheese; sunset at the beach by the old hotel; an early swim at the big white-sand beach; a hike at the volcano. The joke is the timing and the drive, never that a place is closed. Lehua names the activity in English; Coach Pono says any Hawaiian place name.",
+   "gag": "Always has somewhere to be after the show, and it rotates through the places list in this file: the Costco run (Kona Costco, open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun, about an hour from Waimea); paddling at the harbor; the record store; Pac-Man at the pizza place; chocolate cake at the barbecue place; potato wedges at the gas station; the Saturday hike to the pond; the Christmas parade; hula practice; polo; the horses at the stable; volleyball at the district park; dropping her dad at the airport; tennis or golf down the hill; Beach 69; boogie boarding at the bay with the big shore break; a bike ride or Ironman cycling practice; soccer practice by the rodeo arena; the Saturday farmers markets (stables or the school in town); the Wednesday food trucks and the red barn grilled cheese; sunset at the beach by the old hotel; an early swim at the big white-sand beach; a hike at the volcano. The joke is the timing and the drive, never that a place is closed. Lehua names the activity in English; Coach Pono says any Hawaiian place name.",
    "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
    "voice_library_name": "Hoku",
    "local": true,
@@ -199,9 +199,9 @@
    "facts": "any character may say it"
   },
   "ironman": {
-   "say_en": "cycling practice for the triathlon",
+   "say_en": "cycling practice for the Ironman",
    "pono": "Kona",
-   "facts": "The IRONMAN World Championship is held in Kailua-Kona in October (years vary); say 'the big triathlon in October' and check ironman.com before naming a date; do not use the IRONMAN brand name on air"
+   "facts": "The Ironman World Championship is held in Kailua-Kona in October; say Ironman by name (Ryan's call, 2026-10-16)"
   },
   "soccer": {
    "say_en": "soccer practice by the rodeo arena",
@@ -211,17 +211,17 @@
   "farmers_pukalani": {
    "say_en": "the farmers market at the stables",
    "pono": "Pukalani",
-   "facts": "Pukalani Stables farmers market, Waimea, Saturday mornings (Ryan); verify day before stating"
+   "facts": "Pukalani Stables farmers market, Waimea, Saturday mornings"
   },
   "farmers_parker": {
    "say_en": "the Saturday farmers market at the school in town",
    "pono": "Parker School",
-   "facts": "Waimea Town Market at Parker School, Saturday mornings (Ryan); verify before stating a time"
+   "facts": "Waimea Town Market at Parker School, Saturday mornings"
   },
   "foodtrucks": {
    "say_en": "the Wednesday food trucks at the stables",
    "pono": "Pukalani",
-   "facts": "Pukalani Stables food trucks on Wednesdays (Ryan); verify before stating a time"
+   "facts": "Pukalani Stables food trucks, Wednesdays"
   },
   "grilledcheese": {
    "say_en": "a grilled cheese from the red barn truck",

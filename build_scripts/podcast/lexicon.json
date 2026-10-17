@@ -381,6 +381,10 @@
   "Pukalani": {
    "say": "poo-kah-LAH-nee",
    "note": "Pukalani Stables, Waimea; Pono only"
+  },
+  "Ironman": {
+   "say": "Ironman",
+   "note": "the triathlon in Kona; any character"
   }
  },
  "flag_patterns": [
