@@ -13,7 +13,7 @@ Revised 2026-10-16 after Ryan's review of Ep 1 of both shows. Fourteen episodes 
 7. Standard English for every teaching sentence; pidgin only in banter for local characters; only Coach Pono says Hawaiian words (render2.py enforces).
 8. Facts go on the `facts:` header line and get checked by the reviewer against the official source named there. Fees and dates say "this year" and "check the official site".
 9. 1,000 to 1,400 words (panels up to 1,700). Three to four voices; panels and Ep 0 use all five.
-10. Every gag at most once per episode: Lehua's Costco run (Kona Costco, closes 8:30 PM Mon to Fri, 7 PM Sat, 6 PM Sun, about an hour from Waimea), Derek's rating out of ten (never a ten), Pono's rodeo metaphors, Sarah's commas, Kaden's bus, game, or car.
+10. Every gag at most once per episode: Lehua's after-show plans (they rotate; see cast.json `places`: Costco, paddling at the harbor, the pizza place in town, volleyball at the district park, sunset at the beach by the old hotel, an early swim at the big white-sand beach, a day hike at the volcano; Lehua says the English, Pono says the Hawaiian place name if anyone does; Costco at most once per four episodes), Derek's rating out of ten (never a ten), Pono's rodeo metaphors, Sarah's commas, Kaden's bus, game, or car.
 
 ## Review rubric (a fresh agent grades every script before it renders)
 

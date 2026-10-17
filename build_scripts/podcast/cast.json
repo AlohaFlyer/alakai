@@ -9,7 +9,7 @@
    "age": "late 20s",
    "voice_id": "jRIDd6YCznqwKHkWlpOh",
    "voice_brief": "Warm, quick, local Hawaiʻi cadence, laughs easily, keeps the show moving. Not a radio voice, a cool older-cousin voice.",
-   "gag": "Always has a Costco run to get to after the show. Facts to keep straight: Kona Costco (73-5600 Maiau St) is open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun; about an hour from Waimea. The joke is the drive and the early Sunday close, never that it is closed.",
+   "gag": "Always has somewhere to be after the show, and it rotates: the Costco run (Kona Costco, open seven days, closes 8:30 PM Mon to Fri, 7:00 PM Sat, 6:00 PM Sun, about an hour from Waimea); canoe paddling practice at the harbor; dinner at Pau Pizza in town; her niece's volleyball practice at the district park; sunset at the beach by the old hotel; an early swim at the big white-sand beach; a day hike at the volcano. The joke is the timing and the drive, never that a place is closed. House rule: Lehua names the activity in English; if a Hawaiian place name is needed, Coach Pono says it (Kawaihae, Kaunaʻoa, Hāpuna, Kīlauea).",
    "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
    "voice_library_name": "Hoku",
    "local": true,
@@ -78,11 +78,50 @@
   "Pidgin and local slang only for characters marked local, and only in conversational banter (greetings, jokes, reactions, transitions).",
   "Teaching lines (any sentence that states a rule, a number, a formula, a strategy step, or a definition) are standard English for every character, including Coach Pono.",
   "Standard English means no 'wen', 'stay', 'da', 'dis', 'get' for 'have', or dropped copulas inside an instructional sentence.",
-  "A character can set up a teaching point in pidgin ('Okay, listen up, dis one important') and then deliver the point itself in standard English."
+  "A character can set up a teaching point in pidgin ('Okay, listen up, dis one important') and then deliver the point itself in standard English.",
+  "Lehua's after-show plans rotate (see her gag). Use each place at most once per three episodes; Costco at most once per four. Every real place or hour comes with a facts: line entry."
  ],
  "_pronunciation": "2026-10-16 decision (Ryan): ElevenLabs only. Pronunciation dictionaries (alias and IPA) do not fix Hawaiian on any ElevenLabs model, and splicing term-bank clips into other voices sounds choppy. Cartesia tested and rejected for now. HOUSE RULE: only Coach Pono (Mikey voice, hawaiian_native) speaks Hawaiian words and place names. Every other character says the English equivalent (Big Island, the prep school up the road) or a respelling the character is sounding out (Hah-VAI-ee). render2.py refuses a script where a non-native character has a Hawaiian lexicon term in a line.",
  "fact_rules": [
   "Any real place, business, hour, price, or date mentioned in a script must be verified before rendering and noted in the script header as 'facts:'."
  ],
- "engine": "elevenlabs"
+ "engine": "elevenlabs",
+ "places": {
+  "_note": "Waimea-area activities for banter. Lehua says the English description; Pono says the Hawaiian name if it is said at all.",
+  "costco": {
+   "say_en": "the Costco run",
+   "pono": "Kona",
+   "facts": "Kona Costco open 7 days, closes 8:30 PM Mon-Fri, 7 PM Sat, 6 PM Sun"
+  },
+  "paddling": {
+   "say_en": "paddling practice at the harbor",
+   "pono": "Kawaihae",
+   "facts": "outrigger canoe clubs practice out of Kawaihae harbor; no times stated"
+  },
+  "pizza": {
+   "say_en": "dinner at the pizza place in town",
+   "pono": "Pau Pizza",
+   "facts": "Pau Pizza, Waimea; no hours stated"
+  },
+  "volleyball": {
+   "say_en": "volleyball practice at the district park",
+   "pono": "Waimea District Park",
+   "facts": "Waimea District Park has a gym and courts; no times stated"
+  },
+  "sunset": {
+   "say_en": "sunset at the beach by the old hotel",
+   "pono": "Kaunaʻoa",
+   "facts": "Kaunaʻoa Bay at Mauna Kea Beach Hotel faces west; public access is limited to a small number of parking passes per day, first come"
+  },
+  "sunrise_swim": {
+   "say_en": "an early swim at the big white-sand beach",
+   "pono": "Hāpuna",
+   "facts": "Hāpuna Beach State Recreation Area; west-facing, so morning light not a true sunrise over the water; say early swim, not sunrise"
+  },
+  "volcano": {
+   "say_en": "a day hike at the volcano",
+   "pono": "Kīlauea",
+   "facts": "Hawaiʻi Volcanoes National Park is about 2 hours from Waimea by car; check nps.gov for current closures"
+  }
+ }
 }

@@ -104,7 +104,7 @@
   },
   "pau": {
    "say": "pow",
-   "note": "finished"
+   "note": "done, finished; also Pau Pizza in Waimea"
   },
   "pau hana": {
    "say": "pow HAH-nah"
@@ -345,6 +345,14 @@
   },
   "ʻaumākua": {
    "say": "ow-MAH-koo-ah"
+  },
+  "Hāpuna": {
+   "say": "HAH-poo-nah",
+   "note": "Hāpuna Beach, white sand beach south of Kawaihae"
+  },
+  "Kaunaʻoa": {
+   "say": "kow-nah-OH-ah",
+   "note": "Kaunaʻoa Bay, the beach at Mauna Kea Beach Hotel"
   }
  },
  "flag_patterns": [
