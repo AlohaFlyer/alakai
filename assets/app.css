@@ -91,7 +91,7 @@ small, .muted { color: var(--ink-soft); }
 /* Header */
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
-.brand .mark { width: 36px; height: 36px; border-radius: 10px; background: var(--primary); display: grid; place-items: center; color: var(--on-primary); font-family: var(--font-display); font-weight: 700; }
+.brand .mark { width: 36px; height: 36px; border-radius: 10px; display: block; }
 .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
 .hero-bg .topbar, .hero-bg .hero-text { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.4); }
 nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
