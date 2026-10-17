@@ -24,7 +24,8 @@ import render as R
 
 TERMS = R.LEX["terms"]
 def is_hawaiian(t): return bool(re.search(r"[ʻāēīōūĀĒĪŌŪ]", t)) or (t[0].islower() and t not in ("shoots",)) or t in ("Waimea","Kohala","Hilo","Puna","Kona","Kamuela","Kealakehe","Konawaena","Kealakekua","Lehua","Pono","Hele-On","Makua Lani","Kamehameha","Ke Kula","Mauna Kea","Hawaii")
-HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_")], key=len, reverse=True)
+CAST_NAMES = {c["name"] for c in R.CAST["characters"]} | {c["name"].split()[-1] for c in R.CAST["characters"]} | {c["name"].split()[0] for c in R.CAST["characters"]}
+HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_") and t not in CAST_NAMES], key=len, reverse=True)
 ACR = {t: v["say"] for t, v in TERMS.items() if not is_hawaiian(t) and not t.startswith("_") and v.get("say")}
 def slug(t): return re.sub(r"[^a-z0-9]+", "-", t.lower().replace("ʻ", "")).strip("-")
 
@@ -80,6 +81,11 @@ def main():
             if k == "haw" and not (bank / f"{slug(t)}.mp3").exists(): missing_bank.add(t)
         plan.append((n, c, parts))
     nh = sum(1 for _, c, parts in plan for k, _ in parts if k == "haw")
+    offenders = [(n, c["name"], t) for n, c, parts in plan for k, t in parts if k == "haw"]
+    if offenders and not os.environ.get("ALLOW_SPLICE"):
+        print("HOUSE RULE: only hawaiian_native characters may say Hawaiian words. Rewrite these lines or route them to Coach Pono:")
+        for n, name, t in offenders: print(f"  line {n+1} ({name}): {t}")
+        sys.exit(1)
     print(f"{title}: {len(lines)} lines, {nh} spliced Hawaiian terms, natives: {sorted(natives) or 'none'}")
     if missing_bank: print("  termbank missing:", ", ".join(sorted(missing_bank)), "(run termbank.py)")
     if a.dry_run: return

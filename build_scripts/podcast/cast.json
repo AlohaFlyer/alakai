@@ -80,8 +80,9 @@
   "Standard English means no 'wen', 'stay', 'da', 'dis', 'get' for 'have', or dropped copulas inside an instructional sentence.",
   "A character can set up a teaching point in pidgin ('Okay, listen up, dis one important') and then deliver the point itself in standard English."
  ],
- "_pronunciation": "2026-10-16 finding: dictionaries (alias and IPA) do not fix Hawaiian on ElevenLabs. Mikey (Coach Pono) pronounces Hawaiian correctly from raw spelling on eleven_v3. render2.py renders Pono whole and splices termbank clips (Pono's voice) into other characters' Hawaiian words.",
+ "_pronunciation": "2026-10-16 decision (Ryan): ElevenLabs only. Pronunciation dictionaries (alias and IPA) do not fix Hawaiian on any ElevenLabs model, and splicing term-bank clips into other voices sounds choppy. Cartesia tested and rejected for now. HOUSE RULE: only Coach Pono (Mikey voice, hawaiian_native) speaks Hawaiian words and place names. Every other character says the English equivalent (Big Island, the prep school up the road) or a respelling the character is sounding out (Hah-VAI-ee). render2.py refuses a script where a non-native character has a Hawaiian lexicon term in a line.",
  "fact_rules": [
   "Any real place, business, hour, price, or date mentioned in a script must be verified before rendering and noted in the script header as 'facts:'."
- ]
+ ],
+ "engine": "elevenlabs"
 }
