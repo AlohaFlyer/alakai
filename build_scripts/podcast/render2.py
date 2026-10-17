@@ -61,7 +61,7 @@ def concat_with_crossfade(parts, out):
         inputs += ["-i", str(p)]; filt.append(f"[{i}:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-18:TP=-2:LRA=7,apad=pad_dur=0.02[a{i}]")
     chain = "[a0]"
     for i in range(1, len(parts)):
-        filt.append(f"{chain}[a{i}]acrossfade=d=0.06:c1=tri:c2=tri[x{i}]"); chain = f"[x{i}]"
+        filt.append(f"{chain}[a{i}]acrossfade=d={os.environ.get('XFADE','0.06')}:c1=tri:c2=tri[x{i}]"); chain = f"[x{i}]"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt), "-map", chain, "-b:a", "128k", str(out)], check=True)
 
 def main():
