@@ -18,3 +18,10 @@ Linters: render2 0 spliced; render.py ok, 1,101 words.
 
 Verified: worked example has one defensible answer (B, resilient); too extreme matches engine.js; steps match strategies.json rw-cs-words and rw-ii-central; Ep 4 callback and Ep 6 cross-reference; one Kaden bus line, one rating; checks answers taught.
 Linters: render2 0 spliced; render.py ok, 1,082 words.
+
+## Pass 3
+
+PASS. No changes.
+
+Verified by ear: the stem is read twice with no choices, the listener predicts, then the choices are read twice; resilient is the only defensible answer and indestructible is a clean too-extreme trap tied to "with little damage." Plug-back-in step matches strategies.json rw-cs-words. Too narrow and too broad are taught, so checks/sat-ep5.json question 3 has one answer. Callback to Ep 4 trap; Ep 6 cross-reference matches SEASON_PLAN.md. One bus line, one comma bit (list comma, distinct from Ep 2's direct-address joke), one rating; no Lehua place. rw-cs-words exists.
+Linters: render2 0 spliced; render.py ok, 1,082 words, 4 voices.

@@ -25,3 +25,13 @@ Linters: render2 0 spliced; render.py ok, 1,112 words.
 
 Verified: section counts and times, 42/67/67/60 s per question, Composite rounding, 19.4 class of 2025 average (act.org/gradclass2025), superscore uses E, M, R (act.org enhancements page), fee waivers cover registration and score reports to colleges, Ep 2 and Ep 3 cross-references, Costco once in the ACT show, one rodeo bit, one rating, one Kaden bus line; checks answers taught.
 Linters: render2 0 spliced; render.py ok, 1,114 words.
+
+## Pass 3 (LIVE: line 50 needs re-render)
+
+1. LIVE. Line 50, imprecise test-day instruction: "bring a watch with no alarm and your own pencils" would let a student bring mechanical pencils, which ACT prohibits ("Bring sharpened No. 2 pencils with erasers (no pens or mechanical pencils)", act.org/the-act/id, checked 2026-10-16). Now "If you take it on paper, bring sharpened number two pencils, not mechanical ones, and a watch with no alarm."
+2. Header only (no audio): added facts the episode states that were not listed: section order English, Math, Reading, then Science; the pre-2025 ACT was 215 questions in 2 hr 55 min without Writing (supports "shorter, and fewer questions"); paper-test pencils and no-alarm watch (act.org/the-act/id); the online platform's embedded countdown timer (ACT online testing tools guide, doe.sd.gov OnlineACTtools.pdf, checked 2026-10-16).
+
+Read in context, pass 1 and 2 changes sound natural: "New show, new hat / It's the same hat / It's a different hat" stands alone; "Points for remembering / How many points? / Save it for the recap" pays off at "Clean. Seven. Some of that was my line." (Kaden's recap repeats Derek's facts); the fee line, "UH's flagship campus", and "episode eleven" read cleanly.
+Verified: 50/35, 45/50, 36/40, 40/40; 42, 67, 67, 60 s per question; 2 hr 5 min core; Composite rounding; 19.4 average; fees against the facts line; Ep 2, 3 and 11 cross-references; Costco Saturday 7 PM matches cast.json and is the only Costco in the ACT show; one rodeo bit, one rating, one Kaden bus line; checks answers taught.
+Not changed, noted: line 38 "Some schools and some scholarships still look for it" is soft advice with no source on the facts line.
+Linters: render2 0 spliced; render.py ok, 1,118 words, 5 voices.

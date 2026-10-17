@@ -18,3 +18,10 @@ Linters: render2 0 spliced terms; render.py dry run ok, 769 words (Ep 0 allowanc
 
 Verified: Ep 4 cross-reference, HPA red default and Konawaena kelly green (docs/SCHOOL_PALETTES.md), Hāpuna said only by Pono, one Kaden bus gag, checks/sat-ep0.json answers all taught.
 Linters: render2 0 spliced; render.py ok, 778 words.
+
+## Pass 3
+
+PASS. No changes.
+
+Verified: Ep 4 and Ep 1 cross-references match SEASON_PLAN.md; ʻokina placement and respellings (Kaden's Hah-VAI-ee and Koh-nah-WY-nah are sounding-out respellings, allowed); every Hawaiian place and word is in a Pono line (case-insensitive scan, only character names in other lines); HPA red-and-white default and Konawaena green per docs/SCHOOL_PALETTES.md; one Derek rating ("Four out of ten"; line 49 is the gag intro, not a rating); one Kaden bus bit; Lehua's place (early swim at the big white-sand beach, Pono says Hāpuna) is used nowhere else in SAT Eps 0 to 5; checks/sat-ep0.json answers all taught; school-safe.
+Linters: render2 0 spliced; render.py ok, 778 words, 5 voices.

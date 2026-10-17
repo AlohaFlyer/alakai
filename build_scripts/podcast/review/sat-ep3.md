@@ -24,3 +24,10 @@ Linters: render2 0 spliced; render.py ok, 1,275 words. checks/sat-ep3.json answe
 
 Verified: checkpoint targets match timing.html (RW 9 at 10:40, 18 at 21:20; Math 7 at 11:40, 15 at 23:20) and are one-third and two-thirds of each module's clock; ten-second rule from timing.html; timed.html runs checkpoints by default; Ep 4 cross-reference; checks answers taught.
 Linters: render2 0 spliced; render.py ok, 1,286 words.
+
+## Pass 3
+
+PASS. No changes. (Reminder: this episode was rendered before pass 1, so it needs a full re-render; it is not live.)
+
+Verified: 71 s and 95 s per question (1,920 s / 27, 2,100 s / 22); checkpoints are exactly one-third and two-thirds of each module clock and match timing.html; "Time Squeeze page" matches the page title; timed.html runs checkpoints unless onboarding says never; callback to Ep 2; Ep 5 and Ep 4 cross-references; one extended clock-is-a-horse metaphor, one Kaden bus payoff, one rating with a true reason; no example or trap required by SEASON_PLAN for Ep 3; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,286 words, 4 voices.

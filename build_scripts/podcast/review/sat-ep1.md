@@ -21,3 +21,12 @@ Linters: render2 0 spliced; render.py ok, 1,255 words.
 
 Verified: timings, 400 to 1600, 75/25 split, unscored pretest items, Ep 2 and Ep 11 cross-references, one rodeo bit, one rating, one Kaden bus line, checks/sat-ep1.json.
 Linters: render2 0 spliced; render.py ok, 1,260 words.
+
+## Pass 3 (LIVE: line 28 needs re-render)
+
+1. LIVE. Line 28, redundancy introduced by pass 2: "the national average total ... was one thousand twenty-nine. That's from College Board's own report. So roughly a thousand thirty is the national average." said the same fact twice in a row. Cut the last sentence; the line now ends "That's from College Board's own report." Kaden's "So anything over that is good?" still follows naturally.
+2. Header only (no audio): line 16 says the test is "way shorter than the old paper test", which was not on the facts line. Added "the paper SAT it replaced in 2024 was 3 hours without the essay (College Board)".
+
+Read in context, pass 2's other changes (lines 15 and 16 movie exchange, 51 "uses short passages", 53 Mark for Review wording) sound natural at speaking pace.
+Verified: section timings and 2 hr 14 min; 400 to 1600; 1029 class of 2025 mean; Do No Harm wording against the facts line; middle-50 explanation is correct (a quarter below, a quarter above); Ep 2 and Ep 11 cross-references; placement check is "two questions from every skill" (placement.html); "Free official practice" button exists (assets/app.js); one Pono rodeo bit, one Derek rating, Kaden's bus pass line (the "cheat code" remark reads as slang, not the gag); checks/sat-ep1.json answers taught.
+Linters: render2 0 spliced; render.py ok, 1,251 words, 4 voices.

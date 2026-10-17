@@ -16,3 +16,10 @@ Linters: render2 0 spliced; render.py ok, 1,164 words.
 
 Otherwise PASS: example arithmetic (2, 5) and quadratic roots 2 and 3 checked; trap name matches engine.js; Costco is the only Lehua place in SAT Eps 1 to 5 (Ep 0 uses the early swim), so rotation holds; the renaming-variables tip is sound (Desmos makes other letters into sliders); Ep 5 cross-reference matches the plan; checks answers taught; math-alg-systems exists.
 Linters: render2 0 spliced; render.py ok, 1,164 words.
+
+## Pass 3
+
+PASS. No changes.
+
+Verified by ear: stem is one sentence read twice; Kaden's algebra (3x = 6, x = 2) and Derek's y = 2(2) + 1 = 5 are right, A is the planted wrong-part answer, C is the only defensible answer. x² − 5x + 6 roots 2 and 3; 3x + 4 = 19 is a two-step solve. Costco Sunday close 6 PM and one hour match cast.json; Costco is the only Costco in SAT Eps 0 to 5. One rodeo bit, one rating, one Kaden game line; Ep 3 callback and Ep 5 outro match the plan; math-alg-systems exists; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,164 words, 4 voices.

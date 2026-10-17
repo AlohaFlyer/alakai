@@ -15,3 +15,10 @@ Linters: render2 0 spliced; render.py ok, 1,286 words.
 
 Verified: ten trap names and the six listed match engine.js TRAP_NAMES; "You crossed out the right answer" message (engine.js line 78); the app's cross-out button is a × beside each choice; odds arithmetic; worked example has one defensible answer (B); recap lists the six in the order taught; one rating, one comma bit, one Kaden game line; section id rw exists; checks answers taught.
 Linters: render2 0 spliced; render.py ok, 1,283 words.
+
+## Pass 3
+
+PASS. No changes.
+
+Verified by ear: Sarah sets up "blank" before the stem, the stem is one sentence read twice with choices, and the walk-through crosses out A (opposite, named trap), then D, then separates timid (right idea, wrong word, matching SEASON_PLAN's example spec) from diplomatic. One defensible answer (B). Odds arithmetic (1 in 4, 1 in 3, 1 in 2; one in two is twice a blind guess) correct. Ten trap names in engine.js, six listed in app wording and recapped in the same order. One comma bit (pass 2 version is logical), one rating, one Kaden game line, no Lehua place. Ep 3 outro cross-reference; drill.html reads ?section= and rw exists; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,283 words, 4 voices.
