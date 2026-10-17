@@ -17,3 +17,10 @@ Linters: render2 0 spliced; render.py ok, 1,126 words.
 PASS
 
 Grammar redone: "The box of old records are" fixed to "is"; "The team lost its first game" correct; misplaced vs dangling defined correctly; A, C and D all leave "the fog" or "the road" as the driver (dangling); B is the only correct choice and the longest (13 words against 11, 12, 12); redundancy examples correct; OMIT rule matches strategies.json english-style. checks/act-ep5.json has one answer each.
+
+
+## Pass 3
+
+PASS
+
+Agreement (the box is), team/its, dangling modifier with B the only correct choice (C keeps the fog driving, the near miss), redundancy and OMIT rule match strategies.json english-grammar and english-style. "That's next week" for purpose questions matches Ep 6. Pond hike place, rating 8. checks/act-ep5.json matches.

@@ -15,7 +15,7 @@ KADEN: Nothing? Not even the circle one?
 DEREK: Not even the circle one. But the good news is the list is short. Ten things. Kaden, you're going to say them back at the end, so listen.
 DEREK: One. The angles in a triangle add up to one hundred eighty degrees.
 DEREK: Two. The Pythagorean theorem. In a right triangle, a squared plus b squared equals c squared, and c is the long side, the hypotenuse.
-DEREK: Three. Two right triangles that show up all the time. Three, four, five. And five, twelve, thirteen. Also their doubles, like six, eight, ten. If a right triangle shows you two of those numbers, you already know the third.
+DEREK: Three. Two right triangles that show up all the time. Three, four, five. And five, twelve, thirteen. Also their doubles, like six, eight, ten. If a right triangle shows you two of those numbers, and the biggest number in the set is the long side, you already know the third.
 DEREK: Four. Area of a rectangle. Length times width.
 DEREK: Five. Area of a triangle. One half, times base, times height.
 DEREK: Six. Area of a circle. Pi r squared.

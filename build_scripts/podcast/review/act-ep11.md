@@ -15,3 +15,10 @@ Linters: render2 0 spliced; render.py ok, 1,118 words.
 PASS
 
 Re-verified: Plant A 8 cm in 4 weeks (2 cm/week) against Plant B 6 cm (1.5 cm/week), answer A; B is misread the question; no calculator on Science; skill tips match skills.json ("One sentence per scientist" is the science-conflict tip); Science toggle in Settings; one cattle line; Beach 69 place; rating 7; checks/act-ep11.json matches.
+
+
+## Pass 3
+
+PASS
+
+Plant A 8 cm in 4 weeks (2 cm per week) vs Plant B 6 cm (1.5 cm per week): A is correct; B (ended taller) is misread the question. No-calculator and background-knowledge lines match act.org. This is episode eleven, matching Ep 1. One rodeo bit (cattle sorting), Beach 69 with Pono saying Waialea, rating 7. checks/act-ep11.json matches.

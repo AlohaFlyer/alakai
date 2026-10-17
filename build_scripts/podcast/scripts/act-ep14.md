@@ -55,7 +55,7 @@ PONO: Two passes. Ride the clock, don't fight it.
 KADEN: Tap the honest button when you miss one.
 LEHUA: And mine. Start with the placement check, and let the app tell you where to start. You don't have to figure it all out yourself.
 LEHUA: Okay, Kaden. The whole season, recap. Your words.
-KADEN: Okay. Take it twice, maybe three times, with real practice in between. Superscore is my best section from each date, averaged, and it can beat any single test. If money is a problem, go to my counselor for a fee waiver, which covers two tests and score reports to six colleges. Test-optional means I choose, but I need a score to choose. Take Science if I'm going into science or a school wants it. Pick one test after one practice of each. For nerves, make practice feel like the real thing, and have a plan for question one. Accommodations, talk to my counselor. With a job, short sessions, error log first, Blitz on breaks.
+KADEN: Okay. Take it twice, maybe three times, with real practice in between. Superscore is my best English, best Math, and best Reading from any of my dates, averaged, and it can beat any single test. If money is a problem, go to my counselor for a fee waiver, which covers two tests and score reports to six colleges. Test-optional means I choose, but I need a score to choose. Take Science if I'm going into science or a school wants it. Pick one test after one practice of each. For nerves, make practice feel like the real thing, and have a plan for question one. Accommodations, talk to my counselor. With a job, short sessions, error log first, Blitz on breaks.
 DEREK: That was the whole season in one breath. Nine.
 KADEN: Not ten?
 DEREK: Nobody gets ten. That's the point of ten.

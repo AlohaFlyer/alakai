@@ -16,3 +16,10 @@ Linters: render2 0 spliced; render.py ok, 1,073 words.
 PASS
 
 Re-verified: B is the only choice that shows beginners are welcome; A and D are true but irrelevant, C works against the goal; "however" is contrast, "therefore" would claim cause; pointer-word rule; 50 s matches strategies.json; one bus line, rating 9; checks/act-ep6.json matches.
+
+
+## Pass 3
+
+PASS
+
+Goal question has one defensible answer (B); A is true but irrelevant as the app says it; add/delete "right yes, wrong reason" matches strategies.json; however vs therefore example correct; bus line once; volleyball place; rating 9. checks/act-ep6.json matches.

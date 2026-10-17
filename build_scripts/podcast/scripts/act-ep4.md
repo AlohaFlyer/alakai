@@ -4,9 +4,9 @@ facts: ACT English is 50 questions in 35 minutes and tests punctuation under Con
 target_minutes: 8
 homework: Drill punctuation | drill.html?skill=english-punct
 
-LEHUA: Hey, welcome back to ACT Notes, episode four. I'm Lehua. Sarah is here, Derek is here, and Kaden is here with his hood up again.
-KADEN: It's a vibe. It's a study vibe.
-SARAH: It's a nap vibe.
+LEHUA: Hey, welcome back to ACT Notes, episode four. I'm Lehua. Sarah is here, Derek is here, and Kaden is here, and I think his eyes finished loading.
+KADEN: Ninety percent. Still buffering a little.
+SARAH: That's progress.
 LEHUA: Warm-up from last time. Kaden, ACT English. What question should you be on at eleven minutes forty?
 KADEN: Seventeen. And if I'm behind, I flag faster, not read faster.
 LEHUA: Good. So how do you get through English questions fast enough to make seventeen? You know the rules cold. Today is a rule that shows up all over the English section. Where the sentence breaks. Sarah, you've been waiting all week.

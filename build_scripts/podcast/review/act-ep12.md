@@ -13,3 +13,13 @@ Linters: render2 0 spliced; render.py ok, 1,074 words.
 PASS
 
 Re-verified against the app: askCause buttons Careless / Didn't know it / Rushed (engine.js line 113); redo due 3 days later (engine.js line 103); Mastered needs a correct redo; This week plan, timed module after 6 days, full test at 11 to 14 and 1 to 3 days out, Blitz two rounds (dashboard.html); 60 s, 8 s a card (quiz.html); 0.2 x 60 = 12, 0.3 x 60 = 18; checks/act-ep12.json matches.
+
+
+## Pass 3
+
+1. Pass 2 item: the stem said "type point three into the calculator by accident," which handed Kaden the bucket. Now the stem gives only evidence: "Your scratch paper says point two times sixty. The calculator says eighteen, and you pick eighteen. You had time to spare." Kaden reasons it out: setup right, so not didn't know it; time to spare, so not rushed; 0.2 x 60 is 12 and 18 is 0.3 x 60, so a typing slip, careless. Derek's "And the right answer?" exchange merged into Kaden's line.
+2. checks/act-ep12.json Q1 and Q2 stems reworded to match (no "typed 0.3" giveaway); answers unchanged (Careless; Calculation slip).
+
+Linters: render2 0 spliced; render.py ok, 1,075 words, 4 voices.
+
+Verdict after pass 3 fixes: PASS

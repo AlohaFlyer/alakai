@@ -14,3 +14,10 @@ Linters: render2 0 spliced; render.py ok, 1,079 words, 3 voices.
 PASS
 
 Re-verified: slope (7 - 3)/(2 - 0) = 2, f(x) = 2x + 3, f(5) = 13; distractors 2, 5, 10 explained; roots 2 and 6 from (x - 2)(x - 6); max 7 at x = 3; one game line; Pac-Man place; rating 8; checks/act-ep8.json matches.
+
+
+## Pass 3
+
+PASS
+
+Slope 4/2 = 2, f(x) = 2x + 3, f(5) = 13 (D); A is the slope (answers the wrong part), B the input, C missing the intercept. Factored and vertex forms read correctly by ear. Three voices is inside the rubric's 3 to 5. Pac-Man place, rating 8. checks/act-ep8.json matches.

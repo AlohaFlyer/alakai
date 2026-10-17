@@ -17,3 +17,10 @@ Linters: render2 0 spliced; render.py ok, 1,187 words.
 
 Re-verified: fee waiver covers up to two tests, one high school report and up to six college choices, extra reports free after scores (act.org fee waivers page, re-fetched 2026-10-16); test fee includes four college reports if listed at registration (act.org fees page, re-fetched); ID, ticket, pencils, watch; checks/act-ep13.json Q1 has one answer (No. 2 pencils).
 Linters: render2 0 spliced; render.py ok, 1,190 words, 4 voices.
+
+
+## Pass 3
+
+PASS
+
+Half right on the beeping watch accepted as instructed; Q1 has one answer (No. 2 pencils). 8:00 a.m. arrival, ID, ticket, four free college reports, fee waiver two tests and six colleges all match the facts line. "Episode one" mechanical-pencil and "episode nine" formula callbacks correct. One rodeo bit, one car line, volcano place with Pono saying Kīlauea, rating 7. checks/act-ep13.json matches.

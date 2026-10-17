@@ -14,3 +14,12 @@ Linters: render2 0 spliced; render.py ok, 1,040 words.
 PASS
 
 Re-verified: cos P = 4/5 with P opposite 3; 3/5 sine (half right), 3/4 tangent, 5/4 reciprocal of cosine; sine and cosine at most 1 in a right triangle; all ten formulas correct; Ep 8 is "last week" for slope; one horse line; golf place; rating 9; checks/act-ep9.json matches.
+
+
+## Pass 3
+
+1. Triples rule still loose for a tutor: "If a right triangle shows you two of those numbers, you already know the third" fails for legs 3 and 5 (hypotenuse is the square root of 34, not 4). Now "If a right triangle shows you two of those numbers, and the biggest number in the set is the long side, you already know the third."
+
+Re-verified: cos P = 4/5 (B), 3/5 half right, 3/4 tangent, 5/4 reciprocal; all ten formulas. Linters: render2 0 spliced; render.py ok, 1,051 words, 4 voices.
+
+Verdict after pass 3 fixes: PASS

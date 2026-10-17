@@ -14,3 +14,10 @@ Linters: render2 0 spliced; render.py ok, 1,071 words.
 
 Re-verified: example B is the one defensible answer, A too extreme, C and D cut correctly; strategies match strategies.json; checks/act-ep10.json matches.
 Linters: render2 0 spliced; render.py ok, 1,094 words, 4 voices.
+
+
+## Pass 3
+
+PASS
+
+Maya item has one defensible answer (B); A is too extreme; C and D eliminated by the line. Order rule stated as the ACT guide's skip-and-return, not "any order". Paired-passage tip matches skills.json. Airport place, rating 8. checks/act-ep10.json matches.

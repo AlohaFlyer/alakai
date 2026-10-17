@@ -15,3 +15,12 @@ Linters: render2 0 spliced; render.py ok, 1,075 words.
 PASS
 
 Grammar redone: "The tide was low, we walked out to the reef" is a comma splice; B (semicolon) is the only correct choice; C is a fused sentence; D pairs a semicolon with "and"; A is the near miss (fixable by one mark or by adding "and"). Apostrophe rules (student's, students', its/it's) correct for regular nouns. Colon and dash rule correct. Mom's text is a comma splice. checks/act-ep4.json matches.
+
+
+## Pass 3
+
+1. Pass 2 item: "Kaden is here with his hood up again" referred to nothing earlier in the ACT show. Replaced with a real callback to Ep 3's "My eyes are still loading": "Kaden is here, and I think his eyes finished loading." / KADEN: "Ninety percent. Still buffering a little." / SARAH: "That's progress."
+
+Re-verified: comma splice example has one answer (B); near miss named; "Eight. Up from last week" holds (Ep 3 was 7). Linters: render2 0 spliced; render.py ok, 1,074 words, 4 voices.
+
+Verdict after pass 3 fixes: PASS

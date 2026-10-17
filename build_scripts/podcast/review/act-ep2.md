@@ -16,3 +16,10 @@ Linters: render2 0 spliced; render.py ok, 1,164 words, 4 voices.
 
 Re-verified: 2100/50 = 42, 3000/45 = 66.7, 2400/36 = 66.7, 2400/40 = 60 s; SAT 1920/27 = 71.1 and 2100/22 = 95.5 s; 64 + 70 = 134 min (2 h 14 min); 95 minus 67 = 28 s; 50/45 = 1.1 min (answers the wrong part); fee and calculator facts; checks/act-ep2.json Q1 to Q3 each have one answer taught in the script.
 Linters: render2 0 spliced; render.py ok, 1,164 words, 4 voices.
+
+
+## Pass 3
+
+PASS
+
+3000 / 45 = 66.7 s; 95 - 67 = 28 s ("almost half a minute"); 50 / 45 = 1.1 is the answers-the-wrong-part distractor; calculator and formula-sheet lines match the facts; "episode nine" short list and "episode three" pace match the plan; record store place; rating 8. checks/act-ep2.json matches.

@@ -14,3 +14,10 @@ Linters: render2 0 spliced; render.py ok, 1,052 words.
 PASS
 
 Re-verified: 4 x 8 + 8 x 5 = 72, 5 x 8 + 7 x 5 = 75, 8a + 5(12 - a) = 75 gives a = 5 only; D (7) is the student count; 0.8x from x = 100; 100 to 80 to 96; one roping line; wedges place; rating 7; checks/act-ep7.json matches.
+
+
+## Pass 3
+
+PASS
+
+Backsolve checked for every choice: 3 adults 69, 4 adults 72, 5 adults 75, 7 adults 81, so C is unique; D (7) is the student count, misread the question. Plug-in 0.8x with x = 100; 20 percent off then on gives 96, not 100. "Episode three" two-pass callback correct; one rodeo bit (roping); wedges place; rating 7. checks/act-ep7.json matches.

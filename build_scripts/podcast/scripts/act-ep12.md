@@ -17,14 +17,12 @@ SARAH: Don't. That one tap is the most useful data in the whole app. So let's de
 DEREK: Careless means you knew how to do it and you made a slip. Wrong arithmetic, wrong bubble, read a plus as a minus. Didn't know it means the rule or the method wasn't in your head. Rushed means the clock pushed you. You would've gotten it with another thirty seconds.
 SARAH: And each one has its own fix. Careless gets a checking habit, like rereading the question before you pick. Didn't know it gets a lesson. The Strategies tab, a drill on that skill, maybe a question to your teacher. Rushed gets pacing work. Timed sections, checkpoints, flag faster.
 LEHUA: Let's sort one. Derek.
-DEREK: Here's the miss. The question asks for twenty percent of sixty. You write it as point two times sixty. Then you type point three into the calculator by accident, and you pick eighteen. Which bucket, and what's the trap?
-DEREK: Once more. Twenty percent of sixty. You set it up as point two times sixty, typed point three, and picked eighteen. Which of the three buckets, and which trap from the app?
+DEREK: Here's the miss. The question asks for twenty percent of sixty. Your scratch paper says point two times sixty. The calculator says eighteen, and you pick eighteen. You had time to spare. Which bucket, and what's the trap?
+DEREK: Once more. Twenty percent of sixty. Scratch paper says point two times sixty. Calculator says eighteen. Time to spare. Which of the three buckets, and which trap from the app?
 LEHUA: Pause it and try.
 LEHUA: Okay, we're back. Kaden.
-KADEN: It's not "didn't know it," because I set it up right. Point two times sixty is right. And I wasn't rushed, it just says I typed it wrong. So careless.
-DEREK: Careless. And the right answer?
-KADEN: Point two times sixty is twelve. Eighteen is what you get with point three.
-DEREK: Twelve. And the trap is the one we're naming today. The app calls it calculation slip. The method was right, and the arithmetic went wrong. It's the most fixable trap in the app, and it's the one people ignore, because they think, "Oh, I knew that."
+KADEN: It's not "didn't know it," because the setup is right. Point two times sixty is right. And there was time to spare, so it's not rushed. But point two times sixty is twelve, not eighteen. Eighteen is point three times sixty. So I typed it wrong. Careless.
+DEREK: Careless, and the right answer is twelve. And the trap is the one we're naming today. The app calls it calculation slip. The method was right, and the arithmetic went wrong. It's the most fixable trap in the app, and it's the one people ignore, because they think, "Oh, I knew that."
 SARAH: "I knew that" is how you miss it again on test day.
 DEREK: The fix is small. Before you pick, ask, does the size make sense? Twenty percent is one fifth, so the answer should be a fifth of sixty. Eighteen is almost a third. A two-second size check would've caught it.
 KADEN: So if I keep getting calculation slips, I don't need more lessons. I need to check.

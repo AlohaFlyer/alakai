@@ -15,3 +15,10 @@ Linters: render2 0 spliced; render.py ok, 1,102 words.
 PASS
 
 Re-verified: checkpoints 11:40/Q17 and 23:20/Q33, 16:40/Q15 and 33:20/Q30 (match timed.html Math.round(f x count)); mirror claim; Reading passage 2 at 20:00; 3 x 42 = 126 s, flag at 10 s saves 110 s; "stopped a step early" fits the walk-through; timed.html checkpoint wording matches; one rodeo bit, one car line, Ironman place, rating 7; checks/act-ep3.json matches the script after pass 1.
+
+
+## Pass 3
+
+PASS
+
+Checkpoints recomputed: 2100 s / 3 = 700 s = 11:40 (Q 16.7, so 17), 23:20 (Q 33); Math 16:40 (Q 15), 33:20 (Q 30); mirror trick holds (35:00 - 11:40 = 23:20, 50:00 - 16:40 = 33:20); 3 x 42 = 126 s, flagging saves 110 s ("most of that back"). Stopped a step early is named the app's way. One rodeo bit (barrel racing), one car line, Ironman place, rating 7. checks/act-ep3.json matches.

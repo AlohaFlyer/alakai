@@ -14,3 +14,12 @@ Linters: render2 0 spliced; render.py ok, 1,423 words, 5 voices (panel limit 1,7
 PASS
 
 Re-verified: superscore 27 + 26 + 25 = 78 / 3 = 26; single dates 24 and 25; fees 70, 75, 95 dollars and fee waiver (two tests, six colleges, 11th and 12th grade) re-fetched from act.org 2026-10-16; accommodations only "talk to your counselor"; Hilo and Kaunaʻoa said only by Pono; one rodeo line, one bus line, one rating (9); 1,423 words, inside the 1,700 panel limit; checks/act-ep14.json matches.
+
+
+## Pass 3
+
+1. Recap misstated the superscore: "my best section from each date" means the best section of each test date, not the best score in each section. Now "my best English, best Math, and best Reading from any of my dates, averaged."
+
+Re-verified: 27 + 26 + 25 = 78 / 3 = 26; single dates 24 and 25; Science answer matches Ep 1; "episode two" and "episode eleven" correct; one bus line, rating 9, sunset place with Pono saying Kaunaʻoa. Linters: render2 0 spliced; render.py ok, 1,430 words, 5 voices (panel limit 1,700).
+
+Verdict after pass 3 fixes: PASS

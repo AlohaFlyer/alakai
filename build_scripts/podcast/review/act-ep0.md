@@ -14,3 +14,10 @@ Linters: render2 0 spliced; render.py ok, 727 words, 5 voices.
 
 Checked, no change: composite stress (second syllable), OMIT and No Change, STEM, MyACT, superscore, pencils, fee waiver via counselor; only Pono says Hawaiian words; one rating (4), one rodeo line; checks/act-ep0.json all three answers taught.
 Linters: render2 0 spliced; render.py ok, 725 words, 5 voices.
+
+
+## Pass 3
+
+PASS
+
+Read aloud at pace. Composite stress matches Merriam-Webster; every Hawaiian place and word is in a Pono line; paddling sign-off with Pono saying Kawaihae; Derek's "four out of ten" is not a ten; NO CHANGE, OMIT, STEM, MyACT, superscore, No. 2 pencil and fee waiver all match the Ep 1 facts. 725 words (target about 750), 5 voices. checks/act-ep0.json matches.
