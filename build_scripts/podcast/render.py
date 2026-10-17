@@ -39,7 +39,7 @@ def parse(path):
         if s.startswith("# "): title = s[2:].strip(); continue
         if s.lower().startswith("cast:"): cast = [c.strip().lower() for c in s[5:].split(",") if c.strip()]; continue
         if s.lower().startswith("target_minutes:"): minutes = float(s.split(":", 1)[1]); continue
-        if s.lower().startswith(("facts:", "topic:", "note:")): continue
+        if s.lower().startswith(("facts:", "topic:", "note:", "homework:")): continue
         m = re.match(r"^([A-Za-zʻ' .]+?):\s+(.*)$", s)
         if not m: sys.exit(f"unparsable line: {s[:60]}")
         lines.append((m.group(1).strip().lower(), m.group(2).strip()))

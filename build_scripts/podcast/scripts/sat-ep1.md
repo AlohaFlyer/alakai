@@ -2,6 +2,7 @@
 cast: lehua, derek, pono, kaden
 facts: Digital SAT taken in Bluebook; Reading and Writing 2 modules x 27 questions x 32 min; Math 2 modules x 22 questions x 35 min; total 2 hr 14 min plus one 10-minute break between sections; adaptive by module (module 1 mixed difficulty, module 2 easier or harder); a few unscored pretest questions per module; section scores 200 to 800, total 400 to 1600; no guessing penalty; Math about 75% multiple choice, 25% student-produced response; Desmos graphing calculator built in; class of 2025 national mean total 1029 (College Board 2025 Total Group Report); UH Manoa (flagship) is test-optional with a "Do No Harm" policy and some scholarships may require scores (manoa.hawaii.edu/admissions/freshman, checked 2026-10-16); middle 50 percent ranges are published by each school
 target_minutes: 8
+homework: Take the placement check | placement.html
 
 LEHUA: Hey, welcome back to SAT Notes, episode one. I'm Lehua. Today we answer the question nobody asks out loud. What even is this test? Derek is here, Coach Pono is here, and Kaden is here with a breakfast burrito.
 KADEN: It's a second breakfast. First one was at home.

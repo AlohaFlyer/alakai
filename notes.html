@@ -48,6 +48,7 @@
     <p class="muted" id="ptopic"></p>
     <audio id="audio" controls preload="none"></audio>
     <details style="margin-top:8px"><summary>Transcript</summary><pre id="ptranscript" style="white-space:pre-wrap;font-family:inherit"></pre></details>
+    <div id="homework" style="margin-top:10px"></div>
     <div id="check" style="margin-top:12px"></div>
   </section>
 
@@ -80,6 +81,7 @@
     const e = eps.find(x => x.n === n); if (!e) return;
     document.getElementById('player').hidden = false; document.getElementById('ptitle').textContent = `Ep ${e.n}: ${e.title}`; document.getElementById('ptopic').textContent = e.topic;
     const a = document.getElementById('audio'); a.src = e.audio; a.load();
+    document.getElementById('homework').innerHTML = e.homework ? `<a class="btn" href="${A.esc(e.homework.href)}">Homework: ${A.esc(e.homework.label)}</a>` : '';
     document.getElementById('ptranscript').textContent = e.transcript || 'Transcript coming.';
     const prog = S.get(test + '.episodes', {}); const rec = prog[n] || { n, title: e.title, done: false };
     a.ontimeupdate = () => { rec.pos = a.currentTime; if (a.duration && a.currentTime / a.duration > 0.9 && !rec.listened) { rec.listened = true; prog[n] = rec; S.set(test + '.episodes', prog); renderCheck(e, rec); } };

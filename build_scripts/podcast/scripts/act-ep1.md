@@ -2,6 +2,7 @@
 cast: lehua, sarah, derek, pono, kaden
 facts: Enhanced ACT (rolled out starting April 2025 online, September 2025 paper): English 50 questions in 35 minutes; Math 45 questions in 50 minutes; Reading 36 questions in 40 minutes; Science is optional, 40 questions in 40 minutes; Writing is optional, 40 minutes; core test without Science is about 2 hours 5 minutes of testing; each section scored 1 to 36; Composite is the average of English, Math and Reading rounded to the nearest whole number; Science is reported separately and a STEM score is reported when Science is taken; no guessing penalty; offered online or on paper at test centers; roughly 65 dollars without Writing for the 2025-26 year, fee waivers through the school counselor; scores and registration through a MyACT account; ACT provides a superscore from multiple test dates
 target_minutes: 8
+homework: Take the placement check | placement.html
 
 LEHUA: Welcome to ACT Notes, episode one. I'm Lehua. Same crew, different test. Sarah is here, Derek is here, Coach Pono is here, and Kaden is here early for once.
 KADEN: The bus was early. I did not plan this.
