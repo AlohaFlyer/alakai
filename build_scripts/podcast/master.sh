@@ -7,7 +7,9 @@
 set -e
 IN="$1"; SLUG="$2"; HERE="$(cd "$(dirname "$0")" && pwd)"; OUT="$HERE/../../audio"; MUSIC="$HERE/music"; mkdir -p "$OUT"
 cd "$IN"
-if ls scene*.mp3 >/dev/null 2>&1; then
+if [ -f list.txt ] && ! ls scene*.mp3 >/dev/null 2>&1; then
+  ffmpeg -y -loglevel error -f concat -safe 0 -i list.txt -af "apad=pad_dur=0.3" voice.mp3
+elif ls scene*.mp3 >/dev/null 2>&1; then
   for f in scene*.mp3; do echo "file '$PWD/$f'"; done > list.txt
   ffmpeg -y -loglevel error -f concat -safe 0 -i list.txt -c copy voice.mp3
 else

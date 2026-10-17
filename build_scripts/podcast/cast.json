@@ -12,7 +12,8 @@
    "gag": "Always has a Costco run to get to after the show.",
    "speaks": "Light pidgin seasoning, standard English for the teaching parts.",
    "voice_library_name": "Hoku",
-   "local": true
+   "local": true,
+   "hawaiian_native": false
   },
   {
    "key": "derek",
@@ -25,7 +26,8 @@
    "gag": "Rates every shortcut out of ten and nothing has ever scored a ten.",
    "speaks": "Standard English throughout, occasional local phrasing in banter only.",
    "voice_library_name": "Brandon",
-   "local": false
+   "local": false,
+   "hawaiian_native": false
   },
   {
    "key": "sarah",
@@ -38,7 +40,8 @@
    "gag": "Cannot let a misplaced comma go, even in a text from her mom.",
    "speaks": "Standard English with local warmth.",
    "voice_library_name": "Cristina G.",
-   "local": true
+   "local": true,
+   "hawaiian_native": false
   },
   {
    "key": "pono",
@@ -51,7 +54,8 @@
    "gag": "Every strategy is secretly a rodeo metaphor.",
    "speaks": "Pidgin-forward in banter; every teaching line in standard English, slowed down.",
    "voice_library_name": "Mikey",
-   "local": true
+   "local": true,
+   "hawaiian_native": true
   },
   {
    "key": "kaden",
@@ -64,7 +68,8 @@
    "gag": "Relates everything to a game, a car, or being late for the bus.",
    "speaks": "Gen Z slang in moderation, pidgin when excited.",
    "voice_library_name": "Brayden",
-   "local": true
+   "local": true,
+   "hawaiian_native": false
   }
  ],
  "min_voices_per_episode": 3,
@@ -74,5 +79,6 @@
   "Teaching lines (any sentence that states a rule, a number, a formula, a strategy step, or a definition) are standard English for every character, including Coach Pono.",
   "Standard English means no 'wen', 'stay', 'da', 'dis', 'get' for 'have', or dropped copulas inside an instructional sentence.",
   "A character can set up a teaching point in pidgin ('Okay, listen up, dis one important') and then deliver the point itself in standard English."
- ]
+ ],
+ "_pronunciation": "2026-10-16 finding: dictionaries (alias and IPA) do not fix Hawaiian on ElevenLabs. Mikey (Coach Pono) pronounces Hawaiian correctly from raw spelling on eleven_v3. render2.py renders Pono whole and splices termbank clips (Pono's voice) into other characters' Hawaiian words."
 }
