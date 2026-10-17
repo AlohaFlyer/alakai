@@ -49,7 +49,7 @@ def split_hawaiian(text):
 
 def tts(key, vid, text, out, model="eleven_v3"):
     import requests
-    r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{vid}?output_format=mp3_44100_128", headers={"xi-api-key": key, "Content-Type": "application/json"}, json={"text": text, "model_id": model, "voice_settings": {"stability": 0.5, "similarity_boost": 0.8}}, timeout=180)
+    r = requests.post(f"https://api.elevenlabs.io/v1/text-to-speech/{vid}?output_format=mp3_44100_128", headers={"xi-api-key": key, "Content-Type": "application/json"}, json={"text": text, "model_id": model, "voice_settings": {"stability": 0.5, "similarity_boost": 0.8, "speed": float(os.environ.get("TTS_SPEED", "1.1"))}}, timeout=180)
     if r.status_code != 200: sys.exit(f"tts {r.status_code}: {r.text[:200]}")
     out.write_bytes(r.content); time.sleep(0.25)
 
