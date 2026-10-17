@@ -43,19 +43,28 @@
     <p>Retrieval drills, timed sections, quizzers, and a podcast that sounds like home. Everything you do stays on your device.</p>
   </div>
 
-  <section class="card start-card">
+  <section class="card start-card" id="first-visit">
     <div class="field">
       <label for="school">Your school</label>
       <select id="school"></select>
     </div>
     <div class="row">
       <button id="start">Start</button>
-      <a class="btn secondary" id="continue" href="dashboard.html" hidden>Continue</a>
       <a class="btn secondary" href="settings.html#disclosures">What gets stored</a>
     </div>
   </section>
 
-  <section class="grid" style="margin-top:18px">
+  <section class="card start-card returning" id="returning" hidden>
+    <div class="row" style="justify-content:space-between">
+      <div><strong id="hello"></strong><br><small class="muted" id="school-line"></small></div>
+      <div class="row">
+        <a class="btn" href="dashboard.html">Continue</a>
+        <a class="btn secondary" href="settings.html">Settings</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid home-grid" style="margin-top:18px">
     <a class="card link-card" href="drill.html"><h3>Drills</h3><p class="muted">Short mixed sets by skill. Immediate feedback, your way: answer, hint, or worked example.</p></a>
     <a class="card link-card" href="timed.html"><h3>Timed</h3><p class="muted">Real-clock modules with pacing checkpoints and the two-pass method.</p></a>
     <a class="card link-card" href="quiz.html"><h3>Quizzers</h3><p class="muted">Spaced recall for the stuff you just have to know, plus Blitz: 60 seconds, streaks, high scores.</p></a>
@@ -76,8 +85,15 @@
   sel.value = A.Store.get('school', schools.default);
   sel.addEventListener('change', () => { A.Store.set('school', sel.value); const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); });
   const p = A.profile();
-  if (p && p.onboarded) { document.getElementById('continue').hidden = false; document.getElementById('start').textContent = 'Start over'; }
-  document.getElementById('start').addEventListener('click', () => { A.Store.set('school', sel.value); location.href = p && p.onboarded ? 'onboard.html?redo=1' : 'onboard.html'; });
+  if (p && p.onboarded) {
+    // School is chosen: the picker lives in Settings from now on.
+    document.getElementById('first-visit').hidden = true;
+    const r = document.getElementById('returning'); r.hidden = false;
+    const s = schools.schools.find(x => x.id === sel.value);
+    document.getElementById('hello').textContent = p.name ? `Welcome back, ${p.name}.` : 'Welcome back.';
+    document.getElementById('school-line').textContent = (s ? s.short || s.name : '') + ' · change school or test in Settings';
+  }
+  document.getElementById('start').addEventListener('click', () => { A.Store.set('school', sel.value); location.href = 'onboard.html'; });
 })();
 </script>
 </body>

@@ -52,7 +52,8 @@ LEHUA: Superscore. People hear that word and get confused.
 DEREK: Superscore means if you take the ACT more than once, ACT will combine your best English, best Math, and best Reading from different dates into one Composite. Many colleges accept it. Some only look at your best single date. So taking it twice is usually smart. Three times, fine. Six times, you're studying wrong.
 PONO: Two rides, maybe three. After that, the horse knows you.
 KADEN: Okay, so SAT or ACT. Which one do I take?
-LEHUA: That's episode two, the whole thing. Short version, take one practice test of each and see which one feels like your brain. Most Big Island schools accept both, and so does every college in the country.
+LEHUA: That's episode two, the whole thing. Short version, take one practice test of each and see which one feels like your brain. Every college in the country takes both.
+PONO: Including the university in Hilo. Both tests, no favorites.
 PONO: Let's recap. Kaden, you do it.
 KADEN: Three required sections. English, Math, Reading. Science optional, and I should probably take it. Scores one to thirty-six. Composite is the average of the three. No guessing penalty, no blanks. Sign up on MyACT. Fee waivers through the counselor. Superscore means best sections across dates.
 SARAH: That's it. And you put a comma in the right place in your own head. I heard it.
