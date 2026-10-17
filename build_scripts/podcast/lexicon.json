@@ -365,6 +365,22 @@
   "Waikiʻi": {
    "say": "wai-KEE-ee",
    "note": "Waikiʻi Ranch above Waimea, polo; Pono only"
+  },
+  "Waialea": {
+   "say": "wai-ah-LEH-ah",
+   "note": "Waialea Bay (Beach 69); Pono only"
+  },
+  "Kua": {
+   "say": "KOO-ah",
+   "note": "Kua Bay; Pono only"
+  },
+  "Mauna Lani": {
+   "say": "MOW-nah LAH-nee",
+   "note": "resort and golf; Pono only"
+  },
+  "Pukalani": {
+   "say": "poo-kah-LAH-nee",
+   "note": "Pukalani Stables, Waimea; Pono only"
   }
  },
  "flag_patterns": [
