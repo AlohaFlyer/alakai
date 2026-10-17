@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- C: Check and hill. A pencil-stroke checkmark rising over a single hill, with the okina dot. -->
-  <rect width="512" height="512" rx="112" fill="#2F4F3A"/>
-  <path d="M0 392 C140 300 300 300 512 372 V512 H0Z" fill="#6B8F4E"/>
-  <path d="M120 272 L212 364 L392 150" fill="none" stroke="#FBF8F1" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="412" cy="118" r="26" fill="#C8102E"/>
-</svg>

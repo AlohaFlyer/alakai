@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- A: Waimea hills. Red A rising above two green hills on an off-white sky. -->
-  <rect width="512" height="512" rx="112" fill="#FBF8F1"/>
-  <path d="M140 352 L256 110 L372 352 Z" fill="#C8102E"/>
-  <path d="M212 352 L256 258 L300 352 Z" fill="#FBF8F1"/>
-  <path d="M0 372 C120 300 220 310 310 352 C380 386 450 376 512 340 V512 H0Z" fill="#6B8F4E"/>
-  <path d="M0 430 C110 390 220 396 310 428 C380 452 450 446 512 416 V512 H0Z" fill="#2F4F3A"/>
-</svg>

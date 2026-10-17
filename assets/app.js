@@ -74,43 +74,29 @@
     setFavicon(primary, school.id);
   }
 
-  // Favicon and brand mark follow the school's primary colour (HPA red by default).
-  // The horse is a white-on-transparent mask drawn over the colour on a canvas; the static
-  // favicon.ico / apple-touch-icon stay red because browsers fetch those once at install.
+  // Favicon, header mark, home screen icon and manifest all follow the chosen school.
+  // Files are pre-built per school by build_scripts/icons/build_school_icons.py (Grok icon set).
+  // The static favicon.ico / apple-touch-icon stay HPA red because browsers fetch those once at install.
   function setFavicon(color, schoolId) {
     try {
-      // Home screen icons: iOS reads apple-touch-icon and Android reads the manifest at install time,
-      // so point both at the pre-built per-school files (build_scripts/icons/build_school_icons.py).
-      if (schoolId) {
-        const at = document.querySelector('link[rel="apple-touch-icon"]');
-        if (at) at.href = new URL('assets/icons/schools/' + schoolId + '-180.png', document.baseURI).href;
-        const mf = document.querySelector('link[rel="manifest"]');
-        if (mf) mf.href = new URL('assets/manifests/' + schoolId + '.webmanifest', document.baseURI).href;
-        const tc = document.querySelector('meta[name="theme-color"]');
-        if (tc) tc.content = color;
+      if (!schoolId) return;
+      const u = p => new URL(p, document.baseURI).href;
+      let link = document.querySelector('link[rel="icon"][data-dynamic]');
+      if (!link) {
+        document.querySelectorAll('link[rel="icon"]').forEach(l => l.remove());
+        link = document.createElement('link'); link.rel = 'icon'; link.type = 'image/png'; link.dataset.dynamic = '1';
+        document.head.appendChild(link);
       }
-      const img = new Image();
-      img.onload = () => {
-        const draw = (size, radius) => {
-          const c = document.createElement('canvas'); c.width = c.height = size;
-          const x = c.getContext('2d'); x.fillStyle = color;
-          x.beginPath(); x.roundRect(0, 0, size, size, radius); x.fill();
-          x.drawImage(img, 0, 0, size, size);
-          return c.toDataURL('image/png');
-        };
-        let link = document.querySelector('link[rel="icon"][data-dynamic]');
-        if (!link) {
-          document.querySelectorAll('link[rel="icon"]').forEach(l => l.remove());
-          link = document.createElement('link'); link.rel = 'icon'; link.type = 'image/png'; link.dataset.dynamic = '1';
-          document.head.appendChild(link);
-        }
-        link.href = draw(64, 14);
-        document.querySelectorAll('img.mark').forEach(m => { m.src = draw(72, 19); });
-      };
-      img.src = new URL('assets/icons/horse-white-128.png', document.baseURI).href;
-    } catch (e) { /* favicon is cosmetic */ }
+      link.href = u('assets/icons/schools/' + schoolId + '-64.png');
+      document.querySelectorAll('img.mark').forEach(m => { m.src = u('assets/icons/schools/' + schoolId + '-mark-72.png'); });
+      const at = document.querySelector('link[rel="apple-touch-icon"]');
+      if (at) at.href = u('assets/icons/schools/' + schoolId + '-180.png');
+      const mf = document.querySelector('link[rel="manifest"]');
+      if (mf) mf.href = u('assets/manifests/' + schoolId + '.webmanifest');
+      const tc = document.querySelector('meta[name="theme-color"]');
+      if (tc) tc.content = color;
+    } catch (e) { /* cosmetic */ }
   }
-
 
   // Home screen icon prompt. Phones copy the icon once at Add to Home Screen and never refresh it,
   // so after a school change we offer the manual swap. Shown only where it applies (installed app or iOS Safari).

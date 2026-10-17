@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- B: Compass A. A bold letter A whose crossbar is a compass needle, the "guide" idea. -->
-  <rect width="512" height="512" rx="112" fill="#C8102E"/>
-  <path d="M256 96 L400 416 H340 L310 346 H202 L172 416 H112Z M222 290 H290 L256 206Z" fill="#FBF8F1"/>
-  <path d="M96 300 L256 268 L416 300 L256 332Z" fill="#1F1F1F"/>
-  <path d="M96 300 L256 268 L256 332Z" fill="#FBF8F1"/>
-  <circle cx="256" cy="300" r="14" fill="#C8102E"/>
-</svg>
