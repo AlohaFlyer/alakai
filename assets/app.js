@@ -71,14 +71,24 @@
     root.setProperty('--on-primary', onColor(primary));
     root.setProperty('--on-secondary', onColor(school.colors.secondary));
     document.documentElement.dataset.school = school.id;
-    setFavicon(primary);
+    setFavicon(primary, school.id);
   }
 
   // Favicon and brand mark follow the school's primary colour (HPA red by default).
   // The horse is a white-on-transparent mask drawn over the colour on a canvas; the static
   // favicon.ico / apple-touch-icon stay red because browsers fetch those once at install.
-  function setFavicon(color) {
+  function setFavicon(color, schoolId) {
     try {
+      // Home screen icons: iOS reads apple-touch-icon and Android reads the manifest at install time,
+      // so point both at the pre-built per-school files (build_scripts/icons/build_school_icons.py).
+      if (schoolId) {
+        const at = document.querySelector('link[rel="apple-touch-icon"]');
+        if (at) at.href = new URL('assets/icons/schools/' + schoolId + '-180.png', document.baseURI).href;
+        const mf = document.querySelector('link[rel="manifest"]');
+        if (mf) mf.href = new URL('assets/manifests/' + schoolId + '.webmanifest', document.baseURI).href;
+        const tc = document.querySelector('meta[name="theme-color"]');
+        if (tc) tc.content = color;
+      }
       const img = new Image();
       img.onload = () => {
         const draw = (size, radius) => {
@@ -99,6 +109,28 @@
       };
       img.src = new URL('assets/icons/horse-white-128.png', document.baseURI).href;
     } catch (e) { /* favicon is cosmetic */ }
+  }
+
+
+  // Home screen icon prompt. Phones copy the icon once at Add to Home Screen and never refresh it,
+  // so after a school change we offer the manual swap. Shown only where it applies (installed app or iOS Safari).
+  function homeIconPrompt(host, schoolName) {
+    try {
+      const ua = navigator.userAgent;
+      const ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+      const school = Store.get('school', 'hpa');
+      if (!(ios || standalone) || Store.get('iconSchool', null) === school) return;
+      const el = document.createElement('div'); el.className = 'card icon-prompt';
+      const steps = ios
+        ? 'Hold the old Alakaʻi icon, tap Remove App, then open this site in Safari, tap Share, then Add to Home Screen.'
+        : 'Hold the old Alakaʻi icon and uninstall it, then open this site in Chrome, tap the menu, then Add to Home screen.';
+      el.innerHTML = `<h3>Want the icon on your phone to match ${esc(schoolName || 'your school')}?</h3>
+        <p class="muted">Phones copy the icon once when you add it, so the old one stays until you swap it. ${steps}</p>
+        <div class="row"><button type="button" data-act="done">Done, I swapped it</button><button type="button" class="secondary" data-act="later">Not now</button></div>`;
+      el.addEventListener('click', e => { const a = e.target.dataset.act; if (!a) return; if (a === 'done') Store.set('iconSchool', school); el.remove(); });
+      host.appendChild(el);
+    } catch (e) { /* cosmetic */ }
   }
 
   async function initPalette() {
@@ -271,5 +303,5 @@
     return { school, profile: profile(), test: getTest() };
   }
 
-  window.Alakai = { VERSION, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, fmtTime, shuffle, esc, applyPalette };
+  window.Alakai = { VERSION, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, fmtTime, shuffle, esc, applyPalette, homeIconPrompt };
 })();

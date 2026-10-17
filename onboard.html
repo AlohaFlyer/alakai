@@ -116,6 +116,8 @@
     S.set('profile', answers);
     A.setTest(answers.test === 'act' ? 'act' : 'sat');
     await A.pingOnce(S.get('school', schools.default), answers.grade || '');
+    // Not installed yet: whatever they add to the home screen next will already match this school.
+    if (!(window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true)) S.set('iconSchool', S.get('school', schools.default));
     location.href = params.get('next') || 'placement.html';
   }
   render();

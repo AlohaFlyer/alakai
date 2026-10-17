@@ -181,6 +181,7 @@
     });
     if (np.name || p.onboarded) S.set('profile', np);
     const c = document.getElementById('saved'); c.hidden = false; setTimeout(() => c.hidden = true, 1500);
+    const sch = schools.schools.find(x => x.id === sel.value); if (!document.querySelector('.icon-prompt')) A.homeIconPrompt(c.parentElement, sch && sch.short);
   });
   document.getElementById('export').addEventListener('click', async () => {
     const dump = S.exportAll(); dump.attempts = await A.DB.all();
