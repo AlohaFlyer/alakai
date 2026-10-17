@@ -1,0 +1,5 @@
+[
+ {"q": "When you backsolve, which choice do you test first?", "choices": ["Always A", "A middle choice", "The biggest number", "The choice that looks familiar"], "answer": 1},
+ {"q": "You found 5 adults and 7 students, and the question asked for adults. Picking 7 is which trap?", "choices": ["Calculation slip", "Misread the question", "Near miss", "Too extreme"], "answer": 1},
+ {"q": "When should you plug in your own numbers?", "choices": ["When the answer choices have variables in them", "Only on geometry questions", "Never on the ACT", "When the choices are all whole numbers"], "answer": 0}
+]

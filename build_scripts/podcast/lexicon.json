@@ -305,7 +305,8 @@
    "say": "KAH-loh"
   },
   "hula": {
-   "say": "HOO-lah"
+   "say": "HOO-lah",
+   "any": true
   },
   "ʻukulele": {
    "say": "oo-koo-LEH-leh"
@@ -385,6 +386,14 @@
   "Ironman": {
    "say": "Ironman",
    "note": "the triathlon in Kona; any character"
+  },
+  "OMIT": {
+   "say": "oh-mit",
+   "note": "ACT English answer choice: delete the underlined part"
+  },
+  "MyACT": {
+   "say": "my ay see tee",
+   "note": "ACT's student account"
   }
  },
  "flag_patterns": [

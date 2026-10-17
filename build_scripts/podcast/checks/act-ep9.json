@@ -1,0 +1,5 @@
+[
+ {"q": "In a 3-4-5 right triangle, angle P is across from the side of 3. What is the cosine of P?", "choices": ["3/5", "4/5", "3/4", "5/4"], "answer": 1},
+ {"q": "Choosing 3/5, with the right bottom and the wrong top, is which trap?", "choices": ["Half right", "Calculation slip", "Opposite", "Misread the question"], "answer": 0},
+ {"q": "Does the ACT give you a formula sheet?", "choices": ["Yes, for every math question", "Yes, but only for geometry", "No, you memorize the formulas", "Only on the online test"], "answer": 2}
+]

@@ -1,0 +1,5 @@
+[
+ {"q": "You set up 0.2 times 60 right but typed 0.3 and picked 18. Which bucket is that?", "choices": ["Didn't know it", "Rushed", "Careless", "Not a mistake"], "answer": 2},
+ {"q": "That 0.2 times 60 mistake is which trap in the app?", "choices": ["Calculation slip", "Misread the question", "Near miss", "Stopped a step early"], "answer": 0},
+ {"q": "When is a missed question due for a redo in the error log?", "choices": ["The same day", "The next day", "Three days later", "After the real test"], "answer": 2}
+]

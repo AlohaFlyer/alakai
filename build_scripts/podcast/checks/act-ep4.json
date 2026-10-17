@@ -1,0 +1,5 @@
+[
+ {"q": "\"The tide was low, we walked out to the reef.\" Which fix is correct?", "choices": ["low, we (No Change)", "low; we", "low we", "low; and we"], "answer": 1},
+ {"q": "Choice A, \"low, we,\" is one small mark away from correct. Which trap is that?", "choices": ["Too extreme", "Near miss", "True but irrelevant", "Opposite"], "answer": 1},
+ {"q": "What does the app say to do before you pick a punctuation mark?", "choices": ["Put a comma wherever you would pause", "Label each side: full sentence or just a piece", "Always pick No Change", "Pick the longest choice"], "answer": 1}
+]

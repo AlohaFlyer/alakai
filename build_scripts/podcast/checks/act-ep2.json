@@ -1,0 +1,5 @@
+[
+ {"q": "What is the plan for choosing between the SAT and the ACT?", "choices": ["Ask which one your friends took", "Take one official practice test of each, timed, and compare", "Take the real ACT first and see", "Study for both at the same time"], "answer": 1},
+ {"q": "About how many seconds per question does ACT Math give you (45 questions in 50 minutes)?", "choices": ["About 42", "About 67", "About 95", "About 120"], "answer": 1},
+ {"q": "Which test gives you a formula reference sheet for math?", "choices": ["The ACT", "The SAT", "Both", "Neither"], "answer": 1}
+]

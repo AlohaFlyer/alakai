@@ -26,7 +26,7 @@ TERMS = R.LEX["terms"]
 def is_hawaiian(t): return bool(re.search(r"[ʻāēīōūĀĒĪŌŪ]", t)) or (t[0].islower() and t not in ("shoots",)) or t in ("Waimea","Kohala","Hilo","Puna","Kona","Kamuela","Kealakehe","Konawaena","Kealakekua","Lehua","Pono","Hele-On","Makua Lani","Kamehameha","Ke Kula","Mauna Kea","Hawaii")
 CAST_NAMES = {c["name"] for c in R.CAST["characters"]} | {c["name"].split()[-1] for c in R.CAST["characters"]} | {c["name"].split()[0] for c in R.CAST["characters"]}
 CAST_LOWER = {n.lower() for n in CAST_NAMES}
-HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_") and t.lower() not in CAST_LOWER], key=len, reverse=True)
+HAW = sorted([t for t in TERMS if is_hawaiian(t) and not t.startswith("_") and t.lower() not in CAST_LOWER and not TERMS[t].get("any")], key=len, reverse=True)  # "any": loanwords any character may say (hula)
 ACR = {t: v["say"] for t, v in TERMS.items() if not is_hawaiian(t) and not t.startswith("_") and v.get("say")}
 def slug(t): return re.sub(r"[^a-z0-9]+", "-", t.lower().replace("ʻ", "")).strip("-")
 

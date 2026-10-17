@@ -1,0 +1,5 @@
+[
+ {"q": "\"Driving up the hill, the fog made the road hard to see.\" What is wrong with it?", "choices": ["The verb tense changes", "The describing phrase says the fog is driving", "It needs a semicolon", "Nothing is wrong"], "answer": 1},
+ {"q": "\"The box of old records are on the shelf.\" How do you fix it?", "choices": ["The box of old records were on the shelf", "Cross out the middle and match the verb: the box is", "The boxes of old record is on the shelf", "Leave it, records is plural"], "answer": 1},
+ {"q": "When does the shortest choice win on ACT English?", "choices": ["Always", "Only when it keeps the meaning and is grammatically correct", "Never", "Only on the last question"], "answer": 1}
+]

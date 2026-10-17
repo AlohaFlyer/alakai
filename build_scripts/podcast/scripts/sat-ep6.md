@@ -22,7 +22,7 @@ SARAH: Predict first. Then here are the choices. A, the new streetlights may hav
 SARAH: One more time. A, the streetlights may have helped on Main Street. B, Oak Street drivers are more careless. C, streetlights will end accidents in every town. D, the town will add lights to Oak Street next.
 LEHUA: Pause it and try. Find the smallest step.
 LEHUA: And we're back. Kaden?
-KADEN: My prediction was, the lights helped. But D sounds smart. If the lights worked, obviously they put them on Oak Street next.
+KADEN: My prediction was, the lights helped. But D sounds smart. If the lights worked, obviously they'd put them on Oak Street next.
 SARAH: Great, because that's exactly the trap. Does the passage say anything about the town's plans?
 KADEN: No. It just says what happened.
 SARAH: Right. To pick D, you have to bring in a new idea, that the town is planning more lights. The app has a name for that. Adds an assumption. The choice needs one extra idea the passage never gave you.

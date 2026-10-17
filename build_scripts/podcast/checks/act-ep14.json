@@ -1,0 +1,5 @@
+[
+ {"q": "Test 1: English 24, Math 26, Reading 22. Test 2: English 27, Math 23, Reading 25. What is the superscore Composite?", "choices": ["24", "25", "26", "27"], "answer": 2},
+ {"q": "What do ACT fee waivers through your counselor cover?", "choices": ["Only one test", "Up to two tests and score reports to up to six colleges", "Unlimited tests", "Only score reports"], "answer": 1},
+ {"q": "Who should you talk to about test accommodations?", "choices": ["Your friends", "Your counselor", "Nobody, just ask on test day", "The proctor during the test"], "answer": 1}
+]

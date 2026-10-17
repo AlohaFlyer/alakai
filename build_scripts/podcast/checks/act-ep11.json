@@ -1,0 +1,5 @@
+[
+ {"q": "Plant A grew from 2 to 10 cm and Plant B from 6 to 12 cm in four weeks. Which grew faster?", "choices": ["Plant A", "Plant B", "They grew at the same rate", "You can't tell"], "answer": 0},
+ {"q": "Picking Plant B because it ended taller is which trap?", "choices": ["Misread the question", "Too extreme", "Half right", "Opposite"], "answer": 0},
+ {"q": "Before you read any numbers on an ACT Science figure, what do you read?", "choices": ["The answer choices", "The axis labels and units", "The last passage", "Nothing, go straight to the numbers"], "answer": 1}
+]

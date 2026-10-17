@@ -1,0 +1,5 @@
+[
+ {"q": "A line goes through (0, 3) and (2, 7). What is f(5)?", "choices": ["2", "5", "10", "13"], "answer": 3},
+ {"q": "Picking 2, the slope, when the question asked for f(5) is which trap?", "choices": ["Answers the wrong part", "Half right", "Opposite", "Too extreme"], "answer": 0},
+ {"q": "What does f(5) mean on a graph?", "choices": ["The slope at 5", "The height of the graph when x is 5", "The x-value where the graph equals 5", "Five times f"], "answer": 1}
+]
