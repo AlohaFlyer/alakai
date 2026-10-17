@@ -30,7 +30,7 @@ PONO: Now, what if the student had written eighty divided by fifteen?
 KADEN: Then that's concept. They didn't know how percents work.
 PONO: And what if they never wrote anything, and just tapped B with three seconds left?
 KADEN: Time.
-PONO: There you go. Same wrong answer, three different problems, three different fixes.
+PONO: There you go. Same miss, three different causes, three different fixes.
 LEHUA: So what are the fixes?
 DEREK: Careless gets a check. Slow down on the last step, and check backward. Twelve divided by eighty is point one five. That's three seconds. Concept gets studied. Open the Strategies tab for that skill, read the steps, and drill ten of that skill. Time gets a pacing fix, which is episode three. Two passes, flag it if you can't see the path in about ten seconds, and keep the checkpoints.
 KADEN: So if I mark everything careless, that's bad?
