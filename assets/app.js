@@ -71,6 +71,34 @@
     root.setProperty('--on-primary', onColor(primary));
     root.setProperty('--on-secondary', onColor(school.colors.secondary));
     document.documentElement.dataset.school = school.id;
+    setFavicon(primary);
+  }
+
+  // Favicon and brand mark follow the school's primary colour (HPA red by default).
+  // The horse is a white-on-transparent mask drawn over the colour on a canvas; the static
+  // favicon.ico / apple-touch-icon stay red because browsers fetch those once at install.
+  function setFavicon(color) {
+    try {
+      const img = new Image();
+      img.onload = () => {
+        const draw = (size, radius) => {
+          const c = document.createElement('canvas'); c.width = c.height = size;
+          const x = c.getContext('2d'); x.fillStyle = color;
+          x.beginPath(); x.roundRect(0, 0, size, size, radius); x.fill();
+          x.drawImage(img, 0, 0, size, size);
+          return c.toDataURL('image/png');
+        };
+        let link = document.querySelector('link[rel="icon"][data-dynamic]');
+        if (!link) {
+          document.querySelectorAll('link[rel="icon"]').forEach(l => l.remove());
+          link = document.createElement('link'); link.rel = 'icon'; link.type = 'image/png'; link.dataset.dynamic = '1';
+          document.head.appendChild(link);
+        }
+        link.href = draw(64, 14);
+        document.querySelectorAll('img.mark').forEach(m => { m.src = draw(72, 19); });
+      };
+      img.src = new URL('assets/icons/horse-white-128.png', document.baseURI).href;
+    } catch (e) { /* favicon is cosmetic */ }
   }
 
   async function initPalette() {
