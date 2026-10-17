@@ -8,3 +8,9 @@
 
 Verified: worked example (semicolon) is the only correct choice among the four; D's comma between "she" and "had" is correctly explained; colon example "She had one job left: printing the essay." is correct; "Maya, my cousin, finished at midnight." is correct; introductory dependent clause plus comma is correct; trap "near miss" matches engine.js and plan; label-both-sides steps match strategies.json rw-sec-boundaries (four steps); homework rw-sec-boundaries is real; one car gag, one comma gag, rating 9; paddling (Pono-only harbor name not used) does not repeat within three; checks/sat-ep7.json has one answer each.
 Linters: render2 0 spliced; render.py ok, 1,156 words, 4 voices.
+
+## Pass 2
+
+1. Grammar slip in the grammar episode: Lehua's sign-off "I'm out, I have paddling practice at the harbor, and if I'm late I'm the one bailing water" was a comma splice. Now "I'm out. I have paddling practice at the harbor, and if I'm late, I'm the one bailing water."
+
+Re-checked: every rule Sarah states (label both sides; period, semicolon, or comma plus conjunction; comma splice; semicolon needs two independent clauses; colon after a complete clause; matching pairs of dashes or commas; comma after an opening dependent clause) is correct; worked example has only B correct, D's subject-verb comma explained correctly; mom's text is a true splice; pass 1 fixes hold. Kaden's car (new driver, mom in the passenger seat) is consistent with Ep 9 and Ep 13. Linters: render2 0 spliced; render.py ok, 1,156 words, 4 voices.

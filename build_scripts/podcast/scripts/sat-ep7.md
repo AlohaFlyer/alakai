@@ -55,6 +55,6 @@ DEREK: Clean. And the mirrors line was good. Nine.
 KADEN: Nine. I'm going to frame that.
 LEHUA: Homework. In the app, go to Drill and pick Boundaries. Do ten. On every one, before you look at the choices, say "left side complete" or "left side not," then the same for the right. When you miss one and it says "Trap: near miss," check whether you trusted the pause.
 SARAH: And read the Strategies tab for Boundaries. It's four steps. Four.
-LEHUA: That's episode seven. Next time, episode eight, however, therefore, for example. Transitions. I'm out, I have paddling practice at the harbor, and if I'm late I'm the one bailing water.
+LEHUA: That's episode seven. Next time, episode eight, however, therefore, for example. Transitions. I'm out. I have paddling practice at the harbor, and if I'm late, I'm the one bailing water.
 KADEN: Paddle fast.
 LEHUA: Always. Thanks for listening, everybody.

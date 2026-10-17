@@ -30,7 +30,7 @@ SARAH: That's why I care. The words "the new price" were the whole question.
 LEHUA: What about ratios? Same thing?
 DEREK: Same idea, multiply and track units. If a recipe uses two cups of rice for every three cups of water, write the units next to the numbers. Two cups rice over three cups water. If you need cups of water for four cups of rice, set it up so cups of rice cancel. Four cups rice times three cups water over two cups rice is six cups water. If the units don't cancel to what the question asks for, the setup is wrong.
 LEHUA: Okay, the second idea. Growth.
-DEREK: Linear growth adds the same amount every step. Exponential growth multiplies by the same number every step. If a town has a hundred people and grows by ten people a year, that's linear. One ten, one twenty, one thirty. If it grows by ten percent a year, that's exponential. Multiply by one point one each year. One ten, then one twenty-one.
+DEREK: Linear growth adds the same amount every step. Exponential growth multiplies by the same number every step. If a town has a hundred people and grows by ten people a year, that's linear. A hundred ten, a hundred twenty, a hundred thirty. If it grows by ten percent a year, that's exponential. Multiply by one point one each year. A hundred ten, then a hundred twenty-one.
 KADEN: Those look almost the same.
 DEREK: For two years, yes. Wait twenty years and they're not even close. Linear gets to three hundred. Ten percent a year gets to about six hundred seventy. A lot of the time, the SAT question is just, which kind is it? Same amount each step means linear. Same percent each step means exponential.
 LEHUA: And the third one. Mean versus median.

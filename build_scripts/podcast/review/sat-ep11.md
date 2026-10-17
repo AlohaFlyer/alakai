@@ -7,3 +7,9 @@
 
 Verified: reference sheet contents against the same PDF (area/volume formulas incl. cone and pyramid, Pythagorean theorem, 30-60-90 and 45-45-90, 360 degrees and 2 pi radians, triangle angles sum to 180; no trig ratios); 5 characters positive, 6 negative incl. sign; no symbols; one answer if several work; about 25% SPR. Worked example: vertex (3, 50), max 50 feet; trap "answers the wrong part" and Ep 4 callback correct; signs on (x - 4)(x + 1) correct. Homework math-adv-quadratics real. One game gag, one rodeo bit (rope a calf), rating 8; cake at Fish and the Hog does not repeat within three. Ep 1's promise ("we'll go through what's on it in episode eleven") is kept. checks/sat-ep11.json one answer each.
 Linters: render2 0 spliced; render.py ok, 1,209 words, 4 voices.
+
+## Pass 2
+
+PASS
+
+Re-checked independently against the Bluebook directions PDF cited by pass 1: 5/6 characters, fourth-digit truncate or round, mixed numbers as 7/2 or 3.5, no symbols, one answer if several; reference sheet list correct and SOH CAH TOA absent; vertex (3, 50), answer D 50 feet, trap "answers the wrong part" with Ep 4 callback; sign rule on (x - 4)(x + 1). One game gag, one rodeo bit, one rating (8); Fish and the Hog is an English name. No edits.

@@ -8,3 +8,9 @@
 
 Verified: five relationships match strategies.json rw-ei-transitions; worked example (nevertheless = contrast; therefore = cause, trap "opposite") is the single correct answer; "nevertheless" defined correctly; Rhetorical Synthesis stem wording and goal-first steps match strategies.json rw-ei-rhetorical; homework rw-ei-transitions real; one game gag (fighting game combo), one comma gag, rating 8; Pac-Man at the pizza place does not repeat within three; next-episode line matches plan Ep 9; checks/sat-ep8.json one answer each.
 Linters: render2 0 spliced; render.py ok, 1,132 words, 4 voices.
+
+## Pass 2
+
+PASS
+
+Re-checked independently: five relationships match strategies.json; only B (nevertheless) is contrast; "therefore" as cause labeled opposite; Rhetorical Synthesis stem matches College Board wording; serial-comma gag correctly framed as style; no grammar slips in any line; one game gag, one comma gag, one rating (8); 1,132 words; checks one answer each. No edits.

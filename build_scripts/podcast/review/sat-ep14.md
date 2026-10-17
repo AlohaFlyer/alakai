@@ -9,3 +9,10 @@
 
 Verified: superscore arithmetic 600 + 550 = 1150, 570 + 620 = 1190, 600 + 620 = 1220; 15 x 7 = 105 minutes; onboarding offers 15/30/45/60 and Settings has Redo onboarding; Do No Harm wording matches the approved Ep 1 line; accommodations line is counselor only; nerves answer has no medical advice; Ep 5 reading cross-reference correct; Kaden's season recap matches Eps 1 to 14; ratings never ten (season high 9 holds: Eps 7, 10, 12, 14); one bus gag, one rodeo bit, one comma bit; sunset (Pono says Kaunaʻoa) does not repeat within three; five voices. checks/sat-ep14.json one answer each.
 Linters: render2 0 spliced; render.py ok, 1,426 words, 5 voices (panel limit 1,700).
+
+## Pass 2
+
+1. Open item from pass 1 resolved: the PSAT "same skills, in Bluebook" line is supportable. College Board's parents guide: "Structured similarly to the SAT, the PSAT/NMSQT measures the same knowledge and skills" (satsuite.collegeboard.org/media/pdf/parents-guide-digital-psat-nmsqt.pdf); student guide: "Bluebook is our custom-built application you'll use to take the PSAT/NMSQT" and SAT Suite tests "measure the same content domains" (satsuite.collegeboard.org/psat-nmsqt-student-guide/test-taking-information/introducing-digital), same 2 h 14 min, 2 x 27 x 32 and 2 x 22 x 35. Facts line now cites both instead of a bare "(College Board)". Script line unchanged.
+2. Trap label made defensible: Kaden picked the best single date, which is a different method, not obviously "one more step." Derek now says "You stopped a step early. You compared the totals, but a superscore goes one step further, to each section. It takes the best of each section."
+
+Re-checked: 1150, 1190, 1220; 105 minutes; Settings has Redo onboarding, the parent or teacher email field and Save; dashboard has Send progress report; counselor-only accommodations; no medical advice on nerves; one rating (9, never ten); five voices. Left alone: render.py estimates 9.6 min against target_minutes 8; words (1,439) are inside the 1,700 panel limit. Linters: render2 0 spliced; render.py ok, 1,439 words, 5 voices.

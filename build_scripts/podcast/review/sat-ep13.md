@@ -7,3 +7,10 @@
 
 Verified: admission ticket available after exam setup starting 5 days before, printed preferred, print or email; pencils or pens; username and password; nice-to-have list; 2 hr 14 min plus 10-minute break; Timed page full-length button runs RW M1, RW M2, break, Math M1, Math M2 (timed.html line 88); leave-time arithmetic 7:45 - 60 min - 15 min = 6:30; trap "stopped a step early" in engine.js; adaptive module 2 hedged ("can mean"). One game gag, one rodeo bit, rating 8; airport (Pono says Kona) does not repeat within three. checks/sat-ep13.json one answer each.
 Linters: render2 0 spliced; render.py ok, 1,126 words, 4 voices.
+
+## Pass 2
+
+1. Conflict with the app the show tells students to use: Pono said one full test "early in the week" and Derek said the plan "already put" one at 3 days out, but at 7 days out the app's 3-day test is still ahead, so a student following both would take two full tests this week. Pono now says "One full practice test, no later than three days before the test"; Derek says the plan "puts a full-length test at fourteen days out and again at three days out. That three-day one is your full test for this week."; Kaden's recap matches.
+2. checks/sat-ep13.json Q1 correct choice updated to the same wording ("One full practice test, no later than three days out, then short daily practice"), still the only defensible answer.
+
+Re-checked: 7:45 - 60 - 15 = 6:30 and the trap "stopped a step early"; what-to-bring list and calculator wording per pass 1 sources; PSAT October and junior-year National Merit; one game gag, one rodeo bit, one rating (8). Linters: render2 0 spliced; render.py ok, 1,144 words, 4 voices.

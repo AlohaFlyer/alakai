@@ -6,3 +6,9 @@
 
 Verified arithmetic: 40 - 3 x 8 = 16; 26 + 24 = 50 > 40; 37 = 40 - 3; 64 = 40 + 24; backsolve 40 - 24 = 16 (too much water left), 40 - 30 = 10. Trap "calculation slip" matches plan and engine.js; Ep 4 Desmos cross-reference correct; homework math-alg-linear-fn real and "linear functions and graphs" matches the skill name; one car gag, one rodeo bit, rating 8; food trucks (Pono says Pukalani) do not repeat within three; checks/sat-ep9.json one answer each.
 Linters: render2 0 spliced; render.py ok, 1,147 words, 4 voices.
+
+## Pass 2
+
+PASS
+
+Re-checked independently: 40 - 24 = 16, the borrow walk-through is right, 26 from not lowering the tens digit, 37 and 64 distractors explained, 26 + 24 = 50 check, backsolve 8 then 10; 95 s per Math question; Pono alone says Pukalani; Kaden driving fits Ep 7 and Ep 13. Left alone: the episode carries more than three teaching points (slope in words, backsolve, plug in, systems, rise over run), but that is the plan's own list and pass 1 accepted it; plug-in has no worked number, which is thin but brief. No edits.
