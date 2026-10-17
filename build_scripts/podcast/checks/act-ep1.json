@@ -1,0 +1,5 @@
+[
+ {"q": "Which ACT sections are required on the enhanced ACT?", "choices": ["English, Math, Reading, Science", "English, Math, Reading", "English, Math, Reading, Writing", "Math and Science only"], "answer": 1},
+ {"q": "How is the ACT Composite score calculated?", "choices": ["The sum of all section scores", "The average of English, Math and Reading, rounded to a whole number", "The average of all four sections including Science", "Math plus Science divided by two"], "answer": 1},
+ {"q": "What does superscoring mean on the ACT?", "choices": ["Taking the test with extra time", "Scoring above 30 on every section", "Combining your best section scores from different test dates into one Composite", "Adding the Writing score to the Composite"], "answer": 2}
+]
