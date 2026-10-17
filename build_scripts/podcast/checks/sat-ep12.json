@@ -1,0 +1,5 @@
+[
+ {"q": "A student sets up 0.15 x 80 correctly but gets 14 instead of 12. Which bucket?", "choices": ["Careless", "Concept", "Time", "None of these"], "answer": 0},
+ {"q": "How long after a miss does the app bring the item back for a redo?", "choices": ["The same day", "The next day", "3 days later", "A month later"], "answer": 2},
+ {"q": "What is the fix for a concept miss?", "choices": ["Just check the arithmetic backward", "Read the Strategies tab steps for that skill and drill ten of it", "Go faster next time", "Skip that skill"], "answer": 1}
+]

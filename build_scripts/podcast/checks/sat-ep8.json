@@ -1,0 +1,5 @@
+[
+ {"q": "On a Transitions question, what do you do before looking at the choices?", "choices": ["Pick the word that sounds smoothest", "Name the relationship: add, contrast, cause, example, or sequence", "Count the words in each sentence", "Read the choices aloud"], "answer": 1},
+ {"q": "\"The team practiced every morning for a month. ___, they lost their first game by twenty points.\" Which word fits?", "choices": ["Therefore", "Nevertheless", "For example", "In addition"], "answer": 1},
+ {"q": "On a Rhetorical Synthesis (notes) question, what do you read first?", "choices": ["Every note, in order", "The longest note", "The goal in the question", "The last choice"], "answer": 2}
+]

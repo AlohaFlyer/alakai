@@ -1,0 +1,5 @@
+[
+ {"q": "h = -2(t - 3)^2 + 50 gives a ball's height in feet after t seconds. What is the maximum height?", "choices": ["2 feet", "3 feet", "47 feet", "50 feet"], "answer": 3},
+ {"q": "Which form of a quadratic shows the roots directly?", "choices": ["Vertex form", "Factored form", "Standard form", "None of them"], "answer": 1},
+ {"q": "Which of these is NOT on the SAT Math reference sheet?", "choices": ["The Pythagorean theorem", "Special right triangles", "The trig ratios (SOH CAH TOA)", "That a triangle's angles add to 180 degrees"], "answer": 2}
+]

@@ -1,0 +1,61 @@
+# SAT Notes Ep 14: Listener Questions
+cast: lehua, derek, sarah, pono, kaden
+facts: The PSAT/NMSQT is given in October, and National Merit uses the junior-year PSAT/NMSQT as its qualifying test (College Board; nationalmerit.org); superscoring means a college combines your highest section scores across SAT dates, and whether a college superscores is that college's policy (College Board, satsuite.collegeboard.org/sat/scores/sending-scores; college admissions pages); there is no College Board limit on how many times a student can take the SAT (College Board); UH flagship campus is test-optional with a "Do No Harm" policy, and scholarships or department direct entry programs may require scores (manoa.hawaii.edu/admissions/freshman, recalled from Ep 1); several highly selective private colleges reinstated required testing for recent cycles (school admissions pages, recalled from Ep 1); College Board offers SAT fee waivers for eligible students, arranged through the school counselor; fees and waiver details change, "this year, check the official site" (College Board, satsuite.collegeboard.org/sat/registration/fees); Reading and Writing uses one short passage per question, 2 modules x 27 questions x 32 minutes (College Board); accommodations: talk to your counselor (show rule); free official full-length practice in Bluebook (College Board); app features: minutes per day is set in onboarding (15, 30, 45, or 60) and changed with Redo onboarding in Settings, the weekly plan is minutes per day x 7, the dashboard has a Send progress report button, and Settings holds an optional parent or teacher email that is CC'd on reports, which open in your own email app (onboard.html, settings.html, dashboard.html, assets/app.js); what to bring and leave-time example recalled from Ep 13; app trap name "stopped a step early" from assets/engine.js; superscore example scores are invented for the show: March 600 + 550 = 1150, June 570 + 620 = 1190, superscore 600 + 620 = 1220; 15 minutes x 7 days = 105 minutes, more than an hour and a half; sunset at the beach by the old hotel (cast.json places, Kaunaʻoa Bay at Mauna Kea Beach Hotel faces west, limited public parking passes)
+target_minutes: 8
+homework: Set up progress reports | settings.html
+
+LEHUA: Hey, welcome back to SAT Notes, episode fourteen. Last one of the season. I'm Lehua, and the whole crew is here. Derek, Sarah, Coach Pono, and Kaden, who took the real test since last episode.
+KADEN: I took it. I left at six thirty, like we said. I got there before the people running the room.
+PONO: That's how you do it.
+LEHUA: Callback first, then the mailbag. Kaden, what was in your bag?
+KADEN: My device, charged, with exam setup done. Printed admission ticket. Physical ID, not a photo on my phone. Pencils. My login. And a snack for the break. And I left with the fifteen-minute cushion, because last time I stopped a step early.
+DEREK: Good. And how did it feel?
+KADEN: Module two of Math was hard. And I remembered, hard can be good news. So I just kept going.
+LEHUA: Love it. Okay, listener questions. We got a lot. First one is from a junior. "What is National Merit, and do I need to do anything?" Derek.
+DEREK: National Merit is a scholarship program, and the way in is the PSAT slash NMSQT. That test is given in October. The one that counts is the one you take as a junior. So if you're a sophomore, next October is the one. If you're a junior, it's probably already scheduled at your school. Ask your counselor. And prepare for it the same way you prepare for the SAT, because it's built the same way.
+LEHUA: Next. "What does superscore mean?"
+DEREK: Some colleges take your best Reading and Writing score from one test date and your best Math score from another date and add them together. That's a superscore. Not every college does it. It's each college's policy, so look it up on their admissions page.
+SARAH: Can we make it a question? It's the last episode. Let's do one more pause-and-try.
+DEREK: Sure. I'll read it twice. "A student takes the SAT in March and gets six hundred in Reading and Writing and five fifty in Math. In June, she gets five seventy in Reading and Writing and six twenty in Math. What is her superscore?"
+DEREK: Again. "March, six hundred Reading and Writing, five fifty Math. June, five seventy Reading and Writing, six twenty Math. What is her superscore?"
+LEHUA: Pause it and try.
+LEHUA: And we're back. Kaden.
+KADEN: March total is eleven fifty. June total is eleven ninety. June is higher. So eleven ninety.
+DEREK: That's her best single test date. You stopped one step early. A superscore takes the best of each section. Best Reading and Writing is six hundred, from March. Best Math is six twenty, from June. Six hundred plus six twenty is twelve twenty.
+KADEN: Stopped a step early. Again. The same trap as my leave time.
+PONO: That's the trap that follows you around. Every time you get an answer, ask, is there one more step?
+LEHUA: Next. "How many times should I take it?"
+PONO: College Board doesn't put a limit on it. But more is not always better. Here's the plan I like. Take it once, then use your error log and your weekly plan for a couple of months, then take it again. Each time should come after real work, not just another try. Same as breaking a horse. You don't climb back on ten times in a row. You go back to the round pen, work on what went wrong, then try again.
+KADEN: There it is.
+PONO: Last episode. Had to.
+LEHUA: Next. "Do I even need the SAT if colleges are test-optional?"
+DEREK: Depends on the college, and it changes. The flagship UH campus is test-optional with what they call a "Do No Harm" policy. If a score you send would hurt you, they leave it out. But some scholarships and direct-entry programs may still want scores. And several highly selective private colleges have gone back to requiring scores. So look up every school on your list, every year. A good score can still help, even when it's optional.
+LEHUA: Next one is about money. "The test costs money. What if that's a problem?"
+PONO: Talk to your counselor about a fee waiver. College Board has fee waivers for students who qualify, and your counselor can help you get one. The fees and the waiver details change, so check the official site this year. And the practice is free. Bluebook practice tests, this app, this show. You don't need to pay anybody to get ready.
+LEHUA: Next. "I get really nervous. What do I do?"
+PONO: The best thing for nerves is making nothing on test day new. Take a full practice test in Bluebook, so the screen, the timer, and the calculator are all familiar. Have your plan. Two passes, two checkpoints, no blanks. When you have a plan, you have something to do with your mind besides worry. And if your nerves are bigger than that, talk to your counselor.
+KADEN: For real, the plan helped. When I got stuck, I just flagged it. I didn't freeze.
+LEHUA: Next. "I read slowly. Is the SAT going to destroy me?"
+SARAH: Not the way you think. The digital SAT Reading and Writing section is one short passage per question. There's no long passage to get lost in. So you don't need to read faster. You need to read on purpose. Read the question first, so you know what you're hunting for. Then read the passage once, carefully, and predict before you look at the choices. That's episode five. Slow and careful beats fast and lost.
+SARAH: And for the record, I'm a slow reader too. I stop at every comma to check it.
+LEHUA: Of course you do.
+SARAH: My niece made me a birthday card that said, "Happy, birthday." A comma right in the middle, for no reason. I put it on the fridge anyway. Best card I ever got.
+LEHUA: Next. "Can I get extra time or other accommodations?"
+SARAH: Talk to your counselor about accommodations. They know the process, and they'll walk you through it.
+LEHUA: That's the whole answer, and it's the right one. Last question. "I have a job after school. How do I study?"
+DEREK: Small and steady. When you set up the app, it asks how many minutes a day you have. If you work, pick fifteen. That's still more than an hour and a half a week. The weekly plan multiplies your minutes by seven and puts them toward your weakest skills. You can change it any time in Settings, with redo onboarding.
+PONO: And fifteen minutes every day beats two hours on Sunday.
+KADEN: I studied on the bus. Two drills a day. The bus finally paid off.
+LEHUA: Okay, before we close. Kaden, season recap. The whole thing. Go.
+KADEN: Okay. No blanks, because there's no guessing penalty. Cross out with a reason. Two passes and two checkpoints. Desmos for systems, but do the algebra when it's quick. Read the question first, predict, then match. Smallest step on inferences. Label both sides for punctuation. Name the relationship for transitions. Lines are a start plus a rate. Percents are multipliers. Pick the quadratic form for what they want. Sort every miss into careless, concept, or time, and redo it three days later. Pack the night before and leave with a cushion. And today, superscore takes the best of each section, and always check for one more step.
+DEREK: That was fourteen episodes in one breath. Nine.
+KADEN: Nine. Season high is nine. What's a ten?
+DEREK: Still nobody knows.
+LEHUA: Homework, the last one this season. Open Settings in the app. If you want a parent or a teacher to see how you're doing, add their email. Then, from the dashboard, tap Send progress report. It opens in your own email app, so you see everything before it goes, and you're the one who sends it.
+SARAH: And keep using the error log. The season ends. The habit doesn't.
+LEHUA: That's season one of SAT Notes. Thank you for listening, everybody. Thank you, Derek, Sarah, Coach, and Kaden.
+PONO: Where you going tonight, Lehua? Every episode you got somewhere to be.
+LEHUA: Sunset at the beach by the old hotel. I already have a parking pass, so I'm not even late for once.
+PONO: Kaunaʻoa. Good choice for the last one.
+LEHUA: Coach, take us out.
+PONO: Aloha, everybody. Go get 'em.
