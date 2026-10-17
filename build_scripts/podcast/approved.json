@@ -1,7 +1,13 @@
 {
- "_note": "Episodes Ryan has approved for the live site. publish.py emits only these; everything else stays out of episodes.json until approved.",
- "sat": [
-  0
- ],
+ "_note": "Episodes Ryan has approved for the live site. publish.py emits only these. Ep 0 (How We Say Things) of both shows is development only, never published; the public season starts at Ep 1.",
+ "dev_only": {
+  "sat": [
+   0
+  ],
+  "act": [
+   0
+  ]
+ },
+ "sat": [],
  "act": []
 }

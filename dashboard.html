@@ -152,7 +152,7 @@
     weak.slice(0, 2).forEach(([k]) => items.push([`Drill ${name(k)}`, `drill.html?skill=${encodeURIComponent(k)}`]));
     const due = S.get(test + '.errlog', []).filter(e => e.due <= Date.now() && !e.done).length; if (due) items.push([`Redo ${due} missed item${due === 1 ? '' : 's'} that are due`, 'drill.html?mode=redo']);
     if (!s.timed.length) items.push(['Do one timed module to get a baseline', 'timed.html']);
-    if (!Object.values(s.episodes).some(e => e.done)) items.push([`Listen to ${test.toUpperCase()} Notes Podcast Ep 0`, 'notes.html']);
+    if (!Object.values(s.episodes).some(e => e.done)) items.push([`Listen to ${test.toUpperCase()} Notes Podcast Ep 1`, 'notes.html']);
     if (!items.length) items.push(['Mixed drill, 10 items', 'drill.html']);
     items.slice(0, 4).forEach(([t, h]) => nx.insertAdjacentHTML('beforeend', `<a class="btn secondary" href="${h}" style="display:block">${A.esc(t)}</a>`));
     const tt = document.getElementById('timed'); tt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());

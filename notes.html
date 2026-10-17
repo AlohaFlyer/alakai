@@ -71,7 +71,7 @@
     const host = document.getElementById('list');
     host.innerHTML = eps.length ? eps.map(e => e.coming
       ? `<div class="ep coming" aria-disabled="true"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">Coming soon</div></div>`
-      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 0 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
+      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 1 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
     host.querySelectorAll('.ep:not(.coming)').forEach(d => d.addEventListener('click', () => play(+d.dataset.n)));
     if (eps.length) host.insertAdjacentHTML('beforeend', '<p class="muted" style="margin:10px 0 0">More episodes are being recorded. New ones show up here as they are approved.</p>');
     const q = new URLSearchParams(location.search); if (q.get('ep') && eps.some(e => e.n === +q.get('ep') && !e.coming)) play(+q.get('ep'));
