@@ -22,6 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   .ep { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .ep.coming { cursor: default; opacity: .55; }
   .ep .n { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--primary); }
   .ep.done .n::after { content: " ✓"; color: var(--ok); font-size: .9rem; }
   audio { width: 100%; margin-top: 8px; }
@@ -68,9 +69,11 @@
     document.getElementById('cast').innerHTML = cast.map(c => `<span class="chip" title="${A.esc(c.role)}">${A.esc(c.name)}</span>`).join('');
     const prog = S.get(test + '.episodes', {});
     const host = document.getElementById('list');
-    host.innerHTML = eps.length ? eps.map(e => `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes episodes are being recorded. Check back soon.</p>`;
-    host.querySelectorAll('.ep').forEach(d => d.addEventListener('click', () => play(+d.dataset.n)));
-    const q = new URLSearchParams(location.search); if (q.get('ep') && eps.some(e => e.n === +q.get('ep'))) play(+q.get('ep'));
+    host.innerHTML = eps.length ? eps.map(e => e.coming
+      ? `<div class="ep coming" aria-disabled="true"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">Coming soon</div></div>`
+      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes episodes are being recorded. Check back soon.</p>`;
+    host.querySelectorAll('.ep:not(.coming)').forEach(d => d.addEventListener('click', () => play(+d.dataset.n)));
+    const q = new URLSearchParams(location.search); if (q.get('ep') && eps.some(e => e.n === +q.get('ep') && !e.coming)) play(+q.get('ep'));
   }
   function play(n) {
     const e = eps.find(x => x.n === n); if (!e) return;

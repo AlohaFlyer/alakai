@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const NS = 'alakai.';
-  const VERSION = '0.1.0';
+  const VERSION = '0.3.0';
 
   // ---------- Local store ----------
   const Store = {

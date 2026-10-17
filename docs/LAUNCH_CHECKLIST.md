@@ -3,8 +3,8 @@
 Ryan-at-keyboard items, in order. Each is one-time.
 
 1. **GitHub repo**: create `AlohaFlyer/alakai` (public, empty, no README) at github.com/new. Then Claude pushes `main`.
-2. **ElevenLabs key**: `build_scripts/podcast/.env` on the Mac clone (done via pbpaste). Render pilots: `python3 build_scripts/podcast/render.py build_scripts/podcast/scripts/sat-ep0.md`, same for ep3, then `./build_scripts/podcast/master.sh out/sat-ep0-elevenlabs sat-ep0`, and `python3 build_scripts/podcast/publish.py`.
-3. **Cartesia A/B** (optional): free key at cartesia.ai, add `CARTESIA_API_KEY` to `.env`, add `cartesia_voice_id` per character in cast.json, render ep0 with `--engine cartesia`.
+2. **Episodes**: Ep 0 and Ep 3 are rendered (ElevenLabs, house rule). Remaining episodes render on the Mac clone per `build_scripts/podcast/README.md`, a few per month as ElevenLabs credits allow; publish.py lists unrendered ones as Coming soon.
+3. **Icons**: done (horse mark; per-school home screen icons regenerate with `python3 build_scripts/icons/build_school_icons.py` if schools.json changes).
 4. **Domain**: buy alakaitestprep.app at Cloudflare Registrar (same account as ha330pilot.app).
 5. **GitHub Pages**: repo Settings, Pages, deploy from `main` root. Custom domain alakaitestprep.app (CNAME file is already in the repo). Enforce HTTPS once the cert issues.
 6. **DNS at Cloudflare**: CNAME `alakaitestprep.app` to `alohaflyer.github.io` (proxied off until Pages cert issues, then on), CNAME `www` same.
