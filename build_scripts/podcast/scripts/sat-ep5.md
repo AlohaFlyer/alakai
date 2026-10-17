@@ -14,7 +14,7 @@ SARAH: Today is one move. Predict, then match. It works on two kinds of question
 SARAH: The move has three steps. First, read the question so you know what you're hunting for. Second, read the passage and make your own answer before you look at the choices. A word for a blank, or one short sentence for the main idea. Third, find the choice that matches your prediction.
 KADEN: Why not just read the choices? They're right there.
 SARAH: Because the choices are built to sound good. If you read them first, they plant ideas in your head. Four choices, and three of them were written to fool you. If you already have your own answer, you're comparing them to something solid instead of comparing them to each other.
-DEREK: It's like checking your work in math. You want your own number before you look at theirs.
+DEREK: Same in math. You want your own number before you look at theirs.
 LEHUA: Okay, let's try. Sarah, read it. No choices yet.
 SARAH: Right. I'm going to read just the sentence twice. Your job is to come up with your own word for the blank. Here it is.
 SARAH: "Researchers expected the new seedlings to struggle in the cold, but the plants proved surprisingly blank, surviving three frosts with little damage."
@@ -35,7 +35,7 @@ SARAH: Too extreme. The choice goes past what the text supports. It's the right 
 KADEN: So the trap was basically my own prediction, but louder.
 SARAH: That's a perfect way to say it. Too extreme choices are the loud version of the right answer. Listen for words like always, never, completely, impossible, proves. Then go back and check whether the passage was really that strong.
 LEHUA: Now the Central Ideas version. Same move, different target.
-SARAH: For Central Ideas, you read the whole short passage, then say the main point in one short sentence, before the choices. Then you match. Two extra things to watch. A choice can be too narrow, which means it's about one detail, not the whole passage. Or it can be too broad, which means it's about the whole topic in the world, not this passage.
+SARAH: For Central Ideas, you read the whole short passage, then say the main point in one short sentence, before the choices. Then you match. Two extra things to watch. A choice can be too narrow, which means it's about one detail, not the whole passage. Or it can be too broad, which means it covers more than this passage actually says.
 SARAH: And too extreme shows up here a lot. The passage says a study suggests something, and the choice says the study proves it. Suggests and proves are not the same strength.
 DEREK: In math terms, the passage said "probably." The choice said "always." That's a different number.
 LEHUA: What about time? Kaden's going to ask.
@@ -44,9 +44,9 @@ SARAH: The prediction takes about five seconds once you practice. It saves time,
 LEHUA: And if you can't predict anything?
 SARAH: Then predict the direction. Positive or negative. Strong or weak. Even that crosses out a choice or two. Then use what we did in episode two. Cross out with a reason.
 KADEN: Okay, real question. Sarah, do you predict when you read texts from people?
-SARAH: I predict where the comma should be. That's different. My brother texted the family chat "I'm done mom" and I spent five minutes deciding if he meant "I'm done, Mom," or if he was calling himself a done mom.
-LEHUA: Which was it?
-SARAH: He was done with dinner. I wrote back with the comma. Nobody thanked me.
+SARAH: I predict where the commas should be. That's different. My mom texted the family chat, "Pick up milk eggs and rice." No commas. I asked her what a milk egg is.
+LEHUA: Did she answer?
+SARAH: She sent the list again. Same list. Still no commas.
 LEHUA: Recap time. Kaden, go.
 KADEN: Read the question first so I know what I'm hunting. Then read the passage and make my own answer before I look. One word for a blank, one short sentence for a main idea. Then match. The trap is too extreme. It's the right direction but louder than the passage, like indestructible when the passage said little damage. Watch for always, never, proves. And for main ideas, not too narrow, not too broad.
 DEREK: That was solid. The "my prediction but louder" line was good. Eight.

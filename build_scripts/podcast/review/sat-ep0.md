@@ -9,3 +9,12 @@
 7. Facts line rewritten to cover what the episode actually states (SAT name, PSAT/NMSQT, Bluebook, Khan Academy, Hāpuna, app palette); the old Costco entry was removed with the Costco gag.
 
 Linters: render2 0 spliced terms; render.py dry run ok, 769 words (Ep 0 allowance ~770).
+
+## Pass 2
+
+1. Gag overuse: Derek gave two ratings ("Four out of ten" and "Eight out of ten for honesty"). Kept the first; the second is now "Agreed. But at least it's honest about it." Line 49 ("when I rate your shortcut a six") stays as the gag's introduction, alongside Pono's and Sarah's.
+2. Wrong fact: "Blue book, two words, one app." Bluebook is one word. Now "You say it like two words, blue book, but it's one word and one app."
+3. Punctuation: "What is an S-A-T even." now ends with a question mark.
+
+Verified: Ep 4 cross-reference, HPA red default and Konawaena kelly green (docs/SCHOOL_PALETTES.md), Hāpuna said only by Pono, one Kaden bus gag, checks/sat-ep0.json answers all taught.
+Linters: render2 0 spliced; render.py ok, 778 words.

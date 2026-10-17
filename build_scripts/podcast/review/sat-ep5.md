@@ -9,3 +9,12 @@
 Verified: callback matches Ep 4; outro cross-reference to Ep 6 matches the plan; trap wording matches engine.js; skill id rw-cs-words exists; central-idea advice matches rw-ii-central.
 
 Linters: render2 0 spliced; render.py ok, 1,101 words.
+
+## Pass 2
+
+1. Comma gag (pass 1 wording): "calling himself a done mom" did not land, and the comma it hinged on was a direct-address comma, the same joke as Ep 2's "let's eat grandma". Replaced with a list-comma joke from her mom, matching the cast.json gag: "Pick up milk eggs and rice." / "I asked her what a milk egg is." / "She sent the list again. Same list. Still no commas."
+2. Imprecise definition in a teaching line: too broad "means it's about the whole topic in the world" now "means it covers more than this passage actually says."
+3. Wrong analogy: "It's like checking your work in math" (predicting comes before, not after). Now "Same in math. You want your own number before you look at theirs."
+
+Verified: worked example has one defensible answer (B, resilient); too extreme matches engine.js; steps match strategies.json rw-cs-words and rw-ii-central; Ep 4 callback and Ep 6 cross-reference; one Kaden bus line, one rating; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,082 words.

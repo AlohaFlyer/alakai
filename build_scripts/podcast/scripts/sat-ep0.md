@@ -28,10 +28,10 @@ PONO: Laupāhoehoe. That one is a test by itself.
 LEHUA: And some words we'll use a lot. Coach?
 PONO: Kumu. That's a teacher. Akamai. That's smart, which is what you're going to be. Pau. That's done, finished. Pau hana, that's done with work. Kōkua, help. And our name. Alakaʻi. It means to lead, to guide.
 LEHUA: Which is the whole point. We're not here to drag you through this test. You're leading. We're just the guides.
-KADEN: Okay but I came for the acronyms. What is an S-A-T even.
+KADEN: Okay but I came for the acronyms. What is an S-A-T even?
 DEREK: SAT. Say the letters. Ess, ay, tee. It used to stand for something. It doesn't anymore. The company that makes it, College Board, says it just stands for SAT now.
 KADEN: That's so unserious.
-DEREK: Agreed. Eight out of ten for honesty though.
+DEREK: Agreed. But at least it's honest about it.
 SARAH: PSAT. Pee, ess, ay, tee. The practice one. Sometimes you'll see PSAT slash NMSQT. En, em, ess, kyoo, tee. National Merit Scholarship Qualifying Test. You do not need to say that out loud ever again. Just know that the PSAT you take junior year is the one that can qualify you for National Merit scholarships.
 LEHUA: ACT. Ay, see, tee. The other test. We have a whole other show for that one. Same people, different hat.
 PONO: I only got the one hat.
@@ -40,7 +40,7 @@ DEREK: A few more. The SAT now is digital, so some people call it the DSAT, dee 
 SARAH: The nerds being us.
 DEREK: Correct.
 KADEN: What about Bluebook? My counselor keeps saying Bluebook.
-SARAH: Bluebook is the app you take the real SAT on. Blue book, two words, one app. It's also where the free official practice tests live. We'll say it a lot. And Khan Academy, con academy, that's the free official practice site. Those two plus this show plus the drills in the app, and you don't need to buy anything.
+SARAH: Bluebook is the app you take the real SAT on. You say it like two words, blue book, but it's one word and one app. It's also where the free official practice tests live. We'll say it a lot. And Khan Academy, con academy, that's the free official practice site. Those two plus this show plus the drills in the app, and you don't need to buy anything.
 LEHUA: One more. HPA. Aitch, pee, ay. The prep school up the road. The app starts out in their red and white, so if you see red and white, now you know why. You can pick your own school and it changes colors.
 KADEN: Can I make it Koh-nah-WY-nah green?
 PONO: Konawaena green. Yes.

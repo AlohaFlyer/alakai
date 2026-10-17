@@ -8,3 +8,10 @@
 Verified: the six trap names match assets/engine.js TRAP_NAMES wording; "You crossed out the right answer" message exists (engine.js line 78); the odds arithmetic is correct; callback, pause-and-try, named trap (Opposite), recap and rating are all present; each gag appears once; homework section id `rw` exists.
 
 Linters: render2 0 spliced; render.py ok, 1,286 words.
+
+## Pass 2
+
+1. Comma gag logic (introduced in pass 1): Sarah "texted back" Lehua's auntie and was "left on read," which implies a private chat she is not in. Now the auntie posted it on her page, Sarah commented with the comma, and the auntie deleted the comment.
+
+Verified: ten trap names and the six listed match engine.js TRAP_NAMES; "You crossed out the right answer" message (engine.js line 78); the app's cross-out button is a × beside each choice; odds arithmetic; worked example has one defensible answer (B); recap lists the six in the order taught; one rating, one comma bit, one Kaden game line; section id rw exists; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,283 words.

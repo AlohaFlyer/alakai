@@ -482,7 +482,7 @@
       "name": "Two passes",
       "steps": [
         "First pass: answer every question you can do quickly.",
-        "Mark any question taking more than a minute and move on.",
+        "If you cannot see the answer path in about 10 seconds, pick your best guess, flag it, and move on.",
         "Second pass: return to marked questions with the time left.",
         "Save the final minute to fill any blanks."
       ]

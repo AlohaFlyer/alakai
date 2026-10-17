@@ -50,10 +50,10 @@ DEREK: Close is how they get you. The test writers want you to stop at the first
 SARAH: Here's the habit. Before you pick, cross out until you have a reason for every x. If you get down to two and they both feel fine, put each one into the sentence and read it again. The wrong one usually sounds off in one specific spot.
 LEHUA: And what if you get down to two and still can't decide?
 DEREK: Then you pick one and move on. You have a fifty-fifty shot, which is twice as good as a blind guess. Flag it if you want to come back. Don't burn two minutes on it.
-LEHUA: My auntie texted the family chat "let's eat grandma" last week. No comma. I screenshotted it for you, Sarah.
-SARAH: I saw it. I texted her back with the comma. She did not ask.
+LEHUA: My auntie posted "let's eat grandma" on her page last week. No comma. I screenshotted it for you, Sarah.
+SARAH: I saw it. I commented with the comma. She did not ask.
 KADEN: Did she reply?
-SARAH: She left me on read. Worth it.
+SARAH: She deleted my comment. Worth it.
 LEHUA: Okay, bring it home. Kaden, recap. In your own words.
 KADEN: Okay. Don't hunt for the right answer first. Hunt for the wrong ones. Every cross-out makes a guess better, four to three to two. Only cross out when I can say why it's wrong. The app names the traps, like too extreme, half right, true but irrelevant, opposite, adds an assumption, and near miss. Today's trap was opposite, where the choice flips what the passage says, and it usually steals a word from the passage. And if I'm down to two, plug both in, pick one, and move on.
 LEHUA: Derek?

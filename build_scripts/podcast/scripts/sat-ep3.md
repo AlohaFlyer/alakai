@@ -22,7 +22,7 @@ PONO: Exactly. The clock didn't beat you. One question beat you, and then the cl
 KADEN: Okay so what do I actually do.
 PONO: Two passes. First pass, you ride through in order. You look at a question. If you can see the path in about ten seconds, you take it. If you can't see the path, you pick your best guess, you flag it, and you move on. You do not sit there. Sitting there is fighting the horse.
 KADEN: But what if I almost have it.
-DEREK: "Almost have it" is the most expensive phrase on the SAT. Almost have it for one more minute is three questions you never saw. Those three could be easy. The one you're stuck on, by definition, is not.
+DEREK: "Almost have it" is the most expensive phrase on the SAT. Three more minutes on that one question is two or three questions you never reach. Those could be easy. The one you're stuck on, by definition, is not.
 LEHUA: And when you guess, cross out first, like last episode.
 DEREK: Right. Every choice you can prove wrong makes the guess better. One in four becomes one in three, then a coin flip. Small moves, real points.
 LEHUA: Say the guessing rule, Derek, because people still don't believe it.
@@ -36,14 +36,14 @@ PONO: Your tutor's right. You look at the clock exactly twice. Not every thirty 
 DEREK: Reading and Writing, that's question nine at ten minutes forty, and question eighteen at twenty-one minutes twenty. Math, question seven at eleven forty, and question fifteen at twenty-three twenty. Those are minutes used. The Bluebook clock counts down, so do that subtraction once before test day, not during it. The targets are in the app on the Time Squeeze page, you don't have to memorize them right now.
 PONO: If you're behind, you flag faster. That's it. You don't panic, you don't speed-read, you just lower the bar for what you'll flag. If you're ahead, you slow down one notch.
 KADEN: Being ahead is bad?
-PONO: Ahead is not bad. Ahead and careless is bad. Speed is not the problem, so use the extra time to read every word.
+PONO: Ahead is fine. Ahead and careless is the problem. So use the extra time to read every word.
 LEHUA: Let's talk about what happens in the last sixty seconds, because that's where people lose points they already had.
 DEREK: In the last minute, you stop solving. Full stop. You open the grid, you look for anything unanswered, and you put something in. Then you stop. A half-finished solution is worth zero. A guess is worth something.
 KADEN: What if I'm in the middle of a question and I have it?
 DEREK: If you have it, you have it. Finish it, then check the grid. But "I have it" means you're writing the answer, not "I think I see where this goes."
 LEHUA: Okay, Kaden, you're the one who actually takes this thing. What goes wrong for you?
 KADEN: Honestly? Reading. I get into a passage and I read the whole thing like it's a book. Then the question is about one sentence and I'm like, I don't remember that sentence.
-LEHUA: Yeah, that's the number one time leak in Reading and Writing. The digital SAT gives you one short passage per question. One. It's not a long passage with ten questions. So the move is, read the question first, then read the passage knowing what you're hunting for.
+LEHUA: Yeah, that's the number one time leak in Reading and Writing. The digital SAT gives you one short passage per question. One. It's not a long passage with ten questions. So the move is, read the question first, then read the passage knowing what you're hunting for. That gets a whole episode of its own, episode five.
 DEREK: Math version. Read the last sentence of the word problem first. That's the actual question. Then read the rest to collect the numbers. You'll stop doing arithmetic you didn't need.
 KADEN: Okay that one's actually good.
 LEHUA: One more thing, then the recap. The adaptive thing. The SAT is adaptive by module. Module one is a mix of easy, medium, and hard questions for everybody. Depending on how you do, module two is either the harder version or the easier version, and the harder version can score higher. So what does that mean for the clock?
@@ -52,7 +52,7 @@ LEHUA: Kaden, recap. Your words.
 KADEN: Two passes. First pass in order. If I can't see the path in about ten seconds, I guess, flag it, and go. Second pass, I upgrade the flags, closest one first, monster last. Check the clock twice, at one-third and two-thirds. Last minute, stop solving and fill the grid. Module one is about getting it right, not fast. And no blanks.
 DEREK: That's the whole episode in one breath. Seven.
 KADEN: Why not higher?
-DEREK: Nothing's higher.
+DEREK: You left out reading the question first.
 LEHUA: Alright. Here's your homework. If you haven't done the placement check yet, do that first, it's two questions per skill and it tells the dashboard where to start you. Then go to Timed in the app. Do one Reading and Writing module, just one, with the checkpoints on. Don't worry about the score. Watch what the clock does to you. Then come back for episode four, Desmos.
 KADEN: And flag stuff.
 PONO: And flag stuff. No blanks.

@@ -14,3 +14,13 @@
 12. target_minutes 11 changed to 8 (1,275 words is about 8.5 min). Outro now names Ep 4 (Desmos).
 
 Linters: render2 0 spliced; render.py ok, 1,275 words. checks/sat-ep3.json answers are all still taught.
+
+## Pass 2
+
+1. Gag logic (introduced in pass 1): Derek's "Seven. / Why not higher? / Nothing's higher." contradicts Ep 2, where he gave a nine. Now "You left out reading the question first," which is true of Kaden's recap.
+2. Wrong arithmetic: "Almost have it for one more minute is three questions you never saw." At 71 s per RW question, one minute is less than one question. Now "Three more minutes on that one question is two or three questions you never reach."
+3. Flat teaching line (pass 1 wording): "Ahead is not bad. Ahead and careless is bad. Speed is not the problem, so..." Now "Ahead is fine. Ahead and careless is the problem. So use the extra time to read every word."
+4. Concept creep: the read-the-question-first block is Ep 5's concept. Kept it as a time leak and added the cross-reference "That gets a whole episode of its own, episode five."
+
+Verified: checkpoint targets match timing.html (RW 9 at 10:40, 18 at 21:20; Math 7 at 11:40, 15 at 23:20) and are one-third and two-thirds of each module's clock; ten-second rule from timing.html; timed.html runs checkpoints by default; Ep 4 cross-reference; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,286 words.

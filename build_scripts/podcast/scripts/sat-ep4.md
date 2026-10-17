@@ -34,7 +34,7 @@ DEREK: And here's how Desmos helps with this trap. Type both lines. Tap where th
 KADEN: Okay, so Desmos is faster?
 DEREK: For that one, about the same. Here's the honest part. Desmos is not always faster. Typing takes time. If the algebra is one or two steps, like three x plus four equals nineteen, just do it. You'll be done before you finish typing.
 LEHUA: So when is Desmos the move?
-DEREK: Three times. One, systems where the numbers are messy, like fractions or decimals. Two, quadratics. If they ask for the solutions of x squared minus five x plus six equals zero, you can graph y equals that expression and tap where it crosses the x-axis. Those points, two and three, are the solutions. Three, checking. You solved it by hand, you have a little time left, so you graph it to confirm.
+DEREK: Three cases. One, systems where the numbers are messy, like fractions or decimals. Two, quadratics. If they ask for the solutions of x squared minus five x plus six equals zero, you can graph y equals that expression and tap where it crosses the x-axis. Those points, two and three, are the solutions. Three, checking. You solved it by hand, you have a little time left, so you graph it to confirm.
 KADEN: What if the lines don't show up?
 DEREK: Then zoom out. Sometimes the crossing is off the screen. If the lines look parallel, they might actually be parallel, which means no solution. That's a real answer choice sometimes.
 PONO: Okay, here's how I think about it. Desmos is a good horse. A good horse knows the trail. But you still hold the reins. If you don't know where you're going, the horse just walks you in circles around the arena.

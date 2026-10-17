@@ -10,3 +10,14 @@
 Verified unchanged: UH flagship "Do No Harm" line matches manoa.hawaii.edu/admissions/freshman (the policy covers admission and scholarships; some scholarships and direct-entry programs may require scores). Timings, 400 to 1600, 75/25 split are correct.
 
 Linters: render2 0 spliced; render.py ok, 1,255 words.
+
+## Pass 2 (LIVE: lines 2 to 5 need re-render)
+
+1. Header: Do No Harm wording now matches manoa.hawaii.edu/admissions/freshman exactly ("scholarships or department direct entry programs may require test scores"), which supports Derek's direct-entry line; added the public-university/merit-scholarship claim the episode makes.
+2. LIVE. Wrong fact: "That's shorter than one movie... / Way shorter." 2 hr 14 min plus a 10-minute break is about the length of a long movie with trailers, not way shorter. Now "That's like one long movie with all the trailers. / About that, yeah. Way shorter than the old paper test."
+3. LIVE. Wrong statistic word: "a thousand thirty is the middle of the whole country." 1029 is the mean, not the median (and Ep 10 teaches the difference). Now "the national average." 1029 verified in the College Board 2025 Total Group report.
+4. LIVE. Grammar in a teaching line: "Reading and Writing is short passages" now "uses short passages."
+5. LIVE. Loose tool description: Bluebook has Mark for Review and an answer eliminator, not "a flag button and a little x". Now "a flag to mark it for review, and a tool to cross out choices."
+
+Verified: timings, 400 to 1600, 75/25 split, unscored pretest items, Ep 2 and Ep 11 cross-references, one rodeo bit, one rating, one Kaden bus line, checks/sat-ep1.json.
+Linters: render2 0 spliced; render.py ok, 1,260 words.

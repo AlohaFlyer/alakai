@@ -13,3 +13,15 @@
 Left alone (see report): Pono's "Told you I'd get a second one" calls back the hat bit from SAT Ep 0, which never publishes; it still plays standalone. "Including the university in Hilo" is plausible but not verified against hilo.hawaii.edu (the fetch failed).
 
 Linters: render2 0 spliced; render.py ok, 1,112 words.
+
+## Pass 2 (LIVE: lines 3 to 6 need re-render)
+
+1. Open item verified: UH Hilo first-year admission says "Cumulative GPA below 2.7 considered on a sliding scale with official ACT/SAT scores" (hilo.hawaii.edu/admissions/freshman.php, checked 2026-10-16). It accepts both, so Pono's line stands; added to the facts line.
+2. Open item verified: ACT's score page lists Science (optional) as a 1 to 36 section score and says students receive a STEM score (average of math and science) (act.org Understanding Your Scores). Derek's "Science gets its own score... reported next to the Composite, not inside it" stands; added to facts.
+3. LIVE. Wrong fee: "about sixty-five dollars without the essay." act.org Current ACT Fees and Services lists 70 dollars for English, Math and Reading, 75 with Science, 95 with Writing. Now "about seventy dollars this year, a little more if you add Science or the essay."
+4. LIVE. Callback to an unpublished episode: "Two hats today. Told you I'd get a second one" pays off the hat bit from SAT Ep 0, which never publishes. Now "New show, new hat." The "same hat / different hat" exchange still works on its own.
+5. LIVE. Vague: "the flagship campus here" (the flagship is on another island). Now "UH's flagship campus."
+6. LIVE. Cross-reference: "We have a whole episode on it" now names "episode eleven" (It Is a Graph, Not Biology).
+
+Verified: section counts and times, 42/67/67/60 s per question, Composite rounding, 19.4 class of 2025 average (act.org/gradclass2025), superscore uses E, M, R (act.org enhancements page), fee waivers cover registration and score reports to colleges, Ep 2 and Ep 3 cross-references, Costco once in the ACT show, one rodeo bit, one rating, one Kaden bus line; checks answers taught.
+Linters: render2 0 spliced; render.py ok, 1,114 words.
