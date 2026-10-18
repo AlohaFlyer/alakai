@@ -7,6 +7,14 @@ BASE = os.environ.get("AUDIO_BASE", "https://audio.alakaitestprep.app/")
 CAST = json.loads((HERE / "cast.json").read_text())
 APPROVED = json.loads((HERE / "approved.json").read_text())
 eps = {"shows": {"sat": "SAT Notes Podcast", "act": "ACT Notes Podcast"}, "sat": [], "act": [], "cast": [{"name": c["name"], "role": c["role"]} for c in CAST["characters"]]}
+# Episodes already published keep their entry when the mp3 is not on this machine (audio lives on R2).
+try: PREV = json.loads((ROOT / "data" / "episodes.json").read_text())
+except Exception: PREV = {"sat": [], "act": []}
+for test in ("sat", "act"):
+    for n in APPROVED.get(test, []):
+        if not (ROOT / "audio" / f"{test}-ep{n}.mp3").exists():
+            old = next((e for e in PREV.get(test, []) if e.get("n") == n and not e.get("coming")), None)
+            if old: eps[test].append(old)
 for mp3 in sorted((ROOT / "audio").glob("*.mp3")):
     m = re.match(r"(sat|act)-ep(\d+)\.mp3", mp3.name)
     if not m: continue
