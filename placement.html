@@ -44,8 +44,8 @@
   </section>
 
   <section class="card" id="done" hidden>
-    <h2>Placement pau</h2>
-    <p id="summary"></p>
+    <h2 id="done-h" tabindex="-1">Placement pau</h2>
+    <p id="summary" role="status"></p>
     <table id="bysec"><tr><th>Section</th><th>Score</th><th>Start here</th></tr></table>
     <div class="row" style="margin-top:12px"><a class="btn" href="dashboard.html">Go to dashboard</a><a class="btn secondary" href="drill.html">Drills</a></div>
   </section>
@@ -69,7 +69,7 @@
     const seen = S.get('seen', {});
     const items = [];
     skills.forEach(sk => { const pool = A.shuffle(bank.items.filter(i => i.skill === sk && i.timed_ok !== false)).sort((a, b) => (Math.abs(a.difficulty - 2) - Math.abs(b.difficulty - 2)) || ((seen[a.id] || 0) - (seen[b.id] || 0))); items.push(...pool.slice(0, 2)); });
-    order = A.shuffle(items); i = 0; answers = []; finished = false;
+    order = E.clusterByPassage(A.shuffle(items)); i = 0; answers = []; finished = false;
     document.getElementById('est').textContent = Math.round(order.length * 1.1);
     document.getElementById('ptest').textContent = test.toUpperCase();
     const nt = document.getElementById('pnote'); nt.textContent = note || ''; nt.hidden = !note;
@@ -99,6 +99,7 @@
   async function finish() {
     if (finished) return; finished = true;
     document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
+    try { document.getElementById('done-h').focus({ preventScroll: true }); } catch (e) {}
     if (!answers.length) { document.getElementById('summary').textContent = 'Nothing answered.'; return; }
     for (const a of answers) { const free = !a.item.choices || !a.item.choices.length; await E.record(test, a.item, { correct: a.correct, ms: 0, trap: (!a.correct && !free && a.item.traps) ? a.item.traps[a.picked] : null }, 'placement'); }
     const right = answers.filter(a => a.correct).length;

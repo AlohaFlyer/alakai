@@ -39,6 +39,57 @@
     return out;
   }
 
+  // ---------- Passage modules (timed ACT Reading and Science) ----------
+  // A module with a "passages" block in timed.json is built from whole passages, never from loose items: each set
+  // is one passage block of a given type (Reading: the passage label before the colon, Science: the skill), filled
+  // with whole passages of that type and trimmed to the set size. A type the bank is short of is padded with another
+  // passage of the same section (docs/BANK_SCHEMA.md). Items keep bank order inside their passage.
+  function passageType(item, from) { if (from === 'skill') return item.skill; const m = /^([A-Z][A-Z ]+):/.exec(item.passage || ''); return m ? m[1].trim() : ''; }
+  function passagesOf(bank, section, from) {
+    const map = new Map();
+    bank.items.forEach((it, idx) => {
+      if (it.section !== section || it.timed_ok === false || !it.passage) return;
+      let p = map.get(it.passage); if (!p) { p = { text: it.passage, idx, type: passageType(it, from), items: [] }; map.set(it.passage, p); }
+      p.items.push(it);
+    });
+    return [...map.values()];
+  }
+  function buildPassageModule(bank, mod) {
+    const cfg = mod.passages, from = cfg.type_from || 'label';
+    const seen = S.get('seen', {}); const all = passagesOf(bank, mod.section, from); const used = new Set();
+    const avgSeen = p => p.items.reduce((a, i) => a + (+seen[i.id] || 0), 0) / p.items.length;
+    const specs = []; (cfg.sets || []).forEach(s => { for (let r = 0; r < (s.repeat || 1); r++) specs.push(s); });
+    const sets = specs.map(spec => {
+      const parts = []; let n = 0;
+      const fill = cands => {
+        while (n < spec.items) {
+          const left = cands.filter(p => !used.has(p)); if (!left.length) return;
+          const need = spec.items - n;
+          // A passage that covers what is still needed beats one that would leave a stub; least seen first, ties random.
+          const fits = left.filter(p => p.items.length >= need);
+          const pool = A.shuffle(fits.length ? fits : left).sort((a, b) => (fits.length ? 0 : b.items.length - a.items.length) || avgSeen(a) - avgSeen(b));
+          const p = pool[0]; used.add(p);
+          const k = Math.min(p.items.length, need); const keep = new Set(A.shuffle(p.items.map((_, j) => j)).slice(0, k));
+          parts.push({ passage: p, items: p.items.filter((_, j) => keep.has(j)) }); n += k;
+        }
+      };
+      fill(all.filter(p => p.type === spec.type));
+      if (n < spec.items) fill(all); // short of this type: closest is another passage of the same section
+      parts.sort((a, b) => a.passage.idx - b.passage.idx);
+      return { name: spec.name || spec.type, parts, first: parts.length ? parts[0].passage.idx : 1e9 };
+    }).filter(s => s.parts.length);
+    if (cfg.order === 'bank') sets.sort((a, b) => a.first - b.first);
+    const items = [], groups = [];
+    sets.forEach((s, si) => s.parts.forEach((pt, pi) => pt.items.forEach(it => { items.push(it); groups.push([si, pi]); })));
+    return { items, groups, setNames: sets.map(s => s.name) };
+  }
+  // Loose modules (and placement): items that share a passage or table sit next to each other, in first-seen order.
+  function clusterByPassage(items) {
+    const out = [], done = new Set();
+    items.forEach(it => { if (done.has(it)) return; (it.passage ? items.filter(x => x.passage === it.passage) : [it]).forEach(x => { if (!done.has(x)) { done.add(x); out.push(x); } }); });
+    return out;
+  }
+
   // Render one item into container; returns a promise resolving {correct, ms, picked}
   function renderItem(container, item, opts) {
     opts = opts || {};
@@ -55,7 +106,7 @@
       ${free ? `<div class="row">${gridIn('')}<button id="submit">Check</button></div>`
              : `<div class="choices">${item.choices.map((c, i) => `<div class="choice-row"><button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button><button class="strike" data-i="${i}" title="Cross out" aria-label="Cross out ${letters[i]}" aria-pressed="false">×</button></div>`).join('')}</div>`}
       <div class="row" style="margin-top:8px">${opts.allowFlag ? '<button class="ghost" id="flag">Flag for later</button>' : ''}${mode === 'hint' ? '<button class="ghost" id="hintbtn">Hint</button>' : ''}<span class="muted" id="skillname">${A.esc(opts.skillName || '')}</span></div>
-      <div id="fb"></div>`;
+      <div id="fb" aria-live="polite"></div>`;
     wireGridIn(container);
     return new Promise(resolve => {
       let hintUsed = false, tries = 0, settled = false, firstPick = null;
@@ -80,8 +131,8 @@
       }
       function explain(correct, picked, retry) {
         const fb = container.querySelector('#fb');
-        if (retry) { const old = fb.querySelector('.feedback'); if (old) old.remove(); const el = document.createElement('div'); el.className = 'feedback right'; el.textContent = 'Got it on the second try. It goes in your error log so it comes back.'; fb.prepend(el); }
-        else A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak);
+        if (retry) { const old = fb.querySelector('.feedback'); if (old) old.remove(); const el = document.createElement('div'); el.className = 'feedback right'; el.textContent = 'Got it on the second try. It goes in your error log so it comes back.'; fb.prepend(el); el.tabIndex = -1; try { el.focus({ preventScroll: true }); } catch (e) {} }
+        else A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak, { focus: !opts.silent });
         const parts = [];
         if (!correct && !free && item.distractors && item.distractors[picked]) parts.push(`<p>${item.traps && item.traps[picked] ? `<span class="chip warn">${A.esc(TRAP_NAMES[item.traps[picked]] || item.traps[picked])}</span> ` : ''}<strong>Why ${letters[picked]} tempts you:</strong> ${A.esc(item.distractors[picked])}</p>`);
         if (!correct && !free && struck.has(item.answer)) parts.push(`<p class="muted">You crossed out the right answer. Cross out only when you can say why it is wrong.</p>`);
@@ -157,7 +208,8 @@
       const d = document.createElement('div'); d.className = 'row'; d.style.marginTop = '8px';
       d.innerHTML = '<span class="muted">Why did you miss it?</span>' + [['careless', 'Careless'], ['concept', 'Didn\'t know it'], ['time', 'Rushed']].map(([v, l]) => `<button class="secondary" data-c="${v}">${l}</button>`).join('');
       d.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { d.innerHTML = `<span class="chip">${b.textContent}</span>`; resolve(b.dataset.c); }));
-      container.querySelector('#fb').prepend(d);
+      // After the verdict, so keyboard and screen reader users meet it right after the "right / wrong" line.
+      const fb = container.querySelector('#fb'); const v = fb.querySelector('.feedback'); if (v) v.after(d); else fb.prepend(d);
     });
   }
 
@@ -166,5 +218,5 @@
   // Skill levels: Attempted, Familiar (>=60% over 5), Proficient (>=75% over 10 with a hard item right), Mastered (Proficient + a correct redo)
   function level(stats) { if (!stats || !stats.n) return 'New'; const acc = stats.r / stats.n; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight && stats.redoRight) return 'Mastered'; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight) return 'Proficient'; if (stats.n >= 5 && acc >= 0.6) return 'Familiar'; return 'Attempted'; }
   const CAUSE_NAMES = { careless: 'careless', concept: 'didn\'t know it', time: 'rushed or ran out of time', unsorted: 'missed', 'needed hint': 'needed the hint' };
-  window.AlakaiEngine = { gridIn, wireGridIn, strategyFor, level, TRAP_NAMES, CAUSE_NAMES, Bank, buildSet, renderItem, record, setCause, askCause, normalize };
+  window.AlakaiEngine = { buildPassageModule, clusterByPassage, passagesOf, gridIn, wireGridIn, strategyFor, level, TRAP_NAMES, CAUSE_NAMES, Bank, buildSet, renderItem, record, setCause, askCause, normalize };
 })();

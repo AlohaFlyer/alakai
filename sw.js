@@ -1,5 +1,5 @@
 /* Alakaʻi Test Prep service worker: cache-first for app shell and data, network-first for episodes.json, never caches audio. */
-const VERSION = 'alakai-v15';
+const VERSION = 'alakai-v16';
 const BANKS = ['sat/drills_rw.json', 'sat/drills_math.json', 'sat/cards_rw.json', 'sat/cards_math.json',
   'act/drills_english.json', 'act/drills_math.json', 'act/drills_reading.json', 'act/drills_science.json',
   'act/cards_english.json', 'act/cards_math.json', 'act/cards_reading.json', 'act/cards_science.json'].map(p => 'data/' + p);
@@ -30,7 +30,9 @@ self.addEventListener('fetch', e => {
     const key = new URL(path, location.origin).href;
     e.respondWith(caches.match(key, { ignoreSearch: true })
       .then(hit => hit || fetch(key, { cache: 'reload' }).then(r => putCopy(key, r)))
-      .catch(() => caches.match('index.html')));
+      // Offline and not cached (an unknown or nested URL such as /a/b/c): the precached 404 page, which has
+      // <base href="/"> and root-absolute assets, so it renders styled at any depth (index.html would not).
+      .catch(() => caches.match('404.html').then(r => r || caches.match('index.html'))));
     return;
   }
   // Everything else same-origin: cache first, then network (and keep a copy of data and assets), then nothing.

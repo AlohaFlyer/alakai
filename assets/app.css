@@ -218,3 +218,12 @@ footer a, small > a { display: inline-block; padding: 14px 4px; margin: -14px 0;
 .minus-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .minus-row .key { min-width: 44px; min-height: 44px; padding: 0 12px; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); }
 .form-msg { color: var(--bad); font-weight: 600; margin: 8px 0 0; }
+/* Debug pass 3: 44 px tap targets for everyone (not only the "phone" profile). */
+.toggle button { min-height: 44px; min-width: 56px; }
+summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; }
+summary::before { content: "▸"; display: inline-block; width: 1em; flex: none; transition: transform .15s; }
+details[open] > summary::before { transform: rotate(90deg); }
+summary::-webkit-details-marker { display: none; }
+label.check { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; margin: 0; font-weight: 500; cursor: pointer; }
+label.check input { width: 20px; height: 20px; margin: 0; }
+a.skill-link { display: flex; align-items: center; min-height: 44px; padding: 4px 0; }

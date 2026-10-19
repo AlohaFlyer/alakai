@@ -1,6 +1,12 @@
-{"_verify":"2025 enhanced ACT timings, confirm against act.org before launch","modules":[
+{"_verify":"2025 enhanced ACT timings, confirm against act.org before launch",
+ "_passages":"Reading and Science are built from whole passages (see docs/BANK_SCHEMA.md, timed.json). Each entry of sets is one passage block, filled with whole passages of that type in bank order; checkpoint is the halfway mark from timing.html.",
+ "modules":[
  {"id":"act-english","section":"english","name":"English","minutes":35,"count":50},
  {"id":"act-math","section":"math","name":"Math","minutes":50,"count":45},
- {"id":"act-reading","section":"reading","name":"Reading","minutes":40,"count":36},
- {"id":"act-science","section":"science","name":"Science (optional)","minutes":40,"count":40}
+ {"id":"act-reading","section":"reading","name":"Reading","minutes":40,"count":36,
+  "passages":{"type_from":"label","order":"sets","checkpoint":{"minute":20,"sets":2},
+   "sets":[{"type":"LITERARY NARRATIVE","name":"Literary narrative","items":9},{"type":"SOCIAL SCIENCE","name":"Social science","items":9},{"type":"HUMANITIES","name":"Humanities","items":9},{"type":"NATURAL SCIENCE","name":"Natural science","items":9}]}},
+ {"id":"act-science","section":"science","name":"Science (optional)","minutes":40,"count":40,
+  "passages":{"type_from":"skill","order":"bank","checkpoint":{"minute":20,"sets":5},
+   "sets":[{"type":"science-data","name":"Data representation","items":4,"repeat":4},{"type":"science-research","name":"Research summary","items":4,"repeat":4},{"type":"science-conflict","name":"Conflicting viewpoints","items":4,"repeat":2}]}}
 ]}

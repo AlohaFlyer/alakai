@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """verify/keys.py [sat|act|all]: structural checks on the content banks. Exit 1 on failure."""
-import json, os, sys, glob
+import json, os, re, sys, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MIN_PER_SKILL = int(os.environ.get("MIN_PER_SKILL", "16"))
@@ -79,6 +79,22 @@ def check_test(test):
     for m in timed["modules"]:
         pool = [it for it in drills if it["section"] == m["section"] and it.get("timed_ok", True)]
         if len(pool) < m["count"]: errs.append(f"module {m['id']}: pool {len(pool)} < count {m['count']}")
+        if m.get("passages"):
+            # Passage modules (timed.html via engine.js buildPassageModule): every set type needs whole passages
+            # with enough timed items; a shortfall is padded from another passage of the section, so it is a warning.
+            cfg = m["passages"]; by_type = {}
+            for it in pool:
+                if not it.get("passage"): continue
+                t = it["skill"] if cfg.get("type_from") == "skill" else (re.match(r"^([A-Z][A-Z ]+):", it["passage"]) or [None, ""])[1].strip()
+                by_type.setdefault(t, {}).setdefault(it["passage"], 0); by_type[t][it["passage"]] += 1
+            want, total = {}, 0
+            for st in cfg["sets"]:
+                want[st["type"]] = want.get(st["type"], 0) + st["items"] * st.get("repeat", 1); total += st["items"] * st.get("repeat", 1)
+            if total != m["count"]: errs.append(f"module {m['id']}: passage sets add up to {total}, count is {m['count']}")
+            for t, n in want.items():
+                have = sum(by_type.get(t, {}).values())
+                if not by_type.get(t): errs.append(f"module {m['id']}: no passages of type {t}")
+                elif have < n: warns.append(f"module {m['id']}: type {t} has {have} timed items for {n}; padded from other passages")
     print(f"{test}: {len(drills)} drills, {len(cards)} cards, {len(timed['modules'])} modules, {len(skill_ids)} skills")
     for w in warns[:20]: print("  warn:", w)
     if len(warns) > 20: print(f"  ... {len(warns)-20} more warnings")

@@ -6,7 +6,7 @@ Plan: HPA Project doc `claude/ALAKAI_TEST_PREP_PLAN_v1.0.md`. Content schema: `d
 
 ## Layout
 - `*.html` pages, `assets/` css/js/patterns/hero, `data/` banks and config, `sw.js` offline shell.
-- `build_scripts/verify/` checks: `contrast.py`, `keys.py`, `links.py`, `smoke.py`. Run `bash build_scripts/verify/all.sh` before every push.
+- `build_scripts/verify/` checks: `contrast.py`, `keys.py`, `links.py`, `smoke.py`, and `e2e/run.py` (Playwright journeys: onboarding, placement, drill miss logging, timed passage modules and resume, podcast check, Settings dark mode, offline 404; the ping is intercepted, audio is a generated WAV). Run `bash build_scripts/verify/all.sh` before every push; `python3 build_scripts/verify/e2e/run.py --base http://127.0.0.1:8765` runs the journeys against a server you already started.
 - `build_scripts/podcast/` ElevenLabs Text-to-Dialogue pipeline, cast and lexicon.
 - `worker/alakai-ping/` Cloudflare Worker.
 

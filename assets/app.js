@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const NS = 'alakai.';
-  const VERSION = '1.0.2';
+  const VERSION = '1.0.3';
 
   // ---------- Local store ----------
   // Browsers with site data blocked throw on localStorage and IndexedDB. Fall back to memory for this page
@@ -220,7 +220,8 @@
     return school;
   }
 
-  function setPattern(id) { const u = new URL('assets/patterns/' + id + '.svg', document.baseURI).href; document.documentElement.style.setProperty('--pattern', `url("${u}")`); }
+  const PATTERNS = ['solid', 'a', 'b', 'c', 'd', 'e', 'f', 'g'];
+  function setPattern(id) { if (!PATTERNS.includes(id)) id = 'solid'; const u = new URL('assets/patterns/' + id + '.svg', document.baseURI).href; document.documentElement.style.setProperty('--pattern', `url("${u}")`); }
 
   // Resolve relative paths from any page depth (all pages live at root, so this is identity, kept for safety)
   function rel(p) { return p; }
@@ -244,11 +245,16 @@
     if (pool.length > 1) while (line === lastLine[kind]) line = pool[Math.floor(Math.random() * pool.length)];
     lastLine[kind] = line; return line;
   }
-  async function showFeedback(container, kind, streak) {
+  // The container is a polite live region (screen readers hear the verdict); opts.focus moves focus to the verdict,
+  // because the tapped choice is disabled and focus would otherwise drop to <body>.
+  async function showFeedback(container, kind, streak, opts) {
     const line = await feedbackLine(kind, streak);
+    if (!container.hasAttribute('aria-live')) container.setAttribute('aria-live', 'polite');
     let el = container.querySelector('.feedback');
     if (!el) { el = document.createElement('div'); container.prepend(el); }
-    el.className = 'feedback ' + kind; el.textContent = line; return line;
+    el.className = 'feedback ' + kind; el.textContent = line;
+    if (opts && opts.focus && container.isConnected) { el.tabIndex = -1; try { el.focus({ preventScroll: true }); } catch (e) {} }
+    return line;
   }
 
   // ---------- Profile / onboarding gate ----------
@@ -321,7 +327,9 @@
           const se = bySection[a.section] = bySection[a.section] || { n: 0, r: 0 }; se.n++; if (a.correct) se.r++;
         }
       });
-      const timed = Store.list(test + '.timed').filter(t => typeof t.n === 'number');
+      // Junk-proof: a timed record needs a string id and numeric right / n (a bad import can leave id null).
+      const num = v => typeof v === 'number' && isFinite(v);
+      const timed = Store.list(test + '.timed').filter(t => typeof t.id === 'string' && num(t.n) && t.n > 0 && num(t.right)).map(t => Object.assign({}, t, { name: text(t.name) || t.id, seconds: num(t.seconds) ? t.seconds : 0, at: num(t.at) ? t.at : 0 }));
       const epRaw = Store.get(test + '.episodes', {}); const episodes = {};
       Object.keys(epRaw).forEach(k => { if (isPlain(epRaw[k])) episodes[k] = epRaw[k]; });
       const blitz = Store.list(test + '.blitz').filter(b => typeof b.score === 'number');
@@ -355,7 +363,7 @@
     const dte = daysTo(p.testdate);
     const L = []; const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
     L.push(`Alakaʻi Test Prep progress report`);
-    L.push(`Student: ${p.name || ''}   School: ${sc ? sc.name : ''}   Grade: ${p.grade || ''}`);
+    L.push(`Student: ${text(p.name)}   School: ${sc ? sc.name : ''}   Grade: ${text(p.grade)}`);
     L.push(`Test: ${test.toUpperCase()}${dte !== null && dte >= 0 ? `   Days to test: ${dte}` : ''}   Report date: ${new Date().toLocaleDateString()}`);
     L.push('');
     L.push(`Practice (drills and timed): ${plural(s.attempts, 'question')} answered${s.attempts ? `, ${Math.round(100 * s.right / s.attempts)}% correct` : ''}, ${plural(s.activeDays, 'active day')}, current streak ${plural(s.streak, 'day')}.`);
@@ -367,13 +375,13 @@
     const weak = Object.entries(s.bySkill).filter(([, v]) => v.n >= 2).sort((a, b) => a[1].r / a[1].n - b[1].r / b[1].n).slice(0, 5);
     if (weak.length) { L.push(''); L.push('Weakest skills (2+ attempts, placement included):'); weak.forEach(([k, v]) => { const t = avgSec(v); L.push(`  ${name(k)}: ${v.r}/${v.n}${t !== null ? `, avg ${t}s per item` : ''}`); }); }
     if (s.timed.length) { L.push(''); L.push('Timed sections:'); s.timed.slice(-6).forEach(t => L.push(`  ${t.name}: ${t.right}/${t.n} in ${fmtTime(t.seconds)} (${t.unanswered || 0} left blank, ${t.flagged || 0} flagged)`)); }
-    const eps = Object.values(s.episodes); if (eps.length) { L.push(''); L.push(`${test.toUpperCase()} Notes episodes completed: ${eps.filter(e => e.done).length}`); eps.filter(e => e.done).forEach(e => L.push(`  Ep ${e.n} ${e.title}${e.check !== undefined ? ` (check ${e.check}/3)` : ''}`)); }
+    const eps = Object.values(s.episodes).filter(e => Number.isInteger(+e.n)); if (eps.length) { L.push(''); L.push(`${test.toUpperCase()} Notes episodes completed: ${eps.filter(e => e.done).length}`); eps.filter(e => e.done).forEach(e => L.push(`  Ep ${e.n} ${e.title}${e.check !== undefined ? ` (check ${e.check}/3)` : ''}`)); }
     if (s.blitz.length) { const best = Math.max(...s.blitz.map(b => b.score)); L.push(''); L.push(`Blitz high score: ${best}`); }
     L.push(''); L.push('Next three actions:');
     const next = []; weak.slice(0, 2).forEach(([k]) => next.push(`Drill ${name(k)} (10 items)`)); if (!s.timed.length) next.push('Do one full timed module'); next.push('Review the error log and redo the items due'); next.slice(0, 3).forEach((n, i) => L.push(`  ${i + 1}. ${n}`));
     L.push(''); L.push('Sent from the student\'s own email via Alakaʻi Test Prep (alakaitestprep.app). Nothing is stored on our side.');
-    const subject = `Alakaʻi Test Prep progress: ${p.name || 'student'}, ${new Date().toLocaleDateString()}`;
-    return { subject, body: L.join('\n'), to: p.email || '', cc: p.pemail || '' };
+    const subject = `Alakaʻi Test Prep progress: ${text(p.name) || 'student'}, ${new Date().toLocaleDateString()}`;
+    return { subject, body: L.join('\n'), to: text(p.email), cc: text(p.pemail) };
   }
   async function sendReport(test) {
     const r = await buildReport(test);
@@ -422,6 +430,8 @@
   }
   function fmtTime(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
   function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  // Profile text fields read back as text whatever was stored (a number, an object from a bad import).
+  function text(v) { return v === null || v === undefined || typeof v === 'object' ? '' : String(v).trim(); }
   function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
   async function boot(opts) {
@@ -441,5 +451,5 @@
     return { school, profile: p, test: getTest() };
   }
 
-  window.Alakai = { VERSION, avgSec, daysTo, parseLocalDate, safeNext, sendPendingPing, storageNotice, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, primaryText, setTheme, isDark, fmtTime, shuffle, esc, applyPalette, homeIconPrompt };
+  window.Alakai = { VERSION, avgSec, daysTo, parseLocalDate, safeNext, sendPendingPing, storageNotice, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, primaryText, setTheme, isDark, fmtTime, shuffle, esc, text, PATTERNS, applyPalette, homeIconPrompt };
 })();

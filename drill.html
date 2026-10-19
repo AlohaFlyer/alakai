@@ -36,10 +36,10 @@
     <div class="row" style="margin-top:12px">
       <label for="n" style="margin:0">Items</label>
       <select id="n" style="width:auto"><option>6</option><option>10</option><option>14</option><option>18</option></select>
-      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="1" checked> Easy</label>
-      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="2" checked> Medium</label>
-      <label style="margin:0;font-weight:500"><input type="checkbox" class="diff" value="3" checked> Hard</label>
-      <label style="margin:0;font-weight:500"><input type="checkbox" id="missed"> Only ones I've missed</label>
+      <label class="check"><input type="checkbox" class="diff" value="1" checked> Easy</label>
+      <label class="check"><input type="checkbox" class="diff" value="2" checked> Medium</label>
+      <label class="check"><input type="checkbox" class="diff" value="3" checked> Hard</label>
+      <label class="check"><input type="checkbox" id="missed"> Only ones I've missed</label>
       <button id="mixed">Mixed set, all sections</button>
       <button class="secondary" id="redo">Redo missed items due</button>
     </div>
@@ -54,8 +54,8 @@
   </section>
 
   <section class="card" id="done" hidden>
-    <h2>Set pau</h2>
-    <p id="summary"></p>
+    <h2 id="done-h" tabindex="-1">Set pau</h2>
+    <p id="summary" role="status"></p>
     <div class="row"><button id="again">Another set</button><a class="btn secondary" href="dashboard.html">Dashboard</a></div>
   </section>
 </div>
@@ -67,13 +67,22 @@
   const A = window.Alakai, E = window.AlakaiEngine, S = A.Store;
   const { profile } = await A.boot({ page: 'drill.html', gate: true }); if (!profile) return;
   const q = new URLSearchParams(location.search);
+  // A shared link for the other test (skill and item ids are unique across tests; "math" belongs to both, so the
+  // current test keeps it) switches the toggle to the test that owns it instead of saying "No items".
+  let switched = null;
+  if (q.get('skill') || q.get('section') || q.get('item')) {
+    const cur = A.getTest(), other = cur === 'sat' ? 'act' : 'sat';
+    const owns = b => (q.get('skill') && b.sectionOf[q.get('skill')]) || (q.get('section') && b.skills.sections.some(s => s.id === q.get('section'))) || (q.get('item') && b.byId[q.get('item')]);
+    try { if (!owns(await E.Bank.load(cur)) && owns(await E.Bank.load(other))) { A.setTest(other); switched = other; } } catch (e) { /* other bank not available offline: fall through */ }
+  }
   let test = A.getTest(); let bank = await E.Bank.load(test);
+  if (switched) { const n = document.createElement('p'); n.className = 'card banner'; n.setAttribute('role', 'status'); n.textContent = `That link is an ${switched.toUpperCase()} drill, so the app switched to ${switched.toUpperCase()}. Tap SAT or ACT at the top to switch back.`; document.querySelector('nav.tabs').after(n); }
   document.getElementById('n').value = profile.setSize || 10;
   function drawPicker() {
     const secs = E.Bank.visibleSections(bank, test, profile); const host = document.getElementById('sections'); host.innerHTML = '';
     secs.forEach(sec => {
       const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none';
-      d.innerHTML = `<h3>${A.esc(sec.name)}</h3><div class="stack">${sec.skills.map(sk => `<a href="#" data-skill="${sk.id}" style="display:block;min-height:40px;padding:8px 0">${A.esc(sk.name)} <small class="muted">(${bank.items.filter(i => i.skill === sk.id).length})</small></a>`).join('')}</div><button class="secondary" data-section="${sec.id}" style="margin-top:8px">Whole section</button>`;
+      d.innerHTML = `<h3>${A.esc(sec.name)}</h3><div class="stack">${sec.skills.map(sk => `<a href="#" class="skill-link" data-skill="${sk.id}">${A.esc(sk.name)} <small class="muted">(${bank.items.filter(i => i.skill === sk.id).length})</small></a>`).join('')}</div><button class="secondary" data-section="${sec.id}" style="margin-top:8px">Whole section</button>`;
       host.appendChild(d);
     });
     host.querySelectorAll('[data-skill]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); start({ skill: a.dataset.skill }); }));
@@ -135,6 +144,7 @@
     };
     const finish = () => {
       document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
+      try { document.getElementById('done-h').focus({ preventScroll: true }); } catch (e) {}
       const avg = results.length ? Math.round(results.reduce((a, r) => a + (r.ms || 0), 0) / results.length / 1000) : 0;
       const misses = results.length - right; const retries = results.filter(r => r.retry).length;
       document.getElementById('summary').textContent = `${right} of ${set.length} right${retries ? ` (${retries} more after the hint)` : ''}, about ${avg}s per item. ${misses ? 'Misses are in your error log and come back in 3 days.' : 'Clean set, nothing added to the error log.'}`;

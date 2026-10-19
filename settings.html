@@ -78,7 +78,7 @@
       </div>
       <div class="field">
         <label for="timepressure">Pacing coach (timed sections)</label>
-        <select id="timepressure"><option value="never">Off</option><option value="sometimes">Checkpoints at 1/3 and 2/3</option><option value="always">Checkpoints plus a nudge on slow questions</option></select>
+        <select id="timepressure"><option value="never">Off</option><option value="sometimes">Checkpoints at 1/3 and 2/3 (ACT Reading and Science: the halfway passage)</option><option value="always">Checkpoints plus a nudge on slow questions</option></select>
       </div>
       <div class="field">
         <label for="minutes">Minutes a day (sets drill length)</label>
@@ -106,6 +106,7 @@
     <div class="row">
       <button id="save">Save</button>
       <span id="saved" class="chip ok" hidden>Saved</span>
+      <span id="unsaved" class="chip warn" role="status" hidden>Unsaved changes: tap Save to keep them (colours, theme and pattern are only a preview until then)</span>
     </div>
   </section>
 
@@ -165,25 +166,29 @@
   function showOnboardNote() { if (document.getElementById('onb-note')) return; const n = document.createElement('p'); n.id = 'onb-note'; n.className = 'muted'; n.innerHTML = 'You have not finished onboarding yet. These settings are kept and filled in for you there. <a class="tap" href="onboard.html">Start onboarding</a>'; document.getElementById('save').parentElement.after(n); }
   if (!p.onboarded) showOnboardNote();
   sel.value = S.get('school', schools.default);
-  document.getElementById('grade').value = p.grade || '';
-  document.getElementById('name').value = p.name || '';
-  document.getElementById('email').value = p.email || '';
-  document.getElementById('pname').value = p.pname || '';
-  document.getElementById('pemail').value = p.pemail || '';
-  document.getElementById('testdate').value = p.testdate || '';
+  document.getElementById('grade').value = A.text(p.grade);
+  document.getElementById('name').value = A.text(p.name);
+  document.getElementById('email').value = A.text(p.email);
+  document.getElementById('pname').value = A.text(p.pname);
+  document.getElementById('pemail').value = A.text(p.pemail);
+  document.getElementById('testdate').value = A.text(p.testdate);
   document.getElementById('theme').value = S.get('theme', 'auto');
   document.getElementById('science').value = p.science ? 'on' : 'off';
   document.getElementById('milestones').value = (p.milestones === false) ? 'off' : 'on';
   document.getElementById('missmode').value = ['answer', 'hint', 'worked'].includes(p.missmode) ? p.missmode : 'answer';
   document.getElementById('timepressure').value = ['never', 'sometimes', 'always'].includes(p.timepressure) ? p.timepressure : 'sometimes';
   document.getElementById('minutes').value = ['15', '30', '45', '60'].includes(String(p.minutes)) ? String(p.minutes) : '30';
-  document.getElementById('pattern').value = S.get('pattern', 'solid');
+  document.getElementById('pattern').value = A.PATTERNS.includes(S.get('pattern', 'solid')) ? S.get('pattern', 'solid') : 'solid';
   function note() { const s = schools.schools.find(x => x.id === sel.value); const q = s ? (s.status === 'INFERRED' ? 'approximate' : s.status === 'UNVERIFIED' ? 'unverified, tell us the real ones' : '') : ''; document.getElementById('school-note').textContent = s ? `Colors: ${s.colors.names}${q ? ` (${q})` : ''}` : ''; }
   note();
   sel.addEventListener('change', () => { const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); note(); });
   document.getElementById('pattern').addEventListener('change', e => A.setPattern(e.target.value));
   document.getElementById('theme').addEventListener('change', e => A.setTheme(e.target.value));
+  // Theme, colours and pattern preview the moment a select changes; say so until Save is tapped.
+  const unsaved = document.getElementById('unsaved');
+  document.querySelectorAll('.field select, .field input').forEach(x => { x.addEventListener('change', () => { unsaved.hidden = false; }); x.addEventListener('input', () => { unsaved.hidden = false; }); });
   document.getElementById('save').addEventListener('click', () => {
+    unsaved.hidden = true;
     S.set('school', sel.value);
     S.set('theme', document.getElementById('theme').value);
     S.set('pattern', document.getElementById('pattern').value);
@@ -212,7 +217,7 @@
   document.getElementById('export').addEventListener('click', async () => {
     const dump = S.exportAll(); dump.attempts = await A.DB.all();
     const blob = new Blob([JSON.stringify(dump, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'alakai-export-' + new Date().toISOString().slice(0, 10) + '.json'; a.click();
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); const d = new Date(); a.download = 'alakai-export-' + d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0') + '.json'; // local date, not UTC a.click();
   });
   document.getElementById('erase').addEventListener('click', () => document.getElementById('erase-confirm').hidden = false);
   document.getElementById('erase-no').addEventListener('click', () => document.getElementById('erase-confirm').hidden = true);
@@ -221,7 +226,7 @@
   document.getElementById('ping-status').textContent = ps ? `Sent once on ${new Date(ps.at).toLocaleString()} as {"school":"${ps.school}","grade":"${ps.grade}"}.` : 'Not sent yet (sent once when onboarding completes).';
   const log = S.list('sentlog');
   const t = document.getElementById('sentlog');
-  log.slice().reverse().forEach(r => { const tr = document.createElement('tr'); tr.innerHTML = `<td>${A.esc(new Date(r.at).toLocaleString())}</td><td>${A.esc(r.to)}</td><td>${A.esc(r.subject)}</td>`; t.appendChild(tr); });
+  log.filter(r => !isNaN(new Date(r.at)) && typeof r.subject === 'string').slice().reverse().forEach(r => { const tr = document.createElement('tr'); tr.innerHTML = `<td>${A.esc(new Date(r.at).toLocaleString())}</td><td>${A.esc(A.text(r.to))}</td><td>${A.esc(r.subject)}</td>`; t.appendChild(tr); });
   if (!log.length) { const tr = document.createElement('tr'); tr.innerHTML = '<td colspan="3" class="muted">Nothing sent yet.</td>'; t.appendChild(tr); }
 })();
 </script>

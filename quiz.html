@@ -47,12 +47,12 @@
 
   <section class="card" id="studyrun" hidden>
     <div class="row" style="justify-content:space-between"><strong id="stopic"></strong><span class="muted" id="scount"></span></div>
-    <div class="flash" id="card" role="button" tabindex="0" aria-label="Flashcard. Press Enter or Space to flip." aria-expanded="false"><div><div class="front" id="front"></div><div class="back" id="back" hidden aria-live="polite"></div><small class="muted" id="tap">tap, Enter or Space to flip</small></div></div>
+    <div class="flash" id="card" role="button" tabindex="0" aria-labelledby="front" aria-describedby="tap" aria-expanded="false"><div><div class="front" id="front"></div><div class="back" id="back" hidden aria-live="polite"></div><small class="muted" id="tap">tap, Enter or Space to flip</small></div></div>
     <div class="row" id="grade" hidden style="margin-top:10px">
       <span class="muted">Did you have it?</span>
       <button class="secondary" data-g="0">No</button><button class="secondary" data-g="1">Almost</button><button data-g="2">Yes</button>
     </div>
-    <div id="sfb"></div>
+    <div id="sfb" aria-live="polite"></div>
     <div class="row" style="margin-top:10px"><button class="ghost" id="sstop">Stop</button></div>
   </section>
 
@@ -61,7 +61,7 @@
     <div class="bar-track" style="margin:8px 0"><div class="bar-fill" id="btimer" style="width:100%"></div></div>
     <div class="q-stem" id="bfront"></div>
     <div class="choices blitz" id="bchoices"></div>
-    <div id="bfb"></div>
+    <div id="bfb" aria-live="polite"></div>
   </section>
 
   <section class="card" id="bdone" hidden>
@@ -158,7 +158,10 @@
     const others = A.shuffle(bCards.filter(x => x.id !== c.id && x.back !== c.back)).slice(0, 3);
     const opts = A.shuffle([c, ...others]);
     document.getElementById('bfront').textContent = c.front; document.getElementById('bfb').innerHTML = '';
-    const host = document.getElementById('bchoices'); host.innerHTML = opts.map(o => `<button class="choice" data-id="${o.id}">${A.esc(o.back)}</button>`).join('');
+    const host = document.getElementById('bchoices'); const hadFocus = host.contains(document.activeElement) || document.activeElement === document.body || document.activeElement === null;
+    host.innerHTML = opts.map(o => `<button class="choice" data-id="${o.id}">${A.esc(o.back)}</button>`).join('');
+    // Keyboard and screen reader players land on the new card's first answer instead of <body>.
+    if (hadFocus && !document.getElementById('blitzrun').hidden) { try { host.querySelector('button').focus({ preventScroll: true }); } catch (e) {} }
     const per = 8000, t0 = Date.now(); const bar = document.getElementById('btimer');
     const reveal = () => { host.querySelectorAll('button').forEach(x => x.disabled = true); const k = host.querySelector(`[data-id="${c.id}"]`); if (k) k.dataset.state = 'right'; };
     clearInterval(cardTimer); cardTimer = setInterval(() => { if (my !== cardSeq || settled) { clearInterval(cardTimer); return; } const p = 1 - (Date.now() - t0) / per; bar.style.width = Math.max(0, p * 100) + '%'; if (p <= 0) { clearInterval(cardTimer); settled = true; reveal(); miss(true); } }, 100);

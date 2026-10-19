@@ -19,6 +19,7 @@
   <section class="card">
     <h2>That page is not here</h2>
     <p>The link may be old or mistyped. Your progress is safe: it lives on this device, not on the page you were looking for.</p>
+    <p class="muted" id="offline-note" hidden>You are offline, and this address is not one of the pages saved on this device. The pages below work offline.</p>
     <div class="row">
       <a class="btn" href="/dashboard.html">Dashboard</a>
       <a class="btn secondary" href="/drill.html">Drills</a>
@@ -27,6 +28,6 @@
   </section>
 </div>
 <script src="/assets/app.js"></script>
-<script>window.Alakai.boot({ page: '404.html' }).catch(() => {});</script>
+<script>if (navigator.onLine === false) document.getElementById('offline-note').hidden = false; window.Alakai.boot({ page: '404.html' }).catch(() => {});</script>
 </body>
 </html>

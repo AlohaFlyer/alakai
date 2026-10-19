@@ -17,7 +17,9 @@ Free-response items (no choices) are skipped.
 
 Ordered choices (on by default for ORDERED_FILES; --no-order turns it off):
   - numeric items, where every choice parses as a number with the same unit (fractions, negatives,
-    "$", "%", "x 10^n", pi and sqrt forms, trailing units such as "mph" or "mg/L"), keep their
+    "$", "%", "x 10^n", pi and sqrt forms, trailing units such as "mph", "mg/L" or "m^2", clock times such as
+    "8:06 a.m.", ranges such as "10 to 20", "10–20" or "Weeks 2 to 4" (by the first number, then the second) and
+    coordinate pairs such as "(3, -4)" (by x, then y)), keep their
     choices in ascending numeric order, as the real ACT does, because the app teaches backsolving
     from the middle choice;
   - "Student N" style items (Student, Scientist, Hypothesis, Geologist, Biologist N, singles before
@@ -55,9 +57,51 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from act_math_to_4 import pick_removal  # the 5-to-4 rule: which wrong choice is least plausible
 
 
+NUM = r"[-−]?\s*\d[\d,]*(?:\.\d+)?(?:/\d+)?"
+CLOCK = re.compile(r"^(\d{1,2}):(\d{2})\s*(?:([ap])\.?\s*m\.?)?$", re.I)
+RANGE = re.compile(r"^(?:([A-Za-z]+)\s+)?(" + NUM + r")(?:\s*(?:to|–|—)\s*|-)(" + NUM + r")\s*([%°A-Za-z/ .²³^0-9]*)$", re.I)
+PAIR = re.compile(r"^\(\s*(" + NUM + r")\s*,\s*(" + NUM + r")\s*\)$")
+
+
+def _num(s):
+    s = s.replace("−", "-").replace(",", "").replace(" ", "")
+    if "/" in s:
+        a, b = s.split("/"); return float(a) / float(b)
+    return float(s)
+
+
+def _unit(u):
+    u = re.sub(r"\^\s*2\b", "²", u.strip()); u = re.sub(r"\^\s*3\b", "³", u)
+    return u.lower().rstrip(".").strip()
+
+
 def numeric_value(text):
-    """(value, unit) when the choice is a number with an optional unit, else None."""
+    """(value, unit) when the choice is a number with an optional unit, else None. value is a tuple, so clock times
+    (minutes after midnight), ranges ("10 to 20", "10–20", "Weeks 2 to 4": first number, then second) and
+    coordinate pairs ("(3, -4)": x, then y) sort with plain numbers."""
+    raw = text.strip()
+    m = CLOCK.match(raw)
+    if m:
+        h, mi, ap = int(m.group(1)), int(m.group(2)), (m.group(3) or "").lower()
+        if ap == "a" and h == 12: h = 0
+        if ap == "p" and h != 12: h += 12
+        return (float(h * 60 + mi),), "clock"
+    m = PAIR.match(raw)
+    if m: return (_num(m.group(1)), _num(m.group(2))), "pair"
+    m = RANGE.match(raw)
+    if m:
+        unit = _unit(m.group(4) or "")
+        if unit and (re.search(r"\d", unit) or not re.fullmatch(r"[%°a-z/ .²³]+", unit)): return None
+        try: lo, hi = _num(m.group(2)), _num(m.group(3))
+        except (ValueError, ZeroDivisionError): return None
+        return (lo, hi), "range:" + (m.group(1) or "").lower() + ":" + unit
+    v = _scalar(raw)
+    return ((v[0],), v[1]) if v else None
+
+
+def _scalar(text):
     t = text.strip().replace("−", "-").replace("–", "-")
+    t = re.sub(r"\s*\^\s*([23])\s*$", lambda m: "²" if m.group(1) == "2" else "³", t) if re.search(r"[A-Za-z]\s*\^\s*[23]\s*$", t) else t
     t = re.sub(r"(?<=\d),(?=\d{3}\b)", "", t)
     t = re.sub(r"^\$\s*", "", t); t = re.sub(r"^-\s*\$\s*", "-", t)
     t = re.sub(r"\s*[x×]\s*10\s*\^\s*", "*10**", t)
@@ -79,7 +123,7 @@ def numeric_order(choices):
     """Ascending order (list of old positions) when every choice is a number with the same unit, else None."""
     vals = [numeric_value(c) for c in choices]
     if any(v is None for v in vals): return None
-    if len({u for _, u in vals}) != 1 or len({round(v, 9) for v, _ in vals}) != len(vals): return None
+    if len({u for _, u in vals}) != 1 or len({tuple(round(x, 9) for x in v) for v, _ in vals}) != len(vals): return None
     return sorted(range(len(choices)), key=lambda i: vals[i][0])
 
 

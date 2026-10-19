@@ -12,7 +12,7 @@ No blockers left and all 81 earlier findings still fixed. Pass 3 found 21 new is
 |---|---|---|---|---|
 | 1 | `de9f743` (1.0.0) | 48 | 1 / 12 / 25 / 10 | 48 of 48 (`8b8d1d9`, 1.0.1) |
 | 2 | `8b8d1d9` (1.0.1) | 33 | 1 / 5 / 18 / 9 | 32 of 33, 1 not reproducible (`1e68393`, 1.0.2) |
-| 3 | `1e68393` (1.0.2) | 21 | 0 / 1 / 11 / 9 | 0 so far (report only) |
+| 3 | `1e68393` (1.0.2) | 21 | 0 / 1 / 11 / 9 | 21 of 21 (1.0.3, sw `alakai-v16`; see Round 3 fixes) |
 
 Regression: pass 2 rechecked all 48 pass-1 fixes (48 pass). Pass 3 rechecked all 81 (81 pass).
 
@@ -47,3 +47,17 @@ Content: a hand read of 90 random drills and 30 cards found no wrong keys and no
 - Browser runs: serve a copy with `python3 -m http.server 8765 --bind 127.0.0.1` and drive it with Python Playwright (Chromium) at 390x844 (iPhone UA), 820x1180 (iPad UA), 1280x800 and 320x640, light and dark, `timezone_id="Pacific/Honolulu"`. Always route `https://ping.alakaitestprep.app/**` to a stub so no real pings are sent. Use a browser user agent for audio.alakaitestprep.app (it returns 403 otherwise).
 - Service worker: index.html registers the SW only on https, so for local tests register it by hand on a scratch copy served with `Cache-Control: max-age=600` (GitHub Pages' header), then stop the server for a true offline run. Playwright's `set_offline` does not cut service-worker traffic.
 - The pass-3 Playwright scripts lived in the session scratchpad and are not in the repo. If you want them kept, they should go in `build_scripts/verify/e2e/`.
+
+## Round 3 fixes
+
+Site **1.0.3**, service worker **`alakai-v16`**. All 21 pass-3 findings addressed: major 1/1, minor 11/11, cosmetic 9/9 (one part of #1 fixed differently). Details per bug: `docs/debug/pass3-fixes.md`.
+
+- **ACT timed Reading and Science are built from whole passages.** Reading: 4 blocks in ACT order (Literary narrative, Social science, Humanities, Natural science), 9 questions and 10 minutes each; the bank's passages hold 5 questions, so each block is one passage plus 4 questions of a second passage of the same type. Science: 10 whole 4-question passages in bank order (4 data, 4 research, 2 conflicting viewpoints), 4 minutes each, 40 questions; the brief's 6 to 7 passages would be only 24 to 28 questions with this bank. Each passage shows once in a panel that stays put while the student works its questions; checkpoints match the Time squeeze page (Reading passage 2 at 20:00, Science passage 5 at 20:00, timing.html updated). SAT modules are unchanged (one short passage per item).
+- **Test week follows Ep 13**: full-length test about 14 days out and no later than 3 days out, light review 2 days out, rest the day before, nothing on test day.
+- **Accessibility**: polite live region on all feedback, focus moves to the verdict, flashcards are named by their question, 44 px targets for everyone.
+- **Podcast listening counts from the audio clock**, so a locked phone or background tab still counts toward the 90% check (seeks still do not). Verified in Chromium by detaching the page's handler mid-play; still worth one check on an iPhone.
+- **ACT natural order now covers units (m^2), clock times, ranges and coordinate pairs**, and keys.py enforces it. Keys and explanations unchanged.
+- Offline unknown URLs get the styled 404 page; links to the other test's drills switch the toggle; corrupt storage no longer stops the dashboard; the milestone banner follows the toggle; Redo onboarding and a mid-onboarding refresh keep answers; plus the cosmetic fixes (local export date, unsaved hint, ʻokina, 2.77, score bands, offline player line, volume card).
+- **The Playwright journeys are now in the repo**: `build_scripts/verify/e2e/run.py`, run by `all.sh` (11 journeys; all fail on the pass-3 build, all pass now). This replaces the last bullet under "How to rerun the checks": the scripts are no longer scratchpad-only.
+
+Still worth doing: write longer ACT Reading and Science passages (9 and 6 to 7 questions) so the timed modules can use the real passage counts, and add 9-question paired Reading sets; check #5 on an iPhone with the screen locked.

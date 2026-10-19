@@ -130,7 +130,7 @@
   async function render() {
     const my = ++renderSeq; const stale = () => my !== renderSeq;
     const test = A.getTest();
-    document.getElementById('who').textContent = profile.name || 'friend';
+    document.getElementById('who').textContent = A.text(profile.name) || 'friend';
     const dte = A.daysTo(profile.testdate);
     document.getElementById('days').textContent = dte === null ? '–' : dte < 0 ? 'Done' : dte;
     document.getElementById('days-label').textContent = dte !== null && dte < 0 ? 'test date passed: set the next one in Settings' : dte === 0 ? 'test is today' : dte === 1 ? 'day to test' : 'days to test';
@@ -194,13 +194,13 @@
     const allSkills = sections.flatMap(sec => sec.skills.map(sk => sk.id));
     allSkills.map(k => [k, window.AlakaiEngine ? window.AlakaiEngine.level(lv[k]) : 'New', lv[k] ? lv[k].n : 0]).sort((a, b) => order[a[1]] - order[b[1]] || b[2] - a[2]).slice(0, 12).forEach(([k, l, n]) => lt.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(k))}</td><td><span class="chip ${l === 'Mastered' || l === 'Proficient' ? 'ok' : l === 'New' ? '' : 'warn'}">${l}</span></td><td>${n}</td></tr>`));
     // estimated band
-    const base = (profile.lastscore || '').trim(); const bl = document.getElementById('baseline'); bl.hidden = !base; if (base) bl.textContent = `Starting score you entered at onboarding: ${base}.`;
+    const base = A.text(profile.lastscore); const bl = document.getElementById('baseline'); bl.hidden = !base; if (base) bl.textContent = `Starting score you entered at onboarding: ${base}.`;
     let scale = null; try { scale = await A.data(`data/${test}/scale.json`); } catch (e) {}
     if (stale()) return;
     const bandEl = document.getElementById('band'); document.getElementById('band-disc').textContent = scale ? scale.disclaimer : '';
     if (scale && s.timed.length) {
       const out = []; const secKeys = Object.keys(scale).filter(k => k !== 'disclaimer');
-      secKeys.forEach(sec => { const t = s.timed.filter(x => x.id.includes('-' + sec + '-') || x.id === `${test}-${sec}`).slice(-2); if (!t.length) return; const pct = 100 * t.reduce((a, x) => a + x.right, 0) / t.reduce((a, x) => a + x.n, 0); const band = scale[sec].slice().reverse().find(b => pct >= b.min_pct); if (band) out.push(`${name(sec)}: ${band.band[0]} to ${band.band[1]}`); });
+      secKeys.forEach(sec => { const t = s.timed.filter(x => String(x.id).includes('-' + sec + '-') || x.id === `${test}-${sec}`).slice(-2); if (!t.length) return; const pct = 100 * t.reduce((a, x) => a + x.right, 0) / t.reduce((a, x) => a + x.n, 0); const band = scale[sec].slice().reverse().find(b => pct >= b.min_pct); if (band) out.push(`${name(sec)}: ${band.band[0]} to ${band.band[1]}`); });
       bandEl.textContent = out.length ? out.join(' · ') : 'Do a timed module first.';
     }
     // official links
@@ -216,18 +216,42 @@
     let tmods = []; try { tmods = (await A.data(`data/${test}/timed.json`)).modules.filter(m => !(test === 'act' && m.section === 'science' && !profile.science)); } catch (e) {}
     if (stale()) return;
     const tmin = tmods.length ? Math.min(...tmods.map(m => m.minutes)) : 35, tmax = tmods.length ? Math.max(...tmods.map(m => m.minutes)) : 35;
-    if (timedDue) { plan.push([`One timed module (${tmin === tmax ? tmin : tmin + ' to ' + tmax} min)`, 'timed.html']); used += tmax; }
-    if (dte !== null && (dte <= 14 && dte > 10 || dte <= 3 && dte > 0)) { plan.push([`Full-length test (test is in ${dte} days)`, 'timed.html']); used += test === 'sat' ? 145 : 180; }
-    for (const [k] of weights) { if (used + 15 > budget) break; plan.push([`Drill ${name(k)} (10 items, about 15 min)`, `drill.html?skill=${encodeURIComponent(k)}`]); used += 15; if (plan.length >= 6) break; }
-    if (used + 10 <= budget) plan.push(['Quizzer Blitz, two rounds (5 min)', 'quiz.html']);
+    // Test week, as in Ep 13 and the Time squeeze page: one full-length test about 14 days out and one no later than
+    // 3 days out, never 1 or 2 days out; the last days are light review, the day before is rest.
+    const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
+    const fullAt = S.list(test + '.fulltests').map(f => +f.at).filter(x => x > 0);
+    const fullSince = d => fullAt.some(x => x >= Date.now() - d * 86400000);
+    const fullMin = test === 'sat' ? 145 : tmods.reduce((a, m) => a + m.minutes, 0) + 10;
+    const dueN = S.list(test + '.errlog').filter(e => !e.done && e.due <= Date.now()).length;
+    const late = dte !== null && dte >= 0 && dte <= 3;
+    if (dte === 0) plan.push(['Test day. Eat, bring your ID and ticket, leave with a cushion. Nothing to study.', 'timing.html']);
+    else if (dte === 1) plan.push(['Rest day: no new material. Pack your bag tonight and sleep at your normal time.', 'timing.html']);
+    else if (dte === 2) {
+      plan.push([dueN ? `Light review: redo ${dueN} due error-log item${dueN === 1 ? '' : 's'} (20 to 30 min, no full test)` : 'Light review: one short drill on your weakest skill (20 to 30 min, no full test)', dueN ? 'drill.html?mode=redo' : weights.length ? `drill.html?skill=${encodeURIComponent(weights[0][0])}` : 'drill.html']);
+      plan.push(['Quizzer Blitz, one round (2 min)', 'quiz.html']);
+    } else if (dte === 3) {
+      if (!fullSince(4)) plan.push([`Full-length test today, ${plural(3, 'day')} out: your last one before the test (${fullMin} min)`, 'timed.html']);
+      plan.push([dueN ? `Light review: redo ${dueN} due error-log item${dueN === 1 ? '' : 's'}` : 'Light review: Quizzer Blitz, one round', dueN ? 'drill.html?mode=redo' : 'quiz.html']);
+    } else {
+      if (timedDue) { plan.push([`One timed module (${tmin === tmax ? tmin : tmin + ' to ' + tmax} min)`, 'timed.html']); used += tmax; }
+      const full = dte === null ? null : dte >= 11 && dte <= 14 && !fullSince(5) ? `Full-length test this week, about 14 days out (test is in ${plural(dte, 'day')})`
+        : dte >= 4 && dte <= 7 && !fullSince(7 - dte + 1) ? `Full-length test no later than ${plural(3, 'day')} before the test (test is in ${plural(dte, 'day')})` : null;
+      if (full) { plan.push([full, 'timed.html']); used += fullMin; }
+    }
+    if (!late) {
+      for (const [k] of weights) { if (used + 15 > budget) break; plan.push([`Drill ${name(k)} (10 items, about 15 min)`, `drill.html?skill=${encodeURIComponent(k)}`]); used += 15; if (plan.length >= 6) break; }
+      if (used + 10 <= budget) plan.push(['Quizzer Blitz, two rounds (5 min)', 'quiz.html']);
+    }
     plan.forEach(([t, h]) => planEl.insertAdjacentHTML('beforeend', `<a class="btn secondary" href="${h}" style="display:block">${A.esc(t)}</a>`));
-    document.getElementById('plan-note').textContent = (dte !== null && dte < 0 ? 'Your test date has passed. Set your next one in Settings so the plan can count down to it. ' : '') + `${minutes} min a day × 7 = ${budget} min. Weighted toward your weakest skills; timed module every week; full test at 14 and 3 days out.`;
+    document.getElementById('plan-note').textContent = (dte !== null && dte < 0 ? 'Your test date has passed. Set your next one in Settings so the plan can count down to it. ' : '') + (late ? 'Test week: no new material now. ' : '') + `${minutes} min a day × 7 = ${budget} min. Weighted toward your weakest skills; timed module every week; full test about 14 days out and no later than 3 days out; the last 2 days are light review and rest.`;
     // milestone banner
     const pending = S.get('milestone_pending', null);
-    if (pending && pending.test === test) { document.getElementById('milestone').hidden = false; document.getElementById('ms-text').textContent = pending.text; }
+    // Shown only under the test it belongs to: a toggle hides it, so its Send never builds the other test's report.
+    const msOn = !!(pending && pending.test === test && typeof pending.text === 'string');
+    document.getElementById('milestone').hidden = !msOn; if (msOn) document.getElementById('ms-text').textContent = pending.text;
   }
   document.getElementById('send').addEventListener('click', () => A.sendReport(A.getTest()));
-  document.getElementById('ms-send').addEventListener('click', () => { S.del('milestone_pending'); A.sendReport(A.getTest()); });
+  document.getElementById('ms-send').addEventListener('click', () => { const pd = S.get('milestone_pending', null); const t = pd && (pd.test === 'act' || pd.test === 'sat') ? pd.test : A.getTest(); S.del('milestone_pending'); document.getElementById('milestone').hidden = true; A.sendReport(t); });
   document.getElementById('ms-later').addEventListener('click', () => { S.del('milestone_pending'); document.getElementById('milestone').hidden = true; });
   document.getElementById('pl-later').addEventListener('click', () => { const d = S.get('placement_dismissed', {}); d[A.getTest()] = true; S.set('placement_dismissed', d); document.getElementById('placement-nudge').hidden = true; });
   document.addEventListener('alakai:test', render);

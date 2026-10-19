@@ -57,14 +57,22 @@
   const params = new URLSearchParams(location.search);
   // Fields typed into Settings before onboarding (profile_draft) prefill the contact step.
   const draft = A.Store.get('profile_draft', {});
-  const existing = (params.get('redo') ? null : A.profile()) || draft || {};
+  // Redo means "change my answers": everything is prefilled from the current profile (parent email and test date
+  // included), so nothing is lost unless it is changed.
+  const redo = !!params.get('redo');
+  const existing = A.profile() || draft || {};
   const answers = Object.assign({}, existing);
+  // A refresh mid-onboarding resumes at the same question with the answers so far (this tab only).
+  const PK = 'alakai.onboard_progress';
+  let saved = null; try { saved = JSON.parse(sessionStorage.getItem(PK) || 'null'); } catch (e) { saved = null; }
+  if (saved && typeof saved === 'object' && saved.answers && typeof saved.answers === 'object' && !Array.isArray(saved.answers) && saved.redo === redo) Object.assign(answers, saved.answers);
+  const keepProgress = () => { try { sessionStorage.setItem(PK, JSON.stringify({ redo, i, answers })); } catch (e) {} };
   // A saved profile stores science as a boolean; the question works in 'yes'/'no'.
   if (typeof answers.science === 'boolean') answers.science = answers.science ? 'yes' : 'no';
   const qs = cfg.questions.slice();
   // Final contact step
   qs.push({ id: 'contact', q: 'Last thing: who gets your progress reports?', type: 'contact' });
-  let i = 0, advanceTimer = null;
+  let i = saved && Number.isInteger(saved.i) && saved.i > 0 && saved.redo === redo ? saved.i : 0, advanceTimer = null;
   const el = { q: document.getElementById('q'), body: document.getElementById('body'), step: document.getElementById('step'), prog: document.getElementById('prog'), next: document.getElementById('next'), back: document.getElementById('back'), skip: document.getElementById('skip') };
 
   function visible(q) { if (q.only === 'act') return answers.test === 'act' || answers.test === 'both'; return true; }
@@ -72,7 +80,7 @@
   function render() {
     const L = list(); if (i >= L.length) return finish(); if (i < 0) i = 0;
     clearTimeout(advanceTimer); advanceTimer = null;
-    const q = L[i]; el.step.textContent = `Question ${i + 1} of ${L.length}`; document.getElementById('qcount').textContent = L.length; el.prog.style.width = Math.round(100 * i / L.length) + '%';
+    const q = L[i]; el.step.textContent = `Question ${i + 1} of ${L.length}` + (redo && i === 0 ? ' · your current answers are filled in: change what you like, the rest stays' : ''); document.getElementById('qcount').textContent = L.length; el.prog.style.width = Math.round(100 * i / L.length) + '%';
     el.q.textContent = q.q; el.back.disabled = i === 0; el.skip.hidden = !(q.type === 'date' || q.type === 'text');
     el.next.textContent = i === L.length - 1 ? 'Finish' : 'Next'; formMsg('');
     let html = '';
@@ -96,7 +104,7 @@
         <div class="field"><label><input type="checkbox" id="c-ms" ${answers.milestones === false ? '' : 'checked'}> Remind me to send a report at milestones (end of a timed section, every 5 episodes, every 100 drills)</label></div>
         <p class="muted">Emails stay on this device. Reports open in your own mail app. When you tap Finish, one anonymous message with just <code id="c-shape">{"school":"${A.esc(schoolId || '…')}","grade":"${A.esc(answers.grade || '…')}"}</code> is sent.</p>`;
     }
-    el.body.innerHTML = html;
+    el.body.innerHTML = html; keepProgress();
     if (q.type === 'contact') {
       // The disclosure line and the colours follow the School and Grade selects as they change.
       const cs = document.getElementById('c-school'), cg = document.getElementById('c-grade');
@@ -130,7 +138,7 @@
     answers.onboarded = true; answers.onboardedAt = new Date().toISOString();
     answers.science = answers.science === 'yes' || answers.science === 'unsure' || answers.science === true;
     if (answers.fear === 'science' && !answers.science) delete answers.fear;
-    A.Store.del('profile_draft');
+    A.Store.del('profile_draft'); try { sessionStorage.removeItem(PK); } catch (e) {}
     answers.setSize = { '15': 6, '30': 10, '45': 14, '60': 18 }[answers.minutes] || 10;
     S.set('profile', answers);
     A.setTest(answers.test === 'act' ? 'act' : 'sat');
@@ -138,7 +146,7 @@
     A.pingOnce(S.get('school', schools.default), answers.grade || '');
     // Not installed yet: whatever they add to the home screen next will already match this school.
     if (!(window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true)) S.set('iconSchool', S.get('school', schools.default));
-    location.href = A.safeNext(params.get('next')) || 'placement.html';
+    location.href = A.safeNext(params.get('next')) || (redo ? 'dashboard.html' : 'placement.html');
   }
   render();
 })();

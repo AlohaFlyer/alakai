@@ -23,10 +23,19 @@
 <style>
   .hud { display: flex; justify-content: space-between; align-items: center; gap: 10px; position: sticky; top: calc(var(--bar) + 4px); background: var(--paper); z-index: 2; padding: 6px 0; border-bottom: 1px solid var(--line); }
   .nav-q { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
-  .nav-q button { min-width: 40px; height: 40px; padding: 0; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-size: .8rem; }
+  .nav-q button { min-width: 44px; height: 44px; padding: 0; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-size: .8rem; }
   .nav-q button.answered { background: var(--primary); color: var(--on-primary); border-color: var(--primary-text); }
   .nav-q button.flagged { outline: 2px solid var(--warn); }
   .nav-q button.current { border-color: var(--ink); border-width: 2px; }
+  .nav-q .nav-set { align-self: center; font-size: .75rem; font-weight: 700; color: var(--ink-soft); margin: 0 2px 0 6px; }
+  .nav-q .nav-set:first-child { margin-left: 0; }
+  #ppanel { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; max-height: 42vh; overflow: auto; margin-top: 12px; }
+  #ppanel h3 { font-size: .95rem; margin-bottom: 6px; }
+  #ppanel .ptext { white-space: normal; }
+  @media (min-width: 900px) {
+    #qarea.split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+    #qarea.split #ppanel { position: sticky; top: 96px; max-height: calc(100vh - 120px); }
+  }
   .coach { background: color-mix(in srgb, var(--warn) 14%, transparent); border-left: 4px solid var(--warn); padding: 8px 12px; border-radius: 0 10px 10px 0; margin: 8px 0; }
 </style>
 </head>
@@ -54,7 +63,7 @@
     </div>
     <div class="nav-q" id="navq"></div>
     <div id="coach"></div>
-    <div id="item" style="margin-top:12px"></div>
+    <div id="qarea"><div id="ppanel" role="region" aria-label="Passage" tabindex="0" hidden></div><div id="item" style="margin-top:12px"></div></div>
     <div class="row" style="margin-top:10px"><button class="secondary" id="prev">Back</button><button id="next">Next</button></div>
   </section>
 
@@ -120,10 +129,12 @@
   }
   let chain = null, chainResults = [];
   let mod, items, idx, answers, flags, end, timer, checkpoints, started, runTest, running = false, finishing = false, lastSave = 0;
+  // Passage modules (ACT Reading, Science): groups[i] = [set, part] for item i, setNames[set] = passage type name.
+  let groups = null, setNames = null, panelKey = null, setStarted = {};
   function saveState(force) {
     if (!running || finishing) return;
     const now = Date.now(); if (!force && now - lastSave < 5000) return; lastSave = now;
-    S.set(IPK(runTest), { mod: { id: mod.id, name: mod.name, section: mod.section, minutes: mod.minutes, count: mod.count, routed: mod.routed || null }, itemIds: items.map(i => i.id), answers, flags: [...flags], idx, left: Math.max(0, end - now), chain: chain ? chain.map(m => m.id) : null, chainResults, savedAt: now });
+    S.set(IPK(runTest), { mod: { id: mod.id, name: mod.name, section: mod.section, minutes: mod.minutes, count: mod.count, routed: mod.routed || null }, itemIds: items.map(i => i.id), answers, flags: [...flags], idx, left: Math.max(0, end - now), chain: chain ? chain.map(m => m.id) : null, chainResults, groups, setNames, savedAt: now });
   }
   function clearChainButtons() { document.querySelectorAll('.chain-next').forEach(b => b.remove()); }
   function start(m, resumeState) {
@@ -138,20 +149,39 @@
       if (m1) { const pct = m1.right / m1.n; if (pct >= 0.6) { want = { 1: Math.round(m.count * 0.1), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'harder'; } else { want = { 1: Math.round(m.count * 0.45), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'easier'; } }
       else mod.routed = null;
     }
-    let pick = [].concat(by[1].slice(0, want[1]), by[2].slice(0, want[2]), by[3].slice(0, want[3]));
-    if (pick.length < m.count) pick = pick.concat(pool.filter(i => !pick.includes(i)).slice(0, m.count - pick.length));
-    items = pick.sort((a, b) => a.difficulty - b.difficulty);
+    groups = null; setNames = null; panelKey = null; setStarted = {};
+    if (m.passages) {
+      // Whole passages, each passage once with its items together, in passage order (not by difficulty).
+      const built = E.buildPassageModule(bank, m); items = built.items; groups = built.groups; setNames = built.setNames;
+    } else {
+      let pick = [].concat(by[1].slice(0, want[1]), by[2].slice(0, want[2]), by[3].slice(0, want[3]));
+      if (pick.length < m.count) pick = pick.concat(pool.filter(i => !pick.includes(i)).slice(0, m.count - pick.length));
+      // Easy to hard; the few items that share a table or passage (ACT Math) stay next to each other.
+      items = E.clusterByPassage(pick.sort((a, b) => a.difficulty - b.difficulty));
+    }
     answers = new Array(items.length).fill(null); flags = new Set(); idx = 0; started = {};
     let left = m.minutes * 60000;
     if (resumeState) {
       items = resumeState.itemIds.map(id => bank.byId[id]); mod.routed = resumeState.mod.routed || null;
       answers = (Array.isArray(resumeState.answers) ? resumeState.answers : []).slice(0, items.length).map(a => (a === undefined ? null : a)); while (answers.length < items.length) answers.push(null);
       flags = new Set(Array.isArray(resumeState.flags) ? resumeState.flags.filter(x => Number.isInteger(x)) : []); idx = Math.min(resumeState.idx || 0, items.length - 1); left = Math.max(1000, resumeState.left || 0);
+      groups = null; setNames = null;
+      if (m.passages) {
+        const g = resumeState.groups, okG = Array.isArray(g) && g.length === items.length && g.every(x => Array.isArray(x) && Number.isInteger(x[0]) && Number.isInteger(x[1]));
+        if (okG) { groups = g; setNames = Array.isArray(resumeState.setNames) ? resumeState.setNames.map(String) : []; }
+        else { groups = []; let s = -1, last = null; items.forEach(it => { if (it.passage !== last) { s++; last = it.passage; } groups.push([s, 0]); }); setNames = []; }
+      }
     }
+    mod.count = items.length;
     end = Date.now() + left;
-    const per = m.minutes * 60 / m.count; const t0 = end - m.minutes * 60000;
-    checkpoints = profile.timepressure === 'never' ? [] : [1 / 3, 2 / 3].map(f => ({ at: t0 + f * m.minutes * 60000, q: Math.round(f * m.count), fired: Date.now() >= t0 + f * m.minutes * 60000 }));
-    document.getElementById('mname').textContent = m.name; document.getElementById('pace').textContent = `Pace: ${Math.round(per)}s per question`;
+    const per = m.minutes * 60 / items.length; const t0 = end - m.minutes * 60000;
+    // Checkpoints as on the Time squeeze page: question numbers at 1/3 and 2/3, or for passage modules the halfway
+    // passage (Reading: passage 2 done at 20:00; Science: passage 5 done at 20:00).
+    const cp = m.passages && m.passages.checkpoint;
+    checkpoints = profile.timepressure === 'never' ? [] : cp ? [{ at: t0 + cp.minute * 60000, sets: cp.sets, fired: Date.now() >= t0 + cp.minute * 60000 }]
+      : [1 / 3, 2 / 3].map(f => ({ at: t0 + f * m.minutes * 60000, q: Math.round(f * items.length), fired: Date.now() >= t0 + f * m.minutes * 60000 }));
+    document.getElementById('mname').textContent = m.name; document.getElementById('pace').textContent = groups ? `${nSets()} passages · ${A.fmtTime(m.minutes * 60 / nSets())} a passage` : `Pace: ${Math.round(per)}s per question`;
+    document.getElementById('qarea').classList.toggle('split', !!groups); document.getElementById('ppanel').hidden = !groups;
     ['picker', 'review'].forEach(x => document.getElementById(x).hidden = true); document.getElementById('run').hidden = false;
     ['next', 'prev', 'finish'].forEach(x => document.getElementById(x).disabled = false);
     running = true; finishing = false; lastSave = 0;
@@ -165,17 +195,30 @@
   function tick() {
     if (!running) return;
     const left = end - Date.now(); const c = document.getElementById('clock'); c.textContent = A.fmtTime(left / 1000); c.classList.toggle('low', left < 5 * 60000);
-    checkpoints.forEach(cp => { if (!cp.fired && Date.now() >= cp.at) { cp.fired = true; const done = answers.filter(a => a !== null).length; coach(done >= cp.q ? `Checkpoint: on pace (${done} answered, target ${cp.q}).` : `Checkpoint: behind pace (${done} answered, target ${cp.q}). Flag the long ones and move.`); } });
+    checkpoints.forEach(cp => { if (!cp.fired && Date.now() >= cp.at) { cp.fired = true;
+      if (cp.sets) { const done = setsDone(); coach(done >= cp.sets ? `Checkpoint: on pace (${done} of ${nSets()} passages done, target ${cp.sets}).` : `Checkpoint: behind pace (${done} of ${nSets()} passages done, target ${cp.sets}). Answer what you can on this passage and move to the next one.`); return; }
+      const done = answers.filter(a => a !== null).length; coach(done >= cp.q ? `Checkpoint: on pace (${done} answered, target ${cp.q}).` : `Checkpoint: behind pace (${done} answered, target ${cp.q}). Flag the long ones and move.`); } });
+    if (groups && profile.timepressure === 'always') { const s = groups[idx][0]; const budget = mod.minutes * 60000 / nSets(); if (setStarted[s] && Date.now() - setStarted[s] > budget && !setStarted['warn' + s]) { setStarted['warn' + s] = true; coach(`${A.fmtTime(budget / 1000)} on this passage. Guess the rest, flag them, and go to the next passage.`); } }
     if (profile.timepressure === 'always') { const spent = Date.now() - (started[idx] || Date.now()); if (spent > (mod.minutes * 60 / mod.count) * 2000 && !started['warn' + idx]) { started['warn' + idx] = true; coach('Two questions worth of time on this one. Pick your best guess, flag it, move on.'); } }
     saveState(false);
     if (left <= 0) finish(true);
   }
   function coach(msg) { const c = document.getElementById('coach'); c.innerHTML = `<div class="coach">${A.esc(msg)}</div>`; setTimeout(() => { if (c.firstChild && c.firstChild.textContent === msg) c.innerHTML = ''; }, 9000); }
-  function drawNav() { const n = document.getElementById('navq'); n.innerHTML = items.map((_, i) => `<button data-i="${i}" aria-label="Question ${i + 1}${answers[i] !== null ? ', answered' : ''}${flags.has(i) ? ', flagged' : ''}" class="${answers[i] !== null ? 'answered' : ''} ${flags.has(i) ? 'flagged' : ''} ${i === idx ? 'current' : ''}">${i + 1}</button>`).join(''); n.querySelectorAll('button').forEach(b => b.addEventListener('click', () => show(+b.dataset.i))); }
+  function nSets() { return groups ? groups[groups.length - 1][0] + 1 : 0; }
+  function setsDone() { if (!groups) return 0; let n = 0; for (let s = 0; s < nSets(); s++) { if (groups.every((g, i) => g[0] !== s || answers[i] !== null)) n++; } return n; }
+  function setLabel(i) { const [s, p] = groups[i]; const parts = new Set(groups.filter(g => g[0] === s).map(g => g[1])).size; const idxs = groups.map((g, k) => g[0] === s && g[1] === p ? k : -1).filter(k => k >= 0); const nm = setNames && setNames[s] ? ` · ${setNames[s]}` : ''; return `Passage ${s + 1} of ${nSets()}${nm}${parts > 1 ? ` · part ${p + 1} of ${parts}` : ''} · questions ${idxs[0] + 1} to ${idxs[idxs.length - 1] + 1}`; }
+  function drawNav() { const n = document.getElementById('navq'); n.innerHTML = items.map((_, i) => `${groups && (i === 0 || groups[i][0] !== groups[i - 1][0]) ? `<span class="nav-set" aria-hidden="true">P${groups[i][0] + 1}</span>` : ''}<button data-i="${i}" aria-label="Question ${i + 1}${groups ? `, passage ${groups[i][0] + 1}` : ''}${answers[i] !== null ? ', answered' : ''}${flags.has(i) ? ', flagged' : ''}" class="${answers[i] !== null ? 'answered' : ''} ${flags.has(i) ? 'flagged' : ''} ${i === idx ? 'current' : ''}">${i + 1}</button>`).join(''); n.querySelectorAll('button[data-i]').forEach(b => b.addEventListener('click', () => show(+b.dataset.i))); }
   function show(i) {
     idx = i; started[i] = started[i] || Date.now(); drawNav();
     const item = items[i]; const host = document.getElementById('item'); const free = !item.choices || !item.choices.length; const letters = 'ABCDE';
-    host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem"><strong>${i + 1}.</strong> ${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
+    let passageHtml = item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : '';
+    if (groups) {
+      // The passage panel is drawn once per passage and kept (with its scroll) while the student moves through its questions.
+      passageHtml = ''; const s = groups[i][0]; setStarted[s] = setStarted[s] || Date.now();
+      const key = groups[i].join(':'); const pp = document.getElementById('ppanel');
+      if (panelKey !== key) { panelKey = key; pp.innerHTML = `<h3>${A.esc(setLabel(i))}</h3><div class="ptext">${A.esc(item.passage || '').replace(/\n/g, '<br>')}</div>`; pp.scrollTop = 0; }
+    }
+    host.innerHTML = `${passageHtml}<div class="q-stem"><strong>${i + 1}.</strong> ${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
       ${free ? `<div class="row">${E.gridIn(answers[i] !== null ? answers[i] : '')}</div>` : `<div class="choices">${item.choices.map((c, k) => `<button class="choice" data-k="${k}" aria-pressed="${answers[i] === k}" ${answers[i] === k ? 'data-state="picked"' : ''}><strong>${letters[k]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
       <div class="row" style="margin-top:8px"><button class="ghost" id="flag">${flags.has(i) ? 'Unflag' : 'Flag'}</button></div>`;
     host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { answers[i] = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => { delete x.dataset.state; x.setAttribute('aria-pressed', 'false'); }); b.dataset.state = 'picked'; b.setAttribute('aria-pressed', 'true'); drawNav(); saveState(true); }));
@@ -223,7 +266,7 @@
     } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(t + '.fulltests', S.list(t + '.fulltests').concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; S.del(CHK(t)); }
     document.getElementById('rshow').onclick = () => {
       const host = document.getElementById('rlist'); host.innerHTML = ''; const letters = 'ABCDE';
-      rows.forEach(({ it, a, correct }, i) => { const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none'; const free = !it.choices || !it.choices.length;
+      rows.forEach(({ it, a, correct }, i) => { if (it.passage && rows[i - 1] && rows[i - 1].it.passage === it.passage) it = Object.assign({}, it, { passage: '' }); const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none'; const free = !it.choices || !it.choices.length;
         d.innerHTML = `<div class="row" style="justify-content:space-between"><strong>${i + 1}. ${A.esc(bank.skillName[it.skill] || '')}</strong><span class="chip ${correct ? 'ok' : 'bad'}">${correct ? 'right' : a === null ? 'blank' : 'wrong'}</span></div>${it.passage ? `<p class="muted">${A.esc(it.passage).replace(/\n/g, '<br>')}</p>` : ''}<div class="q-stem">${A.esc(it.stem)}</div>${free ? `<p>Your answer: ${A.esc(a ?? '—')} · Key: ${A.esc(it.answer)}</p>` : `<div class="choices">${it.choices.map((c, k) => `<div class="choice" data-state="${k === it.answer ? 'right' : k === a ? 'wrong' : ''}"><strong>${letters[k]}.</strong> ${A.esc(c)}</div>`).join('')}</div>`}<div class="explain">${A.esc(it.explain)}</div>`; host.appendChild(d); });
     };
     document.getElementById('rsend').onclick = () => A.sendReport(t);
