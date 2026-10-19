@@ -1,5 +1,6 @@
 # SAT Notes Ep 8: However, Therefore, For Example
 cast: lehua, sarah, derek, kaden
+topic: Transitions by relationship, plus the "notes" rhetorical synthesis questions
 facts: Transitions and Rhetorical Synthesis are SAT Expression of Ideas skills; Rhetorical Synthesis gives a student's bulleted notes and asks which choice uses the notes to accomplish a stated goal (College Board skill list and sample questions, satsuite.collegeboard.org/sat/whats-on-the-test/reading-writing; data/sat/skills.json ids rw-ei-transitions and rw-ei-rhetorical); name-the-relationship steps (add, contrast, cause, example, sequence) and goal-first steps from data/strategies.json (rw-ei-transitions, rw-ei-rhetorical); app trap names "opposite" and "near miss" from assets/engine.js; standard meanings of the transition words therefore, nevertheless, for example, in addition, however, similarly, as a result; worked example and notes example are original items written for the show; the Pac-Man machine at the pizza place in town (cast.json places, Pau Pizza, no hours stated)
 target_minutes: 8
 homework: Drill Transitions | drill.html?skill=rw-ei-transitions

@@ -1,5 +1,6 @@
 # SAT Notes Ep 3: The Time Squeeze
 cast: lehua, pono, derek, kaden
+topic: Two-pass, checkpoints, module 1 accuracy
 facts: Reading and Writing 2 modules x 27 questions x 32 min (about 71 s per question); Math 2 modules x 22 questions x 35 min (about 95 s per question) (College Board, satsuite.collegeboard.org); adaptive by module, module 1 a mix of difficulties, module 2 easier or harder, each module separately timed (College Board); no guessing penalty on the SAT or the enhanced ACT (College Board; act.org); Bluebook has a built-in flag (Mark for Review), a question navigation grid, and a countdown timer (College Board Bluebook testing tools); two-pass method, ten-second rule, checkpoint targets (RW Q9 at 10:40 and Q18 at 21:20 elapsed, Math Q7 at 11:40 and Q15 at 23:20 elapsed) and last-60-seconds rule from timing.html and data/strategies.json general two-pass; one short passage per Reading and Writing question (College Board)
 target_minutes: 8
 homework: Do one timed module | timed.html

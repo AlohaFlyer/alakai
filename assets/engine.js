@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const A = window.Alakai, S = A.Store;
-  const TRAP_NAMES = { extreme: 'Trap: too extreme', 'half-right': 'Trap: half right', irrelevant: 'Trap: true but irrelevant', 'wrong-part': 'Trap: answers the wrong part', opposite: 'Trap: opposite', 'calc-slip': 'Trap: calculation slip', misread: 'Trap: misread the question', partial: 'Trap: stopped a step early', overreach: 'Trap: adds an assumption', 'grammar-near-miss': 'Trap: near miss', other: 'Trap' };
+  const TRAP_NAMES = { extreme: 'Trap: too extreme', 'half-right': 'Trap: half right', irrelevant: 'Trap: true but irrelevant', 'wrong-part': 'Trap: answers the wrong part', opposite: 'Trap: opposite', 'calc-slip': 'Trap: calculation slip', misread: 'Trap: misread the question', partial: 'Trap: stopped a step early', overreach: 'Trap: adds an assumption', 'grammar-near-miss': 'Trap: near miss', other: 'Trap: other trap' };
   const FILES = { sat: ['drills_rw.json', 'drills_math.json'], act: ['drills_english.json', 'drills_math.json', 'drills_reading.json', 'drills_science.json'] };
 
   const Bank = {
@@ -52,10 +52,11 @@
       ${strat ? `<details class="approach"><summary>Approach: ${A.esc(strat.name)}</summary><ol>${strat.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol></details>` : ''}
       ${item.passage ? `<div class="passage card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}
       <div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
-      ${free ? `<div class="row"><input type="text" id="free" inputmode="decimal" placeholder="Your answer" aria-label="Your answer" style="max-width:220px"><button id="submit">Check</button></div>`
+      ${free ? `<div class="row">${gridIn('')}<button id="submit">Check</button></div>`
              : `<div class="choices">${item.choices.map((c, i) => `<div class="choice-row"><button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button><button class="strike" data-i="${i}" title="Cross out" aria-label="Cross out ${letters[i]}" aria-pressed="false">×</button></div>`).join('')}</div>`}
       <div class="row" style="margin-top:8px">${opts.allowFlag ? '<button class="ghost" id="flag">Flag for later</button>' : ''}${mode === 'hint' ? '<button class="ghost" id="hintbtn">Hint</button>' : ''}<span class="muted" id="skillname">${A.esc(opts.skillName || '')}</span></div>
       <div id="fb"></div>`;
+    wireGridIn(container);
     return new Promise(resolve => {
       let hintUsed = false, tries = 0, settled = false, firstPick = null;
       const hb = container.querySelector('#hintbtn'); if (hb) hb.addEventListener('click', () => { hintUsed = true; showHint(); });
@@ -69,6 +70,8 @@
         if (settled) return; settled = true;
         const ms = Date.now() - start;
         const retry = correct && firstPick !== null;
+        // Answered: strike keys, the answer box and its keys stop responding too.
+        container.querySelectorAll('.strike, #free, #submit, .minus-row .key').forEach(x => { x.disabled = true; });
         container.querySelectorAll('.choice').forEach(b => { b.disabled = true; const i = +b.dataset.i; if (i === item.answer) b.dataset.state = 'right'; else if (i === picked || i === firstPick) b.dataset.state = 'wrong'; });
         if (!opts.silent) explain(correct, picked, retry);
         const trapPick = retry ? firstPick : picked;
@@ -100,7 +103,30 @@
       }
     });
   }
-  function normalize(v) { v = String(v).trim().replace(/\s+/g, '').replace(/^\+/, ''); const n = Number(v); if (!isNaN(n) && v !== '') return String(Math.round(n * 10000) / 10000); if (/^-?\d+\/\d+$/.test(v)) { const [a, b] = v.split('/').map(Number); if (b) return String(Math.round(a / b * 10000) / 10000); } return v.toLowerCase(); }
+  // Student-produced response box. iOS shows a digits-and-point keypad for inputmode="decimal" (no minus, no slash),
+  // so the box carries its own "−" (sign toggle) and "/" keys; a hardware or full keyboard can type them as usual.
+  function gridIn(value) {
+    return `<span class="minus-row"><input type="text" id="free" inputmode="decimal" pattern="-?[0-9./]*" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Your answer" aria-label="Your answer" aria-describedby="free-help" style="max-width:180px" value="${A.esc(value || '')}"><button type="button" class="key" data-key="neg" aria-label="Negative: switch the sign">−</button><button type="button" class="key" data-key="slash" aria-label="Fraction bar">/</button></span><small class="muted" id="free-help" style="flex-basis:100%">Negative: tap −. Fraction: tap / (7/2).</small>`;
+  }
+  function wireGridIn(container) {
+    const inp = container.querySelector('#free'); if (!inp) return;
+    let caret = null; const keep = () => { try { caret = inp.selectionStart; } catch (e) { caret = null; } };
+    ['keyup', 'click', 'input', 'select', 'blur'].forEach(ev => inp.addEventListener(ev, keep));
+    container.querySelectorAll('.minus-row .key').forEach(k => {
+      // Keep the caret (and the keypad) in the box: the key must not take focus.
+      k.addEventListener('mousedown', e => e.preventDefault()); k.addEventListener('pointerdown', e => e.preventDefault());
+      k.addEventListener('click', () => {
+        if (inp.disabled || inp.readOnly) return;
+        let v = inp.value, at = caret === null || caret > v.length ? v.length : caret;
+        if (k.dataset.key === 'neg') { const neg = /^\s*[-−]/.test(v); v = neg ? v.replace(/^\s*[-−]/, '') : '-' + v.trimStart(); at = Math.max(0, at + (neg ? -1 : 1)); }
+        else { v = v.slice(0, at) + '/' + v.slice(at); at += 1; }
+        inp.value = v; caret = at;
+        try { inp.focus(); inp.setSelectionRange(at, at); } catch (e) {}
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    });
+  }
+  function normalize(v) { v = String(v).trim().replace(/[−–]/g, '-').replace(/\s+/g, '').replace(/^\+/, ''); const n = Number(v); if (!isNaN(n) && v !== '') return String(Math.round(n * 10000) / 10000); if (/^-?\d+\/\d+$/.test(v)) { const [a, b] = v.split('/').map(Number); if (b) return String(Math.round(a / b * 10000) / 10000); } return v.toLowerCase(); }
 
   // Records one graded attempt the moment it is graded. Misses go to the error log right away with cause
   // "unsorted" (or the cause already known); setCause() fills it in later if the student answers "Why did you miss it?".
@@ -140,5 +166,5 @@
   // Skill levels: Attempted, Familiar (>=60% over 5), Proficient (>=75% over 10 with a hard item right), Mastered (Proficient + a correct redo)
   function level(stats) { if (!stats || !stats.n) return 'New'; const acc = stats.r / stats.n; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight && stats.redoRight) return 'Mastered'; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight) return 'Proficient'; if (stats.n >= 5 && acc >= 0.6) return 'Familiar'; return 'Attempted'; }
   const CAUSE_NAMES = { careless: 'careless', concept: 'didn\'t know it', time: 'rushed or ran out of time', unsorted: 'missed', 'needed hint': 'needed the hint' };
-  window.AlakaiEngine = { strategyFor, level, TRAP_NAMES, CAUSE_NAMES, Bank, buildSet, renderItem, record, setCause, askCause, normalize };
+  window.AlakaiEngine = { gridIn, wireGridIn, strategyFor, level, TRAP_NAMES, CAUSE_NAMES, Bank, buildSet, renderItem, record, setCause, askCause, normalize };
 })();

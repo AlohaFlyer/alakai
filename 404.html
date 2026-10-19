@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found · Alakaʻi Test Prep</title>
 <meta name="robots" content="noindex">
+<!-- GitHub Pages serves this page at any missing path (for example /a/b/c), so relative URLs in app.js resolve from the root. -->
+<base href="/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="stylesheet" href="/assets/app.css">
 <meta name="theme-color" content="#C8102E">
@@ -24,5 +26,7 @@
     </div>
   </section>
 </div>
+<script src="/assets/app.js"></script>
+<script>window.Alakai.boot({ page: '404.html' }).catch(() => {});</script>
 </body>
 </html>

@@ -18,6 +18,11 @@ for test in ("sat", "act"):
                 # Checks can change without re-rendering audio (for example banks/rebalance.py): always take the current file.
                 check = HERE / "checks" / f"{test}-ep{n}.json"
                 if check.exists(): old = dict(old, check=json.loads(check.read_text()))
+                # The topic line can change without re-rendering too: take it from the script header.
+                script = HERE / "scripts" / f"{test}-ep{n}.md"
+                if script.exists():
+                    for line in script.read_text().splitlines():
+                        if line.lower().startswith("topic:"): old = dict(old, topic=line.split(":", 1)[1].strip()); break
                 eps[test].append(old)
 for mp3 in sorted((ROOT / "audio").glob("*.mp3")):
     m = re.match(r"(sat|act)-ep(\d+)\.mp3", mp3.name)

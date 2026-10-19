@@ -1,5 +1,6 @@
 # ACT Notes Ep 6: What Is This Sentence For?
 cast: lehua, sarah, derek, kaden
+topic: Transitions, purpose questions, add or delete, order
 facts: ACT English includes questions about a writer's purpose, adding or deleting sentences, transitions, and the order of sentences, under Production of Writing, 38 to 43 percent of the section (act.org Preparing-for-the-ACT.pdf, checked 2026-10-16); app strategy "Does it earn its place": read the question to learn the writer's goal, reread the paragraph, ask if the paragraph loses anything without it, pick the yes or no choice whose reason matches; suggested time 50 s; strategy trap "Choosing yes or no correctly but picking the wrong reason" (data/strategies.json english-strategy); skill tip "Would the paragraph lose anything if this sentence vanished? That answers add/delete" (data/act/skills.json english-strategy); app strategy "Fit both neighbors": read the sentence before and after, name the link (contrast, cause, addition, or order), pick the transition that fits both neighbors, for moving sentences look for words pointing back (data/strategies.json english-organization); app trap label "Trap: true but irrelevant" (assets/engine.js TRAP_NAMES); Waimea District Park has a gym and courts, no times stated (cast.json places)
 target_minutes: 8
 homework: Drill topic development | drill.html?skill=english-strategy

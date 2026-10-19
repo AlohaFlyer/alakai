@@ -1,6 +1,7 @@
 /* Alakaʻi Test Prep: shared styles. Palette is set on :root by app.js from data/schools.json. */
 :root {
   --primary: #C8102E;
+  --primary-text: #C8102E; /* the school colour where it is text or an outline; set by app.js applyPalette per theme */
   --secondary: #FFFFFF;
   --accent: #1F1F1F;
   --on-primary: #FFFFFF;
@@ -10,9 +11,9 @@
   --paper: #FBF8F1;
   --paper-2: #F2EDE0;
   --line: rgba(22,33,27,.12);
-  --ok: #1E7F4F;
-  --bad: #B8322B;
-  --warn: #B07A12;
+  --ok: #176B41;
+  --bad: #A12A24;
+  --warn: #7F5600;
   --radius: 14px;
   --bar: 26px;
   --pattern: url("patterns/solid.svg");
@@ -22,9 +23,16 @@
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --ink:#F2EFE6; --ink-soft:#BFC7BE; --paper:#141A16; --paper-2:#1C2520; --line:rgba(242,239,230,.14); }
+  :root:not([data-theme="light"]) { --ink:#F2EFE6; --ink-soft:#BFC7BE; --paper:#141A16; --paper-2:#1C2520; --line:rgba(242,239,230,.14); --ok:#5FD39A; --bad:#FF8F85; --warn:#E8B84A; }
 }
-:root[data-theme="dark"] { --ink:#F2EFE6; --ink-soft:#BFC7BE; --paper:#141A16; --paper-2:#1C2520; --line:rgba(242,239,230,.14); }
+:root[data-theme="dark"] { --ink:#F2EFE6; --ink-soft:#BFC7BE; --paper:#141A16; --paper-2:#1C2520; --line:rgba(242,239,230,.14); --ok:#5FD39A; --bad:#FF8F85; --warn:#E8B84A; }
+/* Dark paper: bars, rings and the selected tab/toggle need an edge that reads against #141A16, so they use the lifted tint. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bar-fill { background: var(--primary-text); }
+  :root:not([data-theme="light"]) .ring { background: conic-gradient(var(--primary-text) calc(var(--p) * 1%), var(--paper-2) 0); }
+}
+:root[data-theme="dark"] .bar-fill { background: var(--primary-text); }
+:root[data-theme="dark"] .ring { background: conic-gradient(var(--primary-text) calc(var(--p) * 1%), var(--paper-2) 0); }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -48,7 +56,7 @@ h1 { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700; }
 h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); font-weight: 600; }
 h3 { font-size: 1.05rem; font-weight: 600; }
 p { margin: 0 0 1em; }
-a { color: var(--primary); }
+a { color: var(--primary-text); }
 small, .muted { color: var(--ink-soft); }
 
 /* Frame: lateral bars on wide screens, top band on narrow */
@@ -95,8 +103,8 @@ small, .muted { color: var(--ink-soft); }
 .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
 .hero-bg .topbar, .hero-bg .hero-text { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.4); }
 nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-nav.tabs a { text-decoration: none; color: inherit; padding: 6px 10px; border-radius: 999px; font-size: .9rem; border: 1px solid var(--line); }
-nav.tabs a[aria-current] { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+nav.tabs a { text-decoration: none; color: inherit; padding: 6px 12px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 999px; font-size: .9rem; border: 1px solid var(--line); }
+nav.tabs a[aria-current] { background: var(--primary); color: var(--on-primary); border-color: var(--primary-text); box-shadow: 0 0 0 1px var(--primary-text); }
 
 /* Official practice button (top bar) */
 .practice { position: relative; }
@@ -124,7 +132,7 @@ label { display: block; font-weight: 600; margin-bottom: 4px; }
 .field { margin-bottom: 12px; }
 .toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--paper); }
 .toggle button { border-radius: 0; background: transparent; color: var(--ink); padding: 8px 16px; font-weight: 700; }
-.toggle button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); }
+.toggle button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); box-shadow: inset 0 0 0 2px var(--primary-text); }
 .chip { display:inline-block; padding: 3px 9px; border-radius: 999px; font-size: .8rem; background: var(--paper-2); border:1px solid var(--line); }
 .chip.ok { background: color-mix(in srgb, var(--ok) 15%, transparent); color: var(--ok); }
 .chip.bad { background: color-mix(in srgb, var(--bad) 15%, transparent); color: var(--bad); }
@@ -162,12 +170,12 @@ th { font-weight: 700; }
 .choice { text-align: left; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); padding: 10px 12px; border-radius: 10px; font-weight: 500; }
 .choice[data-state="right"] { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
 .choice[data-state="wrong"] { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, transparent); }
-.choice[data-state="picked"] { border-color: var(--primary); box-shadow: inset 0 0 0 2px var(--primary); background: color-mix(in srgb, var(--primary) 14%, var(--paper-2)); }
+.choice[data-state="picked"] { border-color: var(--primary-text); box-shadow: inset 0 0 0 2px var(--primary-text); background: color-mix(in srgb, var(--primary) 14%, var(--paper-2)); }
 .choice[data-state="picked"]::after { content: "✓ Selected"; display: block; margin-top: 4px; font-size: .8rem; font-weight: 700; color: var(--ink); }
 /* Answered items: keep the right/wrong reveal at full strength, dim only the other choices. */
 .choice:disabled { opacity: 1; cursor: default; }
 .choice:disabled:not([data-state]) { opacity: .6; }
-.explain { border-left: 4px solid var(--primary); padding: 8px 12px; background: var(--paper-2); border-radius: 0 10px 10px 0; margin-top: 10px; }
+.explain { border-left: 4px solid var(--primary-text); padding: 8px 12px; background: var(--paper-2); border-radius: 0 10px 10px 0; margin-top: 10px; }
 .clock { font-family: var(--font-display); font-variant-numeric: tabular-nums; font-size: 1.6rem; font-weight: 700; }
 .clock.low { color: var(--bad); }
 
@@ -179,7 +187,7 @@ footer { margin-top: 24px; font-size: .85rem; color: var(--ink-soft); }
 /* Landing cards are links */
 a.link-card { display:block; color:inherit; text-decoration:none; transition: transform .12s ease, box-shadow .12s ease; }
 a.link-card:hover, a.link-card:focus-visible { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(10,20,15,.24); }
-a.link-card h3::after { content:" \2192"; color: var(--primary); }
+a.link-card h3::after { content:" \2192"; color: var(--primary-text); }
 
 /* Landing grid: 1 column on phones, 2 on tablets, 4 on wide screens */
 .home-grid { grid-template-columns: 1fr; }
@@ -195,8 +203,18 @@ a.link-card h3::after { content:" \2192"; color: var(--primary); }
 .practice-btn { min-height: 44px; }
 .choice { min-height: 44px; }
 .free-wrong { border-color: var(--bad) !important; box-shadow: inset 0 0 0 1px var(--bad); }
-[role="button"]:focus-visible, .choice:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+[role="button"]:focus-visible, .choice:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--primary-text); outline-offset: 2px; }
 /* Phone profile (onboarding "Where will you mostly do this?"): bigger tap targets. */
 html[data-device="phone"] .choice { min-height: 52px; padding: 14px 14px; }
 html[data-device="phone"] button, html[data-device="phone"] .btn { min-height: 48px; }
 html[data-device="phone"] .choice-row { grid-template-columns: 1fr 52px; }
+/* Debug pass 2 */
+.chip.ok, .chip.bad, .chip.warn { font-weight: 600; }
+.chip.accent { color: var(--primary-text); border-color: var(--primary-text); }
+/* Inline links that stand alone get a 44 px tap area without changing the line. */
+a.tap { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 6px; }
+footer a, small > a { display: inline-block; padding: 14px 4px; margin: -14px 0; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+.minus-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.minus-row .key { min-width: 44px; min-height: 44px; padding: 0 12px; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); }
+.form-msg { color: var(--bad); font-weight: 600; margin: 8px 0 0; }

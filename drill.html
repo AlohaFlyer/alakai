@@ -87,11 +87,21 @@
   let runId = 0;
   document.addEventListener('alakai:test', async () => { runId++; test = A.getTest(); bank = await E.Bank.load(test); if (!document.getElementById('run').hidden) { document.getElementById('run').hidden = true; document.getElementById('picker').hidden = false; } drawPicker(); });
 
+  // A Science link (podcast homework, a bookmark) while Science is off: offer to turn it on instead of "No items".
+  function scienceGate(sel) {
+    if (test !== 'act' || profile.science) return true;
+    const sci = sel.section === 'science' || (sel.skill && bank.sectionOf[sel.skill] === 'science');
+    if (!sci) return true;
+    if (!confirm('ACT Science is off in your Settings, so its drills are hidden. Turn Science on now?')) return false;
+    profile.science = true; const p = A.profile(); if (p) { p.science = true; S.set('profile', p); }
+    drawPicker(); return true;
+  }
   async function start(sel) {
+    if (!scienceGate(sel)) return;
     const n = +document.getElementById('n').value;
     let set, kind = 'drill', title = 'Mixed set';
     if (sel.redo) {
-      const due = S.get(test + '.errlog', []).filter(e => !e.done && e.due <= Date.now()).map(e => bank.byId[e.id]).filter(Boolean);
+      const due = S.list(test + '.errlog').filter(e => !e.done && e.due <= Date.now()).map(e => bank.byId[e.id]).filter(Boolean);
       if (!due.length) { alert('Nothing due for redo yet. Missed items come back 3 days later.'); return; }
       set = due.slice(0, n); kind = 'redo'; title = 'Redo: missed items';
     } else if (sel.item) { set = [bank.byId[sel.item]].filter(Boolean); kind = 'redo'; title = 'Redo'; }
@@ -99,7 +109,7 @@
       // hide science unless on
       const diffs = new Set([...document.querySelectorAll('.diff:checked')].map(c => +c.value));
       const missedOnly = document.getElementById('missed').checked;
-      const missedIds = new Set(S.get(test + '.errlog', []).map(e => e.id));
+      const missedIds = new Set(S.list(test + '.errlog').map(e => e.id));
       const exclude = new Set(bank.items.filter(i => (test === 'act' && i.section === 'science' && !profile.science) || !diffs.has(i.difficulty) || (missedOnly && !missedIds.has(i.id))).map(i => i.id));
       set = E.buildSet(bank, { skill: sel.skill, section: sel.section, n, exclude });
       title = sel.skill ? bank.skillName[sel.skill] : sel.section ? bank.sectionName[sel.section] : 'Mixed set';

@@ -24,7 +24,7 @@
   .onb { max-width: 620px; margin: 0 auto; }
   .opts { display: grid; gap: 8px; }
   .opts button { text-align: left; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-weight: 500; }
-  .opts button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); border-color: transparent; }
+  .opts button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); border-color: var(--primary-text); box-shadow: inset 0 0 0 2px var(--primary-text); }
   .step { font-size: .85rem; color: var(--ink-soft); margin-bottom: 4px; }
 </style>
 </head>
@@ -44,7 +44,7 @@
       <button class="ghost" id="skip" hidden>Skip</button>
     </div>
   </section>
-  <p class="muted" style="text-align:center"><span id="qcount">10</span> quick questions so the app fits how you actually study. Nothing here leaves your device except one anonymous school-and-grade message at the end. <a href="settings.html#disclosures">Details</a></p>
+  <p class="muted" style="text-align:center"><span id="qcount">10</span> quick questions so the app fits how you actually study. Nothing here leaves your device except one anonymous school-and-grade message at the end. <a class="tap" href="settings.html#disclosures">Details</a></p>
 </div>
 <script src="assets/app.js"></script>
 <script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js");</script>
@@ -55,7 +55,9 @@
   const cfg = await A.data('data/onboarding.json');
   const schools = await A.data('data/schools.json');
   const params = new URLSearchParams(location.search);
-  const existing = (params.get('redo') ? null : A.profile()) || {};
+  // Fields typed into Settings before onboarding (profile_draft) prefill the contact step.
+  const draft = A.Store.get('profile_draft', {});
+  const existing = (params.get('redo') ? null : A.profile()) || draft || {};
   const answers = Object.assign({}, existing);
   // A saved profile stores science as a boolean; the question works in 'yes'/'no'.
   if (typeof answers.science === 'boolean') answers.science = answers.science ? 'yes' : 'no';
@@ -72,11 +74,11 @@
     clearTimeout(advanceTimer); advanceTimer = null;
     const q = L[i]; el.step.textContent = `Question ${i + 1} of ${L.length}`; document.getElementById('qcount').textContent = L.length; el.prog.style.width = Math.round(100 * i / L.length) + '%';
     el.q.textContent = q.q; el.back.disabled = i === 0; el.skip.hidden = !(q.type === 'date' || q.type === 'text');
-    el.next.textContent = i === L.length - 1 ? 'Finish' : 'Next';
+    el.next.textContent = i === L.length - 1 ? 'Finish' : 'Next'; formMsg('');
     let html = '';
     if (q.type === 'single') {
       let opts = q.options;
-      if (q.dynamic === 'sections') { const t = answers.test === 'both' ? 'sat' : (answers.test || 'sat'); opts = cfg.sections[t].filter(([k]) => !(t === 'act' && k === 'science' && answers.science === 'no')); if (answers.test === 'both') opts = cfg.sections.sat.concat(cfg.sections.act.filter(([k]) => k !== 'math')); }
+      if (q.dynamic === 'sections') { const t = answers.test === 'both' ? 'sat' : (answers.test || 'sat'); opts = cfg.sections[t].filter(([k]) => !(t === 'act' && k === 'science' && answers.science === 'no')); if (answers.test === 'both') opts = cfg.sections.sat.concat(cfg.sections.act.filter(([k]) => k !== 'math' && !(k === 'science' && answers.science === 'no'))); }
       html = '<div class="opts">' + opts.map(([v, l]) => `<button type="button" data-v="${A.esc(v)}" aria-pressed="${answers[q.id] === v}">${A.esc(l)}</button>`).join('') + '</div>';
     } else if (q.type === 'date') {
       html = `<input type="date" id="in" aria-labelledby="q" value="${A.esc(answers[q.id] || '')}">`;
@@ -92,15 +94,23 @@
         <div class="field"><label for="c-pname">Parent or teacher name (optional)</label><input type="text" id="c-pname" value="${A.esc(answers.pname || '')}"></div>
         <div class="field"><label for="c-pemail">Parent or teacher email (optional, CC on reports)</label><input type="email" id="c-pemail" value="${A.esc(answers.pemail || '')}"></div>
         <div class="field"><label><input type="checkbox" id="c-ms" ${answers.milestones === false ? '' : 'checked'}> Remind me to send a report at milestones (end of a timed section, every 5 episodes, every 100 drills)</label></div>
-        <p class="muted">Emails stay on this device. Reports open in your own mail app. When you tap Finish, one anonymous message with just <code>{"school":"${A.esc(schoolId || '…')}","grade":"…"}</code> is sent.</p>`;
+        <p class="muted">Emails stay on this device. Reports open in your own mail app. When you tap Finish, one anonymous message with just <code id="c-shape">{"school":"${A.esc(schoolId || '…')}","grade":"${A.esc(answers.grade || '…')}"}</code> is sent.</p>`;
     }
     el.body.innerHTML = html;
+    if (q.type === 'contact') {
+      // The disclosure line and the colours follow the School and Grade selects as they change.
+      const cs = document.getElementById('c-school'), cg = document.getElementById('c-grade');
+      const shape = () => { document.getElementById('c-shape').textContent = `{"school":"${cs.value || '…'}","grade":"${cg.value || '…'}"}`; };
+      cs.addEventListener('change', () => { const sc = schools.schools.find(x => x.id === cs.value); if (sc) A.applyPalette(sc); shape(); });
+      cg.addEventListener('change', shape);
+    }
     el.body.querySelectorAll('.opts button').forEach(b => b.addEventListener('click', () => { answers[q.id] = b.dataset.v; el.body.querySelectorAll('.opts button').forEach(x => x.setAttribute('aria-pressed', x === b)); if (advanceTimer) return; advanceTimer = setTimeout(() => { advanceTimer = null; i++; render(); }, 180); }));
   }
   // validate false (Back) saves what is typed without the required-field alert.
+  function formMsg(t) { let m = document.getElementById('form-msg'); if (!m) { m = document.createElement('p'); m.id = 'form-msg'; m.className = 'form-msg'; m.setAttribute('role', 'alert'); el.body.after(m); } m.textContent = t; m.hidden = !t; }
   function collect(validate) {
     const L = list(); const q = L[i]; if (!q) return true;
-    if (q.type === 'single' && !answers[q.id]) return false;
+    if (q.type === 'single' && !answers[q.id]) { if (validate !== false) formMsg('Pick one to continue.'); return false; }
     if (q.type === 'date' || q.type === 'text') { answers[q.id] = document.getElementById('in').value.trim(); }
     if (q.type === 'contact') {
       answers.grade = document.getElementById('c-grade').value; answers.name = document.getElementById('c-name').value.trim(); answers.email = document.getElementById('c-email').value.trim();
@@ -119,6 +129,8 @@
   async function finish() {
     answers.onboarded = true; answers.onboardedAt = new Date().toISOString();
     answers.science = answers.science === 'yes' || answers.science === 'unsure' || answers.science === true;
+    if (answers.fear === 'science' && !answers.science) delete answers.fear;
+    A.Store.del('profile_draft');
     answers.setSize = { '15': 6, '30': 10, '45': 14, '60': 18 }[answers.minutes] || 10;
     S.set('profile', answers);
     A.setTest(answers.test === 'act' ? 'act' : 'sat');

@@ -7,10 +7,10 @@
     {"id":"device","q":"Where will you mostly do this?","type":"single","options":[["phone","Phone"],["laptop","Laptop or tablet"],["mix","Both"]],"effects":"phone turns on bigger tap targets everywhere"},
     {"id":"missmode","q":"When you miss a question, what do you want to see first?","type":"single","options":[["answer","The answer and why"],["hint","A hint, then let me retry"],["worked","A full worked example"]],"effects":"explanation mode in drills"},
     {"id":"firstmode","q":"Do you learn a new idea better by hearing it explained or reading it?","type":"single","options":[["hear","Hearing it (play the episode first)"],["read","Reading it (show the notes first)"],["either","Either"]],"effects":"hear puts the podcast first in the dashboard Next up list, read puts the strategies first; a preference, not a learning style"},
+    {"id":"science","q":"ACT only: are you taking the optional Science section?","type":"single","only":"act","options":[["no","No"],["yes","Yes"],["unsure","Not sure yet"]],"effects":"shows or hides Science everywhere; 'unsure' shows it"},
     {"id":"fear","q":"Which section worries you most?","type":"single","dynamic":"sections","effects":"dashboard puts that section first and the planner front-loads it"},
     {"id":"lastscore","q":"Last practice or real score, if you have one (optional)","type":"text","placeholder":"e.g. 1180 or 24","effects":"shown as the starting score in the dashboard Estimated band card"},
-    {"id":"timepressure","q":"On timed tests, do you run out of time?","type":"single","options":[["never","Never"],["sometimes","Sometimes"],["always","Always"]],"effects":"pacing coach intensity: never → off, sometimes → checkpoints, always → checkpoints plus per-question nudge"},
-    {"id":"science","q":"ACT only: are you taking the optional Science section?","type":"single","only":"act","options":[["no","No"],["yes","Yes"],["unsure","Not sure yet"]],"effects":"shows or hides Science everywhere; 'unsure' shows it"}
+    {"id":"timepressure","q":"On timed tests, do you run out of time?","type":"single","options":[["never","Never"],["sometimes","Sometimes"],["always","Always"]],"effects":"pacing coach intensity: never → off, sometimes → checkpoints, always → checkpoints plus per-question nudge"}
   ],
   "sections": {
     "sat": [["rw","Reading and Writing"],["math","Math"]],

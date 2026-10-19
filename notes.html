@@ -23,7 +23,7 @@
 <style>
   .ep { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
   .ep.coming { cursor: default; opacity: .55; }
-  .ep .n { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--primary); }
+  .ep .n { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--primary-text); }
   .ep.done .n::after { content: " ✓"; color: var(--ok); font-size: .9rem; }
   audio { width: 100%; margin-top: 8px; }
   .cast { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -65,23 +65,25 @@
   let test, eps, cast;
   async function load() {
     test = A.getTest();
-    let all = { sat: [], act: [], cast: [] }; try { all = await A.data('data/episodes.json'); } catch (e) {}
+    let all = { sat: [], act: [], cast: [] }, failed = false; try { all = await A.data('data/episodes.json'); } catch (e) { failed = true; }
     eps = all[test] || []; cast = all.cast || [];
     document.getElementById('cast').innerHTML = cast.map(c => `<span class="chip" title="${A.esc(c.role)}">${A.esc(c.name)}</span>`).join('');
     const prog = S.get(test + '.episodes', {});
     const host = document.getElementById('list');
     host.innerHTML = eps.length ? eps.map(e => e.coming
       ? `<div class="ep coming" aria-disabled="true"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">Coming soon</div></div>`
-      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}" role="button" tabindex="0" aria-label="Play episode ${e.n}: ${A.esc(e.title)}${prog[e.n] && prog[e.n].done ? ', done' : ''}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 1 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
+      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}" role="button" tabindex="0" aria-label="Play episode ${e.n}: ${A.esc(e.title)}${prog[e.n] && prog[e.n].done ? ', done' : ''}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : failed ? `<p class="muted" role="status">${navigator.onLine === false ? 'You are offline, and the episode list has not been saved on this device yet.' : 'The episode list did not load.'} Episodes need a connection: reconnect and reload this page.</p>` : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 1 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
     host.querySelectorAll('.ep:not(.coming)').forEach(d => {
-      d.addEventListener('click', () => play(+d.dataset.n));
+      // A fast second tap on a check's Next can land here once the check shrinks: ignore taps right after one.
+      d.addEventListener('click', () => { if (Date.now() - lastCheckTap < 700) return; play(+d.dataset.n); });
       d.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); play(+d.dataset.n); } });
     });
-    if (eps.length) host.insertAdjacentHTML('beforeend', '<p class="muted" style="margin:10px 0 0">More episodes are being recorded. New ones show up here as they are approved.</p>');
+    if (eps.some(e => e.coming)) host.insertAdjacentHTML('beforeend', '<p class="muted" style="margin:10px 0 0">More episodes are being recorded. New ones show up here as they are approved.</p>');
   }
   // Progress per episode: pos (seconds, saved every 5 s and on pause), heard (seconds actually played, which is what
   // the 90% rule counts, so scrubbing to the end does not unlock the check), listened, done, check.
-  let current = null;
+  let current = null, lastCheckTap = 0;
+  const isPlain = v => v !== null && typeof v === 'object' && !Array.isArray(v);
   function play(n) {
     const e = eps.find(x => x.n === n); if (!e) return;
     if (current && current.flush) current.flush();
@@ -90,9 +92,11 @@
     const a = document.getElementById('audio');
     a.ontimeupdate = a.onpause = a.onended = a.onloadedmetadata = a.onseeking = null;
     a.src = e.audio; a.load();
-    document.getElementById('homework').innerHTML = e.homework ? `<a class="btn" href="${A.esc(e.homework.href)}">Homework: ${A.esc(e.homework.label)}</a>` : '';
+    // ACT Science homework while Science is off: say so, and let the drill page offer to turn it on.
+    const sciOff = t === 'act' && !profile.science && e.homework && /section=science|skill=science-/.test(e.homework.href);
+    document.getElementById('homework').innerHTML = e.homework ? `<a class="btn" href="${A.esc(e.homework.href)}">Homework: ${A.esc(e.homework.label)}</a>${sciOff ? '<p class="muted" style="margin:6px 0 0">Science is off in your Settings. The drill page will ask whether to turn it on.</p>' : ''}` : '';
     document.getElementById('ptranscript').textContent = e.transcript || 'Transcript coming.';
-    const prog = S.get(t + '.episodes', {}); const rec = Object.assign({ n, title: e.title, done: false }, prog[n] || {});
+    const prog = S.get(t + '.episodes', {}); const rec = Object.assign({ n, title: e.title, done: false }, isPlain(prog[n]) ? prog[n] : {});
     const save = () => { const p = S.get(t + '.episodes', {}); p[n] = rec; S.set(t + '.episodes', p); };
     const mine = () => current && current.n === n && current.t === t;
     let lastSave = 0, lastT = null, ready = false;
@@ -127,7 +131,8 @@
     const next = () => {
       if (i >= e.check.length) { rec.done = true; rec.check = score; rec.doneAt = Date.now(); const prog = S.get(t + '.episodes', {}); prog[e.n] = rec; S.set(t + '.episodes', prog); const doneCount = Object.values(prog).filter(x => x && x.done).length; if (doneCount % 5 === 0 && A.milestone(t, 'eps' + doneCount)) S.set('milestone_pending', { test: t, text: `${doneCount} episodes done. Good time to send a progress report.` }); host.innerHTML = `<p class="chip ok">Check done: ${score}/${e.check.length}</p>`; host.dataset.ep = ''; if (t === test) load(); return; }
       const c = e.check[i]; host.innerHTML = `<div class="q-stem"><strong>Check ${i + 1}/${e.check.length}.</strong> ${A.esc(c.q)}</div><div class="choices">${c.choices.map((x, k) => `<button class="choice" data-k="${k}">${A.esc(x)}</button>`).join('')}</div><div id="cfb"></div>`;
-      host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', async () => { const k = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => x.disabled = true); b.dataset.state = k === c.answer ? 'right' : 'wrong'; if (k === c.answer) score++; else host.querySelector(`[data-k="${c.answer}"]`).dataset.state = 'right'; await A.showFeedback(host.querySelector('#cfb'), k === c.answer ? 'right' : 'wrong'); const nb = document.createElement('button'); nb.textContent = 'Next'; nb.style.marginTop = '8px'; nb.onclick = () => { i++; next(); }; host.querySelector('#cfb').appendChild(nb); }));
+      const shownAt = Date.now();
+      host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', async () => { if (Date.now() - shownAt < 400) return; if (b.disabled) return; const k = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => x.disabled = true); b.dataset.state = k === c.answer ? 'right' : 'wrong'; if (k === c.answer) score++; else host.querySelector(`[data-k="${c.answer}"]`).dataset.state = 'right'; await A.showFeedback(host.querySelector('#cfb'), k === c.answer ? 'right' : 'wrong'); const nb = document.createElement('button'); nb.textContent = i === e.check.length - 1 ? 'Finish the check' : 'Next'; nb.style.marginTop = '8px'; nb.onclick = () => { if (nb.disabled) return; nb.disabled = true; lastCheckTap = Date.now(); i++; next(); }; host.querySelector('#cfb').appendChild(nb); }));
     };
     next();
   }

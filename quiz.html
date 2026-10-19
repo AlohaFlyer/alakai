@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   .flash { min-height: 160px; display: grid; place-items: center; text-align: center; font-size: 1.15rem; padding: 18px; background: var(--paper-2); border-radius: var(--radius); cursor: pointer; }
-  .flash .back { color: var(--primary); font-weight: 700; }
+  .flash .back { color: var(--primary-text); font-weight: 700; }
   .blitz-head { display: flex; justify-content: space-between; align-items: center; }
   .score { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; }
   .choices.blitz .choice { font-size: 1rem; }
@@ -89,7 +89,7 @@
     const sched = S.get(test + '.cards', {}); const due = cards.filter(c => !sched[c.id] || sched[c.id].due <= Date.now()).length;
     document.getElementById('due').textContent = cards.length ? `${due} of ${cards.length} cards due` : `${test.toUpperCase()} cards not built yet`;
     const sc = document.getElementById('scores'); sc.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
-    S.get(test + '.blitz', []).slice().sort((a, b) => b.score - a.score).slice(0, 5).forEach(b => sc.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(b.topic || 'All')}</td><td>${b.score}</td><td>${new Date(b.at).toLocaleDateString()}</td></tr>`));
+    S.list(test + '.blitz').filter(b => typeof b.score === 'number').sort((a, b) => b.score - a.score).slice(0, 5).forEach(b => sc.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(b.topic || 'All')}</td><td>${b.score}</td><td>${new Date(b.at).toLocaleDateString()}</td></tr>`));
   }
   function pool() { const t = document.getElementById('topic').value; return t ? cards.filter(c => c.topic === t) : cards; }
   // Blitz needs enough cards for the four answers to vary from card to card.
@@ -134,7 +134,7 @@
   let bScore, bStreak, bEnd, bTimer, bCards, bRunning, bTest;
   function startBlitz() {
     bCards = A.shuffle(pool()); if (bCards.length < BLITZ_MIN) return alert(`Blitz needs at least ${BLITZ_MIN} cards in a topic.`);
-    bTest = test; bScore = 0; bStreak = 0; bRunning = true; bEnd = Date.now() + 60000; show('blitzrun'); tick(); blitzCard();
+    bTest = test; bScore = 0; bStreak = 0; bRunning = true; bEnd = Date.now() + 60000; bDeck = []; bLast = null; show('blitzrun'); tick(); blitzCard();
   }
   document.getElementById('blitz').addEventListener('click', startBlitz);
   document.getElementById('bagain').addEventListener('click', startBlitz);
@@ -144,35 +144,44 @@
     document.getElementById('bclock').textContent = A.fmtTime(left / 1000); document.getElementById('bclock').classList.toggle('low', left < 10000);
     if (left <= 0) return endBlitz(); requestAnimationFrame(tick);
   }
-  let cardTimer;
+  // Cards come from a shuffled deck (no repeats until every card has been shown, never the same card twice in a row).
+  // Each card is settled once: by a tap or by its 8-second timeout, never both, and only one next card is scheduled.
+  let cardTimer, bDeck = [], bLast = null, cardSeq = 0;
+  function drawCard() {
+    if (!bDeck.length) { bDeck = A.shuffle(bCards); if (bDeck.length > 1 && bDeck[0].id === bLast) bDeck.push(bDeck.shift()); }
+    const c = bDeck.shift(); bLast = c.id; return c;
+  }
   function blitzCard() {
     if (!bRunning) return;
-    const c = bCards[Math.floor(Math.random() * bCards.length)];
+    const my = ++cardSeq; let settled = false;
+    const c = drawCard();
     const others = A.shuffle(bCards.filter(x => x.id !== c.id && x.back !== c.back)).slice(0, 3);
     const opts = A.shuffle([c, ...others]);
     document.getElementById('bfront').textContent = c.front; document.getElementById('bfb').innerHTML = '';
     const host = document.getElementById('bchoices'); host.innerHTML = opts.map(o => `<button class="choice" data-id="${o.id}">${A.esc(o.back)}</button>`).join('');
     const per = 8000, t0 = Date.now(); const bar = document.getElementById('btimer');
-    clearInterval(cardTimer); cardTimer = setInterval(() => { const p = 1 - (Date.now() - t0) / per; bar.style.width = Math.max(0, p * 100) + '%'; if (p <= 0) { clearInterval(cardTimer); miss(true); } }, 100);
+    const reveal = () => { host.querySelectorAll('button').forEach(x => x.disabled = true); const k = host.querySelector(`[data-id="${c.id}"]`); if (k) k.dataset.state = 'right'; };
+    clearInterval(cardTimer); cardTimer = setInterval(() => { if (my !== cardSeq || settled) { clearInterval(cardTimer); return; } const p = 1 - (Date.now() - t0) / per; bar.style.width = Math.max(0, p * 100) + '%'; if (p <= 0) { clearInterval(cardTimer); settled = true; reveal(); miss(true); } }, 100);
     host.querySelectorAll('button').forEach(b => b.addEventListener('click', async () => {
+      if (settled || my !== cardSeq || !bRunning) return; settled = true;
       clearInterval(cardTimer); host.querySelectorAll('button').forEach(x => x.disabled = true);
       if (b.dataset.id === c.id) { bStreak++; const mult = bStreak >= 10 ? 3 : bStreak >= 5 ? 2 : 1; const bonus = Math.round(5 * (1 - (Date.now() - t0) / per)); bScore += (10 + bonus) * mult; b.dataset.state = 'right'; await A.showFeedback(document.getElementById('bfb'), 'right', bStreak); }
       else { b.dataset.state = 'wrong'; host.querySelector(`[data-id="${c.id}"]`).dataset.state = 'right'; await miss(false); return; }
       document.getElementById('bscore').textContent = bScore; document.getElementById('bstreak').textContent = 'streak ' + bStreak;
-      setTimeout(blitzCard, 450);
+      setTimeout(() => { if (my === cardSeq) blitzCard(); }, 450);
     }));
-    async function miss(timeout) { bStreak = 0; document.getElementById('bstreak').textContent = 'streak 0'; const f = await A.data('data/feedback.json'); const el = document.getElementById('bfb'); el.innerHTML = `<div class="feedback wrong">${A.esc(timeout ? f.timeout[Math.floor(Math.random() * f.timeout.length)] : f.wrong[Math.floor(Math.random() * f.wrong.length)])}</div>`; setTimeout(blitzCard, 900); }
+    async function miss(timeout) { bStreak = 0; document.getElementById('bstreak').textContent = 'streak 0'; const f = await A.data('data/feedback.json'); if (my !== cardSeq) return; const el = document.getElementById('bfb'); el.innerHTML = `<div class="feedback wrong">${A.esc(timeout ? f.timeout[Math.floor(Math.random() * f.timeout.length)] : f.wrong[Math.floor(Math.random() * f.wrong.length)])}</div>`; setTimeout(() => { if (my === cardSeq) blitzCard(); }, 900); }
   }
   async function endBlitz() {
-    bRunning = false; clearInterval(cardTimer);
-    const list = S.get(bTest + '.blitz', []); const best = list.length ? Math.max(...list.map(b => b.score)) : 0;
+    bRunning = false; clearInterval(cardTimer); cardSeq++;
+    const list = S.list(bTest + '.blitz').filter(b => typeof b.score === 'number'); const best = list.length ? Math.max(...list.map(b => b.score)) : 0;
     list.push({ score: bScore, at: Date.now(), topic: document.getElementById('topic').value }); S.set(bTest + '.blitz', list.slice(-100));
     const f = await A.data('data/feedback.json');
     document.getElementById('bsummary').textContent = `${f.blitz_end[Math.floor(Math.random() * f.blitz_end.length)]} You scored ${bScore}.${bScore > best && list.length > 1 ? ' New high score. Chee hoo!' : best ? ` Best is ${Math.max(best, bScore)}.` : ''}`;
     show('bdone');
   }
   // A test toggle ends a Study session or a Blitz round (a round cut short is not scored).
-  document.addEventListener('alakai:test', () => { bRunning = false; clearInterval(cardTimer); cur = null; show('picker'); load(); });
+  document.addEventListener('alakai:test', () => { bRunning = false; clearInterval(cardTimer); cardSeq++; cur = null; show('picker'); load(); });
   load();
 })();
 </script>

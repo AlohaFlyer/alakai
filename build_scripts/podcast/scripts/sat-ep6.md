@@ -1,5 +1,6 @@
 # SAT Notes Ep 6: The Smallest Step
 cast: lehua, sarah, derek, kaden
+topic: Inference and Command of Evidence, including the chart questions
 facts: Digital SAT Reading and Writing uses one short passage per question, 2 modules x 27 questions x 32 minutes (College Board, satsuite.collegeboard.org/sat/whats-on-the-test/reading-writing); Inferences and Command of Evidence (textual and quantitative, including tables and graphs) are SAT Information and Ideas skills (College Board skill list; data/sat/skills.json ids rw-ii-inference and rw-ii-evidence); "which choice most logically completes the text" is the College Board inference question stem (College Board sample questions); smallest-step, claim-then-proof and check-labels-units-numbers steps from data/strategies.json (rw-ii-inference, rw-ii-evidence); app trap names "adds an assumption" and "too extreme" from assets/engine.js; Strategies tab is strategies.html; worked example and chart numbers (40 to 22) are original items written for the show; half of 40 is 20; the record store in town is Uila Records (cast.json places, no hours stated)
 target_minutes: 8
 homework: Drill Inferences | drill.html?skill=rw-ii-inference

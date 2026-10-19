@@ -1,5 +1,6 @@
 # SAT Notes Ep 5: Read the Question First
 cast: lehua, sarah, derek, kaden
+topic: Words in Context and Central Ideas: predict, then match
 facts: Digital SAT Reading and Writing uses one short passage per question, 2 modules x 27 questions x 32 minutes (College Board, satsuite.collegeboard.org/sat/whats-on-the-test/reading-writing); Words in Context and Central Ideas and Details are SAT skill names (College Board skill list; data/sat/skills.json ids rw-cs-words and rw-ii-central); predict-then-match and plug-it-back-in steps from data/strategies.json (rw-cs-words, rw-ii-central, general predict-match and read-question-first); app trap name "too extreme" from assets/engine.js; worked example is an original item written for the show
 target_minutes: 8
 homework: Drill Words in Context | drill.html?skill=rw-cs-words

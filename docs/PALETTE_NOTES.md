@@ -2,31 +2,44 @@
 
 Status: INFERRED = color names from an official source (HHSAA), hex approximated. UNVERIFIED = names from secondary sources or not found; neutral Alakaʻi fallback used.
 
-| School | Names | Declared primary | Effective primary | Text on primary | Text ratio | Bar vs paper | Status | Derivations |
-|---|---|---|---|---|---|---|---|---|
-| Hawaiʻi Preparatory Academy | Red & White | #C8102E | #C8102E | #FFFFFF | 5.9 | 5.5 | INFERRED |  |
-| Parker School | Maroon, Black & White | #8F0018 | #8F0018 | #FFFFFF | 9.6 | 9.1 | INFERRED |  |
-| St. Joseph School | Red & Gold | #CC0022 | #CC0022 | #FFFFFF | 5.8 | 5.5 | INFERRED |  |
-| Waiākea High School | Navy & White | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | INFERRED |  |
-| Christian Liberty Academy | Navy Blue & Orange | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | INFERRED |  |
-| Makua Lani Christian Academy | Purple & White | #5B2C8F | #5B2C8F | #FFFFFF | 9.5 | 9.0 | UNVERIFIED |  |
-| Kamehameha Schools Hawaiʻi | Dark blue, light blue & white | #0B3D91 | #0B3D91 | #FFFFFF | 10.0 | 9.5 | UNVERIFIED |  |
-| West Hawaiʻi Explorations Academy | Silver & Green | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | UNVERIFIED |  |
-| Hawaiʻi Academy of Arts & Sciences | Silver & Blue | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | UNVERIFIED |  |
-| Volcano School of Arts & Sciences | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | UNVERIFIED |  |
-| Kealakehe High School | Process Blue, Silver & White | #0085CA | #0075b2 | #FFFFFF | 5.0 | 4.7 | INFERRED | primary darkened 1x to #0075b2 for text contrast |
-| Honokaʻa High & Intermediate School | Green & Gold | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | INFERRED |  |
-| Hilo High School | Blue & Gold | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | INFERRED |  |
-| Konawaena High School | Kelly Green & White | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | INFERRED |  |
-| Kohala High School | Black & Gold | #222222 | #222222 | #FFFFFF | 15.9 | 15.0 | INFERRED |  |
-| Keaʻau High School | Navy & Red | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | INFERRED |  |
-| Kanu o ka ʻĀina | Red & Yellow | #C8102E | #C8102E | #FFFFFF | 5.9 | 5.5 | UNVERIFIED |  |
-| Laupāhoehoe Community PCS | Royal Blue & Gold | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | INFERRED |  |
-| Connections PCS | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | UNVERIFIED |  |
-| Ka ʻUmeke Kāʻeo | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | UNVERIFIED |  |
-| Kaʻū High & Pāhala Elementary | Maroon & White | #8F0018 | #8F0018 | #FFFFFF | 9.6 | 9.1 | INFERRED |  |
-| Ke Kula ʻo ʻEhunuikaimalino | Red & Brown | #CC0022 | #CC0022 | #FFFFFF | 5.8 | 5.5 | UNVERIFIED |  |
-| Pāhoa High & Intermediate School | Green & White | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | INFERRED |  |
-| Ke Ana Laʻahana PCS | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | UNVERIFIED |  |
-| Ke Kula ʻo Nāwahīokalaniʻōpuʻu | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | UNVERIFIED |  |
-| Other / not listed | Alakaʻi default | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | n/a |  |
+Primary as text (`--primary-text`) is the school colour darkened (light theme) or lightened (dark theme) until it reaches 4.5:1 on both papers of that theme (light #FBF8F1 and #F2EDE0, dark #141A16 and #1C2520); the ratio shown is the lower of the two.
+
+| School | Names | Declared primary | Effective primary | Text on primary | Text ratio | Bar vs paper | Primary as text, light | Primary as text, dark | Status | Derivations |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Hawaiʻi Preparatory Academy | Red & White | #C8102E | #C8102E | #FFFFFF | 5.9 | 5.5 | #C8102E 5.0 | #db6478 4.6 | INFERRED |  |
+| Parker School | Maroon, Black & White | #8F0018 | #8F0018 | #FFFFFF | 9.6 | 9.1 | #8F0018 8.2 | #c37683 4.7 | INFERRED |  |
+| St. Joseph School | Red & Gold | #CC0022 | #CC0022 | #FFFFFF | 5.8 | 5.5 | #CC0022 5.0 | #e06478 4.7 | INFERRED |  |
+| Waiākea High School | Navy & White | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | #022C66 11.6 | #768dad 4.6 | INFERRED |  |
+| Christian Liberty Academy | Navy Blue & Orange | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | #022C66 11.6 | #768dad 4.6 | INFERRED |  |
+| Makua Lani Christian Academy | Purple & White | #5B2C8F | #5B2C8F | #FFFFFF | 9.5 | 9.0 | #5B2C8F 8.2 | #9b7ebb 4.6 | UNVERIFIED |  |
+| Kamehameha Schools Hawaiʻi | Dark blue, light blue & white | #0B3D91 | #0B3D91 | #FFFFFF | 10.0 | 9.5 | #0B3D91 8.6 | #7391c0 4.9 | UNVERIFIED |  |
+| West Hawaiʻi Explorations Academy | Silver & Green | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | #007a46 4.6 | #389e73 4.7 | UNVERIFIED |  |
+| Hawaiʻi Academy of Arts & Sciences | Silver & Blue | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | #034CB2 6.7 | #6591d0 4.9 | UNVERIFIED |  |
+| Volcano School of Arts & Sciences | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | UNVERIFIED |  |
+| Kealakehe High School | Process Blue, Silver & White | #0085CA | #0075b2 | #FFFFFF | 5.0 | 4.7 | #006ea7 4.7 | #3893c3 4.6 | INFERRED | primary darkened 1x to #0075b2 for text contrast |
+| Honokaʻa High & Intermediate School | Green & Gold | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | #007a46 4.6 | #389e73 4.7 | INFERRED |  |
+| Hilo High School | Blue & Gold | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | #034CB2 6.7 | #6591d0 4.9 | INFERRED |  |
+| Konawaena High School | Kelly Green & White | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | #007a46 4.6 | #389e73 4.7 | INFERRED |  |
+| Kohala High School | Black & Gold | #222222 | #222222 | #FFFFFF | 15.9 | 15.0 | #222222 13.6 | #8f8f8f 4.9 | INFERRED |  |
+| Keaʻau High School | Navy & Red | #022C66 | #022C66 | #FFFFFF | 13.5 | 12.7 | #022C66 11.6 | #768dad 4.6 | INFERRED |  |
+| Kanu o ka ʻĀina | Red & Yellow | #C8102E | #C8102E | #FFFFFF | 5.9 | 5.5 | #C8102E 5.0 | #db6478 4.6 | UNVERIFIED |  |
+| Laupāhoehoe Community PCS | Royal Blue & Gold | #034CB2 | #034CB2 | #FFFFFF | 7.8 | 7.4 | #034CB2 6.7 | #6591d0 4.9 | INFERRED |  |
+| Connections PCS | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | UNVERIFIED |  |
+| Ka ʻUmeke Kāʻeo | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | UNVERIFIED |  |
+| Kaʻū High & Pāhala Elementary | Maroon & White | #8F0018 | #8F0018 | #FFFFFF | 9.6 | 9.1 | #8F0018 8.2 | #c37683 4.7 | INFERRED |  |
+| Ke Kula ʻo ʻEhunuikaimalino | Red & Brown | #CC0022 | #CC0022 | #FFFFFF | 5.8 | 5.5 | #CC0022 5.0 | #e06478 4.7 | UNVERIFIED |  |
+| Pāhoa High & Intermediate School | Green & White | #00824B | #00824B | #FFFFFF | 4.9 | 4.6 | #007a46 4.6 | #389e73 4.7 | INFERRED |  |
+| Ke Ana Laʻahana PCS | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | UNVERIFIED |  |
+| Ke Kula ʻo Nāwahīokalaniʻōpuʻu | not found | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | UNVERIFIED |  |
+| Other / not listed | Alakaʻi default | #2F4F3A | #2F4F3A | #FFFFFF | 9.1 | 8.6 | #2F4F3A 7.8 | #809487 4.9 | n/a |  |
+
+## Status colours (chip text on its own tint, lower of both papers)
+
+| Theme | Token | Value | Ratio |
+|---|---|---|---|
+| light | --ok | #176B41 | 4.53 |
+| light | --bad | #A12A24 | 4.94 |
+| light | --warn | #7F5600 | 4.50 |
+| dark | --ok | #5FD39A | 6.13 |
+| dark | --bad | #FF8F85 | 5.42 |
+| dark | --warn | #E8B84A | 6.19 |

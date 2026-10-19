@@ -1,5 +1,6 @@
 # SAT Notes Ep 4: Desmos Is Your Co-pilot
 cast: lehua, derek, pono, kaden
+topic: Graph to solve systems and quadratics; when typing is slower than algebra
 facts: Desmos graphing calculator is built into Bluebook for the whole Math section, and students may also bring an approved calculator (College Board, satsuite.collegeboard.org/digital/what-to-bring-do/calculator-policy); Math is 2 modules x 22 questions x 35 minutes (College Board); in Desmos, tapping a point of intersection or an x-intercept shows its coordinates (Desmos help center); two-pass, two checkpoints, and no blanks recalled from Ep 3 and the app's Timed page; Kona Costco closes 6:00 PM Sunday and is about an hour from Waimea (cast.json, verified); worked example arithmetic: y = 2x + 1 and y = -x + 7 cross at (2, 5)
 target_minutes: 8
 homework: Drill systems of linear equations | drill.html?skill=math-alg-systems

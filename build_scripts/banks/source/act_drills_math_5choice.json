@@ -1,0 +1,4037 @@
+{
+"_note": "ACT Math answer sets as authored with five choices (git 618fefd, before banks/act_math_to_4.py). banks/rebalance.py reads this to pick, per numeric item, which wrong choice to leave out so the key letter balances while the four kept choices stay in ascending numeric order. Not served to the site.",
+"items": {
+"act-math-prealgebra-001": {
+"choices": [
+"$95",
+"$100",
+"$105",
+"$110",
+"$315"
+],
+"answer": 2,
+"distractors": [
+"Close guess, but 7 x 15 is not 95; recheck the multiplication.",
+"100 would need $14.29 per bag; the rate is $15.",
+"Correct: $15 per bag times 7 bags.",
+"110 adds an extra bag's worth of rounding; 7 x 15 = 105.",
+"315 multiplies 45 by 7, treating $45 as the price of one bag."
+],
+"traps": [
+"calc-slip",
+"other",
+null,
+"calc-slip",
+"misread"
+]
+},
+"act-math-prealgebra-002": {
+"choices": [
+"20%",
+"25%",
+"30%",
+"80%",
+"125%"
+],
+"answer": 1,
+"distractors": [
+"20% divides the 30 m change by 150, the new value, instead of the original.",
+"Correct: 30 / 120 = 25%.",
+"30% treats the raw 30 m change as a percent.",
+"80% is 120/150, the ratio of old to new, not a change.",
+"125% is 150/120, the new value as a percent of the old, not the increase."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"partial"
+]
+},
+"act-math-prealgebra-003": {
+"choices": [
+"8",
+"16",
+"20",
+"24",
+"26"
+],
+"answer": 1,
+"distractors": [
+"8 lb is one part, not the two parts Kona gets.",
+"Correct: 2 of 5 parts, 2 x 8 = 16 lb.",
+"20 lb splits the batch in half, ignoring the ratio.",
+"24 lb is the Brazilian share (3 parts).",
+"26 lb comes from 40 x 2/3, treating 2:3 as a fraction of the whole."
+],
+"traps": [
+"partial",
+null,
+"half-right",
+"wrong-part",
+"half-right"
+]
+},
+"act-math-prealgebra-004": {
+"choices": [
+"1/12",
+"1/6",
+"1/4",
+"2/5",
+"5/12"
+],
+"answer": 2,
+"distractors": [
+"1/12 stops after 3/4 - 2/3 and forgets to add 1/6.",
+"1/6 drops the first two terms or mis-subtracts them.",
+"Correct: 9/12 - 8/12 + 2/12 = 3/12 = 1/4.",
+"2/5 adds and subtracts numerators and denominators straight across, which is not allowed.",
+"5/12 adds 2/12 instead of subtracting 8/12 somewhere; recheck signs."
+],
+"traps": [
+"partial",
+"calc-slip",
+null,
+"half-right",
+"calc-slip"
+]
+},
+"act-math-prealgebra-005": {
+"choices": [
+"$64.00",
+"$68.00",
+"$70.00",
+"$70.40",
+"$72.00"
+],
+"answer": 3,
+"distractors": [
+"64.00 applies the discount but forgets the tax.",
+"68.00 subtracts 20% and adds 10% of the discounted price incorrectly (64 + 4).",
+"70.00 drops the 40 cents of tax on the extra amount; compute 10% of 64 exactly.",
+"Correct: 80 x 0.8 x 1.1 = 70.40.",
+"72.00 is 80 x 0.90, treating -20% and +10% as a single 10% discount."
+],
+"traps": [
+"partial",
+"calc-slip",
+"calc-slip",
+null,
+"half-right"
+]
+},
+"act-math-prealgebra-006": {
+"choices": [
+"0.072",
+"0.36",
+"0.72",
+"7.2",
+"72"
+],
+"answer": 2,
+"distractors": [
+"0.072 divides by 10,000 instead of 1000.",
+"0.36 uses only 24 hours, one day.",
+"Correct: 720 m = 0.72 km.",
+"7.2 divides by 100 instead of 1000.",
+"72 divides 720 by 10."
+],
+"traps": [
+"misread",
+"misread",
+null,
+"misread",
+"misread"
+]
+},
+"act-math-prealgebra-007": {
+"choices": [
+"2.4 x 10^3",
+"2.4 x 10^4",
+"2.4 x 10^-7",
+"24 x 10^-10",
+"1.0 x 10^4"
+],
+"answer": 1,
+"distractors": [
+"2.4 x 10^3 moves the decimal but forgets to raise the exponent.",
+"Correct: 24 x 10^3 = 2.4 x 10^4.",
+"10^-7 subtracts the exponents instead of adding.",
+"24 x 10^-10 multiplies the exponents and is not in proper form.",
+"1.0 x 10^4 adds the coefficients (4 + 6) instead of multiplying."
+],
+"traps": [
+"partial",
+null,
+"calc-slip",
+"calc-slip",
+"calc-slip"
+]
+},
+"act-math-prealgebra-008": {
+"choices": [
+"8:06 a.m.",
+"8:30 a.m.",
+"8:36 a.m.",
+"9:00 a.m.",
+"11:36 a.m."
+],
+"answer": 2,
+"distractors": [
+"8:06 uses 18 - 12 = 6, the difference, not a common multiple.",
+"8:30 is not a multiple of 12 or 18 minutes past 8:00.",
+"Correct: LCM(12, 18) = 36 minutes.",
+"9:00 is 60 minutes, a multiple of 12 but not of 18.",
+"11:36 uses 12 x 18 = 216 minutes, a common multiple but not the least."
+],
+"traps": [
+"half-right",
+"other",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-prealgebra-009": {
+"choices": [
+"-9",
+"-1",
+"1",
+"5",
+"9"
+],
+"answer": 2,
+"distractors": [
+"-9 never takes absolute values: -5 - 4.",
+"-1 forgets the bars on 3 - 8 and computes -5 + 4.",
+"Correct: 5 - 4 = 1.",
+"5 drops the second term.",
+"9 adds the absolute values instead of subtracting."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"partial",
+"calc-slip"
+]
+},
+"act-math-prealgebra-010": {
+"choices": [
+"$19.00",
+"$19.55",
+"$20.00",
+"$21.00",
+"$26.45"
+],
+"answer": 2,
+"distractors": [
+"19.00 subtracts 4 dollars by guesswork.",
+"19.55 takes 15% of 23 and subtracts it; the percent was of the original wage.",
+"Correct: 23 / 1.15 = 20.00.",
+"21.00 is not 23 / 1.15.",
+"26.45 adds another 15% instead of undoing it."
+],
+"traps": [
+"other",
+"half-right",
+null,
+"other",
+"half-right"
+]
+},
+"act-math-prealgebra-011": {
+"choices": [
+"40 mph",
+"42.5 mph",
+"43.2 mph",
+"44 mph",
+"45 mph"
+],
+"answer": 2,
+"distractors": [
+"40 mph is a rough guess below both speeds' midpoint.",
+"42.5 mph does not match total distance over total time.",
+"Correct: 108 / 2.5 = 43.2 mph.",
+"44 mph is not 108 / 2.5.",
+"45 mph averages the speeds, ignoring that he spends more time at the slower speed."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"half-right"
+]
+},
+"act-math-prealgebra-012": {
+"choices": [
+"6.25%",
+"10%",
+"15%",
+"62.5%",
+"65%"
+],
+"answer": 1,
+"distractors": [
+"6.25% multiplies 25% by 25%.",
+"Correct: 0.40 x 0.25 = 0.10.",
+"15% subtracts 25 from 40.",
+"62.5% divides 25 by 40.",
+"65% adds the two percents."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-prealgebra-013": {
+"choices": [
+"1/2",
+"2",
+"4",
+"8",
+"16"
+],
+"answer": 3,
+"distractors": [
+"1/2 subtracts in the wrong order.",
+"2 treats dividing by 2^-1 as dividing by 2.",
+"4 forgets the division by 2^-1 entirely (2^2).",
+"Correct: 2^(5 - 3 + 1) = 2^3 = 8.",
+"16 adds an extra 1 to the exponent."
+],
+"traps": [
+"calc-slip",
+"half-right",
+"partial",
+null,
+"calc-slip"
+]
+},
+"act-math-prealgebra-014": {
+"choices": [
+"30",
+"60",
+"90",
+"120",
+"270"
+],
+"answer": 1,
+"distractors": [
+"30 is one part only.",
+"Correct: 2 x 30 = 60.",
+"90 would be 3 parts.",
+"120 is the sheep count (4 parts).",
+"270 is the cattle count (9 parts)."
+],
+"traps": [
+"partial",
+null,
+"wrong-part",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-prealgebra-015": {
+"choices": [
+"1.5",
+"2",
+"3",
+"4",
+"9"
+],
+"answer": 2,
+"distractors": [
+"1.5 L would make 1.8/7.5 = 24%.",
+"2 L would make 1.8/8 = 22.5%.",
+"Correct: 1.8 / 9 = 20%.",
+"4 L would make 1.8/10 = 18%.",
+"9 L is the new total volume, not the water added."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"wrong-part"
+]
+},
+"act-math-prealgebra-016": {
+"choices": [
+"2",
+"4",
+"5",
+"7",
+"8"
+],
+"answer": 0,
+"distractors": [
+"Correct: remainder 2 points to the second digit, 2.",
+"4 is the first digit (remainder 1).",
+"5 is the fourth digit.",
+"7 is the fifth digit.",
+"8 is the third digit (remainder 3)."
+],
+"traps": [
+null,
+"wrong-part",
+"wrong-part",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-prealgebra-017": {
+"choices": [
+"2 sqrt(6)",
+"4 sqrt(2)",
+"6 sqrt(2)",
+"9 sqrt(2)",
+"36 sqrt(2)"
+],
+"answer": 2,
+"distractors": [
+"2 sqrt(6) = sqrt(24).",
+"4 sqrt(2) = sqrt(32).",
+"Correct: sqrt(36 x 2) = 6 sqrt(2).",
+"9 sqrt(2) = sqrt(162).",
+"36 sqrt(2) forgets to take the square root of 36."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"partial"
+]
+},
+"act-math-prealgebra-018": {
+"choices": [
+"1.5",
+"2",
+"2.5",
+"4.5",
+"9"
+],
+"answer": 1,
+"distractors": [
+"1.5 hr would need a combined rate of 2/3 tank per hour.",
+"Correct: combined rate 1/2 tank per hour gives 2 hr.",
+"2.5 hr does not match any combined rate here.",
+"4.5 hr averages the two times.",
+"9 hr adds the two times."
+],
+"traps": [
+"other",
+null,
+"other",
+"half-right",
+"half-right"
+]
+},
+"act-math-prealgebra-019": {
+"choices": [
+"2.8 in",
+"3.36 in",
+"3.6 in",
+"21 in",
+"33.6 in"
+],
+"answer": 1,
+"distractors": [
+"2.8 divides by 3 instead of 2.5.",
+"Correct: 8.4 / 2.5 = 3.36 in.",
+"3.6 rounds the division incorrectly.",
+"21 multiplies 8.4 by 2.5.",
+"33.6 shifts the decimal of 3.36."
+],
+"traps": [
+"calc-slip",
+null,
+"calc-slip",
+"half-right",
+"calc-slip"
+]
+},
+"act-math-prealgebra-020": {
+"choices": [
+"No change",
+"2% decrease",
+"4% decrease",
+"4% increase",
+"40% decrease"
+],
+"answer": 2,
+"distractors": [
+"No change assumes +20% and -20% cancel; they apply to different bases.",
+"2% is half of the true change.",
+"Correct: 1.2 x 0.8 = 0.96, a 4% decrease.",
+"The net is a decrease, not an increase.",
+"40% adds the sizes of the two changes."
+],
+"traps": [
+"overreach",
+"half-right",
+null,
+"opposite",
+"half-right"
+]
+},
+"act-math-prealgebra-021": {
+"choices": [
+"20",
+"30",
+"60",
+"120",
+"240"
+],
+"answer": 2,
+"distractors": [
+"20 is not divisible by 6.",
+"30 is not divisible by 4.",
+"Correct: 2^2 x 3 x 5 = 60.",
+"120 works but is not the smallest.",
+"240 is 4 x 6 x 10, a common multiple but not the least."
+],
+"traps": [
+"other",
+"other",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-prealgebra-022": {
+"choices": [
+"2",
+"10",
+"14",
+"16",
+"20"
+],
+"answer": 3,
+"distractors": [
+"2 is just the 3(4-6)^2/6 piece.",
+"10 subtracts 18 - 3 first, then multiplies.",
+"14 subtracts (4 - 6)^2 = 4 directly and drops the 3 and the 6.",
+"Correct: 18 - 12/6 = 16.",
+"20 treats (-2)^2 as -4 so the term adds."
+],
+"traps": [
+"partial",
+"calc-slip",
+"calc-slip",
+null,
+"calc-slip"
+]
+},
+"act-math-prealgebra-023": {
+"choices": [
+"3",
+"4.5",
+"9",
+"30",
+"81"
+],
+"answer": 3,
+"distractors": [
+"3 takes sqrt(9) without converting to a decimal fraction of 100.",
+"4.5 halves 9.",
+"9 assumes the net loss equals p.",
+"Correct: (p/100)^2 = 0.09, so p = 30.",
+"81 squares 9 instead of taking a square root."
+],
+"traps": [
+"partial",
+"half-right",
+"overreach",
+null,
+"half-right"
+]
+},
+"act-math-algebra-001": {
+"choices": [
+"3.5",
+"5",
+"7",
+"14",
+"28"
+],
+"answer": 2,
+"distractors": [
+"3.5 subtracts 7 instead of adding it (14/4).",
+"5 is a guess that gives 13, not 21.",
+"Correct: 4x = 28, x = 7.",
+"14 divides 28 by 2 instead of 4.",
+"28 stops at 4x = 28 without dividing."
+],
+"traps": [
+"calc-slip",
+"other",
+null,
+"calc-slip",
+"partial"
+]
+},
+"act-math-algebra-002": {
+"choices": [
+"12",
+"35",
+"47",
+"48",
+"60"
+],
+"answer": 1,
+"distractors": [
+"12 is the price per post, not the count.",
+"Correct: (570 - 150)/12 = 35.",
+"47 divides 570 by 12 and ignores the flat fee.",
+"48 rounds 570/12 up, still ignoring the fee.",
+"60 adds the fee instead of subtracting it: 720/12."
+],
+"traps": [
+"wrong-part",
+null,
+"half-right",
+"half-right",
+"calc-slip"
+]
+},
+"act-math-algebra-003": {
+"choices": [
+"-11",
+"1",
+"3",
+"7",
+"11"
+],
+"answer": 4,
+"distractors": [
+"-11 flips a sign when moving 6.",
+"1 subtracts 6 from 5 instead of adding.",
+"3 gives 3(1) = 3 on the left but 11 on the right.",
+"7 forgets to distribute the 3 to the -2 (3x - 2 = 2x + 5).",
+"Correct: x - 6 = 5, x = 11."
+],
+"traps": [
+"calc-slip",
+"calc-slip",
+"other",
+"calc-slip",
+null
+]
+},
+"act-math-algebra-004": {
+"choices": [
+"x > -3",
+"x < -3",
+"x > 3",
+"x < 3",
+"x < -8"
+],
+"answer": 1,
+"distractors": [
+"x > -3 forgets to flip the sign when dividing by -2.",
+"Correct: divide by -2 and flip: x < -3.",
+"x > 3 drops the negative and the flip.",
+"x < 3 flips but drops the negative sign of the result.",
+"x < -8 adds 5 instead of subtracting before dividing."
+],
+"traps": [
+"calc-slip",
+null,
+"calc-slip",
+"calc-slip",
+"calc-slip"
+]
+},
+"act-math-algebra-005": {
+"choices": [
+"2",
+"3",
+"4",
+"5",
+"6"
+],
+"answer": 2,
+"distractors": [
+"2 is a guess that fails 2x + y = 11 with x - y = 1.",
+"3 is the value of y, not x.",
+"Correct: 3x = 12 gives x = 4.",
+"5 would give y = 4, but 2(5) + 4 = 14.",
+"6 with y = 5 from the second equation gives 2(6) + 5 = 17, not 11."
+],
+"traps": [
+"other",
+"wrong-part",
+null,
+"other",
+"other"
+]
+},
+"act-math-algebra-006": {
+"choices": [
+"20",
+"24",
+"25",
+"30",
+"40"
+],
+"answer": 3,
+"distractors": [
+"20 is the number of adult tickets.",
+"24 does not satisfy both equations.",
+"25 splits the tickets evenly: 25 x 20 = 500, not 480.",
+"Correct: s = 30, a = 20.",
+"40 would give 320 + 120 = 440."
+],
+"traps": [
+"wrong-part",
+"other",
+"other",
+null,
+"other"
+]
+},
+"act-math-algebra-007": {
+"choices": [
+"w = P - 2l",
+"w = (P - 2l)/2",
+"w = P/2 - 2l",
+"w = (P - l)/2",
+"w = 2(P - l)"
+],
+"answer": 1,
+"distractors": [
+"P - 2l is 2w, not w; you still divide by 2.",
+"Correct: 2w = P - 2l, w = (P - 2l)/2.",
+"P/2 - 2l divides only P by 2, not the 2l.",
+"(P - l)/2 forgets the 2 on l.",
+"2(P - l) multiplies instead of divides."
+],
+"traps": [
+"partial",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-algebra-008": {
+"choices": [
+"x <= 7",
+"1 <= x <= 7",
+"-7 <= x <= 7",
+"x <= 1 or x >= 7",
+"-1 <= x <= 7"
+],
+"answer": 1,
+"distractors": [
+"x <= 7 drops the lower bound.",
+"Correct: -3 <= x - 4 <= 3 gives 1 <= x <= 7.",
+"-7 to 7 treats it as |x| <= 7.",
+"The 'or' form is for |x - 4| >= 3.",
+"-1 subtracts 4 from -3 instead of adding."
+],
+"traps": [
+"partial",
+null,
+"other",
+"other",
+"calc-slip"
+]
+},
+"act-math-algebra-009": {
+"choices": [
+"-4",
+"2",
+"3",
+"4",
+"14"
+],
+"answer": 3,
+"distractors": [
+"-4 gives the opposite slope; the lines would cross.",
+"2 gives a different slope; the lines cross once.",
+"3 gives a different slope.",
+"Correct: k = 4 makes 6x + 4y = 10 parallel to 6x + 4y = 14.",
+"14 confuses the constant with the coefficient of y."
+],
+"traps": [
+"opposite",
+"other",
+"other",
+null,
+"misread"
+]
+},
+"act-math-algebra-010": {
+"choices": [
+"-17",
+"-7",
+"7",
+"12",
+"17"
+],
+"answer": 1,
+"distractors": [
+"-17 subtracts 12 from -5.",
+"Correct: -x = 7, x = -7.",
+"7 forgets the negative on x.",
+"12 is the right side, not x.",
+"17 adds 5 and 12."
+],
+"traps": [
+"calc-slip",
+null,
+"calc-slip",
+"wrong-part",
+"calc-slip"
+]
+},
+"act-math-algebra-011": {
+"choices": [
+"3",
+"4",
+"5",
+"6",
+"7"
+],
+"answer": 2,
+"distractors": [
+"3 hours: $55 vs $61.",
+"4 hours: $65 vs $68.",
+"Correct: both cost $75.",
+"6 hours: $85 vs $82.",
+"7 hours: $95 vs $89."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-algebra-012": {
+"choices": [
+"13",
+"24",
+"25",
+"36",
+"Cannot be determined"
+],
+"answer": 2,
+"distractors": [
+"13 adds 1 to 12 without doubling.",
+"24 forgets the + 1.",
+"Correct: 2(12) + 1 = 25.",
+"36 triples instead of doubling.",
+"The value is fixed because 6a - 4b is a multiple of 3a - 2b."
+],
+"traps": [
+"partial",
+"partial",
+null,
+"half-right",
+"other"
+]
+},
+"act-math-algebra-013": {
+"choices": [
+"5",
+"10",
+"15",
+"20",
+"25"
+],
+"answer": 1,
+"distractors": [
+"5 L gives 2.5 + 2 = 4.5 L of acid, not 6.",
+"Correct: y = 10, x = 20; acid = 2 + 4 = 6 L.",
+"15 L gives 1.5 + 6 = 7.5 L of acid.",
+"20 is the amount of 10% solution.",
+"25 L gives 0.5 + 10 = 10.5 L of acid."
+],
+"traps": [
+"other",
+null,
+"other",
+"wrong-part",
+"other"
+]
+},
+"act-math-algebra-014": {
+"choices": [
+"7x - 17",
+"7x - 7",
+"7x + 17",
+"9x - 17",
+"7x - 8"
+],
+"answer": 0,
+"distractors": [
+"Correct: 8x - 12 - x - 5 = 7x - 17.",
+"7x - 7 does -12 + 5, not distributing the minus to 5.",
+"7x + 17 flips both constant signs.",
+"9x adds x instead of subtracting it.",
+"7x - 8 distributes 4 only to 2x (8x - 3 - x - 5)."
+],
+"traps": [
+null,
+"calc-slip",
+"calc-slip",
+"calc-slip",
+"calc-slip"
+]
+},
+"act-math-algebra-015": {
+"choices": [
+"7",
+"22",
+"23",
+"30",
+"31"
+],
+"answer": 2,
+"distractors": [
+"7 divides 300 by 40.",
+"22 days leaves 320 gallons, still not below 300.",
+"Correct: d > 22.5, so day 23 (280 gallons).",
+"30 days empties the whole tank.",
+"31 is past empty."
+],
+"traps": [
+"half-right",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-algebra-016": {
+"choices": [
+"1.5",
+"2",
+"3",
+"4",
+"8"
+],
+"answer": 1,
+"distractors": [
+"1.5 makes the x-coefficients mismatch.",
+"Correct: the second equation is exactly twice the first when a = 2.",
+"3 gives intersecting lines.",
+"4 copies the coefficient without scaling.",
+"8 doubles 4 instead of halving it."
+],
+"traps": [
+"other",
+null,
+"other",
+"half-right",
+"half-right"
+]
+},
+"act-math-algebra-017": {
+"choices": [
+"-5",
+"1",
+"3",
+"5",
+"7"
+],
+"answer": 3,
+"distractors": [
+"-5 makes a sign error moving the constants.",
+"1 makes the right side 0.",
+"3 gives 6/4 vs 2/2.",
+"Correct: x = 5, both sides equal 2.",
+"7 gives 10/4 vs 6/2."
+],
+"traps": [
+"calc-slip",
+"other",
+"other",
+null,
+"other"
+]
+},
+"act-math-algebra-018": {
+"choices": [
+"52",
+"54",
+"56",
+"58",
+"60"
+],
+"answer": 2,
+"distractors": [
+"52 is the smallest.",
+"54 is the middle one.",
+"Correct: 52, 54, 56.",
+"58 is too large; 54 + 56 + 58 = 168.",
+"60 is too large."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+null,
+"other",
+"other"
+]
+},
+"act-math-algebra-019": {
+"choices": [
+"1",
+"7",
+"11",
+"15",
+"19"
+],
+"answer": 2,
+"distractors": [
+"1 computes 5 - 4.",
+"7 computes 3 + 4.",
+"Correct: 15 - 4 = 11.",
+"15 forgets to subtract 4.",
+"19 adds 4 instead of subtracting."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"partial",
+"calc-slip"
+]
+},
+"act-math-algebra-020": {
+"choices": [
+"85",
+"88",
+"94",
+"97",
+"100"
+],
+"answer": 3,
+"distractors": [
+"85 keeps the target average but ignores the deficit.",
+"88 adds 3 points per quiz once, not over five quizzes.",
+"94 adds 4 x 3 to 82: misses one quiz's share.",
+"Correct: 425 - 328 = 97.",
+"100 overshoots; the average would be 85.6."
+],
+"traps": [
+"half-right",
+"half-right",
+"half-right",
+null,
+"other"
+]
+},
+"act-math-algebra-021": {
+"choices": [
+"The flat fee for any rental",
+"The cost per hour",
+"The total cost for one hour",
+"The number of hours rented",
+"The maximum cost"
+],
+"answer": 1,
+"distractors": [
+"The flat fee is 45, the constant term.",
+"Correct: 30 dollars is added per hour.",
+"One hour costs 45 + 30 = 75, not 30.",
+"h is the hours; 30 multiplies it.",
+"A linear cost has no maximum here."
+],
+"traps": [
+"wrong-part",
+null,
+"other",
+"wrong-part",
+"other"
+]
+},
+"act-math-algebra-022": {
+"choices": [
+"2",
+"12",
+"24",
+"42",
+"98"
+],
+"answer": 2,
+"distractors": [
+"2 divides 14 by 7.",
+"12 gives 4 + 3 = 7.",
+"Correct: 7x = 168, x = 24.",
+"42 is 14 x 3.",
+"98 is 14 x 7."
+],
+"traps": [
+"half-right",
+"other",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-functions-001": {
+"choices": [
+"-1",
+"3",
+"7",
+"11",
+"15"
+],
+"answer": 4,
+"distractors": [
+"-1 treats (-2)^2 as -4: -8 + 6 + 1.",
+"3 gets 8 - 6 + 1, mis-signing -3(-2).",
+"7 drops the 2x^2 term: 6 + 1.",
+"11 forgets the coefficient 2 on x^2: 4 + 6 + 1.",
+"Correct: 8 + 6 + 1 = 15."
+],
+"traps": [
+"calc-slip",
+"calc-slip",
+"partial",
+"half-right",
+null
+]
+},
+"act-math-functions-002": {
+"choices": [
+"x = -7 and x = 2",
+"x = 7 and x = -2",
+"x = 7 and x = 2",
+"x = -7 and x = -2",
+"x = 14 and x = -1"
+],
+"answer": 1,
+"distractors": [
+"-7 and 2 are the numbers in the factors, not the roots.",
+"Correct: (x - 7)(x + 2) = 0.",
+"7 and 2 multiply to +14, not -14.",
+"-7 and -2 add to -9.",
+"14 and -1 add to 13."
+],
+"traps": [
+"wrong-part",
+null,
+"calc-slip",
+"other",
+"other"
+]
+},
+"act-math-functions-003": {
+"choices": [
+"(-3, 4)",
+"(3, 4)",
+"(3, -4)",
+"(-3, -4)",
+"(4, 3)"
+],
+"answer": 1,
+"distractors": [
+"(-3, 4) uses the sign shown inside the parentheses; h is the opposite.",
+"Correct: h = 3, k = 4.",
+"(3, -4) flips the sign of k.",
+"(-3, -4) flips both signs.",
+"(4, 3) swaps the coordinates."
+],
+"traps": [
+"calc-slip",
+null,
+"calc-slip",
+"calc-slip",
+"opposite"
+]
+},
+"act-math-functions-004": {
+"choices": [
+"10",
+"22",
+"28",
+"98",
+"100"
+],
+"answer": 1,
+"distractors": [
+"10 is f(3), not f(g(3)).",
+"Correct: f(7) = 22.",
+"28 is f(9): it squares 3 but forgets to subtract 2.",
+"98 is g(f(3)) = 10^2 - 2.",
+"100 squares f(3) without subtracting 2."
+],
+"traps": [
+"wrong-part",
+null,
+"partial",
+"wrong-part",
+"partial"
+]
+},
+"act-math-functions-005": {
+"choices": [
+"N = 500(2)^t",
+"N = 500(2)^(3t)",
+"N = 500(2)^(t/3)",
+"N = 500 + 2t/3",
+"N = 1000t/3"
+],
+"answer": 2,
+"distractors": [
+"500(2)^t doubles every year.",
+"500(2)^(3t) doubles three times a year.",
+"Correct: exponent t/3 is 1 at t = 3.",
+"500 + 2t/3 is linear, not doubling.",
+"1000t/3 is linear growth."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-functions-006": {
+"choices": [
+"4",
+"5",
+"8",
+"13",
+"2"
+],
+"answer": 4,
+"distractors": [
+"4 gives sqrt(0) = 0, which is defined.",
+"5 gives sqrt(1).",
+"8 gives sqrt(4).",
+"13 gives sqrt(9).",
+"Correct: 2 gives sqrt(-2), not a real number."
+],
+"traps": [
+"other",
+"other",
+"other",
+"other",
+null
+]
+},
+"act-math-functions-007": {
+"choices": [
+"5",
+"48",
+"64",
+"69",
+"133"
+],
+"answer": 3,
+"distractors": [
+"5 is the starting height, h(0).",
+"48 is 64 - 16, combining coefficients instead of evaluating.",
+"64 is the coefficient b, not a height.",
+"Correct: h(2) = 69.",
+"133 uses +16t^2."
+],
+"traps": [
+"wrong-part",
+"half-right",
+"wrong-part",
+null,
+"half-right"
+]
+},
+"act-math-functions-008": {
+"choices": [
+"x = -2 and x = 1/2",
+"x = 2 and x = -1/2",
+"x = -1 and x = 2",
+"x = 1 and x = -2",
+"x = -2 and x = -1/2"
+],
+"answer": 0,
+"distractors": [
+"Correct: (2x - 1)(x + 2) = 0.",
+"2 and -1/2 flip both signs.",
+"-1 and 2 solve x^2 - x - 2 = 0.",
+"1 and -2 solve x^2 + x - 2 = 0.",
+"-1/2 gives 0.5 - 1.5 - 2 = -3."
+],
+"traps": [
+null,
+"calc-slip",
+"other",
+"other",
+"other"
+]
+},
+"act-math-functions-009": {
+"choices": [
+"0",
+"1",
+"2",
+"3",
+"Infinitely many"
+],
+"answer": 0,
+"distractors": [
+"Correct: discriminant -44 < 0.",
+"One real root needs discriminant 0.",
+"Two real roots need a positive discriminant.",
+"A quadratic has at most 2 roots.",
+"Only an identity has infinitely many."
+],
+"traps": [
+null,
+"other",
+"other",
+"other",
+"other"
+]
+},
+"act-math-functions-010": {
+"choices": [
+"x^9",
+"x^10",
+"x^24",
+"x^12",
+"x^5"
+],
+"answer": 1,
+"distractors": [
+"x^9 adds 3 + 2 + 4.",
+"Correct: x^6 x x^4 = x^10.",
+"x^24 multiplies all three exponents.",
+"x^12 multiplies 3 x 4.",
+"x^5 is not any valid combination."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"other"
+]
+},
+"act-math-functions-011": {
+"choices": [
+"4",
+"5",
+"6",
+"16",
+"64"
+],
+"answer": 1,
+"distractors": [
+"4: 2^4 = 16.",
+"Correct: 2^5 = 32.",
+"6: 2^6 = 64.",
+"16 is 32/2.",
+"64 is 2 x 32."
+],
+"traps": [
+"other",
+null,
+"other",
+"half-right",
+"wrong-part"
+]
+},
+"act-math-functions-012": {
+"choices": [
+"-4",
+"-2",
+"1",
+"2",
+"4"
+],
+"answer": 4,
+"distractors": [
+"-4 makes a sign error solving 2x + 1 = 3x - 3.",
+"-2 forgets to rewrite 27 and sets 2x + 1 = x - 1.",
+"1 gives 3^3 on the left but 27^0 = 1 on the right.",
+"2 uses 27 = 3^2.",
+"Correct: 2x + 1 = 3x - 3 gives x = 4."
+],
+"traps": [
+"calc-slip",
+"partial",
+"other",
+"calc-slip",
+null
+]
+},
+"act-math-functions-013": {
+"choices": [
+"y = (x - 2)^2 - 5",
+"y = (x + 2)^2 - 5",
+"y = (x + 2)^2 + 5",
+"y = (x - 5)^2 + 2",
+"y = x^2 + 2x - 5"
+],
+"answer": 1,
+"distractors": [
+"(x - 2) shifts right, not left.",
+"Correct: left 2 is x + 2, down 5 is -5.",
+"+5 shifts up.",
+"This swaps the horizontal and vertical amounts.",
+"x^2 + 2x - 5 is not a pure shift of x^2."
+],
+"traps": [
+"opposite",
+null,
+"opposite",
+"opposite",
+"other"
+]
+},
+"act-math-functions-014": {
+"choices": [
+"2",
+"5",
+"8",
+"11",
+"14"
+],
+"answer": 2,
+"distractors": [
+"2 is f(1).",
+"5 is f(2).",
+"Correct: the row x = 3 shows 8.",
+"11 is f(4).",
+"14 is f(5)."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+null,
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-functions-015": {
+"choices": [
+"f(x) = x + 1",
+"f(x) = 2x",
+"f(x) = 3x - 1",
+"f(x) = 3x + 2",
+"f(x) = x^2 + 1"
+],
+"answer": 2,
+"distractors": [
+"x + 1 gives f(1) = 2 but f(2) = 3, not 5.",
+"2x gives f(1) = 2 but f(2) = 4.",
+"Correct: slope 3, intercept -1.",
+"3x + 2 gives f(1) = 5.",
+"x^2 + 1 gives f(2) = 5 but f(3) = 10."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-functions-016": {
+"choices": [
+"-6",
+"-2",
+"2",
+"6",
+"sqrt(11)"
+],
+"answer": 0,
+"distractors": [
+"Correct: -b/a = -6.",
+"-2 is the product of the roots, c/a.",
+"2 flips the sign of the product.",
+"6 forgets the negative in -b/a.",
+"sqrt(11) is only part of each root."
+],
+"traps": [
+null,
+"wrong-part",
+"calc-slip",
+"calc-slip",
+"partial"
+]
+},
+"act-math-functions-017": {
+"choices": [
+"40000(0.15)^4",
+"40000(0.85)^4",
+"40000(1.15)^4",
+"40000 - 4(0.15)",
+"40000(1 - 0.6)"
+],
+"answer": 1,
+"distractors": [
+"0.15 is the part lost, not the part kept.",
+"Correct: 85% kept each year.",
+"1.15 is growth, not decay.",
+"This subtracts a tiny constant, not percent.",
+"1 - 0.6 is a flat 60% loss, ignoring compounding."
+],
+"traps": [
+"opposite",
+null,
+"opposite",
+"half-right",
+"half-right"
+]
+},
+"act-math-functions-018": {
+"choices": [
+"-4",
+"3",
+"4",
+"7",
+"(2, 3)"
+],
+"answer": 3,
+"distractors": [
+"-4 is the coefficient of x.",
+"3 is the y-value of the vertex.",
+"4 is the opposite of b.",
+"Correct: set x = 0.",
+"(2, 3) is the vertex."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+"partial",
+null,
+"wrong-part"
+]
+},
+"act-math-functions-019": {
+"choices": [
+"1",
+"2",
+"3",
+"4",
+"5"
+],
+"answer": 2,
+"distractors": [
+"a = 1: f(2) = 0, f(1) + 5 = 4.",
+"a = 2: f(3) = 3, f(2) + 5 = 5.",
+"Correct: f(4) = 8 = f(3) + 5.",
+"a = 4: f(5) = 15, f(4) + 5 = 13.",
+"a = 5: f(6) = 24, f(5) + 5 = 20."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-functions-020": {
+"choices": [
+"(2x - 5)^2",
+"(4x - 5)(x + 5)",
+"(2x - 5)(2x + 5)",
+"(2x + 5)^2",
+"4(x - 5)(x + 5)"
+],
+"answer": 2,
+"distractors": [
+"(2x - 5)^2 = 4x^2 - 20x + 25.",
+"(4x - 5)(x + 5) = 4x^2 + 15x - 25.",
+"Correct: (2x)^2 - 5^2.",
+"(2x + 5)^2 has a middle term.",
+"4(x - 5)(x + 5) = 4x^2 - 100."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-functions-021": {
+"choices": [
+"-18",
+"-10",
+"-9",
+"2",
+"18"
+],
+"answer": 0,
+"distractors": [
+"Correct: y(2) = 2(3)(-3) = -18.",
+"-10 is the y-intercept, not the minimum.",
+"-9 uses a = 1.",
+"2 is the x-coordinate of the vertex.",
+"18 drops the sign."
+],
+"traps": [
+null,
+"wrong-part",
+"half-right",
+"wrong-part",
+"calc-slip"
+]
+},
+"act-math-geometry-001": {
+"choices": [
+"205",
+"290",
+"340",
+"410",
+"10,200"
+],
+"answer": 3,
+"distractors": [
+"205 is l + w, only half the perimeter.",
+"290 doubles only one side and adds the other.",
+"340 uses 2(85) + 170, doubling the short side twice.",
+"Correct: 2(120 + 85) = 410 m.",
+"10,200 is the area in square meters."
+],
+"traps": [
+"partial",
+"half-right",
+"half-right",
+null,
+"wrong-part"
+]
+},
+"act-math-geometry-002": {
+"choices": [
+"43",
+"55",
+"65",
+"115",
+"245"
+],
+"answer": 2,
+"distractors": [
+"43 subtracts from 158 instead of 180.",
+"55 is a subtraction slip.",
+"Correct: 180 - 115 = 65.",
+"115 is the sum of the two given angles.",
+"245 subtracts from 360."
+],
+"traps": [
+"calc-slip",
+"calc-slip",
+null,
+"wrong-part",
+"half-right"
+]
+},
+"act-math-geometry-003": {
+"choices": [
+"3 pi",
+"6 pi",
+"9 pi",
+"12 pi",
+"36 pi"
+],
+"answer": 2,
+"distractors": [
+"3 pi uses pi r without squaring.",
+"6 pi is the circumference, 2 pi r.",
+"Correct: pi(3^2) = 9 pi.",
+"12 pi does not match any circle formula with r = 3.",
+"36 pi squares the diameter 6."
+],
+"traps": [
+"half-right",
+"wrong-part",
+null,
+"other",
+"half-right"
+]
+},
+"act-math-geometry-004": {
+"choices": [
+"10.5",
+"15",
+"18",
+"21",
+"225"
+],
+"answer": 1,
+"distractors": [
+"10.5 averages the legs.",
+"Correct: sqrt(225) = 15.",
+"18 doubles the shorter leg.",
+"21 adds the legs.",
+"225 is c^2; take the square root."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"partial"
+]
+},
+"act-math-geometry-005": {
+"choices": [
+"31",
+"79",
+"157",
+"314",
+"100"
+],
+"answer": 1,
+"distractors": [
+"31 is the circumference, pi d.",
+"Correct: 25 pi is about 78.5 m^2.",
+"157 is 50 pi, using 2 pi r^2.",
+"314 uses the diameter as the radius: 100 pi.",
+"100 is d^2 without pi."
+],
+"traps": [
+"wrong-part",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-006": {
+"choices": [
+"10",
+"20",
+"30",
+"40",
+"70"
+],
+"answer": 2,
+"distractors": [
+"10 sets the two angles equal: 3x + 10 = 2x + 20.",
+"20 subtracts incorrectly from 180.",
+"Correct: 5x + 30 = 180.",
+"40 makes the sum 230.",
+"70 is not a solution of 5x + 30 = 180."
+],
+"traps": [
+"half-right",
+"calc-slip",
+null,
+"other",
+"other"
+]
+},
+"act-math-geometry-007": {
+"choices": [
+"7",
+"7 sqrt(2)",
+"7 sqrt(3)",
+"14 sqrt(3)",
+"28"
+],
+"answer": 2,
+"distractors": [
+"7 is the shorter leg.",
+"7 sqrt(2) is from a 45-45-90 triangle.",
+"Correct: x sqrt(3) with x = 7.",
+"14 sqrt(3) multiplies the hypotenuse by sqrt(3).",
+"28 doubles the hypotenuse."
+],
+"traps": [
+"wrong-part",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-008": {
+"choices": [
+"24 pi",
+"48 pi",
+"96 pi",
+"144 pi",
+"384 pi"
+],
+"answer": 2,
+"distractors": [
+"24 pi multiplies r and h without squaring.",
+"48 pi is 2 pi r h, the side surface area, not volume.",
+"Correct: pi(4^2)(6) = 96 pi.",
+"144 pi squares h instead of r: pi(4)(36).",
+"384 pi uses the diameter 8 as the radius."
+],
+"traps": [
+"half-right",
+"wrong-part",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-009": {
+"choices": [
+"56",
+"91",
+"112",
+"130",
+"182"
+],
+"answer": 1,
+"distractors": [
+"56 uses (1/2)(16)(7), only the longer base.",
+"Correct: 13 x 7 = 91.",
+"112 uses the longer base times height.",
+"130 is unrelated to the trapezoid formula.",
+"182 forgets the 1/2."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"other",
+"partial"
+]
+},
+"act-math-geometry-010": {
+"choices": [
+"2 pi",
+"4 pi",
+"8 pi",
+"18 pi",
+"18"
+],
+"answer": 1,
+"distractors": [
+"2 pi uses the radius instead of the diameter in the circumference.",
+"Correct: (2/9)(18 pi) = 4 pi.",
+"8 pi doubles the arc by using 4/9 as the fraction.",
+"18 pi is the full circumference.",
+"18 forgets pi entirely."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"wrong-part",
+"half-right"
+]
+},
+"act-math-geometry-011": {
+"choices": [
+"4 pi",
+"9 pi",
+"18 pi",
+"36 pi",
+"81 pi"
+],
+"answer": 2,
+"distractors": [
+"4 pi is the arc length, not the area.",
+"9 pi is (1/9) of the area; the fraction is 2/9.",
+"Correct: (2/9)(81 pi) = 18 pi.",
+"36 pi doubles the correct value.",
+"81 pi is the whole circle."
+],
+"traps": [
+"wrong-part",
+"half-right",
+null,
+"half-right",
+"wrong-part"
+]
+},
+"act-math-geometry-012": {
+"choices": [
+"13",
+"14",
+"15",
+"16",
+"5.4"
+],
+"answer": 2,
+"distractors": [
+"13 adds the difference 4 to 9.",
+"14 is not 9 x 5/3.",
+"Correct: 9 x (10/6) = 15.",
+"16 is 6 + 10.",
+"5.4 scales the wrong way: 9 x 6/10."
+],
+"traps": [
+"half-right",
+"other",
+null,
+"half-right",
+"opposite"
+]
+},
+"act-math-geometry-013": {
+"choices": [
+"360",
+"540",
+"720",
+"900",
+"1080"
+],
+"answer": 2,
+"distractors": [
+"360 is a quadrilateral, or the exterior angle sum.",
+"540 is a pentagon.",
+"Correct: (6 - 2) x 180.",
+"900 is a heptagon.",
+"1080 is n x 180, forgetting to subtract 2."
+],
+"traps": [
+"misread",
+"misread",
+null,
+"misread",
+"half-right"
+]
+},
+"act-math-geometry-014": {
+"choices": [
+"25",
+"50",
+"50 sqrt(2)",
+"100",
+"20 sqrt(2)"
+],
+"answer": 1,
+"distractors": [
+"25 squares half the diagonal.",
+"Correct: (10/sqrt(2))^2 = 50.",
+"50 sqrt(2) leaves a stray radical.",
+"100 treats the diagonal as a side.",
+"20 sqrt(2) is the perimeter."
+],
+"traps": [
+"half-right",
+null,
+"partial",
+"half-right",
+"wrong-part"
+]
+},
+"act-math-geometry-015": {
+"choices": [
+"40",
+"50",
+"70",
+"80",
+"140"
+],
+"answer": 2,
+"distractors": [
+"40 assumes all angles equal the vertex angle.",
+"50 is 90 - 40.",
+"Correct: 140 / 2 = 70.",
+"80 doubles the vertex angle.",
+"140 is the sum of both base angles."
+],
+"traps": [
+"overreach",
+"half-right",
+null,
+"half-right",
+"wrong-part"
+]
+},
+"act-math-geometry-016": {
+"choices": [
+"5",
+"12",
+"13",
+"15",
+"19"
+],
+"answer": 2,
+"distractors": [
+"5 is only the diagonal of the 3-by-4 face.",
+"12 is just the longest edge.",
+"Correct: sqrt(169) = 13.",
+"15 adds 3 and 12.",
+"19 adds all three dimensions."
+],
+"traps": [
+"partial",
+"other",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-017": {
+"choices": [
+"23",
+"46",
+"63",
+"126",
+"252"
+],
+"answer": 2,
+"distractors": [
+"23 adds base and height.",
+"46 doubles the sum.",
+"Correct: half of 126.",
+"126 forgets the 1/2.",
+"252 doubles instead of halving."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"partial",
+"half-right"
+]
+},
+"act-math-geometry-018": {
+"choices": [
+"12 pi",
+"27 pi",
+"36 pi",
+"108 pi",
+"4 pi"
+],
+"answer": 2,
+"distractors": [
+"12 pi uses r^2 instead of r^3: (4/3)pi(9).",
+"27 pi is pi r^3 without the 4/3.",
+"Correct: (4/3)(27) pi = 36 pi.",
+"108 pi is 4 pi r^3, missing the 1/3.",
+"4 pi is (4/3)pi(3) using r^1."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-019": {
+"choices": [
+"3",
+"6",
+"7",
+"11",
+"13.5"
+],
+"answer": 1,
+"distractors": [
+"3 halves the correct answer.",
+"Correct: 36 / 6 = 6.",
+"7 uses 4 + 9 - 6.",
+"11 is 4 + 9 - 2, not a chord rule.",
+"13.5 sets 4/6 = 9/x."
+],
+"traps": [
+"calc-slip",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-geometry-020": {
+"choices": [
+"55",
+"65",
+"75",
+"125",
+"130"
+],
+"answer": 2,
+"distractors": [
+"55 is 180 - 125, the adjacent interior angle.",
+"65 is a subtraction slip.",
+"Correct: 125 - 50 = 75.",
+"125 is the exterior angle itself.",
+"130 is 180 - 50, the angle adjacent to the 50-degree angle."
+],
+"traps": [
+"half-right",
+"calc-slip",
+null,
+"wrong-part",
+"half-right"
+]
+},
+"act-math-geometry-021": {
+"choices": [
+"32",
+"64",
+"127",
+"200",
+"11"
+],
+"answer": 1,
+"distractors": [
+"32 divides by 4 pi.",
+"Correct: 400 / (2 pi) is about 63.7 m.",
+"127 is the diameter, 400/pi.",
+"200 halves the circumference.",
+"11 uses r = sqrt(400/pi), the area formula."
+],
+"traps": [
+"half-right",
+null,
+"wrong-part",
+"half-right",
+"half-right"
+]
+},
+"act-math-coordinate-001": {
+"choices": [
+"1/2",
+"2",
+"4",
+"8",
+"-2"
+],
+"answer": 1,
+"distractors": [
+"1/2 is run over rise.",
+"Correct: 8/4 = 2.",
+"4 is the run alone.",
+"8 is the rise alone.",
+"-2 mixes the subtraction order."
+],
+"traps": [
+"opposite",
+null,
+"wrong-part",
+"wrong-part",
+"calc-slip"
+]
+},
+"act-math-coordinate-002": {
+"choices": [
+"(3, 3)",
+"(7, 4)",
+"(6, 6)",
+"(14, -8)",
+"(3, 4)"
+],
+"answer": 0,
+"distractors": [
+"Correct: averages of x and of y.",
+"(7, 4) halves the differences instead of averaging.",
+"(6, 6) adds without dividing by 2.",
+"(14, -8) is the difference of the endpoints.",
+"(3, 4) halves 7 + 1, using +1 instead of -1."
+],
+"traps": [
+null,
+"half-right",
+"partial",
+"wrong-part",
+"calc-slip"
+]
+},
+"act-math-coordinate-003": {
+"choices": [
+"8",
+"10",
+"14",
+"sqrt(52)",
+"100"
+],
+"answer": 1,
+"distractors": [
+"8 is only the vertical change.",
+"Correct: sqrt(100) = 10.",
+"14 adds the horizontal and vertical changes.",
+"sqrt(52) uses 6 - 2 = 4 for the vertical change, dropping the negative.",
+"100 is d^2."
+],
+"traps": [
+"partial",
+null,
+"half-right",
+"calc-slip",
+"partial"
+]
+},
+"act-math-coordinate-004": {
+"choices": [
+"-3/2",
+"2",
+"4",
+"6",
+"12"
+],
+"answer": 3,
+"distractors": [
+"-3/2 is the slope.",
+"2 is the coefficient of y.",
+"4 is the x-intercept.",
+"Correct: 2y = 12 at x = 0.",
+"12 forgets to divide by 2."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+"wrong-part",
+null,
+"partial"
+]
+},
+"act-math-coordinate-005": {
+"choices": [
+"y = -2x + 1",
+"y = -2x + 7",
+"y = -2x - 5",
+"y = 2x - 5",
+"y = -2x + 5"
+],
+"answer": 1,
+"distractors": [
+"y = -2x + 1 uses the y-coordinate as the intercept.",
+"Correct: y - 1 = -2(x - 3).",
+"-5 makes a sign error: -2(x - 3) = -2x - 6.",
+"Positive 2 has the wrong slope.",
+"+5 subtracts 1 instead of adding."
+],
+"traps": [
+"misread",
+null,
+"calc-slip",
+"calc-slip",
+"calc-slip"
+]
+},
+"act-math-coordinate-006": {
+"choices": [
+"2/3",
+"-2/3",
+"3/2",
+"-3/2",
+"4"
+],
+"answer": 3,
+"distractors": [
+"2/3 is a parallel slope.",
+"-2/3 changes sign but does not flip.",
+"3/2 flips but does not change sign.",
+"Correct: negative reciprocal.",
+"4 confuses the intercept with slope."
+],
+"traps": [
+"half-right",
+"half-right",
+"half-right",
+null,
+"misread"
+]
+},
+"act-math-coordinate-007": {
+"choices": [
+"Center (2, -5), radius 7",
+"Center (-2, 5), radius 7",
+"Center (2, -5), radius 49",
+"Center (2, 5), radius 7",
+"Center (-2, -5), radius 49"
+],
+"answer": 0,
+"distractors": [
+"Correct: (h, k) = (2, -5), r = 7.",
+"(-2, 5) uses the signs shown, which are opposite.",
+"49 is r^2, not r.",
+"(2, 5) keeps the plus sign on 5.",
+"Both the center and radius are wrong."
+],
+"traps": [
+null,
+"calc-slip",
+"partial",
+"calc-slip",
+"other"
+]
+},
+"act-math-coordinate-008": {
+"choices": [
+"3",
+"4",
+"5",
+"10",
+"25"
+],
+"answer": 2,
+"distractors": [
+"3 is the x-coordinate of the center.",
+"4 is |k|, the center's y distance.",
+"Correct: r^2 = 25.",
+"10 is the diameter.",
+"25 is r^2."
+],
+"traps": [
+"wrong-part",
+"half-right",
+null,
+"wrong-part",
+"partial"
+]
+},
+"act-math-coordinate-009": {
+"choices": [
+"(1, 4)",
+"(2, 5)",
+"(3, 8)",
+"(0, 3)",
+"(-1, 1)"
+],
+"answer": 1,
+"distractors": [
+"At x = 1, y = 1.",
+"Correct: 4(2) - 3 = 5.",
+"At x = 3, y = 9.",
+"At x = 0, y = -3.",
+"At x = -1, y = -7."
+],
+"traps": [
+"other",
+null,
+"other",
+"other",
+"other"
+]
+},
+"act-math-coordinate-010": {
+"choices": [
+"y = -(2/3)x + 4",
+"y = (2/3)x + 4",
+"y = -(3/2)x + 4",
+"y = -(2/3)x + 6",
+"y = 4x + 6"
+],
+"answer": 0,
+"distractors": [
+"Correct: m = -2/3, b = 4.",
+"Positive slope would rise to the right; this line falls.",
+"-3/2 is run over rise.",
+"6 is the x-intercept, not b.",
+"4x + 6 mixes up all values."
+],
+"traps": [
+null,
+"opposite",
+"opposite",
+"wrong-part",
+"other"
+]
+},
+"act-math-coordinate-011": {
+"choices": [
+"(2.5, 1)",
+"(7, -5)",
+"(3, -4)",
+"(5, 2)",
+"(7, 2)"
+],
+"answer": 1,
+"distractors": [
+"(2.5, 1) is the midpoint of A and M.",
+"Correct: step from A to M twice.",
+"(3, -4) is the step itself, not B.",
+"(5, 2) adds the coordinates of A and M.",
+"(7, 2) gets x right but adds 3 in y."
+],
+"traps": [
+"wrong-part",
+null,
+"wrong-part",
+"half-right",
+"half-right"
+]
+},
+"act-math-coordinate-012": {
+"choices": [
+"(1, 3)",
+"(2, 5)",
+"(3, 7)",
+"(2, 4)",
+"(6, 1)"
+],
+"answer": 1,
+"distractors": [
+"(1, 3) is on the first line only.",
+"Correct: both lines give y = 5 at x = 2.",
+"(3, 7) is on the first line only.",
+"(2, 4) misses y.",
+"(6, 1) is on the second line only."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"other",
+"half-right"
+]
+},
+"act-math-coordinate-013": {
+"choices": [
+"-3",
+"0",
+"5",
+"Undefined",
+"1"
+],
+"answer": 1,
+"distractors": [
+"-3 is the y-value, which is the line's equation y = -3.",
+"Correct: zero rise.",
+"5 is the x-coordinate.",
+"Undefined slope is for vertical lines.",
+"1 is a 45-degree line."
+],
+"traps": [
+"wrong-part",
+null,
+"wrong-part",
+"half-right",
+"other"
+]
+},
+"act-math-coordinate-014": {
+"choices": [
+"2",
+"2 sqrt(2)",
+"4",
+"4 sqrt(2)",
+"sqrt(2)"
+],
+"answer": 1,
+"distractors": [
+"2 is just the x-coordinate of the foot.",
+"Correct: distance to (2, 2).",
+"4 is the distance to an intercept, not the nearest point.",
+"4 sqrt(2) is the distance between the two intercepts.",
+"sqrt(2) is half the correct distance."
+],
+"traps": [
+"partial",
+null,
+"wrong-part",
+"wrong-part",
+"calc-slip"
+]
+},
+"act-math-coordinate-015": {
+"choices": [
+"12 km",
+"15 km",
+"21 km",
+"225 km",
+"10.5 km"
+],
+"answer": 1,
+"distractors": [
+"12 is only the north-south change.",
+"Correct: sqrt(225) = 15 km.",
+"21 adds the legs.",
+"225 is the squared distance.",
+"10.5 averages the legs."
+],
+"traps": [
+"partial",
+null,
+"half-right",
+"partial",
+"half-right"
+]
+},
+"act-math-coordinate-016": {
+"choices": [
+"-3",
+"-1",
+"1",
+"2",
+"3"
+],
+"answer": 1,
+"distractors": [
+"-3 is the y-intercept of the given line.",
+"Correct: y = 2x - 1.",
+"1 is the y-coordinate of the point.",
+"2 is the slope.",
+"3 uses slope -2."
+],
+"traps": [
+"wrong-part",
+null,
+"wrong-part",
+"wrong-part",
+"half-right"
+]
+},
+"act-math-coordinate-017": {
+"choices": [
+"-6",
+"4",
+"5",
+"6",
+"-4"
+],
+"answer": 3,
+"distractors": [
+"-6 flips the sign of the sum.",
+"4 comes from the parabola's -4x alone.",
+"5 is the product of the roots.",
+"Correct: 1 + 5 = 6.",
+"-4 is the coefficient of x in the parabola."
+],
+"traps": [
+"calc-slip",
+"partial",
+"wrong-part",
+null,
+"wrong-part"
+]
+},
+"act-math-coordinate-018": {
+"choices": [
+"I",
+"II",
+"III",
+"IV",
+"On an axis"
+],
+"answer": 1,
+"distractors": [
+"I needs both coordinates positive.",
+"Correct: x < 0, y > 0.",
+"III needs both negative.",
+"IV needs x > 0, y < 0.",
+"Neither coordinate is 0."
+],
+"traps": [
+"other",
+null,
+"other",
+"other",
+"other"
+]
+},
+"act-math-coordinate-019": {
+"choices": [
+"(-4/3, 0)",
+"(16/3, 0)",
+"(6, 0)",
+"(32/3, 0)",
+"(0, -4)"
+],
+"answer": 1,
+"distractors": [
+"-4/3 makes a sign error.",
+"Correct: x = 4 / (3/4) = 16/3.",
+"6 moves 2 units of run instead of solving.",
+"32/3 is double the correct x.",
+"(0, -4) is the y-intercept."
+],
+"traps": [
+"calc-slip",
+null,
+"half-right",
+"calc-slip",
+"wrong-part"
+]
+},
+"act-math-coordinate-020": {
+"choices": [
+"3",
+"5",
+"6",
+"10",
+"25"
+],
+"answer": 3,
+"distractors": [
+"3 is b, half the minor axis.",
+"5 is a, half the major axis.",
+"6 is the minor axis length.",
+"Correct: 2a = 10.",
+"25 is a^2."
+],
+"traps": [
+"half-right",
+"half-right",
+"wrong-part",
+null,
+"partial"
+]
+},
+"act-math-trig-001": {
+"choices": [
+"3/5",
+"4/5",
+"3/4",
+"4/3",
+"5/3"
+],
+"answer": 0,
+"distractors": [
+"Correct: opposite BC over hypotenuse AB.",
+"4/5 is cos A (adjacent over hypotenuse).",
+"3/4 is tan A (opposite over adjacent).",
+"4/3 is 1/tan A.",
+"5/3 is the hypotenuse over the opposite, csc A."
+],
+"traps": [
+null,
+"half-right",
+"half-right",
+"half-right",
+"opposite"
+]
+},
+"act-math-trig-002": {
+"choices": [
+"3/5",
+"4/5",
+"3/4",
+"4/3",
+"5/4"
+],
+"answer": 3,
+"distractors": [
+"3/5 is sin A, the wrong angle and ratio.",
+"4/5 is sin B.",
+"3/4 is tan A, the other acute angle.",
+"Correct: 8/6 = 4/3.",
+"5/4 is the hypotenuse over a leg."
+],
+"traps": [
+"misread",
+"misread",
+"misread",
+null,
+"half-right"
+]
+},
+"act-math-trig-003": {
+"choices": [
+"10 ft",
+"10 sqrt(2) ft",
+"10 sqrt(3) ft",
+"20 sqrt(3) ft",
+"40 ft"
+],
+"answer": 2,
+"distractors": [
+"10 ft uses cos 60, which gives the distance from the wall.",
+"10 sqrt(2) uses a 45-degree value.",
+"Correct: 20 x sqrt(3)/2.",
+"20 sqrt(3) forgets the 1/2.",
+"40 ft divides by cos 60."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"partial",
+"half-right"
+]
+},
+"act-math-trig-004": {
+"choices": [
+"1/2",
+"sqrt(2)/2",
+"sqrt(3)/2",
+"sqrt(3)",
+"1"
+],
+"answer": 0,
+"distractors": [
+"Correct: adjacent 1 over hypotenuse 2.",
+"sqrt(2)/2 is cos 45.",
+"sqrt(3)/2 is cos 30 (or sin 60).",
+"sqrt(3) is tan 60.",
+"1 is cos 0."
+],
+"traps": [
+null,
+"half-right",
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-005": {
+"choices": [
+"0.4",
+"0.6",
+"0.8",
+"1.2",
+"1.6"
+],
+"answer": 2,
+"distractors": [
+"0.4 is 1 - 0.6, not using squares.",
+"0.6 assumes sin = cos.",
+"Correct: sqrt(0.64) = 0.8.",
+"1.2 doubles 0.6.",
+"1.6 is 1 + 0.6."
+],
+"traps": [
+"half-right",
+"overreach",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-006": {
+"choices": [
+"50 sin 35",
+"50 cos 35",
+"50 tan 35",
+"50 / tan 35",
+"50 / sin 35"
+],
+"answer": 2,
+"distractors": [
+"50 sin 35 treats 50 as the hypotenuse.",
+"50 cos 35 gives an adjacent side from a hypotenuse.",
+"Correct: tan = opposite/adjacent.",
+"50 / tan 35 solves for the adjacent side.",
+"50 / sin 35 gives a hypotenuse."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-007": {
+"choices": [
+"5 pi/6",
+"7 pi/6",
+"4 pi/3",
+"7 pi/4",
+"7 pi/3"
+],
+"answer": 1,
+"distractors": [
+"5 pi/6 is 150 degrees.",
+"Correct: 210/180 = 7/6.",
+"4 pi/3 is 240 degrees.",
+"7 pi/4 is 315 degrees.",
+"7 pi/3 is 420 degrees."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-008": {
+"choices": [
+"-sqrt(3)/2",
+"-1/2",
+"1/2",
+"sqrt(3)/2",
+"-sqrt(2)/2"
+],
+"answer": 1,
+"distractors": [
+"-sqrt(3)/2 is cos(7 pi/6).",
+"Correct: reference 30, negative in QIII.",
+"1/2 forgets the sign in Quadrant III.",
+"sqrt(3)/2 uses the wrong ratio and sign.",
+"-sqrt(2)/2 uses a 45-degree reference."
+],
+"traps": [
+"half-right",
+null,
+"calc-slip",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-009": {
+"choices": [
+"cos x",
+"sin x",
+"tan x",
+"1",
+"sin^2 x"
+],
+"answer": 1,
+"distractors": [
+"cos x would require 1 - cos^2 to equal sin x cos x.",
+"Correct: sin^2 x / sin x.",
+"tan x is sin/cos.",
+"1 would require the numerator to be sin x.",
+"sin^2 x forgets to divide."
+],
+"traps": [
+"other",
+null,
+"half-right",
+"other",
+"partial"
+]
+},
+"act-math-trig-010": {
+"choices": [
+"-3",
+"1",
+"2",
+"3",
+"4"
+],
+"answer": 3,
+"distractors": [
+"-3: amplitude is a distance, so take the absolute value.",
+"1 is the vertical shift.",
+"2 affects the period, not height.",
+"Correct: |-3| = 3.",
+"4 adds the shift to the amplitude, the maximum value."
+],
+"traps": [
+"calc-slip",
+"wrong-part",
+"wrong-part",
+null,
+"wrong-part"
+]
+},
+"act-math-trig-011": {
+"choices": [
+"pi/4",
+"pi/2",
+"pi",
+"4 pi",
+"8 pi"
+],
+"answer": 1,
+"distractors": [
+"pi/4 uses pi/B.",
+"Correct: 2 pi / 4.",
+"pi is the period of cos(2x).",
+"4 pi multiplies by B.",
+"8 pi multiplies 2 pi by 4."
+],
+"traps": [
+"half-right",
+null,
+"wrong-part",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-012": {
+"choices": [
+"5/12",
+"5/13",
+"12/13",
+"13/5",
+"12/5"
+],
+"answer": 1,
+"distractors": [
+"5/12 is adjacent over opposite, 1/tan.",
+"Correct: adjacent / hypotenuse.",
+"12/13 is sin(theta).",
+"13/5 is sec(theta).",
+"12/5 is tan(theta)."
+],
+"traps": [
+"opposite",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-013": {
+"choices": [
+"1.2 ft",
+"1.5 ft",
+"2.7 ft",
+"3.0 ft",
+"0.3 ft"
+],
+"answer": 2,
+"distractors": [
+"1.2 is the amplitude alone.",
+"1.5 is the midline (average).",
+"Correct: 1.5 + 1.2 = 2.7 ft.",
+"3.0 doubles the midline.",
+"0.3 is the minimum."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+null,
+"half-right",
+"wrong-part"
+]
+},
+"act-math-trig-014": {
+"choices": [
+"6",
+"pi/6",
+"12",
+"24",
+"2 pi"
+],
+"answer": 2,
+"distractors": [
+"6 is half the period (high to low).",
+"pi/6 is B itself.",
+"Correct: 2 pi divided by pi/6.",
+"24 doubles the period.",
+"2 pi is the period of sin(t), not this model."
+],
+"traps": [
+"half-right",
+"partial",
+null,
+"half-right",
+"wrong-part"
+]
+},
+"act-math-trig-015": {
+"choices": [
+"0 degrees",
+"30 degrees",
+"45 degrees",
+"60 degrees",
+"90 degrees"
+],
+"answer": 2,
+"distractors": [
+"tan 0 = 0.",
+"tan 30 = sqrt(3)/3.",
+"Correct: equal legs.",
+"tan 60 = sqrt(3).",
+"tan 90 is undefined."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"other"
+]
+},
+"act-math-trig-016": {
+"choices": [
+"5 sqrt(2)",
+"10 sqrt(2)",
+"10 sqrt(3)",
+"20",
+"5"
+],
+"answer": 1,
+"distractors": [
+"5 sqrt(2) halves the correct value.",
+"Correct: 20 x sqrt(2)/2 = 10 sqrt(2).",
+"10 sqrt(3) uses sin 60.",
+"20 is the ratio side/sine, not a side.",
+"5 multiplies by sin 30 instead of dividing."
+],
+"traps": [
+"calc-slip",
+null,
+"half-right",
+"partial",
+"calc-slip"
+]
+},
+"act-math-trig-017": {
+"choices": [
+"7",
+"sqrt(89)",
+"sqrt(129)",
+"13",
+"3"
+],
+"answer": 0,
+"distractors": [
+"Correct: sqrt(49) = 7.",
+"sqrt(89) forgets the -2ab cos C term.",
+"sqrt(129) adds the 40 instead of subtracting.",
+"13 adds the sides.",
+"3 subtracts 2ab = 80 without the cos 60 factor: sqrt(89 - 80)."
+],
+"traps": [
+null,
+"half-right",
+"calc-slip",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-018": {
+"choices": [
+"5/12",
+"5/13",
+"12/13",
+"13/5",
+"12/5"
+],
+"answer": 1,
+"distractors": [
+"5/12 is tan A.",
+"Correct: cofunction identity.",
+"12/13 is cos A.",
+"13/5 is csc A.",
+"12/5 is tan B."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-019": {
+"choices": [
+"1/2",
+"sqrt(3)/3",
+"sqrt(3)/2",
+"sqrt(3)",
+"1"
+],
+"answer": 1,
+"distractors": [
+"1/2 is sin 30.",
+"Correct: 1/sqrt(3) rationalized.",
+"sqrt(3)/2 is cos 30.",
+"sqrt(3) is tan 60.",
+"1 is tan 45."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-trig-020": {
+"choices": [
+"I",
+"II",
+"III",
+"IV",
+"On the y-axis"
+],
+"answer": 1,
+"distractors": [
+"I has both positive.",
+"Correct: x < 0, y > 0.",
+"III has both negative.",
+"IV has x > 0, y < 0.",
+"On the y-axis cos = 0, not negative."
+],
+"traps": [
+"other",
+null,
+"other",
+"other",
+"other"
+]
+},
+"act-math-stats-001": {
+"choices": [
+"0.5",
+"0.8",
+"1.0",
+"1.2",
+"1.7"
+],
+"answer": 1,
+"distractors": [
+"0.5 is the second value in order.",
+"Correct: middle of the ordered list.",
+"1.0 is the mean, not the median.",
+"1.2 is the fourth value in sorted order, one past the middle.",
+"1.7 is the range."
+],
+"traps": [
+"wrong-part",
+null,
+"wrong-part",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-stats-002": {
+"choices": [
+"1/6",
+"1/3",
+"2/5",
+"3/5",
+"6/9"
+],
+"answer": 2,
+"distractors": [
+"1/6 uses 1 over the number of blue marbles.",
+"1/3 assumes the three colors are equally likely.",
+"Correct: 6/15 = 2/5.",
+"3/5 is the probability it is NOT blue.",
+"6/9 compares blue to non-blue (odds), not to the total."
+],
+"traps": [
+"half-right",
+"overreach",
+null,
+"wrong-part",
+"half-right"
+]
+},
+"act-math-stats-003": {
+"choices": [
+"15",
+"17",
+"18",
+"20",
+"90"
+],
+"answer": 2,
+"distractors": [
+"15 is the second value.",
+"17 is an arithmetic slip.",
+"Correct: 90 / 5 = 18.",
+"20 divides by 4.5.",
+"90 is the sum."
+],
+"traps": [
+"wrong-part",
+"calc-slip",
+null,
+"calc-slip",
+"wrong-part"
+]
+},
+"act-math-stats-004": {
+"choices": [
+"9",
+"12",
+"14",
+"24",
+"36"
+],
+"answer": 3,
+"distractors": [
+"9 adds the choices.",
+"12 multiplies only two of the slots.",
+"14 is 4 x 3 + 2.",
+"Correct: 4 x 3 x 2.",
+"36 squares 6 or doubles 18; not a valid count."
+],
+"traps": [
+"half-right",
+"half-right",
+"other",
+null,
+"half-right"
+]
+},
+"act-math-stats-005": {
+"choices": [
+"24",
+"56",
+"336",
+"512",
+"40,320"
+],
+"answer": 2,
+"distractors": [
+"24 is 3!, the ways to arrange three chosen people.",
+"56 is 8C3, which ignores which office each holds.",
+"Correct: 8P3 = 336.",
+"512 is 8^3, allowing repeats.",
+"40,320 is 8!, arranging all eight."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-stats-006": {
+"choices": [
+"24",
+"56",
+"112",
+"336",
+"512"
+],
+"answer": 1,
+"distractors": [
+"24 is 3!.",
+"Correct: 336 / 6 = 56.",
+"112 divides 336 by 3 instead of 3!.",
+"336 counts ordered selections.",
+"512 is 8^3."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-stats-007": {
+"choices": [
+"1/8",
+"1/4",
+"3/8",
+"1/2",
+"2/3"
+],
+"answer": 2,
+"distractors": [
+"1/8 counts only one arrangement.",
+"1/4 is (1/2)^2, ignoring the third toss and arrangements.",
+"Correct: 3 of 8 outcomes.",
+"1/2 assumes heads-count outcomes are equally likely.",
+"2/3 treats 2 of 3 tosses as a probability."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"overreach",
+"half-right"
+]
+},
+"act-math-stats-008": {
+"choices": [
+"1/12",
+"5/36",
+"1/6",
+"7/36",
+"2/11"
+],
+"answer": 1,
+"distractors": [
+"1/12 = 3/36 counts only unordered pairs (2,6), (3,5), (4,4).",
+"Correct: 5 ordered pairs out of 36.",
+"1/6 = 6/36 is the probability of a sum of 7.",
+"7/36 counts too many pairs.",
+"2/11 treats the 11 possible sums as equally likely."
+],
+"traps": [
+"half-right",
+null,
+"wrong-part",
+"half-right",
+"half-right"
+]
+},
+"act-math-stats-009": {
+"choices": [
+"20%",
+"25%",
+"40%",
+"50%",
+"60%"
+],
+"answer": 2,
+"distractors": [
+"20% divides 40 by all 200 students.",
+"25% is not a ratio from this table.",
+"Correct: 40 / 100 surfers.",
+"50% is the share of all students who surf.",
+"60% is the share of surfers who do NOT hike."
+],
+"traps": [
+"half-right",
+"other",
+null,
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-stats-010": {
+"choices": [
+"7/20",
+"2/5",
+"1/2",
+"11/20",
+"9/20"
+],
+"answer": 3,
+"distractors": [
+"7/20 = 70/200 counts only hikers who do not surf.",
+"2/5 is the conditional share of surfers who hike.",
+"1/2 assumes half hike.",
+"Correct: 110/200 = 11/20.",
+"9/20 = 90/200 is the probability of not hiking."
+],
+"traps": [
+"partial",
+"wrong-part",
+"overreach",
+null,
+"wrong-part"
+]
+},
+"act-math-stats-011": {
+"choices": [
+"7/20",
+"7/11",
+"7/10",
+"4/11",
+"11/20"
+],
+"answer": 1,
+"distractors": [
+"7/20 divides by all 200.",
+"Correct: 70 / 110.",
+"7/10 divides by the 100 non-surfers, the wrong condition.",
+"4/11 is the hikers who DO surf.",
+"11/20 is P(hike)."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-stats-012": {
+"choices": [
+"3",
+"5",
+"5.375",
+"7",
+"9"
+],
+"answer": 3,
+"distractors": [
+"3 appears twice, not the most.",
+"5 is near the middle but appears once.",
+"5.375 is the mean.",
+"Correct: 7 appears 3 times.",
+"9 is the maximum."
+],
+"traps": [
+"wrong-part",
+"other",
+"wrong-part",
+null,
+"wrong-part"
+]
+},
+"act-math-stats-013": {
+"choices": [
+"1",
+"14",
+"15",
+"20",
+"29"
+],
+"answer": 3,
+"distractors": [
+"1 subtracts the means.",
+"14 is the new mean.",
+"15 is the old mean.",
+"Correct: 90 - 70 = 20.",
+"29 adds the means."
+],
+"traps": [
+"half-right",
+"wrong-part",
+"wrong-part",
+null,
+"half-right"
+]
+},
+"act-math-stats-014": {
+"choices": [
+"9/25",
+"6/25",
+"3/5",
+"2/5",
+"4/25"
+],
+"answer": 0,
+"distractors": [
+"Correct: (3/5)^2.",
+"6/25 adds the probabilities over 25 instead of multiplying.",
+"3/5 is the probability for one spin.",
+"2/5 is P(even) for one spin.",
+"4/25 is P(both even)."
+],
+"traps": [
+null,
+"calc-slip",
+"wrong-part",
+"half-right",
+"wrong-part"
+]
+},
+"act-math-stats-015": {
+"choices": [
+"KONA has 12, HILO has 24",
+"Both have 24",
+"KONA has 24, HILO has 12",
+"Both have 12",
+"KONA has 4, HILO has 4"
+],
+"answer": 1,
+"distractors": [
+"KONA has no repeated letter; it also has 24.",
+"Correct: each is 4! = 24.",
+"HILO has no repeated letter.",
+"12 would require one letter to repeat.",
+"4 counts letters, not arrangements."
+],
+"traps": [
+"other",
+null,
+"other",
+"other",
+"other"
+]
+},
+"act-math-stats-016": {
+"choices": [
+"24",
+"30",
+"60",
+"100",
+"120"
+],
+"answer": 2,
+"distractors": [
+"24 is 4!, dropping a letter.",
+"30 divides by 4.",
+"Correct: 5!/2! = 60.",
+"100 is 10^2, unrelated.",
+"120 is 5!, treating both A's as different."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"other",
+"half-right"
+]
+},
+"act-math-stats-017": {
+"choices": [
+"9",
+"13",
+"14",
+"19",
+"22"
+],
+"answer": 3,
+"distractors": [
+"9 is a data value.",
+"13 is the mean.",
+"14 is the median.",
+"Correct: 22 - 3.",
+"22 is the maximum only."
+],
+"traps": [
+"wrong-part",
+"wrong-part",
+"wrong-part",
+null,
+"wrong-part"
+]
+},
+"act-math-stats-018": {
+"choices": [
+"12%",
+"42%",
+"58%",
+"70%",
+"88%"
+],
+"answer": 1,
+"distractors": [
+"12% is P(rain both days).",
+"Correct: 0.7 x 0.6 = 0.42.",
+"58% is P(rain on at least one day).",
+"70% is only Saturday dry.",
+"88% is 1 - 0.12, not both dry."
+],
+"traps": [
+"wrong-part",
+null,
+"wrong-part",
+"partial",
+"wrong-part"
+]
+},
+"act-math-stats-019": {
+"choices": [
+"79.5",
+"80.5",
+"81",
+"82",
+"161"
+],
+"answer": 2,
+"distractors": [
+"79.5 weights the smaller class more heavily.",
+"80.5 is the simple average of the two means.",
+"Correct: 4050 / 50 = 81.",
+"82 overweights the larger class.",
+"161 adds the two means."
+],
+"traps": [
+"half-right",
+"wrong-part",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-stats-020": {
+"choices": [
+"1.5",
+"1.6",
+"2",
+"2.5",
+"16"
+],
+"answer": 1,
+"distractors": [
+"1.5 averages the frequencies or values loosely.",
+"Correct: 16 / 10 = 1.6.",
+"2 is the middle keiki value (and median of the values 0 to 4).",
+"2.5 averages 1 and 4.",
+"16 is the total keiki, not the mean."
+],
+"traps": [
+"half-right",
+null,
+"wrong-part",
+"half-right",
+"wrong-part"
+]
+},
+"act-math-stats-021": {
+"choices": [
+"-$2.00",
+"-$1.00",
+"$0.00",
+"$1.00",
+"-$1.30"
+],
+"answer": 1,
+"distractors": [
+"-$2.00 ignores the prizes.",
+"Correct: $1.00 expected winnings minus $2.00 cost.",
+"$0.00 assumes a fair game.",
+"$1.00 is expected winnings before paying for the ticket.",
+"-$1.30 counts only one of the four $50 prizes: 0.60 + 0.10 - 2.00."
+],
+"traps": [
+"half-right",
+null,
+"overreach",
+"partial",
+"partial"
+]
+},
+"act-math-modeling-001": {
+"choices": [
+"$2,490",
+"$4,500",
+"$4,740",
+"$4,560",
+"$270,240"
+],
+"answer": 2,
+"distractors": [
+"2,490 uses half the perimeter (500 m) and adds braces.",
+"4,500 forgets the braces.",
+"Correct: 4,500 + 240.",
+"4,560 adds only one brace.",
+"270,240 multiplies the area by 4.50."
+],
+"traps": [
+"partial",
+"partial",
+null,
+"partial",
+"misread"
+]
+},
+"act-math-modeling-002": {
+"choices": [
+"125",
+"200",
+"300",
+"325",
+"475"
+],
+"answer": 3,
+"distractors": [
+"125 is only the texts over 200.",
+"200 is the included allowance.",
+"300 assumes $10 of overage.",
+"Correct: 200 + 125.",
+"475 divides 47.50 by 0.10."
+],
+"traps": [
+"partial",
+"wrong-part",
+"overreach",
+null,
+"half-right"
+]
+},
+"act-math-modeling-003": {
+"choices": [
+"4.8",
+"6.8",
+"7.5",
+"8",
+"12"
+],
+"answer": 2,
+"distractors": [
+"4.8 multiplies instead of divides.",
+"6.8 adds the numbers.",
+"Correct: 6 / 0.8 = 7.5.",
+"8 rounds before dividing.",
+"12 uses a rate of 0.5."
+],
+"traps": [
+"half-right",
+"half-right",
+null,
+"calc-slip",
+"misread"
+]
+},
+"act-math-modeling-004": {
+"choices": [
+"5",
+"7.5",
+"8",
+"9",
+"53.3"
+],
+"answer": 1,
+"distractors": [
+"5 adds 2 cups loosely.",
+"Correct: 3 x 20/8 = 7.5.",
+"8 is the original serving count.",
+"9 triples 3.",
+"53.3 inverts the proportion: 20 x 8/3."
+],
+"traps": [
+"half-right",
+null,
+"wrong-part",
+"half-right",
+"opposite"
+]
+},
+"act-math-modeling-005": {
+"choices": [
+"20 m",
+"24 m",
+"40 m",
+"44 m",
+"48 m"
+],
+"answer": 2,
+"distractors": [
+"20 is l + w, half the perimeter.",
+"24 uses 12 + 12.",
+"Correct: 2(8 + 12) = 40.",
+"44 uses w = 9, l = 13 (area 117).",
+"48 doubles 24."
+],
+"traps": [
+"partial",
+"half-right",
+null,
+"other",
+"half-right"
+]
+},
+"act-math-modeling-006": {
+"choices": [
+"2",
+"25",
+"33",
+"34",
+"300"
+],
+"answer": 2,
+"distractors": [
+"2 divides 25 by 12 with no unit change.",
+"25 counts pounds, not bags.",
+"Correct: 400 / 12 = 33.3, round down.",
+"34 rounds up; the 34th bag would not be full.",
+"300 is 25 x 12."
+],
+"traps": [
+"misread",
+"misread",
+null,
+"calc-slip",
+"wrong-part"
+]
+},
+"act-math-modeling-007": {
+"choices": [
+"8",
+"10",
+"12",
+"20",
+"22"
+],
+"answer": 1,
+"distractors": [
+"8 gives 176 + 330 = 506.",
+"Correct: 220 + 20 x 15 = 520.",
+"12 gives 264 + 270 = 534.",
+"20 is the bakery hours.",
+"22 is the tutoring rate."
+],
+"traps": [
+"other",
+null,
+"other",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-modeling-008": {
+"choices": [
+"$2,800",
+"$2,812",
+"$2,600",
+"$3,000",
+"$2,704"
+],
+"answer": 1,
+"distractors": [
+"2,800 uses simple interest.",
+"Correct: 2500(1.04)^3 is about 2812.",
+"2,600 is just one year.",
+"3,000 uses 20% total growth.",
+"2,704 is two years of compounding."
+],
+"traps": [
+"half-right",
+null,
+"partial",
+"half-right",
+"partial"
+]
+},
+"act-math-modeling-009": {
+"choices": [
+"C = 4m + 2.80",
+"C = 2.80m + 4",
+"C = 6.80m",
+"C = 4(m + 2.80)",
+"C = 2.80(m + 4)"
+],
+"answer": 1,
+"distractors": [
+"Swaps the fee and the rate.",
+"Correct: per-mile times miles, plus the flat fee.",
+"6.80m charges the start fee every mile.",
+"4(m + 2.80) multiplies everything by 4.",
+"2.80(m + 4) adds 4 free miles of charge."
+],
+"traps": [
+"opposite",
+null,
+"half-right",
+"half-right",
+"half-right"
+]
+},
+"act-math-modeling-010": {
+"choices": [
+"7 km",
+"10 km",
+"14 km",
+"5 km",
+"12 km"
+],
+"answer": 1,
+"distractors": [
+"7 adds the speeds, not distances over 2 hours and at right angles.",
+"Correct: sqrt(6^2 + 8^2).",
+"14 adds the two distances.",
+"5 is the distance after 1 hour.",
+"12 is not sqrt(100)."
+],
+"traps": [
+"half-right",
+null,
+"half-right",
+"partial",
+"calc-slip"
+]
+},
+"act-math-modeling-011": {
+"choices": [
+"167",
+"160",
+"200",
+"250",
+"127"
+],
+"answer": 2,
+"distractors": [
+"167 ignores the per-cup cost: (380 + 120)/3 is about 166.7.",
+"160 divides 400 by 2.50.",
+"Correct: 500 / 2.50 = 200.",
+"250 divides 500 by 2.",
+"127 divides 380 by 3."
+],
+"traps": [
+"partial",
+"half-right",
+null,
+"half-right",
+"half-right"
+]
+},
+"act-math-modeling-012": {
+"choices": [
+"15",
+"16",
+"17",
+"18",
+"27"
+],
+"answer": 2,
+"distractors": [
+"15 would be 405 miles.",
+"16 would be 432 miles.",
+"Correct: 459 / 27 = 17.",
+"18 would be 486 miles.",
+"27 is the miles per gallon."
+],
+"traps": [
+"other",
+"other",
+null,
+"other",
+"wrong-part"
+]
+},
+"act-math-modeling-013": {
+"choices": [
+"225 m^2",
+"432 m^2",
+"400 m^2",
+"450 m^2",
+"900 m^2"
+],
+"answer": 3,
+"distractors": [
+"225 is a 15 by 15 square, using fence on four sides.",
+"432 uses x = 12 (12 x 36), close to the vertex but not at it.",
+"400 uses x = 10: 10 x 40.",
+"Correct: 15 x 30 = 450.",
+"900 is 30^2, ignoring that two sides are needed."
+],
+"traps": [
+"misread",
+"other",
+"other",
+null,
+"half-right"
+]
+},
+"act-math-modeling-014": {
+"choices": [
+"2024",
+"2025",
+"2026",
+"2027",
+"2030"
+],
+"answer": 2,
+"distractors": [
+"2024 is only 4 years: 3,000.",
+"2025 is 5 years: 3,150.",
+"Correct: t = 6.",
+"2027 is 7 years: 3,450.",
+"2030 is 10 years."
+],
+"traps": [
+"calc-slip",
+"calc-slip",
+null,
+"calc-slip",
+"other"
+]
+},
+"act-math-modeling-015": {
+"choices": [
+"11",
+"15",
+"16",
+"46",
+"151"
+],
+"answer": 2,
+"distractors": [
+"11 swaps r and h: (1/3)pi(4^2)(6) is about 100.5, so 11 loads.",
+"15 rounds down and leaves cinder behind.",
+"Correct: 15.08 rounds up to 16.",
+"46 forgets the 1/3: 452/10 = 45.2, rounded up.",
+"151 is the volume, not the load count."
+],
+"traps": [
+"misread",
+"calc-slip",
+null,
+"partial",
+"wrong-part"
+]
+},
+"act-math-modeling-016": {
+"choices": [
+"4",
+"10",
+"11",
+"14",
+"18"
+],
+"answer": 2,
+"distractors": [
+"4 is 140 / 35, the weeks already saved.",
+"10 weeks gives $490, not quite $500.",
+"Correct: round 10.3 up to 11.",
+"14 is 500 / 35 ignoring the $140 head start.",
+"18 is a guess."
+],
+"traps": [
+"wrong-part",
+"partial",
+null,
+"half-right",
+"other"
+]
+},
+"act-math-modeling-017": {
+"choices": [
+"1.68",
+"7.29",
+"16.8",
+"168",
+"16,800"
+],
+"answer": 2,
+"distractors": [
+"1.68 divides by 10,000.",
+"7.29 divides 350 by 48.",
+"Correct: 16,800 / 1000.",
+"168 divides by 100.",
+"16,800 is megabytes, not gigabytes."
+],
+"traps": [
+"misread",
+"half-right",
+null,
+"misread",
+"misread"
+]
+},
+"act-math-modeling-018": {
+"choices": [
+"2 km/h",
+"4 km/h",
+"8 km/h",
+"10 km/h",
+"12 km/h"
+],
+"answer": 0,
+"distractors": [
+"Correct: (12 - 8)/2 = 2.",
+"4 is the difference of the two speeds, which equals 2c.",
+"8 is the upstream speed.",
+"10 is the boat's speed in still water.",
+"12 is the downstream speed."
+],
+"traps": [
+null,
+"wrong-part",
+"wrong-part",
+"wrong-part",
+"wrong-part"
+]
+},
+"act-math-modeling-019": {
+"choices": [
+"$567",
+"$601",
+"$669",
+"$670",
+"$736"
+],
+"answer": 2,
+"distractors": [
+"567 forgets the tax.",
+"601 adds tax on only one night: 567 + 33.94.",
+"Correct: 567 x 1.1796 is about 669.",
+"670 rounds 668.83 up instead of to the nearest dollar.",
+"736 uses about 30% tax."
+],
+"traps": [
+"partial",
+"half-right",
+null,
+"calc-slip",
+"misread"
+]
+},
+"act-math-modeling-020": {
+"choices": [
+"32",
+"48",
+"53.3",
+"80",
+"133.3"
+],
+"answer": 3,
+"distractors": [
+"32 divides 800 by 25.",
+"48 divides 1200 by 25, ignoring the pump.",
+"53.3 divides 800 by 15.",
+"Correct: 1200 / 15 = 80.",
+"133.3 divides 2000 by 15."
+],
+"traps": [
+"half-right",
+"half-right",
+"half-right",
+null,
+"half-right"
+]
+}
+}
+}

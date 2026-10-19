@@ -15,12 +15,26 @@ Kept in place:
     (angle A, cost C, Reef A) only "Choice X" patterns count.
 Free-response items (no choices) are skipped.
 
+Ordered choices (on by default for ORDERED_FILES; --no-order turns it off):
+  - numeric items, where every choice parses as a number with the same unit (fractions, negatives,
+    "$", "%", "x 10^n", pi and sqrt forms, trailing units such as "mph" or "mg/L"), keep their
+    choices in ascending numeric order, as the real ACT does, because the app teaches backsolving
+    from the middle choice;
+  - "Student N" style items (Student, Scientist, Hypothesis, Geologist, Biologist N, singles before
+    pairs) keep 1, 2, 3 order, with None / Neither / Both / All three last.
+  The key letter of an ordered item is then fixed by its values. For ACT Math, which was authored with
+  five choices (source/act_drills_math_5choice.json), the script balances letters by choosing, per
+  numeric item, which wrong choice to leave out: leaving out one below the key moves the key up a
+  letter, one above leaves it where it is. A wrong choice with no distractor note is always the one
+  left out when there is one. Items that cannot move are left in order, and the remaining (non-ordered)
+  items are shuffled to even out the rest; keys.py accepts 15% to 35% per letter.
+
 A file already inside the band (every position between 15% and 35% of keyed items) is left alone
-unless --force. --check prints the distribution and exits 1 if any file is outside the band.
+unless --force (ordered files are always re-derived, which is stable). --check prints the distribution and exits 1 if any file is outside the band.
 Re-running is stable: the same seed and input give the same output.
 After changing the podcast checks, run build_scripts/podcast/publish.py to rebuild data/episodes.json.
 """
-import argparse, glob, json, os, random, re, sys
+import argparse, glob, json, math, os, random, re, sys
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -28,11 +42,57 @@ LETTERS = "ABCDE"
 LO, HI = 0.15, 0.35
 # Files where capital letters in the text are variables or labels, not choice letters (checked by hand).
 LETTERS_ARE_VARIABLES = {"act/drills_math.json", "act/drills_science.json", "sat/drills_math.json"}
-ANCHOR_TAIL = re.compile(r"^\s*(none\b|neither\b|both\b|all of\b|cannot be determined|it cannot be determined|not enough information)", re.I)
+ANCHOR_TAIL = re.compile(r"^\s*(none\b|neither\b|both\b|all of\b|all three\b|all the\b|cannot be determined|it cannot be determined|not enough information)", re.I)
+# Files whose numeric and "Student N" choices keep their natural order.
+ORDERED_FILES = {"act/drills_math.json", "act/drills_science.json"}
+FIVE_CHOICE_SOURCE = {"act/drills_math.json": os.path.join(os.path.dirname(os.path.abspath(__file__)), "source", "act_drills_math_5choice.json")}
+LABEL = re.compile(r"^\s*(Students?|Scientists?|Hypothes[ie]s|Geologists?|Biologists?)\s+(\d+)((?:\s*(?:,|and|,\s*and)\s*\d+)*)\b(.*)$", re.I)
 NO_CHANGE = re.compile(r"^\s*NO CHANGE\b")
 CHOICE_REF = re.compile(r"\b([Cc]hoices?|[Oo]ptions?|[Aa]nswer choices?)(\s+)([A-E])\b((?:\s*(?:,|and|or|,\s*and|,\s*or)\s*[A-E]\b)*)")
 BARE = re.compile(r"(?<![A-Za-z0-9'ʻ\-])([A-E])(?![A-Za-z0-9'ʻ\-])")
 TEXT_FIELDS = ("explain", "worked", "hint")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from act_math_to_4 import pick_removal  # the 5-to-4 rule: which wrong choice is least plausible
+
+
+def numeric_value(text):
+    """(value, unit) when the choice is a number with an optional unit, else None."""
+    t = text.strip().replace("−", "-").replace("–", "-")
+    t = re.sub(r"(?<=\d),(?=\d{3}\b)", "", t)
+    t = re.sub(r"^\$\s*", "", t); t = re.sub(r"^-\s*\$\s*", "-", t)
+    t = re.sub(r"\s*[x×]\s*10\s*\^\s*", "*10**", t)
+    m = re.match(r"^([-+0-9.\s/*()^]|sqrt\(|pi\b|π|\*\*)+", t)
+    if not m: return None
+    expr, unit = m.group(0), t[m.end():].strip()
+    if not re.search(r"\d|pi|π", expr): return None
+    if unit and (re.search(r"\d", unit) or not re.fullmatch(r"[%°A-Za-z/ .²³]+", unit)): return None
+    e = expr.strip().replace("^", "**").replace("π", "pi")
+    e = re.sub(r"sqrt\(", "math.sqrt(", e); e = re.sub(r"(?<![A-Za-z.])pi\b", "math.pi", e)
+    e = re.sub(r"(\d|\))\s*(math\.|\()", r"\1*\2", e)
+    e = re.sub(r"(\d)\s+(\d)", r"\1 \2", e)
+    try: v = float(eval(e, {"__builtins__": {}, "math": math}))
+    except Exception: return None
+    return v, unit.lower().rstrip(".")
+
+
+def numeric_order(choices):
+    """Ascending order (list of old positions) when every choice is a number with the same unit, else None."""
+    vals = [numeric_value(c) for c in choices]
+    if any(v is None for v in vals): return None
+    if len({u for _, u in vals}) != 1 or len({round(v, 9) for v, _ in vals}) != len(vals): return None
+    return sorted(range(len(choices)), key=lambda i: vals[i][0])
+
+
+def label_order(choices):
+    """1, 2, 3 order for "Student N" style choices (singles before pairs, anchors last), else None."""
+    keys, tail = {}, []
+    for i, c in enumerate(choices):
+        m = LABEL.match(c)
+        if m: keys[i] = (len(re.findall(r"\d+", m.group(2) + m.group(3))), [int(x) for x in re.findall(r"\d+", m.group(2) + m.group(3))])
+        elif ANCHOR_TAIL.match(c): tail.append(i)
+        else: return None
+    if len(keys) < 2: return None
+    return sorted(keys, key=lambda i: keys[i]) + tail
 
 
 def distribution(items):
@@ -136,6 +196,105 @@ def rebalance(items, rel, seed):
     return len(movable), fixed
 
 
+def canonical(it):
+    """NO CHANGE first, None / Neither / Both / All of choices last, the rest in text order, so the shuffle that
+    follows depends only on the item and not on its current order (re-running the script is then stable)."""
+    ch = it["choices"]; n = len(ch)
+    head = [p for p in range(n) if NO_CHANGE.match(ch[p])][:1]
+    tail = sorted((p for p in range(n) if p not in head and ANCHOR_TAIL.match(ch[p])), key=lambda p: ch[p])
+    mid = sorted((p for p in range(n) if p not in head and p not in tail), key=lambda p: ch[p])
+    apply_perm(it, head + mid + tail)
+
+
+def assign_free(free, counts, rng, stable=False):
+    """Shuffle each movable item so its key lands on the least-used free position."""
+    if stable: free = sorted(free, key=lambda x: x[0]["id"])
+    order = list(range(len(free))); rng.shuffle(order)
+    for idx in order:
+        it, pins = free[idx]
+        n = len(it["choices"])
+        slots_free = [p for p in range(n) if p not in pins]
+        low = min(counts[p] for p in slots_free)
+        target = rng.choice([p for p in slots_free if counts[p] == low])
+        others = [o for o in range(n) if o not in pins and o != it["answer"]]
+        rng.shuffle(others)
+        new_order = [None] * n
+        for p in pins: new_order[p] = p
+        new_order[target] = it["answer"]
+        slots = [p for p in range(n) if new_order[p] is None]
+        for p, o in zip(slots, others): new_order[p] = o
+        apply_perm(it, new_order)
+        counts[target] += 1
+
+
+def five_choice_options(src):
+    """For a 5-choice numeric source item: [(key position, kept old indices, is_default)] per allowed left-out choice."""
+    ch, ans = src["choices"], src["answer"]
+    if len(ch) != 5 or numeric_order(ch) is None: return None
+    dis = src.get("distractors") or [""] * 5
+    wrong = [i for i in range(5) if i != ans]
+    bare = [i for i in wrong if not (dis[i] or "").strip()]
+    cands = bare or wrong  # a choice with no distractor note is never kept over one that has one
+    vals = {i: numeric_value(ch[i])[0] for i in range(5)}
+    out = []
+    for d in cands:
+        keep = sorted((i for i in range(5) if i != d), key=lambda i: vals[i])
+        out.append((keep.index(ans), keep, d))
+    return out
+
+
+def build_from_source(it, src, keep):
+    """Rewrite it's choices, distractors, traps and answer from the 5-choice source, keeping `keep` in that order."""
+    it["choices"] = [src["choices"][i] for i in keep]
+    if src.get("distractors"): it["distractors"] = [src["distractors"][i] for i in keep]
+    if src.get("traps"): it["traps"] = [src["traps"][i] for i in keep]
+    it["answer"] = keep.index(src["answer"])
+
+
+def order_and_balance(items, rel, seed):
+    """Ordered mode: see the module docstring. Returns (ordered, flexible, shuffled, fixed) counts."""
+    rng = random.Random(f"{seed}:{rel}:ordered")
+    src_items = {}
+    if rel in FIVE_CHOICE_SOURCE and os.path.exists(FIVE_CHOICE_SOURCE[rel]):
+        src_items = json.load(open(FIVE_CHOICE_SOURCE[rel], encoding="utf-8"))["items"]
+    keyed = [it for it in items if it.get("choices") and isinstance(it.get("answer"), int)]
+    counts = Counter(); flex, free = [], []; n_ordered = n_fixed = 0
+    for it in keyed:
+        src = src_items.get(it["id"])
+        opts = five_choice_options(src) if src else None
+        if opts and src["choices"][src["answer"]] == it["choices"][it["answer"]]:
+            # The default is the choice banks/act_math_to_4.py leaves out (recomputed from the source, so reruns agree).
+            default = pick_removal(dict(src, id=it["id"]))
+            if len({p for p, _, _ in opts}) == 1:
+                pos, keep, _ = next(o for o in opts if o[2] == default) if default is not None and any(o[2] == default for o in opts) else opts[0]
+                build_from_source(it, src, keep); counts[pos] += 1; n_ordered += 1
+            else:
+                flex.append((it, src, opts, default))
+            continue
+        order = numeric_order(it["choices"]) or label_order(it["choices"])
+        if order is not None:
+            apply_perm(it, order); counts[it["answer"]] += 1; n_ordered += 1; continue
+        if unsafe_letters(it, rel):
+            counts[it["answer"]] += 1; n_fixed += 1; continue
+        canonical(it)
+        pins = pinned_positions(it["choices"])
+        if it["answer"] in pins or len(pins) >= len(it["choices"]):
+            counts[it["answer"]] += 1; n_fixed += 1
+        else:
+            free.append((it, pins))
+    # Flexible numeric items: put the key on the least-used letter; ties keep the conversion's original choice.
+    flex.sort(key=lambda x: x[0]["id"]); free.sort(key=lambda x: x[0]["id"])
+    order = list(range(len(flex))); rng.shuffle(order)
+    for idx in order:
+        it, src, opts, default = flex[idx]
+        low = min(counts[p] for p, _, _ in opts)
+        best = [o for o in opts if counts[o[0]] == low]
+        pick = next((o for o in best if o[2] == default), None) or best[0]
+        build_from_source(it, src, pick[1]); counts[pick[0]] += 1
+    assign_free(free, counts, rng, stable=True)
+    return n_ordered, len(flex), len(free), n_fixed
+
+
 def write_drills(path, items):
     with open(path, "w", encoding="utf-8") as f: f.write(json.dumps(items, ensure_ascii=False, separators=(",", ":")) + "\n")
 
@@ -149,6 +308,7 @@ def main():
     ap.add_argument("--force", action="store_true", help="reshuffle files that are already inside the band")
     ap.add_argument("--check", action="store_true", help="report only; exit 1 if a file is outside the band")
     ap.add_argument("--seed", default="alakai-2026-10")
+    ap.add_argument("--no-order", action="store_true", help="treat ORDERED_FILES like any other file (numeric choices get shuffled)")
     a = ap.parse_args()
     bad = False
     # Drill banks, one file at a time.
@@ -159,6 +319,11 @@ def main():
         if a.check:
             ok = in_band(items); bad |= not ok
             print(f"{rel}: {before}{'' if ok else '  OUTSIDE BAND'}"); continue
+        if rel in ORDERED_FILES and not a.no_order:
+            o, fl, sh, fx = order_and_balance(items, rel, a.seed)
+            write_drills(path, items)
+            print(f"{rel}: before {before}\n{' ' * len(rel)}  after  {fmt(items)}  ({o} in fixed order, {fl} ordered with a chosen left-out choice, {sh} shuffled, {fx} kept in place)")
+            continue
         if in_band(items) and not a.force:
             print(f"{rel}: in band, left alone: {before}"); continue
         moved, fixed = rebalance(items, rel, a.seed)

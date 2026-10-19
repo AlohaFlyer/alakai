@@ -125,20 +125,25 @@
   const A = window.Alakai, S = A.Store;
   const { profile } = await A.boot({ page: 'dashboard.html', gate: true });
   if (!profile) return;
+  // A toggle can start a second render while the first still awaits its data; only the newest one may write.
+  let renderSeq = 0;
   async function render() {
+    const my = ++renderSeq; const stale = () => my !== renderSeq;
     const test = A.getTest();
     document.getElementById('who').textContent = profile.name || 'friend';
-    const dte = profile.testdate ? Math.ceil((new Date(profile.testdate) - Date.now()) / 86400000) : null;
+    const dte = A.daysTo(profile.testdate);
     document.getElementById('days').textContent = dte === null ? '–' : dte < 0 ? 'Done' : dte;
-    document.getElementById('days-label').textContent = dte !== null && dte < 0 ? 'test date passed: set the next one in Settings' : dte === 0 ? 'test is today' : 'days to test';
+    document.getElementById('days-label').textContent = dte !== null && dte < 0 ? 'test date passed: set the next one in Settings' : dte === 0 ? 'test is today' : dte === 1 ? 'day to test' : 'days to test';
     document.getElementById('sub').textContent = `${test.toUpperCase()} · ${profile.minutes || 30} min a day · ${profile.timepressure === 'always' ? 'pacing coach on' : profile.timepressure === 'sometimes' ? 'checkpoints on' : 'no clock pressure'}`;
-    const s = await A.Progress.summary(test);
+    const s = await A.Progress.summary(test); if (stale()) return;
     document.getElementById('streak').textContent = s.streak;
     document.getElementById('answered').textContent = s.attempts;
     document.getElementById('acc').textContent = s.attempts ? Math.round(100 * s.right / s.attempts) + '%' : '–';
     let skills = null; try { skills = await A.data(`data/${test}/skills.json`); } catch (e) {}
+    if (stale()) return;
     const name = k => { if (!skills) return k; for (const sec of skills.sections) { if (sec.id === k) return sec.name; const f = sec.skills.find(x => x.id === k); if (f) return f.name; } return k; };
     let _bank = null; try { _bank = await window.AlakaiEngine.Bank.load(test); } catch (e) {}
+    if (stale()) return;
     const bankById = id => _bank ? _bank.byId[id] : null;
     const sections = skills ? skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && !profile.science)) : [];
     const rings = document.getElementById('rings'); rings.innerHTML = '';
@@ -146,7 +151,7 @@
     if (!sections.length) rings.innerHTML = '<p class="muted">Content banks load in a later phase of the build.</p>';
     const weak = Object.entries(s.bySkill).filter(([, v]) => v.n >= 2).sort((a, b) => a[1].r / a[1].n - b[1].r / b[1].n).slice(0, 5);
     const wt = document.getElementById('weak'); wt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
-    weak.forEach(([k, v]) => wt.insertAdjacentHTML('beforeend', `<tr><td><a href="drill.html?skill=${encodeURIComponent(k)}">${A.esc(name(k))}</a></td><td>${v.r}/${v.n}</td><td>${A.avgSec(v) !== null ? A.avgSec(v) + 's' : '–'}</td></tr>`));
+    weak.forEach(([k, v]) => wt.insertAdjacentHTML('beforeend', `<tr><td><a class="tap" style="padding-left:0" href="drill.html?skill=${encodeURIComponent(k)}">${A.esc(name(k))}</a></td><td>${v.r}/${v.n}</td><td>${A.avgSec(v) !== null ? A.avgSec(v) + 's' : '–'}</td></tr>`));
     if (!weak.length) wt.insertAdjacentHTML('beforeend', '<tr><td colspan="3" class="muted">Take the placement check or do a few drills first.</td></tr>');
     const nx = document.getElementById('next'); nx.innerHTML = '';
     const items = [];
@@ -157,7 +162,7 @@
     if (profile.firstmode === 'read' && profile.fear && sections.some(sec => sec.id === profile.fear)) items.push([`Read the strategies for ${name(profile.fear)} first`, 'strategies.html']);
     if (profile.fear && sections.some(sec => sec.id === profile.fear) && !s.bySection[profile.fear]) items.push([`Start with ${name(profile.fear)}, the section you flagged`, `drill.html?section=${profile.fear}`]);
     weak.slice(0, 2).forEach(([k]) => items.push([`Drill ${name(k)}`, `drill.html?skill=${encodeURIComponent(k)}`]));
-    const due = S.get(test + '.errlog', []).filter(e => e && e.due <= Date.now() && !e.done).length; if (due) items.push([`Redo ${due} missed item${due === 1 ? '' : 's'} that are due`, 'drill.html?mode=redo']);
+    const due = S.list(test + '.errlog').filter(e => e.due <= Date.now() && !e.done).length; if (due) items.push([`Redo ${due} missed item${due === 1 ? '' : 's'} that are due`, 'drill.html?mode=redo']);
     if (!s.timed.length) items.push(['Do one timed module to get a baseline', 'timed.html']);
     if (podItem && profile.firstmode !== 'hear') items.push(podItem);
     if (!items.length) items.push(['Mixed drill, 10 items', 'drill.html']);
@@ -168,11 +173,13 @@
     const eps = Object.values(s.episodes).filter(e => e && e.done); document.getElementById('eps').textContent = eps.length ? `${eps.length} episode${eps.length === 1 ? '' : 's'} completed.` : 'No episodes completed yet.';
     document.getElementById('blitz').textContent = s.blitz.length ? Math.max(...s.blitz.map(b => b.score)) : '–';
     const el = document.getElementById('errlog'); el.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
-    const log = S.get(test + '.errlog', []).filter(e => e && !e.done).sort((a, b) => a.due - b.due).slice(0, 12);
-    const trapCounts = {}; S.get(test + '.errlog', []).forEach(e => { if (e && e.trap) trapCounts[e.trap] = (trapCounts[e.trap] || 0) + 1; });
+    const openLog = S.list(test + '.errlog').filter(e => !e.done).sort((a, b) => a.due - b.due);
+    const log = openLog.slice(0, 12);
+    const trapCounts = {}; S.list(test + '.errlog').forEach(e => { if (e && e.trap) trapCounts[e.trap] = (trapCounts[e.trap] || 0) + 1; });
     const topTraps = Object.entries(trapCounts).sort((a, b) => b[1] - a[1]).slice(0, 3);
     document.getElementById('trapsum').textContent = topTraps.length ? 'Your most common traps: ' + topTraps.map(([k, n]) => `${(window.AlakaiEngine.TRAP_NAMES[k] || k).replace('Trap: ', '')} (${n})`).join(', ') + '.' : '';
-    log.forEach(e => el.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(e.skill))}</td><td>${e.trap ? A.esc((window.AlakaiEngine.TRAP_NAMES[e.trap] || e.trap).replace('Trap: ', '')) : '<span class="muted">' + (e.cause && e.cause !== 'unsorted' ? A.esc(window.AlakaiEngine.CAUSE_NAMES[e.cause] || e.cause) : 'missed ' + new Date(e.at).toLocaleDateString()) + '</span>'}</td><td>${e.due <= Date.now() ? '<span class="chip warn">due</span>' : new Date(e.due).toLocaleDateString()}</td><td><a href="drill.html?item=${encodeURIComponent(e.id)}">redo</a></td></tr>`));
+    log.forEach(e => el.insertAdjacentHTML('beforeend', `<tr><td>${A.esc(name(e.skill))}</td><td>${e.trap ? A.esc((window.AlakaiEngine.TRAP_NAMES[e.trap] || e.trap).replace('Trap: ', '')) : '<span class="muted">' + (e.cause && e.cause !== 'unsorted' ? A.esc(window.AlakaiEngine.CAUSE_NAMES[e.cause] || e.cause) : 'missed ' + new Date(e.at).toLocaleDateString()) + '</span>'}</td><td>${e.due <= Date.now() ? '<span class="chip warn">due</span>' : new Date(e.due).toLocaleDateString()}</td><td><a class="tap" href="drill.html?item=${encodeURIComponent(e.id)}">redo</a></td></tr>`));
+    if (openLog.length > log.length) { const more = openLog.length - log.length; const dueMore = openLog.slice(12).filter(e => e.due <= Date.now()).length; el.insertAdjacentHTML('beforeend', `<tr><td colspan="4" class="muted">and ${more} more${dueMore ? ` (${dueMore} due: <a class="tap" href="drill.html?mode=redo">redo the due ones</a>)` : ', not due yet'}.</td></tr>`); }
     if (!log.length) el.insertAdjacentHTML('beforeend', '<tr><td colspan="4" class="muted">Clean sheet.</td></tr>');
     // placement nudge
     const pl = S.get(test + '.placement', null); const plDismiss = S.get('placement_dismissed', {});
@@ -180,7 +187,7 @@
     // Same estimate as placement.html: two items per visible skill at about 1.1 min each.
     document.getElementById('pl-min').textContent = Math.max(1, Math.round(sections.reduce((a, sec) => a + sec.skills.length * 2, 0) * 1.1));
     // skill levels
-    const attempts = await A.DB.all(test); const lv = {};
+    const attempts = await A.DB.all(test); if (stale()) return; const lv = {};
     attempts.forEach(a => { if (!['drill', 'timed', 'redo', 'placement'].includes(a.kind)) return; const k = lv[a.skill] = lv[a.skill] || { n: 0, r: 0, hardRight: false, redoRight: false }; k.n++; if (a.correct) { k.r++; if (a.kind === 'redo') k.redoRight = true; const it = bankById(a.item); if (it && it.difficulty === 3) k.hardRight = true; } });
     const lt = document.getElementById('levels'); lt.querySelectorAll('tr:not(:first-child)').forEach(r => r.remove());
     const order = { Mastered: 0, Proficient: 1, Familiar: 2, Attempted: 3, New: 4 };
@@ -189,6 +196,7 @@
     // estimated band
     const base = (profile.lastscore || '').trim(); const bl = document.getElementById('baseline'); bl.hidden = !base; if (base) bl.textContent = `Starting score you entered at onboarding: ${base}.`;
     let scale = null; try { scale = await A.data(`data/${test}/scale.json`); } catch (e) {}
+    if (stale()) return;
     const bandEl = document.getElementById('band'); document.getElementById('band-disc').textContent = scale ? scale.disclaimer : '';
     if (scale && s.timed.length) {
       const out = []; const secKeys = Object.keys(scale).filter(k => k !== 'disclaimer');
@@ -197,6 +205,7 @@
     }
     // official links
     let links = { sat: [], act: [] }; try { links = await A.data('data/links.json'); } catch (e) {}
+    if (stale()) return;
     document.getElementById('links').innerHTML = (links[test] || []).map(l => `<a class="btn secondary" style="display:block" href="${A.esc(l.url)}" target="_blank" rel="noopener">${A.esc(l.name)}</a>`).join('');
     // weekly plan
     const planEl = document.getElementById('plan'); planEl.innerHTML = '';
@@ -205,6 +214,7 @@
     const plan = []; let used = 0;
     const timedDue = !s.timed.length || (Date.now() - s.timed[s.timed.length - 1].at) > 6 * 86400000;
     let tmods = []; try { tmods = (await A.data(`data/${test}/timed.json`)).modules.filter(m => !(test === 'act' && m.section === 'science' && !profile.science)); } catch (e) {}
+    if (stale()) return;
     const tmin = tmods.length ? Math.min(...tmods.map(m => m.minutes)) : 35, tmax = tmods.length ? Math.max(...tmods.map(m => m.minutes)) : 35;
     if (timedDue) { plan.push([`One timed module (${tmin === tmax ? tmin : tmin + ' to ' + tmax} min)`, 'timed.html']); used += tmax; }
     if (dte !== null && (dte <= 14 && dte > 10 || dte <= 3 && dte > 0)) { plan.push([`Full-length test (test is in ${dte} days)`, 'timed.html']); used += test === 'sat' ? 145 : 180; }

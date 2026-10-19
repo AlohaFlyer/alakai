@@ -1,5 +1,6 @@
 # SAT Notes Ep 2: Crossing Out: How to Find the Wrong Answers
 cast: lehua, sarah, derek, kaden
+topic: Elimination beats guessing; the 6 trap types the app names
 facts: No guessing penalty on the digital SAT, a wrong answer and a blank both score zero (College Board, satsuite.collegeboard.org); SAT multiple-choice questions have four answer choices (College Board, satsuite.collegeboard.org); Bluebook has a built-in answer eliminator and a mark-for-review flag (College Board, Bluebook digital testing tools page); app trap names from assets/engine.js TRAP_NAMES; app cross-out button and "You crossed out the right answer" message from assets/engine.js; one-in-four, one-in-three, one-in-two odds are arithmetic, not statistics
 target_minutes: 8
 homework: Drill Reading and Writing | drill.html?section=rw

@@ -23,7 +23,7 @@
 <style>
   .strat { border-bottom: 1px solid var(--line); padding: 10px 0; }
   .strat h3 { margin: 0 0 4px; } .strat ol { margin: 4px 0 6px 18px; padding: 0; } .strat li { margin-bottom: 2px; }
-  .strat .meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: .85rem; }
+  .strat .meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: .85rem; }
 </style>
 </head>
 <body>
@@ -63,7 +63,7 @@
     const host = document.getElementById('byskill'); host.innerHTML = '';
     skills.sections.filter(sec => !(test === 'act' && sec.id === 'science' && profile && !profile.science)).forEach(sec => {
       host.insertAdjacentHTML('beforeend', `<h3 style="margin-top:14px">${A.esc(sec.name)}</h3>`);
-      sec.skills.forEach(sk => { const s = (st[test] || {})[sk.id]; if (!s) return; host.insertAdjacentHTML('beforeend', `<div class="strat"><strong>${A.esc(sk.name)}</strong>: ${A.esc(s.name)}<ol>${s.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol><div class="meta"><span class="chip warn">${A.esc(s.trap)}</span><span class="chip">target ${A.esc(String(s.time))}s</span><a href="drill.html?skill=${encodeURIComponent(sk.id)}">Drill it</a></div></div>`); });
+      sec.skills.forEach(sk => { const s = (st[test] || {})[sk.id]; if (!s) return; host.insertAdjacentHTML('beforeend', `<div class="strat"><strong>${A.esc(sk.name)}</strong>: ${A.esc(s.name)}<ol>${s.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol><div class="meta"><span class="chip warn">${A.esc(s.trap)}</span><span class="chip">target ${A.esc(String(s.time))}s</span><a class="tap" href="drill.html?skill=${encodeURIComponent(sk.id)}">Drill it</a></div></div>`); });
     });
   }
   document.addEventListener('alakai:test', render); render();

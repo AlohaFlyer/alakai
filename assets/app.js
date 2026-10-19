@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const NS = 'alakai.';
-  const VERSION = '1.0.1';
+  const VERSION = '1.0.2';
 
   // ---------- Local store ----------
   // Browsers with site data blocked throw on localStorage and IndexedDB. Fall back to memory for this page
@@ -30,6 +30,8 @@
       return shapeOk(v, fallback) ? v : fallback;
     },
     set(key, value) { const raw = JSON.stringify(value); if (lsOk) { try { localStorage.setItem(NS + key, raw); return; } catch (e) { /* quota or blocked: keep it in memory */ } } mem[key] = raw; },
+    // An array of plain objects: stored lists can hold junk (null, numbers, strings) after a bad import or an old build.
+    list(key) { return this.get(key, []).filter(isPlain); },
     del(key) { delete mem[key]; if (lsOk) { try { localStorage.removeItem(NS + key); } catch (e) {} } },
     keys() { const out = new Set(Object.keys(mem)); if (lsOk) { try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.startsWith(NS)) out.add(k.slice(NS.length)); } } catch (e) {} } return [...out]; },
     exportAll() { const o = {}; this.keys().forEach(k => o[k] = this.get(k)); return { version: VERSION, exported: new Date().toISOString(), data: o }; },
@@ -112,7 +114,36 @@
   function lum([r, g, b]) { const f = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); }
   function contrast(a, b) { const la = lum(hexToRgb(a)), lb = lum(hexToRgb(b)); const [hi, lo] = la > lb ? [la, lb] : [lb, la]; return (hi + 0.05) / (lo + 0.05); }
   function onColor(bg) { return contrast(bg, '#FFFFFF') >= contrast(bg, '#1F1F1F') ? '#FFFFFF' : '#1F1F1F'; }
-  function darken(hex, amt) { const [r, g, b] = hexToRgb(hex).map(c => Math.max(0, Math.round(c * (1 - amt)))); return '#' + [r, g, b].map(c => c.toString(16).padStart(2, '0')).join(''); }
+  function toHex([r, g, b]) { return '#' + [r, g, b].map(c => c.toString(16).padStart(2, '0')).join(''); }
+  function darken(hex, amt) { return toHex(hexToRgb(hex).map(c => Math.max(0, Math.round(c * (1 - amt))))); }
+  function lighten(hex, amt) { return toHex(hexToRgb(hex).map(c => Math.min(255, Math.round(c + (255 - c) * amt)))); }
+
+  // The school primary is a fill colour (buttons, bars). Used as text or an outline on the page it must reach 4.5:1
+  // against both paper colours of the active theme: darker on light paper, lighter on dark paper. Mirrors verify/contrast.py.
+  const PAPERS = { light: ['#FBF8F1', '#F2EDE0'], dark: ['#141A16', '#1C2520'] };
+  function isDark() {
+    const t = document.documentElement.dataset.theme;
+    if (t === 'dark') return true; if (t === 'light') return false;
+    try { return window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) { return false; }
+  }
+  function primaryText(primary, dark) {
+    const papers = PAPERS[dark ? 'dark' : 'light']; let c = primary;
+    for (let i = 0; i < 60 && !papers.every(p => contrast(c, p) >= 4.5); i++) c = dark ? lighten(c, 0.06) : darken(c, 0.06);
+    return c;
+  }
+  let _palette = null;
+  function applyTextColor() {
+    if (!_palette) return;
+    document.documentElement.style.setProperty('--primary-text', primaryText(_palette, isDark()));
+  }
+  function setTheme(v) {
+    if (v === 'light' || v === 'dark') document.documentElement.dataset.theme = v; else delete document.documentElement.dataset.theme;
+    applyTextColor();
+  }
+  try {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', applyTextColor); else if (mq.addListener) mq.addListener(applyTextColor);
+  } catch (e) { /* old browser: theme follows the first load */ }
 
   function applyPalette(school) {
     const root = document.documentElement.style;
@@ -124,6 +155,7 @@
     // Text on primary must hit WCAG AA 4.5:1; nudge darker until it does (mirrors verify/contrast.py).
     for (let i = 0; i < 6 && contrast(primary, onColor(primary)) < 4.5; i++) primary = darken(primary, 0.12);
     root.setProperty('--primary', primary);
+    _palette = primary; applyTextColor();
     root.setProperty('--secondary', school.colors.secondary);
     root.setProperty('--accent', school.colors.accent);
     root.setProperty('--on-primary', onColor(primary));
@@ -166,11 +198,12 @@
       const school = Store.get('school', 'hpa');
       if (!(ios || standalone) || Store.get('iconSchool', null) === school) return;
       const el = document.createElement('div'); el.className = 'card icon-prompt';
+      const ipad = /iPad/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || (!/Mobile/.test(ua) && /Android/.test(ua));
       const steps = ios
         ? 'Hold the old Alakaʻi icon, tap Remove App, then open this site in Safari, tap Share, then Add to Home Screen.'
         : 'Hold the old Alakaʻi icon and uninstall it, then open this site in Chrome, tap the menu, then Add to Home screen.';
-      el.innerHTML = `<h3>Want the icon on your phone to match ${esc(schoolName || 'your school')}?</h3>
-        <p class="muted">Phones copy the icon once when you add it, so the old one stays until you swap it. ${steps}</p>
+      el.innerHTML = `<h3>Want the icon on your ${ipad ? 'tablet' : 'phone'} to match ${esc(schoolName || 'your school')}?</h3>
+        <p class="muted">${ipad ? 'Tablets' : 'Phones'} copy the icon once when you add it, so the old one stays until you swap it. ${steps}</p>
         <div class="row"><button type="button" data-act="done">Done, I swapped it</button><button type="button" class="secondary" data-act="later">Not now</button></div>`;
       el.addEventListener('click', e => { const a = e.target.dataset.act; if (!a) return; if (a === 'done') Store.set('iconSchool', school); el.remove(); });
       host.appendChild(el);
@@ -235,26 +268,37 @@
 
   // ---------- Ping (one time, anonymous) ----------
   // Onboarding only queues the ping (ping_pending) and moves on. The next page sends it, fire-and-forget with a
-  // 3-second timeout; it is marked sent only on success. If that fails, the dashboard retries once.
+  // 3-second timeout. Before the request goes out, ping_pending.sending holds the dispatch time, so a page opened
+  // while it is in flight does not send it again. Success marks it sent. A retry (dashboard only, one at most) needs
+  // no "sent", a "sending" mark older than 60 s, and fewer than 2 tries. If the sending page unloads before the
+  // answer, the keepalive request carries on without us, so it is treated as sent (a rare miss beats a double count).
+  // The body is exactly {school, grade}: the disclosure promises no other field, so no request id is added.
   const PING_URL = 'https://ping.alakaitestprep.app/ping';
+  const PING_WAIT = 60000;
   function pingOnce(schoolId, grade) {
     if (Store.get('pinged', false) || !Store.ok) return;
     Store.set('ping_pending', { school: schoolId, grade: grade, tries: 0 });
   }
+  function markPinged(p, extra) { Store.set('pinged', true); Store.set('ping_sent', Object.assign({ school: p.school, grade: p.grade, at: new Date().toISOString() }, extra || {})); Store.del('ping_pending'); }
   function sendPendingPing(page) {
     const p = Store.get('ping_pending', null);
     if (!p || Store.get('pinged', false)) { if (p) Store.del('ping_pending'); return Promise.resolve(false); }
-    const tries = +p.tries || 0;
+    const tries = +p.tries || 0, sending = +p.sending || 0;
+    if (sending && Date.now() - sending < PING_WAIT) return Promise.resolve(false); // in flight from another page
     if (tries >= 2 || (tries === 1 && page !== 'dashboard.html')) return Promise.resolve(false);
-    p.tries = tries + 1; Store.set('ping_pending', p);
+    p.tries = tries + 1; p.sending = Date.now(); Store.set('ping_pending', p);
+    let settled = false;
+    const onHide = () => { if (!settled) { settled = true; markPinged(p, { assumed: true }); } };
+    window.addEventListener('pagehide', onHide);
     const ctl = typeof AbortController === 'function' ? new AbortController() : null;
     const timer = setTimeout(() => { if (ctl) ctl.abort(); }, 3000);
     return fetch(PING_URL, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ school: p.school, grade: p.grade }), keepalive: true, signal: ctl ? ctl.signal : undefined })
-      .then(r => { if (!r.ok) throw new Error('ping ' + r.status); Store.set('pinged', true); Store.set('ping_sent', { school: p.school, grade: p.grade, at: new Date().toISOString() }); Store.del('ping_pending'); return true; })
-      .catch(() => false)
-      .finally(() => clearTimeout(timer));
+      .then(r => { if (!r.ok) throw new Error('ping ' + r.status); if (!settled) { settled = true; markPinged(p); } return true; })
+      // A failure or a timeout keeps the "sending" mark: a slow Worker may still have counted it, so the one retry
+      // waits out PING_WAIT.
+      .catch(() => { settled = true; return false; })
+      .finally(() => { clearTimeout(timer); window.removeEventListener('pagehide', onHide); });
   }
-
 
   // ---------- Progress + report ----------
   // Accuracy uses the same records on both sides: drill, timed and blitz attempts ("practice").
@@ -277,13 +321,25 @@
           const se = bySection[a.section] = bySection[a.section] || { n: 0, r: 0 }; se.n++; if (a.correct) se.r++;
         }
       });
-      const timed = Store.get(test + '.timed', []);
-      const episodes = Store.get(test + '.episodes', {});
-      const blitz = Store.get(test + '.blitz', []);
+      const timed = Store.list(test + '.timed').filter(t => typeof t.n === 'number');
+      const epRaw = Store.get(test + '.episodes', {}); const episodes = {};
+      Object.keys(epRaw).forEach(k => { if (isPlain(epRaw[k])) episodes[k] = epRaw[k]; });
+      const blitz = Store.list(test + '.blitz').filter(b => typeof b.score === 'number');
       const days = new Set(all.filter(a => a.ts).map(a => new Date(a.ts).toDateString()));
       return { attempts: n, right, placement, redo, bySkill, bySection, timed, episodes, blitz, activeDays: days.size, streak: streakDays(days) };
     }
   };
+  // Days to test: the YYYY-MM-DD date is a local calendar date (new Date('2026-11-07') would be UTC midnight, which is
+  // the afternoon before in Hawaiʻi). Whole local days from today's local midnight; null when unset or unreadable.
+  function parseLocalDate(s) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '').trim()); if (!m) return null;
+    const d = new Date(+m[1], +m[2] - 1, +m[3]); return isNaN(d) ? null : d;
+  }
+  function daysTo(s, now) {
+    const t = parseLocalDate(s); if (!t) return null;
+    const n = now ? new Date(now) : new Date(); const today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+    return Math.round((t - today) / 86400000); // round, not floor: a DST day is 23 or 25 hours
+  }
   // Average seconds per item over the attempts that carry a time (placement and timed records have none).
   function avgSec(v) { return v.timed ? Math.round(v.time / v.timed / 1000) : null; }
   function streakDays(set) {
@@ -296,7 +352,7 @@
     const skills = await data(`data/${test}/skills.json`).catch(() => null);
     const name = k => { if (!skills) return k; for (const sec of skills.sections) { if (sec.id === k) return sec.name; const f = sec.skills.find(x => x.id === k); if (f) return f.name; } return k; };
     const schools = await data('data/schools.json'); const sc = schools.schools.find(x => x.id === Store.get('school', schools.default));
-    const dte = p.testdate ? Math.ceil((new Date(p.testdate) - Date.now()) / 86400000) : null;
+    const dte = daysTo(p.testdate);
     const L = []; const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
     L.push(`Alakaʻi Test Prep progress report`);
     L.push(`Student: ${p.name || ''}   School: ${sc ? sc.name : ''}   Grade: ${p.grade || ''}`);
@@ -322,7 +378,7 @@
   async function sendReport(test) {
     const r = await buildReport(test);
     const url = `mailto:${encodeURIComponent(r.to)}?${r.cc ? 'cc=' + encodeURIComponent(r.cc) + '&' : ''}subject=${encodeURIComponent(r.subject)}&body=${encodeURIComponent(r.body)}`;
-    const log = Store.get('sentlog', []); log.push({ at: new Date().toISOString(), to: [r.to, r.cc].filter(Boolean).join(', '), subject: r.subject }); Store.set('sentlog', log.slice(-50));
+    const log = Store.list('sentlog'); log.push({ at: new Date().toISOString(), to: [r.to, r.cc].filter(Boolean).join(', '), subject: r.subject }); Store.set('sentlog', log.slice(-50));
     location.href = url; return r;
   }
   function milestone(test, key) {
@@ -348,8 +404,13 @@
     const toggle = bar.querySelector('.toggle'); if (toggle) toggle.before(wrap); else bar.appendChild(wrap);
     const btn = wrap.querySelector('.practice-btn'), menu = wrap.querySelector('.practice-menu');
     const fill = () => { const t = getTest(); menu.innerHTML = `<div class="muted" style="padding:4px 10px;font-size:.8rem">${t.toUpperCase()} official, free</div>` + (links[t] || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a>`).join('') + `<div class="muted" style="padding:4px 10px;font-size:.8rem">${t === 'sat' ? 'ACT' : 'SAT'}</div>` + (links[t === 'sat' ? 'act' : 'sat'] || []).slice(0, 1).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a>`).join(''); };
-    btn.addEventListener('click', e => { e.stopPropagation(); fill(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); });
-    document.addEventListener('click', () => { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); });
+    const close = (refocus) => { if (menu.hidden) return; menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); if (refocus) btn.focus(); };
+    btn.addEventListener('click', e => { e.stopPropagation(); fill(); const open = menu.hidden; menu.hidden = !open; btn.setAttribute('aria-expanded', String(open)); if (open) { const first = menu.querySelector('a'); if (first) first.focus(); } });
+    document.addEventListener('click', e => { if (!wrap.contains(e.target)) close(false); });
+    // Escape closes it and returns focus to the button; Tab out of the menu closes it too.
+    wrap.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { e.preventDefault(); close(true); } });
+    menu.addEventListener('click', e => { if (e.target.closest('a')) close(false); });
+    wrap.addEventListener('focusout', e => { if (!menu.hidden && e.relatedTarget && !wrap.contains(e.relatedTarget)) close(false); });
     document.addEventListener('alakai:test', () => { if (!menu.hidden) fill(); });
   }
   const NAV_PARENT = { 'placement.html': 'dashboard.html' };
@@ -366,7 +427,7 @@
   async function boot(opts) {
     opts = opts || {};
     mountFrame();
-    const theme = Store.get('theme', 'auto'); if (theme !== 'auto') document.documentElement.dataset.theme = theme;
+    const theme = Store.get('theme', 'auto'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
     const school = await initPalette();
     document.documentElement.dataset.test = getTest();
     document.querySelectorAll('[data-test-label]').forEach(el => el.textContent = getTest().toUpperCase());
@@ -380,5 +441,5 @@
     return { school, profile: p, test: getTest() };
   }
 
-  window.Alakai = { VERSION, avgSec, safeNext, sendPendingPing, storageNotice, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, fmtTime, shuffle, esc, applyPalette, homeIconPrompt };
+  window.Alakai = { VERSION, avgSec, daysTo, parseLocalDate, safeNext, sendPendingPing, storageNotice, setPattern, Progress, buildReport, sendReport, milestone, Store, DB, data, boot, getTest, setTest, profile, feedbackLine, showFeedback, pingOnce, contrast, onColor, primaryText, setTheme, isDark, fmtTime, shuffle, esc, applyPalette, homeIconPrompt };
 })();

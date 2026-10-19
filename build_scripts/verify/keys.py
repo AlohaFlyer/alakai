@@ -54,6 +54,14 @@ def check_test(test):
         for pos in range(width):
             share = keys.count(pos) / len(keys)
             if share > 0.35 or share < 0.15: errs.append(f"section {sec}: key {'ABCD'[pos]} is {share:.0%} of {len(keys)} items (want 15% to 35%)")
+    # ACT Math and Science keep numeric choices ascending and "Student N" choices in 1, 2, 3 order (banks/rebalance.py).
+    if test == "act":
+        sys.path.insert(0, os.path.join(ROOT, "build_scripts", "banks"))
+        from rebalance import numeric_order, label_order
+        for it in drills:
+            if it["section"] not in ("math", "science") or not it.get("choices"): continue
+            o = numeric_order(it["choices"]) or label_order(it["choices"])
+            if o is not None and o != list(range(len(it["choices"]))): errs.append(f"{it['id']}: choices are not in natural order (run build_scripts/banks/rebalance.py)")
     cards = []
     for p in sorted(glob.glob(os.path.join(d, "cards*.json"))): cards += load(p)
     cids = set()

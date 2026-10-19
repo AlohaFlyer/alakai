@@ -24,7 +24,7 @@
   .hud { display: flex; justify-content: space-between; align-items: center; gap: 10px; position: sticky; top: calc(var(--bar) + 4px); background: var(--paper); z-index: 2; padding: 6px 0; border-bottom: 1px solid var(--line); }
   .nav-q { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
   .nav-q button { min-width: 40px; height: 40px; padding: 0; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-size: .8rem; }
-  .nav-q button.answered { background: var(--primary); color: var(--on-primary); }
+  .nav-q button.answered { background: var(--primary); color: var(--on-primary); border-color: var(--primary-text); }
   .nav-q button.flagged { outline: 2px solid var(--warn); }
   .nav-q button.current { border-color: var(--ink); border-width: 2px; }
   .coach { background: color-mix(in srgb, var(--warn) 14%, transparent); border-left: 4px solid var(--warn); padding: 8px 12px; border-radius: 0 10px 10px 0; margin: 8px 0; }
@@ -102,8 +102,10 @@
   function drawResume() {
     const host = document.getElementById('resume'); host.innerHTML = ''; host.hidden = true;
     const ip = S.get(IPK(test), null), ch = S.get(CHK(test), null);
-    if (ip && ip.mod && Array.isArray(ip.itemIds) && ip.itemIds.every(id => bank.byId[id])) {
-      const done = (ip.answers || []).filter(a => a !== null).length;
+    // A saved module needs the right shapes (a bad import or an old build can leave junk): otherwise it is dropped.
+    const ipOk = ip && ip.mod && typeof ip.mod === 'object' && Array.isArray(ip.itemIds) && ip.itemIds.length && ip.itemIds.every(id => bank.byId[id]) && (ip.answers === undefined || Array.isArray(ip.answers)) && (ip.flags === undefined || Array.isArray(ip.flags)) && (ip.chain == null || Array.isArray(ip.chain));
+    if (ipOk) {
+      const done = (ip.answers || []).filter(a => a !== null && a !== undefined).length;
       host.innerHTML = `<strong>${A.esc(ip.mod.name)} is in progress.</strong> ${done} of ${ip.itemIds.length} answered, ${A.fmtTime((ip.left || 0) / 1000)} left on the clock.<div class="row" style="margin-top:8px"><button id="res-go">Resume</button><button class="ghost" id="res-x">Abandon</button></div>`;
       host.hidden = false;
       host.querySelector('#res-go').onclick = () => resume(ip);
@@ -112,7 +114,7 @@
     else if (ch && Array.isArray(ch.remaining) && ch.remaining.length && modById(ch.remaining[0])) {
       host.innerHTML = `<strong>Full-length test in progress.</strong> Next up: ${A.esc(modById(ch.remaining[0]).name)}.<div class="row" style="margin-top:8px"><button id="res-go">Continue</button><button class="ghost" id="res-x">Abandon</button></div>`;
       host.hidden = false;
-      host.querySelector('#res-go').onclick = () => { chain = ch.remaining.map(modById).filter(Boolean); chainResults = ch.results || []; start(chain.shift()); };
+      host.querySelector('#res-go').onclick = () => { chain = ch.remaining.map(modById).filter(Boolean); chainResults = Array.isArray(ch.results) ? ch.results : []; start(chain.shift()); };
       host.querySelector('#res-x').onclick = () => { if (!confirm('Abandon the full-length test? Modules you finished stay in your history.')) return; S.del(CHK(test)); drawResume(); };
     }
   }
@@ -132,7 +134,7 @@
     let want = { 1: Math.round(m.count * 0.3), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2];
     // Adaptive SAT Module 2: route on the most recent Module 1 of the same section
     if (test === 'sat' && /m2$/.test(m.id)) {
-      const m1 = S.get(test + '.timed', []).filter(t => t && t.id === m.id.replace('m2', 'm1')).slice(-1)[0];
+      const m1 = S.list(test + '.timed').filter(t => t.id === m.id.replace('m2', 'm1')).slice(-1)[0];
       if (m1) { const pct = m1.right / m1.n; if (pct >= 0.6) { want = { 1: Math.round(m.count * 0.1), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'harder'; } else { want = { 1: Math.round(m.count * 0.45), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'easier'; } }
       else mod.routed = null;
     }
@@ -143,8 +145,8 @@
     let left = m.minutes * 60000;
     if (resumeState) {
       items = resumeState.itemIds.map(id => bank.byId[id]); mod.routed = resumeState.mod.routed || null;
-      answers = resumeState.answers.slice(0, items.length); while (answers.length < items.length) answers.push(null);
-      flags = new Set(resumeState.flags || []); idx = Math.min(resumeState.idx || 0, items.length - 1); left = Math.max(1000, resumeState.left || 0);
+      answers = (Array.isArray(resumeState.answers) ? resumeState.answers : []).slice(0, items.length).map(a => (a === undefined ? null : a)); while (answers.length < items.length) answers.push(null);
+      flags = new Set(Array.isArray(resumeState.flags) ? resumeState.flags.filter(x => Number.isInteger(x)) : []); idx = Math.min(resumeState.idx || 0, items.length - 1); left = Math.max(1000, resumeState.left || 0);
     }
     end = Date.now() + left;
     const per = m.minutes * 60 / m.count; const t0 = end - m.minutes * 60000;
@@ -157,7 +159,7 @@
   }
   function resume(ip) {
     const m = modById(ip.mod.id); if (!m) { S.del(IPK(test)); drawResume(); return; }
-    chain = ip.chain ? ip.chain.map(modById).filter(Boolean) : null; chainResults = ip.chainResults || [];
+    chain = Array.isArray(ip.chain) ? ip.chain.map(modById).filter(Boolean) : null; chainResults = Array.isArray(ip.chainResults) ? ip.chainResults : [];
     start(m, ip);
   }
   function tick() {
@@ -174,9 +176,10 @@
     idx = i; started[i] = started[i] || Date.now(); drawNav();
     const item = items[i]; const host = document.getElementById('item'); const free = !item.choices || !item.choices.length; const letters = 'ABCDE';
     host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem"><strong>${i + 1}.</strong> ${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
-      ${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" aria-label="Your answer" style="max-width:220px" value="${answers[i] !== null ? A.esc(answers[i]) : ''}">` : `<div class="choices">${item.choices.map((c, k) => `<button class="choice" data-k="${k}" aria-pressed="${answers[i] === k}" ${answers[i] === k ? 'data-state="picked"' : ''}><strong>${letters[k]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
+      ${free ? `<div class="row">${E.gridIn(answers[i] !== null ? answers[i] : '')}</div>` : `<div class="choices">${item.choices.map((c, k) => `<button class="choice" data-k="${k}" aria-pressed="${answers[i] === k}" ${answers[i] === k ? 'data-state="picked"' : ''}><strong>${letters[k]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
       <div class="row" style="margin-top:8px"><button class="ghost" id="flag">${flags.has(i) ? 'Unflag' : 'Flag'}</button></div>`;
     host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { answers[i] = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => { delete x.dataset.state; x.setAttribute('aria-pressed', 'false'); }); b.dataset.state = 'picked'; b.setAttribute('aria-pressed', 'true'); drawNav(); saveState(true); }));
+    E.wireGridIn(host);
     const f = host.querySelector('#free'); if (f) f.addEventListener('input', () => { answers[i] = f.value.trim() || null; drawNav(); saveState(true); });
     host.querySelector('#flag').addEventListener('click', () => { flags.has(i) ? flags.delete(i) : flags.add(i); show(i); saveState(true); });
     document.getElementById('next').textContent = i === items.length - 1 ? 'To the end' : 'Next';
@@ -203,19 +206,21 @@
     }
     for (const { it, a, correct } of rows) { const free = !it.choices || !it.choices.length; await E.record(t, it, { correct, ms: 0, cause: a === null ? 'time' : null, trap: (!correct && a !== null && !free && it.traps) ? it.traps[a] : null }, 'timed'); }
     const rec = { id: mod.id, name: mod.name, right, n: items.length, seconds, unanswered, flagged: flags.size, timeUp, at: Date.now(), routed: mod.routed || null, hardRight: rows.filter(r => r.correct && r.it.difficulty === 3).length };
-    const list = S.get(t + '.timed', []); list.push(rec); S.set(t + '.timed', list.slice(-50));
-    if (A.milestone(t, 'timed:' + mod.id + ':' + list.length)) S.set('milestone_pending', { test: t, text: `${mod.name} done: ${right}/${items.length}. Good time to send a progress report.` });
+    const list = S.list(t + '.timed'); list.push(rec); S.set(t + '.timed', list.slice(-50));
+    // Milestone key from a running count, not the stored list (capped at 50), so prompts keep coming after the 50th.
+    const tc = S.get(t + '.timedcount', list.length - 1) + 1; S.set(t + '.timedcount', tc);
+    if (A.milestone(t, 'timed:' + mod.id + ':' + tc)) S.set('milestone_pending', { test: t, text: `${mod.name} done: ${right}/${items.length}. Good time to send a progress report.` });
     document.getElementById('run').hidden = true; document.getElementById('review').hidden = false; clearChainButtons();
     const flaggedEasy = [...flags].filter(i => items[i].difficulty === 1).length;
     document.getElementById('rsummary').textContent = `${right} of ${items.length} right in ${A.fmtTime(seconds)}${timeUp ? ' (time ran out)' : ''}. ${unanswered} left blank, ${flags.size} flagged${flags.size ? ` (${flaggedEasy} of those were easy-rated: your own order of difficulty is the one that counts)` : ''}.${mod.routed ? ` Module 2 was the ${mod.routed} version.` : ''} ${right < items.length ? 'Misses are in your error log.' : ''}`;
     if (chain && chain.length) {
       chainResults.push(rec);
-      const nextMod = chain.shift(); const isBreak = t === 'sat' ? nextMod.section === 'math' && mod.section === 'rw' : chain.length === 1;
+      const nextMod = chain.shift(); const isBreak = t === 'sat' ? nextMod.section === 'math' && mod.section === 'rw' : nextMod.section === 'reading' && mod.section === 'math';
       S.set(CHK(t), { remaining: [nextMod.id].concat(chain.map(m => m.id)), results: chainResults });
       const btn = document.createElement('button'); btn.className = 'chain-next'; btn.textContent = isBreak ? `Take a 10-minute break, then start ${nextMod.name}` : `Continue to ${nextMod.name}`; btn.style.marginTop = '10px';
       btn.onclick = () => { if (btn.disabled) return; btn.disabled = true; if (isBreak) takeBreak(nextMod, btn); else start(nextMod); };
       document.getElementById('rsummary').after(btn);
-    } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(t + '.fulltests', (S.get(t + '.fulltests', [])).concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; S.del(CHK(t)); }
+    } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(t + '.fulltests', S.list(t + '.fulltests').concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; S.del(CHK(t)); }
     document.getElementById('rshow').onclick = () => {
       const host = document.getElementById('rlist'); host.innerHTML = ''; const letters = 'ABCDE';
       rows.forEach(({ it, a, correct }, i) => { const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none'; const free = !it.choices || !it.choices.length;
