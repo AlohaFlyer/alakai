@@ -81,9 +81,10 @@
   await A.boot({ page: 'index.html' });
   const schools = await A.data('data/schools.json');
   const sel = document.getElementById('school');
-  sel.innerHTML = schools.schools.map(s => `<option value="${s.id}">${A.esc(s.name)}${s.town ? ' · ' + A.esc(s.town) : ''}</option>`).join('');
-  sel.value = A.Store.get('school', schools.default);
-  sel.addEventListener('change', () => { A.Store.set('school', sel.value); const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); });
+  sel.innerHTML = '<option value="">Choose your school</option>' + schools.schools.map(s => `<option value="${s.id}">${A.esc(s.name)}${s.town ? ' · ' + A.esc(s.town) : ''}</option>`).join('');
+  // No preselected school: a student who taps Start without choosing must not be counted as HPA.
+  const stored = A.Store.get('school', ''); sel.value = schools.schools.some(s => s.id === stored) ? stored : '';
+  sel.addEventListener('change', () => { if (!sel.value) return; A.Store.set('school', sel.value); const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); });
   const p = A.profile();
   if (p && p.onboarded) {
     // School is chosen: the picker lives in Settings from now on.
@@ -93,7 +94,7 @@
     document.getElementById('hello').textContent = p.name ? `Welcome back, ${p.name}.` : 'Welcome back.';
     document.getElementById('school-line').textContent = (s ? s.short || s.name : '') + ' · change school or test in Settings';
   }
-  document.getElementById('start').addEventListener('click', () => { A.Store.set('school', sel.value); location.href = 'onboard.html'; });
+  document.getElementById('start').addEventListener('click', () => { if (!sel.value) { sel.focus(); sel.setAttribute('aria-invalid', 'true'); let m = document.getElementById('school-msg'); if (!m) { m = document.createElement('p'); m.id = 'school-msg'; m.className = 'muted'; m.setAttribute('role', 'alert'); sel.after(m); } m.textContent = 'Choose your school first (pick Other if it is not listed).'; return; } A.Store.set('school', sel.value); location.href = 'onboard.html'; });
 })();
 </script>
 </body>

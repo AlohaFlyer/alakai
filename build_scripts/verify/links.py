@@ -8,7 +8,7 @@ for page in glob.glob(os.path.join(ROOT, "*.html")):
     for m in re.finditer(r'(?:href|src)="([^"#?]+)', s):
         u = m.group(1)
         if u.startswith(("http", "mailto:", "data:", "//", "javascript:")) or "${" in u: continue
-        if not os.path.exists(os.path.join(ROOT, u)): bad.append(f"{os.path.basename(page)}: {u}")
+        if not os.path.exists(os.path.join(ROOT, u.lstrip("/"))): bad.append(f"{os.path.basename(page)}: {u}")
     for m in re.finditer(r"""['"]((?:data|assets|audio)/[^'"]+\.(?:json|svg|jpg|png|js|css))['"]""", s):
         u = m.group(1)
         if "${" in u or "+" in u: continue

@@ -72,39 +72,69 @@
     const host = document.getElementById('list');
     host.innerHTML = eps.length ? eps.map(e => e.coming
       ? `<div class="ep coming" aria-disabled="true"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">Coming soon</div></div>`
-      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 1 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
-    host.querySelectorAll('.ep:not(.coming)').forEach(d => d.addEventListener('click', () => play(+d.dataset.n)));
+      : `<div class="ep ${prog[e.n] && prog[e.n].done ? 'done' : ''}" data-n="${e.n}" role="button" tabindex="0" aria-label="Play episode ${e.n}: ${A.esc(e.title)}${prog[e.n] && prog[e.n].done ? ', done' : ''}"><div class="n">${e.n}</div><div><strong>${A.esc(e.title)}</strong><br><small class="muted">${A.esc(e.topic)}</small></div><div class="muted">${A.esc(e.len || '')}</div></div>`).join('') : `<p class="muted">${test.toUpperCase()} Notes Podcast, episode 1 is being recorded. Same five voices, ${test === 'act' ? 'Coach Pono finally gets his second hat' : 'different hat'}. Check back soon.</p>`;
+    host.querySelectorAll('.ep:not(.coming)').forEach(d => {
+      d.addEventListener('click', () => play(+d.dataset.n));
+      d.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); play(+d.dataset.n); } });
+    });
     if (eps.length) host.insertAdjacentHTML('beforeend', '<p class="muted" style="margin:10px 0 0">More episodes are being recorded. New ones show up here as they are approved.</p>');
-    const q = new URLSearchParams(location.search); if (q.get('ep') && eps.some(e => e.n === +q.get('ep') && !e.coming)) play(+q.get('ep'));
   }
+  // Progress per episode: pos (seconds, saved every 5 s and on pause), heard (seconds actually played, which is what
+  // the 90% rule counts, so scrubbing to the end does not unlock the check), listened, done, check.
+  let current = null;
   function play(n) {
     const e = eps.find(x => x.n === n); if (!e) return;
+    if (current && current.flush) current.flush();
+    const t = test; current = { n, t };
     document.getElementById('player').hidden = false; document.getElementById('ptitle').textContent = `Ep ${e.n}: ${e.title}`; document.getElementById('ptopic').textContent = e.topic;
-    const a = document.getElementById('audio'); a.src = e.audio; a.load();
+    const a = document.getElementById('audio');
+    a.ontimeupdate = a.onpause = a.onended = a.onloadedmetadata = a.onseeking = null;
+    a.src = e.audio; a.load();
     document.getElementById('homework').innerHTML = e.homework ? `<a class="btn" href="${A.esc(e.homework.href)}">Homework: ${A.esc(e.homework.label)}</a>` : '';
     document.getElementById('ptranscript').textContent = e.transcript || 'Transcript coming.';
-    const prog = S.get(test + '.episodes', {}); const rec = prog[n] || { n, title: e.title, done: false };
-    a.ontimeupdate = () => { rec.pos = a.currentTime; if (a.duration && a.currentTime / a.duration > 0.9 && !rec.listened) { rec.listened = true; prog[n] = rec; S.set(test + '.episodes', prog); renderCheck(e, rec); } };
-    if (rec.pos && rec.pos < (a.duration || 1e9)) a.currentTime = rec.pos;
-    a.onended = () => { rec.listened = true; prog[n] = rec; S.set(test + '.episodes', prog); renderCheck(e, rec); };
-    renderCheck(e, rec);
+    const prog = S.get(t + '.episodes', {}); const rec = Object.assign({ n, title: e.title, done: false }, prog[n] || {});
+    const save = () => { const p = S.get(t + '.episodes', {}); p[n] = rec; S.set(t + '.episodes', p); };
+    const mine = () => current && current.n === n && current.t === t;
+    let lastSave = 0, lastT = null, ready = false;
+    current.flush = () => { if (ready && a.currentTime > 0) { rec.pos = a.currentTime; save(); } };
+    a.onloadedmetadata = () => { if (!mine()) return; if (rec.pos && a.duration && rec.pos < a.duration - 5) a.currentTime = rec.pos; lastT = a.currentTime; ready = true; };
+    a.onseeking = () => { lastT = null; };
+    a.ontimeupdate = () => {
+      // Ignore the timeupdate the browser fires while loading, before the saved position is restored.
+      if (!mine() || !ready) return;
+      const now = a.currentTime;
+      // Count only small forward steps of real playback as heard time; a seek resets the baseline.
+      if (lastT !== null && !a.paused && now > lastT && now - lastT < 2) rec.heard = (rec.heard || 0) + (now - lastT);
+      lastT = now; rec.pos = now;
+      if (a.duration && !rec.listened && (rec.heard || 0) >= 0.9 * a.duration) { rec.listened = true; save(); renderCheck(e, rec, t); return; }
+      if (Date.now() - lastSave >= 5000) { lastSave = Date.now(); save(); }
+    };
+    a.onpause = () => { if (!mine() || !ready || a.ended) return; rec.pos = a.currentTime; save(); };
+    a.onended = () => { if (!mine()) return; rec.pos = 0; save(); };
+    const resumeNote = rec.pos > 5 && !rec.done ? ` Resumes at ${A.fmtTime(rec.pos)}.` : '';
+    document.getElementById('ptopic').textContent = e.topic + resumeNote;
+    renderCheck(e, rec, t);
     document.getElementById('player').scrollIntoView({ behavior: 'smooth' });
   }
-  function renderCheck(e, rec) {
+  // Rendered once per unlock: later events (ended, more timeupdates) do not restart a check in progress.
+  function renderCheck(e, rec, t) {
     const host = document.getElementById('check');
     if (!e.check || !e.check.length) { host.innerHTML = ''; return; }
     if (rec.done) { host.innerHTML = `<p class="chip ok">Check done: ${rec.check}/${e.check.length}</p>`; return; }
-    if (!rec.listened) { host.innerHTML = '<p class="muted">The 3-question check unlocks when you have listened to the episode.</p>'; return; }
+    if (!rec.listened) { host.innerHTML = '<p class="muted">The 3-question check unlocks when you have listened to 90% of the episode.</p>'; host.dataset.ep = ''; return; }
+    const key = t + ':' + e.n; if (host.dataset.ep === key) return; host.dataset.ep = key;
     let i = 0, score = 0;
     const next = () => {
-      if (i >= e.check.length) { rec.done = true; rec.check = score; rec.doneAt = Date.now(); const prog = S.get(test + '.episodes', {}); prog[e.n] = rec; S.set(test + '.episodes', prog); const doneCount = Object.values(prog).filter(x => x.done).length; if (doneCount % 5 === 0 && A.milestone(test, 'eps' + doneCount)) S.set('milestone_pending', { test, text: `${doneCount} episodes done. Good time to send a progress report.` }); host.innerHTML = `<p class="chip ok">Check done: ${score}/${e.check.length}</p>`; load(); return; }
+      if (i >= e.check.length) { rec.done = true; rec.check = score; rec.doneAt = Date.now(); const prog = S.get(t + '.episodes', {}); prog[e.n] = rec; S.set(t + '.episodes', prog); const doneCount = Object.values(prog).filter(x => x && x.done).length; if (doneCount % 5 === 0 && A.milestone(t, 'eps' + doneCount)) S.set('milestone_pending', { test: t, text: `${doneCount} episodes done. Good time to send a progress report.` }); host.innerHTML = `<p class="chip ok">Check done: ${score}/${e.check.length}</p>`; host.dataset.ep = ''; if (t === test) load(); return; }
       const c = e.check[i]; host.innerHTML = `<div class="q-stem"><strong>Check ${i + 1}/${e.check.length}.</strong> ${A.esc(c.q)}</div><div class="choices">${c.choices.map((x, k) => `<button class="choice" data-k="${k}">${A.esc(x)}</button>`).join('')}</div><div id="cfb"></div>`;
       host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', async () => { const k = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => x.disabled = true); b.dataset.state = k === c.answer ? 'right' : 'wrong'; if (k === c.answer) score++; else host.querySelector(`[data-k="${c.answer}"]`).dataset.state = 'right'; await A.showFeedback(host.querySelector('#cfb'), k === c.answer ? 'right' : 'wrong'); const nb = document.createElement('button'); nb.textContent = 'Next'; nb.style.marginTop = '8px'; nb.onclick = () => { i++; next(); }; host.querySelector('#cfb').appendChild(nb); }));
     };
     next();
   }
-  document.addEventListener('alakai:test', load);
-  load();
+  // A test toggle closes the player so progress is never filed under the other test.
+  document.addEventListener('alakai:test', () => { const a = document.getElementById('audio'); if (current) { if (current.flush) current.flush(); a.pause(); } current = null; document.getElementById('player').hidden = true; document.getElementById('check').innerHTML = ''; document.getElementById('check').dataset.ep = ''; load(); });
+  await load();
+  const q = new URLSearchParams(location.search); if (q.get('ep') && eps.some(e => e.n === +q.get('ep') && !e.coming)) play(+q.get('ep'));
 })();
 </script>
 </body>

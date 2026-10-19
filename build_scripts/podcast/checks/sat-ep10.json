@@ -1,5 +1,5 @@
 [
- {"q": "A $100 jacket goes up 20%, then the new price goes down 20%. What is the final price?", "choices": ["$100", "$96", "$80", "$104"], "answer": 1},
- {"q": "A student takes 20% off the original price when the question said \"the new price.\" Which trap is that?", "choices": ["Misread the question", "Calculation slip", "Opposite", "Near miss"], "answer": 0},
- {"q": "Scores of 8, 9, 9, 10, and 0. What does the outlier 0 do?", "choices": ["Pulls the median down a lot and leaves the mean alone", "Pulls the mean down a lot and barely changes the median", "Changes neither", "Makes the mean and median equal"], "answer": 1}
+ {"q": "A $100 jacket goes up 20%, then the new price goes down 20%. What is the final price?", "choices": ["$96", "$80", "$104", "$100"], "answer": 0},
+ {"q": "A student takes 20% off the original price when the question said \"the new price.\" Which trap is that?", "choices": ["Calculation slip", "Misread the question", "Near miss", "Opposite"], "answer": 1},
+ {"q": "Scores of 8, 9, 9, 10, and 0. What does the outlier 0 do?", "choices": ["Pulls the median down a lot and leaves the mean alone", "Makes the mean and median equal", "Pulls the mean down a lot and barely changes the median", "Changes neither"], "answer": 2}
 ]

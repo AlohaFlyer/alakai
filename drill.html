@@ -31,7 +31,7 @@
 
   <section class="card" id="picker">
     <h2>Drills</h2>
-    <p class="muted">Short mixed sets. Pick a section or a single skill. Feedback the way you asked for in onboarding (change it in Settings).</p>
+    <p class="muted">Short mixed sets. Pick a section or a single skill. Feedback the way you asked for in onboarding (change it under Feedback after a miss in Settings).</p>
     <div class="grid" id="sections"></div>
     <div class="row" style="margin-top:12px">
       <label for="n" style="margin:0">Items</label>
@@ -73,7 +73,7 @@
     const secs = E.Bank.visibleSections(bank, test, profile); const host = document.getElementById('sections'); host.innerHTML = '';
     secs.forEach(sec => {
       const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none';
-      d.innerHTML = `<h3>${A.esc(sec.name)}</h3><div class="stack">${sec.skills.map(sk => `<a href="#" data-skill="${sk.id}" style="display:block">${A.esc(sk.name)} <small class="muted">(${bank.items.filter(i => i.skill === sk.id).length})</small></a>`).join('')}</div><button class="secondary" data-section="${sec.id}" style="margin-top:8px">Whole section</button>`;
+      d.innerHTML = `<h3>${A.esc(sec.name)}</h3><div class="stack">${sec.skills.map(sk => `<a href="#" data-skill="${sk.id}" style="display:block;min-height:40px;padding:8px 0">${A.esc(sk.name)} <small class="muted">(${bank.items.filter(i => i.skill === sk.id).length})</small></a>`).join('')}</div><button class="secondary" data-section="${sec.id}" style="margin-top:8px">Whole section</button>`;
       host.appendChild(d);
     });
     host.querySelectorAll('[data-skill]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); start({ skill: a.dataset.skill }); }));
@@ -83,7 +83,9 @@
   document.getElementById('mixed').addEventListener('click', () => start({}));
   document.getElementById('redo').addEventListener('click', () => start({ redo: true }));
   document.getElementById('again').addEventListener('click', () => { document.getElementById('done').hidden = true; document.getElementById('picker').hidden = false; });
-  document.addEventListener('alakai:test', async () => { test = A.getTest(); bank = await E.Bank.load(test); drawPicker(); });
+  // A test toggle ends any set in progress; attempts already graded stay filed under the test they were taken in.
+  let runId = 0;
+  document.addEventListener('alakai:test', async () => { runId++; test = A.getTest(); bank = await E.Bank.load(test); if (!document.getElementById('run').hidden) { document.getElementById('run').hidden = true; document.getElementById('picker').hidden = false; } drawPicker(); });
 
   async function start(sel) {
     const n = +document.getElementById('n').value;
@@ -105,22 +107,29 @@
     if (!set.length) { alert('No items for that yet.'); return; }
     document.getElementById('picker').hidden = true; document.getElementById('run').hidden = false; document.getElementById('done').hidden = true;
     document.getElementById('title').textContent = title;
+    const myRun = ++runId, runTest = test, runBank = bank;
     let i = 0, right = 0, streak = 0; const results = [];
     const next = async () => {
+      if (myRun !== runId) return;
       if (i >= set.length) return finish();
       document.getElementById('count').textContent = `${i + 1} of ${set.length}`; document.getElementById('prog').style.width = Math.round(100 * i / set.length) + '%';
       const item = set[i]; const host = document.getElementById('item');
-      const strategy = await E.strategyFor(test, item.skill);
-      const res = await E.renderItem(host, item, { strategy, streak: streak + 1, skillName: bank.skillName[item.skill], onNext: () => { i++; next(); }, nextLabel: i === set.length - 1 ? 'Finish' : 'Next' });
-      if (res.correct) { right++; streak++; } else { streak = 0; res.cause = await E.askCause(host); }
-      results.push(res); await E.record(test, item, res, kind);
+      const strategy = await E.strategyFor(runTest, item.skill);
+      if (myRun !== runId) return;
+      const res = await E.renderItem(host, item, { strategy, streak: streak + 1, skillName: runBank.skillName[item.skill], onNext: () => { i++; next(); }, nextLabel: i === set.length - 1 ? 'Finish' : 'Next' });
+      if (myRun !== runId) return;
+      if (res.correct) { right++; streak++; } else streak = 0;
+      // Record now, not after the cause question: tapping Next without answering it must not lose the miss.
+      results.push(res); const keyP = E.record(runTest, item, res, kind);
+      if (!res.correct && !res.retry) E.askCause(host).then(async c => { res.cause = c; E.setCause(runTest, item, await keyP, c); });
     };
     const finish = () => {
       document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
-      const avg = Math.round(results.reduce((a, r) => a + r.ms, 0) / results.length / 1000);
-      document.getElementById('summary').textContent = `${right} of ${set.length} right, about ${avg}s per item. Misses are in your error log and come back in 3 days.`;
-      const total = S.get(test + '.drillcount', 0) + set.length; S.set(test + '.drillcount', total);
-      if (Math.floor(total / 100) > Math.floor((total - set.length) / 100) && A.milestone(test, 'drills' + Math.floor(total / 100) * 100)) S.set('milestone_pending', { test, text: `${Math.floor(total / 100) * 100} drills done. Good time to send a progress report.` });
+      const avg = results.length ? Math.round(results.reduce((a, r) => a + (r.ms || 0), 0) / results.length / 1000) : 0;
+      const misses = results.length - right; const retries = results.filter(r => r.retry).length;
+      document.getElementById('summary').textContent = `${right} of ${set.length} right${retries ? ` (${retries} more after the hint)` : ''}, about ${avg}s per item. ${misses ? 'Misses are in your error log and come back in 3 days.' : 'Clean set, nothing added to the error log.'}`;
+      const total = S.get(runTest + '.drillcount', 0) + set.length; S.set(runTest + '.drillcount', total);
+      if (Math.floor(total / 100) > Math.floor((total - set.length) / 100) && A.milestone(runTest, 'drills' + Math.floor(total / 100) * 100)) S.set('milestone_pending', { test: runTest, text: `${Math.floor(total / 100) * 100} drills done. Good time to send a progress report.` });
     };
     next();
   }

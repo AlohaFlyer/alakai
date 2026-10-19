@@ -348,5 +348,65 @@
   "tags": [
    "pacing"
   ]
+ },
+ {
+  "id": "act-card-science-036",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Trend in a table with no graph",
+  "back": "Read down the column and check every row: rising, falling, or no consistent pattern",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-037",
+  "section": "science",
+  "topic": "Graphs",
+  "front": "Comparing values across two figures",
+  "back": "Check that both use the same units; convert first, then compare",
+  "tags": [
+   "data"
+  ]
+ },
+ {
+  "id": "act-card-science-038",
+  "section": "science",
+  "topic": "Design",
+  "front": "Larger sample or more trials",
+  "back": "Chance has less effect, so the result is more reliable",
+  "tags": [
+   "design"
+  ]
+ },
+ {
+  "id": "act-card-science-039",
+  "section": "science",
+  "topic": "Viewpoints",
+  "front": "Same data, different scientists",
+  "back": "Two scientists can accept the same observations and still explain them differently",
+  "tags": [
+   "conflict"
+  ]
+ },
+ {
+  "id": "act-card-science-040",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "Which passage first",
+  "back": "Start with passages you can read fast; save the one that looks hardest for last",
+  "tags": [
+   "pacing"
+  ]
+ },
+ {
+  "id": "act-card-science-041",
+  "section": "science",
+  "topic": "Pacing",
+  "front": "Last minute of the section",
+  "back": "Fill in every blank; a guess costs nothing",
+  "tags": [
+   "pacing"
+  ]
  }
 ]

@@ -1,5 +1,5 @@
 [
- {"q": "On ACT English, what does the OMIT choice mean?", "choices": ["Skip the question", "Delete the underlined part completely", "Leave the sentence as it is", "Move the sentence to a new paragraph"], "answer": 1},
- {"q": "What is the ACT STEM score?", "choices": ["The Science score alone", "The average of Math and Science", "The average of all four sections", "The Composite plus Science"], "answer": 1},
- {"q": "If you test on paper, which pencil do you bring?", "choices": ["A mechanical pencil", "A pen", "Sharpened No. 2 pencils", "Any colored pencil"], "answer": 2}
+ {"q": "On ACT English, what does the OMIT choice mean?", "choices": ["Leave the sentence as it is", "Move the sentence to a new paragraph", "Skip the question", "Delete the underlined part completely"], "answer": 3},
+ {"q": "What is the ACT STEM score?", "choices": ["The Composite plus Science", "The Science score alone", "The average of all four sections", "The average of Math and Science"], "answer": 3},
+ {"q": "If you test on paper, which pencil do you bring?", "choices": ["Sharpened No. 2 pencils", "Any colored pencil", "A mechanical pencil", "A pen"], "answer": 0}
 ]

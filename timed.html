@@ -23,7 +23,7 @@
 <style>
   .hud { display: flex; justify-content: space-between; align-items: center; gap: 10px; position: sticky; top: calc(var(--bar) + 4px); background: var(--paper); z-index: 2; padding: 6px 0; border-bottom: 1px solid var(--line); }
   .nav-q { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
-  .nav-q button { width: 34px; height: 30px; padding: 0; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-size: .8rem; }
+  .nav-q button { min-width: 40px; height: 40px; padding: 0; background: var(--paper-2); color: var(--ink); border: 1px solid var(--line); font-size: .8rem; }
   .nav-q button.answered { background: var(--primary); color: var(--on-primary); }
   .nav-q button.flagged { outline: 2px solid var(--warn); }
   .nav-q button.current { border-color: var(--ink); border-width: 2px; }
@@ -40,7 +40,8 @@
 
   <section class="card" id="picker">
     <h2>Timed sections</h2>
-    <p class="muted">Real clock. No guessing penalty on either test, so never leave a blank. Two passes: answer what you know, flag what you don't, come back. Pacing checkpoints are set by your onboarding answer (change in Settings).</p>
+    <p class="muted">Real clock. No guessing penalty on either test, so never leave a blank. Two passes: answer what you know, flag what you don't, come back. Pacing checkpoints are set by your onboarding answer (change it under Pacing coach in Settings). If you leave mid-section, it is saved and you can resume.</p>
+    <div class="card banner" id="resume" hidden role="status"></div>
     <div class="grid" id="modules"></div>
     <div class="row" style="margin-top:12px" id="fullrow"><button id="full">Full-length test</button><small class="muted" id="fullnote"></small></div>
   </section>
@@ -72,6 +73,9 @@
   const A = window.Alakai, E = window.AlakaiEngine, S = A.Store;
   const { profile } = await A.boot({ page: 'timed.html', gate: true }); if (!profile) return;
   let test, bank, timed;
+  // In-progress module state lives in alakai.<test>.timed_inprogress (items, answers, flags, time left) so a refresh,
+  // Back or swipe can resume. A full-length chain between modules lives in alakai.<test>.timed_chain.
+  const IPK = t => t + '.timed_inprogress', CHK = t => t + '.timed_chain';
   async function load() {
     test = A.getTest(); bank = await E.Bank.load(test); timed = await A.data(`data/${test}/timed.json`);
     const host = document.getElementById('modules'); host.innerHTML = '';
@@ -82,91 +86,156 @@
       d.innerHTML = `<h3>${A.esc(m.name)}</h3><p class="muted">${m.count} questions · ${m.minutes} min · ${Math.round(m.minutes * 60 / m.count)}s each${adaptive ? ' · adapts to your Module 1' : ''}</p><button ${pool < m.count ? 'disabled' : ''} data-m="${m.id}">Start</button>${pool < m.count ? `<small class="muted"> bank has ${pool} of ${m.count}</small>` : ''}`;
       host.appendChild(d);
     });
-    host.querySelectorAll('button[data-m]').forEach(b => b.addEventListener('click', () => start(timed.modules.find(m => m.id === b.dataset.m))));
+    host.querySelectorAll('button[data-m]').forEach(b => b.addEventListener('click', () => { if (!confirmReplace()) return; chain = null; chainResults = []; S.del(CHK(test)); start(timed.modules.find(m => m.id === b.dataset.m)); }));
     const mods = timed.modules.filter(m => !(test === 'act' && m.section === 'science' && !profile.science));
     const total = mods.reduce((a, m) => a + m.minutes, 0);
-    document.getElementById('fullnote').textContent = test === 'sat' ? `RW M1, RW M2, 10-min break, Math M1, Math M2. About ${total + 10} minutes. Module 2 adapts.` : `${mods.map(m => m.name.replace(' (optional)', '')).join(', ')} back to back, about ${total + 15} minutes with one break.`;
-    document.getElementById('full').onclick = () => { chain = mods.slice(); chainResults = []; start(chain.shift()); };
+    document.getElementById('fullnote').textContent = test === 'sat' ? `RW M1, RW M2, 10-min break, Math M1, Math M2. About ${total + 10} minutes. Module 2 adapts.` : `${mods.map(m => m.name.replace(' (optional)', '')).join(', ')} back to back, about ${total + 10} minutes with one break.`;
+    document.getElementById('full').onclick = () => { if (!confirmReplace()) return; chain = mods.slice(); chainResults = []; start(chain.shift()); };
+    drawResume();
+  }
+  function confirmReplace() {
+    if (!S.get(IPK(test), null) && !S.get(CHK(test), null)) return true;
+    if (!confirm('Starting a new section abandons the one in progress. Continue?')) return false;
+    S.del(IPK(test)); S.del(CHK(test)); return true;
+  }
+  function modById(id) { return timed.modules.find(m => m.id === id); }
+  function drawResume() {
+    const host = document.getElementById('resume'); host.innerHTML = ''; host.hidden = true;
+    const ip = S.get(IPK(test), null), ch = S.get(CHK(test), null);
+    if (ip && ip.mod && Array.isArray(ip.itemIds) && ip.itemIds.every(id => bank.byId[id])) {
+      const done = (ip.answers || []).filter(a => a !== null).length;
+      host.innerHTML = `<strong>${A.esc(ip.mod.name)} is in progress.</strong> ${done} of ${ip.itemIds.length} answered, ${A.fmtTime((ip.left || 0) / 1000)} left on the clock.<div class="row" style="margin-top:8px"><button id="res-go">Resume</button><button class="ghost" id="res-x">Abandon</button></div>`;
+      host.hidden = false;
+      host.querySelector('#res-go').onclick = () => resume(ip);
+      host.querySelector('#res-x').onclick = () => { if (!confirm('Abandon this section? Nothing from it is saved.')) return; S.del(IPK(test)); S.del(CHK(test)); drawResume(); };
+    } else if (ip) S.del(IPK(test));
+    else if (ch && Array.isArray(ch.remaining) && ch.remaining.length && modById(ch.remaining[0])) {
+      host.innerHTML = `<strong>Full-length test in progress.</strong> Next up: ${A.esc(modById(ch.remaining[0]).name)}.<div class="row" style="margin-top:8px"><button id="res-go">Continue</button><button class="ghost" id="res-x">Abandon</button></div>`;
+      host.hidden = false;
+      host.querySelector('#res-go').onclick = () => { chain = ch.remaining.map(modById).filter(Boolean); chainResults = ch.results || []; start(chain.shift()); };
+      host.querySelector('#res-x').onclick = () => { if (!confirm('Abandon the full-length test? Modules you finished stay in your history.')) return; S.del(CHK(test)); drawResume(); };
+    }
   }
   let chain = null, chainResults = [];
-  let mod, items, idx, answers, flags, t0, end, timer, checkpoints, started;
-  function start(m) {
-    mod = m; const pool = A.shuffle(bank.items.filter(i => i.section === m.section && i.timed_ok !== false));
-    // easy to hard like the real test
-    items = pool.sort((a, b) => a.difficulty - b.difficulty).slice(0, m.count);
-    // rebalance: take a difficulty-stratified sample instead of just the easiest
+  let mod, items, idx, answers, flags, end, timer, checkpoints, started, runTest, running = false, finishing = false, lastSave = 0;
+  function saveState(force) {
+    if (!running || finishing) return;
+    const now = Date.now(); if (!force && now - lastSave < 5000) return; lastSave = now;
+    S.set(IPK(runTest), { mod: { id: mod.id, name: mod.name, section: mod.section, minutes: mod.minutes, count: mod.count, routed: mod.routed || null }, itemIds: items.map(i => i.id), answers, flags: [...flags], idx, left: Math.max(0, end - now), chain: chain ? chain.map(m => m.id) : null, chainResults, savedAt: now });
+  }
+  function clearChainButtons() { document.querySelectorAll('.chain-next').forEach(b => b.remove()); }
+  function start(m, resumeState) {
+    clearChainButtons();
+    runTest = test; mod = Object.assign({}, m);
+    const pool = A.shuffle(bank.items.filter(i => i.section === m.section && i.timed_ok !== false));
     const by = { 1: [], 2: [], 3: [] }; pool.forEach(i => by[i.difficulty].push(i));
     let want = { 1: Math.round(m.count * 0.3), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2];
     // Adaptive SAT Module 2: route on the most recent Module 1 of the same section
     if (test === 'sat' && /m2$/.test(m.id)) {
-      const m1 = S.get(test + '.timed', []).filter(t => t.id === m.id.replace('m2', 'm1')).slice(-1)[0];
-      if (m1) { const pct = m1.right / m1.n; if (pct >= 0.6) { want = { 1: Math.round(m.count * 0.1), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; m.routed = 'harder'; } else { want = { 1: Math.round(m.count * 0.45), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; m.routed = 'easier'; } }
-      else m.routed = null;
+      const m1 = S.get(test + '.timed', []).filter(t => t && t.id === m.id.replace('m2', 'm1')).slice(-1)[0];
+      if (m1) { const pct = m1.right / m1.n; if (pct >= 0.6) { want = { 1: Math.round(m.count * 0.1), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'harder'; } else { want = { 1: Math.round(m.count * 0.45), 2: Math.round(m.count * 0.45) }; want[3] = m.count - want[1] - want[2]; mod.routed = 'easier'; } }
+      else mod.routed = null;
     }
     let pick = [].concat(by[1].slice(0, want[1]), by[2].slice(0, want[2]), by[3].slice(0, want[3]));
     if (pick.length < m.count) pick = pick.concat(pool.filter(i => !pick.includes(i)).slice(0, m.count - pick.length));
     items = pick.sort((a, b) => a.difficulty - b.difficulty);
     answers = new Array(items.length).fill(null); flags = new Set(); idx = 0; started = {};
-    t0 = Date.now(); end = t0 + m.minutes * 60000;
-    const per = m.minutes * 60 / m.count;
-    checkpoints = profile.timepressure === 'never' ? [] : [1 / 3, 2 / 3].map(f => ({ at: t0 + f * m.minutes * 60000, q: Math.round(f * m.count), fired: false }));
+    let left = m.minutes * 60000;
+    if (resumeState) {
+      items = resumeState.itemIds.map(id => bank.byId[id]); mod.routed = resumeState.mod.routed || null;
+      answers = resumeState.answers.slice(0, items.length); while (answers.length < items.length) answers.push(null);
+      flags = new Set(resumeState.flags || []); idx = Math.min(resumeState.idx || 0, items.length - 1); left = Math.max(1000, resumeState.left || 0);
+    }
+    end = Date.now() + left;
+    const per = m.minutes * 60 / m.count; const t0 = end - m.minutes * 60000;
+    checkpoints = profile.timepressure === 'never' ? [] : [1 / 3, 2 / 3].map(f => ({ at: t0 + f * m.minutes * 60000, q: Math.round(f * m.count), fired: Date.now() >= t0 + f * m.minutes * 60000 }));
     document.getElementById('mname').textContent = m.name; document.getElementById('pace').textContent = `Pace: ${Math.round(per)}s per question`;
     ['picker', 'review'].forEach(x => document.getElementById(x).hidden = true); document.getElementById('run').hidden = false;
-    clearInterval(timer); timer = setInterval(tick, 500); drawNav(); show(0);
+    ['next', 'prev', 'finish'].forEach(x => document.getElementById(x).disabled = false);
+    running = true; finishing = false; lastSave = 0;
+    clearInterval(timer); timer = setInterval(tick, 500); tick(); drawNav(); show(idx); saveState(true);
+  }
+  function resume(ip) {
+    const m = modById(ip.mod.id); if (!m) { S.del(IPK(test)); drawResume(); return; }
+    chain = ip.chain ? ip.chain.map(modById).filter(Boolean) : null; chainResults = ip.chainResults || [];
+    start(m, ip);
   }
   function tick() {
+    if (!running) return;
     const left = end - Date.now(); const c = document.getElementById('clock'); c.textContent = A.fmtTime(left / 1000); c.classList.toggle('low', left < 5 * 60000);
     checkpoints.forEach(cp => { if (!cp.fired && Date.now() >= cp.at) { cp.fired = true; const done = answers.filter(a => a !== null).length; coach(done >= cp.q ? `Checkpoint: on pace (${done} answered, target ${cp.q}).` : `Checkpoint: behind pace (${done} answered, target ${cp.q}). Flag the long ones and move.`); } });
     if (profile.timepressure === 'always') { const spent = Date.now() - (started[idx] || Date.now()); if (spent > (mod.minutes * 60 / mod.count) * 2000 && !started['warn' + idx]) { started['warn' + idx] = true; coach('Two questions worth of time on this one. Pick your best guess, flag it, move on.'); } }
+    saveState(false);
     if (left <= 0) finish(true);
   }
   function coach(msg) { const c = document.getElementById('coach'); c.innerHTML = `<div class="coach">${A.esc(msg)}</div>`; setTimeout(() => { if (c.firstChild && c.firstChild.textContent === msg) c.innerHTML = ''; }, 9000); }
-  function drawNav() { const n = document.getElementById('navq'); n.innerHTML = items.map((_, i) => `<button data-i="${i}" class="${answers[i] !== null ? 'answered' : ''} ${flags.has(i) ? 'flagged' : ''} ${i === idx ? 'current' : ''}">${i + 1}</button>`).join(''); n.querySelectorAll('button').forEach(b => b.addEventListener('click', () => show(+b.dataset.i))); }
+  function drawNav() { const n = document.getElementById('navq'); n.innerHTML = items.map((_, i) => `<button data-i="${i}" aria-label="Question ${i + 1}${answers[i] !== null ? ', answered' : ''}${flags.has(i) ? ', flagged' : ''}" class="${answers[i] !== null ? 'answered' : ''} ${flags.has(i) ? 'flagged' : ''} ${i === idx ? 'current' : ''}">${i + 1}</button>`).join(''); n.querySelectorAll('button').forEach(b => b.addEventListener('click', () => show(+b.dataset.i))); }
   function show(i) {
     idx = i; started[i] = started[i] || Date.now(); drawNav();
     const item = items[i]; const host = document.getElementById('item'); const free = !item.choices || !item.choices.length; const letters = 'ABCDE';
     host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem"><strong>${i + 1}.</strong> ${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
-      ${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px" value="${answers[i] !== null ? A.esc(answers[i]) : ''}">` : `<div class="choices">${item.choices.map((c, k) => `<button class="choice" data-k="${k}" ${answers[i] === k ? 'data-state="picked"' : ''}><strong>${letters[k]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
+      ${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" aria-label="Your answer" style="max-width:220px" value="${answers[i] !== null ? A.esc(answers[i]) : ''}">` : `<div class="choices">${item.choices.map((c, k) => `<button class="choice" data-k="${k}" aria-pressed="${answers[i] === k}" ${answers[i] === k ? 'data-state="picked"' : ''}><strong>${letters[k]}.</strong> ${A.esc(c)}</button>`).join('')}</div>`}
       <div class="row" style="margin-top:8px"><button class="ghost" id="flag">${flags.has(i) ? 'Unflag' : 'Flag'}</button></div>`;
-    host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { answers[i] = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => delete x.dataset.state); b.dataset.state = 'picked'; drawNav(); }));
-    const f = host.querySelector('#free'); if (f) f.addEventListener('input', () => { answers[i] = f.value.trim() || null; drawNav(); });
-    host.querySelector('#flag').addEventListener('click', () => { flags.has(i) ? flags.delete(i) : flags.add(i); show(i); });
+    host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { answers[i] = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => { delete x.dataset.state; x.setAttribute('aria-pressed', 'false'); }); b.dataset.state = 'picked'; b.setAttribute('aria-pressed', 'true'); drawNav(); saveState(true); }));
+    const f = host.querySelector('#free'); if (f) f.addEventListener('input', () => { answers[i] = f.value.trim() || null; drawNav(); saveState(true); });
+    host.querySelector('#flag').addEventListener('click', () => { flags.has(i) ? flags.delete(i) : flags.add(i); show(i); saveState(true); });
     document.getElementById('next').textContent = i === items.length - 1 ? 'To the end' : 'Next';
+    saveState(true);
   }
-  document.getElementById('prev').addEventListener('click', () => show(Math.max(0, idx - 1)));
-  document.getElementById('next').addEventListener('click', () => { if (idx < items.length - 1) show(idx + 1); else { const first = answers.findIndex(a => a === null); if (first >= 0) { coach(`${answers.filter(a => a === null).length} unanswered. Second pass: never leave a blank.`); show(first); } else finish(false); } });
-  document.getElementById('finish').addEventListener('click', () => { if (confirm('Finish this section now?')) finish(false); });
+  document.getElementById('prev').addEventListener('click', () => { if (running && !finishing) show(Math.max(0, idx - 1)); });
+  document.getElementById('next').addEventListener('click', () => { if (!running || finishing) return; if (idx < items.length - 1) show(idx + 1); else { const first = answers.findIndex(a => a === null); if (first >= 0) { coach(`${answers.filter(a => a === null).length} unanswered. Second pass: never leave a blank.`); show(first); } else finish(false); } });
+  document.getElementById('finish').addEventListener('click', () => { if (running && !finishing && confirm('Finish this section now?')) finish(false); });
+  window.addEventListener('pagehide', () => saveState(true));
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') saveState(true); });
   async function finish(timeUp) {
-    clearInterval(timer); const seconds = Math.round((Date.now() - t0) / 1000);
+    // Runs once per module: a double tap, a time-up tick and a tap racing each other all stop here.
+    if (!running || finishing) return; finishing = true; running = false;
+    ['next', 'prev', 'finish'].forEach(x => document.getElementById(x).disabled = true);
+    clearInterval(timer); S.del(IPK(runTest));
+    const t = runTest; const left = Math.max(0, end - Date.now());
+    const seconds = Math.round((mod.minutes * 60000 - left) / 1000);
     let right = 0, unanswered = 0; const rows = [];
     for (let i = 0; i < items.length; i++) {
       const it = items[i]; const a = answers[i]; const free = !it.choices || !it.choices.length;
       const correct = a === null ? false : free ? (E.normalize(a) === E.normalize(it.answer) || (it.answer_alt || []).some(x => E.normalize(x) === E.normalize(a))) : a === it.answer;
       if (a === null) unanswered++; if (correct) right++;
       rows.push({ it, a, correct });
-      await E.record(test, it, { correct, ms: 0, cause: a === null ? 'time' : null, trap: (!correct && a !== null && !free && it.traps) ? it.traps[a] : null }, 'timed');
     }
+    for (const { it, a, correct } of rows) { const free = !it.choices || !it.choices.length; await E.record(t, it, { correct, ms: 0, cause: a === null ? 'time' : null, trap: (!correct && a !== null && !free && it.traps) ? it.traps[a] : null }, 'timed'); }
     const rec = { id: mod.id, name: mod.name, right, n: items.length, seconds, unanswered, flagged: flags.size, timeUp, at: Date.now(), routed: mod.routed || null, hardRight: rows.filter(r => r.correct && r.it.difficulty === 3).length };
-    const list = S.get(test + '.timed', []); list.push(rec); S.set(test + '.timed', list.slice(-50));
-    if (A.milestone(test, 'timed:' + mod.id + ':' + list.length)) S.set('milestone_pending', { test, text: `${mod.name} done: ${right}/${items.length}. Good time to send a progress report.` });
-    document.getElementById('run').hidden = true; document.getElementById('review').hidden = false;
+    const list = S.get(t + '.timed', []); list.push(rec); S.set(t + '.timed', list.slice(-50));
+    if (A.milestone(t, 'timed:' + mod.id + ':' + list.length)) S.set('milestone_pending', { test: t, text: `${mod.name} done: ${right}/${items.length}. Good time to send a progress report.` });
+    document.getElementById('run').hidden = true; document.getElementById('review').hidden = false; clearChainButtons();
     const flaggedEasy = [...flags].filter(i => items[i].difficulty === 1).length;
-    document.getElementById('rsummary').textContent = `${right} of ${items.length} right in ${A.fmtTime(seconds)}${timeUp ? ' (time ran out)' : ''}. ${unanswered} left blank, ${flags.size} flagged${flags.size ? ` (${flaggedEasy} of those were easy-rated: your own order of difficulty is the one that counts)` : ''}.${mod.routed ? ` Module 2 was the ${mod.routed} version.` : ''} Misses are in your error log.`;
+    document.getElementById('rsummary').textContent = `${right} of ${items.length} right in ${A.fmtTime(seconds)}${timeUp ? ' (time ran out)' : ''}. ${unanswered} left blank, ${flags.size} flagged${flags.size ? ` (${flaggedEasy} of those were easy-rated: your own order of difficulty is the one that counts)` : ''}.${mod.routed ? ` Module 2 was the ${mod.routed} version.` : ''} ${right < items.length ? 'Misses are in your error log.' : ''}`;
     if (chain && chain.length) {
       chainResults.push(rec);
-      const nextMod = chain.shift(); const isBreak = test === 'sat' ? nextMod.section === 'math' && mod.section === 'rw' : chain.length === 1;
-      const btn = document.createElement('button'); btn.textContent = isBreak ? `Take a 10-minute break, then start ${nextMod.name}` : `Continue to ${nextMod.name}`; btn.style.marginTop = '10px';
-      btn.onclick = () => start(nextMod);
+      const nextMod = chain.shift(); const isBreak = t === 'sat' ? nextMod.section === 'math' && mod.section === 'rw' : chain.length === 1;
+      S.set(CHK(t), { remaining: [nextMod.id].concat(chain.map(m => m.id)), results: chainResults });
+      const btn = document.createElement('button'); btn.className = 'chain-next'; btn.textContent = isBreak ? `Take a 10-minute break, then start ${nextMod.name}` : `Continue to ${nextMod.name}`; btn.style.marginTop = '10px';
+      btn.onclick = () => { if (btn.disabled) return; btn.disabled = true; if (isBreak) takeBreak(nextMod, btn); else start(nextMod); };
       document.getElementById('rsummary').after(btn);
-    } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(test + '.fulltests', (S.get(test + '.fulltests', [])).concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; }
+    } else if (chain && !chain.length) { chainResults.push(rec); const tot = chainResults.reduce((a, r) => a + r.right, 0), n = chainResults.reduce((a, r) => a + r.n, 0); document.getElementById('rsummary').textContent += ` Full test: ${tot} of ${n} overall.`; S.set(t + '.fulltests', (S.get(t + '.fulltests', [])).concat([{ at: Date.now(), parts: chainResults }]).slice(-10)); chain = null; S.del(CHK(t)); }
     document.getElementById('rshow').onclick = () => {
       const host = document.getElementById('rlist'); host.innerHTML = ''; const letters = 'ABCDE';
       rows.forEach(({ it, a, correct }, i) => { const d = document.createElement('div'); d.className = 'card'; d.style.boxShadow = 'none'; const free = !it.choices || !it.choices.length;
         d.innerHTML = `<div class="row" style="justify-content:space-between"><strong>${i + 1}. ${A.esc(bank.skillName[it.skill] || '')}</strong><span class="chip ${correct ? 'ok' : 'bad'}">${correct ? 'right' : a === null ? 'blank' : 'wrong'}</span></div>${it.passage ? `<p class="muted">${A.esc(it.passage).replace(/\n/g, '<br>')}</p>` : ''}<div class="q-stem">${A.esc(it.stem)}</div>${free ? `<p>Your answer: ${A.esc(a ?? '—')} · Key: ${A.esc(it.answer)}</p>` : `<div class="choices">${it.choices.map((c, k) => `<div class="choice" data-state="${k === it.answer ? 'right' : k === a ? 'wrong' : ''}"><strong>${letters[k]}.</strong> ${A.esc(c)}</div>`).join('')}</div>`}<div class="explain">${A.esc(it.explain)}</div>`; host.appendChild(d); });
     };
-    document.getElementById('rsend').onclick = () => A.sendReport(test);
+    document.getElementById('rsend').onclick = () => A.sendReport(t);
   }
-  document.addEventListener('alakai:test', load);
+  // The break is a real 10-minute countdown; the student can cut it short.
+  let breakTimer = null;
+  function takeBreak(nextMod, btn) {
+    const box = document.createElement('div'); box.className = 'chain-next card'; box.style.boxShadow = 'none'; box.style.marginTop = '10px';
+    const until = Date.now() + 10 * 60000;
+    box.innerHTML = `<strong>Break.</strong> Stand up, drink water, look far away. <span class="clock" id="brk">10:00</span><div class="row" style="margin-top:8px"><button id="brk-go">Start ${A.esc(nextMod.name)} now</button></div>`;
+    btn.replaceWith(box);
+    const go = () => { clearInterval(breakTimer); breakTimer = null; start(nextMod); };
+    box.querySelector('#brk-go').onclick = go;
+    clearInterval(breakTimer); breakTimer = setInterval(() => { const l = until - Date.now(); const c = box.querySelector('#brk'); if (c) c.textContent = A.fmtTime(l / 1000); if (l <= 0) go(); }, 500);
+  }
+  // A test toggle mid-module saves the module (resumable from that test's picker) and shows the other test.
+  document.addEventListener('alakai:test', () => { if (running) { saveState(true); running = false; clearInterval(timer); } clearInterval(breakTimer); document.getElementById('run').hidden = true; document.getElementById('review').hidden = true; document.getElementById('picker').hidden = false; chain = null; load(); });
   load();
 })();
 </script>

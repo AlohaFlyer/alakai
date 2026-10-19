@@ -21,7 +21,7 @@ Skill ids: lowercase, hyphenated, prefixed by section id. ACT sections: english,
  "worked":"a fully worked solution, 3 to 8 short steps, each on its own line",
  "timed_ok":true}
 ```
-Rules: exactly 4 choices (SAT math grid-ins and ACT math 5-choice are exceptions: ACT math uses 5 choices; SAT student-produced response items use `"choices":[]` and `"answer":"23"` as a string, with `"answer_alt":["23.0"]` optional). `answer` is a 0-based index for choice items. `difficulty` 1 easy, 2 medium, 3 hard, roughly 30/45/25 split. `timed_ok` false for items too long for a timed module. Math may use plain-text notation (x^2, sqrt(x), 3/4, pi) and simple tables; no LaTeX, no images.
+Rules: exactly 4 choices on every choice item, ACT Math included (the enhanced ACT, 2025, moved Math from five choices to four: "The math section now includes four answer choices instead of five", counselorblog.act.org, The Enhanced ACT Explained). The one exception is SAT student-produced response items, which use `"choices":[]` and `"answer":"23"` as a string, with `"answer_alt":["23.0"]` optional. `distractors` and `traps` are arrays aligned with `choices` (`traps` entries are trap ids from engine.js TRAP_NAMES, or null for the key). Keys must be balanced: in each section no key position above 35% or below 15% (keys.py fails otherwise); run `python3 build_scripts/banks/rebalance.py` to reshuffle choice order with everything mapped along. `answer` is a 0-based index for choice items. `difficulty` 1 easy, 2 medium, 3 hard, roughly 30/45/25 split. `timed_ok` false for items too long for a timed module. Math may use plain-text notation (x^2, sqrt(x), 3/4, pi) and simple tables; no LaTeX, no images.
 
 Minimum per skill: 16 items. Target 20.
 
@@ -38,6 +38,6 @@ Verbatim-answer facts only: rules, definitions, formulas not on the SAT referenc
 Module items are drawn at runtime from drills where `timed_ok` is true, in difficulty order easy to hard, so you only declare modules. SAT: rw m1/m2 27 items 32 min, math m1/m2 22 items 35 min. ACT (2025 enhanced, verify against act.org): english 50 items 35 min, math 45 items 50 min, reading 36 items 40 min, science 40 items 40 min.
 
 ## QA before you finish
-1. Run `python3 build_scripts/verify/keys.py` from the repo root: it checks ids unique, answer index in range, 4 (or 5) choices, required fields, no duplicate stems, per-skill minimum.
+1. Run `python3 build_scripts/verify/keys.py` from the repo root: it checks ids unique, answer index in range, 4 choices, required fields, no duplicate stems, per-skill minimum, 40+ cards per section, and key-letter balance (drills per section and podcast checks per show).
 2. Blind-solve pass: re-read every item as a student with the explanation hidden; if you would not confidently pick the key, rewrite the item.
 3. No item may depend on outside knowledge beyond the test's scope.

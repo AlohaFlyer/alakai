@@ -71,15 +71,17 @@
     if (i >= order.length) return finish();
     const item = order[i]; document.getElementById('count').textContent = `${i + 1} of ${order.length}`; document.getElementById('prog').style.width = Math.round(100 * i / order.length) + '%';
     const host = document.getElementById('item'); const free = !item.choices || !item.choices.length; const letters = 'ABCDE';
-    host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px">` : `<div class="choices">${item.choices.map((c, k) => `<div class="choice-row"><button class="choice" data-k="${k}"><strong>${letters[k]}.</strong> ${A.esc(c)}</button><button class="strike" data-k="${k}" aria-label="Cross out">×</button></div>`).join('')}</div>`}`;
+    host.innerHTML = `${item.passage ? `<div class="card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}<div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>${free ? `<input type="text" id="free" inputmode="decimal" placeholder="Your answer" aria-label="Your answer" style="max-width:220px">` : `<div class="choices">${item.choices.map((c, k) => `<div class="choice-row"><button class="choice" data-k="${k}"><strong>${letters[k]}.</strong> ${A.esc(c)}</button><button class="strike" data-k="${k}" aria-label="Cross out ${letters[k]}" aria-pressed="false">×</button></div>`).join('')}</div>`}`;
     const nb = document.getElementById('next'); nb.disabled = true; let picked = null;
     host.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => { picked = +b.dataset.k; host.querySelectorAll('.choice').forEach(x => delete x.dataset.state); b.dataset.state = 'picked'; nb.disabled = false; }));
-    host.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => b.parentElement.classList.toggle('struck')));
+    host.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => { const on = b.parentElement.classList.toggle('struck'); b.setAttribute('aria-pressed', on ? 'true' : 'false'); }));
     const f = host.querySelector('#free'); if (f) f.addEventListener('input', () => { picked = f.value.trim() || null; nb.disabled = !picked; });
     nb.onclick = () => { const correct = free ? (E.normalize(picked) === E.normalize(item.answer) || (item.answer_alt || []).some(x => E.normalize(x) === E.normalize(picked))) : picked === item.answer; answers.push({ item, picked, correct }); i++; show(); };
   }
   document.getElementById('stop').addEventListener('click', finish);
+  let finished = false;
   async function finish() {
+    if (finished) return; finished = true;
     document.getElementById('run').hidden = true; document.getElementById('done').hidden = false;
     if (!answers.length) { document.getElementById('summary').textContent = 'Nothing answered.'; return; }
     for (const a of answers) { const free = !a.item.choices || !a.item.choices.length; await E.record(test, a.item, { correct: a.correct, ms: 0, trap: (!a.correct && !free && a.item.traps) ? a.item.traps[a.picked] : null }, 'placement'); }

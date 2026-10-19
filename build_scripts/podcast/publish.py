@@ -14,7 +14,11 @@ for test in ("sat", "act"):
     for n in APPROVED.get(test, []):
         if not (ROOT / "audio" / f"{test}-ep{n}.mp3").exists():
             old = next((e for e in PREV.get(test, []) if e.get("n") == n and not e.get("coming")), None)
-            if old: eps[test].append(old)
+            if old:
+                # Checks can change without re-rendering audio (for example banks/rebalance.py): always take the current file.
+                check = HERE / "checks" / f"{test}-ep{n}.json"
+                if check.exists(): old = dict(old, check=json.loads(check.read_text()))
+                eps[test].append(old)
 for mp3 in sorted((ROOT / "audio").glob("*.mp3")):
     m = re.match(r"(sat|act)-ep(\d+)\.mp3", mp3.name)
     if not m: continue

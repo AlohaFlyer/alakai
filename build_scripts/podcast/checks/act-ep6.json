@@ -1,5 +1,5 @@
 [
- {"q": "On a \"which choice best accomplishes this goal\" question, what do you read first?", "choices": ["The choices", "The goal stated in the question", "The whole passage", "The title"], "answer": 1},
- {"q": "\"The club was started more than forty years ago\" when the goal is to show the club welcomes beginners. Which trap is that?", "choices": ["Too extreme", "Opposite", "True but irrelevant", "Near miss"], "answer": 2},
- {"q": "On an add-or-delete question, what else do you have to get right besides yes or no?", "choices": ["The reason", "The paragraph number", "The author's name", "Nothing else"], "answer": 0}
+ {"q": "On a \"which choice best accomplishes this goal\" question, what do you read first?", "choices": ["The goal stated in the question", "The title", "The choices", "The whole passage"], "answer": 0},
+ {"q": "\"The club was started more than forty years ago\" when the goal is to show the club welcomes beginners. Which trap is that?", "choices": ["Near miss", "Too extreme", "Opposite", "True but irrelevant"], "answer": 3},
+ {"q": "On an add-or-delete question, what else do you have to get right besides yes or no?", "choices": ["The paragraph number", "Nothing else", "The reason", "The author's name"], "answer": 2}
 ]

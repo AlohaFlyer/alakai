@@ -1,5 +1,5 @@
 [
- {"q": "How is the digital SAT structured?", "choices": ["One long section of 98 questions", "Two sections, Reading and Writing then Math, each split into two modules", "Four sections including Science", "Three sections with an essay"], "answer": 1},
- {"q": "If Module 2 feels harder than Module 1, what does that usually mean?", "choices": ["You did poorly on Module 1", "The test glitched", "You did well on Module 1 and unlocked the module that can score higher", "Nothing, every Module 2 is the same"], "answer": 2},
- {"q": "What is the rule about blank answers on the SAT?", "choices": ["A blank costs a quarter point", "A blank and a wrong answer both score zero, so answer every question", "Blanks are fine in Math only", "You can leave up to five blanks"], "answer": 1}
+ {"q": "How is the digital SAT structured?", "choices": ["Two sections, Reading and Writing then Math, each split into two modules", "Four sections including Science", "One long section of 98 questions", "Three sections with an essay"], "answer": 0},
+ {"q": "If Module 2 feels harder than Module 1, what does that usually mean?", "choices": ["Nothing, every Module 2 is the same", "You did poorly on Module 1", "The test glitched", "You did well on Module 1 and unlocked the module that can score higher"], "answer": 3},
+ {"q": "What is the rule about blank answers on the SAT?", "choices": ["Blanks are fine in Math only", "A blank costs a quarter point", "You can leave up to five blanks", "A blank and a wrong answer both score zero, so answer every question"], "answer": 3}
 ]

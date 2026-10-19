@@ -1,5 +1,5 @@
 [
- {"q": "You are in ACT English, 11:40 has been used, and you just finished question 14. The target is 17. What do you do?", "choices": ["Read faster", "Flag faster: guess and mark anything you can't see in about 10 seconds", "Skip to the last question", "Stop checking the clock"], "answer": 1},
- {"q": "How many times should you check the clock during a section?", "choices": ["Every minute", "Only at the end", "Twice, at one-third and two-thirds of the time", "Never"], "answer": 2},
- {"q": "How long should you spend on each ACT Reading passage?", "choices": ["About 5 minutes", "About 10 minutes", "About 15 minutes", "As long as it takes"], "answer": 1}
+ {"q": "You are in ACT English, 11:40 has been used, and you just finished question 14. The target is 17. What do you do?", "choices": ["Read faster", "Skip to the last question", "Flag faster: guess and mark anything you can't see in about 10 seconds", "Stop checking the clock"], "answer": 2},
+ {"q": "How many times should you check the clock during a section?", "choices": ["Never", "Twice, at one-third and two-thirds of the time", "Only at the end", "Every minute"], "answer": 1},
+ {"q": "How long should you spend on each ACT Reading passage?", "choices": ["About 5 minutes", "As long as it takes", "About 10 minutes", "About 15 minutes"], "answer": 2}
 ]

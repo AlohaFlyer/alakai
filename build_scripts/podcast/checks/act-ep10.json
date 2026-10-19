@@ -1,5 +1,5 @@
 [
- {"q": "Maya \"began to look forward to\" the library. Which choice is too extreme?", "choices": ["Her feelings grew warmer over time", "She now prefers it to anywhere else", "She once found it boring", "The rain sent her there"], "answer": 1},
- {"q": "When a question gives you a line reference, what do you do?", "choices": ["Answer from memory", "Go back to the line and read a few lines before and after", "Skip it", "Read only the first line of the passage"], "answer": 1},
- {"q": "For paired passages, what does the app say to do before the choices?", "choices": ["Reread both passages twice", "Pin each author's position in about five words", "Pick the longest choice", "Answer the second passage first"], "answer": 1}
+ {"q": "Maya \"began to look forward to\" the library. Which choice is too extreme?", "choices": ["She now prefers it to anywhere else", "She once found it boring", "Her feelings grew warmer over time", "The rain sent her there"], "answer": 0},
+ {"q": "When a question gives you a line reference, what do you do?", "choices": ["Go back to the line and read a few lines before and after", "Read only the first line of the passage", "Answer from memory", "Skip it"], "answer": 0},
+ {"q": "For paired passages, what does the app say to do before the choices?", "choices": ["Pick the longest choice", "Answer the second passage first", "Reread both passages twice", "Pin each author's position in about five words"], "answer": 3}
 ]

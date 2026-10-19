@@ -1,5 +1,5 @@
 [
- {"q": "What is the best use of the last seven days before the SAT?", "choices": ["Three full practice tests and new topics", "One full practice test, no later than three days out, then short daily practice", "No practice at all", "Cramming the night before"], "answer": 1},
- {"q": "Which ID does College Board require on test day?", "choices": ["A photo of your ID on your phone", "An acceptable physical photo ID", "Your school schedule", "No ID is needed"], "answer": 1},
+ {"q": "What is the best use of the last seven days before the SAT?", "choices": ["Three full practice tests and new topics", "Cramming the night before", "No practice at all", "One full practice test, no later than three days out, then short daily practice"], "answer": 3},
+ {"q": "Which ID does College Board require on test day?", "choices": ["No ID is needed", "A photo of your ID on your phone", "An acceptable physical photo ID", "Your school schedule"], "answer": 2},
  {"q": "Arrive by 7:45, the drive is one hour, and you want a 15-minute cushion. When do you leave?", "choices": ["6:45", "6:30", "7:30", "7:00"], "answer": 1}
 ]

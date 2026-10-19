@@ -73,6 +73,18 @@
         <select id="science"><option value="off">Off (not taking it)</option><option value="on">On</option></select>
       </div>
       <div class="field">
+        <label for="missmode">Feedback after a miss (drills)</label>
+        <select id="missmode"><option value="answer">The answer and why</option><option value="hint">A hint, then let me retry</option><option value="worked">A full worked example</option></select>
+      </div>
+      <div class="field">
+        <label for="timepressure">Pacing coach (timed sections)</label>
+        <select id="timepressure"><option value="never">Off</option><option value="sometimes">Checkpoints at 1/3 and 2/3</option><option value="always">Checkpoints plus a nudge on slow questions</option></select>
+      </div>
+      <div class="field">
+        <label for="minutes">Minutes a day (sets drill length)</label>
+        <select id="minutes"><option value="15">15 (6-item sets)</option><option value="30">30 (10-item sets)</option><option value="45">45 (14-item sets)</option><option value="60">60 or more (18-item sets)</option></select>
+      </div>
+      <div class="field">
         <label for="milestones">Progress-report prompts</label>
         <select id="milestones"><option value="on">Remind me at milestones</option><option value="off">Only when I ask</option></select>
       </div>
@@ -105,7 +117,7 @@
       <button class="secondary" id="export">Export JSON</button>
       <button class="secondary" id="erase">Erase everything</button>
     </div>
-    <p id="erase-confirm" hidden style="margin-top:10px">Are you sure? This removes your profile, every drill, score and podcast progress on this device. <button id="erase-yes">Yes, erase</button> <button class="ghost" id="erase-no">Keep it</button></p>
+    <p id="erase-confirm" hidden style="margin-top:10px">Are you sure? This removes your profile, every drill, score and podcast progress on this device. The note that the one anonymous school-and-grade message was already sent is kept, so it is not sent again. <button id="erase-yes">Yes, erase</button> <button class="ghost" id="erase-no">Keep it</button></p>
   </section>
 
   <section class="card" id="disclosures">
@@ -121,14 +133,14 @@
 
   <section class="card" id="pattern-about">
     <h2>About the border pattern</h2>
-    <p>The frame is solid in the current release. Three optional patterns are available in Settings; each is an original geometric pattern in the manner of ʻohe kāpala, the carved bamboo stamps used to print kapa and decorate lauhala. Nothing in it is sacred imagery, and nothing is copied from a petroglyph, a family kapa, or a quilt.</p>
+    <p>The frame is solid by default. Seven optional patterns are available above under Border pattern; each is an original geometric pattern in the manner of ʻohe kāpala, the carved bamboo stamps used to print kapa and decorate lauhala. Nothing in it is sacred imagery, and nothing is copied from a petroglyph, a family kapa, or a quilt.</p>
     <table>
       <tr><th>Kohala</th><td>Low triangles for the Kohala mountain and one tall peak for Mauna Kea, under a diagonal hatch for Kīpuʻupuʻu, the cold wind-driven rain of Waimea. Pili grass ticks along the bottom.</td></tr>
       <tr><th>Lauhala</th><td>A plaited lattice, with an ʻōhiʻa lehua cluster where the strands cross, for the Kohala forest.</td></tr>
       <tr><th>Paniolo</th><td>Stacked chevrons for the ridgelines above town and a ranch-fence rhythm of posts and rails, for paniolo country.</td></tr>
       <tr><th>Kaula, Lariat, Saddle stitch, Horseshoe</th><td>Rope-work and ranch motifs from Waimea's paniolo tradition: a twisted rope, a lasso coil, a stitched strap, a marching horseshoe.</td></tr>
     </table>
-    <p class="muted" id="cultural-note">Reviewed for cultural appropriateness: pending.</p>
+    <!-- Cultural review of the patterns is still pending (internal status, not shown on the page). -->
   </section>
 
   <section class="card">
@@ -160,8 +172,11 @@
   document.getElementById('theme').value = S.get('theme', 'auto');
   document.getElementById('science').value = p.science ? 'on' : 'off';
   document.getElementById('milestones').value = (p.milestones === false) ? 'off' : 'on';
+  document.getElementById('missmode').value = ['answer', 'hint', 'worked'].includes(p.missmode) ? p.missmode : 'answer';
+  document.getElementById('timepressure').value = ['never', 'sometimes', 'always'].includes(p.timepressure) ? p.timepressure : 'sometimes';
+  document.getElementById('minutes').value = ['15', '30', '45', '60'].includes(String(p.minutes)) ? String(p.minutes) : '30';
   document.getElementById('pattern').value = S.get('pattern', 'solid');
-  function note() { const s = schools.schools.find(x => x.id === sel.value); document.getElementById('school-note').textContent = s ? `Colors: ${s.colors.names} (${s.status === 'INFERRED' ? 'approximate' : s.status === 'UNVERIFIED' ? 'unverified, tell us the real ones' : ''})` : ''; }
+  function note() { const s = schools.schools.find(x => x.id === sel.value); const q = s ? (s.status === 'INFERRED' ? 'approximate' : s.status === 'UNVERIFIED' ? 'unverified, tell us the real ones' : '') : ''; document.getElementById('school-note').textContent = s ? `Colors: ${s.colors.names}${q ? ` (${q})` : ''}` : ''; }
   note();
   sel.addEventListener('change', () => { const s = schools.schools.find(x => x.id === sel.value); if (s) A.applyPalette(s); note(); });
   document.getElementById('pattern').addEventListener('change', e => A.setPattern(e.target.value));
@@ -178,7 +193,11 @@
       pemail: document.getElementById('pemail').value.trim(),
       testdate: document.getElementById('testdate').value,
       science: document.getElementById('science').value === 'on',
-      milestones: document.getElementById('milestones').value === 'on'
+      milestones: document.getElementById('milestones').value === 'on',
+      missmode: document.getElementById('missmode').value,
+      timepressure: document.getElementById('timepressure').value,
+      minutes: document.getElementById('minutes').value,
+      setSize: { '15': 6, '30': 10, '45': 14, '60': 18 }[document.getElementById('minutes').value] || 10
     });
     if (np.name || p.onboarded) S.set('profile', np);
     const c = document.getElementById('saved'); c.hidden = false; setTimeout(() => c.hidden = true, 1500);

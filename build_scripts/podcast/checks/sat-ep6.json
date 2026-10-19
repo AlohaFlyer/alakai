@@ -1,5 +1,5 @@
 [
- {"q": "On a \"most logically completes the text\" question, which choice is usually right?", "choices": ["The most interesting conclusion", "The smallest step the text actually supports", "The choice that mentions the most details", "The longest choice"], "answer": 1},
- {"q": "Lights went on Main Street, and accidents dropped there. A choice says the town will add lights to Oak Street next. Which trap is that?", "choices": ["Calculation slip", "Near miss", "Adds an assumption", "Opposite"], "answer": 2},
- {"q": "A claim says accidents fell by more than half. A chart choice shows 40 falling to 22. Does it support the claim?", "choices": ["Yes, because accidents went down", "No, because half of 40 is 20, so 22 is a drop of less than half", "Yes, because the number comes from the chart", "No, because charts never support claims"], "answer": 1}
+ {"q": "On a \"most logically completes the text\" question, which choice is usually right?", "choices": ["The choice that mentions the most details", "The smallest step the text actually supports", "The most interesting conclusion", "The longest choice"], "answer": 1},
+ {"q": "Lights went on Main Street, and accidents dropped there. A choice says the town will add lights to Oak Street next. Which trap is that?", "choices": ["Near miss", "Opposite", "Adds an assumption", "Calculation slip"], "answer": 2},
+ {"q": "A claim says accidents fell by more than half. A chart choice shows 40 falling to 22. Does it support the claim?", "choices": ["No, because charts never support claims", "Yes, because the number comes from the chart", "No, because half of 40 is 20, so 22 is a drop of less than half", "Yes, because accidents went down"], "answer": 2}
 ]

@@ -1,5 +1,5 @@
 [
- {"q": "On a Words in Context question, what do you do before looking at the answer choices?", "choices": ["Read all four choices twice", "Say your own word for the blank using clues in the sentence", "Pick the longest choice", "Skip to the next question"], "answer": 1},
- {"q": "The passage says the plants survived three frosts \"with little damage.\" Why is \"indestructible\" wrong?", "choices": ["It is too extreme: little damage is still some damage", "It is the opposite of the passage", "It is true but irrelevant", "It is a near miss in grammar"], "answer": 0},
- {"q": "On a Central Ideas question, a choice is about one detail, not the whole passage. What is wrong with it?", "choices": ["It is too broad", "It is too narrow", "It is too extreme", "Nothing, details are always the main idea"], "answer": 1}
+ {"q": "On a Words in Context question, what do you do before looking at the answer choices?", "choices": ["Say your own word for the blank using clues in the sentence", "Skip to the next question", "Pick the longest choice", "Read all four choices twice"], "answer": 0},
+ {"q": "The passage says the plants survived three frosts \"with little damage.\" Why is \"indestructible\" wrong?", "choices": ["It is true but irrelevant", "It is too extreme: little damage is still some damage", "It is a near miss in grammar", "It is the opposite of the passage"], "answer": 1},
+ {"q": "On a Central Ideas question, a choice is about one detail, not the whole passage. What is wrong with it?", "choices": ["Nothing, details are always the main idea", "It is too extreme", "It is too narrow", "It is too broad"], "answer": 2}
 ]

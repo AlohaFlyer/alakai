@@ -1,5 +1,5 @@
 [
- {"q": "What is the first move on a Boundaries question?", "choices": ["Read it aloud and listen for a pause", "Label each side as a complete sentence or not", "Pick the choice with the most commas", "Pick the shortest choice"], "answer": 1},
- {"q": "\"Maya finished her essay at midnight, she still had to print it.\" What is wrong?", "choices": ["Nothing, it reads naturally", "It is a comma splice: two complete sentences joined by a comma alone", "It needs a colon after essay", "It is missing a dash"], "answer": 1},
- {"q": "A semicolon needs what on both sides?", "choices": ["A list", "A dependent clause", "A complete sentence (independent clause)", "A transition word"], "answer": 2}
+ {"q": "What is the first move on a Boundaries question?", "choices": ["Pick the choice with the most commas", "Read it aloud and listen for a pause", "Pick the shortest choice", "Label each side as a complete sentence or not"], "answer": 3},
+ {"q": "\"Maya finished her essay at midnight, she still had to print it.\" What is wrong?", "choices": ["Nothing, it reads naturally", "It needs a colon after essay", "It is missing a dash", "It is a comma splice: two complete sentences joined by a comma alone"], "answer": 3},
+ {"q": "A semicolon needs what on both sides?", "choices": ["A list", "A complete sentence (independent clause)", "A transition word", "A dependent clause"], "answer": 1}
 ]

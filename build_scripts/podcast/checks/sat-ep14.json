@@ -1,5 +1,5 @@
 [
- {"q": "Which PSAT/NMSQT score does National Merit use?", "choices": ["The sophomore-year score", "The junior-year score", "The senior-year score", "Any SAT score"], "answer": 1},
- {"q": "March: RW 600, Math 550. June: RW 570, Math 620. What is the superscore?", "choices": ["1150", "1190", "1220", "1170"], "answer": 2},
- {"q": "What does the show say to do about testing accommodations?", "choices": ["Ask a friend", "Talk to your counselor about accommodations", "Email the show", "Nothing can be done"], "answer": 1}
+ {"q": "Which PSAT/NMSQT score does National Merit use?", "choices": ["The senior-year score", "The sophomore-year score", "The junior-year score", "Any SAT score"], "answer": 2},
+ {"q": "March: RW 600, Math 550. June: RW 570, Math 620. What is the superscore?", "choices": ["1220", "1150", "1190", "1170"], "answer": 0},
+ {"q": "What does the show say to do about testing accommodations?", "choices": ["Email the show", "Talk to your counselor about accommodations", "Ask a friend", "Nothing can be done"], "answer": 1}
 ]

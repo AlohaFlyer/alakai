@@ -1,5 +1,5 @@
 [
- {"q": "A tank holds 40 gallons and drains 3 gallons per minute. How many gallons are left after 8 minutes?", "choices": ["16", "26", "37", "64"], "answer": 0},
- {"q": "You set a problem up correctly but subtract wrong. Which trap is that?", "choices": ["Misread the question", "Calculation slip", "Adds an assumption", "Too extreme"], "answer": 1},
- {"q": "When you backsolve from number choices, where do you start?", "choices": ["The smallest choice", "The largest choice", "A middle choice, so you know which way to move", "Any choice at random"], "answer": 2}
+ {"q": "A tank holds 40 gallons and drains 3 gallons per minute. How many gallons are left after 8 minutes?", "choices": ["37", "64", "26", "16"], "answer": 3},
+ {"q": "You set a problem up correctly but subtract wrong. Which trap is that?", "choices": ["Calculation slip", "Too extreme", "Misread the question", "Adds an assumption"], "answer": 0},
+ {"q": "When you backsolve from number choices, where do you start?", "choices": ["The smallest choice", "The largest choice", "Any choice at random", "A middle choice, so you know which way to move"], "answer": 3}
 ]

@@ -1,5 +1,5 @@
 [
- {"q": "You are testing on paper. Which of these goes in your bag?", "choices": ["A mechanical pencil", "Sharpened No. 2 pencils", "A watch that beeps every hour", "Nothing, they give you pencils"], "answer": 1},
- {"q": "When should you take your full practice test in the last week?", "choices": ["The night before, late", "At the same hour your real test starts, a few days out", "Right after school, whenever", "You shouldn't take one"], "answer": 1},
- {"q": "Where do you choose which colleges get your ACT scores?", "choices": ["On the answer sheet", "In your MyACT account", "At the test center", "Through this app"], "answer": 1}
+ {"q": "You are testing on paper. Which of these goes in your bag?", "choices": ["Nothing, they give you pencils", "A watch that beeps every hour", "A mechanical pencil", "Sharpened No. 2 pencils"], "answer": 3},
+ {"q": "When should you take your full practice test in the last week?", "choices": ["You shouldn't take one", "Right after school, whenever", "At the same hour your real test starts, a few days out", "The night before, late"], "answer": 2},
+ {"q": "Where do you choose which colleges get your ACT scores?", "choices": ["At the test center", "In your MyACT account", "Through this app", "On the answer sheet"], "answer": 1}
 ]

@@ -52,31 +52,37 @@
       ${strat ? `<details class="approach"><summary>Approach: ${A.esc(strat.name)}</summary><ol>${strat.steps.map(x => `<li>${A.esc(x)}</li>`).join('')}</ol></details>` : ''}
       ${item.passage ? `<div class="passage card" style="box-shadow:none;background:var(--paper-2)">${A.esc(item.passage).replace(/\n/g, '<br>')}</div>` : ''}
       <div class="q-stem">${A.esc(item.stem).replace(/\n/g, '<br>')}</div>
-      ${free ? `<div class="row"><input type="text" id="free" inputmode="decimal" placeholder="Your answer" style="max-width:220px"><button id="submit">Check</button></div>`
-             : `<div class="choices">${item.choices.map((c, i) => `<div class="choice-row"><button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button><button class="strike" data-i="${i}" title="Cross out" aria-label="Cross out ${letters[i]}">×</button></div>`).join('')}</div>`}
+      ${free ? `<div class="row"><input type="text" id="free" inputmode="decimal" placeholder="Your answer" aria-label="Your answer" style="max-width:220px"><button id="submit">Check</button></div>`
+             : `<div class="choices">${item.choices.map((c, i) => `<div class="choice-row"><button class="choice" data-i="${i}"><strong>${letters[i]}.</strong> ${A.esc(c)}</button><button class="strike" data-i="${i}" title="Cross out" aria-label="Cross out ${letters[i]}" aria-pressed="false">×</button></div>`).join('')}</div>`}
       <div class="row" style="margin-top:8px">${opts.allowFlag ? '<button class="ghost" id="flag">Flag for later</button>' : ''}${mode === 'hint' ? '<button class="ghost" id="hintbtn">Hint</button>' : ''}<span class="muted" id="skillname">${A.esc(opts.skillName || '')}</span></div>
       <div id="fb"></div>`;
     return new Promise(resolve => {
-      let hintUsed = false, tries = 0, settled = false;
+      let hintUsed = false, tries = 0, settled = false, firstPick = null;
       const hb = container.querySelector('#hintbtn'); if (hb) hb.addEventListener('click', () => { hintUsed = true; showHint(); });
       function showHint() { let h = container.querySelector('.hintbox'); if (!h) { h = document.createElement('div'); h.className = 'explain hintbox'; container.querySelector('#fb').appendChild(h); } h.textContent = 'Hint: ' + item.hint; }
       const struck = new Set();
-      container.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => { const i = +b.dataset.i; const row = b.parentElement; if (struck.has(i)) { struck.delete(i); row.classList.remove('struck'); } else { struck.add(i); row.classList.add('struck'); } }));
+      container.querySelectorAll('.strike').forEach(b => b.addEventListener('click', () => { const i = +b.dataset.i; const row = b.parentElement; if (struck.has(i)) { struck.delete(i); row.classList.remove('struck'); } else { struck.add(i); row.classList.add('struck'); } b.setAttribute('aria-pressed', struck.has(i) ? 'true' : 'false'); }));
       const fl = container.querySelector('#flag'); if (fl) fl.addEventListener('click', () => { fl.textContent = 'Flagged'; opts.onFlag && opts.onFlag(item); });
+      // Hint mode: a wrong first try shows the hint (hintUsed). A right second try is shown as right but recorded
+      // as a miss (correct false, retry true, cause "needed hint"), so accuracy and the error log stay honest.
       function finish(correct, picked) {
         if (settled) return; settled = true;
         const ms = Date.now() - start;
-        container.querySelectorAll('.choice').forEach(b => { b.disabled = true; const i = +b.dataset.i; if (i === item.answer) b.dataset.state = 'right'; else if (i === picked) b.dataset.state = 'wrong'; });
-        if (!opts.silent) explain(correct, picked);
-        resolve({ correct, ms, picked, hintUsed, tries, struck: [...struck], trap: (!correct && !free && item.traps && item.traps[picked]) || null });
+        const retry = correct && firstPick !== null;
+        container.querySelectorAll('.choice').forEach(b => { b.disabled = true; const i = +b.dataset.i; if (i === item.answer) b.dataset.state = 'right'; else if (i === picked || i === firstPick) b.dataset.state = 'wrong'; });
+        if (!opts.silent) explain(correct, picked, retry);
+        const trapPick = retry ? firstPick : picked;
+        const trap = (!free && (!correct || retry) && item.traps && item.traps[trapPick]) || null;
+        resolve({ correct: correct && !retry, shownRight: correct, retry, ms, picked, firstPick, hintUsed, tries, struck: [...struck], trap, cause: retry ? 'needed hint' : null });
       }
-      function explain(correct, picked) {
+      function explain(correct, picked, retry) {
         const fb = container.querySelector('#fb');
-        A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak);
+        if (retry) { const old = fb.querySelector('.feedback'); if (old) old.remove(); const el = document.createElement('div'); el.className = 'feedback right'; el.textContent = 'Got it on the second try. It goes in your error log so it comes back.'; fb.prepend(el); }
+        else A.showFeedback(fb, correct ? 'right' : 'wrong', opts.streak);
         const parts = [];
         if (!correct && !free && item.distractors && item.distractors[picked]) parts.push(`<p>${item.traps && item.traps[picked] ? `<span class="chip warn">${A.esc(TRAP_NAMES[item.traps[picked]] || item.traps[picked])}</span> ` : ''}<strong>Why ${letters[picked]} tempts you:</strong> ${A.esc(item.distractors[picked])}</p>`);
         if (!correct && !free && struck.has(item.answer)) parts.push(`<p class="muted">You crossed out the right answer. Cross out only when you can say why it is wrong.</p>`);
-        parts.push(`<p><strong>${free ? 'Answer: ' + A.esc(item.answer) + '. ' : ''}Why ${free ? '' : letters[item.answer] + ' is right'}:</strong> ${A.esc(item.explain)}</p>`);
+        parts.push(`<p><strong>${free ? 'Answer: ' + A.esc(item.answer) + '. Why' : 'Why ' + letters[item.answer] + ' is right'}:</strong> ${A.esc(item.explain)}</p>`);
         if (mode === 'worked' || (!correct && item.worked)) parts.push(`<details ${mode === 'worked' ? 'open' : ''}><summary>Worked solution</summary><pre style="white-space:pre-wrap;font-family:inherit">${A.esc(item.worked)}</pre></details>`);
         const d = document.createElement('div'); d.className = 'explain'; d.innerHTML = parts.join(''); fb.appendChild(d);
         const b = document.createElement('button'); b.textContent = opts.nextLabel || 'Next'; b.style.marginTop = '10px'; b.addEventListener('click', () => opts.onNext && opts.onNext()); fb.appendChild(b);
@@ -84,27 +90,40 @@
       container.querySelectorAll('.choice').forEach(b => b.addEventListener('click', () => {
         const i = +b.dataset.i; tries++;
         if (i === item.answer) return finish(true, i);
-        if (mode === 'hint' && tries === 1 && !opts.timed) { b.dataset.state = 'wrong'; b.disabled = true; showHint(); return; }
+        if (mode === 'hint' && tries === 1 && !opts.timed) { b.dataset.state = 'wrong'; b.disabled = true; firstPick = i; hintUsed = true; showHint(); return; }
         finish(false, i);
       }));
       const sub = container.querySelector('#submit'); if (sub) {
-        const check = () => { const v = container.querySelector('#free').value.trim(); if (!v) return; tries++; const ok = normalize(v) === normalize(item.answer) || (item.answer_alt || []).some(a => normalize(a) === normalize(v)); if (ok) return finish(true, v); if (mode === 'hint' && tries === 1 && !opts.timed) { showHint(); return; } finish(false, v); };
+        const check = () => { const v = container.querySelector('#free').value.trim(); if (!v) return; tries++; const ok = normalize(v) === normalize(item.answer) || (item.answer_alt || []).some(a => normalize(a) === normalize(v)); if (ok) return finish(true, v); if (mode === 'hint' && tries === 1 && !opts.timed) { firstPick = v; hintUsed = true; notQuite(v); showHint(); return; } finish(false, v); };
+        function notQuite(v) { const inp = container.querySelector('#free'); inp.classList.add('free-wrong'); inp.setAttribute('aria-invalid', 'true'); inp.addEventListener('input', () => { inp.classList.remove('free-wrong'); inp.removeAttribute('aria-invalid'); }, { once: true }); const fb = container.querySelector('#fb'); let el = fb.querySelector('.feedback'); if (!el) { el = document.createElement('div'); fb.prepend(el); } el.className = 'feedback wrong'; el.setAttribute('role', 'status'); el.textContent = `Not quite: ${v} is not it. Read the hint and try once more.`; }
         sub.addEventListener('click', check); container.querySelector('#free').addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
       }
     });
   }
   function normalize(v) { v = String(v).trim().replace(/\s+/g, '').replace(/^\+/, ''); const n = Number(v); if (!isNaN(n) && v !== '') return String(Math.round(n * 10000) / 10000); if (/^-?\d+\/\d+$/.test(v)) { const [a, b] = v.split('/').map(Number); if (b) return String(Math.round(a / b * 10000) / 10000); } return v.toLowerCase(); }
 
+  // Records one graded attempt the moment it is graded. Misses go to the error log right away with cause
+  // "unsorted" (or the cause already known); setCause() fills it in later if the student answers "Why did you miss it?".
+  // Resolves with the DB key of the attempt.
   async function record(test, item, res, kind, extra) {
     const seen = S.get('seen', {}); seen[item.id] = (seen[item.id] || 0) + 1; S.set('seen', seen);
-    await A.DB.add(Object.assign({ test, kind, item: item.id, skill: item.skill, section: item.section, correct: !!res.correct, ms: res.ms, hint: !!res.hintUsed, cause: res.cause || null, trap: res.trap || null, struck: (res.struck || []).length }, extra || {}));
-    if (!res.correct && kind !== 'blitz') {
+    const miss = !res.correct;
+    const cause = res.cause || (miss && kind !== 'blitz' ? 'unsorted' : null);
+    if (miss && kind !== 'blitz') {
       const log = S.get(test + '.errlog', []);
-      if (!log.some(e => e.id === item.id && !e.done)) log.push({ id: item.id, skill: item.skill, at: Date.now(), due: Date.now() + 3 * 86400000, done: false, cause: res.cause || null, trap: res.trap || null });
+      const open = log.find(e => e && e.id === item.id && !e.done);
+      if (!open) log.push({ id: item.id, skill: item.skill, at: Date.now(), due: Date.now() + 3 * 86400000, done: false, cause, trap: res.trap || null });
+      else if (kind === 'redo') { open.due = Date.now() + 3 * 86400000; if (res.trap) open.trap = res.trap; }
       S.set(test + '.errlog', log.slice(-300));
     } else if (res.correct && kind === 'redo') {
-      const log = S.get(test + '.errlog', []); log.forEach(e => { if (e.id === item.id) e.done = true; }); S.set(test + '.errlog', log);
+      const log = S.get(test + '.errlog', []); log.forEach(e => { if (e && e.id === item.id) e.done = true; }); S.set(test + '.errlog', log);
     }
+    return A.DB.add(Object.assign({ test, kind, item: item.id, skill: item.skill, section: item.section, correct: !!res.correct, ms: res.ms, hint: !!res.hintUsed, retry: !!res.retry, cause, trap: res.trap || null, struck: (res.struck || []).length }, extra || {}));
+  }
+  async function setCause(test, item, key, cause) {
+    const log = S.get(test + '.errlog', []);
+    const e = log.slice().reverse().find(x => x && x.id === item.id && !x.done); if (e) { e.cause = cause; S.set(test + '.errlog', log); }
+    return A.DB.patch(key, { cause });
   }
 
   function askCause(container) {
@@ -120,5 +139,6 @@
   async function strategyFor(test, skill) { if (!_strat) { try { _strat = await A.data('data/strategies.json'); } catch (e) { _strat = {}; } } return (_strat[test] || {})[skill] || null; }
   // Skill levels: Attempted, Familiar (>=60% over 5), Proficient (>=75% over 10 with a hard item right), Mastered (Proficient + a correct redo)
   function level(stats) { if (!stats || !stats.n) return 'New'; const acc = stats.r / stats.n; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight && stats.redoRight) return 'Mastered'; if (stats.n >= 10 && acc >= 0.75 && stats.hardRight) return 'Proficient'; if (stats.n >= 5 && acc >= 0.6) return 'Familiar'; return 'Attempted'; }
-  window.AlakaiEngine = { strategyFor, level, TRAP_NAMES, Bank, buildSet, renderItem, record, askCause, normalize };
+  const CAUSE_NAMES = { careless: 'careless', concept: 'didn\'t know it', time: 'rushed or ran out of time', unsorted: 'missed', 'needed hint': 'needed the hint' };
+  window.AlakaiEngine = { strategyFor, level, TRAP_NAMES, CAUSE_NAMES, Bank, buildSet, renderItem, record, setCause, askCause, normalize };
 })();
